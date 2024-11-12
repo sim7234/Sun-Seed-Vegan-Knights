@@ -3,22 +3,19 @@ using UnityEngine;
 public class EnemyTakeDamage : MonoBehaviour
 {
     Health healthScript;
-    GameObject Sword;
-    PlayerMeleeCombatPrototype meleeScript;
 
     private void Start()
     {
-        Sword = GameObject.FindWithTag("Sword");
-        meleeScript = Sword.GetComponent<PlayerMeleeCombatPrototype>();
         healthScript = GetComponent<Health>();
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log("Test");
+        Debug.Log("Damage!!!");
         if (other.gameObject.CompareTag("Sword"))
         {
-         //   healthScript.TakeDamage(meleeScript.swordDamage);
+            healthScript.TakeDamage(other.gameObject.GetComponent<PlayerMeleeCombatPrototype>().swordDamage);
             Debug.Log("Hit!");
         }
     }
+
 }

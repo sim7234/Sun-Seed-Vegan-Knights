@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class PlayerMeleeCombatPrototype : MonoBehaviour
 {
-
     bool inputR1 = false;
     bool doesDamage = false;
     Animator animator;
@@ -18,6 +17,7 @@ public class PlayerMeleeCombatPrototype : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Joystick1Button5))
         {
+            animator.SetTrigger("PressedR1");
             inputR1 = true;
         }
 
@@ -28,7 +28,6 @@ public class PlayerMeleeCombatPrototype : MonoBehaviour
 
         if (inputR1 == true)
         {
-            animator.SetTrigger("PressedR1");
             doesDamage = true;
         }
         else
@@ -39,7 +38,22 @@ public class PlayerMeleeCombatPrototype : MonoBehaviour
             }
         }
 
-        
     }
-    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Health enemyHealth = collision.gameObject.GetComponent<Health>();
+
+            if (enemyHealth != null)
+            {
+                enemyHealth.TakeDamage(swordDamage);
+                Debug.Log("Taken damage");
+            }
+            else
+            {
+                Debug.Log("Player did not take damage");
+            }
+        }
+    }
 }

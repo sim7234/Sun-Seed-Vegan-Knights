@@ -236,7 +236,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   growTime: 5
   waterCost: 2
-  seedObject: {fileID: 4130278647452102232, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
+  seedObject: {fileID: 4002550080951735726, guid: ef5a3a201fe11024cafb6f6c6066354c, type: 3}
+  inSun: 0
   displayCostText: {fileID: 4664746600361137346}
 --- !u!61 &2622487958835093076
 BoxCollider2D:

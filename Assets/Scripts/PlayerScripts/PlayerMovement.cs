@@ -27,8 +27,11 @@ public class PlayerMovement : MonoBehaviour
         {
             rb2d.velocity += vecloity * moveSpeed;
         }
-
         Vector3 direction = rb2d.velocity.normalized;
-        directionIndicator.transform.up = direction;
+        
+        if(direction.magnitude > 0)
+        {
+            directionIndicator.transform.up = direction;
+        }
     }
 }
