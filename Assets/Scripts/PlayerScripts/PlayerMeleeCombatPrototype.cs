@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMeleeCombatPrototype : MonoBehaviour
@@ -6,7 +7,7 @@ public class PlayerMeleeCombatPrototype : MonoBehaviour
     bool inputR1 = false;
     bool doesDamage = false;
     Animator animator;
-    
+    public int swordDamage;
 
     private void Start()
     {
@@ -35,9 +36,10 @@ public class PlayerMeleeCombatPrototype : MonoBehaviour
             if (animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
             {
                 doesDamage = false;
-                Debug.Log("Animation Idle");
             }
         }
 
+        
     }
+    
 }
