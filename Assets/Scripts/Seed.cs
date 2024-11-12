@@ -17,13 +17,12 @@ public class Seed : MonoBehaviour
     private GameObject seedObject;
 
     private bool wetSeed;
-    private bool inSun;
+    public bool inSun;
 
     [SerializeField]
     private GameObject displayCostText;
     private void Start()
     {
-        inSun = true;
         displayCostText.SetActive(false);
     }
     private void Update()
