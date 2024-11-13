@@ -102,6 +102,6 @@ public class Pathfinding : MonoBehaviour
         }
 
         agent.SetDestination(targets[target].transform.position);
-        Debug.Log(targets[target].transform.position.ToString());
+        //Debug.Log(targets[target].transform.position.ToString());
     }
 }

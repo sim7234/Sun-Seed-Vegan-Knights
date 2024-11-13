@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Health : MonoBehaviour
 {
@@ -8,7 +9,9 @@ public class Health : MonoBehaviour
 
     [SerializeField]
     private GameObject bloodOnHit;
-    
+    [SerializeField]
+    private GameObject deathEffect;
+
     [SerializeField]
     private SpriteRenderer characterSprite;
 
@@ -18,11 +21,18 @@ public class Health : MonoBehaviour
     private AudioSource audioSource;
 
     private Color baseColor;
+
+    private NavMeshAgent agent;
     void Start()
     {
         currentHealth = maxHealth;
         baseColor = characterSprite.color;
         audioSource = GetComponent<AudioSource>();
+        
+        if (GetComponent<NavMeshAgent>() != null)
+        {
+            agent = GetComponent<NavMeshAgent>();
+        }
     }
 
     public void TakeDamage(int damageAmount)
@@ -34,6 +44,12 @@ public class Health : MonoBehaviour
         Destroy(newBlood, 0.8f);
         audioSource.pitch = Random.Range(0.90f, 1.1f);
         audioSource.Play();
+        
+        if(agent != null)
+        {
+            agent.velocity = Vector3.zero;
+        }
+
         if (currentHealth <= 0)
         {
             Die();
@@ -42,6 +58,8 @@ public class Health : MonoBehaviour
 
     private void Die()
     {
+        GameObject newDeathEffect = Instantiate(deathEffect, transform.position, Quaternion.identity);
+        Destroy(newDeathEffect, 0.8f);
         Destroy(gameObject);
     }
     public int GetCurrentHealth()

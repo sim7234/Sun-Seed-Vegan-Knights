@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
         if (moveDirection != Vector2.zero)
         {
             float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
-            directionIndicator.transform.rotation = Quaternion.Euler(0, 0, angle);
+            directionIndicator.transform.rotation = Quaternion.Euler(0, 0, angle - 90);
         }
         /*Vector2 vecloity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         vecloity.Normalize();
@@ -67,7 +67,5 @@ public class PlayerMovement : MonoBehaviour
         private void FixedUpdate()
         {
             rb2d.velocity = moveDirection * moveSpeed;
-            
         }
     }
-

@@ -400,8 +400,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8547733511855241947}
   - {fileID: 3856953559138683165}
@@ -419,8 +419,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a79ce0dc6840bb49ac52a8a1607d9bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
-  maxSpeed: 4
+  moveSpeed: 3
+  maxSpeed: 6
   directionIndicator: {fileID: 4283199718185520484}
   move:
     m_Name: Move
@@ -469,55 +469,6 @@ MonoBehaviour:
       m_Processors: 
       m_Groups: 
       m_Action: Move
-      m_Flags: 8
-    m_Flags: 0
-  look:
-    m_Name: Look
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: db235f5e-1b17-4c22-9adc-e2eeeef7b620
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 2D Vector
-      m_Id: c45ac79d-4057-44b2-9c90-52daaab99405
-      m_Path: 2DVector
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Look
-      m_Flags: 4
-    - m_Name: up
-      m_Id: fe5ed842-0c9f-4049-bba5-e2ec97374436
-      m_Path: <Gamepad>/rightStick/up
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Look
-      m_Flags: 8
-    - m_Name: down
-      m_Id: 3dc87edc-332d-4350-8175-d1649c595cb4
-      m_Path: <Gamepad>/rightStick/down
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Look
-      m_Flags: 8
-    - m_Name: left
-      m_Id: e8536767-5ab5-46df-b27e-53ac1360d729
-      m_Path: <Gamepad>/rightStick/left
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Look
-      m_Flags: 8
-    - m_Name: right
-      m_Id: d29d0660-dabe-4349-831a-482a0816f1b8
-      m_Path: <Gamepad>/rightStick/right
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Look
       m_Flags: 8
     m_Flags: 0
 --- !u!50 &6392348033316344455
@@ -634,6 +585,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100000
   bloodOnHit: {fileID: 1240254011838071449, guid: 41925829a7d4e9f44b90f9db56482cec, type: 3}
+  deathEffect: {fileID: 1240254011838071449, guid: a8a005973de14ea47810af5564db808b, type: 3}
   characterSprite: {fileID: 5383747409787903520}
   hitSound: {fileID: 0}
 --- !u!114 &5478368589574827822
@@ -650,6 +602,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bigSword: {fileID: 3131349570624323539}
   specialWeaponAttacks: 5
+  fire:
+    m_Name: Fire
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 08836e3a-30d5-4134-8e4e-1c1fed97b2b0
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
   baseWeapon: {fileID: 7790897372868414741}
   attackCooldown: 0
 --- !u!82 &5284485026496525295
@@ -1052,7 +1013,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11a6395490cddb74c9278ea781f91227, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swordDamage: 20
+  swordDamage: 8
 --- !u!95 &1294627140996822549
 Animator:
   serializedVersion: 5
@@ -1146,8 +1107,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.41, y: 0.82, z: 0.41}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 0.07883257, y: 0.07883257, z: 0.07883257}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5130911862086886225}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1192,9 +1153,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 100
-  m_Sprite: {fileID: 21300000, guid: 19c08c07ccb311f4c8705e21026ce236, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 507d64066ac71cb49ae20796c0f7220f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
