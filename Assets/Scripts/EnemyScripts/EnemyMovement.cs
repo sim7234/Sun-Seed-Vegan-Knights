@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class EnemyMovement : MonoBehaviour
         {
             Debug.LogError("Player not found!");
         }
+        var agent = GetComponent<NavMeshAgent>();
     }
 
     void Update()
