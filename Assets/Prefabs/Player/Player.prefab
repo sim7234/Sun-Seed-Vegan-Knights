@@ -534,6 +534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100000
+  bloodOnHit: {fileID: 1240254011838071449, guid: 41925829a7d4e9f44b90f9db56482cec, type: 3}
   characterSprite: {fileID: 5383747409787903520}
 --- !u!114 &5478368589574827822
 MonoBehaviour:

@@ -7,6 +7,9 @@ public class Health : MonoBehaviour
     private int currentHealth;
 
     [SerializeField]
+    private GameObject bloodOnHit;
+    
+    [SerializeField]
     private SpriteRenderer characterSprite;
 
     private Color baseColor;
@@ -21,6 +24,8 @@ public class Health : MonoBehaviour
         currentHealth -= damageAmount; 
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
         StartCoroutine(BlinkOnHit());
+        GameObject newBlood = Instantiate(bloodOnHit, transform.position, Quaternion.identity);
+        Destroy(newBlood, 0.8f);
         if (currentHealth <= 0)
         {
             Die();
