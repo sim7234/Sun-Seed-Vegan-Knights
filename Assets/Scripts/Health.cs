@@ -12,11 +12,17 @@ public class Health : MonoBehaviour
     [SerializeField]
     private SpriteRenderer characterSprite;
 
+    [SerializeField]
+    private AudioClip hitSound;
+
+    private AudioSource audioSource;
+
     private Color baseColor;
     void Start()
     {
         currentHealth = maxHealth;
         baseColor = characterSprite.color;
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void TakeDamage(int damageAmount)
@@ -26,6 +32,8 @@ public class Health : MonoBehaviour
         StartCoroutine(BlinkOnHit());
         GameObject newBlood = Instantiate(bloodOnHit, transform.position, Quaternion.identity);
         Destroy(newBlood, 0.8f);
+        audioSource.pitch = Random.Range(0.90f, 1.1f);
+        audioSource.Play();
         if (currentHealth <= 0)
         {
             Die();
