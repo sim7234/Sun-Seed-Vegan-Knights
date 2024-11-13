@@ -21,6 +21,9 @@ public class Seed : MonoBehaviour
 
     [SerializeField]
     private GameObject displayCostText;
+
+    [SerializeField]
+    private GameObject growingEffect;
     private void Start()
     {
         displayCostText.SetActive(false);
@@ -39,6 +42,7 @@ public class Seed : MonoBehaviour
             wetSeed = true;
             aPlayer.GetComponent<PlayerWater>().TakeWater(waterCost);
             displayCostText.SetActive(false);
+            growingEffect.SetActive(true);
             return true;
         }
         else
