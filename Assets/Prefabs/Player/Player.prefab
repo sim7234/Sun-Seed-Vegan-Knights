@@ -422,6 +422,104 @@ MonoBehaviour:
   moveSpeed: 2
   maxSpeed: 4
   directionIndicator: {fileID: 4283199718185520484}
+  move:
+    m_Name: Move
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: ecf84705-4f96-495f-bc39-6df7a94acc11
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 2D Vector
+      m_Id: 671592bb-21a5-49c7-a6e9-fca4e14d6709
+      m_Path: 2DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 4
+    - m_Name: up
+      m_Id: b799fd0c-2025-4281-a5d4-a87b35ae0e6f
+      m_Path: <Gamepad>/leftStick/up
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: down
+      m_Id: fbe63674-fffc-4992-b9e0-ea0d06634ebe
+      m_Path: <Gamepad>/leftStick/down
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: left
+      m_Id: 93e93ab1-d05c-4733-ba9e-f498871d28b9
+      m_Path: <Gamepad>/leftStick/left
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: right
+      m_Id: f54ade3a-9aff-4bd7-aab3-ceb1c0ca686d
+      m_Path: <Gamepad>/leftStick/right
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    m_Flags: 0
+  look:
+    m_Name: Look
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: db235f5e-1b17-4c22-9adc-e2eeeef7b620
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 2D Vector
+      m_Id: c45ac79d-4057-44b2-9c90-52daaab99405
+      m_Path: 2DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Look
+      m_Flags: 4
+    - m_Name: up
+      m_Id: fe5ed842-0c9f-4049-bba5-e2ec97374436
+      m_Path: <Gamepad>/rightStick/up
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Look
+      m_Flags: 8
+    - m_Name: down
+      m_Id: 3dc87edc-332d-4350-8175-d1649c595cb4
+      m_Path: <Gamepad>/rightStick/down
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Look
+      m_Flags: 8
+    - m_Name: left
+      m_Id: e8536767-5ab5-46df-b27e-53ac1360d729
+      m_Path: <Gamepad>/rightStick/left
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Look
+      m_Flags: 8
+    - m_Name: right
+      m_Id: d29d0660-dabe-4349-831a-482a0816f1b8
+      m_Path: <Gamepad>/rightStick/right
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Look
+      m_Flags: 8
+    m_Flags: 0
 --- !u!50 &6392348033316344455
 Rigidbody2D:
   serializedVersion: 4
