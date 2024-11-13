@@ -370,41 +370,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 572438461}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &405284713 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7790897372868414741, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
-  m_PrefabInstance: {fileID: 1525991529}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &405284719
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 405284713}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 8512ec2c674562c4d92269821d441561, type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Gamepad
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!1 &552008015
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,41 +468,6 @@ Transform:
   - {fileID: 862155284}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &712893943 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4130278647452102232, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
-  m_PrefabInstance: {fileID: 1525991529}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &712893953
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 712893943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 8512ec2c674562c4d92269821d441561, type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Gamepad
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!1 &836861173
 GameObject:
   m_ObjectHideFlags: 0
@@ -1224,108 +1154,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5478368589574827822, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
-      propertyPath: fire.m_Name
-      value: Fire
-      objectReference: {fileID: 0}
-    - target: {fileID: 5478368589574827822, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
-      propertyPath: fire.m_SingletonActionBindings.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5478368589574827822, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
-      propertyPath: fire.m_SingletonActionBindings.Array.data[0].m_Id
-      value: 2dcfa141-8b3a-48a5-9d64-bcf3369b6c91
-      objectReference: {fileID: 0}
-    - target: {fileID: 5478368589574827822, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
-      propertyPath: fire.m_SingletonActionBindings.Array.data[1].m_Id
-      value: d4467a9f-1d2c-4497-b2be-4361a363125b
-      objectReference: {fileID: 0}
-    - target: {fileID: 5478368589574827822, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
-      propertyPath: fire.m_SingletonActionBindings.Array.data[2].m_Id
-      value: df1b3a89-e9f0-4fc4-a88b-b85ddb5af2be
-      objectReference: {fileID: 0}
-    - target: {fileID: 5478368589574827822, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
-      propertyPath: fire.m_SingletonActionBindings.Array.data[3].m_Id
-      value: 9baa1c7f-fe0a-4f08-9ea5-8f5c65b94db3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5478368589574827822, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
-      propertyPath: fire.m_SingletonActionBindings.Array.data[4].m_Id
-      value: 713423f4-63b4-474c-8be1-aaa66371c805
-      objectReference: {fileID: 0}
-    - target: {fileID: 5478368589574827822, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
-      propertyPath: fire.m_SingletonActionBindings.Array.data[0].m_Name
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5478368589574827822, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
-      propertyPath: fire.m_SingletonActionBindings.Array.data[0].m_Path
-      value: <Gamepad>/rightShoulder
-      objectReference: {fileID: 0}
-    - target: {fileID: 5478368589574827822, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
-      propertyPath: fire.m_SingletonActionBindings.Array.data[1].m_Name
-      value: up
-      objectReference: {fileID: 0}
-    - target: {fileID: 5478368589574827822, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
-      propertyPath: fire.m_SingletonActionBindings.Array.data[2].m_Name
-      value: down
-      objectReference: {fileID: 0}
-    - target: {fileID: 5478368589574827822, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
-      propertyPath: fire.m_SingletonActionBindings.Array.data[3].m_Name
-      value: left
-      objectReference: {fileID: 0}
-    - target: {fileID: 5478368589574827822, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
-      propertyPath: fire.m_SingletonActionBindings.Array.data[4].m_Name
-      value: right
-      objectReference: {fileID: 0}
-    - target: {fileID: 5478368589574827822, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
-      propertyPath: fire.m_SingletonActionBindings.Array.data[0].m_Flags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5478368589574827822, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
-      propertyPath: fire.m_SingletonActionBindings.Array.data[1].m_Flags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5478368589574827822, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
-      propertyPath: fire.m_SingletonActionBindings.Array.data[2].m_Flags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5478368589574827822, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
-      propertyPath: fire.m_SingletonActionBindings.Array.data[3].m_Flags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5478368589574827822, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
-      propertyPath: fire.m_SingletonActionBindings.Array.data[4].m_Flags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5478368589574827822, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
-      propertyPath: fire.m_SingletonActionBindings.Array.data[0].m_Action
-      value: Fire
-      objectReference: {fileID: 0}
-    - target: {fileID: 5478368589574827822, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
-      propertyPath: fire.m_SingletonActionBindings.Array.data[1].m_Action
-      value: Fire
-      objectReference: {fileID: 0}
-    - target: {fileID: 5478368589574827822, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
-      propertyPath: fire.m_SingletonActionBindings.Array.data[2].m_Action
-      value: Fire
-      objectReference: {fileID: 0}
-    - target: {fileID: 5478368589574827822, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
-      propertyPath: fire.m_SingletonActionBindings.Array.data[3].m_Action
-      value: Fire
-      objectReference: {fileID: 0}
-    - target: {fileID: 5478368589574827822, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
-      propertyPath: fire.m_SingletonActionBindings.Array.data[4].m_Action
-      value: Fire
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4130278647452102232, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 712893953}
-    - targetCorrespondingSourceObject: {fileID: 7790897372868414741, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 405284719}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
 --- !u!1 &1630799819
 GameObject:
