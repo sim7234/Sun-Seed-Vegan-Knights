@@ -8,7 +8,7 @@ public class PlantSeed : MonoBehaviour
     private GameObject seedType;
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button3))
         {
             Instantiate(seedType, transform.position, Quaternion.identity);
         }

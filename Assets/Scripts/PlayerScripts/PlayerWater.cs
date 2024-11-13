@@ -35,7 +35,7 @@ public class PlayerWater : MonoBehaviour
             waterRateTimer += Time.deltaTime;
         }
 
-        if(Input.GetKeyDown(KeyCode.Space) && seedInRange.Count >= 1)
+        if(Input.GetKeyDown(KeyCode.Joystick1Button1) && seedInRange.Count >= 1)
         {
             for (int i = 0; i < seedInRange.Count; i++)
             {
