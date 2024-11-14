@@ -81,8 +81,8 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BigSwordSwingPrototype
-  m_Speed: 1.5
+  m_Name: BigSpearSwingPrototype
+  m_Speed: 3
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -6931035791807429132}
@@ -95,7 +95,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 350276cedd5848c41a5cdea871a938c3, type: 2}
+  m_Motion: {fileID: 7400000, guid: 95f380d94fc3d14468174fd9b1cf0edb, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -107,7 +107,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BigSword 1
+  m_Name: BigSpear
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Attack
@@ -143,7 +143,7 @@ AnimatorStateMachine:
     m_Position: {x: 250, y: 120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8933676878204566047}
-    m_Position: {x: 230, y: 20, z: 0}
+    m_Position: {x: 250, y: 20, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6001572563935697424}
   - component: {fileID: 2582279992688211274}
   m_Layer: 0
-  m_Name: WeaponPickup
+  m_Name: WeaponPickupSpear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,6 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b6e5ec431ffd6543a14ea6eaee71a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
 --- !u!1 &6332228400897443416
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,7 +155,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 100
-  m_Sprite: {fileID: 21300000, guid: 903c9152f8532cd4fbdaed95bbf48395, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 245cc0c3348e33c46ba8844bd3359599, type: 3}
   m_Color: {r: 0.8113208, g: 0.8113208, b: 0.8113208, a: 0.72156864}
   m_FlipX: 0
   m_FlipY: 0
