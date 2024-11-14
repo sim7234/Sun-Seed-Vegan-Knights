@@ -31,6 +31,10 @@ public class PlayerMovement : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
     }
 
+     public void OnMove(InputAction.CallbackContext context)
+    {
+        moveDirection = context.ReadValue<Vector2>();
+    }
     private void OnEnable() 
     {
         move = playerMovement.Player.Move;
@@ -51,18 +55,6 @@ public class PlayerMovement : MonoBehaviour
             float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
             directionIndicator.transform.rotation = Quaternion.Euler(0, 0, angle - 90);
         }
-        /*Vector2 vecloity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        vecloity.Normalize();
-        if (vecloity.magnitude > 0 && rb2d.velocity.magnitude <= maxSpeed)
-        {
-            rb2d.velocity += vecloity * moveSpeed;
-        }
-        Vector3 direction = rb2d.velocity.normalized;
-        
-        if(direction.magnitude > 0)
-        {
-            directionIndicator.transform.up = direction;
-        }*/
     }
         private void FixedUpdate()
         {
