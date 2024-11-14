@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class MissionMaster : MonoBehaviour
 {
     public static MissionMaster Instance;
 
-   
     private int enemyCounter;
 
     [SerializeField]
@@ -57,6 +56,10 @@ public class MissionMaster : MonoBehaviour
     private void NextStage()
     {
         combatsComplete++;
+        if(combatsComplete == combatPoints.Count)
+        {
+            SceneManager.LoadScene(0);
+        }
         StartCoroutine(MoveCameraToNextPoint(cam.transform.position, combatPoints[combatsComplete].transform.position));
         Debug.Log("New stage, camera moves");
     }
