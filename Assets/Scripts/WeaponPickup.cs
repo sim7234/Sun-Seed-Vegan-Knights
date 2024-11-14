@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class WeaponPickup : MonoBehaviour
 {
-    
-    
+    [SerializeField]
+    public WeaponType type;
+}
 
+public enum WeaponType
+{
+    Spear,
+    Sword,
+    Hammer
 }

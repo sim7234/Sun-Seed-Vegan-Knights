@@ -63,7 +63,6 @@ public class Health : MonoBehaviour
         if(gameObject.CompareTag("Enemy"))
         {
             MissionMaster.Instance.EnemyKilled();
-            Debug.Log("enemy killed:  " + gameObject.name);
         }
         Destroy(gameObject);
     }

@@ -8,6 +8,11 @@ public class SpecialWeapon : MonoBehaviour
     [SerializeField]
     private GameObject bigSword;
     [SerializeField]
+    private GameObject bigSpear;
+
+    private WeaponType weaponType;
+
+    [SerializeField]
     private int specialWeaponAttacks = 5;
     private int attackCounter;
 
@@ -54,14 +59,39 @@ public class SpecialWeapon : MonoBehaviour
             if (attackCounter >= specialWeaponAttacks)
             {
                 bigSword.SetActive(false);
+                bigSpear.SetActive(false);
                 baseWeapon.SetActive(true);
             }
         }
-        
+
+        if (bigSpear.activeSelf && attackCooldown <= 0)
+        {
+            attackCounter++;
+            bigSpear.GetComponent<Animator>().SetTrigger("Attack");
+            attackCooldown = 1.5f;
+            Debug.Log("Big swing");
+
+            if (attackCounter >= specialWeaponAttacks)
+            {
+                bigSpear.SetActive(false);
+                baseWeapon.SetActive(true);
+            }
+        }
+
         else if (weaponPickupsInRange.Count > 0)
         {
-            attackCounter = 0; 
-            bigSword.SetActive(true);
+            attackCounter = 0;
+            if (weaponType == WeaponType.Sword)
+            {
+                bigSword.SetActive(true);
+                specialWeaponAttacks = 5;
+            }
+            else if (weaponType == WeaponType.Spear)
+            {
+                bigSpear.SetActive(true);
+                specialWeaponAttacks = 10;
+            }
+            
             baseWeapon.SetActive(false);
 
             Destroy(weaponPickupsInRange[0]);

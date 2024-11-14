@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 4108633183690296592}
   - component: {fileID: 2622487958835093076}
   m_Layer: 0
-  m_Name: Seed
+  m_Name: Seed Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
