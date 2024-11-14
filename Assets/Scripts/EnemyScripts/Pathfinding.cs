@@ -4,7 +4,7 @@ using UnityEngine.AI;
 
 public class Pathfinding : MonoBehaviour
 {
-    public List<Transform> target;
+    List<GameObject> target = new List<GameObject>();
 
     NavMeshAgent agent;
 
@@ -12,16 +12,31 @@ public class Pathfinding : MonoBehaviour
 
     int finalTarget;
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("Found Player");
+            target.Add(other.gameObject);
+        }
+
+        if (other.CompareTag("Objective"))
+        {
+            Debug.Log("Found Objective");
+            target.Add(other.gameObject);
+        }
+    }
 
     private void Start()
     {
+
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 
         //To dynamically update what targets are available
         totalTargets = 0;
-        foreach (Transform t in target)
+        foreach (GameObject t in target)
         {
             totalTargets++;
         }
@@ -30,11 +45,12 @@ public class Pathfinding : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
 
+        /*
         finalTarget = FindClosestTarget(totalTargets);
 
-        agent.SetDestination(target[finalTarget].position);
+        agent.SetDestination(target[finalTarget].transform.position);
+        */
     }
 
 
@@ -45,19 +61,20 @@ public class Pathfinding : MonoBehaviour
         for (int i = 0; i < totalTargets; i++)
         {
 
+            Vector3 targetDistence = target[i].transform.position - transform.position;
+            float targetDistenceSquared = targetDistence.sqrMagnitude;
 
+            if (targetDistenceSquared < closestTarget)
             {
-                Vector3 targetDistence = target[i].position - transform.position;
-                float targetDistenceSquared = targetDistence.sqrMagnitude;
+                closestTarget = targetDistenceSquared;
 
-                if (targetDistenceSquared < closestTarget)
-                {
-                    closestTarget = targetDistenceSquared;
-
-                    finalTarget = i;
-                }
+                finalTarget = i;
             }
+
         }
         return finalTarget;
     }
+
+    
+
 }
