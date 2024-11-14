@@ -13,4 +13,20 @@ public class PlantSeed : MonoBehaviour
             Instantiate(seedType, transform.position, Quaternion.identity);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+        if(collision.GetComponent<WeaponPickup>() != null)
+        {
+            if(collision.GetComponent<WeaponPickup>().type == WeaponType.Sword)
+            {
+                //Sword
+            }
+            if (collision.GetComponent<WeaponPickup>().type == WeaponType.Spear)
+            {
+                //Spear
+            }
+        }
+    }
 }
