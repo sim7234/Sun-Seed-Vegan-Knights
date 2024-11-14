@@ -15,6 +15,9 @@ public class PlayerWater : MonoBehaviour
     private float waterGainTime;
 
     private float waterRateTimer;
+
+    [SerializeField]
+    private List <GameObject> waterDropsDisplay = new List<GameObject>();
     
     private List<Seed> seedInRange = new List<Seed>();
 
@@ -44,6 +47,19 @@ public class PlayerWater : MonoBehaviour
                     break;
                 }
             }
+        }
+        UpdateWaterDropDisplay();
+    }
+
+    public void UpdateWaterDropDisplay()
+    {
+        foreach (var item in waterDropsDisplay)
+        {
+            item.SetActive(false);
+        }
+        for (int i = 0; i < totalWater; i++)
+        {
+            waterDropsDisplay[i].SetActive(true);
         }
     }
     public void TakeWater(int waterCost)

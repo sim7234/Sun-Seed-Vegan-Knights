@@ -7,6 +7,12 @@ public class Damage : MonoBehaviour
     [SerializeField]
     private int damage = 1;
 
+    private Collider2D damageCollider;
+
+    private void Start()
+    {
+        damageCollider = GetComponent<Collider2D>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -14,5 +20,14 @@ public class Damage : MonoBehaviour
         {
             collision.GetComponent<Health>().TakeDamage(damage);
         }
+    }
+
+    public void TurnOnCollider()
+    {
+        damageCollider.enabled = true;
+    }
+    public void TurnOfCollider()
+    {
+        damageCollider.enabled = false;
     }
 }

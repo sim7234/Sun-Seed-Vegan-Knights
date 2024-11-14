@@ -60,6 +60,11 @@ public class Health : MonoBehaviour
     {
         GameObject newDeathEffect = Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(newDeathEffect, 0.8f);
+        if(gameObject.CompareTag("Enemy"))
+        {
+            MissionMaster.Instance.EnemyKilled();
+            Debug.Log("enemy killed:  " + gameObject.name);
+        }
         Destroy(gameObject);
     }
     public int GetCurrentHealth()
