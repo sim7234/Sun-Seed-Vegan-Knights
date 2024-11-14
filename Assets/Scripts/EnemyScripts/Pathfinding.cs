@@ -1,107 +1,63 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class Pathfinding : MonoBehaviour
 {
-    GameObject[] targets = new GameObject[2];
+    public List<Transform> target;
 
     NavMeshAgent agent;
 
-    bool targetExsists;
+    int totalTargets;
 
-    enum TargetNames {Player, Objective};
-    int arraySelectedPos = 0;
-
-    int target = 0;
+    int finalTarget;
 
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-
-        if (checkIfTarget(TargetNames.Player) == true)
-        {
-            targets[arraySelectedPos] = GameObject.FindWithTag("Player");
-            arraySelectedPos++;
-        }
-
-        if (checkIfTarget(TargetNames.Objective) == true)
-        {
-            targets[arraySelectedPos] = GameObject.FindWithTag("Objective");
-            arraySelectedPos++;
-        }
-
-
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
-    }
 
-    /// <summary>
-    /// If selected enum TargetNames is null return false.
-    /// </summary>
-    /// <param name="selectedEnum"></param>
-    /// <returns></returns>
-    bool checkIfTarget(TargetNames selectedEnum)
-    {
-        if (selectedEnum == TargetNames.Player)
+        //To dynamically update what targets are available
+        totalTargets = 0;
+        foreach (Transform t in target)
         {
-            if (GameObject.FindWithTag("Player") == null)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            totalTargets++;
         }
-
-        if (selectedEnum == TargetNames.Objective)
-        {
-            if (GameObject.FindWithTag("Objective") == null)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
-
-        return false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (targets[0] != null && targets[1] != null)
+        
+
+        finalTarget = FindClosestTarget(totalTargets);
+
+        agent.SetDestination(target[finalTarget].position);
+    }
+
+
+    int FindClosestTarget(int totalTargets)
+    {
+        float closestTarget = Mathf.Infinity;
+
+        for (int i = 0; i < totalTargets; i++)
         {
 
-            float distenceToPlayer;
-            float distenceToObjective;
 
-            Vector2 playerDistence = targets[0].transform.position - transform.position;
-            Vector2 objectiveDistence = targets[1].transform.position - transform.position;
-
-            distenceToPlayer = Vector2.Distance(playerDistence, transform.position);
-            distenceToObjective = Vector2.Distance(objectiveDistence, transform.position);
-
-            if (distenceToPlayer > (distenceToObjective * 2))
             {
-                target = 1;
-            }
-            else
-            {
-                target = 0;
-            }
+                Vector3 targetDistence = target[i].position - transform.position;
+                float targetDistenceSquared = targetDistence.sqrMagnitude;
 
+                if (targetDistenceSquared < closestTarget)
+                {
+                    closestTarget = targetDistenceSquared;
 
-            
-            
-            
+                    finalTarget = i;
+                }
+            }
         }
-
-        agent.SetDestination(targets[target].transform.position);
-        //Debug.Log(targets[target].transform.position.ToString());
+        return finalTarget;
     }
 }
