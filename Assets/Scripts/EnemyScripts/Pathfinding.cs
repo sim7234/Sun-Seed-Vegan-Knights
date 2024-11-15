@@ -9,14 +9,13 @@ public class Pathfinding : MonoBehaviour
     NavMeshAgent agent;
 
     int totalTargets;
-
     int finalTarget;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Found Player");
+            
             target.Add(other.gameObject);
         }
 
@@ -34,25 +33,29 @@ public class Pathfinding : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 
-        //To dynamically update what targets are available
-        totalTargets = 0;
-        foreach (GameObject t in target)
-        {
-            totalTargets++;
-        }
+        
+        getTotalTargets();
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        /*
+        
         finalTarget = FindClosestTarget(totalTargets);
 
-        agent.SetDestination(target[finalTarget].transform.position);
-        */
+        agent.SetDestination(target[finalTarget].transform.position); 
     }
 
+
+    void getTotalTargets()
+    {
+        totalTargets = 0;
+        foreach (GameObject t in target)
+        {
+            totalTargets++;
+        }
+    }
 
     int FindClosestTarget(int totalTargets)
     {
