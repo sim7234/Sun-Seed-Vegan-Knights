@@ -10,26 +10,31 @@ public class MultiplayerManager : MonoBehaviour
 
     private void Update()
     {
-        // Spawn Player 1 on Space key press
         if (playerCount == 0 && Keyboard.current.spaceKey.wasPressedThisFrame)
         {
-            SpawnPlayer(player1Prefab, "Player1Keyboard", "Player1Actions", "Player 1");
+            SpawnPlayer(player1Prefab, "Player1Keyboard", "Player1Actions", "Player 1", Keyboard.current);
         }
-        // Spawn Player 2 on Enter key press
         else if (playerCount == 1 && Keyboard.current.enterKey.wasPressedThisFrame)
         {
-            SpawnPlayer(player2Prefab, "Player2Keyboard", "Player2Actions", "Player 2");
+            SpawnPlayer(player2Prefab, "Player2Keyboard", "Player2Actions", "Player 2", Keyboard.current);
+        }
+        else if (playerCount == 0 && Gamepad.current != null && Gamepad.current.buttonSouth.wasPressedThisFrame) 
+        {
+            SpawnPlayer(player1Prefab, "Player1Gamepad", "Player1Actions", "Player 1", Gamepad.current);
+        }
+        else if (playerCount == 1 && Gamepad.current != null && Gamepad.current.buttonSouth.wasPressedThisFrame) 
+        {
+            SpawnPlayer(player2Prefab, "Player2Gamepad", "Player2Actions", "Player 2", Gamepad.current);
         }
     }
 
-    private void SpawnPlayer(GameObject prefab, string controlScheme, string actionMap, string playerName)
+    private void SpawnPlayer(GameObject prefab, string controlScheme, string actionMap, string playerName, InputDevice device)
     {
-        // Instantiate the player prefab with the specific control scheme and action map
         var playerInput = PlayerInput.Instantiate(prefab,
             controlScheme: controlScheme, 
-            pairWithDevices: new InputDevice[] { Keyboard.current });
+            pairWithDevices: new InputDevice[] { device });
 
-        playerInput.SwitchCurrentActionMap(actionMap); // Set the specific action map
+        playerInput.SwitchCurrentActionMap(actionMap); 
         playerInput.gameObject.name = playerName;
         Debug.Log($"{playerName} joined with {controlScheme} scheme and {actionMap} action map.");
 
