@@ -4,7 +4,7 @@ using UnityEngine.AI;
 
 public class Pathfinding : MonoBehaviour
 {
-    List<GameObject> target = new List<GameObject>();
+    public List<GameObject> target = new List<GameObject>();
 
     NavMeshAgent agent;
 
