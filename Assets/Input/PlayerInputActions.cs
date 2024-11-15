@@ -1251,6 +1251,158 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Player3Actions"",
+            ""id"": ""fb482c4d-1d8a-422f-ad39-ae2e7f6169e8"",
+            ""actions"": [
+                {
+                    ""name"": ""Move"",
+                    ""type"": ""Value"",
+                    ""id"": ""5c56610c-f020-403d-a4be-03bddc3eebcc"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Fire"",
+                    ""type"": ""Button"",
+                    ""id"": ""d7d55869-27e1-4c78-b0ba-796175e0c725"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Join"",
+                    ""type"": ""Button"",
+                    ""id"": ""bba9c91e-091d-43c5-91ce-651e4dc34a29"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Water"",
+                    ""type"": ""Button"",
+                    ""id"": ""6d244ce4-365f-4ba9-84af-aced4e1f7a52"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PlantSeed"",
+                    ""type"": ""Button"",
+                    ""id"": ""1f91cfc5-2742-465e-a41c-1d3b00db2dac"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""2669a596-5de1-4159-ba03-7d4eba8f609f"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""ce7d854f-573f-4ac5-aec2-096344a9d95a"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Player3Gamepad"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""af8abf8b-a0b4-4583-9830-f4f8bb29e5e1"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Player3Gamepad"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""2ab1ecbc-3198-44b9-a06c-b0a6b4e83d45"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Player3Gamepad"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""54216f71-e246-450b-ab18-5f70b33b18a3"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Player3Gamepad"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6f63ac4b-ba39-4427-868c-a5393a551274"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Player3Gamepad"",
+                    ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6c27feb1-4fcb-43d4-b0a7-92fe17812d0e"",
+                    ""path"": ""<DualShockGamepad>/touchpadButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Player3Gamepad"",
+                    ""action"": ""Join"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1c7b61c2-8279-4e96-b182-9bb058a2f058"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Player3Gamepad"",
+                    ""action"": ""Water"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""aa079cef-d2f2-4f1b-ad48-91959cf90718"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Player3Gamepad"",
+                    ""action"": ""PlantSeed"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -1379,6 +1531,13 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player2Actions_Join = m_Player2Actions.FindAction("Join", throwIfNotFound: true);
         m_Player2Actions_Water = m_Player2Actions.FindAction("Water", throwIfNotFound: true);
         m_Player2Actions_PlantSeed = m_Player2Actions.FindAction("PlantSeed", throwIfNotFound: true);
+        // Player3Actions
+        m_Player3Actions = asset.FindActionMap("Player3Actions", throwIfNotFound: true);
+        m_Player3Actions_Move = m_Player3Actions.FindAction("Move", throwIfNotFound: true);
+        m_Player3Actions_Fire = m_Player3Actions.FindAction("Fire", throwIfNotFound: true);
+        m_Player3Actions_Join = m_Player3Actions.FindAction("Join", throwIfNotFound: true);
+        m_Player3Actions_Water = m_Player3Actions.FindAction("Water", throwIfNotFound: true);
+        m_Player3Actions_PlantSeed = m_Player3Actions.FindAction("PlantSeed", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1772,6 +1931,84 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         }
     }
     public Player2ActionsActions @Player2Actions => new Player2ActionsActions(this);
+
+    // Player3Actions
+    private readonly InputActionMap m_Player3Actions;
+    private List<IPlayer3ActionsActions> m_Player3ActionsActionsCallbackInterfaces = new List<IPlayer3ActionsActions>();
+    private readonly InputAction m_Player3Actions_Move;
+    private readonly InputAction m_Player3Actions_Fire;
+    private readonly InputAction m_Player3Actions_Join;
+    private readonly InputAction m_Player3Actions_Water;
+    private readonly InputAction m_Player3Actions_PlantSeed;
+    public struct Player3ActionsActions
+    {
+        private @PlayerInputActions m_Wrapper;
+        public Player3ActionsActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Move => m_Wrapper.m_Player3Actions_Move;
+        public InputAction @Fire => m_Wrapper.m_Player3Actions_Fire;
+        public InputAction @Join => m_Wrapper.m_Player3Actions_Join;
+        public InputAction @Water => m_Wrapper.m_Player3Actions_Water;
+        public InputAction @PlantSeed => m_Wrapper.m_Player3Actions_PlantSeed;
+        public InputActionMap Get() { return m_Wrapper.m_Player3Actions; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(Player3ActionsActions set) { return set.Get(); }
+        public void AddCallbacks(IPlayer3ActionsActions instance)
+        {
+            if (instance == null || m_Wrapper.m_Player3ActionsActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_Player3ActionsActionsCallbackInterfaces.Add(instance);
+            @Move.started += instance.OnMove;
+            @Move.performed += instance.OnMove;
+            @Move.canceled += instance.OnMove;
+            @Fire.started += instance.OnFire;
+            @Fire.performed += instance.OnFire;
+            @Fire.canceled += instance.OnFire;
+            @Join.started += instance.OnJoin;
+            @Join.performed += instance.OnJoin;
+            @Join.canceled += instance.OnJoin;
+            @Water.started += instance.OnWater;
+            @Water.performed += instance.OnWater;
+            @Water.canceled += instance.OnWater;
+            @PlantSeed.started += instance.OnPlantSeed;
+            @PlantSeed.performed += instance.OnPlantSeed;
+            @PlantSeed.canceled += instance.OnPlantSeed;
+        }
+
+        private void UnregisterCallbacks(IPlayer3ActionsActions instance)
+        {
+            @Move.started -= instance.OnMove;
+            @Move.performed -= instance.OnMove;
+            @Move.canceled -= instance.OnMove;
+            @Fire.started -= instance.OnFire;
+            @Fire.performed -= instance.OnFire;
+            @Fire.canceled -= instance.OnFire;
+            @Join.started -= instance.OnJoin;
+            @Join.performed -= instance.OnJoin;
+            @Join.canceled -= instance.OnJoin;
+            @Water.started -= instance.OnWater;
+            @Water.performed -= instance.OnWater;
+            @Water.canceled -= instance.OnWater;
+            @PlantSeed.started -= instance.OnPlantSeed;
+            @PlantSeed.performed -= instance.OnPlantSeed;
+            @PlantSeed.canceled -= instance.OnPlantSeed;
+        }
+
+        public void RemoveCallbacks(IPlayer3ActionsActions instance)
+        {
+            if (m_Wrapper.m_Player3ActionsActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IPlayer3ActionsActions instance)
+        {
+            foreach (var item in m_Wrapper.m_Player3ActionsActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_Player3ActionsActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public Player3ActionsActions @Player3Actions => new Player3ActionsActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     public InputControlScheme KeyboardMouseScheme
     {
@@ -1872,6 +2109,14 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnPlantSeed(InputAction.CallbackContext context);
     }
     public interface IPlayer2ActionsActions
+    {
+        void OnMove(InputAction.CallbackContext context);
+        void OnFire(InputAction.CallbackContext context);
+        void OnJoin(InputAction.CallbackContext context);
+        void OnWater(InputAction.CallbackContext context);
+        void OnPlantSeed(InputAction.CallbackContext context);
+    }
+    public interface IPlayer3ActionsActions
     {
         void OnMove(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
