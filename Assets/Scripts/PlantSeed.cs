@@ -1,44 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.Rendering.Universal;
 
 public class PlantSeed : MonoBehaviour
 {
     [SerializeField]
-    private GameObject seedType;
+    private List<GameObject> seedTypes = new List<GameObject>();
 
-    private InputAction plantSeedAction;
+    [SerializeField]
+    private WeaponType currentType;
 
-    private void Awake()
+
+    private void Update()
     {
-        var playerInput = GetComponent<PlayerInput>();
-        if (playerInput != null)
+        if (Input.GetKeyDown(KeyCode.Joystick1Button3))
         {
-            plantSeedAction = playerInput.actions["PlantSeed"]; 
+            switch(currentType)
+            {
+                case WeaponType.Sword:
+                    Instantiate(seedTypes[0], transform.position, Quaternion.identity);
+                    break;
+
+                case WeaponType.Spear:
+                    Instantiate(seedTypes[1], transform.position, Quaternion.identity);
+                    break;
+            }
+           
         }
     }
 
-    private void OnEnable()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (plantSeedAction != null)
+        
+        if(collision.GetComponent<WeaponPickup>() != null)
         {
-            plantSeedAction.performed += OnPlantSeed;
-            plantSeedAction.Enable();
+            currentType = collision.GetComponent<WeaponPickup>().type;
         }
-    }
-
-    private void OnDisable()
-    {
-        if (plantSeedAction != null)
-        {
-            plantSeedAction.performed -= OnPlantSeed;
-            plantSeedAction.Disable();
-        }
-    }
-
-    private void OnPlantSeed(InputAction.CallbackContext context)
-    {
-        Instantiate(seedType, transform.position, Quaternion.identity);
     }
 }
