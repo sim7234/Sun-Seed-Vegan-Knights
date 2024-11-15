@@ -23,6 +23,9 @@ public class MissionMaster : MonoBehaviour
     [SerializeField]
     private List<GameObject> combatSpawnObject = new List<GameObject>();
 
+    [SerializeField]
+    private List<GameObject> Objectives = new List<GameObject>();
+
     private void Awake()
     {
         Instance = this;
@@ -32,6 +35,14 @@ public class MissionMaster : MonoBehaviour
     {
         combatsComplete = 0;
         combatSpawnObject[0].SetActive(true);
+        if (Objectives.Count >= combatsComplete)
+        {
+            if (Objectives[combatsComplete] != null)
+            {
+                Objectives[combatsComplete].SetActive(true);
+                Objectives[combatsComplete].GetComponent<Objective>().StartObjectiveEvent();
+            }
+        }
     }
     public void AddEnemy()
     {
@@ -82,5 +93,6 @@ public class MissionMaster : MonoBehaviour
     private void StartNextCombat()
     {
         combatSpawnObject[combatsComplete].SetActive(true);
+        
     }
 }
