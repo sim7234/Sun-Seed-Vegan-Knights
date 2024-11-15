@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerWater : MonoBehaviour
 {
@@ -21,14 +22,42 @@ public class PlayerWater : MonoBehaviour
     
     private List<Seed> seedInRange = new List<Seed>();
 
+    private InputAction waterAction;
+
+    private void Awake()
+    {
+        var playerInput = GetComponent<PlayerInput>();
+        if (playerInput != null)
+        {
+            waterAction = playerInput.actions["Water"]; 
+        }
+    }
+
+    private void OnEnable()
+    {
+        if (waterAction != null)
+        {
+            waterAction.performed += OnWater;
+            waterAction.Enable();
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (waterAction != null)
+        {
+            waterAction.performed -= OnWater;
+            waterAction.Disable();
+        }
+    }
     private void Start()
     {
         totalWater = maxWater;
     }
 
-    private void Update()
+   private void Update()
     {
-        if(waterRateTimer >= waterGainTime && totalWater < maxWater)
+        if (waterRateTimer >= waterGainTime && totalWater < maxWater)
         {
             waterRateTimer = 0;
             totalWater += 1;
@@ -38,19 +67,22 @@ public class PlayerWater : MonoBehaviour
             waterRateTimer += Time.deltaTime;
         }
 
-        if(Input.GetKeyDown(KeyCode.Joystick1Button1) && seedInRange.Count >= 1)
-        {
-            for (int i = 0; i < seedInRange.Count; i++)
-            {
-                if(seedInRange[i].WaterSeed(gameObject))
-                {
-                    break;
-                }
-            }
-        }
         UpdateWaterDropDisplay();
     }
 
+        private void OnWater(InputAction.CallbackContext context)
+    {
+        if (seedInRange.Count >= 1)
+        {
+            for (int i = 0; i < seedInRange.Count; i++)
+            {
+                if (seedInRange[i].WaterSeed(gameObject))
+                {
+                    break; 
+                }
+            }
+        }
+    }
     public void UpdateWaterDropDisplay()
     {
         foreach (var item in waterDropsDisplay)
