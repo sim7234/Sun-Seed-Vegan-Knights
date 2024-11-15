@@ -4,29 +4,25 @@ using UnityEngine.AI;
 
 public class Pathfinding : MonoBehaviour
 {
-    public List<GameObject> target = new List<GameObject>();
+    [HideInInspector] public List<GameObject> target = new List<GameObject>();
 
     NavMeshAgent agent;
 
     int totalTargets;
 
-    int finalTarget;
+    [HideInInspector] public int finalTarget;
+
+    public bool followTarget = true;
 
   
 
     private void Start()
     {
-
+        followTarget = true;
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 
-        ////To dynamically update what targets are available
-        //totalTargets = 0;
-        //foreach (GameObject t in target)
-        //{
-        //    totalTargets++;
-        //}
     }
 
     // Update is called once per frame
@@ -36,11 +32,11 @@ public class Pathfinding : MonoBehaviour
         finalTarget = FindClosestTarget(totalTargets);
         if(target.Count > 0)
         {
-            
-            agent.SetDestination(target[finalTarget].transform.position);
-
+            if (followTarget)
+            {
+                agent.SetDestination(target[finalTarget].transform.position);
+            }
         }
-
     }
 
 

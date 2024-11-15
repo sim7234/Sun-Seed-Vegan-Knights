@@ -29,7 +29,7 @@ public class PlayerWater : MonoBehaviour
         var playerInput = GetComponent<PlayerInput>();
         if (playerInput != null)
         {
-            waterAction = playerInput.actions["Water"]; 
+            waterAction = playerInput.actions["Water"];
         }
     }
 
