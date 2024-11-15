@@ -10,6 +10,7 @@ public class EnemyAttacks : MonoBehaviour
 
     public float distanceToAttack;
     [HideInInspector] public bool isAttacking = false;
+    [HideInInspector] public bool withinDistance = false;
 
     NavMeshAgent agent;
 
@@ -31,6 +32,7 @@ public class EnemyAttacks : MonoBehaviour
 
         if (distenceToTarget < distanceToAttack)
         {
+            withinDistance = true;
             pathfindingScript.followTarget = false;
             agent.velocity = Vector3.zero;
         }

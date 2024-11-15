@@ -344,7 +344,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6ee23a00de2e1948af4b65182f92b3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distenceToAttack: 0
+  distanceToAttack: 10
+  isAttacking: 0
 --- !u!1 &8356983418400581731
 GameObject:
   m_ObjectHideFlags: 0
