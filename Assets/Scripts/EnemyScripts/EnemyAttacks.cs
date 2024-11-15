@@ -1,17 +1,15 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyAttacks : MonoBehaviour
 {
-
     Pathfinding pathfindingScript;
 
     Vector3 targetPosition;
     float distenceToTarget;
 
-    public float distenceToAttack;
-    bool attacking = false;
+    public float distanceToAttack;
+    [HideInInspector] public bool isAttacking = false;
 
     NavMeshAgent agent;
 
@@ -23,25 +21,23 @@ public class EnemyAttacks : MonoBehaviour
 
     private void Update()
     {
-        targetPosition = pathfindingScript.target[pathfindingScript.finalTarget].transform.position - transform.position;
-
+        if (!(pathfindingScript.target.Count <= 0))
+        {
+            targetPosition = pathfindingScript.target[pathfindingScript.finalTarget].transform.position - transform.position;
+        }
         
+     
         distenceToTarget = targetPosition.sqrMagnitude;
 
-        if (distenceToTarget < distenceToAttack)
+        if (distenceToTarget < distanceToAttack)
         {
             pathfindingScript.followTarget = false;
             agent.velocity = Vector3.zero;
-            Debug.Log("Within Distance");
         }
 
-        if (distenceToTarget > distenceToAttack && attacking == false)
+        if (distenceToTarget > distanceToAttack && isAttacking == false)
         {
             pathfindingScript.followTarget = true;
         }
-
-
     }
-
-
 }

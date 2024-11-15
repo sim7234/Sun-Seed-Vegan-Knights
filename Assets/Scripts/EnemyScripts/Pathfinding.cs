@@ -12,7 +12,7 @@ public class Pathfinding : MonoBehaviour
 
     [HideInInspector] public int finalTarget;
 
-    public bool followTarget = true;
+    [HideInInspector] public bool followTarget = true;
 
   
 
