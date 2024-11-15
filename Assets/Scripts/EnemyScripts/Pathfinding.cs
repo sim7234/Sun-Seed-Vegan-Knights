@@ -4,7 +4,7 @@ using UnityEngine.AI;
 
 public class Pathfinding : MonoBehaviour
 {
-    List<GameObject> target = new List<GameObject>();
+    public List<GameObject> target = new List<GameObject>();
 
     NavMeshAgent agent;
 
@@ -12,20 +12,7 @@ public class Pathfinding : MonoBehaviour
 
     int finalTarget;
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            Debug.Log("Found Player");
-            target.Add(other.gameObject);
-        }
-
-        if (other.CompareTag("Objective"))
-        {
-            Debug.Log("Found Objective");
-            target.Add(other.gameObject);
-        }
-    }
+  
 
     private void Start()
     {
@@ -34,23 +21,26 @@ public class Pathfinding : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 
-        //To dynamically update what targets are available
-        totalTargets = 0;
-        foreach (GameObject t in target)
-        {
-            totalTargets++;
-        }
+        ////To dynamically update what targets are available
+        //totalTargets = 0;
+        //foreach (GameObject t in target)
+        //{
+        //    totalTargets++;
+        //}
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        /*
+        
         finalTarget = FindClosestTarget(totalTargets);
+        if(target.Count > 0)
+        {
+            
+            agent.SetDestination(target[finalTarget].transform.position);
 
-        agent.SetDestination(target[finalTarget].transform.position);
-        */
+        }
+
     }
 
 
@@ -74,7 +64,4 @@ public class Pathfinding : MonoBehaviour
         }
         return finalTarget;
     }
-
-    
-
 }
