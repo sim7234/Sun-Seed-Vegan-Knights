@@ -6,9 +6,7 @@ using UnityEngine.SceneManagement;
 public class Menu : MonoBehaviour
 {
 
-    [SerializeField] Button playButton;
-    [SerializeField] Button SelectPlayersButton;
-    [SerializeField] Button QuitButton;
+    Button playButton;
 
     public void pressedPlay()
     {
