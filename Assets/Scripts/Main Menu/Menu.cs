@@ -1,24 +1,37 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
 
-    Button playButton;
-    Button SelectPlayersButton;
-    Button QuitButton;
+    [SerializeField] Button playButton;
+    [SerializeField] Button SelectPlayersButton;
+    [SerializeField] Button QuitButton;
 
-
-    // Start is called before the first frame update
-    void Start()
+    public void pressedPlay()
     {
-        
+        //loads Game scene
+        SceneManager.LoadScene(2);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void pressedSelectPlayers()
     {
-        
+        Debug.Log("Load Select Player Scene");
     }
+
+    public void pressedQuit()
+    {
+        if (Application.isEditor)
+        {
+            UnityEditor.EditorApplication.isPlaying = false;
+        }
+        else
+        {
+            Application.Quit();
+        }
+    }
+
+
 }
