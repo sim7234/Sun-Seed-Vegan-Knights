@@ -18,13 +18,13 @@ public class MultiplayerManager : MonoBehaviour
         {
             SpawnPlayer(player2Prefab, "Player2Keyboard", "Player2Actions", "Player 2", Keyboard.current);
         }
-        else if (playerCount == 0 && Gamepad.current != null && Gamepad.current.buttonSouth.wasPressedThisFrame) 
+        else if (playerCount == 0 && Gamepad.current != null && Gamepad.current.dpad.up.wasPressedThisFrame) 
         {
-            SpawnPlayer(player1Prefab, "Player1Gamepad", "Player1Actions", "Player 1", Gamepad.current);
+            SpawnPlayer(player1Prefab, "PlayerControllerInput1", "Player3Actions", "Player 1", Gamepad.current);
         }
-        else if (playerCount == 1 && Gamepad.current != null && Gamepad.current.buttonSouth.wasPressedThisFrame) 
+        else if (playerCount == 1 && Gamepad.current != null && Gamepad.current.dpad.down.wasPressedThisFrame) 
         {
-            SpawnPlayer(player2Prefab, "Player2Gamepad", "Player2Actions", "Player 2", Gamepad.current);
+            SpawnPlayer(player2Prefab, "PlayerControllerInput1", "Player3Actions", "Player 2", Gamepad.current);
         }
     }
 

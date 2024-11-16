@@ -12,6 +12,6 @@ public enum WeaponType
 {
     Spear,
     Sword,
-    Hammer,
+    Bomb,
     Turret
 }

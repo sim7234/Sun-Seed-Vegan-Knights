@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
     {
         // Get the PlayerInput component attached to this player instance
         var playerInput = GetComponent<PlayerInput>();
-        
+
         // Ensure the player input component exists and get the "Move" action from the current action map
         if (playerInput != null)
         {

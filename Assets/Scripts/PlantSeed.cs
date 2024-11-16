@@ -22,9 +22,14 @@ public class PlantSeed : MonoBehaviour
                 case WeaponType.Sword:
                     Instantiate(seedTypes[0], transform.position, Quaternion.identity);
                     break;
-
                 case WeaponType.Spear:
                     Instantiate(seedTypes[1], transform.position, Quaternion.identity);
+                    break;
+                case WeaponType.Turret:
+                    Instantiate(seedTypes[2], transform.position, Quaternion.identity);
+                    break;
+                case WeaponType.Bomb:
+                    Instantiate(seedTypes[3], transform.position, Quaternion.identity);
                     break;
             }
            

@@ -735,7 +735,7 @@ GameObject:
   - component: {fileID: 3556870080283609932}
   - component: {fileID: 8969524211948827692}
   m_Layer: 9
-  m_Name: Player1
+  m_Name: Player3
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -836,8 +836,8 @@ MonoBehaviour:
   - {fileID: 5337573941991948235, guid: 00ce580a1b6e6a846bc2d50776032dc6, type: 3}
   - {fileID: 5337573941991948235, guid: efa0989c00e989d428a9d12f041d3171, type: 3}
   - {fileID: 5337573941991948235, guid: 8c0f5fb874b01ff4e8db0dae69c133a0, type: 3}
-  - {fileID: 5337573941991948235, guid: 9c4eecefc5627bf49be4da99ad0445f2, type: 3}
-  currentType: 2
+  - {fileID: 5337573941991948235, guid: 8c0f5fb874b01ff4e8db0dae69c133a0, type: 3}
+  currentType: 0
 --- !u!61 &6546553380839432055
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1208,8 +1208,8 @@ MonoBehaviour:
     m_ActionId: 1f91cfc5-2742-465e-a41c-1d3b00db2dac
     m_ActionName: Player3Actions/PlantSeed[/DualSenseGamepadHID/buttonNorth]
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Player3Gamepad
-  m_DefaultActionMap: Player3Actions
+  m_DefaultControlScheme: Player2Keyboard
+  m_DefaultActionMap: Player2Actions
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!1 &4283199718185520484
