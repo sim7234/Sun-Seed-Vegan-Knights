@@ -837,7 +837,7 @@ MonoBehaviour:
   - {fileID: 5337573941991948235, guid: efa0989c00e989d428a9d12f041d3171, type: 3}
   - {fileID: 5337573941991948235, guid: 8c0f5fb874b01ff4e8db0dae69c133a0, type: 3}
   - {fileID: 5337573941991948235, guid: 9c4eecefc5627bf49be4da99ad0445f2, type: 3}
-  currentType: 2
+  currentType: 1
 --- !u!61 &6546553380839432055
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1611,6 +1611,7 @@ GameObject:
   - component: {fileID: 1294627140996822549}
   - component: {fileID: 2830835889610333033}
   - component: {fileID: 5210005956849317381}
+  - component: {fileID: 6941443873426641940}
   m_Layer: 6
   m_Name: Sword
   m_TagString: Sword
@@ -1765,6 +1766,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 8
+--- !u!114 &6941443873426641940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7790897372868414741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c1700008e098ae468f3da206c69f3f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockbackStrength: 5
 --- !u!1 &8140362170331263629
 GameObject:
   m_ObjectHideFlags: 0

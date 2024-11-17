@@ -13,5 +13,5 @@ public enum WeaponType
     Spear,
     Sword,
     Bomb,
-    Turret
+    Turret  
 }
