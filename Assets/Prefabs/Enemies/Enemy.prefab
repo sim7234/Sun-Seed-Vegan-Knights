@@ -140,7 +140,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -1.0319853, y: -1.5391002}
-  m_Size: {x: 8.769098, y: 10.258202}
+  m_Size: {x: 13.86, y: 9.45}
   m_Direction: 0
 --- !u!114 &-5904533724159444392
 MonoBehaviour:
@@ -155,6 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  currentHealth: 0
   bloodOnHit: {fileID: 1240254011838071449, guid: 41925829a7d4e9f44b90f9db56482cec, type: 3}
   deathEffect: {fileID: 1240254011838071449, guid: a8a005973de14ea47810af5564db808b, type: 3}
   characterSprite: {fileID: 766832208405697385}
@@ -171,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31470e9f3e1754049b3afdf053e2532a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 1
+  damageAmount: 10
 --- !u!50 &-5038671019410468480
 Rigidbody2D:
   serializedVersion: 4
@@ -344,8 +345,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6ee23a00de2e1948af4b65182f92b3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceToAttack: 10
+  distanceToAttack: 20
   isAttacking: 0
+  withinDistance: 0
 --- !u!1 &8356983418400581731
 GameObject:
   m_ObjectHideFlags: 0

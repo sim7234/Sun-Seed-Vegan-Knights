@@ -4,8 +4,9 @@ using UnityEngine.AI;
 
 public class Health : MonoBehaviour
 {
-    public int maxHealth = 100; 
-    private int currentHealth;
+    public float maxHealth = 100;
+    [SerializeField]
+    private float currentHealth;
 
     [SerializeField]
     private GameObject bloodOnHit;
@@ -66,7 +67,7 @@ public class Health : MonoBehaviour
         }
         Destroy(gameObject);
     }
-    public int GetCurrentHealth()
+    public float GetCurrentHealth()
     {
         return currentHealth;
     }

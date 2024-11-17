@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 262, y: 71.9}
+  m_AnchoredPosition: {x: 705, y: 71.899994}
   m_SizeDelta: {x: 533, y: 339}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6281852451347285124
@@ -277,7 +277,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 309.5, y: 71.9}
+  m_AnchoredPosition: {x: 752.5, y: 71.899994}
   m_SizeDelta: {x: 533, y: 339}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7643548177277515315
@@ -896,6 +896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100000
+  currentHealth: 0
   bloodOnHit: {fileID: 1240254011838071449, guid: 41925829a7d4e9f44b90f9db56482cec, type: 3}
   deathEffect: {fileID: 1240254011838071449, guid: a8a005973de14ea47810af5564db808b, type: 3}
   characterSprite: {fileID: 5383747409787903520}
@@ -1281,7 +1282,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 219, y: 66}
+  m_AnchoredPosition: {x: 662, y: 66}
   m_SizeDelta: {x: 1080, y: 304}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5913702643258225403
@@ -1799,7 +1800,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 214.6, y: 71.9}
+  m_AnchoredPosition: {x: 657.6, y: 71.899994}
   m_SizeDelta: {x: 533, y: 339}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8568542827647638279
