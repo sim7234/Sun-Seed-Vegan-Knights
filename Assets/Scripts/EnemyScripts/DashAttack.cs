@@ -17,6 +17,10 @@ public class DashAttack : MonoBehaviour
 
     float windUpTimer = 0;
     public float dashWindupTime;
+    float dashTime = 0.5f;
+
+    public float dashCooldown;
+    float currentCooldown;
 
     [SerializeField] GameObject dashIndicator;
 
@@ -36,6 +40,19 @@ public class DashAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (currentCooldown >= 0)
+        {
+            currentCooldown -= Time.deltaTime;
+        }
+
+        if (currentCooldown <= 0)
+        {
+            CanDash();
+        }
+    }
+
+    void CanDash()
+    {
         if (enemyAttacksScript.withinDistance == true)
         {
             if (pathfindingScript.target.Count <= 0)
@@ -52,25 +69,51 @@ public class DashAttack : MonoBehaviour
 
         if (dashing == true)
         {
+            lockRotationLocation = transform.position;
             dashIndicator.SetActive(true);
+
             if (setup == true)
             {
-                setUpDash();
+                SetUpDash();
             }
+
             windUpTimer += Time.deltaTime;
             dashIndicator.transform.position = lockRotationLocation;
 
             if (windUpTimer >= dashWindupTime)
             {
-                rb.AddForce(dashIndicator.transform.up * 100);
+                Dash();
+            }
+
+            if (windUpTimer >= dashWindupTime + dashTime)
+            {
+                ResetDash();
             }
         }
-
-
-
     }
 
-    void setUpDash()
+    void Dash()
+    {
+        rb.AddForce(dashIndicator.transform.up * 100);
+        dashIndicator.SetActive(false);
+    }
+
+
+    void ResetDash()
+    {
+        rb.velocity = Vector2.zero;
+
+        lockRotationLocation = transform.position;
+        dashIndicator.transform.position = transform.position;
+
+        windUpTimer = 0;
+        setup = true;
+        dashing = false;
+
+        currentCooldown = dashCooldown;
+    }
+
+    void SetUpDash()
     {
         targetPosition.x = targetPosition.x - transform.position.x;
         targetPosition.y = targetPosition.y - transform.position.y;

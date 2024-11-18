@@ -842,6 +842,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 3939833259618126783, guid: 7e1a7e45e9581db48867944c5311208b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5186901363952288258, guid: 7e1a7e45e9581db48867944c5311208b, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8853922157738319403, guid: 7e1a7e45e9581db48867944c5311208b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.9063706
@@ -889,6 +897,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 881486378}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 516425167985709169, guid: 7e1a7e45e9581db48867944c5311208b, type: 3}
+      insertIndex: 6
+      addedObject: {fileID: 1238688589}
     - targetCorrespondingSourceObject: {fileID: 516425167985709169, guid: 7e1a7e45e9581db48867944c5311208b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1238688578}
@@ -2514,7 +2525,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dashWindupTime: 1
+  dashCooldown: 3
   dashIndicator: {fileID: 881486377}
+--- !u!114 &1238688589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238688566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e20aa28020800f747860e29386be9e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!1 &1357172553
 GameObject:
   m_ObjectHideFlags: 0
@@ -4416,6 +4441,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5130911862086886225, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485992378578483934, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485992378578483934, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
