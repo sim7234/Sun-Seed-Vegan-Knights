@@ -1,6 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Rendering.LookDev;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,8 +7,17 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float moveSpeed = 4f;
 
+    public AnimationCurve curve;
+
     [SerializeField]
     private float maxSpeed = 4f;
+
+    public float runSpeedMultiplicative;
+    bool isRunning;
+    public float timeUntilRun;
+    public  float lastAttackTime = 0;
+
+    Vector2 velocity;
 
     private Rigidbody2D rb2d;
 
@@ -78,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void RotationDirection(InputAction.CallbackContext context)
     {
-        // Read the roation input vector
+        // Read the rotation input vector
         rotationDirection = context.ReadValue<Vector2>();
     }
 
@@ -94,17 +101,41 @@ public class PlayerMovement : MonoBehaviour
             float angle = Mathf.Atan2(rotationDirection.y, rotationDirection.x) * Mathf.Rad2Deg;
             directionIndicator.transform.rotation = Quaternion.Euler(0, 0, angle - 90);
         }
+
+        if (lastAttackTime >= 0)
+        {
+            lastAttackTime -= Time.deltaTime;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Joystick1Button5))
+        {
+            lastAttackTime = timeUntilRun;
+            isRunning = false;
+        }
+
+        if (lastAttackTime <= 0)
+        {
+            isRunning = true;
+        }
+
     }
 
     private void FixedUpdate()
     {
         // Apply movement with clamped speed
-        Vector2 velocity = moveDirection * moveSpeed;
-        if (velocity.magnitude > maxSpeed)
+
+        if (isRunning == true)
         {
-            velocity = velocity.normalized * maxSpeed;
+            velocity = moveDirection.normalized * moveSpeed * runSpeedMultiplicative;
+        }
+        else
+        {
+            velocity = moveDirection.normalized * moveSpeed;
         }
 
-        rb2d.velocity = velocity;
+        if (velocity.sqrMagnitude < (maxSpeed * maxSpeed))
+        {
+            rb2d.velocity += velocity;
+        } 
     }
 }

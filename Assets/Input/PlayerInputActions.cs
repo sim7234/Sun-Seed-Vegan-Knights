@@ -1309,6 +1309,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Dash"",
+                    ""type"": ""Button"",
+                    ""id"": ""c7d85696-4d96-48d7-8c4e-c1da9199344a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -1375,6 +1384,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4fb960d8-5113-4e6f-878e-36f509bd2465"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PlayerControllerInput1;Player3Gamepad"",
+                    ""action"": ""Dash"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1526,6 +1546,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player3Actions_Join = m_Player3Actions.FindAction("Join", throwIfNotFound: true);
         m_Player3Actions_Water = m_Player3Actions.FindAction("Water", throwIfNotFound: true);
         m_Player3Actions_PlantSeed = m_Player3Actions.FindAction("PlantSeed", throwIfNotFound: true);
+        m_Player3Actions_Dash = m_Player3Actions.FindAction("Dash", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1929,6 +1950,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player3Actions_Join;
     private readonly InputAction m_Player3Actions_Water;
     private readonly InputAction m_Player3Actions_PlantSeed;
+    private readonly InputAction m_Player3Actions_Dash;
     public struct Player3ActionsActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -1939,6 +1961,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @Join => m_Wrapper.m_Player3Actions_Join;
         public InputAction @Water => m_Wrapper.m_Player3Actions_Water;
         public InputAction @PlantSeed => m_Wrapper.m_Player3Actions_PlantSeed;
+        public InputAction @Dash => m_Wrapper.m_Player3Actions_Dash;
         public InputActionMap Get() { return m_Wrapper.m_Player3Actions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1966,6 +1989,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @PlantSeed.started += instance.OnPlantSeed;
             @PlantSeed.performed += instance.OnPlantSeed;
             @PlantSeed.canceled += instance.OnPlantSeed;
+            @Dash.started += instance.OnDash;
+            @Dash.performed += instance.OnDash;
+            @Dash.canceled += instance.OnDash;
         }
 
         private void UnregisterCallbacks(IPlayer3ActionsActions instance)
@@ -1988,6 +2014,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @PlantSeed.started -= instance.OnPlantSeed;
             @PlantSeed.performed -= instance.OnPlantSeed;
             @PlantSeed.canceled -= instance.OnPlantSeed;
+            @Dash.started -= instance.OnDash;
+            @Dash.performed -= instance.OnDash;
+            @Dash.canceled -= instance.OnDash;
         }
 
         public void RemoveCallbacks(IPlayer3ActionsActions instance)
@@ -2129,5 +2158,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnJoin(InputAction.CallbackContext context);
         void OnWater(InputAction.CallbackContext context);
         void OnPlantSeed(InputAction.CallbackContext context);
+        void OnDash(InputAction.CallbackContext context);
     }
 }
