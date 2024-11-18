@@ -80,7 +80,6 @@ public class PlayerMovement : MonoBehaviour
     {
         // Read the roation input vector
         rotationDirection = context.ReadValue<Vector2>();
-        Debug.Log("Rotating: " + rotationDirection);
     }
 
     private void Update()

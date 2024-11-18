@@ -1320,6 +1320,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 1f91cfc5-2742-465e-a41c-1d3b00db2dac
     m_ActionName: Player3Actions/PlantSeed[/DualSenseGamepadHID/buttonNorth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a244c18f-9894-48cc-ac66-16406f8778dd
+    m_ActionName: Player3Actions/Rotate[/DualSenseGamepadHID/rightStick/up,/DualSenseGamepadHID/rightStick/down,/DualSenseGamepadHID/rightStick/left,/DualSenseGamepadHID/rightStick/right]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: PlayerControllerInput1
   m_DefaultActionMap: Player3Actions
@@ -2070,7 +2074,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c1700008e098ae468f3da206c69f3f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackStrength: 5
+  knockbackStrength: 2
 --- !u!1 &8140362170331263629
 GameObject:
   m_ObjectHideFlags: 0
