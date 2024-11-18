@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering.LookDev;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -19,6 +20,9 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 moveDirection = Vector2.zero;
     private InputAction move;
 
+    private Vector2 rotationDirection = Vector2.zero;
+    private InputAction rotate;
+
     private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -36,11 +40,18 @@ public class PlayerMovement : MonoBehaviour
             move.Enable();
             move.performed += OnMove;
             move.canceled += OnMove;
+
+            rotate = playerInput.actions["Rotate"];
+            rotate.Enable();
+            rotate.performed += RotationDirection;
+            rotate.canceled += RotationDirection;
         }
         else
         {
             Debug.LogError("PlayerInput component not found on " + gameObject.name);
         }
+
+        
     }
 
     private void OnDisable()
@@ -50,6 +61,12 @@ public class PlayerMovement : MonoBehaviour
             move.Disable();
             move.performed -= OnMove;
             move.canceled -= OnMove;
+        }   
+        if (rotate != null)
+        {
+            rotate.Disable();
+            rotate.performed -= RotationDirection;
+            rotate.canceled -= RotationDirection;
         }
     }
 
@@ -59,11 +76,23 @@ public class PlayerMovement : MonoBehaviour
         moveDirection = context.ReadValue<Vector2>();
     }
 
+    private void RotationDirection(InputAction.CallbackContext context)
+    {
+        // Read the roation input vector
+        rotationDirection = context.ReadValue<Vector2>();
+        Debug.Log("Rotating: " + rotationDirection);
+    }
+
     private void Update()
     {
-        if (moveDirection != Vector2.zero)
+        //if (moveDirection != Vector2.zero)
+        //{
+        //    float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
+        //    directionIndicator.transform.rotation = Quaternion.Euler(0, 0, angle - 90);
+        //}
+        if(rotationDirection != Vector2.zero)
         {
-            float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
+            float angle = Mathf.Atan2(rotationDirection.y, rotationDirection.x) * Mathf.Rad2Deg;
             directionIndicator.transform.rotation = Quaternion.Euler(0, 0, angle - 90);
         }
     }

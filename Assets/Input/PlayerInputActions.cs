@@ -1266,6 +1266,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
+                    ""name"": ""Rotate"",
+                    ""type"": ""Value"",
+                    ""id"": ""a244c18f-9894-48cc-ac66-16406f8778dd"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
                     ""name"": ""Fire"",
                     ""type"": ""Button"",
                     ""id"": ""d7d55869-27e1-4c78-b0ba-796175e0c725"",
@@ -1401,6 +1410,61 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""PlantSeed"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""80a5481f-5b11-4345-9847-952883751a83"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotate"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""0d023e18-625f-4794-9cd6-769de0fa95f4"",
+                    ""path"": ""<Gamepad>/rightStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PlayerControllerInput1"",
+                    ""action"": ""Rotate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""7e32d568-5583-4d87-9e6e-4b7d346aff87"",
+                    ""path"": ""<Gamepad>/rightStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PlayerControllerInput1"",
+                    ""action"": ""Rotate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""2998d0ff-92f8-4f3d-950d-3cdbb69df67b"",
+                    ""path"": ""<Gamepad>/rightStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PlayerControllerInput1"",
+                    ""action"": ""Rotate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""3a6c0e8e-b1d1-4694-bdff-af4cacaf673d"",
+                    ""path"": ""<Gamepad>/rightStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PlayerControllerInput1"",
+                    ""action"": ""Rotate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -1545,6 +1609,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         // Player3Actions
         m_Player3Actions = asset.FindActionMap("Player3Actions", throwIfNotFound: true);
         m_Player3Actions_Move = m_Player3Actions.FindAction("Move", throwIfNotFound: true);
+        m_Player3Actions_Rotate = m_Player3Actions.FindAction("Rotate", throwIfNotFound: true);
         m_Player3Actions_Fire = m_Player3Actions.FindAction("Fire", throwIfNotFound: true);
         m_Player3Actions_Join = m_Player3Actions.FindAction("Join", throwIfNotFound: true);
         m_Player3Actions_Water = m_Player3Actions.FindAction("Water", throwIfNotFound: true);
@@ -1947,6 +2012,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Player3Actions;
     private List<IPlayer3ActionsActions> m_Player3ActionsActionsCallbackInterfaces = new List<IPlayer3ActionsActions>();
     private readonly InputAction m_Player3Actions_Move;
+    private readonly InputAction m_Player3Actions_Rotate;
     private readonly InputAction m_Player3Actions_Fire;
     private readonly InputAction m_Player3Actions_Join;
     private readonly InputAction m_Player3Actions_Water;
@@ -1956,6 +2022,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         private @PlayerInputActions m_Wrapper;
         public Player3ActionsActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Player3Actions_Move;
+        public InputAction @Rotate => m_Wrapper.m_Player3Actions_Rotate;
         public InputAction @Fire => m_Wrapper.m_Player3Actions_Fire;
         public InputAction @Join => m_Wrapper.m_Player3Actions_Join;
         public InputAction @Water => m_Wrapper.m_Player3Actions_Water;
@@ -1972,6 +2039,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Move.started += instance.OnMove;
             @Move.performed += instance.OnMove;
             @Move.canceled += instance.OnMove;
+            @Rotate.started += instance.OnRotate;
+            @Rotate.performed += instance.OnRotate;
+            @Rotate.canceled += instance.OnRotate;
             @Fire.started += instance.OnFire;
             @Fire.performed += instance.OnFire;
             @Fire.canceled += instance.OnFire;
@@ -1991,6 +2061,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Move.started -= instance.OnMove;
             @Move.performed -= instance.OnMove;
             @Move.canceled -= instance.OnMove;
+            @Rotate.started -= instance.OnRotate;
+            @Rotate.performed -= instance.OnRotate;
+            @Rotate.canceled -= instance.OnRotate;
             @Fire.started -= instance.OnFire;
             @Fire.performed -= instance.OnFire;
             @Fire.canceled -= instance.OnFire;
@@ -2139,6 +2212,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     public interface IPlayer3ActionsActions
     {
         void OnMove(InputAction.CallbackContext context);
+        void OnRotate(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
         void OnJoin(InputAction.CallbackContext context);
         void OnWater(InputAction.CallbackContext context);
