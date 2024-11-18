@@ -9,6 +9,9 @@ public class Damage : MonoBehaviour
 
     private Collider2D damageCollider;
 
+    [SerializeField]
+    private bool isTriggerd;
+
     private void Start()
     {
         damageCollider = GetComponent<Collider2D>();
@@ -16,12 +19,24 @@ public class Damage : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if(isTriggerd)
         {
-            collision.GetComponent<Health>().TakeDamage(damage);
+            if (collision.gameObject.CompareTag("Enemy"))
+            {
+                collision.GetComponent<Health>().TakeDamage(damage);
+            }
         }
     }
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (!isTriggerd)
+        {
+            if (collision.gameObject.CompareTag("Enemy"))
+            {
+                collision.gameObject.GetComponent<Health>().TakeDamage(damage);
+            }
+        }
+    }
     public void TurnOnCollider()
     {
         damageCollider.enabled = true;

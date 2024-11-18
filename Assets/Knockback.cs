@@ -14,4 +14,11 @@ public class Knockback : MonoBehaviour
             collision.GetComponent<Rigidbody2D>().AddForce((collision.transform.position - transform.position).normalized * knockbackStrength, ForceMode2D.Impulse);
         }
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.GetComponent<Rigidbody2D>() != null)
+        {
+            collision.gameObject.GetComponent<Rigidbody2D>().AddForce((collision.transform.position - transform.position).normalized * knockbackStrength, ForceMode2D.Impulse);
+        }
+    }
 }

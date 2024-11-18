@@ -22,7 +22,7 @@ public class Pathfinding : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
-
+        transform.rotation = new Quaternion(0, 0, 0, 0);
     }
 
     // Update is called once per frame

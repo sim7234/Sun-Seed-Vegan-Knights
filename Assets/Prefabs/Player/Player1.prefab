@@ -192,7 +192,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -4.7, y: 0}
+  m_AnchoredPosition: {x: -4.700012, y: 0}
   m_SizeDelta: {x: -19.4, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &807296594668257430
@@ -498,6 +498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 100
+  isTriggerd: 0
 --- !u!61 &2257118951597938251
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -612,6 +613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 100
+  isTriggerd: 0
 --- !u!61 &2094024035206509169
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1007,7 +1009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e25760f8658e3b4ab70d5369e5e64ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 10000
   currentHealth: 0
   bloodOnHit: {fileID: 1240254011838071449, guid: 41925829a7d4e9f44b90f9db56482cec, type: 3}
   deathEffect: {fileID: 1240254011838071449, guid: a8a005973de14ea47810af5564db808b, type: 3}
@@ -1410,10 +1412,10 @@ RectTransform:
   - {fileID: 8756615690099644928}
   m_Father: {fileID: 4770048681756799358}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -191.3, y: -204.7}
-  m_SizeDelta: {x: 258.4, y: 27.2}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 232.7, y: 33.300003}
+  m_SizeDelta: {x: 258.4, y: 27.199997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8759595950619617184
 MonoBehaviour:
@@ -2062,6 +2064,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 8
+  isTriggerd: 0
 --- !u!114 &6941443873426641940
 MonoBehaviour:
   m_ObjectHideFlags: 0
