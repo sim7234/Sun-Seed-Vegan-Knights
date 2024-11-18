@@ -334,7 +334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6ee23a00de2e1948af4b65182f92b3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceToAttack: 20
+  distanceToAttack: 35
   isAttacking: 0
   withinDistance: 0
 --- !u!114 &2369945561958132068
@@ -349,10 +349,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b265a733d13f694d8db819fd4ea570f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashWindupTime: 1
+  dashWindupTime: 0.5
   dashTime: 0.4
-  dashPower: 5
-  dashCooldown: 3
+  dashPower: 6
+  dashCooldown: 2
   dashIndicator: {fileID: 5910768304150022312}
 --- !u!1 &5700930588914373161
 GameObject:
