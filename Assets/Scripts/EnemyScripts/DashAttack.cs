@@ -10,8 +10,6 @@ public class DashAttack : MonoBehaviour
     Vector3 targetPosition;
     Vector2 lockRotationLocation;
 
-    float rotationSpeed;
-
     bool dashing;
     bool setup = true;
 
@@ -22,6 +20,8 @@ public class DashAttack : MonoBehaviour
 
     public float dashCooldown;
     float currentCooldown;
+
+    bool beenInRange = false;
 
     Collider2D collider;
 
@@ -35,24 +35,30 @@ public class DashAttack : MonoBehaviour
         collider = GetComponent<Collider2D>();
         windUpTimer = 0f;
         rb = GetComponent<Rigidbody2D>();
-        rotationSpeed = 0;
         dashIndicator.SetActive(false);
         pathfindingScript = GetComponent<Pathfinding>();
         enemyAttacksScript = GetComponent<EnemyAttacks>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (currentCooldown >= 0)
         {
             currentCooldown -= Time.deltaTime;
         }
 
-        if (currentCooldown <= 0)
+        if (currentCooldown <= 0 && beenInRange == true)
         {
             CanDash();
         }
+
+        if (enemyAttacksScript.withinDistance == true && currentCooldown <= 0)
+        {
+            beenInRange = true;
+        }
+
+
     }
 
     void CanDash()
@@ -84,7 +90,7 @@ public class DashAttack : MonoBehaviour
             windUpTimer += Time.deltaTime;
             dashIndicator.transform.position = lockRotationLocation;
 
-            if (windUpTimer >= dashWindupTime)
+            if (windUpTimer >= dashWindupTime )
             {
                 Dash();
             }
@@ -99,8 +105,8 @@ public class DashAttack : MonoBehaviour
     void Dash()
     {
         collider.isTrigger = true;
-        rb.AddForce(dashIndicator.transform.up * dashPower);
         dashIndicator.SetActive(false);
+        rb.AddForce(dashIndicator.transform.up * dashPower, ForceMode2D.Impulse);
     }
 
 
@@ -117,6 +123,8 @@ public class DashAttack : MonoBehaviour
         dashing = false;
 
         currentCooldown = dashCooldown;
+
+        beenInRange = false;
     }
 
     void SetUpDash()

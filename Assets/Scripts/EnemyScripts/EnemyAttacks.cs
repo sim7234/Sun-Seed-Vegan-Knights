@@ -5,7 +5,7 @@ public class EnemyAttacks : MonoBehaviour
 {
     Pathfinding pathfindingScript;
 
-    Vector3 targetPosition;
+    protected Vector3 targetPosition;
     float distenceToTarget;
 
     public float distanceToAttack;
@@ -37,7 +37,7 @@ public class EnemyAttacks : MonoBehaviour
             agent.velocity = Vector3.zero;
         }
 
-        if (distenceToTarget > distanceToAttack && isAttacking == false)
+        if (distenceToTarget > distanceToAttack)
         {
             pathfindingScript.followTarget = true;
             withinDistance = false;

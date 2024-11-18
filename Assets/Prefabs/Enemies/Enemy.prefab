@@ -161,6 +161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  isTriggerd: 0
 --- !u!50 &-5038671019410468480
 Rigidbody2D:
   serializedVersion: 4
@@ -293,7 +294,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 516425167985709169}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 1
+  m_Radius: 4
   m_Speed: 1
   m_Acceleration: 2
   avoidancePriority: 0
@@ -350,7 +351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dashWindupTime: 1
   dashTime: 0.4
-  dashPower: 80
+  dashPower: 5
   dashCooldown: 3
   dashIndicator: {fileID: 5910768304150022312}
 --- !u!1 &5700930588914373161
@@ -452,7 +453,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &268482435020292672
 Transform:
   m_ObjectHideFlags: 0
