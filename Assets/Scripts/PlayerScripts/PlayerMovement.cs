@@ -70,18 +70,10 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnMove(InputAction.CallbackContext context)
+    public void OnMove(InputAction.CallbackContext context)
     {
-        // Read the movement input vector
         moveDirection = context.ReadValue<Vector2>();
-    }
-
-    private void RotationDirection(InputAction.CallbackContext context)
-    {
-        // Read the roation input vector
-        rotationDirection = context.ReadValue<Vector2>();
-    }
-
+    }   
     private void Update()
     {
         //if (moveDirection != Vector2.zero)

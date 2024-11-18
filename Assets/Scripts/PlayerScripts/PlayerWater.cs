@@ -70,9 +70,9 @@ public class PlayerWater : MonoBehaviour
         UpdateWaterDropDisplay();
     }
 
-        private void OnWater(InputAction.CallbackContext context)
+   public void OnWater(InputAction.CallbackContext context)
     {
-        if (seedInRange.Count >= 1)
+        if (context.performed && seedInRange.Count >= 1)
         {
             for (int i = 0; i < seedInRange.Count; i++)
             {

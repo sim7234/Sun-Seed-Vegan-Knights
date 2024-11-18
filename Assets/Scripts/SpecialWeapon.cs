@@ -16,8 +16,6 @@ public class SpecialWeapon : MonoBehaviour
     private int specialWeaponAttacks = 5;
     private int attackCounter;
 
-    public InputAction fire;
-
     [SerializeField]
     private GameObject baseWeapon;
 
@@ -25,79 +23,63 @@ public class SpecialWeapon : MonoBehaviour
 
     public float attackCooldown;
 
-    private void Awake()
-    {
-        fire = new PlayerInputActions().Player.Fire; 
-    }
-
-    private void OnEnable()
-    {
-        fire.Enable();
-        fire.performed += Fire; 
-    }
-
-    private void OnDisable()
-    {
-        fire.Disable();
-        fire.performed -= Fire;
-    }
-
     private void Start()
     {
         attackCounter = 0;
     }
 
-    private void Fire(InputAction.CallbackContext context)
+    public void Fire(InputAction.CallbackContext context)
     {
-        if (bigSword.activeSelf && attackCooldown <= 0)
+        if (context.performed)
         {
-            attackCounter++;
-            bigSword.GetComponent<Animator>().SetTrigger("Attack");
-            attackCooldown = 1.5f;
-            Debug.Log("Big swing");
-
-            if (attackCounter >= specialWeaponAttacks)
+            if (bigSword.activeSelf && attackCooldown <= 0)
             {
-                bigSword.SetActive(false);
-                bigSpear.SetActive(false);
-                baseWeapon.SetActive(true);
+                attackCounter++;
+                bigSword.GetComponent<Animator>().SetTrigger("Attack");
+                attackCooldown = 1.5f;
+                Debug.Log("Big sword swing");
+
+                if (attackCounter >= specialWeaponAttacks)
+                {
+                    bigSword.SetActive(false);
+                    bigSpear.SetActive(false);
+                    baseWeapon.SetActive(true);
+                }
             }
-        }
-
-        if (bigSpear.activeSelf && attackCooldown <= 0)
-        {
-            attackCounter++;
-            bigSpear.GetComponent<Animator>().SetTrigger("Attack");
-            attackCooldown = 1.5f;
-            Debug.Log("Big swing");
-
-            if (attackCounter >= specialWeaponAttacks)
+            else if (bigSpear.activeSelf && attackCooldown <= 0)
             {
-                bigSpear.SetActive(false);
-                baseWeapon.SetActive(true);
-            }
-        }
+                attackCounter++;
+                bigSpear.GetComponent<Animator>().SetTrigger("Attack");
+                attackCooldown = 1.5f;
+                Debug.Log("Big spear swing");
 
-        else if (weaponPickupsInRange.Count > 0)
-        {
-            attackCounter = 0;
-            if (weaponType == WeaponType.Sword)
+                if (attackCounter >= specialWeaponAttacks)
+                {
+                    bigSpear.SetActive(false);
+                    baseWeapon.SetActive(true);
+                }
+            }
+            else if (weaponPickupsInRange.Count > 0)
             {
-                bigSword.SetActive(true);
-                specialWeaponAttacks = 5;
-            }
-            else if (weaponType == WeaponType.Spear)
-            {
-                bigSpear.SetActive(true);
-                specialWeaponAttacks = 10;
-            }
-            
-            baseWeapon.SetActive(false);
+                attackCounter = 0;
+                if (weaponType == WeaponType.Sword)
+                {
+                    bigSword.SetActive(true);
+                    specialWeaponAttacks = 5;
+                }
+                else if (weaponType == WeaponType.Spear)
+                {
+                    bigSpear.SetActive(true);
+                    specialWeaponAttacks = 10;
+                }
+                
+                baseWeapon.SetActive(false);
 
-            Destroy(weaponPickupsInRange[0]);
-            weaponPickupsInRange.Clear();
+                Destroy(weaponPickupsInRange[0]);
+                weaponPickupsInRange.Clear();
 
-            Debug.Log("Special weapon picked up!");
+                Debug.Log("Special weapon picked up!");
+            }
         }
     }
 
@@ -108,15 +90,18 @@ public class SpecialWeapon : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<WeaponPickup>() != null)
+        WeaponPickup pickup = collision.GetComponent<WeaponPickup>();
+        if (pickup != null)
         {
             weaponPickupsInRange.Add(collision.gameObject);
+            weaponType = pickup.type; 
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.GetComponent<WeaponPickup>() != null)
+        WeaponPickup pickup = collision.GetComponent<WeaponPickup>();
+        if (pickup != null)
         {
             weaponPickupsInRange.Remove(collision.gameObject);
         }

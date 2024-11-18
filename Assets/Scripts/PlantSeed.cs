@@ -3,21 +3,22 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.InputSystem;
 
 public class PlantSeed : MonoBehaviour
 {
     [SerializeField]
-    private List<GameObject> seedTypes = new List<GameObject>();
+    private List<GameObject> seedTypes = new List<GameObject>(); 
 
     [SerializeField]
-    private WeaponType currentType;
+    private WeaponType currentType; 
 
-
-    private void Update()
+    
+    public void OnPlantSeed(InputAction.CallbackContext context)
     {
-        if (Input.GetKeyDown(KeyCode.Joystick1Button3))
+        if (context.performed) 
         {
-            switch(currentType)
+            switch (currentType)
             {
                 case WeaponType.Sword:
                     Instantiate(seedTypes[0], transform.position, Quaternion.identity);
@@ -32,16 +33,15 @@ public class PlantSeed : MonoBehaviour
                     Instantiate(seedTypes[3], transform.position, Quaternion.identity);
                     break;
             }
-           
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
-        if(collision.GetComponent<WeaponPickup>() != null)
+        WeaponPickup pickup = collision.GetComponent<WeaponPickup>();
+        if (pickup != null)
         {
-            currentType = collision.GetComponent<WeaponPickup>().type;
+            currentType = pickup.type;
         }
     }
 }
