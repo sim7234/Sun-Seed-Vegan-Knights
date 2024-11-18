@@ -1,5 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
+// Ignore Spelling: Collider
+
 using UnityEngine;
 
 public class Damage : MonoBehaviour
@@ -14,11 +14,15 @@ public class Damage : MonoBehaviour
         damageCollider = GetComponent<Collider2D>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (other.GetComponent<Health>() != null && this.tag != other.tag)
         {
-            collision.GetComponent<Health>().TakeDamage(damage);
+            other.GetComponent<Health>().TakeDamage(damage);
+        }
+        else
+        {
+            return;
         }
     }
 

@@ -40,6 +40,7 @@ public class EnemyAttacks : MonoBehaviour
         if (distenceToTarget > distanceToAttack && isAttacking == false)
         {
             pathfindingScript.followTarget = true;
+            withinDistance = false;
         }
     }
 }

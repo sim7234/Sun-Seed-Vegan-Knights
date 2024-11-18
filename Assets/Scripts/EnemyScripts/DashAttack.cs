@@ -17,10 +17,13 @@ public class DashAttack : MonoBehaviour
 
     float windUpTimer = 0;
     public float dashWindupTime;
-    float dashTime = 0.5f;
+    public float dashTime = 0.5f;
+    public float dashPower;
 
     public float dashCooldown;
     float currentCooldown;
+
+    Collider2D collider;
 
     [SerializeField] GameObject dashIndicator;
 
@@ -29,6 +32,7 @@ public class DashAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        collider = GetComponent<Collider2D>();
         windUpTimer = 0f;
         rb = GetComponent<Rigidbody2D>();
         rotationSpeed = 0;
@@ -94,13 +98,15 @@ public class DashAttack : MonoBehaviour
 
     void Dash()
     {
-        rb.AddForce(dashIndicator.transform.up * 100);
+        collider.isTrigger = true;
+        rb.AddForce(dashIndicator.transform.up * dashPower);
         dashIndicator.SetActive(false);
     }
 
 
     void ResetDash()
     {
+        collider.isTrigger = false;
         rb.velocity = Vector2.zero;
 
         lockRotationLocation = transform.position;
