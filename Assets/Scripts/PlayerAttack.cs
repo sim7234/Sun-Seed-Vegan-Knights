@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -9,6 +8,7 @@ public class PlayerAttack : MonoBehaviour
     private GameObject weapon;
 
     private Collider2D weaponCollider;
+
     private Animator weaponAnimator;
 
     private void Start()
@@ -17,12 +17,12 @@ public class PlayerAttack : MonoBehaviour
         weaponAnimator = weapon.GetComponent<Animator>();
     }
 
-    
-    public void OnAttack(InputAction.CallbackContext context)
+    private void Update()
     {
-        if (context.performed) 
+        if (Input.GetKeyDown(KeyCode.Joystick1Button5))
         {
             weaponAnimator.SetTrigger("PressedR1");
         }
     }
+
 }
