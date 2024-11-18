@@ -9,6 +9,9 @@ public class Damage : MonoBehaviour
 
     private Collider2D damageCollider;
 
+    [SerializeField]
+    private bool isTriggerd;
+
     private void Start()
     {
         damageCollider = GetComponent<Collider2D>();
@@ -23,9 +26,9 @@ public class Damage : MonoBehaviour
         else
         {
             return;
+
         }
     }
-
     public void TurnOnCollider()
     {
         damageCollider.enabled = true;
