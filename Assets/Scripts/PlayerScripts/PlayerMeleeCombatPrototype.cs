@@ -1,32 +1,39 @@
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMeleeCombatPrototype : MonoBehaviour
 {
-    bool inputR1 = false;
-    bool doesDamage = false;
-    Animator animator;
+    private bool inputR1 = false;
+    private bool doesDamage = false;
+    private Animator animator;
     public int swordDamage;
+
+    private PlayerInput playerInput;
+    private InputAction fireAction;
+
+    private void Awake()
+    {
+        playerInput = GetComponent<PlayerInput>();
+        fireAction = playerInput.actions["Fire"];
+    }
 
     private void Start()
     {
         animator = GetComponent<Animator>();
+
+        fireAction.started += OnFireStarted;
+        fireAction.canceled += OnFireCanceled;
     }
 
-    void Update()
+    private void OnDestroy()
     {
-        if (Input.GetKeyDown(KeyCode.Joystick1Button5))
-        {
-            animator.SetTrigger("PressedR1");
-            inputR1 = true;
-        }
+        fireAction.started -= OnFireStarted;
+        fireAction.canceled -= OnFireCanceled;
+    }
 
-        if (Input.GetKeyUp(KeyCode.Joystick1Button5))
-        {
-            inputR1 = false;
-        }
-
-        if (inputR1 == true)
+    private void Update()
+    {
+        if (inputR1)
         {
             doesDamage = true;
         }
@@ -37,15 +44,15 @@ public class PlayerMeleeCombatPrototype : MonoBehaviour
                 doesDamage = false;
             }
         }
-
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
             Health enemyHealth = collision.gameObject.GetComponent<Health>();
 
-            if (enemyHealth != null)
+            if (enemyHealth != null && doesDamage)
             {
                 enemyHealth.TakeDamage(swordDamage);
                 Debug.Log("Taken damage");
@@ -55,5 +62,16 @@ public class PlayerMeleeCombatPrototype : MonoBehaviour
                 Debug.Log("Player did not take damage");
             }
         }
+    }
+
+    private void OnFireStarted(InputAction.CallbackContext context)
+    {
+        animator.SetTrigger("PressedR1");
+        inputR1 = true;
+    }
+
+    private void OnFireCanceled(InputAction.CallbackContext context)
+    {
+        inputR1 = false;
     }
 }
