@@ -14,6 +14,8 @@ public class EnemyAttacks : MonoBehaviour
 
     NavMeshAgent agent;
 
+ 
+
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -22,7 +24,7 @@ public class EnemyAttacks : MonoBehaviour
 
     private void Update()
     {
-        if (!(pathfindingScript.target.Count <= 0))
+        if (!(pathfindingScript.target.Count <= 0) && pathfindingScript.target[pathfindingScript.finalTarget] != null)
         {
             targetPosition = pathfindingScript.target[pathfindingScript.finalTarget].transform.position - transform.position;
         }

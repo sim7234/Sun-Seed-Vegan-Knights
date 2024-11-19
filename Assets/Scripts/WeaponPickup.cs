@@ -6,7 +6,13 @@ public class WeaponPickup : MonoBehaviour
 {
     [SerializeField]
     public WeaponType type;
+
+    public WeaponType GetWeaponType()
+    {
+        return type;
+    }
 }
+
 
 public enum WeaponType
 {

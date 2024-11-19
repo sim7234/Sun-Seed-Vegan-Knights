@@ -19,6 +19,7 @@ public class Damage : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+
         if (other.GetComponent<Health>() != null && this.tag != other.tag)
         {
             other.GetComponent<Health>().TakeDamage(damage);

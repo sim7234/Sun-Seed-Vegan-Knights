@@ -63,7 +63,7 @@ public class SpecialWeapon : MonoBehaviour
                 baseWeapon.SetActive(true);
             }
         }
-
+        
         if (bigSpear.activeSelf && attackCooldown <= 0)
         {
             attackCounter++;
@@ -78,15 +78,16 @@ public class SpecialWeapon : MonoBehaviour
             }
         }
 
+        
         else if (weaponPickupsInRange.Count > 0)
         {
             attackCounter = 0;
-            if (weaponType == WeaponType.Sword)
+            if (weaponPickupsInRange[0].GetComponent<WeaponPickup>().GetWeaponType() == WeaponType.Sword)
             {
                 bigSword.SetActive(true);
                 specialWeaponAttacks = 5;
             }
-            else if (weaponType == WeaponType.Spear)
+            else if (weaponPickupsInRange[0].GetComponent<WeaponPickup>().GetWeaponType() == WeaponType.Sword)
             {
                 bigSpear.SetActive(true);
                 specialWeaponAttacks = 10;
@@ -111,6 +112,7 @@ public class SpecialWeapon : MonoBehaviour
         if (collision.GetComponent<WeaponPickup>() != null)
         {
             weaponPickupsInRange.Add(collision.gameObject);
+            
         }
     }
 

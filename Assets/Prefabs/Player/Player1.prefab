@@ -441,6 +441,7 @@ GameObject:
   - component: {fileID: 5482415300658660391}
   - component: {fileID: 5359120261784099133}
   - component: {fileID: 2257118951597938251}
+  - component: {fileID: 8013503498569168144}
   m_Layer: 0
   m_Name: BigSpear
   m_TagString: Untagged
@@ -497,7 +498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e20aa28020800f747860e29386be9e34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 100
+  damage: 50
   isTriggerd: 0
 --- !u!61 &2257118951597938251
 BoxCollider2D:
@@ -544,6 +545,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 3.886415}
   m_EdgeRadius: 0
+--- !u!114 &8013503498569168144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2422993599085478142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c1700008e098ae468f3da206c69f3f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockbackStrength: 3
 --- !u!1 &3131349570624323539
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,6 +570,7 @@ GameObject:
   - component: {fileID: 880694073915039787}
   - component: {fileID: 2995988693298813860}
   - component: {fileID: 2094024035206509169}
+  - component: {fileID: 5045559313448784522}
   m_Layer: 0
   m_Name: BigSword
   m_TagString: Untagged
@@ -612,7 +627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e20aa28020800f747860e29386be9e34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 100
+  damage: 80
   isTriggerd: 0
 --- !u!61 &2094024035206509169
 BoxCollider2D:
@@ -659,6 +674,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 3.0942807}
   m_EdgeRadius: 0
+--- !u!114 &5045559313448784522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3131349570624323539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c1700008e098ae468f3da206c69f3f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockbackStrength: 8
 --- !u!1 &3881251665842698704
 GameObject:
   m_ObjectHideFlags: 0
@@ -885,14 +913,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a79ce0dc6840bb49ac52a8a1607d9bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 1
   curve:
     serializedVersion: 2
     m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  maxSpeed: 6
+  maxSpeed: 3
   runSpeedMultiplicative: 1.5
   timeUntilRun: 1
   lastAttackTime: 0
@@ -973,7 +1001,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e25760f8658e3b4ab70d5369e5e64ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10000
+  maxHealth: 1000
   currentHealth: 0
   bloodOnHit: {fileID: 1240254011838071449, guid: 41925829a7d4e9f44b90f9db56482cec, type: 3}
   deathEffect: {fileID: 1240254011838071449, guid: a8a005973de14ea47810af5564db808b, type: 3}

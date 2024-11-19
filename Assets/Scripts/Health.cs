@@ -40,6 +40,13 @@ public class Health : MonoBehaviour
     {
         currentHealth -= damageAmount; 
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+
+        if (GetComponent<EnemyHealthDisplay>() != null)
+        {
+            GetComponent<EnemyHealthDisplay>().UpdateSprite();
+            baseColor = characterSprite.color;
+        }
+
         StartCoroutine(BlinkOnHit());
         GameObject newBlood = Instantiate(bloodOnHit, transform.position, Quaternion.identity);
         Destroy(newBlood, 0.8f);
@@ -55,6 +62,9 @@ public class Health : MonoBehaviour
         {
             Die();
         }
+
+        
+
     }
 
     private void Die()

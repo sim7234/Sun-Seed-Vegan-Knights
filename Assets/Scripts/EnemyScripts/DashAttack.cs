@@ -29,6 +29,8 @@ public class DashAttack : MonoBehaviour
 
     Rigidbody2D rb;
 
+    private Damage damageCompnent;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +40,7 @@ public class DashAttack : MonoBehaviour
         dashIndicator.SetActive(false);
         pathfindingScript = GetComponent<Pathfinding>();
         enemyAttacksScript = GetComponent<EnemyAttacks>();
+        damageCompnent = GetComponent<Damage>();
     }
 
     // Update is called once per frame
@@ -67,9 +70,10 @@ public class DashAttack : MonoBehaviour
         {
             if (pathfindingScript.target.Count <= 0)
                 return;
-
+            
             dashing = true;
             enemyAttacksScript.isAttacking = true;
+            if(pathfindingScript.target[pathfindingScript.finalTarget] != null)
             targetPosition = pathfindingScript.target[pathfindingScript.finalTarget].transform.position;
         }
         else
@@ -104,6 +108,7 @@ public class DashAttack : MonoBehaviour
 
     void Dash()
     {
+        //damageCompnent.enabled = true;
         collider.isTrigger = true;
         dashIndicator.SetActive(false);
         rb.AddForce(dashIndicator.transform.up * dashPower, ForceMode2D.Impulse);
@@ -113,6 +118,7 @@ public class DashAttack : MonoBehaviour
     void ResetDash()
     {
         collider.isTrigger = false;
+        damageCompnent.enabled = false;
         rb.velocity = Vector2.zero;
 
         lockRotationLocation = transform.position;
