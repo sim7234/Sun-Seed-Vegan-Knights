@@ -1114,15 +1114,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Fire"",
-                    ""type"": ""Button"",
-                    ""id"": ""8cca1572-5fc7-4e9e-bed5-7fd24fffa578"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""Join"",
                     ""type"": ""Button"",
                     ""id"": ""fd2463a1-ef52-4912-a71e-80c73c11e010"",
@@ -1144,6 +1135,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""name"": ""PlantSeed"",
                     ""type"": ""Button"",
                     ""id"": ""65e5213b-8973-4577-91f4-0e94514007da"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Fire"",
+                    ""type"": ""Button"",
+                    ""id"": ""747db93a-83e0-44c5-9c48-5d56c5ea8895"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -1208,17 +1208,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""979260aa-f19b-4175-a699-df1982606370"",
-                    ""path"": ""<Keyboard>/enter"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Player2Keyboard"",
-                    ""action"": ""Fire"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""7982743d-18ea-4574-9db7-3e143cff2233"",
                     ""path"": ""<Keyboard>/enter"",
                     ""interactions"": """",
@@ -1247,6 +1236,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Player2Keyboard"",
                     ""action"": ""PlantSeed"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3473e8b8-f6ff-4d08-8572-ff57603f4b33"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Player2Keyboard"",
+                    ""action"": ""Fire"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1534,10 +1534,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         // Player2Actions
         m_Player2Actions = asset.FindActionMap("Player2Actions", throwIfNotFound: true);
         m_Player2Actions_Move = m_Player2Actions.FindAction("Move", throwIfNotFound: true);
-        m_Player2Actions_Fire = m_Player2Actions.FindAction("Fire", throwIfNotFound: true);
         m_Player2Actions_Join = m_Player2Actions.FindAction("Join", throwIfNotFound: true);
         m_Player2Actions_Water = m_Player2Actions.FindAction("Water", throwIfNotFound: true);
         m_Player2Actions_PlantSeed = m_Player2Actions.FindAction("PlantSeed", throwIfNotFound: true);
+        m_Player2Actions_Fire = m_Player2Actions.FindAction("Fire", throwIfNotFound: true);
         // Player3Actions
         m_Player3Actions = asset.FindActionMap("Player3Actions", throwIfNotFound: true);
         m_Player3Actions_Move = m_Player3Actions.FindAction("Move", throwIfNotFound: true);
@@ -1867,19 +1867,19 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Player2Actions;
     private List<IPlayer2ActionsActions> m_Player2ActionsActionsCallbackInterfaces = new List<IPlayer2ActionsActions>();
     private readonly InputAction m_Player2Actions_Move;
-    private readonly InputAction m_Player2Actions_Fire;
     private readonly InputAction m_Player2Actions_Join;
     private readonly InputAction m_Player2Actions_Water;
     private readonly InputAction m_Player2Actions_PlantSeed;
+    private readonly InputAction m_Player2Actions_Fire;
     public struct Player2ActionsActions
     {
         private @PlayerInputActions m_Wrapper;
         public Player2ActionsActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Player2Actions_Move;
-        public InputAction @Fire => m_Wrapper.m_Player2Actions_Fire;
         public InputAction @Join => m_Wrapper.m_Player2Actions_Join;
         public InputAction @Water => m_Wrapper.m_Player2Actions_Water;
         public InputAction @PlantSeed => m_Wrapper.m_Player2Actions_PlantSeed;
+        public InputAction @Fire => m_Wrapper.m_Player2Actions_Fire;
         public InputActionMap Get() { return m_Wrapper.m_Player2Actions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1892,9 +1892,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Move.started += instance.OnMove;
             @Move.performed += instance.OnMove;
             @Move.canceled += instance.OnMove;
-            @Fire.started += instance.OnFire;
-            @Fire.performed += instance.OnFire;
-            @Fire.canceled += instance.OnFire;
             @Join.started += instance.OnJoin;
             @Join.performed += instance.OnJoin;
             @Join.canceled += instance.OnJoin;
@@ -1904,6 +1901,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @PlantSeed.started += instance.OnPlantSeed;
             @PlantSeed.performed += instance.OnPlantSeed;
             @PlantSeed.canceled += instance.OnPlantSeed;
+            @Fire.started += instance.OnFire;
+            @Fire.performed += instance.OnFire;
+            @Fire.canceled += instance.OnFire;
         }
 
         private void UnregisterCallbacks(IPlayer2ActionsActions instance)
@@ -1911,9 +1911,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Move.started -= instance.OnMove;
             @Move.performed -= instance.OnMove;
             @Move.canceled -= instance.OnMove;
-            @Fire.started -= instance.OnFire;
-            @Fire.performed -= instance.OnFire;
-            @Fire.canceled -= instance.OnFire;
             @Join.started -= instance.OnJoin;
             @Join.performed -= instance.OnJoin;
             @Join.canceled -= instance.OnJoin;
@@ -1923,6 +1920,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @PlantSeed.started -= instance.OnPlantSeed;
             @PlantSeed.performed -= instance.OnPlantSeed;
             @PlantSeed.canceled -= instance.OnPlantSeed;
+            @Fire.started -= instance.OnFire;
+            @Fire.performed -= instance.OnFire;
+            @Fire.canceled -= instance.OnFire;
         }
 
         public void RemoveCallbacks(IPlayer2ActionsActions instance)
@@ -2145,10 +2145,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     public interface IPlayer2ActionsActions
     {
         void OnMove(InputAction.CallbackContext context);
-        void OnFire(InputAction.CallbackContext context);
         void OnJoin(InputAction.CallbackContext context);
         void OnWater(InputAction.CallbackContext context);
         void OnPlantSeed(InputAction.CallbackContext context);
+        void OnFire(InputAction.CallbackContext context);
     }
     public interface IPlayer3ActionsActions
     {

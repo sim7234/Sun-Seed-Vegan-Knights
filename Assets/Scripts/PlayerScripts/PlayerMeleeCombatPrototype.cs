@@ -14,21 +14,38 @@ public class PlayerMeleeCombatPrototype : MonoBehaviour
     private void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
-        fireAction = playerInput.actions["Fire"];
+        if (playerInput != null)
+        {
+            fireAction = playerInput.actions["Fire"];
+        }
+        else
+        {
+            Debug.LogError("PlayerInput component is missing on this GameObject.");
+        }
     }
 
     private void Start()
     {
         animator = GetComponent<Animator>();
 
-        fireAction.started += OnFireStarted;
-        fireAction.canceled += OnFireCanceled;
+        if (fireAction != null)
+        {
+            fireAction.started += OnFireStarted;
+            fireAction.canceled += OnFireCanceled;
+        }
+        else
+        {
+            Debug.LogError("Fire action could not be found. Check Input Action Asset and action name.");
+        }
     }
 
     private void OnDestroy()
     {
-        fireAction.started -= OnFireStarted;
-        fireAction.canceled -= OnFireCanceled;
+        if (fireAction != null)
+        {
+            fireAction.started -= OnFireStarted;
+            fireAction.canceled -= OnFireCanceled;
+        }
     }
 
     private void Update()

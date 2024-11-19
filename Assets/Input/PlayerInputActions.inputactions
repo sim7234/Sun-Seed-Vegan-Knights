@@ -1092,15 +1092,6 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Fire",
-                    "type": "Button",
-                    "id": "8cca1572-5fc7-4e9e-bed5-7fd24fffa578",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Join",
                     "type": "Button",
                     "id": "fd2463a1-ef52-4912-a71e-80c73c11e010",
@@ -1122,6 +1113,15 @@
                     "name": "PlantSeed",
                     "type": "Button",
                     "id": "65e5213b-8973-4577-91f4-0e94514007da",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Fire",
+                    "type": "Button",
+                    "id": "747db93a-83e0-44c5-9c48-5d56c5ea8895",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -1186,17 +1186,6 @@
                 },
                 {
                     "name": "",
-                    "id": "979260aa-f19b-4175-a699-df1982606370",
-                    "path": "<Keyboard>/enter",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Player2Keyboard",
-                    "action": "Fire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "7982743d-18ea-4574-9db7-3e143cff2233",
                     "path": "<Keyboard>/enter",
                     "interactions": "",
@@ -1225,6 +1214,17 @@
                     "processors": "",
                     "groups": "Player2Keyboard",
                     "action": "PlantSeed",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3473e8b8-f6ff-4d08-8572-ff57603f4b33",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Player2Keyboard",
+                    "action": "Fire",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -30,9 +30,7 @@ public class MultiplayerManager : MonoBehaviour
 
     private void SpawnPlayer(GameObject prefab, string controlScheme, string actionMap, string playerName, InputDevice device)
     {
-        var playerInput = PlayerInput.Instantiate(prefab,
-            controlScheme: controlScheme, 
-            pairWithDevices: new InputDevice[] { device });
+        var playerInput = PlayerInput.Instantiate(prefab, controlScheme: controlScheme, pairWithDevices: new InputDevice[] { device });
 
         playerInput.SwitchCurrentActionMap(actionMap); 
         playerInput.gameObject.name = playerName;
