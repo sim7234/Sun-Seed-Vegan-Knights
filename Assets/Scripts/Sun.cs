@@ -5,9 +5,9 @@ using UnityEngine;
 public class Sun : MonoBehaviour
 {
 
-    private void Update()
+    private void Start()
     {
-        transform.Rotate(0, 0, 1);
+        InvokeRepeating(nameof(ColliderUpdate), 1, 1);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -23,5 +23,11 @@ public class Sun : MonoBehaviour
         {
             collision.GetComponent<Seed>().inSun = false;
         }
+    }
+
+    private void ColliderUpdate()
+    {
+        transform.Rotate(0, 0, 1, Space.Self);
+        transform.Rotate(0, 0, -1, Space.Self);
     }
 }
