@@ -13,6 +13,12 @@ public class PlayerDash : MonoBehaviour
 
     private InputAction dashAction;
 
+    Collider2D playerCollider;
+
+    [SerializeField] GameObject rotationPoint;
+    [SerializeField] TrailRenderer dashTrail;
+    bool dashEffectEnabled;
+
     private void Awake()
     {
         var playerInput = GetComponent<PlayerInput>();
@@ -23,26 +29,35 @@ public class PlayerDash : MonoBehaviour
     }
     void Start()
     {
-        sprite = GetComponent<SpriteRenderer>();
+        playerCollider = GetComponent<Collider2D>();
+        dashTrail.emitting = false;
+        sprite = GetComponentInChildren<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         waterScript = GetComponent<PlayerWater>();
     }
 
-   /* private IEnumerator SpendWaterEffect()
+    private IEnumerator SpendWaterEffect()
     {
+        playerCollider.enabled = false;
+        dashTrail.emitting = true;
         sprite.color = Color.blue;
-        yield return new WaitForSeconds(0.01f);
+        yield return new WaitForSeconds(0.2f);
         sprite.color = Color.white;
-    }*/
+        playerCollider.enabled = true;
+        yield return new WaitForSeconds(0.1f);
+        dashTrail.emitting = false;
+
+
+    }
 
     public void Dash(InputAction.CallbackContext context)
     {
         if (waterScript.TotalWater() >= 1)
         {
-        Debug.Log("Dashed");
+            Debug.Log("Dashed");
             waterScript.TakeWater(1);
-            rb.AddForce(transform.up * dashPower, ForceMode2D.Impulse);
-         //   StartCoroutine(SpendWaterEffect());
+            rb.AddForce(rotationPoint.transform.up * dashPower, ForceMode2D.Impulse);
+            StartCoroutine(SpendWaterEffect());
         }
     }
 
