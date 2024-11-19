@@ -972,6 +972,12 @@ MonoBehaviour:
   - {fileID: 8140362170331263629}
   - {fileID: 589554370017117746}
   - {fileID: 1852783458912916459}
+  onWaterPerformed:
+    m_PersistentCalls:
+      m_Calls: []
+  onWaterGained:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &8556687162033392005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -990,6 +996,9 @@ MonoBehaviour:
   - {fileID: 5337573941991948235, guid: 8c0f5fb874b01ff4e8db0dae69c133a0, type: 3}
   - {fileID: 5337573941991948235, guid: 9c4eecefc5627bf49be4da99ad0445f2, type: 3}
   currentType: 1
+  onPlantSeed:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &4088991493060879705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1143,6 +1152,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 7790897372868414741}
+  onFire:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!70 &3556870080283609932
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1256,11 +1268,35 @@ MonoBehaviour:
     m_ActionId: 36ba9079-2642-4075-a87a-5d05a4725b95
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6158602124808279384}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 960eb106-23be-47ed-b741-5d47bd6decce
     m_ActionName: Player1Actions/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5321282776459043100}
+        m_TargetAssemblyTypeName: PlayerAttack, Assembly-CSharp
+        m_MethodName: Fire
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 362ba671-cde8-446e-a653-851d3dae5618
     m_ActionName: Player1Actions/Fire[/Keyboard/space]
   - m_PersistentCalls:
@@ -1268,39 +1304,119 @@ MonoBehaviour:
     m_ActionId: 53659708-7902-419e-9048-2b5999189ea5
     m_ActionName: Player1Actions/Join[/Keyboard/space]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7340977928187407993}
+        m_TargetAssemblyTypeName: PlayerWater, Assembly-CSharp
+        m_MethodName: OnWater
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 9d5bed5a-209f-47b3-bd06-9a7590c6ec1f
     m_ActionName: Player1Actions/Water[/Keyboard/e]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8556687162033392005}
+        m_TargetAssemblyTypeName: PlantSeed, Assembly-CSharp
+        m_MethodName: PlantSeedAction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 26d41a63-5e2f-46ea-b46a-dc6c05dccaa5
     m_ActionName: Player1Actions/PlantSeed[/Keyboard/r]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6158602124808279384}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 83a6cb1f-a6fa-42cb-993c-25e56d5a8e64
     m_ActionName: Player2Actions/Move[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 8cca1572-5fc7-4e9e-bed5-7fd24fffa578
-    m_ActionName: Player2Actions/Fire[/Keyboard/enter]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: fd2463a1-ef52-4912-a71e-80c73c11e010
     m_ActionName: Player2Actions/Join[/Keyboard/enter]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7340977928187407993}
+        m_TargetAssemblyTypeName: PlayerWater, Assembly-CSharp
+        m_MethodName: OnWater
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: a1503fa1-4924-4bac-9e0b-101af512385f
     m_ActionName: Player2Actions/Water[/Keyboard/backspace]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8556687162033392005}
+        m_TargetAssemblyTypeName: PlantSeed, Assembly-CSharp
+        m_MethodName: PlantSeedAction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 65e5213b-8973-4577-91f4-0e94514007da
     m_ActionName: Player2Actions/PlantSeed[/Keyboard/rightShift]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6158602124808279384}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 5c56610c-f020-403d-a4be-03bddc3eebcc
     m_ActionName: Player3Actions/Move[/DualSenseGamepadHID/leftStick/up,/DualSenseGamepadHID/leftStick/down,/DualSenseGamepadHID/leftStick/left,/DualSenseGamepadHID/leftStick/right]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5321282776459043100}
+        m_TargetAssemblyTypeName: PlayerAttack, Assembly-CSharp
+        m_MethodName: Fire
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: d7d55869-27e1-4c78-b0ba-796175e0c725
     m_ActionName: Player3Actions/Fire[/DualSenseGamepadHID/rightShoulder]
   - m_PersistentCalls:
@@ -1308,24 +1424,88 @@ MonoBehaviour:
     m_ActionId: bba9c91e-091d-43c5-91ce-651e4dc34a29
     m_ActionName: Player3Actions/Join[/DualSenseGamepadHID/dpad/up]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7340977928187407993}
+        m_TargetAssemblyTypeName: PlayerWater, Assembly-CSharp
+        m_MethodName: OnWater
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 6d244ce4-365f-4ba9-84af-aced4e1f7a52
     m_ActionName: Player3Actions/Water[/DualSenseGamepadHID/buttonEast]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8556687162033392005}
+        m_TargetAssemblyTypeName: PlantSeed, Assembly-CSharp
+        m_MethodName: PlantSeedAction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 1f91cfc5-2742-465e-a41c-1d3b00db2dac
     m_ActionName: Player3Actions/PlantSeed[/DualSenseGamepadHID/buttonNorth]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6158602124808279384}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: a244c18f-9894-48cc-ac66-16406f8778dd
     m_ActionName: Player3Actions/Rotate[/DualSenseGamepadHID/rightStick/up,/DualSenseGamepadHID/rightStick/down,/DualSenseGamepadHID/rightStick/left,/DualSenseGamepadHID/rightStick/right]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8503630816615383961}
+        m_TargetAssemblyTypeName: PlayerDash, Assembly-CSharp
+        m_MethodName: Dash
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: c7d85696-4d96-48d7-8c4e-c1da9199344a
     m_ActionName: Player3Actions/Dash[/DualShock4GamepadHID/rightTrigger]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5321282776459043100}
+        m_TargetAssemblyTypeName: PlayerAttack, Assembly-CSharp
+        m_MethodName: Fire
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 747db93a-83e0-44c5-9c48-5d56c5ea8895
+    m_ActionName: Player2Actions/Fire[/Keyboard/enter]
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Player1Keyboard
-  m_DefaultActionMap: Player1Actions
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &5228890039750120404

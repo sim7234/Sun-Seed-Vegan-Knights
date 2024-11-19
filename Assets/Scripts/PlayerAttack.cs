@@ -1,55 +1,33 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.Events;
 
 public class PlayerAttack : MonoBehaviour
 {
     [SerializeField]
     private GameObject weapon;
 
-    private Collider2D weaponCollider;
+    [SerializeField]
+    private UnityEvent onFire;
+
     private Animator weaponAnimator;
-
-    private PlayerInput playerInput;
-    private InputAction fireAction;
-
-    private void Awake()
-    {
-        playerInput = GetComponent<PlayerInput>();
-        if (playerInput != null)
-        {
-            fireAction = playerInput.actions["Fire"];
-        }
-        else
-        {
-            Debug.LogError("PlayerInput component is missing on this GameObject.");
-        }
-    }
 
     private void Start()
     {
-        weaponCollider = weapon.GetComponent<Collider2D>();
         weaponAnimator = weapon.GetComponent<Animator>();
 
-        if (fireAction != null)
+        if (onFire == null)
         {
-            fireAction.performed += OnFirePerformed;
-        }
-        else
-        {
-            Debug.LogError("Fire action could not be found. Check the Input Action Asset.");
+            Debug.LogWarning("No event assigned to OnFire Unity Event.");
         }
     }
 
-    private void OnDestroy()
+    public void Fire()
     {
-        if (fireAction != null)
-        {
-            fireAction.performed -= OnFirePerformed;
-        }
-    }
+        onFire?.Invoke();
 
-    private void OnFirePerformed(InputAction.CallbackContext context)
-    {
-        weaponAnimator.SetTrigger("PressedR1");
+        if (weaponAnimator != null)
+        {
+            weaponAnimator.SetTrigger("PressedR1");
+        }
     }
 }

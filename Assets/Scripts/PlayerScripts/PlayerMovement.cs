@@ -77,25 +77,19 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnMove(InputAction.CallbackContext context)
+    public void OnMove(InputAction.CallbackContext context)
     {
-        // Read the movement input vector
+
         moveDirection = context.ReadValue<Vector2>();
     }
 
     private void RotationDirection(InputAction.CallbackContext context)
     {
-        // Read the rotation input vector
         rotationDirection = context.ReadValue<Vector2>();
     }
 
     private void Update()
     {
-        //if (moveDirection != Vector2.zero)
-        //{
-        //    float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
-        //    directionIndicator.transform.rotation = Quaternion.Euler(0, 0, angle - 90);
-        //}
         if(rotationDirection != Vector2.zero)
         {
             float angle = Mathf.Atan2(rotationDirection.y, rotationDirection.x) * Mathf.Rad2Deg;
@@ -122,7 +116,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Apply movement with clamped speed
 
         if (isRunning == true)
         {

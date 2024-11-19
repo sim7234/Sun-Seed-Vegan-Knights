@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
 
 public class PlayerWater : MonoBehaviour
 {
-
     [SerializeField]
     private int totalWater;
     [SerializeField]
@@ -18,11 +18,15 @@ public class PlayerWater : MonoBehaviour
     private float waterRateTimer;
 
     [SerializeField]
-    private List <GameObject> waterDropsDisplay = new List<GameObject>();
-    
+    private List<GameObject> waterDropsDisplay = new List<GameObject>();
     private List<Seed> seedInRange = new List<Seed>();
 
     private InputAction waterAction;
+
+    [SerializeField]
+    private UnityEvent onWaterPerformed;
+    [SerializeField]
+    private UnityEvent onWaterGained;
 
     private void Awake()
     {
@@ -50,17 +54,20 @@ public class PlayerWater : MonoBehaviour
             waterAction.Disable();
         }
     }
+
     private void Start()
     {
         totalWater = maxWater;
+        UpdateWaterDropDisplay();
     }
 
-   private void Update()
+    private void Update()
     {
         if (waterRateTimer >= waterGainTime && totalWater < maxWater)
         {
             waterRateTimer = 0;
             totalWater += 1;
+            onWaterGained?.Invoke(); 
         }
         else if (totalWater < maxWater)
         {
@@ -70,7 +77,7 @@ public class PlayerWater : MonoBehaviour
         UpdateWaterDropDisplay();
     }
 
-        private void OnWater(InputAction.CallbackContext context)
+    public void OnWater(InputAction.CallbackContext context)
     {
         if (seedInRange.Count >= 1)
         {
@@ -78,11 +85,13 @@ public class PlayerWater : MonoBehaviour
             {
                 if (seedInRange[i].WaterSeed(gameObject))
                 {
-                    break; 
+                    onWaterPerformed?.Invoke(); 
+                    break;
                 }
             }
         }
     }
+
     public void UpdateWaterDropDisplay()
     {
         foreach (var item in waterDropsDisplay)
@@ -94,6 +103,7 @@ public class PlayerWater : MonoBehaviour
             waterDropsDisplay[i].SetActive(true);
         }
     }
+
     public void TakeWater(int waterCost)
     {
         totalWater -= waterCost;
@@ -106,9 +116,8 @@ public class PlayerWater : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
         Seed newSeed = collision.GetComponent<Seed>();
-        if(newSeed != null)
+        if (newSeed != null)
         {
             newSeed.DisplayCost();
             seedInRange.Add(newSeed);

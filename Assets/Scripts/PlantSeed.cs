@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.Events;
 
 public class PlantSeed : MonoBehaviour
 {
@@ -11,26 +11,10 @@ public class PlantSeed : MonoBehaviour
     [SerializeField]
     private WeaponType currentType;
 
-    private PlayerInput playerInput;
-    private InputAction plantSeedAction;
+    [SerializeField]
+    private UnityEvent onPlantSeed;
 
-    private void Awake()
-    {
-        playerInput = GetComponent<PlayerInput>();
-        plantSeedAction = playerInput.actions["PlantSeed"];
-    }
-
-    private void OnEnable()
-    {
-        plantSeedAction.performed += OnPlantSeedPerformed;
-    }
-
-    private void OnDisable()
-    {
-        plantSeedAction.performed -= OnPlantSeedPerformed;
-    }
-
-    private void OnPlantSeedPerformed(InputAction.CallbackContext context)
+    public void PlantSeedAction()
     {
         switch (currentType)
         {
@@ -47,13 +31,16 @@ public class PlantSeed : MonoBehaviour
                 Instantiate(seedTypes[3], transform.position, Quaternion.identity);
                 break;
         }
+
+        onPlantSeed?.Invoke();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<WeaponPickup>() != null)
+        var weaponPickup = collision.GetComponent<WeaponPickup>();
+        if (weaponPickup != null)
         {
-            currentType = collision.GetComponent<WeaponPickup>().type;
+            currentType = weaponPickup.type;
         }
     }
 }
