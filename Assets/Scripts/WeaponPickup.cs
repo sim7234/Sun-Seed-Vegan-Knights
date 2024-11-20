@@ -9,6 +9,8 @@ public class WeaponPickup : MonoBehaviour
 
     public WeaponType GetWeaponType()
     {
+        SaveData.Instance.seedType = type;
+
         return type;
     }
 }
