@@ -9657,7 +9657,7 @@ MonoBehaviour:
   spawnInterval: 2
   spawnOverTime: 0
   spawnWave: 1
-  spawnAmount: 14
+  spawnAmount: 5
 --- !u!4 &572438461
 Transform:
   m_ObjectHideFlags: 0
@@ -34273,6 +34273,71 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddc7353fdaf538d45a7ff36cf60e9034, type: 3}
+--- !u!1001 &7685362056963545471
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4291055712889806521, guid: 0ebe300deec1f83459ea1ff286712fc7, type: 3}
+      propertyPath: m_Name
+      value: Sun laser
+      objectReference: {fileID: 0}
+    - target: {fileID: 4291055712889806521, guid: 0ebe300deec1f83459ea1ff286712fc7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4893160003844611643, guid: 0ebe300deec1f83459ea1ff286712fc7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4893160003844611643, guid: 0ebe300deec1f83459ea1ff286712fc7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 4893160003844611643, guid: 0ebe300deec1f83459ea1ff286712fc7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4893160003844611643, guid: 0ebe300deec1f83459ea1ff286712fc7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4893160003844611643, guid: 0ebe300deec1f83459ea1ff286712fc7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4893160003844611643, guid: 0ebe300deec1f83459ea1ff286712fc7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4893160003844611643, guid: 0ebe300deec1f83459ea1ff286712fc7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4893160003844611643, guid: 0ebe300deec1f83459ea1ff286712fc7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4893160003844611643, guid: 0ebe300deec1f83459ea1ff286712fc7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4893160003844611643, guid: 0ebe300deec1f83459ea1ff286712fc7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7618860901662492265, guid: 0ebe300deec1f83459ea1ff286712fc7, type: 3}
+      propertyPath: SubModule.subEmitters.Array.data[0].emitter
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0ebe300deec1f83459ea1ff286712fc7, type: 3}
 --- !u!1001 &8303496153114880644
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34289,6 +34354,10 @@ PrefabInstance:
       propertyPath: enemyCounterText
       value: 
       objectReference: {fileID: 313585789}
+    - target: {fileID: 476285938522494790, guid: b5d8548dc6b1bfa408559e695f307bde, type: 3}
+      propertyPath: stageCompleteSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 7bfdd66e3385f89488fd5720c2e0084e, type: 3}
     - target: {fileID: 476285938522494790, guid: b5d8548dc6b1bfa408559e695f307bde, type: 3}
       propertyPath: Objectives.Array.size
       value: 2
@@ -34417,3 +34486,4 @@ SceneRoots:
   - {fileID: 3036744371847646993}
   - {fileID: 2144497827}
   - {fileID: 1566699634}
+  - {fileID: 7685362056963545471}

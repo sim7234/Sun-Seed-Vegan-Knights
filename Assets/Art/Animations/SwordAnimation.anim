@@ -486,6 +486,13 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 0.33333334
+    functionName: moveWhenAttacking
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 8
+    intParameter: 0
+    messageOptions: 0
   - time: 0.6
     functionName: TurnOfCollider
     data: 
