@@ -27,7 +27,7 @@ public class SpecialWeapon : MonoBehaviour
 
     private void Awake()
     {
-        fire = new PlayerInputActions().Player.Fire; 
+        fire = new PlayerInputActions().KeyboardActions1.Fire; 
     }
 
     private void OnEnable()

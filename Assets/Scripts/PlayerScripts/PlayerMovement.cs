@@ -30,6 +30,12 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 rotationDirection = Vector2.zero;
     private InputAction rotate;
 
+    private void Start()
+    {
+        var playerInput = GetComponent<PlayerInput>();
+        Debug.Log($"Player {playerInput.playerIndex} has joined.");
+    }
+
     private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
