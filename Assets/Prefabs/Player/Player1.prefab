@@ -1050,6 +1050,8 @@ MonoBehaviour:
   baseWeapon: {fileID: 7790897372868414741}
   weaponPickupsInRange: []
   attackCooldown: 0
+  swordSwingSound: {fileID: 8300000, guid: dec3f8a6d31d51c4995341d391828895, type: 3}
+  spearThrustSound: {fileID: 8300000, guid: e7a66464d458314458ccc300d36134b0, type: 3}
 --- !u!82 &5284485026496525295
 AudioSource:
   m_ObjectHideFlags: 0

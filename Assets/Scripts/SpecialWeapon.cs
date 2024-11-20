@@ -26,9 +26,23 @@ public class SpecialWeapon : MonoBehaviour
 
     public float attackCooldown;
 
+    [SerializeField]
+    private AudioClip swordSwingSound; 
+
+    [SerializeField]
+    private AudioClip spearThrustSound;
+
+    private AudioSource audioSource; 
+
     private void Awake()
     {
         fire = new PlayerInputActions().KeyboardActions1.Fire; 
+
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
     }
 
     private void OnEnable()
@@ -54,6 +68,7 @@ public class SpecialWeapon : MonoBehaviour
         {
             attackCounter++;
             bigSword.GetComponent<Animator>().SetTrigger("Attack");
+            PlaySwordSwingSound();
             attackCooldown = 1.5f;
             Debug.Log("Big swing");
 
@@ -69,6 +84,7 @@ public class SpecialWeapon : MonoBehaviour
         {
             attackCounter++;
             bigSpear.GetComponent<Animator>().SetTrigger("Attack");
+            PlaySpearThrustSound();
             attackCooldown = 1.5f;
             Debug.Log("Big swing");
 
@@ -122,6 +138,22 @@ public class SpecialWeapon : MonoBehaviour
         if (collision.GetComponent<WeaponPickup>() != null)
         {
             weaponPickupsInRange.Remove(collision.gameObject);
+        }
+    }
+
+     private void PlaySwordSwingSound()
+    {
+        if (swordSwingSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(swordSwingSound); 
+        }
+    }
+
+    private void PlaySpearThrustSound()
+    {
+        if (swordSwingSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(spearThrustSound); 
         }
     }
 }
