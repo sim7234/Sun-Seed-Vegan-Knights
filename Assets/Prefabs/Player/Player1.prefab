@@ -925,6 +925,16 @@ MonoBehaviour:
   runSpeedMultiplicative: 1.5
   timeUntilRun: 0.8
   directionIndicator: {fileID: 4283199718185520484}
+  movementSounds:
+  - {fileID: 8300000, guid: 6244e73794851084494030575ec28f43, type: 3}
+  - {fileID: 8300000, guid: 36822a512980bcb4b8af5fecf15294a1, type: 3}
+  - {fileID: 8300000, guid: 8513edfacf7aeae40bac4489ae138810, type: 3}
+  - {fileID: 8300000, guid: c1a954221956c824d9584ee22f43b760, type: 3}
+  - {fileID: 8300000, guid: 23a00d5a132ec7f48b2f05aa877b4530, type: 3}
+  - {fileID: 8300000, guid: 5adcb53f5f4b7d647ad80723db02929d, type: 3}
+  - {fileID: 8300000, guid: 6846541bcd287594a9cb9d945f490a0d, type: 3}
+  - {fileID: 8300000, guid: 31660bf0304435c4e9d14701d8aac184, type: 3}
+  - {fileID: 8300000, guid: d2793a1f592f0e94fba64678b8283a4d, type: 3}
 --- !u!50 &6392348033316344455
 Rigidbody2D:
   serializedVersion: 4

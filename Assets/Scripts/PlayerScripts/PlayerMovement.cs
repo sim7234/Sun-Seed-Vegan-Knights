@@ -1,6 +1,7 @@
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections.Generic;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -30,6 +31,10 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 rotationDirection = Vector2.zero;
     private InputAction rotate;
 
+    [SerializeField]
+    private List<AudioClip> movementSounds;
+    private AudioSource audioSource;
+
     private void Start()
     {
         var playerInput = GetComponent<PlayerInput>();
@@ -39,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnEnable()
@@ -87,6 +93,11 @@ public class PlayerMovement : MonoBehaviour
     {
 
         moveDirection = context.ReadValue<Vector2>();
+
+        if (moveDirection != Vector2.zero && !audioSource.isPlaying)
+        {
+            PlayRandomMovementSound();
+        }
     }
 
     private void RotationDirection(InputAction.CallbackContext context)
@@ -136,5 +147,16 @@ public class PlayerMovement : MonoBehaviour
         {
             rb2d.velocity += velocity;
         } 
+    }    // Method to play a random movement sound
+    private void PlayRandomMovementSound()
+    {
+        if (movementSounds.Count > 0)
+        {
+            int randomIndex = Random.Range(0, movementSounds.Count);
+            audioSource.clip = movementSounds[randomIndex]; 
+            audioSource.Play(); 
+        }
+    
     }
+
 }
