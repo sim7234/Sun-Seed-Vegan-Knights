@@ -41,20 +41,21 @@ public class PlayerDash : MonoBehaviour
         playerCollider.enabled = false;
         dashTrail.emitting = true;
         sprite.color = Color.blue;
+
         yield return new WaitForSeconds(0.2f);
+
         sprite.color = Color.white;
         playerCollider.enabled = true;
+
         yield return new WaitForSeconds(0.1f);
+
         dashTrail.emitting = false;
-
-
     }
 
     public void Dash(InputAction.CallbackContext context)
     {
         if (waterScript.TotalWater() >= 1)
         {
-            Debug.Log("Dashed");
             waterScript.TakeWater(1);
             rb.AddForce(rotationPoint.transform.up * dashPower, ForceMode2D.Impulse);
             StartCoroutine(SpendWaterEffect());

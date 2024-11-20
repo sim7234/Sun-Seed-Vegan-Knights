@@ -5937,12 +5937,17 @@ MonoBehaviour:
 
     Move = left joystick
 
-    Attack = R1 / right bumber
+    Aim = right joystick
 
-    Plant
-    = Triangle / Y
+    Attack
+    = R1 / right bumber
 
-    Water = X / A
+    Dash = R2
+
+    Plant = Triangle / Y
+
+    Water = X /
+    A
 
     Pickup =  R1 / right bumber'
   m_isRightToLeft: 0
@@ -5971,13 +5976,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -7705,6 +7710,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5130911862086886225, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485992378578483934, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485992378578483934, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -28,7 +28,6 @@ public class Pathfinding : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         finalTarget = FindClosestTarget(totalTargets);
         if(target.Count > 0)
         {
