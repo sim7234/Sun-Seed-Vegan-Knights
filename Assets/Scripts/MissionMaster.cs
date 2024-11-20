@@ -43,7 +43,6 @@ public class MissionMaster : MonoBehaviour
                 Objectives[combatsComplete].GetComponent<Objective>().StartObjectiveEvent();
             }
         }
-        SaveData.Instance.spawnPlayers();
     }
     public void AddEnemy()
     {

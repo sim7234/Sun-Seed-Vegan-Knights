@@ -21,6 +21,7 @@ public class SpecialWeapon : MonoBehaviour
     [SerializeField]
     private GameObject baseWeapon;
 
+    [SerializeField]
     private List<GameObject> weaponPickupsInRange = new List<GameObject>();
 
     public float attackCooldown;
@@ -47,7 +48,7 @@ public class SpecialWeapon : MonoBehaviour
         attackCounter = 0;
     }
 
-    private void Fire(InputAction.CallbackContext context)
+    public void Fire(InputAction.CallbackContext context)
     {
         if (bigSword.activeSelf && attackCooldown <= 0)
         {

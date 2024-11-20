@@ -1048,6 +1048,7 @@ MonoBehaviour:
     m_SingletonActionBindings: []
     m_Flags: 0
   baseWeapon: {fileID: 7790897372868414741}
+  weaponPickupsInRange: []
   attackCooldown: 0
 --- !u!82 &5284485026496525295
 AudioSource:
@@ -1308,6 +1309,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: PlayerAttack, Assembly-CSharp
         m_MethodName: Fire
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5478368589574827822}
+        m_TargetAssemblyTypeName: SpecialWeapon, Assembly-CSharp
+        m_MethodName: Fire
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
