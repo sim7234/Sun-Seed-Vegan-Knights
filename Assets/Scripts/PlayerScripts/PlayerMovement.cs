@@ -34,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private List<AudioClip> movementSounds;
     private AudioSource audioSource;
+    private bool isMoving;
 
     private void Start()
     {
@@ -49,10 +50,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnEnable()
     {
-        // Get the PlayerInput component attached to this player instance
         var playerInput = GetComponent<PlayerInput>();
 
-        // Ensure the player input component exists and get the "Move" action from the current action map
         if (playerInput != null)
         {
             move = playerInput.actions["Move"];
@@ -128,7 +127,28 @@ public class PlayerMovement : MonoBehaviour
         {
             isRunning = true;
         }
+        if (moveDirection != Vector2.zero) 
+        {
+            if (!isMoving) 
+            {
+                isMoving = true; 
+                PlayRandomMovementSound(); 
+            }
 
+            else if (!audioSource.isPlaying) 
+            {
+                PlayRandomMovementSound(); 
+            }
+        }
+
+        else 
+        {
+            if (isMoving) 
+            {
+                isMoving = false; 
+                audioSource.Stop(); 
+            }
+        }
     }
 
     private void FixedUpdate()
@@ -147,7 +167,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb2d.velocity += velocity;
         } 
-    }    // Method to play a random movement sound
+    }    
     private void PlayRandomMovementSound()
     {
         if (movementSounds.Count > 0)
@@ -156,7 +176,5 @@ public class PlayerMovement : MonoBehaviour
             audioSource.clip = movementSounds[randomIndex]; 
             audioSource.Play(); 
         }
-    
     }
-
 }

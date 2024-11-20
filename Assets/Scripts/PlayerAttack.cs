@@ -9,25 +9,67 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField]
     private UnityEvent onFire;
 
+    [SerializeField]
+    private AudioClip swordSwingSound;
+
+    private AudioSource audioSource;  
     private Animator weaponAnimator;
+
+
+    [SerializeField]
+    private float attackCooldown = 1f; 
+
+    private float lastAttackTime = 0f; 
+
 
     private void Start()
     {
         weaponAnimator = weapon.GetComponent<Animator>();
 
+
+        audioSource = gameObject.GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+
         if (onFire == null)
         {
-            Debug.LogWarning("No event assigned to OnFire Unity Event.");
+            Debug.LogWarning("No event Fire");
         }
     }
 
-    public void Fire()
+     public void Fire()
     {
-        onFire?.Invoke();
-
-        if (weaponAnimator != null)
+        if (Time.time >= lastAttackTime + attackCooldown)
         {
-            weaponAnimator.SetTrigger("PressedR1");
+            onFire?.Invoke();
+
+            if (weaponAnimator != null)
+            {
+                weaponAnimator.SetTrigger("PressedR1");
+            }
+
+            PlaySwordSwingSound();
+
+    
+            lastAttackTime = Time.time;
+        }
+        else
+        {
+            Debug.Log("Attack on cooldown");
+        }
+    }
+
+    private void PlaySwordSwingSound()
+    {
+        if (swordSwingSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(swordSwingSound); 
+        }
+        else
+        {
+            Debug.LogWarning("nosound");
         }
     }
 }
