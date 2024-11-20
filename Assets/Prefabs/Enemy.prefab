@@ -296,7 +296,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 4
-  m_Speed: 1
+  m_Speed: 2
   m_Acceleration: 2
   avoidancePriority: 0
   m_AngularSpeed: 120
@@ -335,7 +335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6ee23a00de2e1948af4b65182f92b3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceToAttack: 40
+  distanceToAttack: 20
   isAttacking: 0
   withinDistance: 0
 --- !u!114 &2369945561958132068
@@ -352,7 +352,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dashWindupTime: 0.45
   dashTime: 0.4
-  dashPower: 3
+  dashPower: 2
   dashCooldown: 2
   dashIndicator: {fileID: 5910768304150022312}
 --- !u!114 &4790872568561083539
