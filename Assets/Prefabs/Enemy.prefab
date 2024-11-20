@@ -321,6 +321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: []
+  totalTargets: 0
   finalTarget: 0
   followTarget: 0
 --- !u!114 &928377495995262593
