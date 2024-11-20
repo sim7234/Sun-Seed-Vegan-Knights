@@ -26,6 +26,11 @@ public class MissionMaster : MonoBehaviour
     [SerializeField]
     private List<GameObject> Objectives = new List<GameObject>();
 
+      [SerializeField]
+    private AudioClip stageCompleteSound; 
+
+    private AudioSource audioSource; 
+
     private void Awake()
     {
         Instance = this;
@@ -35,6 +40,14 @@ public class MissionMaster : MonoBehaviour
     {
         combatsComplete = 0;
         combatSpawnObject[0].SetActive(true);
+
+         
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+
         if (Objectives.Count >= combatsComplete)
         {
             if (Objectives[combatsComplete] != null)
@@ -55,6 +68,7 @@ public class MissionMaster : MonoBehaviour
         UpdateText();
         if (enemyCounter <= 0)
         {
+            PlayStageCompleteSound();
             NextStage();
         }
     }
@@ -94,5 +108,13 @@ public class MissionMaster : MonoBehaviour
     {
         combatSpawnObject[combatsComplete].SetActive(true);
         
+    }
+
+    private void PlayStageCompleteSound()
+    {
+        if (stageCompleteSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(stageCompleteSound); // Play the sound
+        }
     }
 }
