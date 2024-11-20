@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public float runSpeedMultiplicative;
     bool isRunning;
     public float timeUntilRun;
-    public  float lastAttackTime = 0;
+    float lastAttackTime = 0;
 
     Vector2 velocity;
 

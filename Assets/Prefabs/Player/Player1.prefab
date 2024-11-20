@@ -914,17 +914,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a79ce0dc6840bb49ac52a8a1607d9bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  moveSpeed: 0.4
   curve:
     serializedVersion: 2
     m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  maxSpeed: 3
+  maxSpeed: 1.6
   runSpeedMultiplicative: 1.5
-  timeUntilRun: 1
-  lastAttackTime: 0
+  timeUntilRun: 0.8
   directionIndicator: {fileID: 4283199718185520484}
 --- !u!50 &6392348033316344455
 Rigidbody2D:
@@ -967,7 +966,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalWater: 0
   maxWater: 3
-  waterGainTime: 3
+  waterGainTime: 10
   waterDropsDisplay:
   - {fileID: 8140362170331263629}
   - {fileID: 589554370017117746}
@@ -1530,7 +1529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9621b7d8cecec654fb146c8c8474c10b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashPower: 40
+  dashPower: 20
   rotationPoint: {fileID: 4283199718185520484}
   dashTrail: {fileID: 1023537523245711233}
 --- !u!1 &4283199718185520484
@@ -2411,7 +2410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c1700008e098ae468f3da206c69f3f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackStrength: 50
+  knockbackStrength: 3
 --- !u!1 &8140362170331263629
 GameObject:
   m_ObjectHideFlags: 0
