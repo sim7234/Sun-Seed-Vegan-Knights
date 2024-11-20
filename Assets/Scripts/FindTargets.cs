@@ -31,7 +31,7 @@ public class FindTargets : MonoBehaviour
 
     private void FindObjects()
     {
-        if(GameObject.FindWithTag("Player") != null)
+        if (GameObject.FindWithTag("Player") != null)
         pathfinding.target.Add(GameObject.FindWithTag("Player"));
         if(GameObject.FindWithTag("Objective") != null)
         pathfinding.target.Add(GameObject.FindWithTag("Objective"));
