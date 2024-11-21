@@ -76,6 +76,7 @@ public class Health : MonoBehaviour
         if (gameObject.CompareTag("Player"))
         {
             this.gameObject.SetActive(false);
+            Invoke(nameof(Respawn), 5);
         }
         else
         {
@@ -83,6 +84,14 @@ public class Health : MonoBehaviour
         }
         
     }
+
+    void Respawn()
+    {
+        this.gameObject.SetActive(true);
+        currentHealth = maxHealth;
+       // this.gameObject.transform.position = Camera.main.transform.position;
+    }
+
     public float GetCurrentHealth()
     {
         return currentHealth;

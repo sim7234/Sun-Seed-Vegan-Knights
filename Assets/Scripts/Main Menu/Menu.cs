@@ -51,7 +51,6 @@ public class Menu : MonoBehaviour
     {
         camera.transform.position = new Vector3(0,0,-10);
         backToMenu.SetActive(false);
-        changeButtonState();
     }
 
     void changeButtonState()
