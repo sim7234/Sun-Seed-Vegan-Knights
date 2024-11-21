@@ -113,11 +113,14 @@ public class SpecialWeapon : MonoBehaviour
             if (weaponPickupsInRange[0].GetComponent<WeaponPickup>().GetWeaponType() == WeaponType.Sword)
             {
                 bigSword.SetActive(true);
+                bigSpear.SetActive(false);
+
                 specialWeaponAttacks = 5;
             }
             else if (weaponPickupsInRange[0].GetComponent<WeaponPickup>().GetWeaponType() == WeaponType.Spear)
             {
-                bigSpear.SetActive(true);
+                bigSword.SetActive(true);   
+                bigSpear.SetActive(false);
                 specialWeaponAttacks = 10;
             }
             
