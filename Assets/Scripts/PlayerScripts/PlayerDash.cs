@@ -1,3 +1,5 @@
+// Ignore Spelling: Cooldown
+
 using UnityEngine.InputSystem;
 using System.Collections;
 using UnityEngine;
@@ -19,8 +21,11 @@ public class PlayerDash : MonoBehaviour
     [SerializeField] TrailRenderer dashTrail;
     bool dashEffectEnabled;
 
+   // float r2Value;
+
     private void Awake()
     {
+        
         var playerInput = GetComponent<PlayerInput>();
         if (playerInput != null)
         {
@@ -52,8 +57,20 @@ public class PlayerDash : MonoBehaviour
         dashTrail.emitting = false;
     }
 
+    /*private void Update()
+    {
+        r2Value = Gamepad.current.rightTrigger.ReadValue();
+        if (r2Value > 0)
+        {
+            r2Value = 1;
+        }
+    }*/
+
     public void Dash(InputAction.CallbackContext context)
     {
+       if (context.phase != InputActionPhase.Started)
+            return; 
+
         if (waterScript.TotalWater() >= 1)
         {
             waterScript.TakeWater(1);
