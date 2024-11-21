@@ -48,7 +48,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &790156042106664017
 Transform:
   m_ObjectHideFlags: 0
@@ -76,7 +76,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 855179ece9fdfb048b31c11681b85435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathfinding: {fileID: 8226866499903861166}
 --- !u!1 &6281990553759320917
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,7 +309,6 @@ MonoBehaviour:
   deathEffect: {fileID: 1240254011838071449, guid: a8a005973de14ea47810af5564db808b, type: 3}
   characterSprite: {fileID: 7582446994168529696}
   hitSound: {fileID: 8300000, guid: 340dd37fae7514c499dbd20603c7fcac, type: 3}
-  useMissionMaster: 1
 --- !u!114 &2674409701406064980
 MonoBehaviour:
   m_ObjectHideFlags: 0

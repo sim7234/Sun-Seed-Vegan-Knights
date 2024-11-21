@@ -522,7 +522,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7920178670802184012}
-  - component: {fileID: 1097968557372441798}
   m_Layer: 10
   m_Name: HitScan
   m_TagString: Untagged
@@ -545,15 +544,3 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8853922157738319403}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1097968557372441798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8356983418400581731}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 855179ece9fdfb048b31c11681b85435, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
