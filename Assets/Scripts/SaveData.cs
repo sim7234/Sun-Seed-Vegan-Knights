@@ -29,5 +29,24 @@ public class SaveData : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    public void AddPlayer(GameObject player, int index)
+    {
+        switch (index)
+        {
+            case 0:
+                player1 = player;
+                break;
+            case 1:
+                player2 = player;
+                break;
+            case 2:
+                player3 = player;
+                break;
+            case 3:
+                player4 = player;
+                break;
+        }
+        DontDestroyOnLoad(player);
+    }
 
 }
