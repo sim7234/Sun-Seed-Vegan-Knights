@@ -50,8 +50,10 @@ public class PlayerAttack : MonoBehaviour
             {
                 weaponAnimator.SetTrigger("PressedR1");
             }
-
-            PlaySwordSwingSound();
+            if(weapon.activeSelf)
+            {
+                PlaySwordSwingSound();
+            }
 
     
             lastAttackTime = Time.time;
