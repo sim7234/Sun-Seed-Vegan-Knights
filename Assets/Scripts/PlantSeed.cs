@@ -78,10 +78,10 @@ public class PlantSeed : MonoBehaviour
     {
         if (collision.GetComponent<WeaponPickup>() != null)
         {
-            
             currentType = collision.GetComponent<WeaponPickup>().type;
+            
             int playerIndex = GetComponent<PlayerMovement>().playerIndex;
-            if ( playerIndex == 1)
+            if ( playerIndex == 1 || playerIndex == 0)
             {
                 SaveData.Instance.seedType = currentType;
             }

@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log($"Player {playerInput.playerIndex} has joined.");
 
         SaveData.Instance.playerAmount++;
-       
+        playerIndex = SaveData.Instance.playerAmount;
     }
 
     private void Awake()
