@@ -409,7 +409,7 @@ MonoBehaviour:
   spawnInterval: 2
   spawnOverTime: 0
   spawnWave: 1
-  spawnAmount: 30
+  spawnAmount: 2
 --- !u!4 &189225855
 Transform:
   m_ObjectHideFlags: 0
@@ -1897,7 +1897,7 @@ MonoBehaviour:
   spawnInterval: 2
   spawnOverTime: 0
   spawnWave: 1
-  spawnAmount: 8
+  spawnAmount: 3
 --- !u!4 &778896799
 Transform:
   m_ObjectHideFlags: 0
@@ -4831,7 +4831,7 @@ MonoBehaviour:
   spawnInterval: 4
   spawnOverTime: 1
   spawnWave: 1
-  spawnAmount: 20
+  spawnAmount: 2
 --- !u!4 &1763185294
 Transform:
   m_ObjectHideFlags: 0
