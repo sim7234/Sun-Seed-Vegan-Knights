@@ -16,8 +16,6 @@ public class SpecialWeapon : MonoBehaviour
     private int specialWeaponAttacks = 5;
     private int attackCounter;
 
-    public InputAction fire;
-
     [SerializeField]
     private GameObject baseWeapon;
 
@@ -34,28 +32,40 @@ public class SpecialWeapon : MonoBehaviour
 
     private AudioSource audioSource; 
     
+    private PlayerInput playerInput; 
+    private InputAction fireAction; 
 
     private void Awake()
     {
-        fire = new PlayerInputActions().KeyboardActions1.Fire; 
-
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
         {
             audioSource = gameObject.AddComponent<AudioSource>();
         }
+        
+        playerInput = GetComponent<PlayerInput>();
+        if (playerInput != null)
+        {
+            fireAction = playerInput.actions["Fire"];
+        }
     }
 
     private void OnEnable()
     {
-        fire.Enable();
-        fire.performed += Fire; 
+        if (fireAction != null)
+        {
+            fireAction.Enable();
+            fireAction.performed += Fire; 
+        }
     }
 
     private void OnDisable()
     {
-        fire.Disable();
-        fire.performed -= Fire;
+        if (fireAction != null)
+        {
+            fireAction.Disable();
+            fireAction.performed -= Fire;
+        }
     }
 
     private void Start()
@@ -142,7 +152,7 @@ public class SpecialWeapon : MonoBehaviour
         }
     }
 
-     private void PlaySwordSwingSound()
+    private void PlaySwordSwingSound()
     {
         if (swordSwingSound != null && audioSource != null)
         {
@@ -152,7 +162,7 @@ public class SpecialWeapon : MonoBehaviour
 
     private void PlaySpearThrustSound()
     {
-        if (swordSwingSound != null && audioSource != null)
+        if (spearThrustSound != null && audioSource != null)
         {
             audioSource.PlayOneShot(spearThrustSound); 
         }

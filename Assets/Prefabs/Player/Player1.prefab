@@ -15828,20 +15828,11 @@ MonoBehaviour:
   bigSword: {fileID: 3131349570624323539}
   bigSpear: {fileID: 2422993599085478142}
   specialWeaponAttacks: 5
-  fire:
-    m_Name: Fire
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 08836e3a-30d5-4134-8e4e-1c1fed97b2b0
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
   baseWeapon: {fileID: 7790897372868414741}
   weaponPickupsInRange: []
   attackCooldown: 0
-  swordSwingSound: {fileID: 0}
-  spearThrustSound: {fileID: 0}
+  swordSwingSound: {fileID: 8300000, guid: dec3f8a6d31d51c4995341d391828895, type: 3}
+  spearThrustSound: {fileID: 8300000, guid: e7a66464d458314458ccc300d36134b0, type: 3}
 --- !u!82 &5284485026496525295
 AudioSource:
   m_ObjectHideFlags: 0
