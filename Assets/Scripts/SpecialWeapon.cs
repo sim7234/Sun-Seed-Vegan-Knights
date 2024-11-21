@@ -33,6 +33,7 @@ public class SpecialWeapon : MonoBehaviour
     private AudioClip spearThrustSound;
 
     private AudioSource audioSource; 
+    
 
     private void Awake()
     {
