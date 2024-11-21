@@ -7,7 +7,7 @@ public class MissionMaster : MonoBehaviour
 {
     public static MissionMaster Instance;
 
-    private int enemyCounter;
+    [HideInInspector] public int enemyCounter;
 
     [SerializeField]
     private TextMeshProUGUI enemyCounterText;

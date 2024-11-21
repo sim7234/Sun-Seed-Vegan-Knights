@@ -9,12 +9,10 @@ public class Menu : MonoBehaviour
     Camera camera;
     
 
-    [SerializeField] TMPro.TMP_Text howToJoinText;
     [SerializeField] GameObject[] buttons;
     [SerializeField] GameObject backToMenu;
     private void Start()
     {
-        howToJoinText.enabled = false;
         camera = Camera.main;
     }
 
@@ -26,7 +24,6 @@ public class Menu : MonoBehaviour
 
     public void pressedSelectPlayers()
     {
-        howToJoinText.enabled = true;
         camera.transform.position = new Vector3(0, 8.5f, -10);
         changeButtonState();
         backToMenu.SetActive(true);
@@ -42,6 +39,12 @@ public class Menu : MonoBehaviour
         {
             Application.Quit();
         }
+    }
+
+
+    public void pressedTutorial()
+    {
+        SceneManager.LoadScene(4);
     }
 
     public void pressedBackToMenu()
