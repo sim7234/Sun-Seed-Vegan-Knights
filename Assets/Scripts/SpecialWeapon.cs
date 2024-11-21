@@ -113,14 +113,14 @@ public class SpecialWeapon : MonoBehaviour
             if (weaponPickupsInRange[0].GetComponent<WeaponPickup>().GetWeaponType() == WeaponType.Sword)
             {
                 bigSword.SetActive(true);
-                bigSpear.SetActive(false);
+                bigSpear.SetActive(false);   
 
                 specialWeaponAttacks = 5;
             }
             else if (weaponPickupsInRange[0].GetComponent<WeaponPickup>().GetWeaponType() == WeaponType.Spear)
             {
-                bigSword.SetActive(true);   
-                bigSpear.SetActive(false);
+                bigSpear.SetActive(true);   
+                bigSword.SetActive(false);
                 specialWeaponAttacks = 10;
             }
             
@@ -140,7 +140,7 @@ public class SpecialWeapon : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<WeaponPickup>() != null)
+        if (collision.GetComponent<WeaponPickup>() != null && collision.CompareTag("WeaponPickup"))
         {
             weaponPickupsInRange.Add(collision.gameObject);
             
@@ -149,9 +149,12 @@ public class SpecialWeapon : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.GetComponent<WeaponPickup>() != null)
+        if (collision.GetComponent<WeaponPickup>() != null && collision.CompareTag("WeaponPickup"))
         {
-            weaponPickupsInRange.Remove(collision.gameObject);
+            if(weaponPickupsInRange.Contains(collision.gameObject))
+            {
+                weaponPickupsInRange.Remove(collision.gameObject);
+            }
         }
     }
 

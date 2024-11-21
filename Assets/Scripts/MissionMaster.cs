@@ -48,12 +48,15 @@ public class MissionMaster : MonoBehaviour
             audioSource = gameObject.AddComponent<AudioSource>();
         }
 
-        if (Objectives.Count >= combatsComplete)
+        if(Objectives.Count > 1)
         {
-            if (Objectives[combatsComplete] != null)
+            if (Objectives.Count >= combatsComplete)
             {
-                Objectives[combatsComplete].SetActive(true);
-                Objectives[combatsComplete].GetComponent<Objective>().StartObjectiveEvent();
+                if (Objectives[combatsComplete] != null)
+                {
+                    Objectives[combatsComplete].SetActive(true);
+                    Objectives[combatsComplete].GetComponent<Objective>().StartObjectiveEvent();
+                }
             }
         }
     }
@@ -85,7 +88,10 @@ public class MissionMaster : MonoBehaviour
         {
             SceneManager.LoadScene(0);
         }
-        StartCoroutine(MoveCameraToNextPoint(cam.transform.position, combatPoints[combatsComplete].transform.position));
+        if(combatsComplete < combatPoints.Count)
+        {
+            StartCoroutine(MoveCameraToNextPoint(cam.transform.position, combatPoints[combatsComplete].transform.position));
+        }
         Debug.Log("New stage, camera moves");
     }
 

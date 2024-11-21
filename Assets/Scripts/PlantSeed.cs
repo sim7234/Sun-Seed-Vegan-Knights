@@ -14,6 +14,10 @@ public class PlantSeed : MonoBehaviour
     private PlayerInput playerInput;
     private InputAction plantSeedAction;
 
+    [SerializeField]
+    private float plantSpeed = 1;
+    private float plantingTimer;
+
     private void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
@@ -22,6 +26,10 @@ public class PlantSeed : MonoBehaviour
     private void Start()
     {
         Invoke(nameof(SelectSeed), 0.2f);
+    }
+    private void Update()
+    {
+        plantingTimer -= Time.deltaTime;
     }
     private void SelectSeed()
     {
@@ -57,20 +65,24 @@ public class PlantSeed : MonoBehaviour
 
     private void OnPlantSeedPerformed(InputAction.CallbackContext context)
     {
-        switch (currentType)
+        if (plantingTimer <= 0)
         {
-            case WeaponType.Sword:
-                Instantiate(seedTypes[0], transform.position, Quaternion.identity);
-                break;
-            case WeaponType.Spear:
-                Instantiate(seedTypes[1], transform.position, Quaternion.identity);
-                break;
-            case WeaponType.Turret:
-                Instantiate(seedTypes[2], transform.position, Quaternion.identity);
-                break;
-            case WeaponType.Bomb:
-                Instantiate(seedTypes[3], transform.position, Quaternion.identity);
-                break;
+            switch (currentType)
+            {
+                case WeaponType.Sword:
+                    Instantiate(seedTypes[0], transform.position, Quaternion.identity);
+                    break;
+                case WeaponType.Spear:
+                    Instantiate(seedTypes[1], transform.position, Quaternion.identity);
+                    break;
+                case WeaponType.Turret:
+                    Instantiate(seedTypes[2], transform.position, Quaternion.identity);
+                    break;
+                case WeaponType.Bomb:
+                    Instantiate(seedTypes[3], transform.position, Quaternion.identity);
+                    break;
+            }
+            plantingTimer = plantSpeed;
         }
     }
 
@@ -79,9 +91,9 @@ public class PlantSeed : MonoBehaviour
         if (collision.GetComponent<WeaponPickup>() != null)
         {
             currentType = collision.GetComponent<WeaponPickup>().type;
-            
+
             int playerIndex = GetComponent<PlayerMovement>().playerIndex;
-            if ( playerIndex == 1 || playerIndex == 0)
+            if (playerIndex == 1 || playerIndex == 0)
             {
                 SaveData.Instance.seedType = currentType;
             }

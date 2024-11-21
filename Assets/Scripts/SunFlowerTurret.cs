@@ -53,9 +53,10 @@ public class SunFlowerTurret : MonoBehaviour
                 sunHeadAnimator.SetTrigger("Fire");
                 Invoke(nameof(ShootUp), 1f);
                 StartCoroutine(ShootAtTarget(target));
+                yield return new WaitForSeconds(shootInterval);
             }
 
-            yield return new WaitForSeconds(shootInterval);
+                yield return new WaitForSeconds(0.5f);
         }
     }
 
