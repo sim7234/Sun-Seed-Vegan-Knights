@@ -75,6 +75,7 @@ public class Health : MonoBehaviour
         {
             MissionMaster.Instance.EnemyKilled();
         }
+        Screenshake.Instance.Shake(2.0f, 0.2f, 1.0f);
         Destroy(gameObject);
     }
     public float GetCurrentHealth()

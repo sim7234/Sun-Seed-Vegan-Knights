@@ -14,6 +14,7 @@ public class DeathLaser : MonoBehaviour
 
     private NavMeshAgent agent;
 
+    [SerializeField]
     private List<GameObject> targets = new List<GameObject>();
 
     private float hitsperSecond;
@@ -24,16 +25,26 @@ public class DeathLaser : MonoBehaviour
     private void Update()
     {
         hitsperSecond -= Time.deltaTime;
-        if (targets.Count > 0 && hitsperSecond <= 0)
+        if (targets.Count > 0)
         {
-            hitsperSecond = 0.1f;
-            agent.destination = targets[0].transform.position;
-            foreach (GameObject go in targets)
+            for (int i = 0; i < targets.Count; i++)
             {
-                if (Vector3.Distance(go.transform.position, transform.position) <= damageRange)
+                if (targets[i] == null)
                 {
-                    go.GetComponent<Health>().TakeDamage(damage * Time.deltaTime * 10);
+                    targets.RemoveAt(i);
                 }
+            }
+            agent.destination = targets[0].transform.position;
+            if (hitsperSecond <= 0)
+            {
+                for (int i = 0; i < targets.Count; i++)
+                {
+                    if (Vector3.Distance(targets[i].transform.position, transform.position) <= damageRange)
+                    {
+                        targets[i].GetComponent<Health>().TakeDamage(damage * Time.deltaTime * 10);
+                    }
+                }
+                hitsperSecond = 0.1f;
             }
         }
 

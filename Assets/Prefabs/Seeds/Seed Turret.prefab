@@ -152,7 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   growTime: 5
   waterCost: 2
-  seedObject: {fileID: 713874338375168470, guid: cca09f30297c5f64d93ff3ed7d6bafdc, type: 3}
+  seedObject: {fileID: 713874338375168470, guid: 3914ba3403ed55d47986c4128c354eeb, type: 3}
   inSun: 0
   displayCostText: {fileID: 4664746600361137346}
   growingEffect: {fileID: 6193921703186707197}
