@@ -9,6 +9,7 @@ public class SmallSwordEffects : MonoBehaviour
     {
         if (thrustTrail != null)
         {
+            thrustTrail.SetActive(false);
             thrustTrail.SetActive(true);
             Debug.Log("Sword trail activated");
         }

@@ -5,16 +5,17 @@ public class BigSwordEffects : MonoBehaviour
     [SerializeField]
     private GameObject swordTrails;
 
-    public void ActivateSwordTrail()
+    public void ActivateBigSwordTrail()
     {
         if (swordTrails != null)
         {
+            swordTrails.SetActive(false);
             swordTrails.SetActive(true);
             Debug.Log("Sword trail activated");
         }
     }
 
-    public void DeactivateSwordTrail()
+    public void DeactivateBigSwordTrail()
     {
         if (swordTrails != null)
         {

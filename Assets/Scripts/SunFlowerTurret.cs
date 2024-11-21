@@ -27,6 +27,9 @@ public class SunFlowerTurret : MonoBehaviour
     private Animator sunHeadAnimator;
 
     [SerializeField]
+    private GameObject sunGatheringEffect;
+
+    [SerializeField]
     private AudioClip nastyGirl;
 
     private AudioSource nastyGirlSource;
@@ -50,6 +53,7 @@ public class SunFlowerTurret : MonoBehaviour
 
             if (target != null)
             {
+                sunGatheringEffect.SetActive(false);
                 sunHeadAnimator.SetTrigger("Fire");
                 Invoke(nameof(ShootUp), 1f);
                 StartCoroutine(ShootAtTarget(target));
@@ -86,6 +90,7 @@ public class SunFlowerTurret : MonoBehaviour
         GameObject projectile = Instantiate(shootUpVisual, transform.position, Quaternion.identity);
         Destroy(projectile, 3);
         nastyGirlSource.PlayOneShot(nastyGirl);
+        
     }
     private IEnumerator ShootAtTarget(GameObject target)
     {
@@ -93,6 +98,9 @@ public class SunFlowerTurret : MonoBehaviour
         GameObject projectile = Instantiate(projectilePrefab, target.transform.position, Quaternion.identity);
         Destroy(projectile, 10);
         Debug.Log("Shooting Enemy");
+
+        yield return new WaitForSeconds(10);
+        sunGatheringEffect.SetActive(true);
     }
 
     private void OnDestroy()
