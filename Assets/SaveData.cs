@@ -17,23 +17,6 @@ public class SaveData : MonoBehaviour
 
     private void Awake()
     {
-        if (player1 != null)
-        {
-            Pathfinding.totalTargets++;
-        }
-        if (player2 != null)
-        {
-            Pathfinding.totalTargets++;
-        }
-        if (player3 != null)
-        {
-            Pathfinding.totalTargets++;
-        }
-        if (player4 != null)
-        {
-            Pathfinding.totalTargets++;
-        }
-
 
         if (Instance == null)
         {

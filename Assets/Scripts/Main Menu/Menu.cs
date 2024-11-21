@@ -18,8 +18,8 @@ public class Menu : MonoBehaviour
 
     public void pressedPlay()
     {
-        //loads Game scene
-        SceneManager.LoadScene(2);
+        //loads Hub scene
+        SceneManager.LoadScene(0);
     }
 
     public void pressedSelectPlayers()

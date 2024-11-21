@@ -8,13 +8,16 @@ public class Pathfinding : MonoBehaviour
 
     NavMeshAgent agent;
 
-    [HideInInspector] public static int totalTargets;
+    [HideInInspector] public int totalTargets;
 
     [HideInInspector] public int finalTarget;
 
     [HideInInspector] public bool followTarget = true;
 
-  
+    private void Awake()
+    {
+        
+    }
 
     private void Start()
     {
