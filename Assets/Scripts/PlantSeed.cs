@@ -18,9 +18,33 @@ public class PlantSeed : MonoBehaviour
     {
         playerInput = GetComponent<PlayerInput>();
         plantSeedAction = playerInput.actions["PlantSeed"];
-        currentType = SaveData.Instance.seedType;
     }
-
+    private void Start()
+    {
+        Invoke(nameof(SelectSeed), 0.2f);
+    }
+    private void SelectSeed()
+    {
+        int playerIndex = GetComponent<PlayerMovement>().playerIndex;
+        if (playerIndex == 1)
+        {
+            currentType = SaveData.Instance.seedType;
+            Debug.Log("player 1 seed selected");
+        }
+        else if (playerIndex == 2)
+        {
+            currentType = SaveData.Instance.seedType2;
+            Debug.Log("player 2 seed selected");
+        }
+        else if (playerIndex == 3)
+        {
+            currentType = SaveData.Instance.seedType3;
+        }
+        else if (playerIndex == 4)
+        {
+            currentType = SaveData.Instance.seedType4;
+        }
+    }
     private void OnEnable()
     {
         plantSeedAction.performed += OnPlantSeedPerformed;
@@ -54,8 +78,25 @@ public class PlantSeed : MonoBehaviour
     {
         if (collision.GetComponent<WeaponPickup>() != null)
         {
+            
             currentType = collision.GetComponent<WeaponPickup>().type;
-            SaveData.Instance.seedType = currentType;
+            int playerIndex = GetComponent<PlayerMovement>().playerIndex;
+            if ( playerIndex == 1)
+            {
+                SaveData.Instance.seedType = currentType;
+            }
+            else if (playerIndex == 2)
+            {
+                SaveData.Instance.seedType2 = currentType;
+            }
+            else if (playerIndex == 3)
+            {
+                SaveData.Instance.seedType3 = currentType;
+            }
+            else if (playerIndex == 4)
+            {
+                SaveData.Instance.seedType4 = currentType;
+            }
         }
     }
 }

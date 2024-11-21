@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 public class PlayerJoined : MonoBehaviour
 {
 
-
 public void OnPlayerJoined(PlayerInput playerInput)
 {
     Debug.Log("OnPlayerJoined called.");

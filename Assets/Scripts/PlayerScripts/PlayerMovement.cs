@@ -2,6 +2,7 @@ using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -36,10 +37,16 @@ public class PlayerMovement : MonoBehaviour
     private AudioSource audioSource;
     private bool isMoving;
 
+    //Save data stuff
+    public int playerIndex;
+
     private void Start()
     {
         var playerInput = GetComponent<PlayerInput>();
         Debug.Log($"Player {playerInput.playerIndex} has joined.");
+
+        SaveData.Instance.playerAmount++;
+       
     }
 
     private void Awake()
