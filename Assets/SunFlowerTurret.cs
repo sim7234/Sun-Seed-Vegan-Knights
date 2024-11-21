@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class SunFlowerTurret : MonoBehaviour
 {
 
     [SerializeField]
     private GameObject projectilePrefab;
+
+    [SerializeField]
+    private GameObject shootUpVisual;
 
     [SerializeField]
     private float shootInterval = 2.0f;
@@ -19,7 +23,8 @@ public class SunFlowerTurret : MonoBehaviour
 
     private bool isActive;
 
-
+    [SerializeField]
+    private Animator sunHeadAnimator;
 
     public void ActivateShooting()
     {
@@ -40,7 +45,9 @@ public class SunFlowerTurret : MonoBehaviour
 
             if (target != null)
             {
-                ShootAtTarget(target);
+                sunHeadAnimator.SetTrigger("Fire");
+                Invoke(nameof(ShootUp), 1f);
+                StartCoroutine(ShootAtTarget(target));
             }
 
             yield return new WaitForSeconds(shootInterval);
@@ -68,10 +75,17 @@ public class SunFlowerTurret : MonoBehaviour
         return nearestEnemy;
     }
 
-    private void ShootAtTarget(GameObject target)
+    private void ShootUp()
     {
+        GameObject projectile = Instantiate(shootUpVisual, transform.position, Quaternion.identity);
+        Destroy(projectile, 3);
+        
+    }
+    private IEnumerator ShootAtTarget(GameObject target)
+    {
+        yield return new WaitForSeconds(2);
         GameObject projectile = Instantiate(projectilePrefab, target.transform.position, Quaternion.identity);
-        Destroy(projectile, 5);
+        Destroy(projectile, 3);
         Debug.Log("Shooting Enemy");
     }
 
