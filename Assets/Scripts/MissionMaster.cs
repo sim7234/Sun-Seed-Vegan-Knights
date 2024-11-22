@@ -42,7 +42,7 @@ public class MissionMaster : MonoBehaviour
     private void Start()
     {
         combatsComplete = 0;
-        combatSpawnObject[0].SetActive(true);
+       
 
          
         audioSource = GetComponent<AudioSource>();
@@ -122,9 +122,10 @@ public class MissionMaster : MonoBehaviour
         
         while (remainingTime > 0)
         {
-            countdownText.SetText($"Prepare for battle: {remainingTime:F1} seconds");
-            yield return new WaitForSeconds(0.1f);
-            combatSpawnObject[combatIndex].SetActive(true);
+            Debug.Log(remainingTime);
+            countdownText.SetText("Prepare for battle: " +  Mathf.FloorToInt(remainingTime).ToString());
+            yield return new WaitForEndOfFrame();
+            remainingTime -= Time.deltaTime;
         }
 
         countdownText.SetText(""); 
