@@ -47,7 +47,10 @@ public class Health : MonoBehaviour
             baseColor = characterSprite.color;
         }
 
-        StartCoroutine(BlinkOnHit());
+        if(gameObject.activeSelf)
+        {
+            StartCoroutine(BlinkOnHit());
+        }
         GameObject newBlood = Instantiate(bloodOnHit, transform.position, Quaternion.identity);
         Destroy(newBlood, 0.8f);
         audioSource.pitch = Random.Range(0.90f, 1.1f);

@@ -500,7 +500,7 @@ AnimationClip:
     floatParameter: 10
     intParameter: 0
     messageOptions: 0
-  - time: 0.38333333
+  - time: 0.55
     functionName: ActivateSwordTrail
     data: 
     objectReferenceParameter: {fileID: 0}
