@@ -55,6 +55,7 @@ public class SunFlowerTurret : MonoBehaviour
             {
                 sunGatheringEffect.SetActive(false);
                 sunHeadAnimator.SetTrigger("Fire");
+                
                 Invoke(nameof(ShootUp), 1f);
                 StartCoroutine(ShootAtTarget(target));
                 yield return new WaitForSeconds(shootInterval);
@@ -87,10 +88,10 @@ public class SunFlowerTurret : MonoBehaviour
 
     private void ShootUp()
     {
+        Screenshake.Instance.Shake(0.15f, 3, 5);
         GameObject projectile = Instantiate(shootUpVisual, transform.position, Quaternion.identity);
         Destroy(projectile, 3);
         nastyGirlSource.PlayOneShot(nastyGirl);
-        
     }
     private IEnumerator ShootAtTarget(GameObject target)
     {
