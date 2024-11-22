@@ -18,9 +18,26 @@ public class DeathLaser : MonoBehaviour
     private List<GameObject> targets = new List<GameObject>();
 
     private float hitsperSecond;
+
+    [SerializeField]
+    private GameObject NormalVfx;
+    [SerializeField]
+    private GameObject EpelepticFreindlyVerison;
+    
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        if(SaveData.Instance.epelepticFilterOn)
+        {
+            EpelepticFreindlyVerison.SetActive(true);
+            NormalVfx.SetActive(false);
+        }
+        else
+        {
+            EpelepticFreindlyVerison.SetActive(false);
+            NormalVfx.SetActive(true);
+
+        }
     }
     private void Update()
     {

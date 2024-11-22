@@ -24,6 +24,10 @@ public class Health : MonoBehaviour
     private Color baseColor;
 
     private NavMeshAgent agent;
+
+    [SerializeField]
+    public bool EpelepticFilterOn;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -34,6 +38,8 @@ public class Health : MonoBehaviour
         {
             agent = GetComponent<NavMeshAgent>();
         }
+
+        EpelepticFilterOn = SaveData.Instance.epelepticFilterOn;
     }
 
     public void TakeDamage(float damageAmount)
@@ -75,7 +81,9 @@ public class Health : MonoBehaviour
         {
             MissionMaster.Instance.EnemyKilled();
         }
+
         Screenshake.Instance.Shake(2.0f, 0.2f, 1.0f);
+        
         if (gameObject.CompareTag("Player"))
         {
             this.gameObject.SetActive(false);
@@ -102,8 +110,11 @@ public class Health : MonoBehaviour
 
     private IEnumerator BlinkOnHit()
     {
-        characterSprite.color = Color.red;
-        yield return new WaitForSeconds(0.01f);
-        characterSprite.color = baseColor;
+        if(!EpelepticFilterOn)
+        {
+            characterSprite.color = Color.red;
+            yield return new WaitForSeconds(0.01f);
+            characterSprite.color = baseColor;
+        }
     }
 }

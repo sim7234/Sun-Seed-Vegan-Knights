@@ -712,15 +712,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e5e6a50a5055c2a42a7405ff66f8fc95, type: 2}
+  m_sharedMaterial: {fileID: 8760632212996779936, guid: e5e6a50a5055c2a42a7405ff66f8fc95, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190335
-  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
+    rgba: 4289329328
+  m_fontColor: {r: 0.6896872, g: 0.9716981, b: 0.66460484, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2510,6 +2510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50f87495cf82f2e49aff5aa121c54028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EpelepticFilterOn: 1
 --- !u!1 &852305281
 GameObject:
   m_ObjectHideFlags: 0
@@ -5660,6 +5661,10 @@ PrefabInstance:
     - target: {fileID: 8965027930231287057, guid: b79c589b57bef7e4e85ed853ae3a9f8e, type: 3}
       propertyPath: m_Name
       value: Grid
+      objectReference: {fileID: 0}
+    - target: {fileID: 8965027930231287057, guid: b79c589b57bef7e4e85ed853ae3a9f8e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

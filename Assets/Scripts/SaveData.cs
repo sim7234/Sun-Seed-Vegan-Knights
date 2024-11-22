@@ -15,7 +15,8 @@ public class SaveData : MonoBehaviour
     public GameObject player3;
     public GameObject player4;
 
-
+    [SerializeField]
+    public bool epelepticFilterOn;
     private void Awake()
     {
       

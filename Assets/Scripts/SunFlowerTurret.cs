@@ -88,7 +88,7 @@ public class SunFlowerTurret : MonoBehaviour
 
     private void ShootUp()
     {
-        Screenshake.Instance.Shake(0.15f, 3, 5);
+        Screenshake.Instance.Shake(0.02f, 3, 5);
         GameObject projectile = Instantiate(shootUpVisual, transform.position, Quaternion.identity);
         Destroy(projectile, 3);
         nastyGirlSource.PlayOneShot(nastyGirl);

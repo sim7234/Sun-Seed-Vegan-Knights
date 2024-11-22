@@ -11,6 +11,9 @@ public class Screenshake : MonoBehaviour
     float magnitude, time, priority;
     float startMagnitude, startTime, startPriority;
 
+    [SerializeField]
+    public bool EpelepticFilterOn;
+
     private void Awake()
     {
         Instance = this;
@@ -19,11 +22,12 @@ public class Screenshake : MonoBehaviour
     private void Start()
     {
         startPos = transform.localPosition;
+        EpelepticFilterOn = SaveData.Instance.epelepticFilterOn;
     }
 
     public void Shake(float magnitude, float time, float priority)
     {
-        if(priority > this.priority)
+        if (priority > this.priority)
         {
             startMagnitude = magnitude;
             startTime = time;
@@ -34,7 +38,7 @@ public class Screenshake : MonoBehaviour
 
     public void Shake(float magnitude, float time)
     {
-        if(1 > priority)
+        if (1 > priority)
         {
             startMagnitude = magnitude;
             startTime = time;
@@ -51,32 +55,34 @@ public class Screenshake : MonoBehaviour
 
     private void Update()
     {
-        if(startTime == 0)
+        if (!EpelepticFilterOn)
         {
-            return;
-        }
+            if (startTime == 0)
+            {
+                return;
+            }
 
-        if(time > 0)
-        {
-            time -= Time.deltaTime / startTime;
-            priority = Mathf.Lerp(startPriority, 0, 1-(time / startTime));
-            magnitude = Mathf.Lerp(startMagnitude, 0, 1-(time / startTime));
-        }
-        else
-        {
-            time = 0;
-            magnitude = 0;
-            priority = 0;
-        }
+            if (time > 0)
+            {
+                time -= Time.deltaTime / startTime;
+                priority = Mathf.Lerp(startPriority, 0, 1 - (time / startTime));
+                magnitude = Mathf.Lerp(startMagnitude, 0, 1 - (time / startTime));
+            }
+            else
+            {
+                time = 0;
+                magnitude = 0;
+                priority = 0;
+            }
 
-        if(time > 0)
-        {
-            transform.localPosition = startPos + (Vector3)Random.insideUnitCircle * magnitude;
+            if (time > 0)
+            {
+                transform.localPosition = startPos + (Vector3)Random.insideUnitCircle * magnitude;
+            }
+            else
+            {
+                transform.localPosition = startPos;
+            }
         }
-        else
-        {
-            transform.localPosition = startPos;
-        }
-
     }
 }
