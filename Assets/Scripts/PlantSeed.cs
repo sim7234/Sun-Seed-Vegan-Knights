@@ -19,7 +19,7 @@ public class PlantSeed : MonoBehaviour
     private float plantingTimer;
 
     [SerializeField]
-    private float plantingCooldown = 0.2f; // cd  before u can water
+    private float plantingCooldown = 0.2f; // cd before u can water
     private bool recentlyPlanted = false;
 
     private void Awake()
