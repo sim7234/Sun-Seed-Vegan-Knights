@@ -31,6 +31,9 @@ public class MissionMaster : MonoBehaviour
 
     private AudioSource audioSource; 
 
+    [SerializeField]
+    private TextMeshProUGUI countdownText;
+
     private void Awake()
     {
         Instance = this;
@@ -47,6 +50,8 @@ public class MissionMaster : MonoBehaviour
         {
             audioSource = gameObject.AddComponent<AudioSource>();
         }
+
+        StartCoroutine(ActivateCombatAfterDelay(10f, 0));
 
         if(Objectives.Count > 1)
         {
@@ -108,19 +113,29 @@ public class MissionMaster : MonoBehaviour
         }
 
         cam.transform.position = end;
-        StartNextCombat();
+        StartCoroutine(ActivateCombatAfterDelay(10f, combatsComplete));
     }
-    private void StartNextCombat()
+    private IEnumerator ActivateCombatAfterDelay(float delay, int combatIndex)
     {
-        combatSpawnObject[combatsComplete].SetActive(true);
+        float remainingTime = delay;
+
         
+        while (remainingTime > 0)
+        {
+            countdownText.SetText($"Prepare for battle: {remainingTime:F1} seconds");
+            yield return new WaitForSeconds(0.1f);
+            combatSpawnObject[combatIndex].SetActive(true);
+        }
+
+        countdownText.SetText(""); 
+        combatSpawnObject[combatIndex].SetActive(true);
     }
 
     private void PlayStageCompleteSound()
     {
         if (stageCompleteSound != null && audioSource != null)
         {
-            audioSource.PlayOneShot(stageCompleteSound); // Play the sound
+            audioSource.PlayOneShot(stageCompleteSound); 
         }
     }
 }

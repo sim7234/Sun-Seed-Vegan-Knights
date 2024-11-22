@@ -15,6 +15,8 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private int spawnAmount;
 
+    private bool spawnerActive = false;
+
     void Start()
     {
         timer = spawnInterval;
@@ -26,14 +28,16 @@ public class EnemySpawner : MonoBehaviour
 
     void Update()
     {
-        if(spawnOverTime == true)
+        if (!spawnerActive) return;
+
+        if (spawnOverTime)
         {
-            timer -= Time.deltaTime; 
+            timer -= Time.deltaTime;
 
             if (timer <= 0f)
             {
                 SpawnEnemy();
-                timer = spawnInterval; 
+                timer = spawnInterval;
             }
 
             if (Input.GetKeyDown(KeyCode.J))
@@ -41,6 +45,11 @@ public class EnemySpawner : MonoBehaviour
                 SpawnEnemy();
             }
         }
+    }
+
+    public void StartSpawner()
+    {
+        spawnerActive = true;
     }
 
     void SpawnWave(int amount)

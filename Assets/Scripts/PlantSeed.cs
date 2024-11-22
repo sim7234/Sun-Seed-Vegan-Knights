@@ -18,6 +18,10 @@ public class PlantSeed : MonoBehaviour
     private float plantSpeed = 1;
     private float plantingTimer;
 
+    [SerializeField]
+    private float plantingCooldown = 0.2f; // cd  before u can water
+    private bool recentlyPlanted = false;
+
     private void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
@@ -67,6 +71,9 @@ public class PlantSeed : MonoBehaviour
     {
         if (plantingTimer <= 0)
         {
+            recentlyPlanted = true;
+            StartCoroutine(ResetPlantingFlag());
+
             switch (currentType)
             {
                 case WeaponType.Sword:
@@ -86,6 +93,17 @@ public class PlantSeed : MonoBehaviour
         }
     }
 
+
+    private IEnumerator ResetPlantingFlag()
+    {
+        yield return new WaitForSeconds(plantingCooldown);
+        recentlyPlanted = false;
+    }
+
+    public bool IsRecentlyPlanted()
+    {
+        return recentlyPlanted;
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<WeaponPickup>() != null && !collision.gameObject.CompareTag("WeaponPickup"))

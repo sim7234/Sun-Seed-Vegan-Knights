@@ -27,6 +27,7 @@ public class PlayerWater : MonoBehaviour
     private UnityEvent onWaterPerformed;
     [SerializeField]
     private UnityEvent onWaterGained;
+    private PlantSeed plantSeed;
 
     private void Awake()
     {
@@ -35,6 +36,8 @@ public class PlayerWater : MonoBehaviour
         {
             waterAction = playerInput.actions["Water"];
         }
+
+        plantSeed = GetComponent<PlantSeed>();
     }
 
     private void OnEnable()
@@ -79,6 +82,13 @@ public class PlayerWater : MonoBehaviour
 
     public void OnWater(InputAction.CallbackContext context)
     {
+
+        if (plantSeed != null && plantSeed.IsRecentlyPlanted())
+        {
+            Debug.Log("CD on watering!");
+            return;
+        }
+
         if (seedInRange.Count >= 1)
         {
             for (int i = 0; i < seedInRange.Count; i++)
