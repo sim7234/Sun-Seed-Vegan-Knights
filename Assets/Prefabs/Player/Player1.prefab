@@ -25574,7 +25574,7 @@ MonoBehaviour:
   - {fileID: 5337573941991948235, guid: 9c4eecefc5627bf49be4da99ad0445f2, type: 3}
   currentType: 1
   plantSpeed: 1
-  plantingCooldown: 0.8
+  plantingCooldown: 0.3
 --- !u!114 &4088991493060879705
 MonoBehaviour:
   m_ObjectHideFlags: 0
