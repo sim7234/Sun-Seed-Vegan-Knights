@@ -120,7 +120,6 @@ public class MissionMaster : MonoBehaviour
         
         while (remainingTime > 0)
         {
-            Debug.Log(remainingTime);
             countdownText.SetText("Prepare for battle: " +  Mathf.FloorToInt(remainingTime).ToString());
             yield return new WaitForEndOfFrame();
             remainingTime -= Time.deltaTime;
