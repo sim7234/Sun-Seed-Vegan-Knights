@@ -11,22 +11,11 @@ public class Menu : MonoBehaviour
 
     [SerializeField] GameObject[] buttons;
     [SerializeField] GameObject backToMenu;
-    private void Start()
-    {
-        camera = Camera.main;
-    }
 
     public void pressedPlay()
     {
         //loads Hub scene
         SceneManager.LoadScene(0);
-    }
-
-    public void pressedSelectPlayers()
-    {
-        camera.transform.position = new Vector3(0, 8.5f, -10);
-        changeButtonState();
-        backToMenu.SetActive(true);
     }
 
     public void pressedQuit()
@@ -41,16 +30,9 @@ public class Menu : MonoBehaviour
         }
     }
 
-
     public void pressedTutorial()
     {
         SceneManager.LoadScene(4);
-    }
-
-    public void pressedBackToMenu()
-    {
-        camera.transform.position = new Vector3(0,0,-10);
-        backToMenu.SetActive(false);
     }
 
     void changeButtonState()

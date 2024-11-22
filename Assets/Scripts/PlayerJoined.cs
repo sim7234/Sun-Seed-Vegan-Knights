@@ -11,11 +11,11 @@ public class PlayerJoined : MonoBehaviour
         
         DontDestroyOnLoad(playerInput.gameObject);
 
-        if (playerInput.currentControlScheme == "Keyboard")
+        if (playerInput.currentControlScheme == "Control")
         {
-            playerInput.SwitchCurrentActionMap("KeyboardActions1");
+            playerInput.SwitchCurrentActionMap("ControlActions1");
         }
-        else if (playerInput.currentControlScheme == "Control")
+        else if (playerInput.currentControlScheme == "Keyboard")
         {
             playerInput.SwitchCurrentActionMap("ControlActions1");
         }

@@ -36,7 +36,10 @@ public class Pathfinding : MonoBehaviour
         {
             if (followTarget)
             {
-                agent.SetDestination(target[finalTarget].transform.position);
+                if (target[finalTarget].gameObject != null)
+                {
+                    agent.SetDestination(target[finalTarget].transform.position);
+                }
             }
         }
     }
@@ -48,15 +51,17 @@ public class Pathfinding : MonoBehaviour
 
         for (int i = 0; i < totalTargets; i++)
         {
-
-            Vector3 targetDistence = target[i].transform.position - transform.position;
-            float targetDistenceSquared = targetDistence.sqrMagnitude;
-
-            if (targetDistenceSquared < closestTarget)
+            if (target[i].gameObject != null)
             {
-                closestTarget = targetDistenceSquared;
+                Vector3 targetDistence = target[i].transform.position - transform.position;
+                float targetDistenceSquared = targetDistence.sqrMagnitude;
 
-                finalTarget = i;
+                if (targetDistenceSquared < closestTarget)
+                {
+                    closestTarget = targetDistenceSquared;
+
+                    finalTarget = i;
+                }
             }
 
         }

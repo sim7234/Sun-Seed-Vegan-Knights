@@ -25977,8 +25977,8 @@ MonoBehaviour:
     m_ActionId: f6b11372-3e58-4028-8922-b2e1dbbdb9aa
     m_ActionName: KeyboardActions1/Rotate[/Mouse/position]
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: KeyboardActions1
+  m_DefaultControlScheme: Control
+  m_DefaultActionMap: ControlActions1
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &5228890039750120404
