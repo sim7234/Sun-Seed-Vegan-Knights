@@ -19,10 +19,10 @@ public class SaveData : MonoBehaviour
     public bool epelepticFilterOn;
 
 
-    public Vector2 position1;
-    public Vector2 position2;
-    public Vector2 position3;
-    public Vector2 position4;
+    public GameObject position1;
+    public GameObject position2;
+    public GameObject position3;
+    public GameObject position4;
 
     private void Awake()
     {
@@ -39,30 +39,58 @@ public class SaveData : MonoBehaviour
     }
     public void AddPlayer(GameObject player, int index)
     {
+        Debug.Log("Addplayer");
         switch (index)
         {
             case 0:
                 player1 = player;
-                player1.GetComponent<HPBar>().parent.transform.position = position1;
+                player.GetComponent<HPBar>().parent.transform.position = position1.transform.position;
                 Debug.Log("Move to pos: " + position1);
                 break;
             case 1:
                 player2 = player;
-                player2.GetComponent<HPBar>().parent.transform.position = position2;
+                player.GetComponent<HPBar>().parent.transform.position = position2.transform.position;
                 Debug.Log("Move to pos: " + position2);
                 break;
             case 2:
                 player3 = player;
-                player3.GetComponent<HPBar>().parent.transform.position = position3;
+                player.GetComponent<HPBar>().parent.transform.position = position3.transform.position;
                 Debug.Log("Move to pos: " + position3);
                 break; 
             case 3:
                 player4 = player;
-                player4.GetComponent<HPBar>().parent.transform.position = position4;
+                player.GetComponent<HPBar>().parent.transform.position = position4.transform.position;
                 Debug.Log("Move to pos: " + position4);
                 break;
         }
         DontDestroyOnLoad(player);
     }
-
+    public void FixHud(GameObject player, int index)
+    {
+        Debug.Log("Addplayer");
+        switch (index)
+        {
+            case 0:
+   
+                player.GetComponent<HPBar>().parent.transform.position = position1.transform.position;
+                Debug.Log("Move to pos: " + position1);
+                break;
+            case 1:
+     
+                player.GetComponent<HPBar>().parent.transform.position = position2.transform.position;
+                Debug.Log("Move to pos: " + position2);
+                break;
+            case 2:
+          
+                player.GetComponent<HPBar>().parent.transform.position = position3.transform.position;
+                Debug.Log("Move to pos: " + position3);
+                break;
+            case 3:
+              
+                player.GetComponent<HPBar>().parent.transform.position = position4.transform.position;
+                Debug.Log("Move to pos: " + position4);
+                break;
+        }
+        DontDestroyOnLoad(player);
+    }
 }
