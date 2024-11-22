@@ -26,8 +26,8 @@ public class EnemyHealthDisplay : MonoBehaviour
     {
         if (health.GetCurrentHealth() / health.maxHealth <= 0.80f)
         {
-            Debug.Log(health.GetCurrentHealth() / health.maxHealth);
-            Debug.Log("SlightlyDamged");
+            //Debug.Log(health.GetCurrentHealth() / health.maxHealth);
+            //Debug.Log("SlightlyDamged");
             sprite.color = slightlyDamaged;
         }
         if (health.GetCurrentHealth() / health.maxHealth <= 0.50f)

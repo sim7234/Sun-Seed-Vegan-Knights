@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         var playerInput = GetComponent<PlayerInput>();
-        Debug.Log($"Player {playerInput.playerIndex} has joined.");
+        //Debug.Log($"Player {playerInput.playerIndex} has joined.");
 
         SaveData.Instance.playerAmount++;
         playerIndex = SaveData.Instance.playerAmount;

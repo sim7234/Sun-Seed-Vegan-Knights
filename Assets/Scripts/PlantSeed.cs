@@ -41,12 +41,12 @@ public class PlantSeed : MonoBehaviour
         if (playerIndex == 1)
         {
             currentType = SaveData.Instance.seedType;
-            Debug.Log("player 1 seed selected");
+            //Debug.Log("player 1 seed selected");
         }
         else if (playerIndex == 2)
         {
             currentType = SaveData.Instance.seedType2;
-            Debug.Log("player 2 seed selected");
+            //Debug.Log("player 2 seed selected");
         }
         else if (playerIndex == 3)
         {

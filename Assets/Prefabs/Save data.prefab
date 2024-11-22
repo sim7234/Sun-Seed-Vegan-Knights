@@ -44,8 +44,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a696f6fa71afaa40a89c497349ee5eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerAmount: 0
+  seedType: 3
+  seedType2: 0
+  seedType3: 0
+  seedType4: 0
   player1: {fileID: 0}
   player2: {fileID: 0}
   player3: {fileID: 0}
   player4: {fileID: 0}
-  playerAmount: 0
+  epelepticFilterOn: 1
+  position1: {x: -266, y: -144}
+  position2: {x: -79, y: -144}
+  position3: {x: 108, y: -144}
+  position4: {x: 294, y: -144}

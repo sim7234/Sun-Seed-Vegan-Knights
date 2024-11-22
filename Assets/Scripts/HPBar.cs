@@ -7,7 +7,6 @@ public class HPBar : MonoBehaviour
     [SerializeField]
     private Slider hpBar;
 
-    
     private Health health;
 
     public GameObject parent;
