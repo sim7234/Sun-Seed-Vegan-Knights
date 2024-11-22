@@ -125,8 +125,10 @@ public class SpecialWeapon : MonoBehaviour
             }
             
             baseWeapon.SetActive(false);
-
-            Destroy(weaponPickupsInRange[0]);
+            if (weaponPickupsInRange[0] != null)
+            {
+                Destroy(weaponPickupsInRange[0]);
+            }
             weaponPickupsInRange.Clear();
 
             Debug.Log("Special weapon picked up!");

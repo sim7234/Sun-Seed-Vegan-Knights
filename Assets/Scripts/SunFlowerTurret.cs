@@ -95,8 +95,17 @@ public class SunFlowerTurret : MonoBehaviour
     private IEnumerator ShootAtTarget(GameObject target)
     {
         yield return new WaitForSeconds(2);
-        GameObject projectile = Instantiate(projectilePrefab, target.transform.position, Quaternion.identity);
-        Destroy(projectile, 10);
+        GameObject projectile;
+        if (target != null)
+        {
+            projectile = Instantiate(projectilePrefab, target.transform.position, Quaternion.identity);
+            Destroy(projectile, 10);
+        }
+        else
+        {
+            projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+            Destroy(projectile, 10);
+        }
         Debug.Log("Shooting Enemy");
 
         yield return new WaitForSeconds(10);

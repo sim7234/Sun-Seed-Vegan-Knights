@@ -150,8 +150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cfd4c22b737fce48b5cc82658cdf82c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  growTime: 5
-  waterCost: 2
+  growTime: 10
+  waterCost: 3
   seedObject: {fileID: 713874338375168470, guid: 3914ba3403ed55d47986c4128c354eeb, type: 3}
   inSun: 0
   displayCostText: {fileID: 4664746600361137346}
@@ -5096,7 +5096,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 2 Water
+  m_text: 3 Water
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

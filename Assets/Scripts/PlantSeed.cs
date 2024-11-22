@@ -88,7 +88,7 @@ public class PlantSeed : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<WeaponPickup>() != null)
+        if (collision.GetComponent<WeaponPickup>() != null && !collision.gameObject.CompareTag("WeaponPickup"))
         {
             currentType = collision.GetComponent<WeaponPickup>().type;
 

@@ -20191,6 +20191,7 @@ GameObject:
   - component: {fileID: 5045559313448784522}
   - component: {fileID: 8426236993261437812}
   - component: {fileID: 482181376568373884}
+  - component: {fileID: 8166134038670447541}
   m_Layer: 0
   m_Name: BigSword
   m_TagString: Untagged
@@ -20348,6 +20349,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swordTrails: {fileID: 4016091016710159813}
+--- !u!114 &8166134038670447541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3131349570624323539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c1700008e098ae468f3da206c69f3f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockbackStrength: 16
 --- !u!1 &3881251665842698704
 GameObject:
   m_ObjectHideFlags: 0
