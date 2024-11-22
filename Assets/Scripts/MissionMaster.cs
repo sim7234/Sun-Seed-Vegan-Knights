@@ -43,8 +43,6 @@ public class MissionMaster : MonoBehaviour
     {
         combatsComplete = 0;
        
-
-         
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
         {

@@ -10,6 +10,7 @@ public class HPBar : MonoBehaviour
     
     private Health health;
 
+    public GameObject parent;
     private void Start()
     {
         health = GetComponent<Health>();
