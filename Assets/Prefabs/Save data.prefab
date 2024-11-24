@@ -229,7 +229,7 @@ MonoBehaviour:
   player2: {fileID: 0}
   player3: {fileID: 0}
   player4: {fileID: 0}
-  epelepticFilterOn: 1
+  epelepticFilterOn: 0
   position1: {fileID: 7988341549903208997}
   position2: {fileID: 3618063883175773639}
   position3: {fileID: 6590924826189250401}

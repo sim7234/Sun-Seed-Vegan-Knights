@@ -20,14 +20,14 @@ public class Menu : MonoBehaviour
 
     public void pressedQuit()
     {
-        if (Application.isEditor)
-        {
-            UnityEditor.EditorApplication.isPlaying = false;
-        }
-        else
-        {
+        //if (Application.isEditor)
+        //{
+        //    UnityEditor.EditorApplication.isPlaying = false;
+        //}
+        //else
+        //{
             Application.Quit();
-        }
+        //}
     }
 
     public void pressedTutorial()

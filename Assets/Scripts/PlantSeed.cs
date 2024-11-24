@@ -22,6 +22,8 @@ public class PlantSeed : MonoBehaviour
     private float plantingCooldown = 0.2f; // cd before u can water
     private bool recentlyPlanted = false;
 
+    public bool inSun;
+
     private void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
@@ -69,7 +71,7 @@ public class PlantSeed : MonoBehaviour
 
     private void OnPlantSeedPerformed(InputAction.CallbackContext context)
     {
-        if (plantingTimer <= 0)
+        if (plantingTimer <= 0 && GetComponent<PlayerWater>().GetSeedsInRangeCount() == 0 && inSun)
         {
             recentlyPlanted = true;
             StartCoroutine(ResetPlantingFlag());

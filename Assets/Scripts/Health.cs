@@ -28,6 +28,9 @@ public class Health : MonoBehaviour
     [SerializeField]
     public bool EpelepticFilterOn;
 
+    [SerializeField]
+    public bool talkToMissionMaster = true;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -77,7 +80,7 @@ public class Health : MonoBehaviour
     {
         GameObject newDeathEffect = Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(newDeathEffect, 0.8f);
-        if(gameObject.CompareTag("Enemy"))
+        if(gameObject.CompareTag("Enemy") && talkToMissionMaster == true)
         {
             MissionMaster.Instance.EnemyKilled();
         }

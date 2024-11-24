@@ -144,6 +144,11 @@ public class PlayerWater : MonoBehaviour
         }
     }
 
+    public int GetSeedsInRangeCount()
+    {
+        return seedInRange.Count;
+    }
+
     internal void MaxFill()
     {
         totalWater = maxWater;

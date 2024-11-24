@@ -17,6 +17,9 @@ public class EnemySpawner : MonoBehaviour
 
     private bool spawnerActive = false;
 
+    [SerializeField]
+    private bool talkToMissionMaster = true;
+
     void Start()
     {
         timer = spawnInterval;
@@ -62,7 +65,11 @@ public class EnemySpawner : MonoBehaviour
     void SpawnEnemy()
     {
         Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-        Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
-        MissionMaster.Instance.AddEnemy();
+        GameObject newEnemy = Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
+        if(talkToMissionMaster)
+        {
+            MissionMaster.Instance.AddEnemy();
+        }
+        newEnemy.GetComponent<Health>().talkToMissionMaster = talkToMissionMaster;
     }
 }

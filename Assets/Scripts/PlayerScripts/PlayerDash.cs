@@ -8,6 +8,10 @@ public class PlayerDash : MonoBehaviour
 {
     public float dashPower;
 
+    [SerializeField]
+    private float dashCooldown;
+    private float dashCooldownTimer;
+
     Rigidbody2D rb;
 
     PlayerWater waterScript;
@@ -40,6 +44,10 @@ public class PlayerDash : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         waterScript = GetComponent<PlayerWater>();
     }
+    private void Update()
+    {
+        dashCooldownTimer -= Time.deltaTime;
+    }
 
     private IEnumerator SpendWaterEffect()
     {
@@ -71,10 +79,12 @@ public class PlayerDash : MonoBehaviour
        if (context.phase != InputActionPhase.Started)
             return; 
 
-        if (waterScript.TotalWater() >= 1)
+       
+        if (waterScript.TotalWater() >= 1 && dashCooldownTimer < 0)
         {
-            waterScript.TakeWater(1);
-            rb.AddForce(rotationPoint.transform.up * dashPower, ForceMode2D.Impulse);
+            //waterScript.TakeWater(1);
+            dashCooldownTimer = dashCooldown;
+            rb.AddForce(-rotationPoint.transform.up * dashPower, ForceMode2D.Impulse);
             StartCoroutine(SpendWaterEffect());
         }
     }

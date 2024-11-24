@@ -112,9 +112,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6141111032278627485}
   - component: {fileID: 4108633183690296592}
-  - component: {fileID: 2622487958835093076}
+  - component: {fileID: 398067191722363602}
   m_Layer: 0
-  m_Name: Seed Turret
+  m_Name: Seed Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -150,14 +150,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cfd4c22b737fce48b5cc82658cdf82c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  growTime: 10
-  waterCost: 3
-  seedObject: {fileID: 713874338375168470, guid: 3914ba3403ed55d47986c4128c354eeb, type: 3}
+  growTime: 5
+  waterCost: 2
+  seedObject: {fileID: 4002550080951735726, guid: 066170e2f7f5be746886318a68494a52, type: 3}
   inSun: 0
   displayCostText: {fileID: 4664746600361137346}
   growingEffect: {fileID: 6193921703186707197}
---- !u!61 &2622487958835093076
-BoxCollider2D:
+--- !u!58 &398067191722363602
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -189,18 +189,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Radius: 1.27
 --- !u!1 &6193921703186707197
 GameObject:
   m_ObjectHideFlags: 0
@@ -5096,7 +5086,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 3 Water
+  m_text: 2 Water
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e5e6a50a5055c2a42a7405ff66f8fc95, type: 2}
   m_sharedMaterial: {fileID: 8760632212996779936, guid: e5e6a50a5055c2a42a7405ff66f8fc95, type: 2}
