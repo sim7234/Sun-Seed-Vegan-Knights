@@ -18,7 +18,6 @@ GameObject:
   - component: {fileID: -7853527409676064457}
   - component: {fileID: 4083805980931952316}
   - component: {fileID: 928377495995262593}
-  - component: {fileID: 2369945561958132068}
   - component: {fileID: 4790872568561083539}
   - component: {fileID: -7112622000373811108}
   - component: {fileID: -2784603825038570371}
@@ -87,7 +86,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 98
-  m_Sprite: {fileID: 21300000, guid: 1a4998a3d972a4248af859c5504271da, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a9a84a79c1f53a6428206f83bad8fff9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -131,7 +130,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 16.12, y: 9.45}
+  m_Size: {x: 9.45, y: 9.45}
   m_Direction: 0
 --- !u!114 &-5904533724159444392
 MonoBehaviour:
@@ -145,12 +144,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e25760f8658e3b4ab70d5369e5e64ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 5
   currentHealth: 0
   bloodOnHit: {fileID: 1240254011838071449, guid: 41925829a7d4e9f44b90f9db56482cec, type: 3}
   deathEffect: {fileID: 1240254011838071449, guid: a8a005973de14ea47810af5564db808b, type: 3}
   characterSprite: {fileID: 766832208405697385}
   hitSound: {fileID: 8300000, guid: 340dd37fae7514c499dbd20603c7fcac, type: 3}
+  EpelepticFilterOn: 0
+  talkToMissionMaster: 1
 --- !u!114 &8504829168524113185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,12 +159,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 516425167985709169}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e20aa28020800f747860e29386be9e34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 2
   isTriggerd: 0
 --- !u!50 &-5038671019410468480
 Rigidbody2D:
@@ -298,7 +299,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 4
-  m_Speed: 1
+  m_Speed: 2
   m_Acceleration: 2
   avoidancePriority: 0
   m_AngularSpeed: 120
@@ -338,26 +339,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6ee23a00de2e1948af4b65182f92b3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceToAttack: 25
+  distanceToAttack: 0
   isAttacking: 0
   withinDistance: 0
---- !u!114 &2369945561958132068
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 516425167985709169}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b265a733d13f694d8db819fd4ea570f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dashWindupTime: 0.5
-  dashTime: 0.4
-  dashPower: 1.5
-  dashCooldown: 2
-  dashIndicator: {fileID: 5910768304150022312}
 --- !u!114 &4790872568561083539
 MonoBehaviour:
   m_ObjectHideFlags: 0

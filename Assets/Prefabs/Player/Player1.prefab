@@ -15271,6 +15271,7 @@ GameObject:
   - component: {fileID: 8684005188956096814}
   - component: {fileID: 189110155375367779}
   - component: {fileID: 5446418183491109804}
+  - component: {fileID: 6706431125567826182}
   m_Layer: 6
   m_Name: BigSpear
   m_TagString: Player
@@ -15429,6 +15430,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swordTrails: {fileID: 4975414390284899736}
+--- !u!114 &6706431125567826182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2422993599085478142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4652404fe8aec3441a7b76ad8aca024d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bloomDamage: 12
 --- !u!1 &2815485709930524877
 GameObject:
   m_ObjectHideFlags: 0
@@ -20276,6 +20290,7 @@ GameObject:
   - component: {fileID: 8426236993261437812}
   - component: {fileID: 482181376568373884}
   - component: {fileID: 8166134038670447541}
+  - component: {fileID: 5977648922007010921}
   m_Layer: 6
   m_Name: BigSword
   m_TagString: Player
@@ -20446,6 +20461,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockbackStrength: 16
+--- !u!114 &5977648922007010921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3131349570624323539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4652404fe8aec3441a7b76ad8aca024d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bloomDamage: 12
 --- !u!1 &3881251665842698704
 GameObject:
   m_ObjectHideFlags: 0
@@ -25528,6 +25556,7 @@ GameObject:
   - component: {fileID: 8503630816615383961}
   - component: {fileID: 8576083324819313168}
   - component: {fileID: 5064035060424883740}
+  - component: {fileID: 690668558361250079}
   m_Layer: 9
   m_Name: Player1
   m_TagString: Player
@@ -26128,6 +26157,19 @@ MonoBehaviour:
   glow: {fileID: 4496682064531440704}
   directinalTriangle: {fileID: 4848016678425666741}
   playerText: {fileID: 4971959335754871291}
+--- !u!114 &690668558361250079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4130278647452102232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c111fc7f0794810488cd8dab9ccf0034, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healingAmount: 10
 --- !u!1 &4283199718185520484
 GameObject:
   m_ObjectHideFlags: 0
@@ -36321,7 +36363,7 @@ RectTransform:
   m_GameObject: {fileID: 5777925578217782104}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.35568914, y: 0.35568914, z: 0.35568914}
+  m_LocalScale: {x: 0.2078326, y: 0.2078326, z: 0.2078326}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1718172019910654567}
@@ -46576,6 +46618,7 @@ GameObject:
   - component: {fileID: 6941443873426641940}
   - component: {fileID: 288850003479939413}
   - component: {fileID: 7150702619533737145}
+  - component: {fileID: 3325750335812587222}
   m_Layer: 6
   m_Name: Sword
   m_TagString: Player
@@ -46771,6 +46814,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrustTrail: {fileID: 7628361708257345719}
+--- !u!114 &3325750335812587222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7790897372868414741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4652404fe8aec3441a7b76ad8aca024d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bloomDamage: 4
 --- !u!1 &8140362170331263629
 GameObject:
   m_ObjectHideFlags: 0

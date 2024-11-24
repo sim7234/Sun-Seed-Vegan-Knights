@@ -75,7 +75,11 @@ public class Health : MonoBehaviour
             Die();
         }
     }
-
+ 
+    public void Heal(float amount)
+    {
+        currentHealth += amount;
+    }
     private void Die()
     {
         GameObject newDeathEffect = Instantiate(deathEffect, transform.position, Quaternion.identity);
