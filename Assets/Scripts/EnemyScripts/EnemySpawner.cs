@@ -3,7 +3,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemyPrefab; 
-    public Transform[] spawnPoints; 
+    //public Transform[] spawnPoints; 
     public float spawnInterval = 10f;
     private float timer;
 
@@ -48,8 +48,9 @@ public class EnemySpawner : MonoBehaviour
                 SpawnEnemy();
             }
         }
+        
     }
-
+  
     public void StartSpawner()
     {
         spawnerActive = true;
@@ -64,8 +65,9 @@ public class EnemySpawner : MonoBehaviour
     }
     void SpawnEnemy()
     {
-        Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-        GameObject newEnemy = Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
+        //Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+        Vector2 spawnPoint = (Vector2)transform.position + Random.insideUnitCircle * 4;
+        GameObject newEnemy = Instantiate(enemyPrefab, spawnPoint, Quaternion.identity);
         if(talkToMissionMaster)
         {
             MissionMaster.Instance.AddEnemy();

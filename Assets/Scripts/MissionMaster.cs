@@ -96,13 +96,12 @@ public class MissionMaster : MonoBehaviour
         }
         if (combatsComplete < combatPoints.Count)
         {
-            if (actionBetweenLevels.Count < combatsComplete - 1)
+
+            if (actionBetweenLevels[combatsComplete] != null)
             {
-                if (actionBetweenLevels[combatsComplete] != null)
-                {
-                    actionBetweenLevels[combatsComplete].SetActive(true);
-                }
+                actionBetweenLevels[combatsComplete].SetActive(true);
             }
+
             StartCoroutine(MoveCameraToNextPoint(cam.transform.position, combatPoints[combatsComplete].transform.position));
         }
         Debug.Log("New stage, camera moves");
