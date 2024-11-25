@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
-    [SerializeField]
     private GameObject projectilePrefab; 
 
-    [SerializeField]
     private float shootInterval = 0.2f; 
 
-    [SerializeField]
     private Transform shootPoint; 
 
-    [SerializeField]
     private float detectionRadius = 10.0f; 
 
     private bool isActive;

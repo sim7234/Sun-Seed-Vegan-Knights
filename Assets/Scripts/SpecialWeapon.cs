@@ -12,17 +12,15 @@ public class SpecialWeapon : MonoBehaviour
 
     private WeaponType weaponType;
 
-    [SerializeField]
     private int specialWeaponAttacks = 5;
     private int attackCounter;
+    public float attackCooldown;
 
     [SerializeField]
     private GameObject baseWeapon;
 
     [SerializeField]
     private List<GameObject> weaponPickupsInRange = new List<GameObject>();
-
-    public float attackCooldown;
 
     [SerializeField]
     private AudioClip swordSwingSound; 

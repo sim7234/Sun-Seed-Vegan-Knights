@@ -15,8 +15,6 @@ public class PlayerAttack : MonoBehaviour
     private AudioSource audioSource;  
     private Animator weaponAnimator;
 
-
-    [SerializeField]
     private float attackCooldown = 1f; 
 
     private float lastAttackTime = 0f; 

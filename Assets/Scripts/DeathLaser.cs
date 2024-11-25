@@ -6,11 +6,9 @@ using UnityEngine.AI;
 
 public class DeathLaser : MonoBehaviour
 {
-    [SerializeField]
-    private float damageRange;
+    private float damageRange = 2;
 
-    [SerializeField]
-    private float damage;
+    private float damage = 100;
 
     private NavMeshAgent agent;
 
