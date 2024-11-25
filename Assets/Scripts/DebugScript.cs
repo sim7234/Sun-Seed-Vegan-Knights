@@ -30,6 +30,10 @@ public class DebugScript : MonoBehaviour
         {
             infiniteHealth();
         }
+        if(Input.GetKeyDown(KeyCode.Keypad9))
+        {
+            RegainAllStats();
+        }
     }
     void goToMenu()
     {
@@ -74,6 +78,39 @@ public class DebugScript : MonoBehaviour
             if (item.gameObject.CompareTag("Player"))
             {
                 item.maxHealth = 100000;
+                item.currentHealth = item.maxHealth;
+            }
+
+        }
+    }
+
+    private void RegainAllStats()
+    {
+        PlantSeed[] seedStats = FindObjectsOfType<PlantSeed>();
+
+        foreach (var item in seedStats)
+        {
+            if (item.gameObject.CompareTag("Player"))
+            {
+                item.plantingTimer = 0;
+            }
+        }
+        PlayerWater[] waterStats = FindObjectsOfType<PlayerWater>();
+
+        foreach (var item in waterStats)
+        {
+            if (item.gameObject.CompareTag("Player"))
+            {
+                item.MaxFill();
+            }
+        }
+
+        Health[] health = FindObjectsOfType<Health>();
+
+        foreach (var item in health)
+        {
+            if (item.gameObject.CompareTag("Player"))
+            {
                 item.currentHealth = item.maxHealth;
             }
 

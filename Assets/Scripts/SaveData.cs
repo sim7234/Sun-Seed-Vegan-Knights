@@ -73,22 +73,22 @@ public class SaveData : MonoBehaviour
             case 0:
    
                 player.GetComponent<HPBar>().parent.transform.position = position1.transform.position;
-                Debug.Log("Move to pos: " + position1);
+
                 break;
             case 1:
      
                 player.GetComponent<HPBar>().parent.transform.position = position2.transform.position;
-                Debug.Log("Move to pos: " + position2);
+           
                 break;
             case 2:
           
                 player.GetComponent<HPBar>().parent.transform.position = position3.transform.position;
-                Debug.Log("Move to pos: " + position3);
+    
                 break;
             case 3:
               
                 player.GetComponent<HPBar>().parent.transform.position = position4.transform.position;
-                Debug.Log("Move to pos: " + position4);
+           
                 break;
         }
         DontDestroyOnLoad(player);

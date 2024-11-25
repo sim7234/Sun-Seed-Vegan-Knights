@@ -81,7 +81,7 @@ public class SpecialWeapon : MonoBehaviour
             bigSword.GetComponent<Animator>().SetTrigger("Attack");
             PlaySwordSwingSound();
             attackCooldown = 1.5f;
-            Debug.Log("Big swing");
+            //Debug.Log("Big swing");
 
             if (attackCounter >= specialWeaponAttacks)
             {
@@ -131,7 +131,7 @@ public class SpecialWeapon : MonoBehaviour
             }
             weaponPickupsInRange.Clear();
 
-            Debug.Log("Special weapon picked up!");
+            //Debug.Log("Special weapon picked up!");
         }
     }
 

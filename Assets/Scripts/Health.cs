@@ -86,7 +86,8 @@ public class Health : MonoBehaviour
         Destroy(newDeathEffect, 0.8f);
         if(gameObject.CompareTag("Enemy") && talkToMissionMaster == true)
         {
-            MissionMaster.Instance.EnemyKilled();
+            MissionMaster.Instance.EnemyKilled(this.gameObject);
+            Debug.Log("EnemyKilled");
         }
 
         Screenshake.Instance.Shake(2.0f, 0.2f, 1.0f);
@@ -100,7 +101,6 @@ public class Health : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        
     }
 
     void Respawn()

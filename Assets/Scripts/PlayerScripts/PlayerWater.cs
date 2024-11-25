@@ -85,7 +85,7 @@ public class PlayerWater : MonoBehaviour
 
         if (plantSeed != null && plantSeed.IsRecentlyPlanted())
         {
-            Debug.Log("CD on watering!");
+            //Debug.Log("CD on watering!");
             return;
         }
 

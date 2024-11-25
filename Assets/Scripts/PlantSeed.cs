@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -16,7 +18,7 @@ public class PlantSeed : MonoBehaviour
 
     [SerializeField]
     private float plantSpeed = 1;
-    private float plantingTimer;
+    public float plantingTimer;
 
     [SerializeField]
     private float plantingCooldown = 0.2f; // cd before u can water
@@ -24,10 +26,14 @@ public class PlantSeed : MonoBehaviour
 
     public bool inSun;
 
+    [SerializeField]
+    private TextMeshProUGUI seedCooldownText;
+
     private void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
         plantSeedAction = playerInput.actions["PlantSeed"];
+
     }
     private void Start()
     {
@@ -35,7 +41,16 @@ public class PlantSeed : MonoBehaviour
     }
     private void Update()
     {
-        plantingTimer -= Time.deltaTime;
+        if (plantingTimer <= 0)
+        {
+            plantingTimer = 0;
+            seedCooldownText.text = Mathf.RoundToInt(plantingTimer).ToString();
+        }
+        else
+        {
+            plantingTimer -= Time.deltaTime;
+            seedCooldownText.text = Mathf.RoundToInt(plantingTimer).ToString();
+        }
     }
     private void SelectSeed()
     {

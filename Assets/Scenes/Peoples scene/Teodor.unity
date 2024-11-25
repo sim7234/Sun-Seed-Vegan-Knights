@@ -4724,63 +4724,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 146089c19c4c06a4eb44be6e3cc3b8a1, type: 3}
---- !u!1001 &2347609673695193539
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1086917757890490529, guid: cf3e5b31c791601439c4461ff815e430, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -13.978727
-      objectReference: {fileID: 0}
-    - target: {fileID: 1086917757890490529, guid: cf3e5b31c791601439c4461ff815e430, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -18.350275
-      objectReference: {fileID: 0}
-    - target: {fileID: 1086917757890490529, guid: cf3e5b31c791601439c4461ff815e430, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1086917757890490529, guid: cf3e5b31c791601439c4461ff815e430, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1086917757890490529, guid: cf3e5b31c791601439c4461ff815e430, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1086917757890490529, guid: cf3e5b31c791601439c4461ff815e430, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1086917757890490529, guid: cf3e5b31c791601439c4461ff815e430, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1086917757890490529, guid: cf3e5b31c791601439c4461ff815e430, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1086917757890490529, guid: cf3e5b31c791601439c4461ff815e430, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1086917757890490529, guid: cf3e5b31c791601439c4461ff815e430, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3972079768082717414, guid: cf3e5b31c791601439c4461ff815e430, type: 3}
-      propertyPath: m_Name
-      value: Kottbulle
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: cf3e5b31c791601439c4461ff815e430, type: 3}
 --- !u!1001 &3036744371847646993
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4981,7 +4924,7 @@ PrefabInstance:
       objectReference: {fileID: 1426277676}
     - target: {fileID: 476285938522494790, guid: b5d8548dc6b1bfa408559e695f307bde, type: 3}
       propertyPath: actionBetweenLevels.Array.size
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 476285938522494790, guid: b5d8548dc6b1bfa408559e695f307bde, type: 3}
       propertyPath: combatSpawnObject.Array.data[0]
@@ -5134,5 +5077,4 @@ SceneRoots:
   - {fileID: 1854044188}
   - {fileID: 674501947}
   - {fileID: 1337842634}
-  - {fileID: 2347609673695193539}
   - {fileID: 1951967044}

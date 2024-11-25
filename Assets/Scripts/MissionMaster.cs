@@ -9,6 +9,10 @@ public class MissionMaster : MonoBehaviour
 
     [HideInInspector] public int enemyCounter;
 
+
+    [SerializeField]
+    private List<GameObject> enemies = new List<GameObject>();
+
     [SerializeField]
     private TextMeshProUGUI enemyCounterText;
 
@@ -66,19 +70,24 @@ public class MissionMaster : MonoBehaviour
             }
         }
     }
-    public void AddEnemy()
+    public void AddEnemy(GameObject enemyObject)
     {
         enemyCounter += 1;
         UpdateText();
+        enemies.Add(enemyObject);
     }
-    public void EnemyKilled()
+    public void EnemyKilled(GameObject aEnemy)
     {
-        enemyCounter -= 1;
-        UpdateText();
-        if (enemyCounter <= 0)
+        if(enemies.Contains(aEnemy))
         {
-            PlayStageCompleteSound();
-            NextStage();
+            enemies.Remove(aEnemy);
+            enemyCounter -= 1;
+            UpdateText();
+            if (enemyCounter <= 0)
+            {
+                PlayStageCompleteSound();
+                NextStage();
+            }
         }
     }
 
@@ -104,7 +113,6 @@ public class MissionMaster : MonoBehaviour
 
             StartCoroutine(MoveCameraToNextPoint(cam.transform.position, combatPoints[combatsComplete].transform.position));
         }
-        Debug.Log("New stage, camera moves");
     }
 
     private IEnumerator MoveCameraToNextPoint(Vector3 start, Vector3 end)

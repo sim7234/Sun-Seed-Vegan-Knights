@@ -28,10 +28,10 @@ public class PlayerAttack : MonoBehaviour
         weaponAnimator = weapon.GetComponent<Animator>();
 
 
-        audioSource = gameObject.GetComponent<AudioSource>();
+        audioSource = weapon.GetComponent<AudioSource>();
         if (audioSource == null)
         {
-            audioSource = gameObject.AddComponent<AudioSource>();
+            audioSource = weapon.AddComponent<AudioSource>();
         }
 
         if (onFire == null)
@@ -58,17 +58,19 @@ public class PlayerAttack : MonoBehaviour
     
             lastAttackTime = Time.time;
         }
-        else
-        {
-            Debug.Log("Attack on cooldown");
-        }
+        //else
+        //{
+        //    Debug.Log("Attack on cooldown");
+        //}
     }
 
     private void PlaySwordSwingSound()
     {
         if (swordSwingSound != null && audioSource != null)
         {
-            audioSource.PlayOneShot(swordSwingSound); 
+            audioSource.pitch = Random.Range(0.90f, 1.1f);
+            audioSource.Play();
+            //audioSource.PlayOneShot(swordSwingSound);
         }
         else
         {

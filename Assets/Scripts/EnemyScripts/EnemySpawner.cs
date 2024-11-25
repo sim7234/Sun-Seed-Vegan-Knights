@@ -70,7 +70,7 @@ public class EnemySpawner : MonoBehaviour
         GameObject newEnemy = Instantiate(enemyPrefab, spawnPoint, Quaternion.identity);
         if(talkToMissionMaster)
         {
-            MissionMaster.Instance.AddEnemy();
+            MissionMaster.Instance.AddEnemy(newEnemy);
         }
         newEnemy.GetComponent<Health>().talkToMissionMaster = talkToMissionMaster;
     }

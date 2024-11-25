@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,6 +23,9 @@ public class BloomRecipient : MonoBehaviour
 
     [SerializeField]
     private GameObject BloomExplosionVFX;
+
+    [SerializeField]
+    private GameObject bloomGlowRim;
 
     private Health health;
 
@@ -63,6 +67,8 @@ public class BloomRecipient : MonoBehaviour
             if(bloomBuildUp > bloomResistance)
             {
                 hasBloomed = true;
+                bloomGlowRim.SetActive(true);
+                changeColorOfRim(BloomIndex);
             }
 
         }
@@ -75,7 +81,32 @@ public class BloomRecipient : MonoBehaviour
             BloomExplosion();
         }
     }
+    private void changeColorOfRim(int playerIndex)
+    {
+        switch (playerIndex)
+        {
+            case 1:
+                bloomGlowRim.GetComponent<SpriteRenderer>().color = Color.green;
 
+                break;
+            case 2:
+                bloomGlowRim.GetComponent<SpriteRenderer>().color = Color.red;
+
+                break;
+            case 3:
+                bloomGlowRim.GetComponent<SpriteRenderer>().color = Color.cyan;
+
+                break;
+            case 4:
+                bloomGlowRim.GetComponent<SpriteRenderer>().color = Color.yellow;
+
+                break;
+            default:
+                bloomGlowRim.GetComponent<SpriteRenderer>().color = Color.white;
+
+                break;
+        }
+    }
     private void BloomExplosion()
     {
         GameObject newExplosion = Instantiate(BloomExplosionVFX, transform.position, Quaternion.identity);
@@ -84,5 +115,6 @@ public class BloomRecipient : MonoBehaviour
         hasBloomed = false;
         BloomBuildUpSliderObject.SetActive(false);
         bloomBuildUp = 0;
+        bloomGlowRim.SetActive(false);
     }
 }
