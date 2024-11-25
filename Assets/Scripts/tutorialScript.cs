@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.U2D;
 
 public class tutorialScript : MonoBehaviour
 {

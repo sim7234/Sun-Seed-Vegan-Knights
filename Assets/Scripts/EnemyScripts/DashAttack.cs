@@ -14,11 +14,12 @@ public class DashAttack : MonoBehaviour
     bool setup = true;
 
     float windUpTimer = 0;
-    public float dashWindupTime;
-    public float dashTime = 0.5f;
-    public float dashPower;
+    //Hide to lower compile time.
+    [HideInInspector] public float dashWindupTime = 0.45f;
+    [HideInInspector] public float dashTime = 0.4f;
+    [HideInInspector] public float dashPower = 2;
+    [HideInInspector] public float dashCooldown = 2;
 
-    public float dashCooldown;
     float currentCooldown;
 
     bool beenInRange = false;

@@ -7,8 +7,9 @@ public class EnemyAttacks : MonoBehaviour
 
     protected Vector3 targetPosition;
     float distenceToTarget;
+    //Hide to reduce compile time
+    [HideInInspector] public float distanceToAttack = 20;
 
-    public float distanceToAttack;
     [HideInInspector] public bool isAttacking = false;
     [HideInInspector] public bool withinDistance = false;
 
