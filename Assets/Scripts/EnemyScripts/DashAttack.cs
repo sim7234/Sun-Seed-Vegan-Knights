@@ -15,10 +15,10 @@ public class DashAttack : MonoBehaviour
 
     float windUpTimer = 0;
     //Hide to lower compile time.
-    [HideInInspector] public float dashWindupTime = 0.45f;
-    [HideInInspector] public float dashTime = 0.4f;
-    [HideInInspector] public float dashPower = 2;
-    [HideInInspector] public float dashCooldown = 2;
+     public float dashWindupTime = 0.45f;
+     public float dashTime = 0.4f;
+     public float dashPower = 2;
+     public float dashCooldown = 2;
 
     float currentCooldown;
 
@@ -76,11 +76,7 @@ public class DashAttack : MonoBehaviour
             enemyAttacksScript.isAttacking = true;
             if(pathfindingScript.target[pathfindingScript.finalTarget] != null)
             targetPosition = pathfindingScript.target[pathfindingScript.finalTarget].transform.position;
-        }
-        else
-        {
-            enemyAttacksScript.isAttacking = false;
-        }
+        } 
 
         if (dashing == true)
         {
@@ -102,6 +98,7 @@ public class DashAttack : MonoBehaviour
 
             if (windUpTimer >= dashWindupTime + dashTime)
             {
+                enemyAttacksScript.isAttacking = false;
                 ResetDash();
             }
         }

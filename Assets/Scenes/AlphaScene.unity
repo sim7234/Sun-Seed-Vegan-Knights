@@ -395,21 +395,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 516425167985709169, guid: 7e1a7e45e9581db48867944c5311208b, type: 3}
-  spawnPoints:
-  - {fileID: 1897310158}
-  - {fileID: 1681354434}
-  - {fileID: 270692945}
-  - {fileID: 871293242}
-  - {fileID: 1224452604}
-  - {fileID: 85864427}
-  - {fileID: 1673009919}
-  - {fileID: 1377124211}
-  - {fileID: 198761997}
-  - {fileID: 587770139}
   spawnInterval: 2
   spawnOverTime: 0
   spawnWave: 1
   spawnAmount: 2
+  talkToMissionMaster: 1
 --- !u!4 &189225855
 Transform:
   m_ObjectHideFlags: 0
@@ -1883,21 +1873,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 516425167985709169, guid: 7e1a7e45e9581db48867944c5311208b, type: 3}
-  spawnPoints:
-  - {fileID: 95682272}
-  - {fileID: 960815487}
-  - {fileID: 1328641301}
-  - {fileID: 1165694411}
-  - {fileID: 886113115}
-  - {fileID: 1316429443}
-  - {fileID: 969302234}
-  - {fileID: 2143408978}
-  - {fileID: 262060127}
-  - {fileID: 356273997}
   spawnInterval: 2
   spawnOverTime: 0
   spawnWave: 1
   spawnAmount: 3
+  talkToMissionMaster: 1
 --- !u!4 &778896799
 Transform:
   m_ObjectHideFlags: 0
@@ -2376,11 +2356,11 @@ Transform:
   m_GameObject: {fileID: 850540690}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.860592, y: 1.9773401, z: -0.08600248}
+  m_LocalPosition: {x: 6.9299994, y: 0.64, z: 0}
   m_LocalScale: {x: 2.3629916, y: 2.3629916, z: 2.3629916}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1613006608}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &861993075
 GameObject:
@@ -4319,7 +4299,6 @@ Transform:
   - {fileID: 229306216}
   - {fileID: 788477058}
   - {fileID: 171798504}
-  - {fileID: 850540693}
   - {fileID: 260933817}
   - {fileID: 1982180174}
   - {fileID: 459798251}
@@ -4787,6 +4766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50f87495cf82f2e49aff5aa121c54028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EpelepticFilterOn: 0
 --- !u!1 &1763185292
 GameObject:
   m_ObjectHideFlags: 0
@@ -4817,21 +4797,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 516425167985709169, guid: 7e1a7e45e9581db48867944c5311208b, type: 3}
-  spawnPoints:
-  - {fileID: 788900468}
-  - {fileID: 819289298}
-  - {fileID: 622299550}
-  - {fileID: 1739450643}
-  - {fileID: 595035912}
-  - {fileID: 400574185}
-  - {fileID: 500954239}
-  - {fileID: 880675856}
-  - {fileID: 861993076}
-  - {fileID: 762636462}
   spawnInterval: 4
   spawnOverTime: 1
   spawnWave: 1
   spawnAmount: 2
+  talkToMissionMaster: 1
 --- !u!4 &1763185294
 Transform:
   m_ObjectHideFlags: 0
@@ -5247,5 +5217,6 @@ SceneRoots:
   - {fileID: 719755133}
   - {fileID: 373703694}
   - {fileID: 1713165882}
+  - {fileID: 850540693}
   - {fileID: 1613006608}
   - {fileID: 670625570}

@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e25760f8658e3b4ab70d5369e5e64ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 200
+  maxHealth: 50
   currentHealth: 0
   bloodOnHit: {fileID: 1240254011838071449, guid: 41925829a7d4e9f44b90f9db56482cec, type: 3}
   deathEffect: {fileID: 1240254011838071449, guid: a8a005973de14ea47810af5564db808b, type: 3}
@@ -379,7 +379,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 4
-  m_Speed: 1
+  m_Speed: 5
   m_Acceleration: 2
   avoidancePriority: 0
   m_AngularSpeed: 120
@@ -419,7 +419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6ee23a00de2e1948af4b65182f92b3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceToAttack: 25
+  distanceToAttack: 100
   isAttacking: 0
   withinDistance: 0
 --- !u!114 &2369945561958132068
@@ -434,10 +434,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b265a733d13f694d8db819fd4ea570f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashWindupTime: 0.5
-  dashTime: 0.4
-  dashPower: 1.5
-  dashCooldown: 2
+  dashWindupTime: 1.5
+  dashTime: 0.6
+  dashPower: 4
+  dashCooldown: 6
   dashIndicator: {fileID: 5910768304150022312}
 --- !u!114 &4790872568561083539
 MonoBehaviour:

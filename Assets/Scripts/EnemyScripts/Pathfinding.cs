@@ -14,10 +14,7 @@ public class Pathfinding : MonoBehaviour
 
     [HideInInspector] public bool followTarget = true;
 
-    private void Awake()
-    {
-        
-    }
+    [HideInInspector] public bool trackTarget = true;
 
     private void Start()
     {
@@ -36,8 +33,9 @@ public class Pathfinding : MonoBehaviour
         {
             if (followTarget)
             {
-                if (target[finalTarget].gameObject != null)
+                if (target[finalTarget].gameObject != null && trackTarget == true)
                 {
+                    Debug.Log("Track target");
                     agent.SetDestination(target[finalTarget].transform.position);
                 }
             }
@@ -45,7 +43,7 @@ public class Pathfinding : MonoBehaviour
     }
 
 
-    int FindClosestTarget(int totalTargets)
+   public int FindClosestTarget(int totalTargets)
     {
         float closestTarget = Mathf.Infinity;
 

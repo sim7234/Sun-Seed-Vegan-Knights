@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -18,6 +19,10 @@ public class DebugScript : MonoBehaviour
         {
             goToLevel1();
         }
+        if (Input.GetKeyDown(KeyCode.Keypad5))
+        {
+            goToSandbox();
+        }
         if (Input.GetKeyDown(KeyCode.KeypadEnter))
         {
             killPlayers();
@@ -35,6 +40,9 @@ public class DebugScript : MonoBehaviour
             RegainAllStats();
         }
     }
+
+    
+
     void goToMenu()
     {
         SceneManager.LoadScene(3);
@@ -48,6 +56,11 @@ public class DebugScript : MonoBehaviour
     void goToLevel1()
     {
         SceneManager.LoadScene(1);
+    }
+
+    void goToSandbox()
+    {
+        SceneManager.LoadScene(5);
     }
 
     void killPlayers()
