@@ -29,6 +29,9 @@ public class PlantSeed : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI seedCooldownText;
 
+    [SerializeField]
+    private GameObject inSunEffect;
+
     private void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
@@ -50,6 +53,15 @@ public class PlantSeed : MonoBehaviour
         {
             plantingTimer -= Time.deltaTime;
             seedCooldownText.text = Mathf.RoundToInt(plantingTimer).ToString();
+        }
+
+        if(inSun)
+        {
+            inSunEffect.SetActive(true);
+        }
+        else
+        {
+            inSunEffect.SetActive(false);
         }
     }
     private void SelectSeed()
