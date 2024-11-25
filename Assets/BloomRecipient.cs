@@ -74,11 +74,11 @@ public class BloomRecipient : MonoBehaviour
         }
         else
         {
-            //if(playerIndex != BloomIndex)
-            //{
-            //    BloomExplosion();
-            //}
-            BloomExplosion();
+            if (playerIndex != BloomIndex)
+            {
+                BloomExplosion();
+            }
+            //BloomExplosion();
         }
     }
     private void changeColorOfRim(int playerIndex)

@@ -84,7 +84,8 @@ public class PlayerDash : MonoBehaviour
         {
             //waterScript.TakeWater(1);
             dashCooldownTimer = dashCooldown;
-            rb.AddForce(-rotationPoint.transform.up * dashPower, ForceMode2D.Impulse);
+            //rb.AddForce(-rotationPoint.transform.up * dashPower, ForceMode2D.Impulse);
+            rb.AddForce(rb.velocity.normalized * dashPower, ForceMode2D.Impulse);
             StartCoroutine(SpendWaterEffect());
         }
     }

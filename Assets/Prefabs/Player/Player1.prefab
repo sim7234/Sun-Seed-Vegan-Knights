@@ -15354,7 +15354,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7769679312966110070
 Transform:
   m_ObjectHideFlags: 0
@@ -15519,6 +15519,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bloomDamage: 12
+  turnOfOnStart: 1
 --- !u!1 &2815485709930524877
 GameObject:
   m_ObjectHideFlags: 0
@@ -20373,7 +20374,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8955499395542940024
 Transform:
   m_ObjectHideFlags: 0
@@ -20550,6 +20551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bloomDamage: 12
+  turnOfOnStart: 1
 --- !u!1 &3881251665842698704
 GameObject:
   m_ObjectHideFlags: 0
@@ -25899,6 +25901,7 @@ MonoBehaviour:
   - {fileID: 4209319261259547291, guid: 668de3c610a6bef4f8e142a583ec9615, type: 3}
   currentType: 1
   plantSpeed: 30
+  plantingTimer: 0
   plantingCooldown: 0.3
   inSun: 0
   seedCooldownText: {fileID: 2450117201710678076}
@@ -47040,6 +47043,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bloomDamage: 4
+  turnOfOnStart: 0
 --- !u!82 &3293877512282924849
 AudioSource:
   m_ObjectHideFlags: 0
