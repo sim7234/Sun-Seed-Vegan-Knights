@@ -173,4 +173,9 @@ public class SpecialWeapon : MonoBehaviour
             audioSource.PlayOneShot(spearThrustSound); 
         }
     }
+
+    public bool IsWieldingSword()
+    {
+        return bigSword != null && bigSword.activeSelf;
+    }
 }
