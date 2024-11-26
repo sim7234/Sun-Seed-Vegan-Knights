@@ -16,6 +16,8 @@ public class Pathfinding : MonoBehaviour
 
     [HideInInspector] public bool trackTarget = true;
 
+    [HideInInspector] public Vector3 targetTransform;
+
     private void Start()
     {
         followTarget = true;
@@ -26,23 +28,30 @@ public class Pathfinding : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         finalTarget = FindClosestTarget(totalTargets);
-        if(target.Count > 0)
+        
+        if (target.Count > 0)
         {
+            if (target[finalTarget].gameObject == null)
+                return;
+            targetTransform = (target[finalTarget].transform.position);
+
             if (followTarget)
             {
-                if (target[finalTarget].gameObject != null && trackTarget == true)
+
+                if (trackTarget == true)
                 {
                     agent.SetDestination(target[finalTarget].transform.position);
+
                 }
             }
         }
     }
 
 
-   public int FindClosestTarget(int totalTargets)
+    public int FindClosestTarget(int totalTargets)
     {
         float closestTarget = Mathf.Infinity;
 

@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 921286589095528923}
   - component: {fileID: 453492740380084113}
   - component: {fileID: 7355972204576941239}
+  - component: {fileID: 8764225356946334184}
+  - component: {fileID: -2379071724555845110}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -101,7 +103,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -142,9 +144,35 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &8764225356946334184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4149015995408106834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 769ef891cf3f0e54a85469126cb1b667, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-2379071724555845110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4149015995408106834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e20aa28020800f747860e29386be9e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  isTriggerd: 1
