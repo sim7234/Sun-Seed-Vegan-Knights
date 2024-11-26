@@ -25895,6 +25895,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   swordSwingSound: {fileID: 8300000, guid: 18811a636cdf3184bba5ac5851db6421, type: 3}
+  attackCooldown: 0.2
 --- !u!70 &3556870080283609932
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
