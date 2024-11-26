@@ -30,6 +30,9 @@ public class EnemyRetreat : MonoBehaviour
         //retreat if enemy gets within distance
         currentTarget = pathfindingScript.FindClosestTarget(pathfindingScript.totalTargets);
 
+        if (currentTarget <= 0)
+            return;
+
         retreatDestination = -(pathfindingScript.target[currentTarget].transform.position - transform.position).normalized * whenToRetreat;
         if (enemyAttackScript.distenceToTarget < whenToRetreat)
         {
@@ -42,6 +45,7 @@ public class EnemyRetreat : MonoBehaviour
             agent.speed = baseSpeed;
             pathfindingScript.trackTarget = true;
         }
+
     }
     void retreat()
     {
