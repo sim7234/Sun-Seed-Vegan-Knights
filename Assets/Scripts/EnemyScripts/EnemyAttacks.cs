@@ -37,7 +37,10 @@ public class EnemyAttacks : MonoBehaviour
         {
             withinDistance = true;
             pathfindingScript.followTarget = false;
-            agent.velocity = Vector3.zero;
+            if (pathfindingScript.trackTarget == true)
+            {
+                agent.velocity = Vector3.zero;
+            }
         }
 
         if (distenceToTarget > distanceToAttack && isAttacking == false)

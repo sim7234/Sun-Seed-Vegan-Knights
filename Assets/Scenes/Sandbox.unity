@@ -1532,9 +1532,10 @@ GameObject:
   - component: {fileID: 995903656}
   - component: {fileID: 995903655}
   - component: {fileID: 995903661}
+  - component: {fileID: 995903666}
+  - component: {fileID: 995903664}
   - component: {fileID: 995903660}
   - component: {fileID: 995903663}
-  - component: {fileID: 995903664}
   - component: {fileID: 995903665}
   m_Layer: 0
   m_Name: RangedEnemy
@@ -1573,7 +1574,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distenceToTarget: 0
-  distanceToAttack: 150
+  distanceToAttack: 45.1
   isAttacking: 0
   withinDistance: 0
 --- !u!114 &995903657
@@ -1674,7 +1675,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 1
+  m_Speed: 1.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -1698,8 +1699,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6289e05915f9b7498788ff3d688cffb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  retreatPosition: {fileID: 862108089}
-  whenToRetreat: 50
+  baseSpeed: 1
+  retreatSpeed: 2.5
+  whenToRetreat: 45
+  retreating: 0
 --- !u!50 &995903663
 Rigidbody2D:
   serializedVersion: 4
@@ -1774,6 +1777,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &995903666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995903654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32a8b29bff67c664e8dae3b3d79ae45f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rangedAttackActive: 0
+  projectilePrefab: {fileID: 4149015995408106834, guid: 0b58dcbd428bcfd4ba2dbd778857cf1a, type: 3}
+  attackSpeed: 0
+  damage: 0
+  projectileSpeed: 0
 --- !u!1 &1072171563
 GameObject:
   m_ObjectHideFlags: 0

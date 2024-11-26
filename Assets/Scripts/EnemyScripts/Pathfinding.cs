@@ -35,7 +35,6 @@ public class Pathfinding : MonoBehaviour
             {
                 if (target[finalTarget].gameObject != null && trackTarget == true)
                 {
-                    Debug.Log("Track target");
                     agent.SetDestination(target[finalTarget].transform.position);
                 }
             }
