@@ -15270,7 +15270,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7769679312966110070
 Transform:
   m_ObjectHideFlags: 0
@@ -20291,7 +20291,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8955499395542940024
 Transform:
   m_ObjectHideFlags: 0
@@ -25603,6 +25603,7 @@ GameObject:
   - component: {fileID: 8576083324819313168}
   - component: {fileID: 5064035060424883740}
   - component: {fileID: 690668558361250079}
+  - component: {fileID: 5982578935766589562}
   m_Layer: 9
   m_Name: Player1
   m_TagString: Player
@@ -25643,16 +25644,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a79ce0dc6840bb49ac52a8a1607d9bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.4
+  moveSpeed: 15
   curve:
     serializedVersion: 2
     m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  maxSpeed: 1.6
-  runSpeedMultiplicative: 2.5
+  maxSpeed: 15
+  runSpeedMultiplicative: 1.5
   timeUntilRun: 2.5
+  deAcceleration: 4
   directionIndicator: {fileID: 4283199718185520484}
   movementSounds:
   - {fileID: 8300000, guid: aef106de866b11a438c10f5d20df6063, type: 3}
@@ -25665,6 +25667,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4e4a3a4d5a07d3547a8804797f215e52, type: 3}
   - {fileID: 8300000, guid: 8d9427673b698af46b94d3785b7170c7, type: 3}
   playerIndex: 0
+  lockOn: 0
 --- !u!50 &6392348033316344455
 Rigidbody2D:
   serializedVersion: 4
@@ -25678,7 +25681,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 10
+  m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -25737,7 +25740,6 @@ MonoBehaviour:
   currentType: 1
   plantSpeed: 30
   plantingTimer: 0
-  plantingCooldown: 0.3
   inSun: 0
   seedCooldownText: {fileID: 2450117201710678076}
   inSunEffect: {fileID: 7701823554249734520}
@@ -26226,6 +26228,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healingAmount: 10
+--- !u!114 &5982578935766589562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4130278647452102232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5833c1c5c5dfae74791d4cac45da1071, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4283199718185520484
 GameObject:
   m_ObjectHideFlags: 0

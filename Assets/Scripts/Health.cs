@@ -35,8 +35,11 @@ public class Health : MonoBehaviour
     {
         currentHealth = maxHealth;
         baseColor = characterSprite.color;
-        audioSource = GetComponent<AudioSource>();
-        
+        if (GetComponent<AudioSource>() != null)
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
+
         if (GetComponent<NavMeshAgent>() != null)
         {
             agent = GetComponent<NavMeshAgent>();
@@ -53,17 +56,26 @@ public class Health : MonoBehaviour
         if (GetComponent<EnemyHealthDisplay>() != null)
         {
             GetComponent<EnemyHealthDisplay>().UpdateSprite();
-            baseColor = characterSprite.color;
+            if(characterSprite.color != null)
+            {
+                baseColor = characterSprite.color;
+            }
         }
 
         if(gameObject.activeSelf)
         {
             StartCoroutine(BlinkOnHit());
         }
-        GameObject newBlood = Instantiate(bloodOnHit, transform.position, Quaternion.identity);
-        Destroy(newBlood, 0.8f);
-        audioSource.pitch = Random.Range(0.90f, 1.1f);
-        audioSource.Play();
+        if(bloodOnHit != null)
+        {
+            GameObject newBlood = Instantiate(bloodOnHit, transform.position, Quaternion.identity);
+            Destroy(newBlood, 0.8f);
+        }
+        if(audioSource != null)
+        {
+            audioSource.pitch = Random.Range(0.90f, 1.1f);
+            audioSource.Play();
+        }
         
         if(agent != null)
         {
@@ -82,8 +94,11 @@ public class Health : MonoBehaviour
     }
     private void Die()
     {
-        GameObject newDeathEffect = Instantiate(deathEffect, transform.position, Quaternion.identity);
-        Destroy(newDeathEffect, 0.8f);
+        if(deathEffect != null)
+        {
+            GameObject newDeathEffect = Instantiate(deathEffect, transform.position, Quaternion.identity);
+            Destroy(newDeathEffect, 0.8f);
+        }
         if(gameObject.CompareTag("Enemy") && talkToMissionMaster == true)
         {
             MissionMaster.Instance.EnemyKilled(this.gameObject);
@@ -117,7 +132,7 @@ public class Health : MonoBehaviour
 
     private IEnumerator BlinkOnHit()
     {
-        if(!EpelepticFilterOn)
+        if(!EpelepticFilterOn && characterSprite != null)
         {
             characterSprite.color = Color.red;
             yield return new WaitForSeconds(0.01f);

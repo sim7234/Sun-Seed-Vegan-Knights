@@ -84,7 +84,7 @@ public class SpecialWeapon : MonoBehaviour
             if (attackCounter >= specialWeaponAttacks)
             {
                 bigSword.SetActive(false);
-                bigSpear.SetActive(false);
+                bigSpear.SetActive(false);  
                 baseWeapon.SetActive(true);
             }
         }

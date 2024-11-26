@@ -5,8 +5,6 @@ using UnityEngine;
 public class MoveOnAttack : MonoBehaviour
 {
 
-
-
     [SerializeField]
     private GameObject rotationObject;
 

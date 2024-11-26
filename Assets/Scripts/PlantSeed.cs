@@ -19,11 +19,11 @@ public class PlantSeed : MonoBehaviour
     [SerializeField]
     private float plantSpeed = 1;
     public float plantingTimer;
-
-    [SerializeField]
+ 
     private float plantingCooldown = 0.2f; // cd before u can water
     private bool recentlyPlanted = false;
 
+    [HideInInspector]
     public bool inSun;
 
     [SerializeField]

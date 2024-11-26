@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -17,10 +18,15 @@ public class PlayerAttack : MonoBehaviour
 
     private float attackCooldown = 1f; 
 
-    private float lastAttackTime = 0f; 
+    private float lastAttackTime = 0f;
+
+    public PlayerInputActions playerControls;
 
     
-
+    private void Awake()
+    {
+        playerControls = new PlayerInputActions();
+    }
     private void Start()
     {
         weaponAnimator = weapon.GetComponent<Animator>();
@@ -40,10 +46,11 @@ public class PlayerAttack : MonoBehaviour
 
      public void Fire()
     {
+        
         if (Time.time >= lastAttackTime + attackCooldown)
         {
             onFire?.Invoke();
-
+            
             if (weaponAnimator != null)
             {
                 weaponAnimator.SetTrigger("PressedR1");
@@ -61,7 +68,19 @@ public class PlayerAttack : MonoBehaviour
         //    Debug.Log("Attack on cooldown");
         //}
     }
+    public void Attack()
+    {
+        if (weaponAnimator != null)
+        {
+            weaponAnimator.SetTrigger("PressedR1");
+        }
+        if (weapon.activeSelf)
+        {
+            PlaySwordSwingSound();
+        }
 
+        lastAttackTime = Time.time;
+    }
     private void PlaySwordSwingSound()
     {
         if (swordSwingSound != null && audioSource != null)

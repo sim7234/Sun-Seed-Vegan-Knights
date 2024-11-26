@@ -19,12 +19,15 @@ public class PlayerMovement : MonoBehaviour
     public float timeUntilRun;
     float lastAttackTime = 0;
 
-    Vector2 velocity;
+    [SerializeField]
+    private float deAcceleration = 0.96f;
+
+    Vector2 accerleation;
 
     private Rigidbody2D rb2d;
 
     [SerializeField]
-    private GameObject directionIndicator;
+    public GameObject directionIndicator;
 
     private Vector2 moveDirection = Vector2.zero;
     private InputAction move;
@@ -40,6 +43,9 @@ public class PlayerMovement : MonoBehaviour
     //Save data stuff
     public int playerIndex;
 
+    public bool lockOn;
+
+    
     private void Start()
     {
         var playerInput = GetComponent<PlayerInput>();
@@ -114,7 +120,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if(rotationDirection != Vector2.zero)
+        if(rotationDirection != Vector2.zero && !lockOn)
         {
             float angle = Mathf.Atan2(rotationDirection.y, rotationDirection.x) * Mathf.Rad2Deg;
             directionIndicator.transform.rotation = Quaternion.Euler(0, 0, angle - 90);
@@ -162,19 +168,16 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
 
-        if (isRunning == true)
-        {
-            velocity = moveDirection.normalized * moveSpeed * runSpeedMultiplicative;
-        }
-        else
-        {
-            velocity = moveDirection.normalized * moveSpeed;
-        }
+        accerleation = moveDirection.normalized * moveSpeed * Time.deltaTime;
+        accerleation *= runSpeedMultiplicative;
 
-        if (velocity.sqrMagnitude < (maxSpeed * maxSpeed))
+        if((rb2d.velocity + accerleation).magnitude < maxSpeed)
         {
-            rb2d.velocity += velocity;
-        } 
+            rb2d.velocity += accerleation;
+        }
+        
+        rb2d.velocity -= rb2d.velocity * deAcceleration * Time.deltaTime;
+        
     }    
     private void PlayRandomMovementSound()
     {

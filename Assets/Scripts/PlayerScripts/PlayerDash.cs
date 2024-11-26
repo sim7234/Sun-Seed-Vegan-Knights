@@ -54,13 +54,15 @@ public class PlayerDash : MonoBehaviour
         playerCollider.enabled = false;
         dashTrail.emitting = true;
         sprite.color = Color.blue;
-
+        
         yield return new WaitForSeconds(0.2f);
 
         sprite.color = Color.white;
         playerCollider.enabled = true;
 
         yield return new WaitForSeconds(0.1f);
+        GetComponent<LookOnSystem>().AttackClosestEnemy();
+
 
         dashTrail.emitting = false;
     }
