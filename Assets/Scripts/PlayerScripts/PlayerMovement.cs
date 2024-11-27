@@ -7,7 +7,7 @@ using Unity.VisualScripting;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
-    private float moveSpeed = 4f;
+    public float moveSpeed = 4f;
 
     public AnimationCurve curve;
 

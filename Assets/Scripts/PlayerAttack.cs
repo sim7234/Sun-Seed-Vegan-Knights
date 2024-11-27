@@ -17,13 +17,19 @@ public class PlayerAttack : MonoBehaviour
     private Animator weaponAnimator;
 
     [SerializeField]
-    private float attackCooldown = 1f; 
+    private float attackCooldown = 1f;
+    private float baseAttackCooldown;
+    private int attackCounter = 0;
+    private int attacksInChain = 3;
+    private float attackCounterResetTime = 1.2f;
+    private float attackCounterReset;
 
     private float lastAttackTime = 0f;
 
     public PlayerInputActions playerControls;
 
-    
+    [SerializeField]
+    private MoveOnAttack baseWeaponMoveScript;
     private void Awake()
     {
         playerControls = new PlayerInputActions();
@@ -31,7 +37,6 @@ public class PlayerAttack : MonoBehaviour
     private void Start()
     {
         weaponAnimator = weapon.GetComponent<Animator>();
-
 
         audioSource = weapon.GetComponent<AudioSource>();
         if (audioSource == null)
@@ -43,14 +48,25 @@ public class PlayerAttack : MonoBehaviour
         {
             Debug.LogWarning("No event Fire");
         }
-    }
 
-     public void Fire()
+        baseAttackCooldown = attackCooldown;
+    }
+    private void Update()
     {
-        
+        attackCounterReset -= Time.deltaTime;
+        if (attackCounterReset < 0)
+        {
+            attackCounter = 0;
+        }
+    }
+    public void Fire()
+    {
+       
         if (Time.time >= lastAttackTime + attackCooldown)
         {
             onFire?.Invoke();
+            
+            attackCounter++;
             
             if (weaponAnimator != null)
             {
@@ -61,13 +77,29 @@ public class PlayerAttack : MonoBehaviour
                 PlaySwordSwingSound();
             }
 
-    
+            
+            switch(attackCounter)
+            {
+                case 1:
+                    attackCooldown = baseAttackCooldown * 0.3f;
+                    break;
+                case 2:
+                    attackCooldown = baseAttackCooldown * 0.5f;
+                    break;
+                case 3:
+                    baseWeaponMoveScript.strengthModifer = 1.5f;
+                    attackCooldown = baseAttackCooldown * 1.4f;
+                    break;
+            }
+            attackCounterReset = attackCounterResetTime;
+            Debug.Log("Attack: " + attackCounter);
+            if (attackCounter == attacksInChain)
+            {
+                attackCounter = 0;
+            }
+
             lastAttackTime = Time.time;
         }
-        //else
-        //{
-        //    Debug.Log("Attack on cooldown");
-        //}
     }
     public void Attack()
     {
@@ -82,11 +114,12 @@ public class PlayerAttack : MonoBehaviour
 
         lastAttackTime = Time.time;
     }
+
     private void PlaySwordSwingSound()
     {
         if (swordSwingSound != null && audioSource != null)
         {
-            audioSource.pitch = Random.Range(0.90f, 1.1f);
+            audioSource.pitch = (1.0f - attackCounter /10) * Random.Range(0.95f, 1.05f);
             audioSource.Play();
             //audioSource.PlayOneShot(swordSwingSound);
         }

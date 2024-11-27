@@ -93,6 +93,7 @@ MonoBehaviour:
   characterSprite: {fileID: 8945087212878883356}
   hitSound: {fileID: 8300000, guid: cde256ef1f7e7dd439abc3b2899703db, type: 3}
   EpelepticFilterOn: 0
+  talkToMissionMaster: 1
 --- !u!50 &-5038671019410468480
 Rigidbody2D:
   serializedVersion: 4
@@ -272,7 +273,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: dd53bb512a287bd43b54cdc6e5212691, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 36eaf3b8e57fa4b4f9f8c727ca981c47, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
