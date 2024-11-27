@@ -2,32 +2,32 @@ using UnityEngine;
 
 public class FindTargets : MonoBehaviour
 {
-
     Pathfinding pathfinding;
-    GameObject[] targets = new GameObject[3];
+    isTarget[] targets = new isTarget[3];
 
     private void Awake()
     {
         pathfinding = GetComponent<Pathfinding>();
-        targets = GameObject.FindGameObjectsWithTag("Player");
+        targets = FindObjectsOfType<isTarget>();
 
-        foreach (GameObject target in targets)
+        foreach (isTarget target in targets)
         {
             pathfinding.totalTargets++;
-            pathfinding.target.Add(target);
+            pathfinding.target.Add(target.gameObject);
         }
     }
 
     //for bug testing.
     public void GetTargets()
     {
-        Debug.Log("GetTargets");
-        targets = GameObject.FindGameObjectsWithTag("Player");
+        pathfinding.target.Clear();
+        pathfinding.totalTargets = 0;
 
-        foreach (GameObject target in targets)
+        foreach (isTarget target in targets)
         {
             pathfinding.totalTargets++;
-            pathfinding.target.Add(target);
+            pathfinding.target.Add(target.gameObject);
         }
+        Debug.Log("GetTargets");
     }
 }

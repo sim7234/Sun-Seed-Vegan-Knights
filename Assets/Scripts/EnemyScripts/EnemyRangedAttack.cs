@@ -66,8 +66,6 @@ public class EnemyRangedAttack : MonoBehaviour
     }
     void rangedAttack()
     {
-        
-
         spawnPointToVector = projectileSpawnPoint.transform.position;
 
          GameObject projectile = Instantiate(projectilePrefab, spawnPointToVector, Quaternion.identity);

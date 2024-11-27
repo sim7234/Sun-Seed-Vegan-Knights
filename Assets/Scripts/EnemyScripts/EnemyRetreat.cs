@@ -16,7 +16,7 @@ public class EnemyRetreat : MonoBehaviour
 
     Vector3 retreatDestination;
     [HideInInspector] public bool retreating;
-    // Start is called before the first frame update
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -24,13 +24,12 @@ public class EnemyRetreat : MonoBehaviour
         enemyAttackScript = GetComponent<EnemyAttacks>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         //retreat if enemy gets within distance
         currentTarget = pathfindingScript.FindClosestTarget(pathfindingScript.totalTargets);
 
-        if (currentTarget <= 0)
+        if (currentTarget < 0)
             return;
 
         retreatDestination = -(pathfindingScript.target[currentTarget].transform.position - transform.position).normalized * whenToRetreat;

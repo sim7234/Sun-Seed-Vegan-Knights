@@ -63,22 +63,10 @@ public class Pathfinding : MonoBehaviour
                 Vector3 targetDistence = target[i].transform.position - transform.position;
                 float targetDistenceSquared = targetDistence.sqrMagnitude;
 
-                if (targetDistenceSquared < closestTarget)
+                if (targetDistenceSquared < closestTarget && target[i].gameObject.activeSelf == true)
                 {
                     closestTarget = targetDistenceSquared;
-                    //this makes it so enemies target other players if the OG target is dead, rn it hard coded
-                    if (target[i].gameObject.activeSelf == false && totalTargets > 0)
-                    {
-                       if (i == 1)
-                        {
-                            i = 0;
-                        }
-                        else
-                        {
-                            i = 1;
-                        }
-                    }
-
+                    
                     finalTarget = i;
                 }
             }
