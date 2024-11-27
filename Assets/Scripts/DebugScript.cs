@@ -8,6 +8,7 @@ public class DebugScript : MonoBehaviour
 
     [SerializeField] GameObject dashEnemy;
     [SerializeField] GameObject rangedEnemy;
+    [SerializeField] GameObject meleeEnemy;
 
     Vector2 mousePos;
     Camera camera;
@@ -61,6 +62,10 @@ public class DebugScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             Instantiate(rangedEnemy, mousePos, Quaternion.identity);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            Instantiate(meleeEnemy, mousePos, Quaternion.identity);
         }
     }
 

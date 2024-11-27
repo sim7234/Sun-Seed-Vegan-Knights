@@ -1,11 +1,12 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class enemyMeleeAttack : MonoBehaviour
 {
     EnemyAttacks enemyAttacksScript;
     Pathfinding pathfindingScript;
-    Damage attackPatternDamage;
+    Collider2D attackVisualCollider;
     rotateTowardsTarget rotateScript;
 
     [SerializeField] GameObject attackPattern;
@@ -13,58 +14,76 @@ public class enemyMeleeAttack : MonoBehaviour
 
     [SerializeField] Color defaultColor;
 
-    public float timeTillDamage;
-    public float damageEnabledTime;
+    public float windUpTime;
+    public float resetTime;
 
-    bool isAttacking;
+    bool cannotStartAttack;
 
     float currentCooldown;
-    float baseCooldown = 4f;
+    public float baseCooldown = 4f;
 
+    bool canWalk = true;
+
+    NavMeshAgent agent;
     // Start is called before the first frame update
     void Start()
     {
+        agent = GetComponent<NavMeshAgent>();
+        baseCooldown = baseCooldown + windUpTime + resetTime;
+
         enemyAttacksScript = GetComponent<EnemyAttacks>();
         pathfindingScript = GetComponent<Pathfinding>();
-        attackPatternDamage = attackPattern.GetComponent<Damage>();
-        damageSprite = attackPatternDamage.gameObject.GetComponent<SpriteRenderer>();
+        attackVisualCollider = attackPattern.GetComponent<Collider2D>();
+        damageSprite = attackVisualCollider.gameObject.GetComponent<SpriteRenderer>();
         rotateScript = attackPattern.GetComponentInParent<rotateTowardsTarget>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (canWalk == false)
+        {
+            agent.velocity = Vector3.zero;
+        }
+
         if (currentCooldown > 0)
         {
             currentCooldown -= Time.deltaTime;
         }
 
-        if (enemyAttacksScript.withinDistance == true && isAttacking == false && currentCooldown <= 0)
+        if (enemyAttacksScript.withinDistance == true && cannotStartAttack == false && currentCooldown <= 0)
         {
-            isAttacking = true;
+            cannotStartAttack = true;
             currentCooldown = baseCooldown;
+
             enemyAttacksScript.isAttacking = true;
             pathfindingScript.followTarget = false;
+            
 
             attackPattern.SetActive(true);
             rotateScript.lockRotation = true;
-            Invoke(nameof(StartMeleeAttack),1);
+            canWalk = false;
+            Invoke(nameof(StartMeleeAttack),windUpTime);
         }
     }
 
     void StartMeleeAttack()
     {
-        attackPatternDamage.enabled = true;
+        
+        attackVisualCollider.enabled = true;
         damageSprite.color = Color.black;
-        Invoke(nameof(EndMeleeAttack), 1);
+        Invoke(nameof(EndMeleeAttack), resetTime);
     }
     void EndMeleeAttack()
     {
-        attackPatternDamage.enabled = false;
+        attackVisualCollider.enabled = false;
         rotateScript.lockRotation = false;
+
         damageSprite.color = defaultColor;
         attackPattern.SetActive(false);
+
         enemyAttacksScript.isAttacking = false;
-        isAttacking = false;
+        cannotStartAttack = false;
+        canWalk = true;
     }
 }
