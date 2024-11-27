@@ -178,4 +178,13 @@ public class SpecialWeapon : MonoBehaviour
     {
         return bigSword != null && bigSword.activeSelf;
     }
+
+    public void DisableSpecialWeapon()
+    {
+        if (bigSword.activeSelf || bigSpear.activeSelf)
+        {
+            bigSword.SetActive(false);
+            baseWeapon.SetActive(true);
+        }
+    }
 }

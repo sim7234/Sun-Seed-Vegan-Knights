@@ -153,4 +153,10 @@ public class PlayerWater : MonoBehaviour
     {
         totalWater = maxWater;
     }
+
+    public void TakeAllWater()
+    {
+        totalWater = 0; 
+        UpdateWaterDropDisplay();
+    }
 }
