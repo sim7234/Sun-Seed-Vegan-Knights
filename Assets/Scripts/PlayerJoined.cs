@@ -7,8 +7,6 @@ public class PlayerJoined : MonoBehaviour
 {
     public void OnPlayerJoined(PlayerInput playerInput)
     {
-        //Debug.Log("OnPlayerJoined called.");
-        
         DontDestroyOnLoad(playerInput.gameObject);
 
         if (playerInput.currentControlScheme == "Control")
@@ -19,7 +17,5 @@ public class PlayerJoined : MonoBehaviour
         {
             playerInput.SwitchCurrentActionMap("ControlActions1");
         }
-
-        //Debug.Log($"Player {playerInput.playerIndex} joined with {playerInput.currentControlScheme}.");
     }
 }
