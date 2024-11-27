@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: -2784603825038570371}
   - component: {fileID: 4907288996071646888}
   - component: {fileID: 1991746258513872864}
+  - component: {fileID: 6087083339855631714}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Enemy
@@ -224,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e25760f8658e3b4ab70d5369e5e64ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 50
+  maxHealth: 300
   currentHealth: 0
   bloodOnHit: {fileID: 1240254011838071449, guid: 41925829a7d4e9f44b90f9db56482cec, type: 3}
   deathEffect: {fileID: 1240254011838071449, guid: a8a005973de14ea47810af5564db808b, type: 3}
@@ -407,6 +408,8 @@ MonoBehaviour:
   totalTargets: 0
   finalTarget: 0
   followTarget: 0
+  trackTarget: 1
+  targetTransform: {x: 0, y: 0, z: 0}
 --- !u!114 &928377495995262593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -419,6 +422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6ee23a00de2e1948af4b65182f92b3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distenceToTarget: 0
   distanceToAttack: 100
   isAttacking: 0
   withinDistance: 0
@@ -435,8 +439,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dashWindupTime: 1.5
-  dashTime: 0.6
-  dashPower: 4
+  dashTime: 0.75
+  dashPower: 2
   dashCooldown: 6
   dashIndicator: {fileID: 5910768304150022312}
 --- !u!114 &4790872568561083539
@@ -509,6 +513,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockbackStrength: 20
+--- !u!114 &6087083339855631714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516425167985709169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6289e05915f9b7498788ff3d688cffb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseSpeed: 2
+  retreatSpeed: 0.75
+  whenToRetreat: 50
+  retreating: 0
 --- !u!1 &4099860121307068791
 GameObject:
   m_ObjectHideFlags: 0
