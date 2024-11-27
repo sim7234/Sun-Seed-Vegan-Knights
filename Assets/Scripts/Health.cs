@@ -34,7 +34,10 @@ public class Health : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        baseColor = characterSprite.color;
+        if(characterSprite != null)
+        {
+            baseColor = characterSprite.color;
+        }
         if (GetComponent<AudioSource>() != null)
         {
             audioSource = GetComponent<AudioSource>();
@@ -56,7 +59,7 @@ public class Health : MonoBehaviour
         if (GetComponent<EnemyHealthDisplay>() != null)
         {
             GetComponent<EnemyHealthDisplay>().UpdateSprite();
-            if(characterSprite.color != null)
+            if(characterSprite != null)
             {
                 baseColor = characterSprite.color;
             }
