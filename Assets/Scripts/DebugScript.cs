@@ -5,8 +5,23 @@ using UnityEngine.SceneManagement;
 public class DebugScript : MonoBehaviour
 {
     // Update is called once per frame
+
+    [SerializeField] GameObject dashEnemy;
+    [SerializeField] GameObject rangedEnemy;
+
+    Vector2 mousePos;
+    Camera camera;
+
+    private void Start()
+    {
+        camera = Camera.main;
+    }
+
     void Update()
     {
+        mousePos = Input.mousePosition;
+        mousePos = camera.ScreenToWorldPoint(mousePos);
+
         if (Input.GetKeyDown(KeyCode.Keypad1))
         {
             goToMenu();
@@ -38,6 +53,14 @@ public class DebugScript : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Keypad9))
         {
             RegainAllStats();
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            Instantiate(dashEnemy, mousePos, Quaternion.identity);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            Instantiate(rangedEnemy, mousePos, Quaternion.identity);
         }
     }
 

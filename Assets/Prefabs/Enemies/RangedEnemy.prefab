@@ -83,7 +83,7 @@ GameObject:
   - component: {fileID: 750004781725619606}
   - component: {fileID: 6099218356677875489}
   - component: {fileID: 2970145736370037896}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RangedEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseSpeed: 1
-  retreatSpeed: 2.5
+  retreatSpeed: 1.5
   whenToRetreat: 40
   retreating: 0
 --- !u!114 &8063347678101092571
@@ -355,9 +355,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 783cbae38164d0f4bb241c9e3c745220, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slightlyDamaged: {r: 0, g: 0, b: 0, a: 0}
-  damaged: {r: 0, g: 0, b: 0, a: 0}
-  almostDead: {r: 0, g: 0, b: 0, a: 0}
+  slightlyDamaged: {r: 0.35348517, g: 0.7584905, b: 0.38599652, a: 0}
+  damaged: {r: 0.23314343, g: 0.4188679, b: 0.23871776, a: 0}
+  almostDead: {r: 0.13077578, g: 0.16981131, b: 0.12783907, a: 0}
 --- !u!1 &8425576322100544905
 GameObject:
   m_ObjectHideFlags: 0
