@@ -9959,7 +9959,7 @@ GameObject:
   - component: {fileID: 5130911862086886225}
   - component: {fileID: 5064035060424883740}
   m_Layer: 9
-  m_Name: tutorialPlayer
+  m_Name: tutorialNPC
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
