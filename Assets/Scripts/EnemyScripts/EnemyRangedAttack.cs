@@ -13,7 +13,6 @@ public class EnemyRangedAttack : MonoBehaviour
     [SerializeField] Transform rotationPoint;
 
     public float attackSpeed;
-    public float damage;
     public float projectileSpeed;
 
     Vector3 spawnPointToVector;
