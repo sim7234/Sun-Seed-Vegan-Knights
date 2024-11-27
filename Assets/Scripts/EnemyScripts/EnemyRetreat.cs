@@ -32,7 +32,7 @@ public class EnemyRetreat : MonoBehaviour
         if (currentTarget < 0)
             return;
 
-        retreatDestination = -(pathfindingScript.target[currentTarget].transform.position - transform.position).normalized * whenToRetreat;
+        retreatDestination = -(pathfindingScript.targetTransform - transform.position).normalized * whenToRetreat;
         if (enemyAttackScript.distenceToTarget < whenToRetreat)
         {
             pathfindingScript.trackTarget = false;
