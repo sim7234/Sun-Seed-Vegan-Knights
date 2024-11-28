@@ -98,8 +98,8 @@ GameObject:
   - component: {fileID: -7112622000373811108}
   - component: {fileID: -2784603825038570371}
   - component: {fileID: 4907288996071646888}
-  - component: {fileID: 1991746258513872864}
   - component: {fileID: 6087083339855631714}
+  - component: {fileID: 1991746258513872864}
   m_Layer: 7
   m_Name: DashEnemy
   m_TagString: Enemy
@@ -210,8 +210,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 16.12, y: 9.45}
+  m_Offset: {x: 0.18939209, y: -0.6249895}
+  m_Size: {x: 5.362608, y: 6.612587}
   m_Direction: 0
 --- !u!114 &-5904533724159444392
 MonoBehaviour:
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e25760f8658e3b4ab70d5369e5e64ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 300
+  maxHealth: 1000
   currentHealth: 0
   bloodOnHit: {fileID: 1240254011838071449, guid: 41925829a7d4e9f44b90f9db56482cec, type: 3}
   deathEffect: {fileID: 1240254011838071449, guid: a8a005973de14ea47810af5564db808b, type: 3}
@@ -245,8 +245,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e20aa28020800f747860e29386be9e34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
-  isTriggerd: 0
+  damage: 60
+  isTriggerd: 1
 --- !u!50 &-5038671019410468480
 Rigidbody2D:
   serializedVersion: 4
@@ -438,10 +438,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b265a733d13f694d8db819fd4ea570f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashWindupTime: 1.5
+  dashWindupTime: 1
   dashTime: 0.75
   dashPower: 2
-  dashCooldown: 6
+  dashCooldown: 4
   dashIndicator: {fileID: 5910768304150022312}
 --- !u!114 &4790872568561083539
 MonoBehaviour:
@@ -500,19 +500,7 @@ MonoBehaviour:
   BloomBuildUpSliderObject: {fileID: 4099860121307068791}
   BloomExplosionVFX: {fileID: 1240254011838071449, guid: 20efd42d40277384687f4f2a74a87383, type: 3}
   bloomGlowRim: {fileID: 6540321965531942517}
---- !u!114 &1991746258513872864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 516425167985709169}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c1700008e098ae468f3da206c69f3f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  knockbackStrength: 20
+  divideHealthBy: 2
 --- !u!114 &6087083339855631714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -529,6 +517,19 @@ MonoBehaviour:
   retreatSpeed: 0.75
   whenToRetreat: 50
   retreating: 0
+--- !u!114 &1991746258513872864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516425167985709169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c1700008e098ae468f3da206c69f3f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockbackStrength: 20
 --- !u!1 &4099860121307068791
 GameObject:
   m_ObjectHideFlags: 0

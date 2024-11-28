@@ -29,6 +29,8 @@ public class BloomRecipient : MonoBehaviour
 
     private Health health;
 
+    public int divideHealthBy = 5;
+
     private void Start()
     {
         health = GetComponent<Health>();
@@ -111,7 +113,7 @@ public class BloomRecipient : MonoBehaviour
     {
         GameObject newExplosion = Instantiate(BloomExplosionVFX, transform.position, Quaternion.identity);
         Destroy(newExplosion, 1);
-        health.TakeDamage(health.maxHealth/5 + 25);
+        health.TakeDamage(health.maxHealth/divideHealthBy + 25);
         hasBloomed = false;
         BloomBuildUpSliderObject.SetActive(false);
         bloomBuildUp = 0;
