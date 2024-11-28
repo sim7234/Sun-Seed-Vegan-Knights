@@ -13,6 +13,9 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField]
     private AudioClip swordSwingSound;
 
+    [SerializeField]
+    private AudioClip swordDashAttack;
+
     private AudioSource audioSource;  
     private Animator weaponAnimator;
 
@@ -111,7 +114,19 @@ public class PlayerAttack : MonoBehaviour
 
         lastAttackTime = Time.time;
     }
+    public void DashAttack()
+    {
+        if (weaponAnimator != null)
+        {
+            weaponAnimator.SetTrigger("DashAttack");
+        }
+        if (weapon.activeSelf)
+        {
+            PlaySwordSwingSound();
+        }
 
+        lastAttackTime = Time.time;
+    }
     private void PlaySwordSwingSound()
     {
         if (swordSwingSound != null && audioSource != null)
