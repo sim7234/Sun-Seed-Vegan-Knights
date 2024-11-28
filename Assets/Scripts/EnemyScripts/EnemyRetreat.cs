@@ -4,6 +4,8 @@ using UnityEngine.AI;
 public class EnemyRetreat : MonoBehaviour
 {
 
+    Camera camera;
+
     Pathfinding pathfindingScript;
     EnemyAttacks enemyAttackScript;
     NavMeshAgent agent;
@@ -14,18 +16,40 @@ public class EnemyRetreat : MonoBehaviour
     public float retreatSpeed;
     public float whenToRetreat;
 
+    bool canRetreat;
+
     Vector3 retreatDestination;
     [HideInInspector] public bool retreating;
+
+    float cameraHorizontal;
+    float cameraVertical;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         pathfindingScript = GetComponent<Pathfinding>();
         enemyAttackScript = GetComponent<EnemyAttacks>();
+        camera = Camera.main;
     }
 
     void Update()
     {
+        cameraVertical = camera.orthographicSize * 2;
+        cameraHorizontal = cameraVertical * camera.aspect;
+
+        if (transform.position.x > (cameraHorizontal/2 - 0.8) || transform.position.x < -(cameraHorizontal/2 - 0.8))
+        {
+            canRetreat = false;
+        }
+        else if (transform.position.y > ((cameraVertical/2) - 0.8) || transform.position.y < -((cameraVertical/2 - 0.8)))
+        {
+            canRetreat = false;
+        }
+        else
+        {
+            canRetreat = true;
+        }
+
         //retreat if enemy gets within distance
         currentTarget = pathfindingScript.FindClosestTarget(pathfindingScript.totalTargets);
 
@@ -33,7 +57,7 @@ public class EnemyRetreat : MonoBehaviour
             return;
 
         retreatDestination = -(pathfindingScript.targetTransform - transform.position).normalized * whenToRetreat;
-        if (enemyAttackScript.distenceToTarget < whenToRetreat)
+        if (enemyAttackScript.distenceToTarget < whenToRetreat && canRetreat == true)
         {
             pathfindingScript.trackTarget = false;
             retreat();

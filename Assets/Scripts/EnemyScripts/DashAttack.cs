@@ -31,17 +31,21 @@ public class DashAttack : MonoBehaviour
     Rigidbody2D rb;
 
     private Damage damageCompnent;
+    Knockback knockbackscript;
 
     // Start is called before the first frame update
     void Start()
     {
+        knockbackscript = GetComponent<Knockback>();
         collider = GetComponent<Collider2D>();
-        windUpTimer = 0f;
         rb = GetComponent<Rigidbody2D>();
         dashIndicator.SetActive(false);
         pathfindingScript = GetComponent<Pathfinding>();
         enemyAttacksScript = GetComponent<EnemyAttacks>();
         damageCompnent = GetComponent<Damage>();
+
+        windUpTimer = 0f;
+        knockbackscript.enabled = false;
     }
 
     // Update is called once per frame
@@ -106,7 +110,8 @@ public class DashAttack : MonoBehaviour
 
     void Dash()
     {
-        //damageCompnent.enabled = true;
+        knockbackscript.enabled = true;
+        damageCompnent.enabled = true;
         collider.isTrigger = true;
         dashIndicator.SetActive(false);
         rb.AddForce(dashIndicator.transform.up * dashPower, ForceMode2D.Impulse);
@@ -115,6 +120,7 @@ public class DashAttack : MonoBehaviour
 
     void ResetDash()
     {
+        knockbackscript.enabled = false;
         collider.isTrigger = false;
         damageCompnent.enabled = false;
         rb.velocity = Vector2.zero;
