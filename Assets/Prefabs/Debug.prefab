@@ -44,6 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ca3fed133a872e40b4553d0f9137748, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashEnemy: {fileID: 516425167985709169, guid: 7e1a7e45e9581db48867944c5311208b, type: 3}
-  rangedEnemy: {fileID: 4026458952341622850, guid: 9aa488ed6f997dc41932d4ec2557d188, type: 3}
-  meleeEnemy: {fileID: 4076701649708178499, guid: cb6c1d0fdca49b04185ed3318fe9cd61, type: 3}
+  enemies:
+  - {fileID: 4076701649708178499, guid: cb6c1d0fdca49b04185ed3318fe9cd61, type: 3}
+  - {fileID: 4026458952341622850, guid: 9aa488ed6f997dc41932d4ec2557d188, type: 3}
+  - {fileID: 516425167985709169, guid: 7e1a7e45e9581db48867944c5311208b, type: 3}
+  - {fileID: 516425167985709169, guid: 591317bce9526e547b9a599070faa43b, type: 3}
