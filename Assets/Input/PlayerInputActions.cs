@@ -261,6 +261,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""NextDialogue"",
+                    ""type"": ""Button"",
+                    ""id"": ""8b37be16-9d85-4f6f-82f4-dd09cbab4178"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -340,6 +349,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Join"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5a141322-f336-48ba-87ff-788a3d31d5ba"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control"",
+                    ""action"": ""NextDialogue"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -391,6 +411,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_ControlActions1_PlantSeed = m_ControlActions1.FindAction("PlantSeed", throwIfNotFound: true);
         m_ControlActions1_Dash = m_ControlActions1.FindAction("Dash", throwIfNotFound: true);
         m_ControlActions1_Join = m_ControlActions1.FindAction("Join", throwIfNotFound: true);
+        m_ControlActions1_NextDialogue = m_ControlActions1.FindAction("NextDialogue", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -545,6 +566,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_ControlActions1_PlantSeed;
     private readonly InputAction m_ControlActions1_Dash;
     private readonly InputAction m_ControlActions1_Join;
+    private readonly InputAction m_ControlActions1_NextDialogue;
     public struct ControlActions1Actions
     {
         private @PlayerInputActions m_Wrapper;
@@ -556,6 +578,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @PlantSeed => m_Wrapper.m_ControlActions1_PlantSeed;
         public InputAction @Dash => m_Wrapper.m_ControlActions1_Dash;
         public InputAction @Join => m_Wrapper.m_ControlActions1_Join;
+        public InputAction @NextDialogue => m_Wrapper.m_ControlActions1_NextDialogue;
         public InputActionMap Get() { return m_Wrapper.m_ControlActions1; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -586,6 +609,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Join.started += instance.OnJoin;
             @Join.performed += instance.OnJoin;
             @Join.canceled += instance.OnJoin;
+            @NextDialogue.started += instance.OnNextDialogue;
+            @NextDialogue.performed += instance.OnNextDialogue;
+            @NextDialogue.canceled += instance.OnNextDialogue;
         }
 
         private void UnregisterCallbacks(IControlActions1Actions instance)
@@ -611,6 +637,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Join.started -= instance.OnJoin;
             @Join.performed -= instance.OnJoin;
             @Join.canceled -= instance.OnJoin;
+            @NextDialogue.started -= instance.OnNextDialogue;
+            @NextDialogue.performed -= instance.OnNextDialogue;
+            @NextDialogue.canceled -= instance.OnNextDialogue;
         }
 
         public void RemoveCallbacks(IControlActions1Actions instance)
@@ -664,5 +693,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnPlantSeed(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
         void OnJoin(InputAction.CallbackContext context);
+        void OnNextDialogue(InputAction.CallbackContext context);
     }
 }

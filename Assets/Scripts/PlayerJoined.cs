@@ -1,10 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerJoined : MonoBehaviour
 {
+    public Dialogue dialogueSystem; 
+
+    private PlayerInputManager playerInputManager;
+
+    void OnEnable()
+    {
+        playerInputManager = FindObjectOfType<PlayerInputManager>();
+        if (playerInputManager != null)
+        {
+            playerInputManager.onPlayerJoined += OnPlayerJoined;
+        }
+    }
+
+    void OnDisable()
+    {
+        if (playerInputManager != null)
+        {
+            playerInputManager.onPlayerJoined -= OnPlayerJoined;
+        }
+    }
+
     public void OnPlayerJoined(PlayerInput playerInput)
     {
         DontDestroyOnLoad(playerInput.gameObject);
@@ -17,5 +36,11 @@ public class PlayerJoined : MonoBehaviour
         {
             playerInput.SwitchCurrentActionMap("ControlActions1");
         }
+
+        if (dialogueSystem != null)
+        {
+            playerInput.actions["NextDialogue"].performed += context => dialogueSystem.NextLine();
+        }
+    
     }
 }
