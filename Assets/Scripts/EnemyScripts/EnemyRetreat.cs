@@ -30,9 +30,6 @@ public class EnemyRetreat : MonoBehaviour
         pathfindingScript = GetComponent<Pathfinding>();
         enemyAttackScript = GetComponent<EnemyAttacks>();
         camera = Camera.main;
-
-        Debug.Log(camera.orthographicSize*2);
-        Debug.Log(camera.orthographicSize*2 * camera.aspect);
     }
 
     void Update()
@@ -40,11 +37,11 @@ public class EnemyRetreat : MonoBehaviour
         cameraVertical = camera.orthographicSize * 2;
         cameraHorizontal = cameraVertical * camera.aspect;
 
-        if (transform.position.x > cameraHorizontal/2 || transform.position.x < -cameraHorizontal/2)
+        if (transform.position.x > (cameraHorizontal/2 - 0.8) || transform.position.x < -(cameraHorizontal/2 - 0.8))
         {
             canRetreat = false;
         }
-        else if (transform.position.y > cameraVertical/2 || transform.position.y < -cameraVertical/2)
+        else if (transform.position.y > ((cameraVertical/2) - 0.8) || transform.position.y < -((cameraVertical/2 - 0.8)))
         {
             canRetreat = false;
         }
