@@ -20677,7 +20677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e20aa28020800f747860e29386be9e34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 80
+  damage: 20
   isTriggerd: 0
 --- !u!61 &2094024035206509169
 BoxCollider2D:
@@ -20780,7 +20780,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c1700008e098ae468f3da206c69f3f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackStrength: 16
+  knockbackStrength: 4
 --- !u!114 &5977648922007010921
 MonoBehaviour:
   m_ObjectHideFlags: 0
