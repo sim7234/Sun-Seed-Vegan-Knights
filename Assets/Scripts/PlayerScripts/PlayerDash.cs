@@ -57,11 +57,12 @@ public class PlayerDash : MonoBehaviour
         
         yield return new WaitForSeconds(0.2f);
 
+        GetComponent<LookOnSystem>().AttackClosestEnemy();
         sprite.color = Color.white;
         playerCollider.enabled = true;
 
         yield return new WaitForSeconds(0.1f);
-        GetComponent<LookOnSystem>().AttackClosestEnemy();
+        
 
 
         dashTrail.emitting = false;

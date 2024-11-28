@@ -30,7 +30,7 @@ public class LookOnSystem : MonoBehaviour
         TargetClosestEnemy();
         if(targetsInRange.Count > 0 && Vector3.Distance(currentTarget.transform.position, transform.position) < minDistanceForAttack)
         {
-            GetComponent<PlayerAttack>().Attack(); 
+            GetComponent<PlayerAttack>().DashAttack(); 
             StartCoroutine(TurnOfLockOn());
         }
     }
@@ -41,8 +41,8 @@ public class LookOnSystem : MonoBehaviour
         {
             FindClosestTarget();
 
-            playerMovement.lockOn = true;
-            if(currentTarget != null)
+            
+            if (currentTarget != null)
             {
                 float angle = Mathf.Atan2(-(transform.position.y - currentTarget.transform.position.y), -(transform.position.x - currentTarget.transform.position.x)) * Mathf.Rad2Deg;
                 playerMovement.directionIndicator.transform.rotation = Quaternion.Euler(0, 0, angle - 90);
@@ -96,6 +96,7 @@ public class LookOnSystem : MonoBehaviour
     }
     private IEnumerator TurnOfLockOn()
     {
+        playerMovement.lockOn = true;
         yield return new WaitForSeconds(0.3f);
         playerMovement.lockOn = false;
     }

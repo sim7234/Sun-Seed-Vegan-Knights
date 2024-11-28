@@ -15482,7 +15482,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7769679312966110070
 Transform:
   m_ObjectHideFlags: 0
@@ -20613,7 +20613,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8955499395542940024
 Transform:
   m_ObjectHideFlags: 0
@@ -26337,6 +26337,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   swordSwingSound: {fileID: 8300000, guid: 18811a636cdf3184bba5ac5851db6421, type: 3}
+  swordDashAttack: {fileID: 0}
   attackCooldown: 0.8
   baseWeaponMoveScript: {fileID: 288850003479939413}
 --- !u!70 &3556870080283609932
@@ -26670,7 +26671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5833c1c5c5dfae74791d4cac45da1071, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minDistanceForAttack: 0
+  minDistanceForAttack: 2
 --- !u!114 &4817412555743037333
 MonoBehaviour:
   m_ObjectHideFlags: 0
