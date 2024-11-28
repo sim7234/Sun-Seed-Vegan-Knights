@@ -397,7 +397,7 @@ MonoBehaviour:
   characterSprite: {fileID: 963201380123006881}
   hitSound: {fileID: 8300000, guid: 18e659edc45c9ad40bcffc453bb19912, type: 3}
   EpelepticFilterOn: 1
-  talkToMissionMaster: 0
+  talkToMissionMaster: 1
 --- !u!195 &1137979767170368613
 NavMeshAgent:
   m_ObjectHideFlags: 0

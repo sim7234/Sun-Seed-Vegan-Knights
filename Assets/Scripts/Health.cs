@@ -33,6 +33,12 @@ public class Health : MonoBehaviour
 
     void Start()
     {
+        if (FindAnyObjectByType<MissionMaster>() == null)
+        {
+            talkToMissionMaster = false;
+        }
+
+
         currentHealth = maxHealth;
         if(characterSprite != null)
         {

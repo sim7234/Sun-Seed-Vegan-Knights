@@ -6,9 +6,7 @@ public class DebugScript : MonoBehaviour
 {
     // Update is called once per frame
 
-    [SerializeField] GameObject dashEnemy;
-    [SerializeField] GameObject rangedEnemy;
-    [SerializeField] GameObject meleeEnemy;
+    [SerializeField] GameObject[] enemies;
 
     Vector2 mousePos;
     Camera camera;
@@ -17,6 +15,7 @@ public class DebugScript : MonoBehaviour
 
     private void Start()
     {
+        Application.targetFrameRate = 144;
         camera = Camera.main;
     }
 
@@ -76,15 +75,19 @@ public class DebugScript : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            Instantiate(dashEnemy, mousePos, Quaternion.identity);
+            Instantiate(enemies[0], mousePos, Quaternion.identity);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            Instantiate(rangedEnemy, mousePos, Quaternion.identity);
+            Instantiate(enemies[1], mousePos, Quaternion.identity);
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            Instantiate(meleeEnemy, mousePos, Quaternion.identity);
+            Instantiate(enemies[2], mousePos, Quaternion.identity);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            Instantiate(enemies[3], mousePos, Quaternion.identity);
         }
     }
 

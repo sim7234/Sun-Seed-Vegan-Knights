@@ -24,6 +24,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: DashEnemy Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 3623487075006663985, guid: 7e1a7e45e9581db48867944c5311208b, type: 3}
+      propertyPath: m_Color.a
+      value: 0.16862746
+      objectReference: {fileID: 0}
+    - target: {fileID: 4334811778795216543, guid: 7e1a7e45e9581db48867944c5311208b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 9.5606165
+      objectReference: {fileID: 0}
+    - target: {fileID: 4334811778795216543, guid: 7e1a7e45e9581db48867944c5311208b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 5910768304150022312, guid: 7e1a7e45e9581db48867944c5311208b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8853922157738319403, guid: 7e1a7e45e9581db48867944c5311208b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.790908
