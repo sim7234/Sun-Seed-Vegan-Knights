@@ -12,8 +12,11 @@ public class FindTargets : MonoBehaviour
 
         foreach (isTarget target in targets)
         {
-            pathfinding.totalTargets++;
-            pathfinding.target.Add(target.gameObject);
+            if(target.gameObject != null)
+            {
+                pathfinding.totalTargets++;
+                pathfinding.target.Add(target.gameObject);
+            }
         }
     }
 

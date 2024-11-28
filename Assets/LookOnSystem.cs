@@ -28,10 +28,13 @@ public class LookOnSystem : MonoBehaviour
     public void AttackClosestEnemy()
     {
         TargetClosestEnemy();
-        if(targetsInRange.Count > 0 && Vector3.Distance(currentTarget.transform.position, transform.position) < minDistanceForAttack)
+        if(currentTarget != null)
         {
-            GetComponent<PlayerAttack>().DashAttack(); 
-            StartCoroutine(TurnOfLockOn());
+            if(targetsInRange.Count > 0 && Vector3.Distance(currentTarget.transform.position, transform.position) < minDistanceForAttack)
+            {
+                GetComponent<PlayerAttack>().DashAttack(); 
+                StartCoroutine(TurnOfLockOn());
+            }
         }
     }
     public void TargetClosestEnemy()

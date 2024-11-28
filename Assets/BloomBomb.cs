@@ -12,11 +12,11 @@ public class BloomBomb : MonoBehaviour
 
     [SerializeField]
     private bool turnOfOnStart;
+
     private void Start()
     {
         Invoke(nameof(GetPlayerIndex), 0.05f);
     }
-
     private void GetPlayerIndex()
     {
         playerIndex = SaveData.Instance.playerAmount;
@@ -32,5 +32,4 @@ public class BloomBomb : MonoBehaviour
             other.GetComponent<BloomRecipient>().TakeBloomDamage(bloomDamage, playerIndex);
         }
     }
-
 }

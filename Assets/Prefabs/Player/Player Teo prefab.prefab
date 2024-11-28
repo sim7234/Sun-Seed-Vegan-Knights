@@ -20677,7 +20677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e20aa28020800f747860e29386be9e34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 20
+  damage: 80
   isTriggerd: 0
 --- !u!61 &2094024035206509169
 BoxCollider2D:
@@ -20711,7 +20711,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.11947787, y: 1.9289542}
+  m_Offset: {x: -0.11947788, y: 1.033055}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -20722,7 +20722,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.87956, y: 3.6888435}
+  m_Size: {x: 0.87956, y: 1.897044}
   m_EdgeRadius: 0
 --- !u!114 &5045559313448784522
 MonoBehaviour:
@@ -20780,7 +20780,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c1700008e098ae468f3da206c69f3f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackStrength: 4
+  knockbackStrength: 16
 --- !u!114 &5977648922007010921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26038,7 +26038,7 @@ GameObject:
   - component: {fileID: 4817412555743037333}
   - component: {fileID: 6104029201349294512}
   m_Layer: 9
-  m_Name: Player1
+  m_Name: Player Teo prefab
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26596,38 +26596,6 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 5a810e6a-3f5e-4fb0-a4cf-7f691e38d47d
     m_ActionName: ControlActions1/Join
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 8b37be16-9d85-4f6f-82f4-dd09cbab4178
-    m_ActionName: ControlActions1/NextDialogue[/DualShock4GamepadHID/dpad/right,/DualSenseGamepadHID/dpad/right]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5478368589574827822}
-        m_TargetAssemblyTypeName: SpecialWeapon, Assembly-CSharp
-        m_MethodName: PickUpWeapon
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8556687162033392005}
-        m_TargetAssemblyTypeName: PlantSeed, Assembly-CSharp
-        m_MethodName: OnSeedPickup
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: e714669b-8a5e-423b-a759-707649f215c8
-    m_ActionName: ControlActions1/PickUp[/DualShock4GamepadHID/buttonNorth,/DualSenseGamepadHID/buttonNorth]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Control
   m_DefaultActionMap: ControlActions1
@@ -57266,7 +57234,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7790897372868414741}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:

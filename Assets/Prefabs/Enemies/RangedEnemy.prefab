@@ -265,7 +265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseSpeed: 1
-  retreatSpeed: 0.5
+  retreatSpeed: 1.5
   whenToRetreat: 40
   retreating: 0
 --- !u!114 &8063347678101092571
@@ -380,6 +380,7 @@ MonoBehaviour:
   BloomBuildUpSliderObject: {fileID: 7389402600108658985}
   BloomExplosionVFX: {fileID: 1240254011838071449, guid: 20efd42d40277384687f4f2a74a87383, type: 3}
   bloomGlowRim: {fileID: 7485465861862717770}
+  divideHealthBy: 5
 --- !u!1 &4355318536468724637
 GameObject:
   m_ObjectHideFlags: 0
