@@ -20,7 +20,7 @@ public class PlayerAttack : MonoBehaviour
     private float attackCooldown = 1f;
     private float baseAttackCooldown;
     private int attackCounter = 0;
-    private int attacksInChain = 3;
+    private int attacksInChain = 2;
     private float attackCounterResetTime = 1.2f;
     private float attackCounterReset;
 
@@ -77,18 +77,15 @@ public class PlayerAttack : MonoBehaviour
                 PlaySwordSwingSound();
             }
 
-            
             switch(attackCounter)
             {
                 case 1:
+                    baseWeaponMoveScript.strengthModifer = 0.1f;
                     attackCooldown = baseAttackCooldown * 0.3f;
                     break;
                 case 2:
+                    baseWeaponMoveScript.strengthModifer = 0.1f;
                     attackCooldown = baseAttackCooldown * 0.5f;
-                    break;
-                case 3:
-                    baseWeaponMoveScript.strengthModifer = 1.5f;
-                    attackCooldown = baseAttackCooldown * 1.4f;
                     break;
             }
             attackCounterReset = attackCounterResetTime;

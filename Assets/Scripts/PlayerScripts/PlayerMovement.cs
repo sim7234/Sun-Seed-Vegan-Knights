@@ -177,8 +177,8 @@ public class PlayerMovement : MonoBehaviour
         }
         
         rb2d.velocity -= rb2d.velocity * deAcceleration * Time.deltaTime;
-        
     }    
+
     private void PlayRandomMovementSound()
     {
         if (movementSounds.Count > 0)
