@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 using static UnityEngine.GridBrushBase;
@@ -15,6 +16,11 @@ public class LookOnSystem : MonoBehaviour
     private GameObject currentTarget;
 
     private PlayerMovement playerMovement;
+
+    [SerializeField]
+    private float minDistanceForAttack;
+
+
     private void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();
@@ -22,9 +28,9 @@ public class LookOnSystem : MonoBehaviour
     public void AttackClosestEnemy()
     {
         TargetClosestEnemy();
-        if(targetsInRange.Count > 0)
+        if(targetsInRange.Count > 0 && Vector3.Distance(currentTarget.transform.position, transform.position) < minDistanceForAttack)
         {
-            GetComponent<PlayerAttack>().Attack();
+            GetComponent<PlayerAttack>().Attack(); 
             StartCoroutine(TurnOfLockOn());
         }
     }
