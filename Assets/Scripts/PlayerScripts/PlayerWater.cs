@@ -12,8 +12,7 @@ public class PlayerWater : MonoBehaviour
     [SerializeField]
     private int maxWater = 3;
 
-    [SerializeField]
-    private float waterGainTime;
+    public float waterGainTime;
 
     private float waterRateTimer;
 

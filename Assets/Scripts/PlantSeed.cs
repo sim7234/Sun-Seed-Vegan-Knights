@@ -16,8 +16,7 @@ public class PlantSeed : MonoBehaviour
     private PlayerInput playerInput;
     private InputAction plantSeedAction;
 
-    [SerializeField]
-    private float plantSpeed = 1;
+    public float plantSpeed = 1;
     public float plantingTimer;
  
     private float plantingCooldown = 0.2f; // cd before u can water

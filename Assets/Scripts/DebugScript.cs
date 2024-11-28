@@ -13,6 +13,8 @@ public class DebugScript : MonoBehaviour
     Vector2 mousePos;
     Camera camera;
 
+    bool noPlantCooldown;
+
     private void Start()
     {
         camera = Camera.main;
@@ -22,6 +24,19 @@ public class DebugScript : MonoBehaviour
     {
         mousePos = Input.mousePosition;
         mousePos = camera.ScreenToWorldPoint(mousePos);
+
+        if (noPlantCooldown)
+        {
+            PlantSeed[] seedStats = FindObjectsOfType<PlantSeed>();
+
+            foreach (var item in seedStats)
+            {
+                if (item.gameObject.CompareTag("Player"))
+                {
+                    item.plantingTimer = 0;
+                }
+            }
+        }
 
         if (Input.GetKeyDown(KeyCode.Keypad1))
         {
@@ -54,6 +69,10 @@ public class DebugScript : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Keypad9))
         {
             RegainAllStats();
+        }
+        if (Input.GetKeyDown(KeyCode.Keypad8))
+        {
+            Nocd();
         }
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
@@ -155,6 +174,32 @@ public class DebugScript : MonoBehaviour
                 item.currentHealth = item.maxHealth;
             }
 
+        }
+    }
+
+
+    void Nocd()
+    {
+        PlantSeed[] seedStats = FindObjectsOfType<PlantSeed>();
+
+        foreach (var item in seedStats)
+        {
+            if (item.gameObject.CompareTag("Player"))
+            {
+                item.plantSpeed = 1;
+            }
+        }
+
+        noPlantCooldown = !noPlantCooldown;
+
+        PlayerWater[] waterStats = FindObjectsOfType<PlayerWater>();
+
+        foreach (var item in waterStats)
+        {
+            if (item.gameObject.CompareTag("Player"))
+            {
+                item.waterGainTime = 0.1f;
+            }
         }
     }
 }
