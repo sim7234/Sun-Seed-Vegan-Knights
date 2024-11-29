@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class TutorialGoal : MonoBehaviour
 {
-    private float delay = 2f;
+    private float delay = 2f; 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -18,19 +18,12 @@ public class TutorialGoal : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
 
-        SceneManager.sceneLoaded += OnSceneLoaded;
-
-        SceneManager.LoadScene(3);
-    }
-
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        GameObject tutorialPlayer = GameObject.FindWithTag("Player");
-        if (tutorialPlayer != null)
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        foreach (GameObject player in players)
         {
-            Destroy(tutorialPlayer);
+            Destroy(player);
         }
 
-        SceneManager.sceneLoaded -= OnSceneLoaded;
+        SceneManager.LoadScene(3);
     }
 }
