@@ -30,6 +30,37 @@ public class DebugScript : MonoBehaviour
         {
             infiniteHealth();
         }
+<<<<<<< Updated upstream
+=======
+        if(Input.GetKeyDown(KeyCode.Keypad9))
+        {
+            RegainAllStats();
+        }
+        if (Input.GetKeyDown(KeyCode.Keypad8))
+        {
+            Nocd();
+        }
+        if (Input.GetKeyDown(KeyCode.KeypadPeriod))
+        {
+            killEnemies();
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            Instantiate(enemies[0], mousePos, Quaternion.identity);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            Instantiate(enemies[1], mousePos, Quaternion.identity);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            Instantiate(enemies[2], mousePos, Quaternion.identity);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            Instantiate(enemies[3], mousePos, Quaternion.identity);
+        }
+>>>>>>> Stashed changes
     }
     void goToMenu()
     {
@@ -53,6 +84,16 @@ public class DebugScript : MonoBehaviour
         foreach (GameObject p in players)
         {
             Destroy(p);
+        }
+    }
+
+    void killEnemies()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        foreach (GameObject enemy in enemies)
+        {
+            Destroy(enemy);
         }
     }
 
