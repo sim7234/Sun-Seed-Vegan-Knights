@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
@@ -9,15 +8,13 @@ public class Dialogue : MonoBehaviour
     [TextArea(3, 10)]
     public string[] lines; 
     
-    public float textSpeed; 
     private int index; 
     private PlayerInput playerInput;
-    
-    private bool isTyping = false;
 
-    void Start()
+    private void Start()
     {
         textComponent.text = string.Empty; 
+        StartDialogue(lines); 
     }
 
     public void OnPlayerJoined(PlayerInput playerInput)
@@ -47,35 +44,24 @@ public class Dialogue : MonoBehaviour
     {
         lines = newLines; 
         index = 0; 
-        textComponent.text = string.Empty; 
         gameObject.SetActive(true); 
-        StartCoroutine(TypeLine()); 
+        DisplayLine(); 
     }
 
-    private IEnumerator TypeLine()
+    private void DisplayLine()
     {
-        isTyping = true; 
-        foreach (char c in lines[index].ToCharArray())
+        if (index >= 0 && index < lines.Length)
         {
-            textComponent.text += c; 
-            yield return new WaitForSeconds(textSpeed); 
+            textComponent.text = lines[index];
         }
-        isTyping = false; 
     }
 
     public void NextLine()
     {
-        if (isTyping) 
-        {
-            StopAllCoroutines();
-            textComponent.text = lines[index]; 
-            isTyping = false; 
-        }
-        else if (index < lines.Length - 1) 
+        if (index < lines.Length - 1) 
         {
             index++;
-            textComponent.text = string.Empty; 
-            StartCoroutine(TypeLine()); 
+            DisplayLine(); 
         }
         else
         {
