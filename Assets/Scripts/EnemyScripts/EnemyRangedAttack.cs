@@ -38,7 +38,6 @@ public class EnemyRangedAttack : MonoBehaviour
 
         targetPos = pathfindingScript.targetTransform;
 
-
         targetPos.x = targetPos.x - transform.position.x;
         targetPos.y = targetPos.y - transform.position.y;
         float angle = Mathf.Atan2(targetPos.y, targetPos.x) * Mathf.Rad2Deg;

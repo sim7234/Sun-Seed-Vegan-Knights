@@ -285,7 +285,7 @@ MonoBehaviour:
   projectileSpawnPoint: {fileID: 8603948458539968747}
   rotationPoint: {fileID: 416790700085312721}
   attackSpeed: 3
-  projectileSpeed: 0.75
+  projectileSpeed: 1.25
 --- !u!114 &3580056762478777823
 MonoBehaviour:
   m_ObjectHideFlags: 0
