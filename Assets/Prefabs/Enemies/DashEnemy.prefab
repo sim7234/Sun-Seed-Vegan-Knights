@@ -494,7 +494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab102bb52a7da4b4a9d11af98a9b39f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bloomResistance: 10
+  bloomResistance: 25
   bloomBuildUp: 0
   hasBloomed: 0
   BloomBuildUpSliderObject: {fileID: 4099860121307068791}

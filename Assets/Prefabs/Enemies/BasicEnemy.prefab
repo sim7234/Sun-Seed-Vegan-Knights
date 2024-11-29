@@ -390,7 +390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e25760f8658e3b4ab70d5369e5e64ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 150
   currentHealth: 0
   bloodOnHit: {fileID: 1240254011838071449, guid: 41925829a7d4e9f44b90f9db56482cec, type: 3}
   deathEffect: {fileID: 1240254011838071449, guid: a8a005973de14ea47810af5564db808b, type: 3}
@@ -470,6 +470,7 @@ MonoBehaviour:
   BloomBuildUpSliderObject: {fileID: 7086488669468801133}
   BloomExplosionVFX: {fileID: 1240254011838071449, guid: 20efd42d40277384687f4f2a74a87383, type: 3}
   bloomGlowRim: {fileID: 8153298086642899111}
+  divideHealthBy: 5
 --- !u!1 &6558300269100734190
 GameObject:
   m_ObjectHideFlags: 0
