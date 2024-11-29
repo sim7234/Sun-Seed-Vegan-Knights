@@ -91,6 +91,7 @@ public class SpecialWeapon : MonoBehaviour
             if (weaponPickupsInRange[0].GetComponent<WeaponPickup>().GetWeaponType() == WeaponType.Sword)
             {
                 bigSword.SetActive(true);
+                bigSword.GetComponent<Collider2D>().enabled = false;
                 bigSpear.SetActive(false);
 
                 specialWeaponAttacks = 5;
@@ -98,6 +99,7 @@ public class SpecialWeapon : MonoBehaviour
             else if (weaponPickupsInRange[0].GetComponent<WeaponPickup>().GetWeaponType() == WeaponType.Spear)
             {
                 bigSpear.SetActive(true);
+                bigSpear.GetComponent<Collider2D>().enabled = false;
                 bigSword.SetActive(false);
                 specialWeaponAttacks = 10;
             }
@@ -124,6 +126,8 @@ public class SpecialWeapon : MonoBehaviour
             }
 
             bigSword.GetComponent<Animator>().SetTrigger("Attack");
+            bigSword.GetComponent<Collider2D>().enabled = true;
+            Invoke(nameof(DisableWeaponCollider), 0.5f);
             PlaySwordSwingSound();
             attackCooldown = 1.5f;
             //Debug.Log("Big swing");
@@ -138,6 +142,8 @@ public class SpecialWeapon : MonoBehaviour
             }
 
             bigSpear.GetComponent<Animator>().SetTrigger("Attack");
+            bigSpear.GetComponent<Collider2D>().enabled = true;
+            Invoke(nameof(DisableWeaponCollider), 0.5f);
             PlaySpearThrustSound();
             attackCooldown = 1.5f;
             Debug.Log("Big swing");
@@ -198,6 +204,19 @@ public class SpecialWeapon : MonoBehaviour
             bigSword.SetActive(false);
             bigSpear.SetActive(false);
             baseWeapon.SetActive(true);
+        }
+    }
+
+    private void DisableWeaponCollider()
+    {
+        if (bigSword.activeSelf)
+        {
+            bigSword.GetComponent<Collider2D>().enabled = false;
+        }
+
+        if (bigSpear.activeSelf)
+        {
+            bigSpear.GetComponent<Collider2D>().enabled = false;
         }
     }
 }
