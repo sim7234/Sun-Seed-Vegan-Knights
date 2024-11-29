@@ -6,8 +6,11 @@ public class PlayerGlow : MonoBehaviour
 {
 
     [SerializeField]
-    private SpriteRenderer glow;    
-    
+    private SpriteRenderer glow1;
+
+    [SerializeField]
+    private SpriteRenderer glow2;
+
     [SerializeField]
     private SpriteRenderer directinalTriangle;
 
@@ -36,27 +39,32 @@ public class PlayerGlow : MonoBehaviour
         switch (playerIndex)
         {
             case 1:
-                glow.color = Color.green;
+                glow1.color = Color.green;
+                glow2.color = Color.green;
                 directinalTriangle.color = Color.green;
                 playerText.color = Color.green;
                 break;
             case 2:
-                glow.color = Color.red;
+                glow1.color = Color.red;
+                glow2.color = Color.red;
                 directinalTriangle.color = Color.red;
                 playerText.color = Color.red;
                 break;
             case 3:
-                glow.color = Color.cyan;
+                glow1.color = Color.cyan;
+                glow2.color = Color.cyan;
                 directinalTriangle.color = Color.cyan;
                 playerText.color = Color.cyan;
                 break;
             case 4:
-                glow.color = Color.yellow;
+                glow1.color = Color.yellow;
+                glow2.color = Color.yellow;
                 directinalTriangle.color = Color.yellow;
                 playerText.color = Color.yellow;
                 break;
             default:
-                glow.color = Color.white;
+                glow1.color = Color.white;
+                glow2.color = Color.white;
                 directinalTriangle.color = Color.white;
                 playerText.color = Color.white;
                 break;

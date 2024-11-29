@@ -15,7 +15,6 @@ public class PlayerDash : MonoBehaviour
     Rigidbody2D rb;
 
     PlayerWater waterScript;
-    SpriteRenderer sprite;
 
     private InputAction dashAction;
 
@@ -40,7 +39,6 @@ public class PlayerDash : MonoBehaviour
     {
         playerCollider = GetComponent<Collider2D>();
         dashTrail.emitting = false;
-        sprite = GetComponentInChildren<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         waterScript = GetComponent<PlayerWater>();
     }
@@ -53,12 +51,10 @@ public class PlayerDash : MonoBehaviour
     {
         playerCollider.enabled = false;
         dashTrail.emitting = true;
-        sprite.color = Color.blue;
         
         yield return new WaitForSeconds(0.2f);
 
         GetComponent<LookOnSystem>().AttackClosestEnemy();
-        sprite.color = Color.white;
         playerCollider.enabled = true;
 
         yield return new WaitForSeconds(0.1f);
