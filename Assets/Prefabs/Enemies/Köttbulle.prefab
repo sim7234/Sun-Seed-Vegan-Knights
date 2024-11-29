@@ -385,7 +385,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionCollider: {fileID: 590350630154106866}
-  growthRate: 0.1
 --- !u!1 &687080503339796179
 GameObject:
   m_ObjectHideFlags: 0
@@ -621,7 +620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e20aa28020800f747860e29386be9e34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 20
   isTriggerd: 1
 --- !u!212 &2197320349180914669
 SpriteRenderer:
