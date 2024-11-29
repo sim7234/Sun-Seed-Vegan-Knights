@@ -375,7 +375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distenceToTarget: 0
-  distanceToAttack: 20
+  distanceToAttack: 4
   isAttacking: 0
   withinDistance: 0
 --- !u!114 &997164337715888419
@@ -753,7 +753,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7762172955754322478
 Transform:
   m_ObjectHideFlags: 0
@@ -764,7 +764,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.05, z: 0}
-  m_LocalScale: {x: 1.0645028, y: 1.0502979, z: 1.0010287}
+  m_LocalScale: {x: 1.3, y: 1.1, z: 1.0010287}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4375344111486016213}
