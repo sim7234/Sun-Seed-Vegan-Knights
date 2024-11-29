@@ -115,6 +115,8 @@ public class DebugScript : MonoBehaviour
 
     void killPlayers()
     {
+        SaveData.Instance.playerAmount = 0;
+
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
 
         foreach (GameObject p in players)
