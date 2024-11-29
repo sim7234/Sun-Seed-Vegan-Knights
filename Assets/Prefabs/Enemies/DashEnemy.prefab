@@ -85,7 +85,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8853922157738319403}
   - component: {fileID: 766832208405697385}
-  - component: {fileID: 5186901363952288258}
   - component: {fileID: -5904533724159444392}
   - component: {fileID: 8504829168524113185}
   - component: {fileID: -5038671019410468480}
@@ -100,6 +99,8 @@ GameObject:
   - component: {fileID: 4907288996071646888}
   - component: {fileID: 6087083339855631714}
   - component: {fileID: 5379325141884206624}
+  - component: {fileID: 8424980281040868951}
+  - component: {fileID: 112777825124948672}
   m_Layer: 7
   m_Name: DashEnemy
   m_TagString: Enemy
@@ -117,7 +118,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.8006, y: -0.83939, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.13429303}
+  m_LocalScale: {x: 0.16607392, y: 0.16607392, z: 0.0743419}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 748973506052100093}
@@ -167,9 +168,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 98
-  m_Sprite: {fileID: 21300000, guid: 2f3fd663f4864164c921a17dbcc2672b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fa1f3ee5d35de9d48b02f3b718d9e856, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 5.24, y: 7.18}
@@ -178,41 +179,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &5186901363952288258
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 516425167985709169}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.18939209, y: -0.6249895}
-  m_Size: {x: 5.362608, y: 6.612587}
-  m_Direction: 0
 --- !u!114 &-5904533724159444392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,7 +225,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 3
   m_LinearDrag: 5
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -440,7 +406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dashWindupTime: 1
   dashTime: 0.75
-  dashPower: 2
+  dashPower: 6
   dashCooldown: 4
   dashIndicator: {fileID: 5910768304150022312}
 --- !u!114 &4790872568561083539
@@ -530,6 +496,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockbackStrength: 0
+--- !u!114 &8424980281040868951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516425167985709169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c1700008e098ae468f3da206c69f3f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockbackStrength: 0
+--- !u!70 &112777825124948672
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516425167985709169}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -2.2581556, y: -2.9408512}
+  m_Size: {x: 13.392859, y: 17.050953}
+  m_Direction: 0
 --- !u!1 &4099860121307068791
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,7 +570,7 @@ RectTransform:
   m_GameObject: {fileID: 4099860121307068791}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.015561081, y: 0.015561081, z: 0.015561081}
+  m_LocalScale: {x: 0.03179129, y: 0.03179129, z: 0.03179129}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 744294400855649673}
@@ -565,7 +579,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.178}
+  m_AnchoredPosition: {x: 0, y: 0.535}
   m_SizeDelta: {x: 80, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7023583866676957833
@@ -747,8 +761,8 @@ Transform:
   m_GameObject: {fileID: 5700930588914373161}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.82, z: 0}
-  m_LocalScale: {x: 1.2245, y: 4.35051, z: 1}
+  m_LocalPosition: {x: 0, y: 3.16, z: 0}
+  m_LocalScale: {x: 1.2245, y: 7.511156, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 268482435020292672}
@@ -900,7 +914,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.03, y: 0.45, z: 0}
-  m_LocalScale: {x: 1.2205068, y: 1.0625472, z: 1.0759974}
+  m_LocalScale: {x: 1.1, y: 1.1, z: 1.0759974}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8853922157738319403}
@@ -946,9 +960,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 97
-  m_Sprite: {fileID: 21300000, guid: 2f3fd663f4864164c921a17dbcc2672b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fa1f3ee5d35de9d48b02f3b718d9e856, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.34117648}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 5.24, y: 7.18}

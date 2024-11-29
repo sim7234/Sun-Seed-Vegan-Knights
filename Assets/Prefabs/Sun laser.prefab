@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5989242054330223118}
   - component: {fileID: 8772184966686302631}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4885852071440191381}
   - component: {fileID: 8160629260186856859}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 7203366049198095790}
   - component: {fileID: 266120682327299798}
   - component: {fileID: 1825564032937957529}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sun laser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,7 +251,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 3.3
 --- !u!195 &1825564032937957529
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -285,7 +285,7 @@ GameObject:
   - component: {fileID: 3043236159615631091}
   - component: {fileID: 2702315918164231893}
   - component: {fileID: 7072095802484572152}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Epeleptic Warning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5116,7 +5116,7 @@ GameObject:
   - component: {fileID: 3179702000557846246}
   - component: {fileID: 7618860901662492265}
   - component: {fileID: 877155785730402743}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Laser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9948,7 +9948,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8578658512774870025}
   - component: {fileID: 3390111427592554974}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ep version
   m_TagString: Untagged
   m_Icon: {fileID: 0}
