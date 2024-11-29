@@ -977,7 +977,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 551, y: -77}
+  m_AnchoredPosition: {x: 555.9, y: -87}
   m_SizeDelta: {x: 500, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &238644243
@@ -1000,7 +1000,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '<size=40><voffset=0.15em><sprite=0></voffset></size>CONTINUE
+  m_text: '<size=40><voffset=0.3em><sprite=1></voffset></size>NEXT
 
 '
   m_isRightToLeft: 0
@@ -1021,7 +1021,7 @@ MonoBehaviour:
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 11400000, guid: f1bcf3fc71793f74b9af856e263c6eef, type: 2}
+  m_spriteAsset: {fileID: 11400000, guid: c3053eca6a6b8544f949b00de29b02df, type: 2}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
   m_TextStyleHashCode: -1183493901
@@ -1029,13 +1029,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -2872,15 +2872,17 @@ MonoBehaviour:
   stageDialogues:
   - dialogues:
     - PRESS      <size=50><voffset=-0.15em><sprite=5></voffset></size> TO JOIN
-    - "PRESS        <size=50><voffset=-0.15em><sprite=2></voffset></size> TO ATTACK\n
+    - "PRESS        <size=50><voffset=-0.15em><sprite=3></voffset></size> TO ATTACK\n
       ATTACK THE ENEMY TO PROGRESS"
+    - USE        <size=50><voffset=-0.15em><sprite=0></voffset></size> TO ROTATE
+      YOUR CHARACTER
   - dialogues:
     - THE WALL LOOKS TOO STRONG TO  DESTROY WITH A REGULAR WEAPON. GROW A STRONGER
-      WEAPON USING     <size=50><voffset=-0.15em><sprite=3></voffset></size>IN THE
+      WEAPON USING     <size=50><voffset=-0.15em><sprite=4></voffset></size>IN THE
       SUNLIT AREA
-    - TO START THE GROWING PROCESS, PROCEED TO PRESS      <size=50><voffset=-0.15em><sprite=3></voffset></size>WHEN
+    - TO START THE GROWING PROCESS, PROCEED TO PRESS      <size=50><voffset=-0.15em><sprite=4></voffset></size>WHEN
       STANDING ON TOP OF THE SEED
-    - TO PICK UP THE UPGRADED WEAPON, PRESS     <size=50><voffset=-0.15em><sprite=3></voffset></size>
+    - TO PICK UP THE UPGRADED WEAPON, PRESS     <size=50><voffset=-0.15em><sprite=4></voffset></size>
       AND DESTROY THE WALL AND ELIMINATE THE ENEMIES TO PROGRESS
   - dialogues:
     - DEALING ENOUGH DAMAGE TO AN ENEMY MARKS THEM WITH YOUR PLAYER COLOR. THIS EFFECT
@@ -2888,9 +2890,9 @@ MonoBehaviour:
     - IF A TEAMMATE HITS A BLOOMED ENEMY IT BURSTS THE BLOOM TO DEAL EXTRA DAMAGE.
     - ' YOU CAN NOT BURST THE BLOOM OF THE ENEMY MARKED WITH YOUR OWN PLAYER COLOR.'
   - dialogues:
-    - WATER IS USED AS AN RESOURCE FOR SPECIAL ACTIONS. TO REFILL YOUR WATER RESOURCE
+    - WATER IS USED AS A RESOURCE FOR SPECIAL ACTIONS. TO REFILL YOUR WATER RESOURCE
       STEP INTO THE PUDDLE
-    - GROWING SEEDS COSTS 2 WATER. YOU CAN ALSO DASH USING      <size=50><voffset=-0.15em><sprite=1></voffset></size>AS
+    - GROWING SEEDS COSTS 2 WATER. YOU CAN ALSO DASH USING      <size=50><voffset=-0.15em><sprite=2></voffset></size>AS
       LONG AS YOU HAVE ANY WATER IN UR POSSESION.
     - AFTER YOU HAVE REFILLED YOUR WATER. GROW ANOTHER SPECIAL WEAPON, DESTROY THE
       WALL AND ENTER THE GOAL ZONE
@@ -4140,7 +4142,7 @@ Transform:
   m_GameObject: {fileID: 1027044606}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 37.8, y: -23.03, z: 0}
+  m_LocalPosition: {x: 33.99, y: -22.79, z: 0}
   m_LocalScale: {x: 4.257973, y: 16.663465, z: 1.1414}
   m_ConstrainProportionsScale: 0
   m_Children: []
