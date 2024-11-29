@@ -1674,6 +1674,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grid
       objectReference: {fileID: 0}
+    - target: {fileID: 8965027930231287057, guid: b79c589b57bef7e4e85ed853ae3a9f8e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4455,7 +4459,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1286990901
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4621,7 +4625,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.12
+  m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -5769,7 +5773,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2041880990766857901, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
       propertyPath: m_Intensity
-      value: 2.42
+      value: 0.78
       objectReference: {fileID: 0}
     - target: {fileID: 5986924373097982296, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
       propertyPath: m_Intensity

@@ -12,7 +12,7 @@ public class SunFlowerTurret : MonoBehaviour
     [SerializeField]
     private GameObject shootUpVisual;
 
-    private float shootInterval = 2.0f;
+    private float shootInterval = 20.0f;
 
     [SerializeField]
     private Transform shootPoint;
