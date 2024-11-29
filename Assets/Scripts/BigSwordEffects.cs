@@ -11,7 +11,7 @@ public class BigSwordEffects : MonoBehaviour
         {
             swordTrails.SetActive(false);
             swordTrails.SetActive(true);
-            Debug.Log("Sword trail activated");
+
         }
     }
 
@@ -20,7 +20,7 @@ public class BigSwordEffects : MonoBehaviour
         if (swordTrails != null)
         {
             swordTrails.SetActive(false);
-            Debug.Log("Sword trail deactivated");
+
         }
     }
 }

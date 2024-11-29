@@ -12,8 +12,7 @@ public class PlayerWater : MonoBehaviour
     [SerializeField]
     private int maxWater = 3;
 
-    [SerializeField]
-    private float waterGainTime;
+    public float waterGainTime;
 
     private float waterRateTimer;
 
@@ -85,7 +84,7 @@ public class PlayerWater : MonoBehaviour
 
         if (plantSeed != null && plantSeed.IsRecentlyPlanted())
         {
-            Debug.Log("CD on watering!");
+            //Debug.Log("CD on watering!");
             return;
         }
 
@@ -144,8 +143,19 @@ public class PlayerWater : MonoBehaviour
         }
     }
 
+    public int GetSeedsInRangeCount()
+    {
+        return seedInRange.Count;
+    }
+
     internal void MaxFill()
     {
         totalWater = maxWater;
+    }
+
+    public void TakeAllWater()
+    {
+        totalWater = 0; 
+        UpdateWaterDropDisplay();
     }
 }

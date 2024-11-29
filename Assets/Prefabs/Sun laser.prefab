@@ -214,8 +214,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1304e2ace511994495294e3679902cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageRange: 2
-  damage: 100
   targets: []
   NormalVfx: {fileID: 7943693891793035305}
   EpelepticFreindlyVerison: {fileID: 9001734060940147954}
@@ -293,7 +291,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3043236159615631091
 Transform:
   m_ObjectHideFlags: 0

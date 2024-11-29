@@ -28,12 +28,27 @@ public class Health : MonoBehaviour
     [SerializeField]
     public bool EpelepticFilterOn;
 
+    [SerializeField]
+    public bool talkToMissionMaster = true;
+
     void Start()
     {
+        if (FindAnyObjectByType<MissionMaster>() == null)
+        {
+            talkToMissionMaster = false;
+        }
+
+
         currentHealth = maxHealth;
-        baseColor = characterSprite.color;
-        audioSource = GetComponent<AudioSource>();
-        
+        if(characterSprite != null)
+        {
+            baseColor = characterSprite.color;
+        }
+        if (GetComponent<AudioSource>() != null)
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
+
         if (GetComponent<NavMeshAgent>() != null)
         {
             agent = GetComponent<NavMeshAgent>();
@@ -50,17 +65,26 @@ public class Health : MonoBehaviour
         if (GetComponent<EnemyHealthDisplay>() != null)
         {
             GetComponent<EnemyHealthDisplay>().UpdateSprite();
-            baseColor = characterSprite.color;
+            if(characterSprite != null)
+            {
+                baseColor = characterSprite.color;
+            }
         }
 
         if(gameObject.activeSelf)
         {
             StartCoroutine(BlinkOnHit());
         }
-        GameObject newBlood = Instantiate(bloodOnHit, transform.position, Quaternion.identity);
-        Destroy(newBlood, 0.8f);
-        audioSource.pitch = Random.Range(0.90f, 1.1f);
-        audioSource.Play();
+        if(bloodOnHit != null)
+        {
+            GameObject newBlood = Instantiate(bloodOnHit, transform.position, Quaternion.identity);
+            Destroy(newBlood, 0.8f);
+        }
+        if(audioSource != null)
+        {
+            audioSource.pitch = Random.Range(0.90f, 1.1f);
+            audioSource.Play();
+        }
         
         if(agent != null)
         {
@@ -72,14 +96,22 @@ public class Health : MonoBehaviour
             Die();
         }
     }
-
+ 
+    public void Heal(float amount)
+    {
+        currentHealth += amount;
+    }
     private void Die()
     {
-        GameObject newDeathEffect = Instantiate(deathEffect, transform.position, Quaternion.identity);
-        Destroy(newDeathEffect, 0.8f);
-        if(gameObject.CompareTag("Enemy"))
+        if(deathEffect != null)
         {
-            MissionMaster.Instance.EnemyKilled();
+            GameObject newDeathEffect = Instantiate(deathEffect, transform.position, Quaternion.identity);
+            Destroy(newDeathEffect, 0.8f);
+        }
+        if(gameObject.CompareTag("Enemy") && talkToMissionMaster == true)
+        {
+            MissionMaster.Instance.EnemyKilled(this.gameObject);
+            Debug.Log("EnemyKilled");
         }
 
         Screenshake.Instance.Shake(2.0f, 0.2f, 1.0f);
@@ -93,7 +125,6 @@ public class Health : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        
     }
 
     void Respawn()
@@ -110,7 +141,7 @@ public class Health : MonoBehaviour
 
     private IEnumerator BlinkOnHit()
     {
-        if(!EpelepticFilterOn)
+        if(!EpelepticFilterOn && characterSprite != null)
         {
             characterSprite.color = Color.red;
             yield return new WaitForSeconds(0.01f);

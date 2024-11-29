@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,32 +13,42 @@ public class PlantSeed : MonoBehaviour
     [SerializeField]
     private WeaponType currentType;
 
+    [SerializeField]
+    private GameObject currentSeedTypeInRange;
+
     private PlayerInput playerInput;
     private InputAction plantSeedAction;
+    private InputAction pickUpSeed;
 
-    [SerializeField]
-    private float plantSpeed = 1;
-    private float plantingTimer;
+    public float plantSpeed = 1;
+    public float plantingTimer;
 
-    [SerializeField]
     private float plantingCooldown = 0.2f; // cd before u can water
     private bool recentlyPlanted = false;
+
+    [HideInInspector]
+    public bool inSun;
+
+    [SerializeField]
+    private TextMeshProUGUI seedCooldownText;
+
+    [SerializeField]
+    private GameObject inSunEffect;
+
+    [HideInInspector]
+    public bool cantPlant;
 
     private void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
         plantSeedAction = playerInput.actions["PlantSeed"];
+        pickUpSeed = playerInput.actions["PickUp"];
+
     }
     private void Start()
     {
         Invoke(nameof(SelectSeed), 0.2f);
-    }
-    private void Update()
-    {
-        plantingTimer -= Time.deltaTime;
-    }
-    private void SelectSeed()
-    {
+
         int playerIndex = GetComponent<PlayerMovement>().playerIndex;
         if (playerIndex == 1)
         {
@@ -57,19 +69,52 @@ public class PlantSeed : MonoBehaviour
             currentType = SaveData.Instance.seedType4;
         }
     }
+    private void Update()
+    {
+        if (plantingTimer <= 0)
+        {
+            plantingTimer = 0;
+            seedCooldownText.text = Mathf.RoundToInt(plantingTimer).ToString();
+        }
+        else
+        {
+            plantingTimer -= Time.deltaTime;
+            seedCooldownText.text = Mathf.RoundToInt(plantingTimer).ToString();
+        }
+
+        if (inSun)
+        {
+            inSunEffect.SetActive(true);
+        }
+        else
+        {
+            inSunEffect.SetActive(false);
+        }
+    }
+    private void SelectSeed()
+    {
+        if (currentSeedTypeInRange != null)
+        {
+            Debug.Log("New seed pickup");
+            currentType = currentSeedTypeInRange.GetComponent<WeaponPickup>().type;
+            
+        }
+    }
     private void OnEnable()
     {
         plantSeedAction.performed += OnPlantSeedPerformed;
+        pickUpSeed.performed += OnSeedPickup;
     }
 
     private void OnDisable()
     {
         plantSeedAction.performed -= OnPlantSeedPerformed;
+        pickUpSeed.performed -= OnSeedPickup;
     }
 
     private void OnPlantSeedPerformed(InputAction.CallbackContext context)
     {
-        if (plantingTimer <= 0)
+        if (plantingTimer <= 0 && GetComponent<PlayerWater>().GetSeedsInRangeCount() == 0 && currentSeedTypeInRange == null && inSun && !cantPlant)
         {
             recentlyPlanted = true;
             StartCoroutine(ResetPlantingFlag());
@@ -92,7 +137,10 @@ public class PlantSeed : MonoBehaviour
             plantingTimer = plantSpeed;
         }
     }
-
+    public void OnSeedPickup(InputAction.CallbackContext context)
+    {
+        SelectSeed();
+    }
 
     private IEnumerator ResetPlantingFlag()
     {
@@ -108,24 +156,16 @@ public class PlantSeed : MonoBehaviour
     {
         if (collision.GetComponent<WeaponPickup>() != null && !collision.gameObject.CompareTag("WeaponPickup"))
         {
-            currentType = collision.GetComponent<WeaponPickup>().type;
-
-            int playerIndex = GetComponent<PlayerMovement>().playerIndex;
-            if (playerIndex == 1 || playerIndex == 0)
+            currentSeedTypeInRange = collision.gameObject;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.GetComponent<WeaponPickup>() != null && !collision.gameObject.CompareTag("WeaponPickup"))
+        {
+            if (currentSeedTypeInRange == collision.gameObject)
             {
-                SaveData.Instance.seedType = currentType;
-            }
-            else if (playerIndex == 2)
-            {
-                SaveData.Instance.seedType2 = currentType;
-            }
-            else if (playerIndex == 3)
-            {
-                SaveData.Instance.seedType3 = currentType;
-            }
-            else if (playerIndex == 4)
-            {
-                SaveData.Instance.seedType4 = currentType;
+                currentSeedTypeInRange = null;
             }
         }
     }

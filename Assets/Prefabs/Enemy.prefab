@@ -151,6 +151,8 @@ MonoBehaviour:
   deathEffect: {fileID: 1240254011838071449, guid: a8a005973de14ea47810af5564db808b, type: 3}
   characterSprite: {fileID: 766832208405697385}
   hitSound: {fileID: 8300000, guid: 340dd37fae7514c499dbd20603c7fcac, type: 3}
+  EpelepticFilterOn: 0
+  talkToMissionMaster: 1
 --- !u!114 &8504829168524113185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -326,6 +328,8 @@ MonoBehaviour:
   totalTargets: 0
   finalTarget: 0
   followTarget: 0
+  trackTarget: 1
+  targetTransform: {x: 0, y: 0, z: 0}
 --- !u!114 &928377495995262593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,6 +342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6ee23a00de2e1948af4b65182f92b3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distenceToTarget: 0
   distanceToAttack: 20
   isAttacking: 0
   withinDistance: 0
@@ -354,8 +359,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dashWindupTime: 0.45
-  dashTime: 0.4
-  dashPower: 2
+  dashTime: 0.2
+  dashPower: 1
   dashCooldown: 2
   dashIndicator: {fileID: 5910768304150022312}
 --- !u!114 &4790872568561083539

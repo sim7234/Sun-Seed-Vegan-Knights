@@ -10,7 +10,6 @@ public class Menu : MonoBehaviour
     
 
     [SerializeField] GameObject[] buttons;
-    [SerializeField] GameObject backToMenu;
 
     public void pressedPlay()
     {
@@ -20,14 +19,7 @@ public class Menu : MonoBehaviour
 
     public void pressedQuit()
     {
-        if (Application.isEditor)
-        {
-            UnityEditor.EditorApplication.isPlaying = false;
-        }
-        else
-        {
-            Application.Quit();
-        }
+            Application.Quit();    
     }
 
     public void pressedTutorial()

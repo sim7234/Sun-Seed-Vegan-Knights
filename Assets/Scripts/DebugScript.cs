@@ -1,11 +1,42 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class DebugScript : MonoBehaviour
 {
     // Update is called once per frame
+
+    [SerializeField] GameObject[] enemies;
+
+    Vector2 mousePos;
+    Camera camera;
+
+    bool noPlantCooldown;
+
+    private void Start()
+    {
+        Application.targetFrameRate = 144;
+        camera = Camera.main;
+    }
+
     void Update()
     {
+        mousePos = Input.mousePosition;
+        mousePos = camera.ScreenToWorldPoint(mousePos);
+
+        if (noPlantCooldown)
+        {
+            PlantSeed[] seedStats = FindObjectsOfType<PlantSeed>();
+
+            foreach (var item in seedStats)
+            {
+                if (item.gameObject.CompareTag("Player"))
+                {
+                    item.plantingTimer = 0;
+                }
+            }
+        }
+
         if (Input.GetKeyDown(KeyCode.Keypad1))
         {
             goToMenu();
@@ -17,6 +48,10 @@ public class DebugScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Keypad3))
         {
             goToLevel1();
+        }
+        if (Input.GetKeyDown(KeyCode.Keypad5))
+        {
+            goToSandbox();
         }
         if (Input.GetKeyDown(KeyCode.KeypadEnter))
         {
@@ -30,8 +65,6 @@ public class DebugScript : MonoBehaviour
         {
             infiniteHealth();
         }
-<<<<<<< Updated upstream
-=======
         if(Input.GetKeyDown(KeyCode.Keypad9))
         {
             RegainAllStats();
@@ -39,10 +72,6 @@ public class DebugScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Keypad8))
         {
             Nocd();
-        }
-        if (Input.GetKeyDown(KeyCode.KeypadPeriod))
-        {
-            killEnemies();
         }
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
@@ -60,8 +89,10 @@ public class DebugScript : MonoBehaviour
         {
             Instantiate(enemies[3], mousePos, Quaternion.identity);
         }
->>>>>>> Stashed changes
     }
+
+    
+
     void goToMenu()
     {
         SceneManager.LoadScene(3);
@@ -77,6 +108,11 @@ public class DebugScript : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    void goToSandbox()
+    {
+        SceneManager.LoadScene(5);
+    }
+
     void killPlayers()
     {
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
@@ -84,16 +120,6 @@ public class DebugScript : MonoBehaviour
         foreach (GameObject p in players)
         {
             Destroy(p);
-        }
-    }
-
-    void killEnemies()
-    {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-
-        foreach (GameObject enemy in enemies)
-        {
-            Destroy(enemy);
         }
     }
 
@@ -118,6 +144,65 @@ public class DebugScript : MonoBehaviour
                 item.currentHealth = item.maxHealth;
             }
 
+        }
+    }
+
+    private void RegainAllStats()
+    {
+        PlantSeed[] seedStats = FindObjectsOfType<PlantSeed>();
+
+        foreach (var item in seedStats)
+        {
+            if (item.gameObject.CompareTag("Player"))
+            {
+                item.plantingTimer = 0;
+            }
+        }
+        PlayerWater[] waterStats = FindObjectsOfType<PlayerWater>();
+
+        foreach (var item in waterStats)
+        {
+            if (item.gameObject.CompareTag("Player"))
+            {
+                item.MaxFill();
+            }
+        }
+
+        Health[] health = FindObjectsOfType<Health>();
+
+        foreach (var item in health)
+        {
+            if (item.gameObject.CompareTag("Player"))
+            {
+                item.currentHealth = item.maxHealth;
+            }
+
+        }
+    }
+
+
+    void Nocd()
+    {
+        PlantSeed[] seedStats = FindObjectsOfType<PlantSeed>();
+
+        foreach (var item in seedStats)
+        {
+            if (item.gameObject.CompareTag("Player"))
+            {
+                item.plantSpeed = 1;
+            }
+        }
+
+        noPlantCooldown = !noPlantCooldown;
+
+        PlayerWater[] waterStats = FindObjectsOfType<PlayerWater>();
+
+        foreach (var item in waterStats)
+        {
+            if (item.gameObject.CompareTag("Player"))
+            {
+                item.waterGainTime = 0.1f;
+            }
         }
     }
 }

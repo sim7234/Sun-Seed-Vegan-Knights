@@ -12,17 +12,15 @@ public class SpecialWeapon : MonoBehaviour
 
     private WeaponType weaponType;
 
-    [SerializeField]
     private int specialWeaponAttacks = 5;
     private int attackCounter;
+    public float attackCooldown;
 
     [SerializeField]
     private GameObject baseWeapon;
 
     [SerializeField]
     private List<GameObject> weaponPickupsInRange = new List<GameObject>();
-
-    public float attackCooldown;
 
     [SerializeField]
     private AudioClip swordSwingSound; 
@@ -34,6 +32,7 @@ public class SpecialWeapon : MonoBehaviour
     
     private PlayerInput playerInput; 
     private InputAction fireAction; 
+    private InputAction pickUpAction; 
 
     private void Awake()
     {
@@ -47,6 +46,7 @@ public class SpecialWeapon : MonoBehaviour
         if (playerInput != null)
         {
             fireAction = playerInput.actions["Fire"];
+            pickUpAction = playerInput.actions["PickUp"];
         }
     }
 
@@ -57,8 +57,12 @@ public class SpecialWeapon : MonoBehaviour
             fireAction.Enable();
             fireAction.performed += Fire; 
         }
+        if (pickUpAction != null)
+        {
+            pickUpAction.Enable();
+            pickUpAction.performed += PickUpWeapon;
+        }
     }
-
     private void OnDisable()
     {
         if (fireAction != null)
@@ -66,64 +70,38 @@ public class SpecialWeapon : MonoBehaviour
             fireAction.Disable();
             fireAction.performed -= Fire;
         }
+        if (pickUpAction != null)
+        {
+            pickUpAction.Disable();
+            pickUpAction.performed -= PickUpWeapon;
+        }
     }
+
 
     private void Start()
     {
         attackCounter = 0;
     }
 
-    public void Fire(InputAction.CallbackContext context)
+    public void PickUpWeapon(InputAction.CallbackContext context)
     {
-        if (bigSword.activeSelf && attackCooldown <= 0)
-        {
-            attackCounter++;
-            bigSword.GetComponent<Animator>().SetTrigger("Attack");
-            PlaySwordSwingSound();
-            attackCooldown = 1.5f;
-            Debug.Log("Big swing");
-
-            if (attackCounter >= specialWeaponAttacks)
-            {
-                bigSword.SetActive(false);
-                bigSpear.SetActive(false);
-                baseWeapon.SetActive(true);
-            }
-        }
-        
-        if (bigSpear.activeSelf && attackCooldown <= 0)
-        {
-            attackCounter++;
-            bigSpear.GetComponent<Animator>().SetTrigger("Attack");
-            PlaySpearThrustSound();
-            attackCooldown = 1.5f;
-            Debug.Log("Big swing");
-
-            if (attackCounter >= specialWeaponAttacks)
-            {
-                bigSpear.SetActive(false);
-                baseWeapon.SetActive(true);
-            }
-        }
-
-        
-        else if (weaponPickupsInRange.Count > 0)
+        if (weaponPickupsInRange.Count > 0)
         {
             attackCounter = 0;
             if (weaponPickupsInRange[0].GetComponent<WeaponPickup>().GetWeaponType() == WeaponType.Sword)
             {
                 bigSword.SetActive(true);
-                bigSpear.SetActive(false);   
+                bigSpear.SetActive(false);
 
                 specialWeaponAttacks = 5;
             }
             else if (weaponPickupsInRange[0].GetComponent<WeaponPickup>().GetWeaponType() == WeaponType.Spear)
             {
-                bigSpear.SetActive(true);   
+                bigSpear.SetActive(true);
                 bigSword.SetActive(false);
                 specialWeaponAttacks = 10;
             }
-            
+
             baseWeapon.SetActive(false);
             if (weaponPickupsInRange[0] != null)
             {
@@ -131,7 +109,38 @@ public class SpecialWeapon : MonoBehaviour
             }
             weaponPickupsInRange.Clear();
 
-            Debug.Log("Special weapon picked up!");
+            //Debug.Log("Special weapon picked up!");
+        }
+    }
+
+    public void Fire(InputAction.CallbackContext context)
+    {
+        if (bigSword.activeSelf && attackCooldown <= 0)
+        {
+            attackCounter++;
+            if (attackCounter == specialWeaponAttacks)
+            {
+                Invoke(nameof(DisableSpecialWeapon), 0.8f);
+            }
+
+            bigSword.GetComponent<Animator>().SetTrigger("Attack");
+            PlaySwordSwingSound();
+            attackCooldown = 1.5f;
+            //Debug.Log("Big swing");
+        }
+        
+        if (bigSpear.activeSelf && attackCooldown <= 0)
+        {
+            attackCounter++;
+            if (attackCounter == specialWeaponAttacks)
+            {
+                Invoke(nameof(DisableSpecialWeapon), 0.8f);
+            }
+
+            bigSpear.GetComponent<Animator>().SetTrigger("Attack");
+            PlaySpearThrustSound();
+            attackCooldown = 1.5f;
+            Debug.Log("Big swing");
         }
     }
 
@@ -145,7 +154,7 @@ public class SpecialWeapon : MonoBehaviour
         if (collision.GetComponent<WeaponPickup>() != null && collision.CompareTag("WeaponPickup"))
         {
             weaponPickupsInRange.Add(collision.gameObject);
-            
+            GetComponent<PlantSeed>().cantPlant = true;
         }
     }
 
@@ -156,6 +165,7 @@ public class SpecialWeapon : MonoBehaviour
             if(weaponPickupsInRange.Contains(collision.gameObject))
             {
                 weaponPickupsInRange.Remove(collision.gameObject);
+                GetComponent<PlantSeed>().cantPlant = false;
             }
         }
     }
@@ -173,6 +183,21 @@ public class SpecialWeapon : MonoBehaviour
         if (spearThrustSound != null && audioSource != null)
         {
             audioSource.PlayOneShot(spearThrustSound); 
+        }
+    }
+
+    public bool IsWieldingSword()
+    {
+        return bigSword != null && bigSword.activeSelf;
+    }
+
+    public void DisableSpecialWeapon()
+    {
+        if (bigSword.activeSelf || bigSpear.activeSelf)
+        {
+            bigSword.SetActive(false);
+            bigSpear.SetActive(false);
+            baseWeapon.SetActive(true);
         }
     }
 }

@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class Seed : MonoBehaviour
 {
-    [SerializeField]
-    private float growTime;
+    private float growTime = 5f;
 
     private float growthTimer;
 
-    public int waterCost;
+    [HideInInspector] public int waterCost = 2;
 
     private float progressionValue;
 

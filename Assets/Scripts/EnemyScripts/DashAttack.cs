@@ -14,11 +14,12 @@ public class DashAttack : MonoBehaviour
     bool setup = true;
 
     float windUpTimer = 0;
-    public float dashWindupTime;
-    public float dashTime = 0.5f;
-    public float dashPower;
+    //Hide to lower compile time.
+     public float dashWindupTime = 0.45f;
+     public float dashTime = 0.4f;
+     public float dashPower = 2;
+     public float dashCooldown = 2;
 
-    public float dashCooldown;
     float currentCooldown;
 
     bool beenInRange = false;
@@ -30,17 +31,21 @@ public class DashAttack : MonoBehaviour
     Rigidbody2D rb;
 
     private Damage damageCompnent;
+    Knockback knockbackscript;
 
     // Start is called before the first frame update
     void Start()
     {
+        knockbackscript = GetComponent<Knockback>();
         collider = GetComponent<Collider2D>();
-        windUpTimer = 0f;
         rb = GetComponent<Rigidbody2D>();
         dashIndicator.SetActive(false);
         pathfindingScript = GetComponent<Pathfinding>();
         enemyAttacksScript = GetComponent<EnemyAttacks>();
         damageCompnent = GetComponent<Damage>();
+
+        windUpTimer = 0f;
+        knockbackscript.enabled = false;
     }
 
     // Update is called once per frame
@@ -75,11 +80,7 @@ public class DashAttack : MonoBehaviour
             enemyAttacksScript.isAttacking = true;
             if(pathfindingScript.target[pathfindingScript.finalTarget] != null)
             targetPosition = pathfindingScript.target[pathfindingScript.finalTarget].transform.position;
-        }
-        else
-        {
-            enemyAttacksScript.isAttacking = false;
-        }
+        } 
 
         if (dashing == true)
         {
@@ -101,6 +102,7 @@ public class DashAttack : MonoBehaviour
 
             if (windUpTimer >= dashWindupTime + dashTime)
             {
+                enemyAttacksScript.isAttacking = false;
                 ResetDash();
             }
         }
@@ -108,7 +110,8 @@ public class DashAttack : MonoBehaviour
 
     void Dash()
     {
-        //damageCompnent.enabled = true;
+        knockbackscript.enabled = true;
+        damageCompnent.enabled = true;
         collider.isTrigger = true;
         dashIndicator.SetActive(false);
         rb.AddForce(dashIndicator.transform.up * dashPower, ForceMode2D.Impulse);
@@ -117,6 +120,7 @@ public class DashAttack : MonoBehaviour
 
     void ResetDash()
     {
+        knockbackscript.enabled = false;
         collider.isTrigger = false;
         damageCompnent.enabled = false;
         rb.velocity = Vector2.zero;

@@ -6,9 +6,10 @@ public class EnemyAttacks : MonoBehaviour
     Pathfinding pathfindingScript;
 
     protected Vector3 targetPosition;
-    float distenceToTarget;
+    [HideInInspector] public float distenceToTarget;
+    //Hide to reduce compile time
+    public float distanceToAttack = 20;
 
-    public float distanceToAttack;
     [HideInInspector] public bool isAttacking = false;
     [HideInInspector] public bool withinDistance = false;
 
@@ -36,10 +37,13 @@ public class EnemyAttacks : MonoBehaviour
         {
             withinDistance = true;
             pathfindingScript.followTarget = false;
-            agent.velocity = Vector3.zero;
+            if (pathfindingScript.trackTarget == true)
+            {
+                agent.velocity = Vector3.zero;
+            }
         }
 
-        if (distenceToTarget > distanceToAttack)
+        if (distenceToTarget > distanceToAttack && isAttacking == false)
         {
             pathfindingScript.followTarget = true;
             withinDistance = false;

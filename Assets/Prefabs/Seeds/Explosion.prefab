@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 5461385478693056826}
   - component: {fileID: 4305674187459415638}
   - component: {fileID: 2460421239612711588}
-  - component: {fileID: 8398634927627471251}
-  m_Layer: 0
+  - component: {fileID: 2252372722292332465}
+  m_Layer: 6
   m_Name: Explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5331,7 +5331,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.15328121}
   serializedVersion: 2
   m_Radius: 3.25
---- !u!114 &8398634927627471251
+--- !u!114 &2252372722292332465
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5340,11 +5340,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1643971528376598854}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e20aa28020800f747860e29386be9e34, type: 3}
+  m_Script: {fileID: 11500000, guid: 4652404fe8aec3441a7b76ad8aca024d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 100
-  isTriggerd: 0
+  playerIndex: 5
+  bloomDamage: 2
+  turnOfOnStart: 0
 --- !u!1 &3983735119726193417
 GameObject:
   m_ObjectHideFlags: 0
@@ -5355,7 +5356,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1433958333327164396}
   - component: {fileID: 5157857374687516524}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sapling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5440,7 +5441,7 @@ GameObject:
   - component: {fileID: 3079296384041479}
   - component: {fileID: 8401945365033839312}
   - component: {fileID: 5133451591274307419}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -71,6 +71,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""New action"",
+                    ""type"": ""Button"",
+                    ""id"": ""35b4de0d-44be-4cb9-89f5-605a5b4677c3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -172,6 +181,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Rotate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""48afd1b1-3b92-4c51-902b-f2dc6320444c"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""New action"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -203,7 +223,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""id"": ""d7d55869-27e1-4c78-b0ba-796175e0c725"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Press(behavior=2)"",
                     ""initialStateCheck"": false
                 },
                 {
@@ -232,6 +252,33 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Join"",
+                    ""type"": ""Button"",
+                    ""id"": ""5a810e6a-3f5e-4fb0-a4cf-7f691e38d47d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""NextDialogue"",
+                    ""type"": ""Button"",
+                    ""id"": ""8b37be16-9d85-4f6f-82f4-dd09cbab4178"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PickUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""e714669b-8a5e-423b-a759-707649f215c8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -271,7 +318,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""82433dfd-8f37-4aca-8785-c16393469ff4"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Control"",
@@ -282,7 +329,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""3036fd63-4ef5-4a6c-bfc2-a80504bef658"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Control"",
@@ -293,11 +340,44 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""48aa2e12-a47c-40b2-b1eb-3a49924e5423"",
-                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": ""Control"",
                     ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""88e0631e-9a21-403d-a608-66a5c07dbb30"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control"",
+                    ""action"": ""Join"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5a141322-f336-48ba-87ff-788a3d31d5ba"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control"",
+                    ""action"": ""NextDialogue"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bb1e02b9-7b1e-4016-94df-9700aaec3fee"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control"",
+                    ""action"": ""PickUp"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -341,6 +421,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_KeyboardActions1_Water = m_KeyboardActions1.FindAction("Water", throwIfNotFound: true);
         m_KeyboardActions1_PlantSeed = m_KeyboardActions1.FindAction("PlantSeed", throwIfNotFound: true);
         m_KeyboardActions1_Rotate = m_KeyboardActions1.FindAction("Rotate", throwIfNotFound: true);
+        m_KeyboardActions1_Newaction = m_KeyboardActions1.FindAction("New action", throwIfNotFound: true);
         // ControlActions1
         m_ControlActions1 = asset.FindActionMap("ControlActions1", throwIfNotFound: true);
         m_ControlActions1_Move = m_ControlActions1.FindAction("Move", throwIfNotFound: true);
@@ -349,6 +430,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_ControlActions1_Water = m_ControlActions1.FindAction("Water", throwIfNotFound: true);
         m_ControlActions1_PlantSeed = m_ControlActions1.FindAction("PlantSeed", throwIfNotFound: true);
         m_ControlActions1_Dash = m_ControlActions1.FindAction("Dash", throwIfNotFound: true);
+        m_ControlActions1_Join = m_ControlActions1.FindAction("Join", throwIfNotFound: true);
+        m_ControlActions1_NextDialogue = m_ControlActions1.FindAction("NextDialogue", throwIfNotFound: true);
+        m_ControlActions1_PickUp = m_ControlActions1.FindAction("PickUp", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -415,6 +499,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_KeyboardActions1_Water;
     private readonly InputAction m_KeyboardActions1_PlantSeed;
     private readonly InputAction m_KeyboardActions1_Rotate;
+    private readonly InputAction m_KeyboardActions1_Newaction;
     public struct KeyboardActions1Actions
     {
         private @PlayerInputActions m_Wrapper;
@@ -424,6 +509,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @Water => m_Wrapper.m_KeyboardActions1_Water;
         public InputAction @PlantSeed => m_Wrapper.m_KeyboardActions1_PlantSeed;
         public InputAction @Rotate => m_Wrapper.m_KeyboardActions1_Rotate;
+        public InputAction @Newaction => m_Wrapper.m_KeyboardActions1_Newaction;
         public InputActionMap Get() { return m_Wrapper.m_KeyboardActions1; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -448,6 +534,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Rotate.started += instance.OnRotate;
             @Rotate.performed += instance.OnRotate;
             @Rotate.canceled += instance.OnRotate;
+            @Newaction.started += instance.OnNewaction;
+            @Newaction.performed += instance.OnNewaction;
+            @Newaction.canceled += instance.OnNewaction;
         }
 
         private void UnregisterCallbacks(IKeyboardActions1Actions instance)
@@ -467,6 +556,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Rotate.started -= instance.OnRotate;
             @Rotate.performed -= instance.OnRotate;
             @Rotate.canceled -= instance.OnRotate;
+            @Newaction.started -= instance.OnNewaction;
+            @Newaction.performed -= instance.OnNewaction;
+            @Newaction.canceled -= instance.OnNewaction;
         }
 
         public void RemoveCallbacks(IKeyboardActions1Actions instance)
@@ -494,6 +586,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_ControlActions1_Water;
     private readonly InputAction m_ControlActions1_PlantSeed;
     private readonly InputAction m_ControlActions1_Dash;
+    private readonly InputAction m_ControlActions1_Join;
+    private readonly InputAction m_ControlActions1_NextDialogue;
+    private readonly InputAction m_ControlActions1_PickUp;
     public struct ControlActions1Actions
     {
         private @PlayerInputActions m_Wrapper;
@@ -504,6 +599,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @Water => m_Wrapper.m_ControlActions1_Water;
         public InputAction @PlantSeed => m_Wrapper.m_ControlActions1_PlantSeed;
         public InputAction @Dash => m_Wrapper.m_ControlActions1_Dash;
+        public InputAction @Join => m_Wrapper.m_ControlActions1_Join;
+        public InputAction @NextDialogue => m_Wrapper.m_ControlActions1_NextDialogue;
+        public InputAction @PickUp => m_Wrapper.m_ControlActions1_PickUp;
         public InputActionMap Get() { return m_Wrapper.m_ControlActions1; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -531,6 +629,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Dash.started += instance.OnDash;
             @Dash.performed += instance.OnDash;
             @Dash.canceled += instance.OnDash;
+            @Join.started += instance.OnJoin;
+            @Join.performed += instance.OnJoin;
+            @Join.canceled += instance.OnJoin;
+            @NextDialogue.started += instance.OnNextDialogue;
+            @NextDialogue.performed += instance.OnNextDialogue;
+            @NextDialogue.canceled += instance.OnNextDialogue;
+            @PickUp.started += instance.OnPickUp;
+            @PickUp.performed += instance.OnPickUp;
+            @PickUp.canceled += instance.OnPickUp;
         }
 
         private void UnregisterCallbacks(IControlActions1Actions instance)
@@ -553,6 +660,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Dash.started -= instance.OnDash;
             @Dash.performed -= instance.OnDash;
             @Dash.canceled -= instance.OnDash;
+            @Join.started -= instance.OnJoin;
+            @Join.performed -= instance.OnJoin;
+            @Join.canceled -= instance.OnJoin;
+            @NextDialogue.started -= instance.OnNextDialogue;
+            @NextDialogue.performed -= instance.OnNextDialogue;
+            @NextDialogue.canceled -= instance.OnNextDialogue;
+            @PickUp.started -= instance.OnPickUp;
+            @PickUp.performed -= instance.OnPickUp;
+            @PickUp.canceled -= instance.OnPickUp;
         }
 
         public void RemoveCallbacks(IControlActions1Actions instance)
@@ -595,6 +711,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnWater(InputAction.CallbackContext context);
         void OnPlantSeed(InputAction.CallbackContext context);
         void OnRotate(InputAction.CallbackContext context);
+        void OnNewaction(InputAction.CallbackContext context);
     }
     public interface IControlActions1Actions
     {
@@ -604,5 +721,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnWater(InputAction.CallbackContext context);
         void OnPlantSeed(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
+        void OnJoin(InputAction.CallbackContext context);
+        void OnNextDialogue(InputAction.CallbackContext context);
+        void OnPickUp(InputAction.CallbackContext context);
     }
 }

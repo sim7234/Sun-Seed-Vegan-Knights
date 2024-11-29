@@ -15,13 +15,20 @@ public class Sun : MonoBehaviour
         {
             collision.GetComponent<Seed>().inSun = true;
         }
+        if(collision.GetComponent<PlantSeed>() != null)
+        {
+            collision.GetComponent<PlantSeed>().inSun = true;
+        }
     }
-
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.GetComponent<Seed>() != null)
         {
             collision.GetComponent<Seed>().inSun = false;
+        }
+        if (collision.GetComponent<PlantSeed>() != null)
+        {
+            collision.GetComponent<PlantSeed>().inSun = false;
         }
     }
 

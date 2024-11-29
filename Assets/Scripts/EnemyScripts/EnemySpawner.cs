@@ -3,7 +3,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemyPrefab; 
-    public Transform[] spawnPoints; 
+    //public Transform[] spawnPoints; 
     public float spawnInterval = 10f;
     private float timer;
 
@@ -16,6 +16,9 @@ public class EnemySpawner : MonoBehaviour
     private int spawnAmount;
 
     private bool spawnerActive = false;
+
+    [SerializeField]
+    private bool talkToMissionMaster = true;
 
     void Start()
     {
@@ -45,8 +48,9 @@ public class EnemySpawner : MonoBehaviour
                 SpawnEnemy();
             }
         }
+        
     }
-
+  
     public void StartSpawner()
     {
         spawnerActive = true;
@@ -61,8 +65,13 @@ public class EnemySpawner : MonoBehaviour
     }
     void SpawnEnemy()
     {
-        Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-        Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
-        MissionMaster.Instance.AddEnemy();
+        //Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+        Vector2 spawnPoint = (Vector2)transform.position + Random.insideUnitCircle * 4;
+        GameObject newEnemy = Instantiate(enemyPrefab, spawnPoint, Quaternion.identity);
+        if(talkToMissionMaster)
+        {
+            MissionMaster.Instance.AddEnemy(newEnemy);
+        }
+        newEnemy.GetComponent<Health>().talkToMissionMaster = talkToMissionMaster;
     }
 }

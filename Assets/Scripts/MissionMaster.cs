@@ -9,6 +9,10 @@ public class MissionMaster : MonoBehaviour
 
     [HideInInspector] public int enemyCounter;
 
+
+    [SerializeField]
+    private List<GameObject> enemies = new List<GameObject>();
+
     [SerializeField]
     private TextMeshProUGUI enemyCounterText;
 
@@ -26,10 +30,13 @@ public class MissionMaster : MonoBehaviour
     [SerializeField]
     private List<GameObject> Objectives = new List<GameObject>();
 
-      [SerializeField]
-    private AudioClip stageCompleteSound; 
+    [SerializeField]
+    private List<GameObject> actionBetweenLevels = new List<GameObject>();
 
-    private AudioSource audioSource; 
+    [SerializeField]
+    private AudioClip stageCompleteSound;
+
+    private AudioSource audioSource;
 
     [SerializeField]
     private TextMeshProUGUI countdownText;
@@ -42,7 +49,7 @@ public class MissionMaster : MonoBehaviour
     private void Start()
     {
         combatsComplete = 0;
-       
+
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
         {
@@ -51,7 +58,7 @@ public class MissionMaster : MonoBehaviour
 
         StartCoroutine(ActivateCombatAfterDelay(10f, 0));
 
-        if(Objectives.Count > 1)
+        if (Objectives.Count > 1)
         {
             if (Objectives.Count >= combatsComplete)
             {
@@ -63,19 +70,24 @@ public class MissionMaster : MonoBehaviour
             }
         }
     }
-    public void AddEnemy()
+    public void AddEnemy(GameObject enemyObject)
     {
         enemyCounter += 1;
         UpdateText();
+        enemies.Add(enemyObject);
     }
-    public void EnemyKilled()
+    public void EnemyKilled(GameObject aEnemy)
     {
-        enemyCounter -= 1;
-        UpdateText();
-        if (enemyCounter <= 0)
+        if(enemies.Contains(aEnemy))
         {
-            PlayStageCompleteSound();
-            NextStage();
+            enemies.Remove(aEnemy);
+            enemyCounter -= 1;
+            UpdateText();
+            if (enemyCounter <= 0)
+            {
+                PlayStageCompleteSound();
+                NextStage();
+            }
         }
     }
 
@@ -87,15 +99,20 @@ public class MissionMaster : MonoBehaviour
     private void NextStage()
     {
         combatsComplete++;
-        if(combatsComplete == combatPoints.Count)
+        if (combatsComplete == combatPoints.Count)
         {
             SceneManager.LoadScene(0);
         }
-        if(combatsComplete < combatPoints.Count)
+        if (combatsComplete < combatPoints.Count)
         {
+
+            if (actionBetweenLevels[combatsComplete] != null)
+            {
+                actionBetweenLevels[combatsComplete].SetActive(true);
+            }
+
             StartCoroutine(MoveCameraToNextPoint(cam.transform.position, combatPoints[combatsComplete].transform.position));
         }
-        Debug.Log("New stage, camera moves");
     }
 
     private IEnumerator MoveCameraToNextPoint(Vector3 start, Vector3 end)
@@ -117,16 +134,15 @@ public class MissionMaster : MonoBehaviour
     {
         float remainingTime = delay;
 
-        
+
         while (remainingTime > 0)
         {
-            Debug.Log(remainingTime);
-            countdownText.SetText("Prepare for battle: " +  Mathf.FloorToInt(remainingTime).ToString());
+            countdownText.SetText("Prepare for battle: " + Mathf.FloorToInt(remainingTime).ToString());
             yield return new WaitForEndOfFrame();
             remainingTime -= Time.deltaTime;
         }
 
-        countdownText.SetText(""); 
+        countdownText.SetText("");
         combatSpawnObject[combatIndex].SetActive(true);
     }
 
@@ -134,7 +150,7 @@ public class MissionMaster : MonoBehaviour
     {
         if (stageCompleteSound != null && audioSource != null)
         {
-            audioSource.PlayOneShot(stageCompleteSound); 
+            audioSource.PlayOneShot(stageCompleteSound);
         }
     }
 }
