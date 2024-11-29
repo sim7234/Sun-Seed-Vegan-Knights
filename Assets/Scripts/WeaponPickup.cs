@@ -10,6 +10,7 @@ public class WeaponPickup : MonoBehaviour
     [SerializeField]
     private GameObject weaponPickupText;
 
+    [SerializeField]
     private List<GameObject> playersInRange = new List<GameObject>();
 
     public WeaponType GetWeaponType()
@@ -21,26 +22,31 @@ public class WeaponPickup : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
-        if(collision.gameObject.CompareTag("Player"))
+        if (weaponPickupText != null)
         {
-            playersInRange.Add(gameObject);
+            if (collision.gameObject.GetComponent<PlayerMovement>() != null)
+            {
+                playersInRange.Add(collision.gameObject);
+            }
+            weaponPickupText.SetActive(true);
         }
-        weaponPickupText.SetActive(true);
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-     
-        if(playersInRange.Contains(collision.gameObject))
+        if (weaponPickupText != null)
         {
-            playersInRange.Remove(collision.gameObject);
+            if (playersInRange.Contains(collision.gameObject))
+            {
+                playersInRange.Remove(collision.gameObject);
+            }
+            if (playersInRange.Count <= 0)
+            {
+                weaponPickupText.SetActive(false);
+            }
         }
-        if(playersInRange.Count <= 0)
-        {
-            weaponPickupText.SetActive(false);
-        }
+       
     }
-    
+
 }
 
 public enum WeaponType
@@ -48,5 +54,5 @@ public enum WeaponType
     Spear,
     Sword,
     Bomb,
-    Turret  
+    Turret
 }
