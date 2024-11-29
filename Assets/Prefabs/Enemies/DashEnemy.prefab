@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: -2784603825038570371}
   - component: {fileID: 4907288996071646888}
   - component: {fileID: 6087083339855631714}
-  - component: {fileID: 1991746258513872864}
+  - component: {fileID: 5379325141884206624}
   m_Layer: 7
   m_Name: DashEnemy
   m_TagString: Enemy
@@ -517,7 +517,7 @@ MonoBehaviour:
   retreatSpeed: 0.75
   whenToRetreat: 50
   retreating: 0
---- !u!114 &1991746258513872864
+--- !u!114 &5379325141884206624
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -529,7 +529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c1700008e098ae468f3da206c69f3f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackStrength: 20
+  knockbackStrength: 0
 --- !u!1 &4099860121307068791
 GameObject:
   m_ObjectHideFlags: 0
