@@ -22,11 +22,18 @@ public class EnemyRangedAttack : MonoBehaviour
     Vector3 targetPos;
 
     int targetArrayPos;
+
+    Camera camera;
+    float cameraVertical;
+    float cameraHorizontal;
+
+    bool canShoot;
     void Start()
     {
         pathfindingScript = GetComponent<Pathfinding>();
         enemyRetreatScript = GetComponent<EnemyRetreat>();
         enemyAttacksScript = GetComponent<EnemyAttacks>();
+        camera = Camera.main;
     }
 
     // Update is called once per frame
@@ -43,7 +50,23 @@ public class EnemyRangedAttack : MonoBehaviour
         float angle = Mathf.Atan2(targetPos.y, targetPos.x) * Mathf.Rad2Deg;
         rotationPoint.transform.rotation = Quaternion.Euler(0, 0, angle - 90);
 
-        
+
+        cameraVertical = camera.orthographicSize * 2;
+        cameraHorizontal = cameraVertical * camera.aspect;
+
+        if (transform.position.x > (cameraHorizontal / 2 - 0.8) || transform.position.x < -(cameraHorizontal / 2 - 0.8))
+        {
+            canShoot = false;
+        }
+        else if (transform.position.y > ((cameraVertical / 2) - 0.8) || transform.position.y < -((cameraVertical / 2 - 0.8)))
+        {
+            canShoot = false;
+        }
+        else
+        {
+            canShoot = true;
+        }
+
         if (enemyAttacksScript.withinDistance == true && enemyRetreatScript.retreating == false)
         {
             rangedAttackActive = true;
@@ -52,7 +75,7 @@ public class EnemyRangedAttack : MonoBehaviour
                 attackCooldown -= Time.deltaTime;
             }
 
-            if (attackCooldown <= 0)
+            if (attackCooldown <= 0 && canShoot == true)
             {
                 rangedAttack();
             }
