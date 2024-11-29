@@ -218,10 +218,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAmount: 0
-  seedType: 0
-  seedType2: 0
-  seedType3: 0
-  seedType4: 0
+  seedType: 1
+  seedType2: 1
+  seedType3: 1
+  seedType4: 1
   player1: {fileID: 0}
   player2: {fileID: 0}
   player3: {fileID: 0}
