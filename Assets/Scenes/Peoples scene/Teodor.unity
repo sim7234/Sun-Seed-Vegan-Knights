@@ -7143,10 +7143,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Save data
       objectReference: {fileID: 0}
-    - target: {fileID: 8697077578726434992, guid: fb5d2647caf8ee044b759d5cf1915843, type: 3}
-      propertyPath: seedType
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

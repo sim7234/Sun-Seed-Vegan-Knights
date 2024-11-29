@@ -20780,7 +20780,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c1700008e098ae468f3da206c69f3f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackStrength: 4
+  knockbackStrength: 2
 --- !u!114 &5977648922007010921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26180,11 +26180,13 @@ MonoBehaviour:
   - {fileID: 3066602483055560766, guid: 5dcf56cd6f39d53469d737ee801e09f7, type: 3}
   - {fileID: 4209319261259547291, guid: 668de3c610a6bef4f8e142a583ec9615, type: 3}
   currentType: 1
+  currentSeedTypeInRange: {fileID: 0}
   plantSpeed: 30
   plantingTimer: 0
   inSun: 0
   seedCooldownText: {fileID: 2450117201710678076}
   inSunEffect: {fileID: 7701823554249734520}
+  cantPlant: 0
 --- !u!114 &4088991493060879705
 MonoBehaviour:
   m_ObjectHideFlags: 0
