@@ -157,7 +157,7 @@ PrefabInstance:
     - target: {fileID: 570690928819822502, guid: 97eae5f3675806247b524adabf3889e8, type: 3}
       propertyPath: m_spriteAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 99cb2b18a77776541b790257434f317d, type: 2}
+      objectReference: {fileID: 11400000, guid: c3053eca6a6b8544f949b00de29b02df, type: 2}
     - target: {fileID: 570690928819822502, guid: 97eae5f3675806247b524adabf3889e8, type: 3}
       propertyPath: m_fontSizeBase
       value: 26
@@ -3036,11 +3036,10 @@ MonoBehaviour:
   dialogueSystem: {fileID: 754411483}
   stageDialogues:
   - dialogues:
-    - PRESS      <size=50><voffset=-0.15em><sprite=5></voffset></size> TO JOIN
-    - "PRESS        <size=50><voffset=-0.15em><sprite=3></voffset></size> TO ATTACK\n
-      ATTACK THE ENEMY TO PROGRESS"
-    - USE        <size=50><voffset=-0.15em><sprite=0></voffset></size> TO ROTATE
-      YOUR CHARACTER
+    - PRESS <size=50><voffset=-0.15em><sprite=6></voffset></size> TO JOIN
+    - "PRESS <size=50><voffset=-0.15em><sprite=3></voffset></size> TO ATTACK\n ATTACK
+      THE ENEMY TO PROGRESS"
+    - USE <size=50><voffset=-0.15em><sprite=0></voffset></size> TO ROTATE YOUR CHARACTER
   - dialogues:
     - THE WALL LOOKS TOO STRONG TO  DESTROY WITH A REGULAR WEAPON. GROW A STRONGER
       WEAPON USING     <size=50><voffset=-0.15em><sprite=4></voffset></size>IN THE

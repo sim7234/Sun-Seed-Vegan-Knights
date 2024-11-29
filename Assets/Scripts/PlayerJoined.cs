@@ -1,9 +1,10 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerJoined : MonoBehaviour
 {
-    public Dialogue dialogueSystem; 
+    public Dialogue dialogueSystem;
 
     private PlayerInputManager playerInputManager;
 
@@ -14,6 +15,7 @@ public class PlayerJoined : MonoBehaviour
         {
             playerInputManager.onPlayerJoined += OnPlayerJoined;
         }
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     void OnDisable()
@@ -22,6 +24,8 @@ public class PlayerJoined : MonoBehaviour
         {
             playerInputManager.onPlayerJoined -= OnPlayerJoined;
         }
+
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     public void OnPlayerJoined(PlayerInput playerInput)
@@ -41,6 +45,30 @@ public class PlayerJoined : MonoBehaviour
         {
             playerInput.actions["NextDialogue"].performed += context => dialogueSystem.NextLine();
         }
-    
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "TeodorHub" || scene.name == "Menu")
+        {
+            ResetPlayerInputManager();
+        }
+    }
+
+    private void ResetPlayerInputManager()
+    {
+        PlayerInput[] allPlayers = FindObjectsOfType<PlayerInput>();
+        foreach (var player in allPlayers)
+        {
+            Destroy(player.gameObject);
+        }
+
+        if (playerInputManager != null)
+        {
+            Destroy(playerInputManager.gameObject);
+        }
+
+        SceneManager.sceneLoaded -= OnSceneLoaded; 
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name); 
     }
 }
