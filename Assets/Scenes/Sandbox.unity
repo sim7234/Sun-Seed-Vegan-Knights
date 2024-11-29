@@ -1553,6 +1553,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DashEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 8504829168524113185, guid: 7e1a7e45e9581db48867944c5311208b, type: 3}
+      propertyPath: damage
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 8853922157738319403, guid: 7e1a7e45e9581db48867944c5311208b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.27
