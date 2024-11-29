@@ -3042,11 +3042,11 @@ MonoBehaviour:
     - USE <size=50><voffset=-0.15em><sprite=0></voffset></size> TO ROTATE YOUR CHARACTER
   - dialogues:
     - THE WALL LOOKS TOO STRONG TO  DESTROY WITH A REGULAR WEAPON. GROW A STRONGER
-      WEAPON USING     <size=50><voffset=-0.15em><sprite=4></voffset></size>IN THE
-      SUNLIT AREA
-    - TO START THE GROWING PROCESS, PROCEED TO PRESS      <size=50><voffset=-0.15em><sprite=4></voffset></size>WHEN
+      WEAPON USING <size=50><voffset=-0.15em><sprite=4></voffset></size>IN THE SUNLIT
+      AREA
+    - TO START THE GROWING PROCESS, PROCEED TO PRESS <size=50><voffset=-0.15em><sprite=4></voffset></size>WHEN
       STANDING ON TOP OF THE SEED
-    - TO PICK UP THE UPGRADED WEAPON, PRESS     <size=50><voffset=-0.15em><sprite=4></voffset></size>
+    - TO PICK UP THE UPGRADED WEAPON, PRESS <size=50><voffset=-0.15em><sprite=4></voffset></size>
       AND DESTROY THE WALL AND ELIMINATE THE ENEMIES TO PROGRESS
   - dialogues:
     - DEALING ENOUGH DAMAGE TO AN ENEMY MARKS THEM WITH YOUR PLAYER COLOR. THIS EFFECT
@@ -3056,7 +3056,7 @@ MonoBehaviour:
   - dialogues:
     - WATER IS USED AS A RESOURCE FOR SPECIAL ACTIONS. TO REFILL YOUR WATER RESOURCE
       STEP INTO THE PUDDLE
-    - GROWING SEEDS COSTS 2 WATER. YOU CAN ALSO DASH USING      <size=50><voffset=-0.15em><sprite=2></voffset></size>AS
+    - GROWING SEEDS COSTS 2 WATER. YOU CAN ALSO DASH USING <size=50><voffset=-0.15em><sprite=2></voffset></size>AS
       LONG AS YOU HAVE ANY WATER IN UR POSSESION.
     - AFTER YOU HAVE REFILLED YOUR WATER. GROW ANOTHER SPECIAL WEAPON, DESTROY THE
       WALL AND ENTER THE GOAL ZONE
