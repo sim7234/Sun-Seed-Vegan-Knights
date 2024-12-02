@@ -3037,9 +3037,9 @@ MonoBehaviour:
   stageDialogues:
   - dialogues:
     - PRESS <size=50><voffset=-0.15em><sprite=6></voffset></size> TO JOIN
+    - USE <size=50><voffset=-0.15em><sprite=0></voffset></size> TO ROTATE YOUR CHARACTER
     - "PRESS <size=50><voffset=-0.15em><sprite=3></voffset></size> TO ATTACK\n ATTACK
       THE ENEMY TO PROGRESS"
-    - USE <size=50><voffset=-0.15em><sprite=0></voffset></size> TO ROTATE YOUR CHARACTER
   - dialogues:
     - THE WALL LOOKS TOO STRONG TO  DESTROY WITH A REGULAR WEAPON. GROW A STRONGER
       WEAPON USING <size=50><voffset=-0.15em><sprite=4></voffset></size>IN THE SUNLIT
