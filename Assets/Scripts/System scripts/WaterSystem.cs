@@ -1,31 +1,61 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Events;
 
-public class PlayerWater : MonoBehaviour
+
+public class WaterSystem : MonoBehaviour
 {
-    [SerializeField]
-    private int totalWater;
-    [SerializeField]
-    private int maxWater = 3;
 
-    public float waterGainTime;
+    //TODO: Make 1 big water drop, that fills with water/blue color based on water amount
+    
 
-    private float waterRateTimer;
+    int maxWater = 10;
 
-    [SerializeField]
-    private List<GameObject> waterDropsDisplay = new List<GameObject>();
-    private List<Seed> seedInRange = new List<Seed>();
+   [HideInInspector] public int currentWater;
+
+    float wateringTime = 0.1f;
+    float wateringTimer;
+
+    float waterRefillCooldown = 1.5f;
+    float waterRefillTimer;
+
+    bool hasEnoughWater;
 
     private InputAction waterAction;
 
-    [SerializeField]
-    private UnityEvent onWaterPerformed;
-    [SerializeField]
-    private UnityEvent onWaterGained;
+    private List<Seed> seedInRange = new List<Seed>();
+
     private PlantSeed plantSeed;
 
+    //[SerializeField] SpriteRenderer waterImage;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        currentWater = maxWater;
+        waterRefillTimer = waterRefillCooldown;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (wateringTimer > 0)
+        {
+            wateringTimer--;
+        }
+        else
+
+        if (waterRefillTimer > 0)
+        {
+            waterRefillTimer -= Time.deltaTime;
+        }
+
+        if (waterRefillCooldown <= 0 && currentWater < maxWater)
+        {
+            currentWater++;
+            waterRefillTimer = waterRefillCooldown;
+        }
+    }
     private void Awake()
     {
         var playerInput = GetComponent<PlayerInput>();
@@ -55,34 +85,10 @@ public class PlayerWater : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        totalWater = maxWater;
-        UpdateWaterDropDisplay();
-    }
-
-    private void Update()
-    {
-        if (waterRateTimer >= waterGainTime && totalWater < maxWater)
-        {
-            waterRateTimer = 0;
-            totalWater += 1;
-            onWaterGained?.Invoke(); 
-        }
-        else if (totalWater < maxWater)
-        {
-            waterRateTimer += Time.deltaTime;
-        }
-
-        UpdateWaterDropDisplay();
-    }
-
     public void OnWater(InputAction.CallbackContext context)
     {
-
         if (plantSeed != null && plantSeed.IsRecentlyPlanted())
         {
-            //Debug.Log("CD on watering!");
             return;
         }
 
@@ -92,33 +98,29 @@ public class PlayerWater : MonoBehaviour
             {
                 if (seedInRange[i].WaterSeed(gameObject))
                 {
-                    onWaterPerformed?.Invoke(); 
                     break;
                 }
             }
         }
     }
 
-    public void UpdateWaterDropDisplay()
+    /// <summary>
+    /// Takes a water cost, returns true if player had enough water and had the cooldown to water, returns false otherwise.
+    /// </summary>
+    /// <param name="waterCost"></param>
+    /// <returns></returns>
+    public bool TakeWater(int waterCost)
     {
-        foreach (var item in waterDropsDisplay)
+        if (currentWater > waterCost && wateringTimer <= 0)
         {
-            item.SetActive(false);
+            wateringTimer = wateringTime;
+            currentWater -= waterCost;
+            return true;
         }
-        for (int i = 0; i < totalWater; i++)
+        else
         {
-            waterDropsDisplay[i].SetActive(true);
+            return false;
         }
-    }
-
-    public void TakeWater(int waterCost)
-    {
-        totalWater -= waterCost;
-    }
-
-    public int TotalWater()
-    {
-        return totalWater;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -140,20 +142,20 @@ public class PlayerWater : MonoBehaviour
             seedInRange.Remove(oldSeed);
         }
     }
+    public int GetCurrentWater()
+    {
+        return currentWater;
+    }
 
     public int GetSeedsInRangeCount()
     {
         return seedInRange.Count;
     }
 
-    internal void MaxFill()
+    void RefillAllWater()
     {
-        totalWater = maxWater;
+        currentWater = maxWater;
     }
 
-    public void TakeAllWater()
-    {
-        totalWater = 0; 
-        UpdateWaterDropDisplay();
-    }
 }
+

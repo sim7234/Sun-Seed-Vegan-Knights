@@ -18,6 +18,10 @@ public class BloomRecipient : MonoBehaviour
     private int BloomIndex;
 
     [SerializeField]
+    private GameObject BloomBuildUpSliderObject;
+    private Slider BloomBuildUpSlider;
+
+    [SerializeField]
     private GameObject BloomExplosionVFX;
 
     [SerializeField]
@@ -27,28 +31,22 @@ public class BloomRecipient : MonoBehaviour
 
     public int divideHealthBy = 5;
 
-
-    [SerializeField]
-    private GameObject flowerPelletsObject;
-
-    [SerializeField]
-    private List<GameObject> flowerPelltes = new List<GameObject>();
     private void Start()
     {
         health = GetComponent<Health>();
-        //BloomBuildUpSlider = BloomBuildUpSliderObject.GetComponent<Slider>();
+        BloomBuildUpSlider = BloomBuildUpSliderObject.GetComponent<Slider>();
     }
 
     private void Update()
     {
         if(bloomBuildUp <= 0)
         {
-            flowerPelletsObject.SetActive(false);
+            BloomBuildUpSliderObject.SetActive(false);
         }
         else if(hasBloomed != true)
         {
             bloomBuildUp -= Time.deltaTime;
-            flowerPelletsObject.SetActive(true);
+            BloomBuildUpSlider.value = bloomBuildUp / bloomResistance;
         }
 
     }
@@ -56,17 +54,19 @@ public class BloomRecipient : MonoBehaviour
     {
         if (hasBloomed != true)
         {
-            if (playerIndex != BloomIndex)
+            if (playerIndex == BloomIndex)
+            {
+                bloomBuildUp += damage;
+            }
+            else
             {
                 BloomIndex = playerIndex;
                 bloomBuildUp = 0;
-                ColorPellets(playerIndex);
+                bloomBuildUp += damage; 
             }
-
-            bloomBuildUp += damage;
-            PrintPellets();
-
-            if (bloomBuildUp > bloomResistance)
+            BloomBuildUpSlider.value = bloomBuildUp / bloomResistance;
+            BloomBuildUpSliderObject.SetActive(true);
+            if(bloomBuildUp > bloomResistance)
             {
                 hasBloomed = true;
                 bloomGlowRim.SetActive(true);
@@ -80,6 +80,7 @@ public class BloomRecipient : MonoBehaviour
             {
                 BloomExplosion();
             }
+            //BloomExplosion();
         }
     }
     private void changeColorOfRim(int playerIndex)
@@ -114,55 +115,8 @@ public class BloomRecipient : MonoBehaviour
         Destroy(newExplosion, 1);
         health.TakeDamage(health.maxHealth/divideHealthBy + 25);
         hasBloomed = false;
-        flowerPelletsObject.SetActive(false);
+        BloomBuildUpSliderObject.SetActive(false);
         bloomBuildUp = 0;
         bloomGlowRim.SetActive(false);
-    }
-
-    private void PrintPellets()
-    {
-
-        foreach (var item in flowerPelltes)
-        {
-            item.SetActive(false);
-        }
-
-        for (int i = 0; i < Mathf.FloorToInt(flowerPelltes.Count * (bloomBuildUp / bloomResistance)); i++)
-        {
-            if(i < flowerPelltes.Count)
-            {
-                flowerPelltes[i].SetActive(true);
-            }
-        }
-    }
-
-    private void ColorPellets(int playerIndex)
-    {
-        foreach (var item in flowerPelltes)
-        {
-            switch (playerIndex)
-            {
-                case 1:
-                    item.GetComponent<SpriteRenderer>().color = Color.green;
-
-                    break;
-                case 2:
-                    item.GetComponent<SpriteRenderer>().color = Color.red;
-
-                    break;
-                case 3:
-                    item.GetComponent<SpriteRenderer>().color = Color.cyan;
-
-                    break;
-                case 4:
-                    item.GetComponent<SpriteRenderer>().color = Color.yellow;
-
-                    break;
-                default:
-                    item.GetComponent<SpriteRenderer>().color = Color.white;
-
-                    break;
-            }
-        }
     }
 }
