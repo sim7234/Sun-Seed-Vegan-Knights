@@ -1,16 +1,17 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
 
 public class Dialogue : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
-    public TextMeshProUGUI progressText; 
     [TextArea(3, 10)]
     public string[] lines;
 
     private int index;
     private PlayerInput playerInput;
+    public UnityEvent<int> onDialogueLineChanged;
 
     public string actionMapToDisable = "ControlActions1"; 
     public bool IsDialogueActive { get; private set; } 
@@ -52,7 +53,6 @@ public class Dialogue : MonoBehaviour
 
     private void OnNextDialoguePerformed(InputAction.CallbackContext context)
     {
-        Debug.Log("Pressed next");
         NextLine();
     }
 
@@ -65,15 +65,13 @@ public class Dialogue : MonoBehaviour
     {
         if (newLines == null || newLines.Length == 0)
         {
-            Debug.LogError("Dialogue lines are empty or null.");
             return;
         }
 
         lines = newLines;
         index = 0;
         IsDialogueActive = true; 
-        gameObject.SetActive(true);
-        UpdateProgress(); 
+        gameObject.SetActive(true); 
         DisplayLine();
 
         DisableActionMap();
@@ -84,7 +82,7 @@ public class Dialogue : MonoBehaviour
         if (index >= 0 && index < lines.Length)
         {
             textComponent.text = lines[index];
-            UpdateProgress(); 
+            onDialogueLineChanged?.Invoke(index); 
         }
     }
 
@@ -110,18 +108,11 @@ public class Dialogue : MonoBehaviour
         }
     }
 
-    private void UpdateProgress()
-    {
-        progressText.text = $"{index + 1}/{lines.Length}";
-    }
-
     private void EndDialogue()
     {
         IsDialogueActive = false; 
         gameObject.SetActive(false);
         textComponent.text = string.Empty;
-        progressText.text = string.Empty; 
-
         EnableActionMap();
     }
 
