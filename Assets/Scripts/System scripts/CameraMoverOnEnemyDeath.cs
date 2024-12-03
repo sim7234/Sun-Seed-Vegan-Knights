@@ -1,13 +1,15 @@
 using UnityEngine;
-
+using System.Collections;
+using System.Collections.Generic;
 
 
 [System.Serializable]
 public class StageDialogue
 {
     [TextArea(3, 10)]
-    public string[] dialogues; 
+    public string[] dialogues;
 }
+
 public class CameraMoverOnEnemyDeath : MonoBehaviour
 {
     public GameObject[] enemiesStage1;
@@ -34,7 +36,8 @@ public class CameraMoverOnEnemyDeath : MonoBehaviour
             return;
         }
 
-        dialogueSystem.StartDialogue(stageDialogues[currentStage].dialogues);
+        dialogueSystem.gameObject.SetActive(false);
+        StartCoroutine(ShowDialogueAfterDelay(10f));
     }
 
     void Update()
@@ -47,6 +50,18 @@ public class CameraMoverOnEnemyDeath : MonoBehaviour
         if (moveCamera)
         {
             MoveCameraToTarget();
+        }
+    }
+
+    IEnumerator ShowDialogueAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        dialogueSystem.gameObject.SetActive(true);
+
+        if (stageDialogues.Length > 0)
+        {
+            dialogueSystem.StartDialogue(stageDialogues[currentStage].dialogues);
         }
     }
 
@@ -69,11 +84,6 @@ public class CameraMoverOnEnemyDeath : MonoBehaviour
         if (currentStage < stageDialogues.Length && dialogueSystem != null)
         {
             dialogueSystem.StartDialogue(stageDialogues[currentStage].dialogues);
-        }
-
-        if (currentStage >= cameraPositions.Length)
-        {
-            Debug.Log("All stages completed!");
         }
     }
 

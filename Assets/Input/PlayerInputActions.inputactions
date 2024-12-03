@@ -241,15 +241,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "NextDialogue",
-                    "type": "Button",
-                    "id": "8b37be16-9d85-4f6f-82f4-dd09cbab4178",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "PickUp",
                     "type": "Button",
                     "id": "e714669b-8a5e-423b-a759-707649f215c8",
@@ -339,7 +330,44 @@
                 },
                 {
                     "name": "",
-                    "id": "5a141322-f336-48ba-87ff-788a3d31d5ba",
+                    "id": "bb1e02b9-7b1e-4016-94df-9700aaec3fee",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Control",
+                    "action": "PickUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "UI",
+            "id": "398be3a7-ee05-4573-b221-d0b924ba0fbe",
+            "actions": [
+                {
+                    "name": "PreviousDialogue",
+                    "type": "Button",
+                    "id": "ebd99b96-cc12-43b4-9a1d-bc900c1998de",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "NextDialogue",
+                    "type": "Button",
+                    "id": "0f15e55c-5487-4191-91b7-2fff1e2d8772",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "21a04f6f-b162-4e3d-8824-b97f5f7be599",
                     "path": "<Gamepad>/dpad/right",
                     "interactions": "",
                     "processors": "",
@@ -350,12 +378,12 @@
                 },
                 {
                     "name": "",
-                    "id": "bb1e02b9-7b1e-4016-94df-9700aaec3fee",
-                    "path": "<Gamepad>/buttonNorth",
+                    "id": "bfb21052-4ea3-4661-8304-b312d7295a6e",
+                    "path": "<Gamepad>/dpad/left",
                     "interactions": "",
                     "processors": "",
                     "groups": "Control",
-                    "action": "PickUp",
+                    "action": "PreviousDialogue",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

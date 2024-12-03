@@ -68,6 +68,7 @@ public class PlayerAttack : MonoBehaviour
         if (Time.time >= lastAttackTime + attackCooldown)
         {
             onFire?.Invoke();
+            Debug.Log(Gamepad.current.rightShoulder.value);
             
             attackCounter++;
             

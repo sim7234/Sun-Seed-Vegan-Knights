@@ -263,15 +263,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""NextDialogue"",
-                    ""type"": ""Button"",
-                    ""id"": ""8b37be16-9d85-4f6f-82f4-dd09cbab4178"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""PickUp"",
                     ""type"": ""Button"",
                     ""id"": ""e714669b-8a5e-423b-a759-707649f215c8"",
@@ -361,7 +352,44 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""5a141322-f336-48ba-87ff-788a3d31d5ba"",
+                    ""id"": ""bb1e02b9-7b1e-4016-94df-9700aaec3fee"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control"",
+                    ""action"": ""PickUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""UI"",
+            ""id"": ""398be3a7-ee05-4573-b221-d0b924ba0fbe"",
+            ""actions"": [
+                {
+                    ""name"": ""PreviousDialogue"",
+                    ""type"": ""Button"",
+                    ""id"": ""ebd99b96-cc12-43b4-9a1d-bc900c1998de"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""NextDialogue"",
+                    ""type"": ""Button"",
+                    ""id"": ""0f15e55c-5487-4191-91b7-2fff1e2d8772"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""21a04f6f-b162-4e3d-8824-b97f5f7be599"",
                     ""path"": ""<Gamepad>/dpad/right"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -372,12 +400,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""bb1e02b9-7b1e-4016-94df-9700aaec3fee"",
-                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""id"": ""bfb21052-4ea3-4661-8304-b312d7295a6e"",
+                    ""path"": ""<Gamepad>/dpad/left"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Control"",
-                    ""action"": ""PickUp"",
+                    ""action"": ""PreviousDialogue"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -431,8 +459,11 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_ControlActions1_PlantSeed = m_ControlActions1.FindAction("PlantSeed", throwIfNotFound: true);
         m_ControlActions1_Dash = m_ControlActions1.FindAction("Dash", throwIfNotFound: true);
         m_ControlActions1_Join = m_ControlActions1.FindAction("Join", throwIfNotFound: true);
-        m_ControlActions1_NextDialogue = m_ControlActions1.FindAction("NextDialogue", throwIfNotFound: true);
         m_ControlActions1_PickUp = m_ControlActions1.FindAction("PickUp", throwIfNotFound: true);
+        // UI
+        m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
+        m_UI_PreviousDialogue = m_UI.FindAction("PreviousDialogue", throwIfNotFound: true);
+        m_UI_NextDialogue = m_UI.FindAction("NextDialogue", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -587,7 +618,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_ControlActions1_PlantSeed;
     private readonly InputAction m_ControlActions1_Dash;
     private readonly InputAction m_ControlActions1_Join;
-    private readonly InputAction m_ControlActions1_NextDialogue;
     private readonly InputAction m_ControlActions1_PickUp;
     public struct ControlActions1Actions
     {
@@ -600,7 +630,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @PlantSeed => m_Wrapper.m_ControlActions1_PlantSeed;
         public InputAction @Dash => m_Wrapper.m_ControlActions1_Dash;
         public InputAction @Join => m_Wrapper.m_ControlActions1_Join;
-        public InputAction @NextDialogue => m_Wrapper.m_ControlActions1_NextDialogue;
         public InputAction @PickUp => m_Wrapper.m_ControlActions1_PickUp;
         public InputActionMap Get() { return m_Wrapper.m_ControlActions1; }
         public void Enable() { Get().Enable(); }
@@ -632,9 +661,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Join.started += instance.OnJoin;
             @Join.performed += instance.OnJoin;
             @Join.canceled += instance.OnJoin;
-            @NextDialogue.started += instance.OnNextDialogue;
-            @NextDialogue.performed += instance.OnNextDialogue;
-            @NextDialogue.canceled += instance.OnNextDialogue;
             @PickUp.started += instance.OnPickUp;
             @PickUp.performed += instance.OnPickUp;
             @PickUp.canceled += instance.OnPickUp;
@@ -663,9 +689,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Join.started -= instance.OnJoin;
             @Join.performed -= instance.OnJoin;
             @Join.canceled -= instance.OnJoin;
-            @NextDialogue.started -= instance.OnNextDialogue;
-            @NextDialogue.performed -= instance.OnNextDialogue;
-            @NextDialogue.canceled -= instance.OnNextDialogue;
             @PickUp.started -= instance.OnPickUp;
             @PickUp.performed -= instance.OnPickUp;
             @PickUp.canceled -= instance.OnPickUp;
@@ -686,6 +709,60 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         }
     }
     public ControlActions1Actions @ControlActions1 => new ControlActions1Actions(this);
+
+    // UI
+    private readonly InputActionMap m_UI;
+    private List<IUIActions> m_UIActionsCallbackInterfaces = new List<IUIActions>();
+    private readonly InputAction m_UI_PreviousDialogue;
+    private readonly InputAction m_UI_NextDialogue;
+    public struct UIActions
+    {
+        private @PlayerInputActions m_Wrapper;
+        public UIActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @PreviousDialogue => m_Wrapper.m_UI_PreviousDialogue;
+        public InputAction @NextDialogue => m_Wrapper.m_UI_NextDialogue;
+        public InputActionMap Get() { return m_Wrapper.m_UI; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(UIActions set) { return set.Get(); }
+        public void AddCallbacks(IUIActions instance)
+        {
+            if (instance == null || m_Wrapper.m_UIActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_UIActionsCallbackInterfaces.Add(instance);
+            @PreviousDialogue.started += instance.OnPreviousDialogue;
+            @PreviousDialogue.performed += instance.OnPreviousDialogue;
+            @PreviousDialogue.canceled += instance.OnPreviousDialogue;
+            @NextDialogue.started += instance.OnNextDialogue;
+            @NextDialogue.performed += instance.OnNextDialogue;
+            @NextDialogue.canceled += instance.OnNextDialogue;
+        }
+
+        private void UnregisterCallbacks(IUIActions instance)
+        {
+            @PreviousDialogue.started -= instance.OnPreviousDialogue;
+            @PreviousDialogue.performed -= instance.OnPreviousDialogue;
+            @PreviousDialogue.canceled -= instance.OnPreviousDialogue;
+            @NextDialogue.started -= instance.OnNextDialogue;
+            @NextDialogue.performed -= instance.OnNextDialogue;
+            @NextDialogue.canceled -= instance.OnNextDialogue;
+        }
+
+        public void RemoveCallbacks(IUIActions instance)
+        {
+            if (m_Wrapper.m_UIActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IUIActions instance)
+        {
+            foreach (var item in m_Wrapper.m_UIActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_UIActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public UIActions @UI => new UIActions(this);
     private int m_ControlSchemeIndex = -1;
     public InputControlScheme ControlScheme
     {
@@ -722,7 +799,11 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnPlantSeed(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
         void OnJoin(InputAction.CallbackContext context);
-        void OnNextDialogue(InputAction.CallbackContext context);
         void OnPickUp(InputAction.CallbackContext context);
+    }
+    public interface IUIActions
+    {
+        void OnPreviousDialogue(InputAction.CallbackContext context);
+        void OnNextDialogue(InputAction.CallbackContext context);
     }
 }

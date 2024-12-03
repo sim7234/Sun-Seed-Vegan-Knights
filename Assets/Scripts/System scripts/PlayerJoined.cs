@@ -28,19 +28,30 @@ public class PlayerJoined : MonoBehaviour
     {
         DontDestroyOnLoad(playerInput.gameObject);
 
-        if (playerInput.currentControlScheme == "Control")
-        {
-            playerInput.SwitchCurrentActionMap("ControlActions1");
-        }
-        else if (playerInput.currentControlScheme == "Keyboard")
+        if (playerInput.currentControlScheme == "Control" || playerInput.currentControlScheme == "Keyboard")
         {
             playerInput.SwitchCurrentActionMap("ControlActions1");
         }
 
         if (dialogueSystem != null)
         {
-            playerInput.actions["NextDialogue"].performed += context => dialogueSystem.NextLine();
+            dialogueSystem.OnPlayerJoined(playerInput);
+
+            playerInput.actions["NextDialogue"].performed += context =>
+            {
+                if (dialogueSystem.IsDialogueActive) 
+                {
+                    dialogueSystem.NextLine();
+                }
+            };
+
+            playerInput.actions["PreviousDialogue"].performed += context =>
+            {
+                if (dialogueSystem.IsDialogueActive)
+                {
+                    dialogueSystem.PreviousLine();
+                }
+            };
         }
-    
     }
 }
