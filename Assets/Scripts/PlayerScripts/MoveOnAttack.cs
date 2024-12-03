@@ -21,6 +21,8 @@ public class MoveOnAttack : MonoBehaviour
     private PlayerMovement playerMovement;
     private float baseMoveSpeed;
 
+
+
     [SerializeField]
     private float stopTime = 0.2f;
     private void Start()
@@ -36,6 +38,7 @@ public class MoveOnAttack : MonoBehaviour
         rb.AddForce(rotationObject.transform.up * strength * strengthModifer, ForceMode2D.Impulse);
         strength = 1.0f;
 
+  
         if(stopMovement && playerMovement != null)
         {
             StartCoroutine(stopMoveControlls());
@@ -45,7 +48,9 @@ public class MoveOnAttack : MonoBehaviour
     IEnumerator stopMoveControlls()
     {
         playerMovement.moveSpeed = 0;
+        playerMovement.rotationSpeed = 0;
         yield return new WaitForSeconds(stopTime);
+        playerMovement.rotationSpeed = 1;
         playerMovement.moveSpeed = baseMoveSpeed;
     }
 }

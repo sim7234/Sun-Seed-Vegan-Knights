@@ -12,15 +12,25 @@ public class PlayerDeath : MonoBehaviour
     [SerializeField]
     private GameObject deathBomb;
 
+    private float baseMoveSpeed;
+
+    private void Start()
+    {
+        baseMoveSpeed = GetComponent<PlayerMovement>().moveSpeed;
+    }
     public void onPlayerDeath()
     {
 
         GetComponent<PlayerHealing>().HealMax();
         TurnOfAllScripts();
+        GetComponent<PlayerMovement>().moveSpeed = baseMoveSpeed;
+        GetComponent<PlayerMovement>().rotationSpeed = 1;
         Invoke(nameof(TurnOnAllScripts), 5.0f);
         Invoke(nameof(SpawnExplosion), 4.8f);
 
         SaveData.Instance.playerDeathsBeforeGameOver--;
+
+                    
     }
     void Respawn()
     {

@@ -15535,8 +15535,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e20aa28020800f747860e29386be9e34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 50
-  isTriggerd: 0
+  damage: 100
+  isTriggerd: 1
 --- !u!61 &2257118951597938251
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15652,7 +15652,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndex: 0
-  bloomDamage: 12
+  bloomDamage: 30
   turnOfOnStart: 1
 --- !u!1 &2815485709930524877
 GameObject:
@@ -20678,7 +20678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e20aa28020800f747860e29386be9e34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 20
+  damage: 25
   isTriggerd: 0
 --- !u!61 &2094024035206509169
 BoxCollider2D:
@@ -20795,7 +20795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndex: 0
-  bloomDamage: 12
+  bloomDamage: 15
   turnOfOnStart: 1
 --- !u!1 &3293496961543997181
 GameObject:

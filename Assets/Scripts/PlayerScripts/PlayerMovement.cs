@@ -9,6 +9,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     public float moveSpeed = 4f;
 
+    [SerializeField]
+    public float rotationSpeed = 1;
+
     public AnimationCurve curve;
 
     [SerializeField]
@@ -123,7 +126,7 @@ public class PlayerMovement : MonoBehaviour
         if(rotationDirection != Vector2.zero && !lockOn)
         {
             float angle = Mathf.Atan2(rotationDirection.y, rotationDirection.x) * Mathf.Rad2Deg;
-            directionIndicator.transform.rotation = Quaternion.Euler(0, 0, angle - 90);
+            directionIndicator.transform.rotation = Quaternion.Euler(0, 0, angle - 90 * rotationSpeed);
         }
 
         if (lastAttackTime >= 0)
