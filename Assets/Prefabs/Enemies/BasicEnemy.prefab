@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e20aa28020800f747860e29386be9e34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 25
   isTriggerd: 1
 --- !u!1 &2423242964555548766
 GameObject:
@@ -210,6 +210,7 @@ GameObject:
   - component: {fileID: 2249135563756533116}
   - component: {fileID: 598431295749118918}
   - component: {fileID: 834400481011916039}
+  - component: {fileID: 1194922765740879506}
   m_Layer: 7
   m_Name: BasicEnemy
   m_TagString: Enemy
@@ -478,6 +479,33 @@ MonoBehaviour:
   - {fileID: 1395465111974678}
   - {fileID: 7584354485347380486}
   - {fileID: 5900076672597715206}
+--- !u!50 &1194922765740879506
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4076701649708178499}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 2
+  m_LinearDrag: 3
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &6558300269100734190
 GameObject:
   m_ObjectHideFlags: 0

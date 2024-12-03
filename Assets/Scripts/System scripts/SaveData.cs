@@ -5,6 +5,8 @@ public class SaveData : MonoBehaviour
     public static SaveData Instance { get; private set; }
     public int playerAmount;
 
+    public int playerDeathsBeforeGameOver;
+
     public WeaponType seedType;
     public WeaponType seedType2;
     public WeaponType seedType3;

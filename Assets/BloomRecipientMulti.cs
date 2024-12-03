@@ -72,19 +72,19 @@ public class BloomRecipientMulti : MonoBehaviour
             switch (playerIndex)
             {
                 case 1:
-                    bloomBuildUp1 = playerIndex;
+                    BloomIndex1 = playerIndex;
                     ColorPellets(playerIndex, flowerPelltes1);
                     break;
                 case 2:
-                    bloomBuildUp2 = playerIndex;
+                    BloomIndex2 = playerIndex;
                     ColorPellets(playerIndex, flowerPelltes2);
                     break;
                 case 3:
-                    bloomBuildUp3 = playerIndex;
+                    BloomIndex3 = playerIndex;
                     ColorPellets(playerIndex, flowerPelltes3);
                     break;
                 case 4:
-                    bloomBuildUp4 = playerIndex;
+                    BloomIndex4 = playerIndex;
                     ColorPellets(playerIndex, flowerPelltes4);
                     break;
             }
@@ -146,6 +146,7 @@ public class BloomRecipientMulti : MonoBehaviour
 
     private void BloomExplosion(int playerIndex)
     {
+        Debug.Log("Boom");
         GameObject newExplosion = Instantiate(BloomExplosionVFX, transform.position, Quaternion.identity);
         Destroy(newExplosion, 1);
         health.TakeDamage(health.maxHealth / divideHealthBy + 25);
@@ -226,38 +227,44 @@ public class BloomRecipientMulti : MonoBehaviour
         {
             flowerPelletsObject1.SetActive(false);
         }
-        if (bloomBuildUp2 <= 0)
-        {
-            flowerPelletsObject1.SetActive(false);
-        }
-        if (bloomBuildUp3 <= 0)
-        {
-            flowerPelletsObject1.SetActive(false);
-        }
-        if (bloomBuildUp4 <= 0)
-        {
-            flowerPelletsObject1.SetActive(false);
-        }
-
-        if (hasBloomed1 != true)
+        else if (hasBloomed1 != true)
         {
             bloomBuildUp1 -= Time.deltaTime;
             flowerPelletsObject1.SetActive(true);
+            PrintPellets(flowerPelltes1, bloomBuildUp1);
         }
-        if (hasBloomed2 != true)
+
+        if (bloomBuildUp2 <= 0)
+        {
+            flowerPelletsObject2.SetActive(false);
+        }
+        else if (hasBloomed2 != true)
         {
             bloomBuildUp2 -= Time.deltaTime;
             flowerPelletsObject2.SetActive(true);
+            PrintPellets(flowerPelltes2, bloomBuildUp2);
         }
-        if (hasBloomed3 != true)
+
+        if (bloomBuildUp3 <= 0)
+        {
+            flowerPelletsObject3.SetActive(false);
+        }
+        else if (hasBloomed3 != true)
         {
             bloomBuildUp3 -= Time.deltaTime;
             flowerPelletsObject3.SetActive(true);
+            PrintPellets(flowerPelltes3, bloomBuildUp3);
         }
-        if (hasBloomed4 != true)
+
+        if (bloomBuildUp4 <= 0)
+        {
+            flowerPelletsObject4.SetActive(false);
+        }
+        else if (hasBloomed4 != true)
         {
             bloomBuildUp4 -= Time.deltaTime;
             flowerPelletsObject4.SetActive(true);
+            PrintPellets(flowerPelltes4, bloomBuildUp4);
         }
     }
 }

@@ -13,9 +13,16 @@ public class PlayerHealing : MonoBehaviour
     }
     private void Update()
     {
-        if(GetComponent<PlantSeed>().inSun && GetComponent<Rigidbody2D>().velocity.magnitude <= 1)
+        if(GetComponent<PlantSeed>().inSun)
         {
             health.Heal(healingAmount * Time.deltaTime);
         }
+    }
+
+    public void HealMax()
+    {
+
+        health.currentHealth = health.maxHealth;
+
     }
 }

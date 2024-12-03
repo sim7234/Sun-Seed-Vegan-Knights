@@ -63,7 +63,7 @@ public class Pathfinding : MonoBehaviour
                 Vector3 targetDistence = target[i].transform.position - transform.position;
                 float targetDistenceSquared = targetDistence.sqrMagnitude;
 
-                if (targetDistenceSquared < closestTarget && target[i].gameObject.activeSelf == true)
+                if (targetDistenceSquared < closestTarget && target[i].GetComponent<isTarget>().enabled == true)
                 {
                     closestTarget = targetDistenceSquared;
                     
