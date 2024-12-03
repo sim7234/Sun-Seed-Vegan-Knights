@@ -442,9 +442,11 @@ MonoBehaviour:
   bloomResistance: 20
   bloomBuildUp: 0
   hasBloomed: 0
-  BloomBuildUpSliderObject: {fileID: 4099860121307068791}
   BloomExplosionVFX: {fileID: 1240254011838071449, guid: 20efd42d40277384687f4f2a74a87383, type: 3}
   bloomGlowRim: {fileID: 6540321965531942517}
+  divideHealthBy: 5
+  flowerPelletsObject: {fileID: 0}
+  flowerPelltes: []
 --- !u!60 &3003678878721537244
 PolygonCollider2D:
   m_ObjectHideFlags: 0

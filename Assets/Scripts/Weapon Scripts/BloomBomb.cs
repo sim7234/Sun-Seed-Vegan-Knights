@@ -31,5 +31,9 @@ public class BloomBomb : MonoBehaviour
         {
             other.GetComponent<BloomRecipient>().TakeBloomDamage(bloomDamage, playerIndex);
         }
+        else if (other.GetComponent<BloomRecipientMulti>() != null)
+        {
+            other.GetComponent<BloomRecipientMulti>().TakeBloomDamage(bloomDamage, playerIndex);
+        }
     }
 }
