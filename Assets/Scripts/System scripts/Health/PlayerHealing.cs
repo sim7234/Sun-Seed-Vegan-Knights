@@ -13,7 +13,7 @@ public class PlayerHealing : MonoBehaviour
     }
     private void Update()
     {
-        if(GetComponent<PlantSeed>().inSun)
+        if(GetComponent<EnteredSun>().inSun)
         {
             health.Heal(healingAmount * Time.deltaTime);
         }

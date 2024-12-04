@@ -159,7 +159,7 @@ public class SpecialWeapon : MonoBehaviour
         if (collision.GetComponent<WeaponPickup>() != null && collision.CompareTag("WeaponPickup"))
         {
             weaponPickupsInRange.Add(collision.gameObject);
-            GetComponent<PlantSeed>().cantPlant = true;
+            GetComponent<PlantSeedSystem>().cantPlant = true;
         }
     }
 
@@ -170,7 +170,7 @@ public class SpecialWeapon : MonoBehaviour
             if(weaponPickupsInRange.Contains(collision.gameObject))
             {
                 weaponPickupsInRange.Remove(collision.gameObject);
-                GetComponent<PlantSeed>().cantPlant = false;
+                GetComponent<PlantSeedSystem>().cantPlant = false;
             }
         }
     }

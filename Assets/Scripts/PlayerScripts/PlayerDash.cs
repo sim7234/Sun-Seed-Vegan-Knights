@@ -14,8 +14,6 @@ public class PlayerDash : MonoBehaviour
 
     Rigidbody2D rb;
 
-    PlayerWater waterScript;
-
     private InputAction dashAction;
 
     Collider2D playerCollider;
@@ -40,7 +38,6 @@ public class PlayerDash : MonoBehaviour
         playerCollider = GetComponent<Collider2D>();
         dashTrail.emitting = false;
         rb = GetComponent<Rigidbody2D>();
-        waterScript = GetComponent<PlayerWater>();
     }
     private void Update()
     {
@@ -79,7 +76,7 @@ public class PlayerDash : MonoBehaviour
             return; 
 
        
-        if (waterScript.TotalWater() >= 1 && dashCooldownTimer < 0)
+        if (dashCooldownTimer < 0)
         {
             //waterScript.TakeWater(1);
             dashCooldownTimer = dashCooldown;
