@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bc68a8dd5dedf374ba9ad9ea636e4e20
+guid: d023e28660bce6c4d848f64d68cfd939
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,127 +110,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SPRITEASSETSYES_3
+      name: SPRITETUTORIALS_0
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 473
+        width: 90
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbb103bd017ed2b48bfa47fa20389740
+      internalID: -228998947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITETUTORIALS_4
       rect:
         serializedVersion: 2
         x: 672
         y: 464
         width: 82
         height: 82
-      alignment: 6
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f81f3bf82c1806f44a6096463b4567d1
-      internalID: -906643162
+      spriteID: 30ec0d496ae7a874bb9b09433106b6b6
+      internalID: -714141779
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SPRITEASSETSYES_4
+      name: SPRITETUTORIALS_5
       rect:
         serializedVersion: 2
-        x: 447
-        y: 467
-        width: 93
-        height: 98
-      alignment: 6
+        x: 831
+        y: 457
+        width: 90
+        height: 89
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 322ff781560d6be4498c5a6b2ec8d263
-      internalID: -634392652
+      spriteID: dafb16ea92ced7b41bc0a38bc39c6626
+      internalID: -2093493855
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SPRITEASSETSYES_5
+      name: SPRITETUTORIALS_6
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 467
+        width: 97
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6494f843202892345b5639960465f67b
+      internalID: -1017360043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRITETUTORIALS_7
       rect:
         serializedVersion: 2
         x: 200
         y: 302
         width: 82
         height: 82
-      alignment: 6
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c5c4ea3b11a54f4da82604ce4bf01ae
-      internalID: 296376642
+      spriteID: d3028eea097e6a64bbf1df91d7065806
+      internalID: 2088173963
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SPRITEASSETSYES_6
+      name: SPRITETUTORIALS_8
       rect:
         serializedVersion: 2
         x: 384
         y: 302
         width: 82
         height: 82
-      alignment: 6
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8159688f1ed25a74da006847cdb34e1e
-      internalID: 1690704596
+      spriteID: d1e7a8f428b45d041849265584be33a0
+      internalID: 1627857006
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SPRITEASSETSYES_7
+      name: SPRITETUTORIALS_9
       rect:
         serializedVersion: 2
-        x: 568
+        x: 570
         y: 310
         width: 85
         height: 65
-      alignment: 6
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9426274424d8534abbcf2b93c9691f2
-      internalID: 1044788137
+      spriteID: ef8922497ab5b604f900463a732e1624
+      internalID: 1947950877
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SPRITEASSETSYES_11
+      name: SPRITETUTORIALS_13
       rect:
         serializedVersion: 2
-        x: 737
+        x: 736
         y: 296
-        width: 90
-        height: 94
-      alignment: 6
+        width: 92
+        height: 95
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b121288eadfc69649b8dbb293ad9fc0a
-      internalID: 497857723
+      spriteID: 68817268363a2e849b4d2fa6e71ac80e
+      internalID: 1217411406
       vertices: []
       indices: 
       edges: []
@@ -246,18 +288,20 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SPRITEASSETSYES_0: -97534293
-      SPRITEASSETSYES_1: -1247438110
-      SPRITEASSETSYES_10: -623532419
-      SPRITEASSETSYES_11: 497857723
-      SPRITEASSETSYES_2: 1819669026
-      SPRITEASSETSYES_3: -906643162
-      SPRITEASSETSYES_4: -634392652
-      SPRITEASSETSYES_5: 296376642
-      SPRITEASSETSYES_6: 1690704596
-      SPRITEASSETSYES_7: 1044788137
-      SPRITEASSETSYES_8: 763779056
-      SPRITEASSETSYES_9: -1834062872
+      SPRITETUTORIALS_0: -228998947
+      SPRITETUTORIALS_1: 1311822586
+      SPRITETUTORIALS_10: -1625127958
+      SPRITETUTORIALS_11: 766776507
+      SPRITETUTORIALS_12: -2076147546
+      SPRITETUTORIALS_13: 1217411406
+      SPRITETUTORIALS_2: 2028186380
+      SPRITETUTORIALS_3: -860190769
+      SPRITETUTORIALS_4: -714141779
+      SPRITETUTORIALS_5: -2093493855
+      SPRITETUTORIALS_6: -1017360043
+      SPRITETUTORIALS_7: 2088173963
+      SPRITETUTORIALS_8: 1627857006
+      SPRITETUTORIALS_9: 1947950877
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
