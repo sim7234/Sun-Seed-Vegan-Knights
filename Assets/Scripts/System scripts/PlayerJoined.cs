@@ -1,11 +1,23 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
+using System.Collections;
 
 public class PlayerJoined : MonoBehaviour
 {
     public Dialogue dialogueSystem; 
-
+    public TextMeshProUGUI messageText;
     private PlayerInputManager playerInputManager;
+    public CameraMoverOnEnemyDeath cameraMover;
+
+
+     private void Start()
+    {
+        if (messageText != null)
+        {
+            messageText.gameObject.SetActive(true); 
+        }
+    }
 
     void OnEnable()
     {
@@ -33,6 +45,12 @@ public class PlayerJoined : MonoBehaviour
             playerInput.SwitchCurrentActionMap("ControlActions1");
         }
 
+        if (messageText != null)
+        {
+            messageText.text = "Use   <voffset=0.3em><sprite=0></voffset>to move and   <voffset=0.3em><sprite=3></voffset>to rotate"; 
+            Invoke(nameof(HideMessage), 10f); 
+        }
+
         if (dialogueSystem != null)
         {
             dialogueSystem.OnPlayerJoined(playerInput);
@@ -53,5 +71,21 @@ public class PlayerJoined : MonoBehaviour
                 }
             };
         }
+    }
+    private void HideMessage()
+    {
+        if (messageText != null)
+        {
+            messageText.gameObject.SetActive(false);
+        }
+         if (cameraMover != null)
+        {
+            StartCoroutine(StartDialogueCoroutine());
+        }
+    }
+
+    private IEnumerator StartDialogueCoroutine()
+    {
+        yield return cameraMover.ShowDialogueAfterDelay(0f);
     }
 }

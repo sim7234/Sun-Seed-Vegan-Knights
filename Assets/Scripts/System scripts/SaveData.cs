@@ -69,7 +69,6 @@ public class SaveData : MonoBehaviour
     }
     public void FixHud(GameObject player, int index)
     {
-        Debug.Log("Addplayer");
         switch (index)
         {
             case 0:

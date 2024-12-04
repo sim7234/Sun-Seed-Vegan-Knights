@@ -15611,8 +15611,8 @@ MonoBehaviour:
   rb: {fileID: 6392348033316344455}
   strengthModifer: 1
   stopMovement: 1
-  playerMovement: {fileID: 0}
-  stopTime: 0.2
+  playerMovement: {fileID: 6158602124808279384}
+  stopTime: 0.3
 --- !u!114 &189110155375367779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20754,8 +20754,8 @@ MonoBehaviour:
   rb: {fileID: 6392348033316344455}
   strengthModifer: 1
   stopMovement: 1
-  playerMovement: {fileID: 0}
-  stopTime: 0.2
+  playerMovement: {fileID: 6158602124808279384}
+  stopTime: 0.1
 --- !u!114 &482181376568373884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26121,6 +26121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 30
+  rotationSpeed: 1
   curve:
     serializedVersion: 2
     m_Curve: []
@@ -26633,10 +26634,6 @@ MonoBehaviour:
     m_ActionId: 5a810e6a-3f5e-4fb0-a4cf-7f691e38d47d
     m_ActionName: ControlActions1/Join
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 8b37be16-9d85-4f6f-82f4-dd09cbab4178
-    m_ActionName: ControlActions1/NextDialogue[/DualShock4GamepadHID/dpad/right,/DualSenseGamepadHID/dpad/right]
-  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5478368589574827822}
         m_TargetAssemblyTypeName: SpecialWeapon, Assembly-CSharp
@@ -26664,6 +26661,14 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: e714669b-8a5e-423b-a759-707649f215c8
     m_ActionName: ControlActions1/PickUp[/DualShock4GamepadHID/buttonNorth,/DualSenseGamepadHID/buttonNorth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ebd99b96-cc12-43b4-9a1d-bc900c1998de
+    m_ActionName: UI/PreviousDialogue[/DualSenseGamepadHID/dpad/left,/XInputControllerWindows/dpad/left]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0f15e55c-5487-4191-91b7-2fff1e2d8772
+    m_ActionName: UI/NextDialogue[/DualSenseGamepadHID/dpad/right,/XInputControllerWindows/dpad/right]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Control
   m_DefaultActionMap: ControlActions1

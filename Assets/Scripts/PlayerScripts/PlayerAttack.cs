@@ -33,6 +33,7 @@ public class PlayerAttack : MonoBehaviour
 
     [SerializeField]
     private MoveOnAttack baseWeaponMoveScript;
+
     private void Awake()
     {
         playerControls = new PlayerInputActions();
@@ -68,7 +69,7 @@ public class PlayerAttack : MonoBehaviour
         if (Time.time >= lastAttackTime + attackCooldown)
         {
             onFire?.Invoke();
-            Debug.Log(Gamepad.current.rightShoulder.value);
+
             
             attackCounter++;
             
@@ -93,7 +94,6 @@ public class PlayerAttack : MonoBehaviour
                     break;
             }
             attackCounterReset = attackCounterResetTime;
-            Debug.Log("Attack: " + attackCounter);
             if (attackCounter == attacksInChain)
             {
                 attackCounter = 0;

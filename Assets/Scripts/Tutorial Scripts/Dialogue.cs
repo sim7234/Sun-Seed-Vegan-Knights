@@ -118,17 +118,23 @@ public class Dialogue : MonoBehaviour
 
     private void DisableActionMap()
     {
-        if (playerInput != null)
+        foreach (PlayerInput player in FindObjectsOfType<PlayerInput>())
         {
-            playerInput.SwitchCurrentActionMap("UI"); 
+            if (player != null)
+            {
+                player.SwitchCurrentActionMap("UI");
+            }
         }
     }
 
     private void EnableActionMap()
     {
-        if (playerInput != null)
+        foreach (PlayerInput player in FindObjectsOfType<PlayerInput>())
         {
-            playerInput.SwitchCurrentActionMap(actionMapToDisable); 
+            if (player != null)
+            {
+                player.SwitchCurrentActionMap(actionMapToDisable);
+            }
         }
     }
 }

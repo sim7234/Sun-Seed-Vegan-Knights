@@ -26,20 +26,13 @@ public class CameraMoverOnEnemyDeath : MonoBehaviour
 
     void Start()
     {
-        if (dialogueSystem == null)
+        if (dialogueSystem == null || stageDialogues == null || stageDialogues.Length == 0)
         {
             return;
         }
-
-        if (stageDialogues == null || stageDialogues.Length == 0)
-        {
-            return;
-        }
-
+        
         dialogueSystem.gameObject.SetActive(false);
-        StartCoroutine(ShowDialogueAfterDelay(10f));
     }
-
     void Update()
     {
         if (currentStage < cameraPositions.Length && AreAllEnemiesDead(GetCurrentEnemies()))
@@ -53,7 +46,7 @@ public class CameraMoverOnEnemyDeath : MonoBehaviour
         }
     }
 
-    IEnumerator ShowDialogueAfterDelay(float delay)
+    public IEnumerator ShowDialogueAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
 
