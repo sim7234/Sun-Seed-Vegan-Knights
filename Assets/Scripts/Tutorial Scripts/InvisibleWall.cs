@@ -4,9 +4,20 @@ using UnityEngine;
 public class InvisibleWall : MonoBehaviour
 {
     [SerializeField]
-    private string specialWeaponTag = "Player";
+    private string specialWeaponTag = "BigSword";
 
-    private bool isDisappearing = false; 
+    [SerializeField]
+    private Sprite destroyedSprite; 
+
+    private SpriteRenderer spriteRenderer;
+    private Collider2D wallCollider;
+    private bool isDisappearing = false;
+
+    private void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        wallCollider = GetComponent<Collider2D>();
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -16,16 +27,26 @@ public class InvisibleWall : MonoBehaviour
 
             if (specialWeapon != null && specialWeapon.IsWieldingSword())
             {
-                isDisappearing = true; 
-                StartCoroutine(DisappearWithDelay());
+                isDisappearing = true;
+                StartCoroutine(ChangeToDestroyedSprite());
             }
         }
     }
 
-    private IEnumerator DisappearWithDelay()
+    private IEnumerator ChangeToDestroyedSprite()
     {
         yield return new WaitForSeconds(0f);
-        Destroy(gameObject);
 
+        if (destroyedSprite != null && spriteRenderer != null)
+        {
+            spriteRenderer.sprite = destroyedSprite; 
+        }
+
+        if (wallCollider != null)
+        {
+            wallCollider.enabled = false;
+        }
+
+        isDisappearing = false;
     }
 }

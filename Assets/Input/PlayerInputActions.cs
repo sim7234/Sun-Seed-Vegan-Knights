@@ -410,6 +410,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Disabled"",
+            ""id"": ""a4f0a3db-078d-4443-80a3-015606525b69"",
+            ""actions"": [],
+            ""bindings"": []
         }
     ],
     ""controlSchemes"": [
@@ -464,6 +470,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_PreviousDialogue = m_UI.FindAction("PreviousDialogue", throwIfNotFound: true);
         m_UI_NextDialogue = m_UI.FindAction("NextDialogue", throwIfNotFound: true);
+        // Disabled
+        m_Disabled = asset.FindActionMap("Disabled", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -763,6 +771,44 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         }
     }
     public UIActions @UI => new UIActions(this);
+
+    // Disabled
+    private readonly InputActionMap m_Disabled;
+    private List<IDisabledActions> m_DisabledActionsCallbackInterfaces = new List<IDisabledActions>();
+    public struct DisabledActions
+    {
+        private @PlayerInputActions m_Wrapper;
+        public DisabledActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputActionMap Get() { return m_Wrapper.m_Disabled; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(DisabledActions set) { return set.Get(); }
+        public void AddCallbacks(IDisabledActions instance)
+        {
+            if (instance == null || m_Wrapper.m_DisabledActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_DisabledActionsCallbackInterfaces.Add(instance);
+        }
+
+        private void UnregisterCallbacks(IDisabledActions instance)
+        {
+        }
+
+        public void RemoveCallbacks(IDisabledActions instance)
+        {
+            if (m_Wrapper.m_DisabledActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IDisabledActions instance)
+        {
+            foreach (var item in m_Wrapper.m_DisabledActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_DisabledActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public DisabledActions @Disabled => new DisabledActions(this);
     private int m_ControlSchemeIndex = -1;
     public InputControlScheme ControlScheme
     {
@@ -805,5 +851,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     {
         void OnPreviousDialogue(InputAction.CallbackContext context);
         void OnNextDialogue(InputAction.CallbackContext context);
+    }
+    public interface IDisabledActions
+    {
     }
 }
