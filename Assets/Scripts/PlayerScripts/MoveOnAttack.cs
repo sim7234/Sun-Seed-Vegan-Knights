@@ -38,14 +38,13 @@ public class MoveOnAttack : MonoBehaviour
         rb.AddForce(rotationObject.transform.up * strength * strengthModifer, ForceMode2D.Impulse);
         strength = 1.0f;
 
-  
         if(stopMovement && playerMovement != null)
         {
             StartCoroutine(stopMoveControlls());
         }
     }
 
-    IEnumerator stopMoveControlls()
+    private IEnumerator stopMoveControlls()
     {
         playerMovement.moveSpeed = 0;
         playerMovement.rotationSpeed = 0;

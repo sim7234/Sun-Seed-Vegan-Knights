@@ -129,7 +129,7 @@ public class SpecialWeapon : MonoBehaviour
             bigSword.GetComponent<Collider2D>().enabled = true;
             Invoke(nameof(DisableWeaponCollider), 0.5f);
             PlaySwordSwingSound();
-            attackCooldown = 1.5f;
+            attackCooldown = 1.25f;
             //Debug.Log("Big swing");
         }
         
@@ -145,8 +145,7 @@ public class SpecialWeapon : MonoBehaviour
             bigSpear.GetComponent<Collider2D>().enabled = true;
             Invoke(nameof(DisableWeaponCollider), 0.5f);
             PlaySpearThrustSound();
-            attackCooldown = 1.5f;
-            Debug.Log("Big swing");
+            attackCooldown = 0.8f;
         }
     }
 

@@ -126,7 +126,10 @@ public class PlayerMovement : MonoBehaviour
         if(rotationDirection != Vector2.zero && !lockOn)
         {
             float angle = Mathf.Atan2(rotationDirection.y, rotationDirection.x) * Mathf.Rad2Deg;
-            directionIndicator.transform.rotation = Quaternion.Euler(0, 0, angle - 90 * rotationSpeed);
+            if(rotationSpeed != 0)
+            {
+                directionIndicator.transform.rotation = Quaternion.Euler(0, 0, angle - 90);
+            }
         }
 
         if (lastAttackTime >= 0)

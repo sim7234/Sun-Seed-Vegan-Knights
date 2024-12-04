@@ -45,7 +45,7 @@ public class PlayerDeath : MonoBehaviour
         GetComponent<PlantSeed>().enabled = false;
         GetComponent<Health>().enabled = false;
         GetComponent<SpecialWeapon>().enabled = false;
-        GetComponent<AudioSource>().enabled = false;
+        //GetComponent<AudioSource>().enabled = false;
         GetComponent<PlayerAttack>().enabled = false;
         GetComponent<CapsuleCollider2D>().enabled = false;
         GetComponent<HPBar>().enabled = false;
@@ -63,7 +63,7 @@ public class PlayerDeath : MonoBehaviour
         GetComponent<PlantSeed>().enabled = true;
         GetComponent<Health>().enabled = true;
         GetComponent<SpecialWeapon>().enabled = true;
-        GetComponent<AudioSource>().enabled = true;
+        //GetComponent<AudioSource>().enabled = true;
         GetComponent<PlayerAttack>().enabled = true;
         GetComponent<CapsuleCollider2D>().enabled = true;
         GetComponent<HPBar>().enabled = true;
