@@ -42,8 +42,8 @@ public class PlayerDeath : MonoBehaviour
     private void TurnOfAllScripts()
     {
         allChildren.SetActive(false);
-        GetComponent<PlayerWater>().enabled = false;
-        GetComponent<PlantSeed>().enabled = false;
+        GetComponent<WaterSystem>().enabled = false;
+        GetComponent<PlantSeedSystem>().enabled = false;
         GetComponent<Health>().enabled = false;
         GetComponent<SpecialWeapon>().enabled = false;
         //GetComponent<AudioSource>().enabled = false;
@@ -56,12 +56,13 @@ public class PlayerDeath : MonoBehaviour
         GetComponent<LookOnSystem>().enabled = false;
         GetComponent<isTarget>().enabled = false;
         GetComponent<PlayerAnimations>().enabled = false;
+        GetComponent<EnteredSun>().enabled = false;
     }
     private void TurnOnAllScripts()
     {
         allChildren.SetActive(true);
-        GetComponent<PlayerWater>().enabled = true;
-        GetComponent<PlantSeed>().enabled = true;
+        GetComponent<WaterSystem>().enabled = true;
+        GetComponent<PlantSeedSystem>().enabled = true;
         GetComponent<Health>().enabled = true;
         GetComponent<SpecialWeapon>().enabled = true;
         //GetComponent<AudioSource>().enabled = true;
@@ -74,6 +75,7 @@ public class PlayerDeath : MonoBehaviour
         GetComponent<LookOnSystem>().enabled = true;
         GetComponent<isTarget>().enabled = true;
         GetComponent<PlayerAnimations>().enabled = true;
+        GetComponent<EnteredSun>().enabled = true;
     }
 
     private void SpawnExplosion()
