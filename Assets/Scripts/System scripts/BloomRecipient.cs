@@ -27,7 +27,6 @@ public class BloomRecipient : MonoBehaviour
 
     public int divideHealthBy = 5;
 
-
     [SerializeField]
     private GameObject flowerPelletsObject;
 
@@ -41,7 +40,7 @@ public class BloomRecipient : MonoBehaviour
 
     private void Update()
     {
-        if (bloomBuildUp <= 0)
+        if (bloomBuildUp <= 0 && hasBloomed != true)
         {
             flowerPelletsObject.SetActive(false);
         }
@@ -68,6 +67,7 @@ public class BloomRecipient : MonoBehaviour
 
             if (bloomBuildUp > bloomResistance)
             {
+                flowerPelletsObject.SetActive(true);
                 hasBloomed = true;
                 bloomGlowRim.SetActive(true);
                 changeColorOfRim(BloomIndex);
