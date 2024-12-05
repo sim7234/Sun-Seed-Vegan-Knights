@@ -2422,7 +2422,7 @@ GameObject:
   - component: {fileID: 149872321}
   - component: {fileID: 149872320}
   m_Layer: 9
-  m_Name: Text (TMP)
+  m_Name: Jointext
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9141,22 +9141,22 @@ MonoBehaviour:
 
 '
     - 
-    - '(2/3) USE    <size=35><voffset=0.4em><sprite=4></voffset></size>to attack
+    - '(2/3) Press    <size=35><voffset=0.4em><sprite=4></voffset></size>to attack
 
 '
     - 
-    - (3/3) USE    <size=40><voffset=0.4em><sprite=0></voffset></size> to aim and
-      USE     <size=35><voffset=0.4em><sprite=4></voffset></size>to eliminate the
+    - (3/3) Press    <size=40><voffset=0.4em><sprite=0></voffset></size> to aim and
+      Use     <size=35><voffset=0.4em><sprite=4></voffset></size>to eliminate the
       enemy
   - dialogues:
     - (1/4) The wall is too strong. Grow a stronger weapon to destroy it
-    - '(2/4) USE    <size=35><voffset=0.4em><sprite=5></voffset></size>To plant a
-      weapon in the sunlit area
+    - '(2/4) Press    <size=35><voffset=0.4em><sprite=5></voffset></size>To plant
+      a weapon in the sunlit area
 
 '
-    - (3/4) HOLD    <size=35><voffset=0.4em><sprite=5></voffset></size>While standing
+    - (3/4) Hold    <size=35><voffset=0.4em><sprite=5></voffset></size>While standing
       on top of the plant to water it
-    - (4/4) Pick up the weapon USING    <size=35><voffset=0.4em><sprite=5></voffset></size>destroy
+    - (4/4) Pick up the weapon by pressing    <size=35><voffset=0.4em><sprite=5></voffset></size>destroy
       the wall and eliminate the enemies
   - dialogues:
     - (1/3) Dealing enough damage to an enemy causes them to get an effect called

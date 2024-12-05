@@ -24,6 +24,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tutorialPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 4777482717192873088, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
+      propertyPath: currentType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5130911862086886225, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.709959
@@ -193,3 +197,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentWater: 0
+  wateringTimer: 0
+  waterRefillCooldown: 0
+  waterRefillTimer: 0
+  waterOutLineImage: {fileID: 7801951700146227050}
+  playersWaterImage: {fileID: 8673120516472471392}
+--- !u!114 &7801951700146227050 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7891215268220091245, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
+  m_PrefabInstance: {fileID: 127547497854614535}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8673120516472471392 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8761822268379841383, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
+  m_PrefabInstance: {fileID: 127547497854614535}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

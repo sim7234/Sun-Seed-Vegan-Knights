@@ -10,8 +10,7 @@ public class PlayerJoined : MonoBehaviour
     private PlayerInputManager playerInputManager;
     public CameraMoverOnEnemyDeath cameraMover;
 
-
-     private void Start()
+    private void Start()
     {
         if (messageText != null)
         {
@@ -72,20 +71,41 @@ public class PlayerJoined : MonoBehaviour
             };
         }
     }
+
     private void HideMessage()
     {
         if (messageText != null)
         {
             messageText.gameObject.SetActive(false);
         }
-         if (cameraMover != null)
+        if (cameraMover != null)
         {
             StartCoroutine(StartDialogueCoroutine());
         }
+        StartCoroutine(ShowSecondMessageCoroutine()); 
     }
 
     private IEnumerator StartDialogueCoroutine()
     {
-        yield return cameraMover.ShowDialogueAfterDelay(0f);
+        yield return cameraMover.ShowDialogueAfterDelay(5f);
+    }
+
+    private IEnumerator ShowSecondMessageCoroutine()
+    {
+        yield return new WaitForSeconds(0f); 
+        if (messageText != null)
+        {
+            messageText.gameObject.SetActive(true);
+            messageText.text = "Press   <voffset=0.3em><sprite=2></voffset>to dash."; 
+            Invoke(nameof(HideSecondMessage), 5f); 
+        }
+    }
+
+    private void HideSecondMessage()
+    {
+        if (messageText != null)
+        {
+            messageText.gameObject.SetActive(false);
+        }
     }
 }
