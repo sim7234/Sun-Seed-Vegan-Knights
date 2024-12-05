@@ -12,6 +12,8 @@ public class EnemyRangedAttack : MonoBehaviour
     [SerializeField] Transform projectileSpawnPoint;
     [SerializeField] Transform rotationPoint;
 
+    [SerializeField] float distenceToAttack;
+
     public float attackSpeed;
     public float projectileSpeed;
 
@@ -54,16 +56,19 @@ public class EnemyRangedAttack : MonoBehaviour
         cameraVertical = camera.orthographicSize * 2;
         cameraHorizontal = cameraVertical * camera.aspect;
 
-        if (transform.position.x > (cameraHorizontal / 2 - 0.8) || transform.position.x < -(cameraHorizontal / 2 - 0.8))
+        if (transform.position.x > (cameraHorizontal / 2 - 0.7) || transform.position.x < -(cameraHorizontal / 2 - 0.7))
         {
+            enemyAttacksScript.distanceToAttack = 0;
             canShoot = false;
         }
-        else if (transform.position.y > ((cameraVertical / 2) - 0.8) || transform.position.y < -((cameraVertical / 2 - 0.8)))
+        else if (transform.position.y > ((cameraVertical / 2) - 0.7) || transform.position.y < -((cameraVertical / 2 - 0.7)))
         {
+            enemyAttacksScript.distanceToAttack = 0;
             canShoot = false;
         }
         else
         {
+            enemyAttacksScript.distanceToAttack = distenceToAttack;
             canShoot = true;
         }
 

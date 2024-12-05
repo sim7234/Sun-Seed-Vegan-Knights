@@ -231,7 +231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distenceToTarget: 0
-  distanceToAttack: 90
+  distanceToAttack: 60
   isAttacking: 0
   withinDistance: 0
 --- !u!114 &5035833179104927231
@@ -284,6 +284,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 4149015995408106834, guid: 0b58dcbd428bcfd4ba2dbd778857cf1a, type: 3}
   projectileSpawnPoint: {fileID: 8603948458539968747}
   rotationPoint: {fileID: 416790700085312721}
+  distenceToAttack: 90
   attackSpeed: 3
   projectileSpeed: 1.25
 --- !u!114 &3580056762478777823
