@@ -762,7 +762,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 982bb33ba0356584bb312b3b6344263f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ad9a0d0eb2331604c8ab4a0928b57347, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -801,7 +801,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   specialWeaponTag: Player
-  destroyedSprite: {fileID: 21300000, guid: 53543fc778d8ad441a92287015032e44, type: 3}
+  destroyedSprite: {fileID: 21300000, guid: a7e829ad83124bc449450ad19d1db673, type: 3}
 --- !u!60 &49482294
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -6820,7 +6820,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   specialWeaponTag: Player
-  destroyedSprite: {fileID: 21300000, guid: 53543fc778d8ad441a92287015032e44, type: 3}
+  destroyedSprite: {fileID: 21300000, guid: a7e829ad83124bc449450ad19d1db673, type: 3}
 --- !u!212 &413285601
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6862,7 +6862,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 982bb33ba0356584bb312b3b6344263f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ad9a0d0eb2331604c8ab4a0928b57347, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7284,7 +7284,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 982bb33ba0356584bb312b3b6344263f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ad9a0d0eb2331604c8ab4a0928b57347, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7323,7 +7323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   specialWeaponTag: Player
-  destroyedSprite: {fileID: 21300000, guid: 53543fc778d8ad441a92287015032e44, type: 3}
+  destroyedSprite: {fileID: 21300000, guid: a7e829ad83124bc449450ad19d1db673, type: 3}
 --- !u!60 &446066422
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -8486,7 +8486,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 982bb33ba0356584bb312b3b6344263f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ad9a0d0eb2331604c8ab4a0928b57347, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8525,7 +8525,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   specialWeaponTag: Player
-  destroyedSprite: {fileID: 21300000, guid: 53543fc778d8ad441a92287015032e44, type: 3}
+  destroyedSprite: {fileID: 21300000, guid: a7e829ad83124bc449450ad19d1db673, type: 3}
 --- !u!60 &522758167
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -13184,7 +13184,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 982bb33ba0356584bb312b3b6344263f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ad9a0d0eb2331604c8ab4a0928b57347, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -13223,7 +13223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   specialWeaponTag: Player
-  destroyedSprite: {fileID: 21300000, guid: 53543fc778d8ad441a92287015032e44, type: 3}
+  destroyedSprite: {fileID: 21300000, guid: a7e829ad83124bc449450ad19d1db673, type: 3}
 --- !u!60 &829763867
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -17400,7 +17400,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   specialWeaponTag: Player
-  destroyedSprite: {fileID: 21300000, guid: 53543fc778d8ad441a92287015032e44, type: 3}
+  destroyedSprite: {fileID: 21300000, guid: a7e829ad83124bc449450ad19d1db673, type: 3}
 --- !u!212 &1088319968
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17442,7 +17442,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 982bb33ba0356584bb312b3b6344263f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ad9a0d0eb2331604c8ab4a0928b57347, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -17759,7 +17759,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   specialWeaponTag: Player
-  destroyedSprite: {fileID: 21300000, guid: 53543fc778d8ad441a92287015032e44, type: 3}
+  destroyedSprite: {fileID: 21300000, guid: a7e829ad83124bc449450ad19d1db673, type: 3}
 --- !u!212 &1099627269
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17801,7 +17801,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 982bb33ba0356584bb312b3b6344263f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ad9a0d0eb2331604c8ab4a0928b57347, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -19440,7 +19440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   specialWeaponTag: Player
-  destroyedSprite: {fileID: 21300000, guid: 53543fc778d8ad441a92287015032e44, type: 3}
+  destroyedSprite: {fileID: 21300000, guid: a7e829ad83124bc449450ad19d1db673, type: 3}
 --- !u!212 &1153676870
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19482,7 +19482,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 982bb33ba0356584bb312b3b6344263f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ad9a0d0eb2331604c8ab4a0928b57347, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -24971,7 +24971,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 982bb33ba0356584bb312b3b6344263f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ad9a0d0eb2331604c8ab4a0928b57347, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -25010,7 +25010,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   specialWeaponTag: Player
-  destroyedSprite: {fileID: 21300000, guid: 53543fc778d8ad441a92287015032e44, type: 3}
+  destroyedSprite: {fileID: 21300000, guid: a7e829ad83124bc449450ad19d1db673, type: 3}
 --- !u!60 &1625780997
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -30858,7 +30858,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   specialWeaponTag: Player
-  destroyedSprite: {fileID: 21300000, guid: 53543fc778d8ad441a92287015032e44, type: 3}
+  destroyedSprite: {fileID: 21300000, guid: a7e829ad83124bc449450ad19d1db673, type: 3}
 --- !u!212 &1997486792
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -30900,7 +30900,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 982bb33ba0356584bb312b3b6344263f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ad9a0d0eb2331604c8ab4a0928b57347, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

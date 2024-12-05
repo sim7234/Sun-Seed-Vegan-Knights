@@ -40,6 +40,7 @@ public class InvisibleWall : MonoBehaviour
         if (destroyedSprite != null && spriteRenderer != null)
         {
             spriteRenderer.sprite = destroyedSprite; 
+            spriteRenderer.sortingOrder = -1;
         }
 
         if (wallCollider != null)
