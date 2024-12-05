@@ -47,7 +47,7 @@ public class PlayerJoined : MonoBehaviour
 
         if (messageText != null)
         {
-            messageText.text = "Use   <voffset=0.3em><sprite=0></voffset>to move and   <voffset=0.3em><sprite=3></voffset>to rotate"; 
+            messageText.text = "Use   <voffset=0.3em><sprite=3></voffset>to move and   <voffset=0.3em><sprite=0></voffset>to rotate"; 
             Invoke(nameof(HideMessage), 10f); 
         }
 

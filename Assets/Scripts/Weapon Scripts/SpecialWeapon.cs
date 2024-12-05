@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class SpecialWeapon : MonoBehaviour
 {
@@ -23,16 +24,19 @@ public class SpecialWeapon : MonoBehaviour
     private List<GameObject> weaponPickupsInRange = new List<GameObject>();
 
     [SerializeField]
-    private AudioClip swordSwingSound; 
+    private AudioClip swordSwingSound;
 
     [SerializeField]
     private AudioClip spearThrustSound;
 
-    private AudioSource audioSource; 
+    private AudioSource audioSource;
     
-    private PlayerInput playerInput; 
-    private InputAction fireAction; 
-    private InputAction pickUpAction; 
+    private PlayerInput playerInput;
+    private InputAction fireAction;
+    private InputAction pickUpAction;
+
+    [SerializeField]
+    private TextMeshProUGUI attacksLeftText;
 
     private void Awake()
     {
@@ -95,13 +99,16 @@ public class SpecialWeapon : MonoBehaviour
                 bigSpear.SetActive(false);
 
                 specialWeaponAttacks = 5;
+                attacksLeftText.gameObject.SetActive(true);
             }
             else if (weaponPickupsInRange[0].GetComponent<WeaponPickup>().GetWeaponType() == WeaponType.Spear)
             {
                 bigSpear.SetActive(true);
                 bigSpear.GetComponent<Collider2D>().enabled = false;
                 bigSword.SetActive(false);
+
                 specialWeaponAttacks = 10;
+                attacksLeftText.gameObject.SetActive(true);
             }
 
             baseWeapon.SetActive(false);
@@ -147,11 +154,13 @@ public class SpecialWeapon : MonoBehaviour
             PlaySpearThrustSound();
             attackCooldown = 0.8f;
         }
+
     }
 
     private void Update()
     {
         attackCooldown -= Time.deltaTime;
+        attacksLeftText.SetText((specialWeaponAttacks - attackCounter).ToString());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -200,6 +209,7 @@ public class SpecialWeapon : MonoBehaviour
     {
         if (bigSword.activeSelf || bigSpear.activeSelf)
         {
+            attacksLeftText.gameObject.SetActive(false);
             bigSword.SetActive(false);
             bigSpear.SetActive(false);
             baseWeapon.SetActive(true);

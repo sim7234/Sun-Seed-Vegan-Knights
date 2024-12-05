@@ -5,7 +5,7 @@ using UnityEngine;
 public class Damage : MonoBehaviour
 {
     [SerializeField]
-    private int damage = 1;
+    public int damage = 1;
 
     private Collider2D damageCollider;
 

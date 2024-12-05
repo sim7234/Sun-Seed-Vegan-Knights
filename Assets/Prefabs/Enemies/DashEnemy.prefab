@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: -7112622000373811108}
   - component: {fileID: -2784603825038570371}
   - component: {fileID: 6087083339855631714}
-  - component: {fileID: 5379325141884206624}
   - component: {fileID: 8424980281040868951}
   - component: {fileID: 112777825124948672}
   - component: {fileID: 1284862736038383755}
@@ -392,19 +391,6 @@ MonoBehaviour:
   retreatSpeed: 0.75
   whenToRetreat: 50
   retreating: 0
---- !u!114 &5379325141884206624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 516425167985709169}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c1700008e098ae468f3da206c69f3f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  knockbackStrength: 0
 --- !u!114 &8424980281040868951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -417,7 +403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c1700008e098ae468f3da206c69f3f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackStrength: 0
+  knockbackStrength: 10
 --- !u!70 &112777825124948672
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
