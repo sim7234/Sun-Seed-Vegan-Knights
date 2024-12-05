@@ -60,7 +60,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4108633183690296592, guid: cfa68bd4bd1d7d24eb1945c07c4a67a7, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -117,7 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canBeWatered: 1
-  totalWaterCost: 10
+  totalWaterCost: 15
   waterCostPerAction: 1
   currentWater: 0
 --- !u!1 &4163302293235249618 stripped

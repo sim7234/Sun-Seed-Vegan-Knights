@@ -75,6 +75,108 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &541949825394785053
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3485127350647251901}
+  - component: {fileID: 7519280598926357144}
+  - component: {fileID: 8411514794400481026}
+  - component: {fileID: 693356481242760850}
+  m_Layer: 9
+  m_Name: Cavnas For Water
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3485127350647251901
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541949825394785053}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5548962543114840876}
+  m_Father: {fileID: 5130911862086886225}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
+--- !u!223 &7519280598926357144
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541949825394785053}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 10000
+  m_TargetDisplay: 0
+--- !u!114 &8411514794400481026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541949825394785053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!114 &693356481242760850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541949825394785053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &589554370017117746
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,6 +372,81 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &844649986957390515
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6090709649039424265}
+  - component: {fileID: 2889470739514093134}
+  - component: {fileID: 8761822268379841383}
+  m_Layer: 9
+  m_Name: PlayersWaterImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &6090709649039424265
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844649986957390515}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5548962543114840876}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 10, y: 10}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &2889470739514093134
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844649986957390515}
+  m_CullTransparentMesh: 1
+--- !u!114 &8761822268379841383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844649986957390515}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 9a0ad9674e2fbf54f83621d227749522, type: 3}
+  m_Type: 3
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 1
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &950332982401678805
 GameObject:
   m_ObjectHideFlags: 0
@@ -31034,8 +31211,6 @@ GameObject:
   - component: {fileID: 5130911862086886225}
   - component: {fileID: 6158602124808279384}
   - component: {fileID: 6392348033316344455}
-  - component: {fileID: 7340977928187407993}
-  - component: {fileID: 8556687162033392005}
   - component: {fileID: 4088991493060879705}
   - component: {fileID: 5478368589574827822}
   - component: {fileID: 5284485026496525295}
@@ -31050,6 +31225,9 @@ GameObject:
   - component: {fileID: 4817412555743037333}
   - component: {fileID: 6104029201349294512}
   - component: {fileID: 5730679572236321430}
+  - component: {fileID: 4777482717192873088}
+  - component: {fileID: 7107893933753096804}
+  - component: {fileID: -7618321270550414427}
   m_Layer: 9
   m_Name: Player1
   m_TagString: Player
@@ -31072,6 +31250,7 @@ Transform:
   m_Children:
   - {fileID: 8367038486258555058}
   - {fileID: 4777502310756283682}
+  - {fileID: 3485127350647251901}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6158602124808279384
@@ -31138,56 +31317,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &7340977928187407993
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4130278647452102232}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4429fc26bcb2574faf9a0cf5f4f3b14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  totalWater: 0
-  maxWater: 3
-  waterGainTime: 10
-  waterDropsDisplay:
-  - {fileID: 8140362170331263629}
-  - {fileID: 589554370017117746}
-  - {fileID: 1852783458912916459}
-  onWaterPerformed:
-    m_PersistentCalls:
-      m_Calls: []
-  onWaterGained:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &8556687162033392005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4130278647452102232}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1dda81bb59f57294aac4c18192ffc0f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  seedTypes:
-  - {fileID: 2747442751486442724, guid: b26c7d976a1803c4a92f026c0f0ddcf4, type: 3}
-  - {fileID: 2747442751486442724, guid: 604a4aae6236b1f40a5d4fbfd945117d, type: 3}
-  - {fileID: 3066602483055560766, guid: 5dcf56cd6f39d53469d737ee801e09f7, type: 3}
-  - {fileID: 4209319261259547291, guid: 668de3c610a6bef4f8e142a583ec9615, type: 3}
-  currentType: 1
-  currentSeedTypeInRange: {fileID: 0}
-  plantSpeed: 30
-  plantingTimer: 0
-  inSun: 0
-  seedCooldownText: {fileID: 2450117201710678076}
-  inSunEffect: {fileID: 7701823554249734520}
-  cantPlant: 0
 --- !u!114 &4088991493060879705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31450,7 +31579,7 @@ MonoBehaviour:
     m_ActionName: Player1Actions/Fire[/Keyboard/space]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7340977928187407993}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerWater, Assembly-CSharp
         m_MethodName: OnWater
         m_Mode: 0
@@ -31466,7 +31595,7 @@ MonoBehaviour:
     m_ActionName: Player1Actions/Water[/Keyboard/e]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8556687162033392005}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlantSeed, Assembly-CSharp
         m_MethodName: PlantSeedAction
         m_Mode: 1
@@ -31526,7 +31655,7 @@ MonoBehaviour:
     m_ActionName: Player3Actions/Fire[/DualSenseGamepadHID/rightShoulder]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7340977928187407993}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerWater, Assembly-CSharp
         m_MethodName: OnWater
         m_Mode: 0
@@ -31542,7 +31671,7 @@ MonoBehaviour:
     m_ActionName: Player3Actions/Water[/DualSenseGamepadHID/buttonEast]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8556687162033392005}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlantSeed, Assembly-CSharp
         m_MethodName: PlantSeedAction
         m_Mode: 1
@@ -31614,7 +31743,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8556687162033392005}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlantSeed, Assembly-CSharp
         m_MethodName: OnSeedPickup
         m_Mode: 0
@@ -31759,6 +31888,60 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allChildren: {fileID: 3656512881633316162}
   deathBomb: {fileID: 6217569336462880355, guid: 9ee545789671ad940a52d74fee1a68d8, type: 3}
+--- !u!114 &4777482717192873088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4130278647452102232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cad82a4624f727c46b8c06c6537f0eb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seedTypes:
+  - {fileID: 2747442751486442724, guid: 604a4aae6236b1f40a5d4fbfd945117d, type: 3}
+  - {fileID: 2747442751486442724, guid: b26c7d976a1803c4a92f026c0f0ddcf4, type: 3}
+  - {fileID: 4209319261259547291, guid: 668de3c610a6bef4f8e142a583ec9615, type: 3}
+  - {fileID: 3066602483055560766, guid: 5dcf56cd6f39d53469d737ee801e09f7, type: 3}
+  currentType: 0
+  currentSeedTypeInRange: {fileID: 0}
+  plantSpeed: 30
+  seedCooldownText: {fileID: 2450117201710678076}
+  cantPlant: 0
+--- !u!114 &7107893933753096804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4130278647452102232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 191f1c39e50d03743994b2741aa70f68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentWater: 0
+  wateringTimer: 0
+  waterRefillCooldown: 0
+  waterRefillTimer: 0
+  waterOutLineImage: {fileID: 7891215268220091245}
+  playersWaterImage: {fileID: 8761822268379841383}
+--- !u!114 &-7618321270550414427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4130278647452102232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72f6dea03e8f2124a8527e7e4df60dd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inSun: 0
+  inSunEffect: {fileID: 7701823554249734520}
 --- !u!1 &4283199718185520484
 GameObject:
   m_ObjectHideFlags: 0
@@ -52264,6 +52447,82 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &7386793975028194502
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5548962543114840876}
+  - component: {fileID: 8790400778289323578}
+  - component: {fileID: 7891215268220091245}
+  m_Layer: 9
+  m_Name: WaterImageoOutline
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &5548962543114840876
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7386793975028194502}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 5.5, y: 2.5, z: 4}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6090709649039424265}
+  m_Father: {fileID: 3485127350647251901}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.2000122, y: 28.300003}
+  m_SizeDelta: {x: 10, y: 10}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &8790400778289323578
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7386793975028194502}
+  m_CullTransparentMesh: 1
+--- !u!114 &7891215268220091245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7386793975028194502}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: be502cfbb9a1dff46879ce0d11b61879, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &7483822223967950791
 GameObject:
   m_ObjectHideFlags: 0

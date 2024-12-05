@@ -125,7 +125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 126f18bfcce7c1e4d8bc2a7869f50b83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalWaterCost: 8
+  canBeWatered: 1
+  totalWaterCost: 13
   waterCostPerAction: 1
   currentWater: 0
 --- !u!1 &4163302293235249618 stripped
