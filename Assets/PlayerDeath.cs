@@ -29,6 +29,7 @@ public class PlayerDeath : MonoBehaviour
         Invoke(nameof(SpawnExplosion), 4.8f);
 
         SaveData.Instance.playerDeathsBeforeGameOver--;
+        SaveData.Instance.UpdateRespawnCount();
 
                     
     }

@@ -41,6 +41,9 @@ public class MissionMaster : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI countdownText;
 
+    [SerializeField]
+    private int respawnsForMission = 4;
+
     private void Awake()
     {
         Instance = this;
@@ -49,7 +52,8 @@ public class MissionMaster : MonoBehaviour
     private void Start()
     {
         combatsComplete = 0;
-
+        SaveData.Instance.playerDeathsBeforeGameOver = respawnsForMission;
+        SaveData.Instance.UpdateRespawnCount();
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
         {

@@ -1,11 +1,15 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 public class SaveData : MonoBehaviour
 {
     public static SaveData Instance { get; private set; }
     public int playerAmount;
 
     public int playerDeathsBeforeGameOver;
+    [SerializeField]
+    private TextMeshProUGUI respawnCountText;
 
     public WeaponType seedType;
     public WeaponType seedType2;
@@ -93,5 +97,17 @@ public class SaveData : MonoBehaviour
                 break;
         }
         DontDestroyOnLoad(player);
+    }
+
+    public void UpdateRespawnCount()
+    {        
+        respawnCountText.gameObject.SetActive(true);
+        respawnCountText.SetText("Respawns: " + playerDeathsBeforeGameOver);
+        if(playerDeathsBeforeGameOver <= 0)
+        {
+            respawnCountText.gameObject.SetActive(false);
+            SceneManager.LoadScene(0);
+        }
+        
     }
 }

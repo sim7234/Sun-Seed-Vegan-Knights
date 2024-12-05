@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: -7112622000373811108}
   - component: {fileID: -2784603825038570371}
   - component: {fileID: 8719180891618046561}
+  - component: {fileID: 2981785323766658313}
   m_Layer: 7
   m_Name: "K\xF6ttbulle"
   m_TagString: Enemy
@@ -385,6 +386,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionCollider: {fileID: 590350630154106866}
+--- !u!114 &2981785323766658313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516425167985709169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c1700008e098ae468f3da206c69f3f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockbackStrength: 2
 --- !u!1 &687080503339796179
 GameObject:
   m_ObjectHideFlags: 0
