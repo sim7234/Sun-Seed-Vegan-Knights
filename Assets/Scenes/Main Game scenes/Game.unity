@@ -1650,7 +1650,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sun spot (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1358936037529817819, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
+    - {fileID: 8626635431990360104, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2449,41 +2451,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sun spot (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 4587334765917600411, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.477215
-      objectReference: {fileID: 0}
-    - target: {fileID: 4587334765917600411, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 7.3860736
-      objectReference: {fileID: 0}
-    - target: {fileID: 4587334765917600411, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.4772148
-      objectReference: {fileID: 0}
-    - target: {fileID: 4587334765917600411, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4587334765917600411, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.76
-      objectReference: {fileID: 0}
-    - target: {fileID: 4587334765917600411, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9829268
-      objectReference: {fileID: 0}
-    - target: {fileID: 4587334765917600411, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.18399723
-      objectReference: {fileID: 0}
-    - target: {fileID: 4587334765917600411, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 21.205
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 5502668527808531473, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
@@ -4339,18 +4308,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 452093264199394699, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 7.280264
-      objectReference: {fileID: 0}
-    - target: {fileID: 452093264199394699, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 7.280264
-      objectReference: {fileID: 0}
-    - target: {fileID: 452093264199394699, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 7.280264
-      objectReference: {fileID: 0}
-    - target: {fileID: 452093264199394699, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.05
       objectReference: {fileID: 0}
@@ -5185,7 +5142,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sun spot (5)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8626635431990360104, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6817,7 +6775,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sun spot (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1358936037529817819, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
+    - {fileID: 8626635431990360104, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

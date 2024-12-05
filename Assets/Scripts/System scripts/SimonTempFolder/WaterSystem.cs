@@ -32,8 +32,8 @@ public class WaterSystem : MonoBehaviour
 
     private List<Seed> seedInRange = new List<Seed>();
 
-    [SerializeField] Image waterDropImage;
-    [SerializeField] Image waterDropChild;
+    [SerializeField] Image waterOutLineImage;
+    [SerializeField] Image playersWaterImage;
 
     void Start()
     {
@@ -43,8 +43,8 @@ public class WaterSystem : MonoBehaviour
     }
     void Update()
     {
-        waterDropImage.transform.position = new Vector3(gameObject.transform.position.x,gameObject.transform.position.y 
-            + gameObject.transform.localScale.y + 0.3f,0);
+        waterOutLineImage.transform.position = Camera.main.WorldToScreenPoint(new Vector3(gameObject.transform.position.x,gameObject.transform.position.y 
+            + gameObject.transform.localScale.y + 0.3f,0));
 
         changeImageFill();
         refillWater();      
@@ -62,14 +62,14 @@ public class WaterSystem : MonoBehaviour
     {
         waterPercentage = (currentWater / maxWater);
 
-        if (waterDropChild.fillAmount > waterPercentage)
+        if (playersWaterImage.fillAmount > waterPercentage)
         {
-            waterDropChild.fillAmount -= Time.deltaTime * 0.4f;
+            playersWaterImage.fillAmount -= Time.deltaTime * 0.4f;
         }
 
-        if (waterDropChild.fillAmount < waterPercentage)
+        if (playersWaterImage.fillAmount < waterPercentage)
         {
-            waterDropChild.fillAmount += Time.deltaTime * 0.2f;
+            playersWaterImage.fillAmount += Time.deltaTime * 0.2f;
         }
     }
     void refillWater()
@@ -177,8 +177,8 @@ public class WaterSystem : MonoBehaviour
 
     void DisplayWater(bool displayWater)
     {
-        waterDropImage.enabled = displayWater;
-        waterDropChild.enabled = displayWater;
+        waterOutLineImage.enabled = displayWater;
+        playersWaterImage.enabled = displayWater;
     }
 
     public void ChangeWaterRefillRate(float rate)
