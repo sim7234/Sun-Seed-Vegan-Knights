@@ -1,14 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class NaturalWater : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if (other.GetComponent<WaterSystem>() != null)
         {
-            collision.gameObject.GetComponent<PlayerWater>().MaxFill();
+            other.GetComponent<WaterSystem>().ChangeWaterRefillRate(0.5f);
+            other.GetComponent<WaterSystem>().waterRefillTimer = 0;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.GetComponent<WaterSystem>() != null)
+        {
+            //0 resets to default value
+            other.GetComponent<WaterSystem>().ChangeWaterRefillRate(0);
         }
     }
 }

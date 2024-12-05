@@ -4,11 +4,10 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlantSeed : MonoBehaviour
+public class PlantSeedSystem : MonoBehaviour
 {
     [SerializeField]
     private List<GameObject> seedTypes = new List<GameObject>();
-    private List<SeedSystem> seedInRange = new List<SeedSystem>();
 
     [SerializeField]
     private WeaponType currentType;
@@ -20,26 +19,26 @@ public class PlantSeed : MonoBehaviour
     private InputAction plantSeedAction;
     private InputAction pickUpSeed;
 
-    public float plantSpeed = 1;
-    public float plantingTimer;
+    public float plantSpeed = 30;
+    float plantingTimer;
 
-    private float plantingCooldown = 0.2f; // cd before u can water
+    private float plantingCooldown = 0.2f;
     private bool recentlyPlanted = false;
-
-    [HideInInspector]
-    public bool inSun;
 
     [SerializeField]
     private TextMeshProUGUI seedCooldownText;
 
-    [SerializeField]
-    private GameObject inSunEffect;
+    [HideInInspector] public bool cantPlant;
 
-    [HideInInspector]
-    public bool cantPlant;
+    private List<SeedSystem> seedInRange = new List<SeedSystem>();
+
+    EnteredSun inSunScript;
+
+    bool canPlant = true;
 
     private void Awake()
     {
+        inSunScript = GetComponent<EnteredSun>();
         playerInput = GetComponent<PlayerInput>();
         plantSeedAction = playerInput.actions["PlantSeed"];
         pickUpSeed = playerInput.actions["PickUp"];
@@ -47,6 +46,7 @@ public class PlantSeed : MonoBehaviour
     }
     private void Start()
     {
+        plantingTimer = plantSpeed;
         Invoke(nameof(SelectSeed), 0.2f);
 
         int playerIndex = GetComponent<PlayerMovement>().playerIndex;
@@ -82,22 +82,15 @@ public class PlantSeed : MonoBehaviour
             seedCooldownText.text = Mathf.RoundToInt(plantingTimer).ToString();
         }
 
-        if (inSun)
-        {
-            inSunEffect.SetActive(true);
-        }
-        else
-        {
-            inSunEffect.SetActive(false);
-        }
+
     }
+    
     private void SelectSeed()
     {
         if (currentSeedTypeInRange != null)
         {
             Debug.Log("New seed pickup");
             currentType = currentSeedTypeInRange.GetComponent<WeaponPickup>().type;
-            
         }
     }
     private void OnEnable()
@@ -114,9 +107,16 @@ public class PlantSeed : MonoBehaviour
 
     private void OnPlantSeedPerformed(InputAction.CallbackContext context)
     {
-        if (plantingTimer <= 0 && GetComponent<PlayerWater>().GetSeedsInRangeCount() == 0 && currentSeedTypeInRange == null && inSun && !cantPlant)
+        if (plantingTimer <= 0 && seedInRange.Count == 0 && currentSeedTypeInRange == null && inSunScript.inSun && !cantPlant)
         {
             recentlyPlanted = true;
+
+            //this makes sure you cant water a seed at the same time you plant.
+            if (GetComponent<WaterSystem>() != null)
+            {
+                GetComponent<WaterSystem>().wateringTimer = 0.35f;
+            }
+
             StartCoroutine(ResetPlantingFlag());
 
             switch (currentType)
@@ -152,35 +152,37 @@ public class PlantSeed : MonoBehaviour
     {
         return recentlyPlanted;
     }
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.GetComponent<WeaponPickup>() != null && !other.gameObject.CompareTag("WeaponPickup"))
-        {
-            currentSeedTypeInRange = other.gameObject;
-        }
-
-        SeedSystem newSeed = other.GetComponent<SeedSystem>();
+        SeedSystem newSeed = collision.GetComponent<SeedSystem>();
         if (newSeed != null)
         {
             newSeed.DisplayCost(true);
             seedInRange.Add(newSeed);
         }
-    }
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.GetComponent<WeaponPickup>() != null && !other.gameObject.CompareTag("WeaponPickup"))
+
+        if (collision.GetComponent<WeaponPickup>() != null && !collision.gameObject.CompareTag("WeaponPickup"))
         {
-            if (currentSeedTypeInRange == other.gameObject)
-            {
-                currentSeedTypeInRange = null;
-            }
+            currentSeedTypeInRange = collision.gameObject;
         }
 
-        SeedSystem oldSeed = other.GetComponent<SeedSystem>();
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        SeedSystem oldSeed = collision.GetComponent<SeedSystem>();
         if (oldSeed != null)
         {
             oldSeed.DisplayCost(false);
             seedInRange.Remove(oldSeed);
         }
+
+        if (collision.GetComponent<WeaponPickup>() != null && !collision.gameObject.CompareTag("WeaponPickup"))
+        {
+            if (currentSeedTypeInRange == collision.gameObject)
+            {
+                currentSeedTypeInRange = null;
+            }
+        }
     }
+
 }

@@ -9,6 +9,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4108633183690296592, guid: cfa68bd4bd1d7d24eb1945c07c4a67a7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4108633183690296592, guid: cfa68bd4bd1d7d24eb1945c07c4a67a7, type: 3}
       propertyPath: seedObject
       value: 
       objectReference: {fileID: 4002550080951735726, guid: ef5a3a201fe11024cafb6f6c6066354c, type: 3}
@@ -59,5 +63,65 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5337573941991948235, guid: cfa68bd4bd1d7d24eb1945c07c4a67a7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -6914110394373007569}
+    - targetCorrespondingSourceObject: {fileID: 5337573941991948235, guid: cfa68bd4bd1d7d24eb1945c07c4a67a7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4554895166309983749}
   m_SourcePrefab: {fileID: 100100000, guid: cfa68bd4bd1d7d24eb1945c07c4a67a7, type: 3}
+--- !u!114 &1573752902587605130 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8783471131486380965, guid: cfa68bd4bd1d7d24eb1945c07c4a67a7, type: 3}
+  m_PrefabInstance: {fileID: 7796363828305691439}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &2747442751486442724 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5337573941991948235, guid: cfa68bd4bd1d7d24eb1945c07c4a67a7, type: 3}
+  m_PrefabInstance: {fileID: 7796363828305691439}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-6914110394373007569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2747442751486442724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7deeadb0e4313ed469e5eb031ede1e5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seedObject: {fileID: 4002550080951735726, guid: ef5a3a201fe11024cafb6f6c6066354c, type: 3}
+  wetSeed: 0
+  inSun: 0
+  displayCostText: {fileID: 1573752902587605130}
+  growingEffect: {fileID: 4163302293235249618}
+--- !u!114 &4554895166309983749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2747442751486442724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 126f18bfcce7c1e4d8bc2a7869f50b83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canBeWatered: 1
+  totalWaterCost: 10
+  waterCostPerAction: 1
+  currentWater: 0
+--- !u!1 &4163302293235249618 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6193921703186707197, guid: cfa68bd4bd1d7d24eb1945c07c4a67a7, type: 3}
+  m_PrefabInstance: {fileID: 7796363828305691439}
+  m_PrefabAsset: {fileID: 0}
