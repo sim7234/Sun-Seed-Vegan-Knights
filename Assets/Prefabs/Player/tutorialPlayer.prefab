@@ -28,6 +28,18 @@ PrefabInstance:
       propertyPath: currentType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4777482717192873088, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
+      propertyPath: seedTypes.Array.data[0]
+      value: 
+      objectReference: {fileID: 2747442751486442724, guid: b26c7d976a1803c4a92f026c0f0ddcf4, type: 3}
+    - target: {fileID: 4777482717192873088, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
+      propertyPath: seedTypes.Array.data[2]
+      value: 
+      objectReference: {fileID: 2747442751486442724, guid: b26c7d976a1803c4a92f026c0f0ddcf4, type: 3}
+    - target: {fileID: 4777482717192873088, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
+      propertyPath: seedTypes.Array.data[3]
+      value: 
+      objectReference: {fileID: 2747442751486442724, guid: b26c7d976a1803c4a92f026c0f0ddcf4, type: 3}
     - target: {fileID: 5130911862086886225, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.709959

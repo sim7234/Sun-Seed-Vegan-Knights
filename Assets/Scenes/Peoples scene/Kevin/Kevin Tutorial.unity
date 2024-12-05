@@ -9145,16 +9145,16 @@ MonoBehaviour:
 
 '
     - 
-    - (3/3) Press    <size=40><voffset=0.4em><sprite=0></voffset></size> to aim and
-      Use     <size=35><voffset=0.4em><sprite=4></voffset></size>to eliminate the
+    - (3/3) Use    <size=40><voffset=0.4em><sprite=0></voffset></size> to aim and
+      Press     <size=35><voffset=0.4em><sprite=4></voffset></size>to eliminate the
       enemy
   - dialogues:
     - (1/4) The wall is too strong. Grow a stronger weapon to destroy it
-    - '(2/4) Press    <size=35><voffset=0.4em><sprite=5></voffset></size>To plant
+    - '(2/4) Press    <size=35><voffset=0.4em><sprite=5></voffset></size>to plant
       a weapon in the sunlit area
 
 '
-    - (3/4) Hold    <size=35><voffset=0.4em><sprite=5></voffset></size>While standing
+    - (3/4) Hold    <size=35><voffset=0.4em><sprite=5></voffset></size>while standing
       on top of the plant to water it
     - (4/4) Pick up the weapon by pressing    <size=35><voffset=0.4em><sprite=5></voffset></size>destroy
       the wall and eliminate the enemies
@@ -9169,7 +9169,7 @@ MonoBehaviour:
     - (2/4) The water required is displayed above the seed when standing on top of
       it
     - '(3/4) If you are missing water, step into the puddle to refill water quickly '
-    - (4/4) You also gain water overtime altough it is very slow
+    - (4/4) You also gain water overtime although it is very slow
 --- !u!1 &536061673
 GameObject:
   m_ObjectHideFlags: 0
