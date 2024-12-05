@@ -67,6 +67,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5337573941991948235, guid: cfa68bd4bd1d7d24eb1945c07c4a67a7, type: 3}
       insertIndex: -1
       addedObject: {fileID: -6914110394373007569}
+    - targetCorrespondingSourceObject: {fileID: 5337573941991948235, guid: cfa68bd4bd1d7d24eb1945c07c4a67a7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4554895166309983749}
   m_SourcePrefab: {fileID: 100100000, guid: cfa68bd4bd1d7d24eb1945c07c4a67a7, type: 3}
 --- !u!114 &1573752902587605130 stripped
 MonoBehaviour:
@@ -101,6 +104,22 @@ MonoBehaviour:
   inSun: 0
   displayCostText: {fileID: 1573752902587605130}
   growingEffect: {fileID: 4163302293235249618}
+--- !u!114 &4554895166309983749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2747442751486442724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 126f18bfcce7c1e4d8bc2a7869f50b83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canBeWatered: 1
+  totalWaterCost: 10
+  waterCostPerAction: 1
+  currentWater: 0
 --- !u!1 &4163302293235249618 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6193921703186707197, guid: cfa68bd4bd1d7d24eb1945c07c4a67a7, type: 3}

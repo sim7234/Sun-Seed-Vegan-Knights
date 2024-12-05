@@ -5,52 +5,74 @@ using UnityEngine.UI;
 
 public class WaterSystem : MonoBehaviour
 {
-    //TODO: Make 1 big water drop, that fills with water/blue color based on water amount
-
     //this script needs a "CanWater" script on any potential object you wish to be able to water
-    //this script interacts with 
+    //this script interacts with NaturalWater, PlantSeedSystem.
 
-    int maxWater = 10;
+    float maxWater = 10.0f;
 
-   [SerializeField] int currentWater;
+    [SerializeField] float currentWater;
 
     float wateringCooldown = 0.35f;
-    float wateringTimer;
+    //this value is changed from PlantSeedSystem to make sure you cant water at the same time you plant.
+    [HideInInspector] public float wateringTimer;
 
-    //this is what decides how often water is regained
     float baseWaterRefillCooldown = 10f;
-
-    //this value can be changed by other scripts. Mainly "NaturalWater" script.
+    //these values can be changed by other scripts. Mainly "NaturalWater" script.
     [HideInInspector] public float waterRefillCooldown;
-    float waterRefillTimer;
+    [HideInInspector] public float waterRefillTimer;
+
+    float waterPercentage;
+
+    int payWater;
 
     bool hasEnoughWater;
+    bool waterButtonHeld;
 
     private InputAction waterAction;
 
     private List<Seed> seedInRange = new List<Seed>();
 
-    int payWater;
-
-    bool buttonHeld;
-
-    [SerializeField] RectTransform uiElement;
-
-    Camera camera;
-
-    Vector3 screenPos;
+    [SerializeField] Image waterDropImage;
+    [SerializeField] Image waterDropChild;
 
     void Start()
     {
-        camera = Camera.main;
-        screenPos = camera.WorldToScreenPoint(transform.position);
-        uiElement.transform.position = screenPos + new Vector3 (0,10,0);
-
         waterRefillCooldown = baseWaterRefillCooldown;
         currentWater = maxWater;
         waterRefillTimer = waterRefillCooldown;
     }
     void Update()
+    {
+        waterDropImage.transform.position = new Vector3(gameObject.transform.position.x,gameObject.transform.position.y 
+            + gameObject.transform.localScale.y + 0.3f,0);
+
+        changeImageFill();
+        refillWater();      
+    }
+    private void Awake()
+    {
+        var playerInput = GetComponent<PlayerInput>();
+        if (playerInput != null)
+        {
+            waterAction = playerInput.actions["Water"];
+        }
+    }
+
+    void changeImageFill()
+    {
+        waterPercentage = (currentWater / maxWater);
+
+        if (waterDropChild.fillAmount > waterPercentage)
+        {
+            waterDropChild.fillAmount -= Time.deltaTime * 0.4f;
+        }
+
+        if (waterDropChild.fillAmount < waterPercentage)
+        {
+            waterDropChild.fillAmount += Time.deltaTime * 0.2f;
+        }
+    }
+    void refillWater()
     {
         if (wateringTimer > 0)
         {
@@ -66,15 +88,6 @@ public class WaterSystem : MonoBehaviour
         {
             currentWater++;
             waterRefillTimer = waterRefillCooldown;
-        }
-
-    }
-    private void Awake()
-    {
-        var playerInput = GetComponent<PlayerInput>();
-        if (playerInput != null)
-        {
-            waterAction = playerInput.actions["Water"];
         }
     }
 
@@ -98,10 +111,14 @@ public class WaterSystem : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.GetComponent<CanWater>() != null && buttonHeld == true && wateringTimer <= 0 && other.GetComponent<CanWater>().canBeWatered)
+        if (other.GetComponent<CanWater>() != null && other.GetComponent<CanWater>().enabled == true)
+        {
+            DisplayWater(true);
+        }
+
+        if (other.GetComponent<CanWater>() != null && waterButtonHeld == true && wateringTimer <= 0 && other.GetComponent<CanWater>().canBeWatered)
         {
             wateringTimer = wateringCooldown;
-            Debug.Log("Watered Seed");
 
             payWater = other.GetComponent<CanWater>().waterCostPerAction;
 
@@ -111,6 +128,24 @@ public class WaterSystem : MonoBehaviour
                 other.GetComponent<CanWater>().currentWater += payWater;
             }
         }
+
+        if (other.GetComponent<NaturalWater>() != null)
+        {
+            DisplayWater(true);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.GetComponent<NaturalWater>() != null)
+        {
+            DisplayWater(false);
+        }
+
+        if (other.GetComponent<CanWater>() != null)
+        {
+            DisplayWater(false);
+        }
     }
 
     public void OnWater(InputAction.CallbackContext context)
@@ -118,7 +153,7 @@ public class WaterSystem : MonoBehaviour
         //WaterInput triggers on press and release.
         if (context.performed)
         {
-            buttonHeld = !buttonHeld;
+            waterButtonHeld = !waterButtonHeld;
         }
     }
 
@@ -138,16 +173,12 @@ public class WaterSystem : MonoBehaviour
         {
             return false;
         }
-    }
+    }   
 
-    public int GetCurrentWater()
+    void DisplayWater(bool displayWater)
     {
-        return currentWater;
-    }
-
-    void RefillAllWater()
-    {
-        currentWater = maxWater;
+        waterDropImage.enabled = displayWater;
+        waterDropChild.enabled = displayWater;
     }
 
     public void ChangeWaterRefillRate(float rate)
@@ -160,5 +191,14 @@ public class WaterSystem : MonoBehaviour
         }
     }
 
+    public float GetCurrentWater()
+    {
+        return currentWater;
+    }
+
+    void RefillAllWater()
+    {
+        currentWater = maxWater;
+    }
 }
 

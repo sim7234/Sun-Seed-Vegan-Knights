@@ -110,6 +110,13 @@ public class PlantSeedSystem : MonoBehaviour
         if (plantingTimer <= 0 && seedInRange.Count == 0 && currentSeedTypeInRange == null && inSunScript.inSun && !cantPlant)
         {
             recentlyPlanted = true;
+
+            //this makes sure you cant water a seed at the same time you plant.
+            if (GetComponent<WaterSystem>() != null)
+            {
+                GetComponent<WaterSystem>().wateringTimer = 0.35f;
+            }
+
             StartCoroutine(ResetPlantingFlag());
 
             switch (currentType)
