@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerHealing : MonoBehaviour
@@ -13,10 +11,10 @@ public class PlayerHealing : MonoBehaviour
     }
     private void Update()
     {
-        //if(GetComponent<EnteredSun>().inSun)
-        //{
-        //    health.Heal(healingAmount * Time.deltaTime);
-        //}
+        if (GetComponent<EnteredSun>().inSun)
+        {
+            health.Heal(healingAmount * Time.deltaTime);
+        }
     }
 
     public void HealMax()

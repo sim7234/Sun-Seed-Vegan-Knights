@@ -1562,10 +1562,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 224198753787193531, guid: 9aa488ed6f997dc41932d4ec2557d188, type: 3}
-      propertyPath: distanceToAttack
-      value: 60
-      objectReference: {fileID: 0}
     - target: {fileID: 344034789168004185, guid: 9aa488ed6f997dc41932d4ec2557d188, type: 3}
       propertyPath: m_LocalPosition.x
       value: -24.18
@@ -1609,10 +1605,6 @@ PrefabInstance:
     - target: {fileID: 4026458952341622850, guid: 9aa488ed6f997dc41932d4ec2557d188, type: 3}
       propertyPath: m_Name
       value: RangedEnemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 8063347678101092571, guid: 9aa488ed6f997dc41932d4ec2557d188, type: 3}
-      propertyPath: distenceToAttack
-      value: 90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
