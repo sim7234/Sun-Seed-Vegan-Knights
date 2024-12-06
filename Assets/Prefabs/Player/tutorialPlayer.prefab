@@ -90,7 +90,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8503630816615383961, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
       propertyPath: dashPower
-      value: 5
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 8969524211948827692, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
       propertyPath: m_ActionEvents.Array.size

@@ -5,16 +5,18 @@ using System.Collections;
 
 public class PlayerJoined : MonoBehaviour
 {
-    public Dialogue dialogueSystem; 
+    public Dialogue dialogueSystem;
     public TextMeshProUGUI messageText;
     private PlayerInputManager playerInputManager;
     public CameraMoverOnEnemyDeath cameraMover;
+
+    private PlayerInput firstPlayerInput; 
 
     private void Start()
     {
         if (messageText != null)
         {
-            messageText.gameObject.SetActive(true); 
+            messageText.gameObject.SetActive(true);
         }
     }
 
@@ -39,24 +41,29 @@ public class PlayerJoined : MonoBehaviour
     {
         DontDestroyOnLoad(playerInput.gameObject);
 
-        if (playerInput.currentControlScheme == "Control" || playerInput.currentControlScheme == "Keyboard")
+        if (firstPlayerInput == null)
+        {
+            firstPlayerInput = playerInput;
+            playerInput.SwitchCurrentActionMap("ControlActions1"); 
+        }
+        else
         {
             playerInput.SwitchCurrentActionMap("ControlActions1");
         }
 
         if (messageText != null)
         {
-            messageText.text = "Use   <voffset=0.3em><sprite=3></voffset>to move and   <voffset=0.3em><sprite=0></voffset>to rotate"; 
-            Invoke(nameof(HideMessage), 10f); 
+            messageText.text = "Use   <voffset=0.3em><sprite=3></voffset>to move and   <voffset=0.3em><sprite=0></voffset>to rotate";
+            Invoke(nameof(HideMessage), 10f);
         }
 
-        if (dialogueSystem != null)
+        if (dialogueSystem != null && playerInput == firstPlayerInput) 
         {
             dialogueSystem.OnPlayerJoined(playerInput);
 
             playerInput.actions["NextDialogue"].performed += context =>
             {
-                if (dialogueSystem.IsDialogueActive) 
+                if (dialogueSystem.IsDialogueActive)
                 {
                     dialogueSystem.NextLine();
                 }
@@ -82,7 +89,7 @@ public class PlayerJoined : MonoBehaviour
         {
             StartCoroutine(StartDialogueCoroutine());
         }
-        StartCoroutine(ShowSecondMessageCoroutine()); 
+        StartCoroutine(ShowSecondMessageCoroutine());
     }
 
     private IEnumerator StartDialogueCoroutine()
@@ -92,12 +99,12 @@ public class PlayerJoined : MonoBehaviour
 
     private IEnumerator ShowSecondMessageCoroutine()
     {
-        yield return new WaitForSeconds(0f); 
+        yield return new WaitForSeconds(0f);
         if (messageText != null)
         {
             messageText.gameObject.SetActive(true);
-            messageText.text = "Press   <voffset=0.3em><sprite=2></voffset>to dash."; 
-            Invoke(nameof(HideSecondMessage), 5f); 
+            messageText.text = "Press   <voffset=0.3em><sprite=2></voffset>to dash.";
+            Invoke(nameof(HideSecondMessage), 5f);
         }
     }
 

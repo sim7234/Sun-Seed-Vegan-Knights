@@ -116,53 +116,37 @@ public class Dialogue : MonoBehaviour
         EnableActionMap();
     }
 
-    private PlayerInput dialogueControllerPlayer; // assign dialogue configure to 1 player
+    private PlayerInput dialogueControllerPlayer; 
 
     private void DisableActionMap()
     {
         var players = FindObjectsOfType<PlayerInput>();
 
-        if (players.Length == 1)
+        foreach (PlayerInput player in players)
         {
-            dialogueControllerPlayer = players[0];
-            dialogueControllerPlayer.SwitchCurrentActionMap("UI"); //Singleplayer
-        }
-        else
-        {
-            foreach (PlayerInput player in players)
+            if (player == dialogueControllerPlayer)
             {
-                if (player != null)
-                {
-                    if (dialogueControllerPlayer == null)
-                    {
-                        dialogueControllerPlayer = player;
-                        player.SwitchCurrentActionMap("UI"); 
-                    }
-                    else if (player != dialogueControllerPlayer)
-                    {
-                        player.SwitchCurrentActionMap("Disabled");
-                    }
-                }
+                player.SwitchCurrentActionMap("UI"); 
+            }
+            else
+            {
+                player.SwitchCurrentActionMap("Disabled"); 
             }
         }
     }
 
-        private void EnableActionMap()
+    private void EnableActionMap()
     {
         foreach (PlayerInput player in FindObjectsOfType<PlayerInput>())
         {
-            if (player != null)
+            if (player == dialogueControllerPlayer)
             {
-                if (player == dialogueControllerPlayer)
-                {
-                    player.SwitchCurrentActionMap(actionMapToDisable);
-                }
-                else
-                {
-                    player.SwitchCurrentActionMap("Disabled");
-                }
+                player.SwitchCurrentActionMap(actionMapToDisable); 
+            }
+            else
+            {
+                player.SwitchCurrentActionMap("ControlActions1"); 
             }
         }
-        dialogueControllerPlayer = null;
     }
 }
