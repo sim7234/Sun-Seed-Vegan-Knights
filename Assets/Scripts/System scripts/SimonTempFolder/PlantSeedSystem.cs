@@ -114,17 +114,18 @@ public class PlantSeedSystem : MonoBehaviour
             //this makes sure you cant water a seed at the same time you plant.
             if (GetComponent<WaterSystem>() != null)
             {
-                GetComponent<WaterSystem>().wateringTimer = 0.35f;
+                GetComponent<WaterSystem>().wateringTimer = 0.10f;
             }
 
             StartCoroutine(ResetPlantingFlag());
 
+
             switch (currentType)
             {
-                case WeaponType.Sword:
+                case WeaponType.Spear:
                     Instantiate(seedTypes[0], transform.position, Quaternion.identity);
                     break;
-                case WeaponType.Spear:
+                case WeaponType.Sword:
                     Instantiate(seedTypes[1], transform.position, Quaternion.identity);
                     break;
                 case WeaponType.Turret:
