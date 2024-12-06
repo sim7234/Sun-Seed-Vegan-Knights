@@ -81,14 +81,19 @@ public class CameraSystem : MonoBehaviour
         Vector3 position = gameObject.transform.position;
         if (position != cameraPosition)
         {
-
-            Vector3 newPosition = Vector3.zero;
-            newPosition.x = Mathf.MoveTowards(position.x, cameraPosition.x, positionUpdateSpeed * Time.deltaTime);
-            newPosition.y = Mathf.MoveTowards(position.y, cameraPosition.y, positionUpdateSpeed * Time.deltaTime);
-            newPosition.x = Mathf.MoveTowards(position.z, cameraPosition.z, depthUpdateSpeed * Time.deltaTime);
+            Vector3 targetPosition = Vector3.zero;
+            targetPosition.x = Mathf.MoveTowards(position.x, cameraPosition.x, positionUpdateSpeed * Time.deltaTime);
+            targetPosition.y = Mathf.MoveTowards(position.y, cameraPosition.y, positionUpdateSpeed * Time.deltaTime);
+            targetPosition.z = Mathf.MoveTowards(position.z, cameraPosition.z, depthUpdateSpeed * Time.deltaTime);
+            gameObject.transform.position = targetPosition;
         }
 
-
+        //Vector3 localEulerAngles = gameObject.transform.localEulerAngles;
+        //if (localEulerAngles.x != cameraEulerX)
+        //{
+        //    Vector3 targetEulerAngeles = new Vector3(cameraEulerX, localEulerAngles.y, localEulerAngles.z);
+        //    gameObject.transform.localEulerAngles = Vector3.MoveTowards(localEulerAngles, targetEulerAngeles, angleUpdateSpeed * Time.deltaTime);
+        //}
     }
     private void CalculateCameraLocation()
     {

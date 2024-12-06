@@ -2713,6 +2713,56 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &730917681
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 730917683}
+  - component: {fileID: 730917682}
+  m_Layer: 0
+  m_Name: Camera Focus
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &730917682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730917681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c05f1956ff6c60945b0cbbefa22758eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  halfXBounds: 10
+  halfYBounds: 8
+  halfZBounds: 15
+  focusBounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+--- !u!4 &730917683
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730917681}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &746829654
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7151,6 +7201,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2036887187}
+  - component: {fileID: 2036887188}
   m_Layer: 8
   m_Name: CameraAxis
   m_TagString: Untagged
@@ -7174,6 +7225,27 @@ Transform:
   - {fileID: 843450566}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2036887188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036887186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c5ee5307c9208744a8e03275d97d648, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  focusLevel: {fileID: 730917682}
+  depthUpdateSpeed: 5
+  angleUpdateSpeed: 7
+  positionUpdateSpeed: 5
+  deapthMax: -10
+  deapthMin: -22
+  angleMax: 11
+  angleMin: 3
+  players: []
 --- !u!1 &2044336287
 GameObject:
   m_ObjectHideFlags: 0
@@ -7891,7 +7963,7 @@ PrefabInstance:
     - target: {fileID: 476285938522494790, guid: b5d8548dc6b1bfa408559e695f307bde, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 2036887186}
+      objectReference: {fileID: 730917681}
     - target: {fileID: 476285938522494790, guid: b5d8548dc6b1bfa408559e695f307bde, type: 3}
       propertyPath: respawnsForMission
       value: 2
@@ -8030,6 +8102,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 2036887187}
+  - {fileID: 730917683}
   - {fileID: 201121909}
   - {fileID: 1681748002}
   - {fileID: 331215382}
