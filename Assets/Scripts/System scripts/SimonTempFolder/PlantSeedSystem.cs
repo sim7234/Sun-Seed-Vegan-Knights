@@ -20,7 +20,7 @@ public class PlantSeedSystem : MonoBehaviour
     private InputAction pickUpSeed;
 
     public float plantSpeed = 30;
-    float plantingTimer;
+    public float plantingTimer;
 
     private float plantingCooldown = 0.2f;
     private bool recentlyPlanted = false;
