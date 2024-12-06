@@ -44,6 +44,9 @@ public class MissionMaster : MonoBehaviour
     [SerializeField]
     private int respawnsForMission = 4;
 
+    [SerializeField]
+    private GameObject nextStagePointer;
+
     private void Awake()
     {
         Instance = this;
@@ -109,7 +112,6 @@ public class MissionMaster : MonoBehaviour
         }
         if (combatsComplete < combatPoints.Count)
         {
-
             if (actionBetweenLevels[combatsComplete] != null)
             {
                 actionBetweenLevels[combatsComplete].SetActive(true);
@@ -123,15 +125,18 @@ public class MissionMaster : MonoBehaviour
     {
         float duration = Vector3.Distance(start, end) / 2;
         float timeElapsed = 0;
-
+        nextStagePointer.SetActive(true);
         while (timeElapsed < duration)
         {
             cam.transform.position = Vector3.Lerp(start, end, timeElapsed / duration);
             timeElapsed += Time.deltaTime;
             yield return null;
+            nextStagePointer.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, 0);
+            nextStagePointer.transform.up = (end - nextStagePointer.transform.position).normalized;
         }
 
         cam.transform.position = end;
+        nextStagePointer.SetActive(false);
         StartCoroutine(ActivateCombatAfterDelay(10f, combatsComplete));
     }
     private IEnumerator ActivateCombatAfterDelay(float delay, int combatIndex)

@@ -671,7 +671,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 89
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 2a500ab2c7d485f48ba2d9c076a1d003, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 1
@@ -755,7 +755,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 106
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: cbf0054da49784743b01a05ee73e79cc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5729,7 +5729,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 99
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 42b490e6a0de29b48b812fe22bc6e513, type: 3}
   m_Color: {r: 1, g: 0.8443396, b: 0.98670155, a: 1}
   m_FlipX: 0
@@ -20652,7 +20652,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 99
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 606e55afc1ce4ad4897b4ca4cb3660b7, type: 3}
   m_Color: {r: 1, g: 0.8443396, b: 0.98670155, a: 1}
   m_FlipX: 0
@@ -20878,7 +20878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndex: 0
-  bloomDamage: 30
+  bloomDamage: 15
   turnOfOnStart: 1
 --- !u!1 &2815485709930524877
 GameObject:
@@ -25783,7 +25783,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 99
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 407d39b0c0cabc44abb997e97e30d671, type: 3}
   m_Color: {r: 1, g: 0.8443396, b: 0.98670155, a: 1}
   m_FlipX: 1
@@ -26096,7 +26096,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 99
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9ad048f2507199540a0c4ed67836a3ac, type: 3}
   m_Color: {r: 1, g: 0.8443396, b: 0.98670155, a: 1}
   m_FlipX: 1
@@ -26383,7 +26383,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 105
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 794be9a7dfb8535428db3388770d6436, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -31356,7 +31356,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 106
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a61c0fb11b4fa5d4d9d34eef781aa3fa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -31525,6 +31525,7 @@ MonoBehaviour:
   swordSwingSound: {fileID: 8300000, guid: dec3f8a6d31d51c4995341d391828895, type: 3}
   spearThrustSound: {fileID: 8300000, guid: e7a66464d458314458ccc300d36134b0, type: 3}
   attacksLeftText: {fileID: 4415557574761422054}
+  weaponPickupSound: {fileID: 8300000, guid: 8855124cdfc85654f9aa866a4e1a1187, type: 3}
 --- !u!82 &5284485026496525295
 AudioSource:
   m_ObjectHideFlags: 0
@@ -31933,6 +31934,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 0f15e55c-5487-4191-91b7-2fff1e2d8772
     m_ActionName: UI/NextDialogue[/DualSenseGamepadHID/dpad/right,/XInputControllerWindows/dpad/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ebec5cf8-c357-48ae-9184-524b60a03ab3
+    m_ActionName: UI/Rotate[/DualShock4GamepadHID/rightStick,/DualSenseGamepadHID/rightStick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 195099d6-055b-4f19-9359-983a3f519b14
+    m_ActionName: UI/Fire[/DualShock4GamepadHID/rightShoulder,/DualSenseGamepadHID/rightShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5de3c3dd-5858-440a-8c92-cccba54c7a6f
+    m_ActionName: Disabled/Rotate[/DualShock4GamepadHID/rightStick,/DualSenseGamepadHID/rightStick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ac8de15b-6aa6-46ce-90b6-e269781e8f7e
+    m_ActionName: Disabled/Fire[/DualShock4GamepadHID/rightShoulder,/DualSenseGamepadHID/rightShoulder]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Control
   m_DefaultActionMap: ControlActions1
@@ -31996,7 +32013,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c111fc7f0794810488cd8dab9ccf0034, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healingAmount: 2
+  healingAmount: 3
 --- !u!114 &5982578935766589562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32076,8 +32093,10 @@ MonoBehaviour:
   currentType: 0
   currentSeedTypeInRange: {fileID: 0}
   plantSpeed: 30
+  plantingTimer: 0
   seedCooldownText: {fileID: 2450117201710678076}
   cantPlant: 0
+  weaponPickupSound: {fileID: 8300000, guid: 8855124cdfc85654f9aa866a4e1a1187, type: 3}
 --- !u!114 &7107893933753096804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37304,7 +37323,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 99
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9ad048f2507199540a0c4ed67836a3ac, type: 3}
   m_Color: {r: 1, g: 0.8443396, b: 0.98670155, a: 1}
   m_FlipX: 0
@@ -37485,8 +37504,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 105
-  m_Sprite: {fileID: 21300000, guid: 644006f46c8905b4296e6dd24dc39bb3, type: 3}
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: be6cbb23ffc4c324ca3cb3f733212b40, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -52221,7 +52240,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 99
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 407d39b0c0cabc44abb997e97e30d671, type: 3}
   m_Color: {r: 1, g: 0.8443396, b: 0.98670155, a: 1}
   m_FlipX: 0
@@ -52583,7 +52602,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 99
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 38e3b23b60143ca41aec3d4838a6ed68, type: 3}
   m_Color: {r: 1, g: 0.8443396, b: 0.98670155, a: 1}
   m_FlipX: 0
@@ -57707,7 +57726,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2255108453058052982
 Transform:
   m_ObjectHideFlags: 0
@@ -57977,8 +57996,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.06
-      minScalar: 0.02
+      scalar: 0.3
+      minScalar: 0.1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -58441,7 +58460,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.3
+      value: 0.61
       mode: 0
       spread: 0
       speed:
@@ -68155,7 +68174,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 110
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8faa5b60fb248aa44ad49852658a3b12, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 1
@@ -68240,8 +68259,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 106
-  m_Sprite: {fileID: 21300000, guid: 2c85937413730ac4688fe39273a9bc1b, type: 3}
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 379d586138f4a614d8019d74faecbee5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 1
@@ -68325,7 +68344,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 99
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d9d7f6a02c7c44b4695e36b7783bf8b7, type: 3}
   m_Color: {r: 1, g: 0.8443396, b: 0.98670155, a: 1}
   m_FlipX: 0

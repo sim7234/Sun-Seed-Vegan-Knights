@@ -36,6 +36,8 @@ public class PlantSeedSystem : MonoBehaviour
 
     bool canPlant = true;
 
+    [SerializeField]
+    private AudioClip weaponPickupSound;
     private void Awake()
     {
         inSunScript = GetComponent<EnteredSun>();
@@ -89,7 +91,7 @@ public class PlantSeedSystem : MonoBehaviour
     {
         if (currentSeedTypeInRange != null)
         {
-            Debug.Log("New seed pickup");
+            GetComponent<AudioSource>().PlayOneShot(weaponPickupSound);
             currentType = currentSeedTypeInRange.GetComponent<WeaponPickup>().type;
         }
     }
