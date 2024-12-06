@@ -10,7 +10,7 @@ public class WaterSystem : MonoBehaviour
 
     float maxWater = 10.0f;
 
-    [SerializeField] float currentWater;
+    public float currentWater;
 
     float wateringCooldown = 0.35f;
     //this value is changed from PlantSeedSystem to make sure you cant water at the same time you plant.
