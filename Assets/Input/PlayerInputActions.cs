@@ -288,6 +288,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""02b0b374-9cbb-4c9c-b914-205d715d0770"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -398,6 +407,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Control"",
                     ""action"": ""Stomp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""980f9ce0-6440-4e0d-8776-a4bb0d4c2109"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control"",
+                    ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -590,6 +610,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_ControlActions1_PickUp = m_ControlActions1.FindAction("PickUp", throwIfNotFound: true);
         m_ControlActions1_ChargeAttack = m_ControlActions1.FindAction("ChargeAttack", throwIfNotFound: true);
         m_ControlActions1_Stomp = m_ControlActions1.FindAction("Stomp", throwIfNotFound: true);
+        m_ControlActions1_Interact = m_ControlActions1.FindAction("Interact", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_PreviousDialogue = m_UI.FindAction("PreviousDialogue", throwIfNotFound: true);
@@ -757,6 +778,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_ControlActions1_PickUp;
     private readonly InputAction m_ControlActions1_ChargeAttack;
     private readonly InputAction m_ControlActions1_Stomp;
+    private readonly InputAction m_ControlActions1_Interact;
     public struct ControlActions1Actions
     {
         private @PlayerInputActions m_Wrapper;
@@ -771,6 +793,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @PickUp => m_Wrapper.m_ControlActions1_PickUp;
         public InputAction @ChargeAttack => m_Wrapper.m_ControlActions1_ChargeAttack;
         public InputAction @Stomp => m_Wrapper.m_ControlActions1_Stomp;
+        public InputAction @Interact => m_Wrapper.m_ControlActions1_Interact;
         public InputActionMap Get() { return m_Wrapper.m_ControlActions1; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -810,6 +833,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Stomp.started += instance.OnStomp;
             @Stomp.performed += instance.OnStomp;
             @Stomp.canceled += instance.OnStomp;
+            @Interact.started += instance.OnInteract;
+            @Interact.performed += instance.OnInteract;
+            @Interact.canceled += instance.OnInteract;
         }
 
         private void UnregisterCallbacks(IControlActions1Actions instance)
@@ -844,6 +870,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Stomp.started -= instance.OnStomp;
             @Stomp.performed -= instance.OnStomp;
             @Stomp.canceled -= instance.OnStomp;
+            @Interact.started -= instance.OnInteract;
+            @Interact.performed -= instance.OnInteract;
+            @Interact.canceled -= instance.OnInteract;
         }
 
         public void RemoveCallbacks(IControlActions1Actions instance)
@@ -1024,6 +1053,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnPickUp(InputAction.CallbackContext context);
         void OnChargeAttack(InputAction.CallbackContext context);
         void OnStomp(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

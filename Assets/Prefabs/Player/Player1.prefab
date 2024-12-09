@@ -31959,9 +31959,25 @@ MonoBehaviour:
     m_ActionId: 8e5d6574-3a5a-4be3-af0a-bed5687fa1f3
     m_ActionName: ControlActions1/ChargeAttack[/XInputControllerWindows/leftShoulder]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5321282776459043100}
+        m_TargetAssemblyTypeName: PlayerAttack, Assembly-CSharp
+        m_MethodName: Stomp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 795f7a96-e356-440e-9d0d-e2d738cf7ba8
     m_ActionName: ControlActions1/Stomp[/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 02b0b374-9cbb-4c9c-b914-205d715d0770
+    m_ActionName: ControlActions1/Interact[/XInputControllerWindows/buttonNorth]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Control
   m_DefaultActionMap: ControlActions1
@@ -32481,7 +32497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4652404fe8aec3441a7b76ad8aca024d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerIndex: 3
+  playerIndex: 0
   bloomDamage: 20
   turnOfOnStart: 0
 --- !u!1 &4928263016644737579
