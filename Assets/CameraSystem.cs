@@ -9,20 +9,22 @@ public class CameraSystem : MonoBehaviour
     [SerializeField]
     private FocusLevel focusLevel;
 
-    [SerializeField]
+
     private float depthUpdateSpeed = 5.0f;
 
-    [SerializeField]
+   
     private float angleUpdateSpeed = 7.0f;
  
     [SerializeField]
     private float positionUpdateSpeed = 5.0f;
 
-
+    [HideInInspector]
     public float deapthMax = 12.0f;
+    [HideInInspector]
     public float deapthMin = 6.0f;
-
+    [HideInInspector]
     public float angleMax = 11.0f;
+    [HideInInspector]
     public float angleMin = 11.0f;
 
 

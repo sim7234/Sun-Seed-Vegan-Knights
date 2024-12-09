@@ -65,7 +65,7 @@ public class MissionMaster : MonoBehaviour
 
         StartCoroutine(ActivateCombatAfterDelay(10f, 0));
 
-        if (Objectives.Count > 1)
+        if (Objectives.Count >= 1)
         {
             if (Objectives.Count >= combatsComplete)
             {
