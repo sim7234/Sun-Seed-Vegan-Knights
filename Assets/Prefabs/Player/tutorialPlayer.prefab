@@ -205,7 +205,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2422993599085478142, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2830835889610333033, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
       propertyPath: m_Enabled
@@ -285,7 +285,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5163089789201268005, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5321282776459043100, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
       propertyPath: stompArea
