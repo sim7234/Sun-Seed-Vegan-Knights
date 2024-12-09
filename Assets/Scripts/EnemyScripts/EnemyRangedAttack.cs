@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyRangedAttack : MonoBehaviour
@@ -11,6 +12,8 @@ public class EnemyRangedAttack : MonoBehaviour
     [SerializeField] GameObject projectilePrefab;
     [SerializeField] Transform projectileSpawnPoint;
     [SerializeField] Transform rotationPoint;
+
+    [SerializeField] float distenceToAttack;
 
     public float attackSpeed;
     public float projectileSpeed;
@@ -33,12 +36,12 @@ public class EnemyRangedAttack : MonoBehaviour
         pathfindingScript = GetComponent<Pathfinding>();
         enemyRetreatScript = GetComponent<EnemyRetreat>();
         enemyAttacksScript = GetComponent<EnemyAttacks>();
-        camera = Camera.main;
     }
 
     // Update is called once per frame
     void Update()
     {
+        camera = Camera.main;
         if (enemyAttacksScript == null) return;
         if (enemyRetreatScript == null) return;
         if (pathfindingScript == null) return;
@@ -53,19 +56,6 @@ public class EnemyRangedAttack : MonoBehaviour
 
         cameraVertical = camera.orthographicSize * 2;
         cameraHorizontal = cameraVertical * camera.aspect;
-
-        if (transform.position.x > (cameraHorizontal / 2 - 0.8) || transform.position.x < -(cameraHorizontal / 2 - 0.8))
-        {
-            canShoot = false;
-        }
-        else if (transform.position.y > ((cameraVertical / 2) - 0.8) || transform.position.y < -((cameraVertical / 2 - 0.8)))
-        {
-            canShoot = false;
-        }
-        else
-        {
-            canShoot = true;
-        }
 
         if (enemyAttacksScript.withinDistance == true && enemyRetreatScript.retreating == false)
         {
@@ -84,7 +74,23 @@ public class EnemyRangedAttack : MonoBehaviour
         { 
             rangedAttackActive = false;
         }
+
+        Vector2 distenceToCamera = camera.WorldToViewportPoint(gameObject.transform.position);
+
+        if(distenceToCamera.x < 0 || distenceToCamera.y < 0)
+        {
+            enemyAttacksScript.distanceToAttack = 0;
+            canShoot = false;
+        }
+        else
+        {
+            enemyAttacksScript.distanceToAttack = distenceToAttack;
+            canShoot = true;
+        }
     }
+
+   
+
     void rangedAttack()
     {
         spawnPointToVector = projectileSpawnPoint.transform.position;

@@ -6,10 +6,11 @@ public class InvisibleWallWaterDrain : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        PlayerWater playerWater = collision.GetComponent<PlayerWater>();
+        WaterSystem playerWater = collision.GetComponent<WaterSystem>();
         if (playerWater != null)
         {
-            playerWater.TakeAllWater();
+            playerWater.currentWater = 0;
+            Debug.Log("Drained water");
         }
     }
 }

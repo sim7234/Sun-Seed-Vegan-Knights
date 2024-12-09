@@ -20,7 +20,7 @@ public class PlantSeedSystem : MonoBehaviour
     private InputAction pickUpSeed;
 
     public float plantSpeed = 30;
-    float plantingTimer;
+    public float plantingTimer;
 
     private float plantingCooldown = 0.2f;
     private bool recentlyPlanted = false;
@@ -36,6 +36,8 @@ public class PlantSeedSystem : MonoBehaviour
 
     bool canPlant = true;
 
+    [SerializeField]
+    private AudioClip weaponPickupSound;
     private void Awake()
     {
         inSunScript = GetComponent<EnteredSun>();
@@ -89,7 +91,7 @@ public class PlantSeedSystem : MonoBehaviour
     {
         if (currentSeedTypeInRange != null)
         {
-            Debug.Log("New seed pickup");
+            GetComponent<AudioSource>().PlayOneShot(weaponPickupSound);
             currentType = currentSeedTypeInRange.GetComponent<WeaponPickup>().type;
         }
     }
@@ -114,17 +116,18 @@ public class PlantSeedSystem : MonoBehaviour
             //this makes sure you cant water a seed at the same time you plant.
             if (GetComponent<WaterSystem>() != null)
             {
-                GetComponent<WaterSystem>().wateringTimer = 0.35f;
+                GetComponent<WaterSystem>().wateringTimer = 0.10f;
             }
 
             StartCoroutine(ResetPlantingFlag());
 
+
             switch (currentType)
             {
-                case WeaponType.Sword:
+                case WeaponType.Spear:
                     Instantiate(seedTypes[0], transform.position, Quaternion.identity);
                     break;
-                case WeaponType.Spear:
+                case WeaponType.Sword:
                     Instantiate(seedTypes[1], transform.position, Quaternion.identity);
                     break;
                 case WeaponType.Turret:

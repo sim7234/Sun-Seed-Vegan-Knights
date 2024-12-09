@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -34,9 +35,26 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField]
     private MoveOnAttack baseWeaponMoveScript;
 
+        [SerializeField]
+    private GameObject stompArea; 
+
+    [SerializeField]
+    private int stompDamage = 10; 
+
+    [SerializeField]
+    private float stompDuration = 0.3f; 
+
+    [SerializeField]
+    private float stompCooldown = 10f; 
+    private bool canStomp = true; 
+
+
     private void Awake()
     {
         playerControls = new PlayerInputActions();
+        
+        playerControls.ControlActions1.Stomp.performed += ctx => Stomp();
+
     }
     private void Start()
     {
@@ -102,6 +120,7 @@ public class PlayerAttack : MonoBehaviour
             lastAttackTime = Time.time;
         }
     }
+
     public void Attack()
     {
         if (weaponAnimator != null)
@@ -115,6 +134,7 @@ public class PlayerAttack : MonoBehaviour
 
         lastAttackTime = Time.time;
     }
+    
     public void DashAttack()
     {
         if (weaponAnimator != null)
@@ -128,17 +148,78 @@ public class PlayerAttack : MonoBehaviour
 
         lastAttackTime = Time.time;
     }
+
+    public void Stomp()
+    {
+    if (!canStomp)
+        {
+            Debug.Log("Stomp CD");
+            return;
+        }
+
+        if (stompArea != null)
+        {
+            stompArea.SetActive(true); 
+
+            Damage stompDamageComponent = stompArea.GetComponent<Damage>();
+            if (stompDamageComponent != null)
+            {
+                stompDamageComponent.damage = stompDamage;
+                stompDamageComponent.TurnOnCollider();
+            }
+
+            StartCoroutine(DeactivateStompAreaAfterDelay());
+        }
+
+        Screenshake.Instance.Shake(0.7f, 0.25f, 1.5f);
+
+        canStomp = false;
+        StartCoroutine(StompCooldownCoroutine());
+    }
+
+    private IEnumerator StompCooldownCoroutine()
+    {
+        yield return new WaitForSeconds(stompCooldown);
+        canStomp = true;
+    }
+
+    private IEnumerator DeactivateStompAreaAfterDelay()
+    {
+        yield return new WaitForSeconds(stompDuration);
+
+        if (stompArea != null)
+        {
+            Damage stompDamageComponent = stompArea.GetComponent<Damage>();
+            if (stompDamageComponent != null)
+            {   
+                stompDamageComponent.TurnOfCollider();
+            }
+            stompArea.SetActive(false);
+        }
+    }
+
+    private void OnEnable()
+    {
+        playerControls.ControlActions1.Stomp.performed += ctx =>
+        {
+            Debug.Log("Stomp");
+            Stomp();
+        };
+        playerControls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        playerControls.ControlActions1.Stomp.performed -= ctx => Stomp();
+        playerControls.Disable();
+    }
+
     private void PlaySwordSwingSound()
     {
         if (swordSwingSound != null && audioSource != null)
         {
             audioSource.pitch = (1.0f - attackCounter /10) * Random.Range(0.95f, 1.05f);
             audioSource.Play();
-            //audioSource.PlayOneShot(swordSwingSound);
-        }
-        else
-        {
-            Debug.LogWarning("nosound");
         }
     }
 }

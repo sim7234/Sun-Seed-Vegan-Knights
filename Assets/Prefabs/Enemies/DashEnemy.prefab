@@ -403,7 +403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c1700008e098ae468f3da206c69f3f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackStrength: 10
+  knockbackStrength: 80
 --- !u!70 &112777825124948672
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -451,7 +451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 599290347712b3c4bae5b7cd329c0c96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bloomResistance: 25
+  bloomResistance: 35
   hasBloomed1: 0
   BloomExplosionVFX: {fileID: 1240254011838071449, guid: 20efd42d40277384687f4f2a74a87383, type: 3}
   divideHealthBy: 5

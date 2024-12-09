@@ -27,8 +27,8 @@ public class WeaponPickup : MonoBehaviour
             if (collision.gameObject.GetComponent<PlayerMovement>() != null)
             {
                 playersInRange.Add(collision.gameObject);
+                weaponPickupText.SetActive(true);
             }
-            weaponPickupText.SetActive(true);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)

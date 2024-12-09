@@ -270,6 +270,24 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ChargeAttack"",
+                    ""type"": ""Button"",
+                    ""id"": ""8e5d6574-3a5a-4be3-af0a-bed5687fa1f3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Stomp"",
+                    ""type"": ""Button"",
+                    ""id"": ""795f7a96-e356-440e-9d0d-e2d738cf7ba8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -360,6 +378,28 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""PickUp"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a5394146-d3c0-45e4-819c-9f81aceba751"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": ""Control"",
+                    ""action"": ""ChargeAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5a752270-9c1f-4a44-bc59-4041854d5e1f"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control"",
+                    ""action"": ""Stomp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -377,6 +417,24 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""Rotate"",
+                    ""type"": ""Value"",
+                    ""id"": ""ebec5cf8-c357-48ae-9184-524b60a03ab3"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Fire"",
+                    ""type"": ""Button"",
+                    ""id"": ""195099d6-055b-4f19-9359-983a3f519b14"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""NextDialogue"",
                     ""type"": ""Button"",
                     ""id"": ""0f15e55c-5487-4191-91b7-2fff1e2d8772"",
@@ -390,7 +448,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""21a04f6f-b162-4e3d-8824-b97f5f7be599"",
-                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Control"",
@@ -404,8 +462,30 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/dpad/left"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Control"",
+                    ""groups"": """",
                     ""action"": ""PreviousDialogue"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f7905b3d-73ab-4cc8-a021-c1533bcef3f8"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control"",
+                    ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2eff4e5d-4579-4aab-8987-5e68b6d1e7b5"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control"",
+                    ""action"": ""Rotate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -414,8 +494,50 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         {
             ""name"": ""Disabled"",
             ""id"": ""a4f0a3db-078d-4443-80a3-015606525b69"",
-            ""actions"": [],
-            ""bindings"": []
+            ""actions"": [
+                {
+                    ""name"": ""Rotate"",
+                    ""type"": ""Value"",
+                    ""id"": ""5de3c3dd-5858-440a-8c92-cccba54c7a6f"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Fire"",
+                    ""type"": ""Button"",
+                    ""id"": ""ac8de15b-6aa6-46ce-90b6-e269781e8f7e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""5df785d3-0833-4ff6-8dc3-782332811e8f"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control"",
+                    ""action"": ""Rotate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4dc8babd-9f12-4207-b103-1c8a0db89ce6"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control"",
+                    ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -466,12 +588,18 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_ControlActions1_Dash = m_ControlActions1.FindAction("Dash", throwIfNotFound: true);
         m_ControlActions1_Join = m_ControlActions1.FindAction("Join", throwIfNotFound: true);
         m_ControlActions1_PickUp = m_ControlActions1.FindAction("PickUp", throwIfNotFound: true);
+        m_ControlActions1_ChargeAttack = m_ControlActions1.FindAction("ChargeAttack", throwIfNotFound: true);
+        m_ControlActions1_Stomp = m_ControlActions1.FindAction("Stomp", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_PreviousDialogue = m_UI.FindAction("PreviousDialogue", throwIfNotFound: true);
+        m_UI_Rotate = m_UI.FindAction("Rotate", throwIfNotFound: true);
+        m_UI_Fire = m_UI.FindAction("Fire", throwIfNotFound: true);
         m_UI_NextDialogue = m_UI.FindAction("NextDialogue", throwIfNotFound: true);
         // Disabled
         m_Disabled = asset.FindActionMap("Disabled", throwIfNotFound: true);
+        m_Disabled_Rotate = m_Disabled.FindAction("Rotate", throwIfNotFound: true);
+        m_Disabled_Fire = m_Disabled.FindAction("Fire", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -627,6 +755,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_ControlActions1_Dash;
     private readonly InputAction m_ControlActions1_Join;
     private readonly InputAction m_ControlActions1_PickUp;
+    private readonly InputAction m_ControlActions1_ChargeAttack;
+    private readonly InputAction m_ControlActions1_Stomp;
     public struct ControlActions1Actions
     {
         private @PlayerInputActions m_Wrapper;
@@ -639,6 +769,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @Dash => m_Wrapper.m_ControlActions1_Dash;
         public InputAction @Join => m_Wrapper.m_ControlActions1_Join;
         public InputAction @PickUp => m_Wrapper.m_ControlActions1_PickUp;
+        public InputAction @ChargeAttack => m_Wrapper.m_ControlActions1_ChargeAttack;
+        public InputAction @Stomp => m_Wrapper.m_ControlActions1_Stomp;
         public InputActionMap Get() { return m_Wrapper.m_ControlActions1; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -672,6 +804,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @PickUp.started += instance.OnPickUp;
             @PickUp.performed += instance.OnPickUp;
             @PickUp.canceled += instance.OnPickUp;
+            @ChargeAttack.started += instance.OnChargeAttack;
+            @ChargeAttack.performed += instance.OnChargeAttack;
+            @ChargeAttack.canceled += instance.OnChargeAttack;
+            @Stomp.started += instance.OnStomp;
+            @Stomp.performed += instance.OnStomp;
+            @Stomp.canceled += instance.OnStomp;
         }
 
         private void UnregisterCallbacks(IControlActions1Actions instance)
@@ -700,6 +838,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @PickUp.started -= instance.OnPickUp;
             @PickUp.performed -= instance.OnPickUp;
             @PickUp.canceled -= instance.OnPickUp;
+            @ChargeAttack.started -= instance.OnChargeAttack;
+            @ChargeAttack.performed -= instance.OnChargeAttack;
+            @ChargeAttack.canceled -= instance.OnChargeAttack;
+            @Stomp.started -= instance.OnStomp;
+            @Stomp.performed -= instance.OnStomp;
+            @Stomp.canceled -= instance.OnStomp;
         }
 
         public void RemoveCallbacks(IControlActions1Actions instance)
@@ -722,12 +866,16 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_UI;
     private List<IUIActions> m_UIActionsCallbackInterfaces = new List<IUIActions>();
     private readonly InputAction m_UI_PreviousDialogue;
+    private readonly InputAction m_UI_Rotate;
+    private readonly InputAction m_UI_Fire;
     private readonly InputAction m_UI_NextDialogue;
     public struct UIActions
     {
         private @PlayerInputActions m_Wrapper;
         public UIActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @PreviousDialogue => m_Wrapper.m_UI_PreviousDialogue;
+        public InputAction @Rotate => m_Wrapper.m_UI_Rotate;
+        public InputAction @Fire => m_Wrapper.m_UI_Fire;
         public InputAction @NextDialogue => m_Wrapper.m_UI_NextDialogue;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
@@ -741,6 +889,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @PreviousDialogue.started += instance.OnPreviousDialogue;
             @PreviousDialogue.performed += instance.OnPreviousDialogue;
             @PreviousDialogue.canceled += instance.OnPreviousDialogue;
+            @Rotate.started += instance.OnRotate;
+            @Rotate.performed += instance.OnRotate;
+            @Rotate.canceled += instance.OnRotate;
+            @Fire.started += instance.OnFire;
+            @Fire.performed += instance.OnFire;
+            @Fire.canceled += instance.OnFire;
             @NextDialogue.started += instance.OnNextDialogue;
             @NextDialogue.performed += instance.OnNextDialogue;
             @NextDialogue.canceled += instance.OnNextDialogue;
@@ -751,6 +905,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @PreviousDialogue.started -= instance.OnPreviousDialogue;
             @PreviousDialogue.performed -= instance.OnPreviousDialogue;
             @PreviousDialogue.canceled -= instance.OnPreviousDialogue;
+            @Rotate.started -= instance.OnRotate;
+            @Rotate.performed -= instance.OnRotate;
+            @Rotate.canceled -= instance.OnRotate;
+            @Fire.started -= instance.OnFire;
+            @Fire.performed -= instance.OnFire;
+            @Fire.canceled -= instance.OnFire;
             @NextDialogue.started -= instance.OnNextDialogue;
             @NextDialogue.performed -= instance.OnNextDialogue;
             @NextDialogue.canceled -= instance.OnNextDialogue;
@@ -775,10 +935,14 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     // Disabled
     private readonly InputActionMap m_Disabled;
     private List<IDisabledActions> m_DisabledActionsCallbackInterfaces = new List<IDisabledActions>();
+    private readonly InputAction m_Disabled_Rotate;
+    private readonly InputAction m_Disabled_Fire;
     public struct DisabledActions
     {
         private @PlayerInputActions m_Wrapper;
         public DisabledActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Rotate => m_Wrapper.m_Disabled_Rotate;
+        public InputAction @Fire => m_Wrapper.m_Disabled_Fire;
         public InputActionMap Get() { return m_Wrapper.m_Disabled; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -788,10 +952,22 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_DisabledActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_DisabledActionsCallbackInterfaces.Add(instance);
+            @Rotate.started += instance.OnRotate;
+            @Rotate.performed += instance.OnRotate;
+            @Rotate.canceled += instance.OnRotate;
+            @Fire.started += instance.OnFire;
+            @Fire.performed += instance.OnFire;
+            @Fire.canceled += instance.OnFire;
         }
 
         private void UnregisterCallbacks(IDisabledActions instance)
         {
+            @Rotate.started -= instance.OnRotate;
+            @Rotate.performed -= instance.OnRotate;
+            @Rotate.canceled -= instance.OnRotate;
+            @Fire.started -= instance.OnFire;
+            @Fire.performed -= instance.OnFire;
+            @Fire.canceled -= instance.OnFire;
         }
 
         public void RemoveCallbacks(IDisabledActions instance)
@@ -846,13 +1022,19 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnDash(InputAction.CallbackContext context);
         void OnJoin(InputAction.CallbackContext context);
         void OnPickUp(InputAction.CallbackContext context);
+        void OnChargeAttack(InputAction.CallbackContext context);
+        void OnStomp(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
         void OnPreviousDialogue(InputAction.CallbackContext context);
+        void OnRotate(InputAction.CallbackContext context);
+        void OnFire(InputAction.CallbackContext context);
         void OnNextDialogue(InputAction.CallbackContext context);
     }
     public interface IDisabledActions
     {
+        void OnRotate(InputAction.CallbackContext context);
+        void OnFire(InputAction.CallbackContext context);
     }
 }

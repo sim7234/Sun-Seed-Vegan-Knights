@@ -8,9 +8,9 @@ public class WaterSystem : MonoBehaviour
     //this script needs a "CanWater" script on any potential object you wish to be able to water
     //this script interacts with NaturalWater, PlantSeedSystem.
 
-    float maxWater = 10.0f;
+    public float maxWater = 10.0f;
 
-    [SerializeField] float currentWater;
+    public float currentWater;
 
     float wateringCooldown = 0.35f;
     //this value is changed from PlantSeedSystem to make sure you cant water at the same time you plant.
@@ -32,8 +32,8 @@ public class WaterSystem : MonoBehaviour
 
     private List<Seed> seedInRange = new List<Seed>();
 
-    [SerializeField] Image waterDropImage;
-    [SerializeField] Image waterDropChild;
+    [SerializeField] Image waterOutLineImage;
+    [SerializeField] Image playersWaterImage;
 
     void Start()
     {
@@ -43,8 +43,8 @@ public class WaterSystem : MonoBehaviour
     }
     void Update()
     {
-        waterDropImage.transform.position = new Vector3(gameObject.transform.position.x,gameObject.transform.position.y 
-            + gameObject.transform.localScale.y + 0.3f,0);
+        waterOutLineImage.transform.position = Camera.main.WorldToScreenPoint(new Vector3(gameObject.transform.position.x,gameObject.transform.position.y 
+            + gameObject.transform.localScale.y + 0.3f,0));
 
         changeImageFill();
         refillWater();      
@@ -62,14 +62,14 @@ public class WaterSystem : MonoBehaviour
     {
         waterPercentage = (currentWater / maxWater);
 
-        if (waterDropChild.fillAmount > waterPercentage)
+        if (playersWaterImage.fillAmount > waterPercentage)
         {
-            waterDropChild.fillAmount -= Time.deltaTime * 0.4f;
+            playersWaterImage.fillAmount -= Time.deltaTime * 0.4f;
         }
 
-        if (waterDropChild.fillAmount < waterPercentage)
+        if (playersWaterImage.fillAmount < waterPercentage)
         {
-            waterDropChild.fillAmount += Time.deltaTime * 0.2f;
+            playersWaterImage.fillAmount += Time.deltaTime * 0.2f;
         }
     }
     void refillWater()
@@ -177,8 +177,8 @@ public class WaterSystem : MonoBehaviour
 
     void DisplayWater(bool displayWater)
     {
-        waterDropImage.enabled = displayWater;
-        waterDropChild.enabled = displayWater;
+        waterOutLineImage.enabled = displayWater;
+        playersWaterImage.enabled = displayWater;
     }
 
     public void ChangeWaterRefillRate(float rate)

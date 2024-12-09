@@ -98,6 +98,7 @@ public class BloomRecipientMulti : MonoBehaviour
                 if (bloomBuildUp1 > bloomResistance)
                 {
                     hasBloomed1 = true;
+                    flowerPelletsObject1.SetActive(true);
                 }
                 break;
             case 2:
@@ -106,6 +107,7 @@ public class BloomRecipientMulti : MonoBehaviour
                 if (bloomBuildUp2 > bloomResistance)
                 {
                     hasBloomed2 = true;
+                    flowerPelletsObject2.SetActive(true);
                 }
                 break;
             case 3:
@@ -114,6 +116,7 @@ public class BloomRecipientMulti : MonoBehaviour
                 if (bloomBuildUp3 > bloomResistance)
                 {
                     hasBloomed3 = true;
+                    flowerPelletsObject3.SetActive(true);
                 }
                 break;
             case 4:
@@ -122,6 +125,7 @@ public class BloomRecipientMulti : MonoBehaviour
                 if (bloomBuildUp4 > bloomResistance)
                 {
                     hasBloomed4 = true;
+                    flowerPelletsObject4.SetActive(true);
                 }
                 break;
         }
@@ -223,7 +227,7 @@ public class BloomRecipientMulti : MonoBehaviour
 
     private void cheackAllBloomValues()
     {
-        if (bloomBuildUp1 <= 0)
+        if (bloomBuildUp1 <= 0 && hasBloomed1 != true)
         {
             flowerPelletsObject1.SetActive(false);
         }
@@ -234,7 +238,7 @@ public class BloomRecipientMulti : MonoBehaviour
             PrintPellets(flowerPelltes1, bloomBuildUp1);
         }
 
-        if (bloomBuildUp2 <= 0)
+        if (bloomBuildUp2 <= 0 && hasBloomed2 != true)
         {
             flowerPelletsObject2.SetActive(false);
         }
@@ -245,7 +249,7 @@ public class BloomRecipientMulti : MonoBehaviour
             PrintPellets(flowerPelltes2, bloomBuildUp2);
         }
 
-        if (bloomBuildUp3 <= 0)
+        if (bloomBuildUp3 <= 0 && hasBloomed3 != true)
         {
             flowerPelletsObject3.SetActive(false);
         }
@@ -256,7 +260,7 @@ public class BloomRecipientMulti : MonoBehaviour
             PrintPellets(flowerPelltes3, bloomBuildUp3);
         }
 
-        if (bloomBuildUp4 <= 0)
+        if (bloomBuildUp4 <= 0 && hasBloomed4 != true)
         {
             flowerPelletsObject4.SetActive(false);
         }
