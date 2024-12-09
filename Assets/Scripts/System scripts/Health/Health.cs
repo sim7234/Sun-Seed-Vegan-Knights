@@ -6,7 +6,7 @@ public class Health : MonoBehaviour
 {
     public float maxHealth = 100;
     [SerializeField]
-    [HideInInspector] public float currentHealth;
+    public float currentHealth;
 
     [SerializeField]
     private GameObject bloodOnHit;

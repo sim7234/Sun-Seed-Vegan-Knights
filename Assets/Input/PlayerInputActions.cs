@@ -270,6 +270,24 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ChargeAttack"",
+                    ""type"": ""Button"",
+                    ""id"": ""8e5d6574-3a5a-4be3-af0a-bed5687fa1f3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Stomp"",
+                    ""type"": ""Button"",
+                    ""id"": ""795f7a96-e356-440e-9d0d-e2d738cf7ba8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -358,6 +376,28 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Control"",
                     ""action"": ""PickUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a5394146-d3c0-45e4-819c-9f81aceba751"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": ""Control"",
+                    ""action"": ""ChargeAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5a752270-9c1f-4a44-bc59-4041854d5e1f"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Control"",
+                    ""action"": ""Stomp"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -548,6 +588,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_ControlActions1_Dash = m_ControlActions1.FindAction("Dash", throwIfNotFound: true);
         m_ControlActions1_Join = m_ControlActions1.FindAction("Join", throwIfNotFound: true);
         m_ControlActions1_PickUp = m_ControlActions1.FindAction("PickUp", throwIfNotFound: true);
+        m_ControlActions1_ChargeAttack = m_ControlActions1.FindAction("ChargeAttack", throwIfNotFound: true);
+        m_ControlActions1_Stomp = m_ControlActions1.FindAction("Stomp", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_PreviousDialogue = m_UI.FindAction("PreviousDialogue", throwIfNotFound: true);
@@ -713,6 +755,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_ControlActions1_Dash;
     private readonly InputAction m_ControlActions1_Join;
     private readonly InputAction m_ControlActions1_PickUp;
+    private readonly InputAction m_ControlActions1_ChargeAttack;
+    private readonly InputAction m_ControlActions1_Stomp;
     public struct ControlActions1Actions
     {
         private @PlayerInputActions m_Wrapper;
@@ -725,6 +769,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @Dash => m_Wrapper.m_ControlActions1_Dash;
         public InputAction @Join => m_Wrapper.m_ControlActions1_Join;
         public InputAction @PickUp => m_Wrapper.m_ControlActions1_PickUp;
+        public InputAction @ChargeAttack => m_Wrapper.m_ControlActions1_ChargeAttack;
+        public InputAction @Stomp => m_Wrapper.m_ControlActions1_Stomp;
         public InputActionMap Get() { return m_Wrapper.m_ControlActions1; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -758,6 +804,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @PickUp.started += instance.OnPickUp;
             @PickUp.performed += instance.OnPickUp;
             @PickUp.canceled += instance.OnPickUp;
+            @ChargeAttack.started += instance.OnChargeAttack;
+            @ChargeAttack.performed += instance.OnChargeAttack;
+            @ChargeAttack.canceled += instance.OnChargeAttack;
+            @Stomp.started += instance.OnStomp;
+            @Stomp.performed += instance.OnStomp;
+            @Stomp.canceled += instance.OnStomp;
         }
 
         private void UnregisterCallbacks(IControlActions1Actions instance)
@@ -786,6 +838,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @PickUp.started -= instance.OnPickUp;
             @PickUp.performed -= instance.OnPickUp;
             @PickUp.canceled -= instance.OnPickUp;
+            @ChargeAttack.started -= instance.OnChargeAttack;
+            @ChargeAttack.performed -= instance.OnChargeAttack;
+            @ChargeAttack.canceled -= instance.OnChargeAttack;
+            @Stomp.started -= instance.OnStomp;
+            @Stomp.performed -= instance.OnStomp;
+            @Stomp.canceled -= instance.OnStomp;
         }
 
         public void RemoveCallbacks(IControlActions1Actions instance)
@@ -964,6 +1022,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnDash(InputAction.CallbackContext context);
         void OnJoin(InputAction.CallbackContext context);
         void OnPickUp(InputAction.CallbackContext context);
+        void OnChargeAttack(InputAction.CallbackContext context);
+        void OnStomp(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
