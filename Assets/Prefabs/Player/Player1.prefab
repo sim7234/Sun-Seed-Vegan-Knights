@@ -32109,6 +32109,9 @@ MonoBehaviour:
   seedCooldownText: {fileID: 2450117201710678076}
   cantPlant: 0
   weaponPickupSound: {fileID: 8300000, guid: 8855124cdfc85654f9aa866a4e1a1187, type: 3}
+  pickUpPs:
+  - {fileID: 1648176869501192611, guid: 3f09068b0e829ef43be91e56bfac518a, type: 3}
+  - {fileID: 8819809140200660411, guid: 60517763afc465346b4fa03285703899, type: 3}
 --- !u!114 &7107893933753096804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32121,6 +32124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 191f1c39e50d03743994b2741aa70f68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxWater: 10
   currentWater: 0
   wateringTimer: 0
   waterRefillCooldown: 0

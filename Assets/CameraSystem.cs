@@ -76,6 +76,14 @@ public class CameraSystem : MonoBehaviour
         }
     }
 
+    public void AddTemporaryTarget(GameObject target)
+    {
+        players.Add(target);
+    }
+    public void RemoveTemporaryTarget(GameObject target)
+    {
+        players.Remove(target);
+    }
     private void MoveCamera()
     {
         Vector3 position = gameObject.transform.position;

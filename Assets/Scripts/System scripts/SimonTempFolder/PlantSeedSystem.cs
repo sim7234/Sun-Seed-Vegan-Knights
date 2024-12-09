@@ -38,6 +38,11 @@ public class PlantSeedSystem : MonoBehaviour
 
     [SerializeField]
     private AudioClip weaponPickupSound;
+
+    [SerializeField]
+    private List<GameObject> pickUpPs = new List<GameObject>();
+
+
     private void Awake()
     {
         inSunScript = GetComponent<EnteredSun>();
@@ -93,6 +98,21 @@ public class PlantSeedSystem : MonoBehaviour
         {
             GetComponent<AudioSource>().PlayOneShot(weaponPickupSound);
             currentType = currentSeedTypeInRange.GetComponent<WeaponPickup>().type;
+            switch(currentType)
+            {
+                case WeaponType.Spear:
+                    GameObject newSperaPickupPS = Instantiate(pickUpPs[0], transform.position, Quaternion.identity);
+                    Destroy(newSperaPickupPS, 2);
+                    break;  
+                case WeaponType.Sword:
+                    GameObject newSwordPickupPS = Instantiate(pickUpPs[1], transform.position, Quaternion.identity);
+                    Destroy(newSwordPickupPS, 2);
+                    break;
+
+                default:
+                    Debug.Log(currentType.ToString() + " Does not exist as seedPrefab");
+                    break;
+            }
         }
     }
     private void OnEnable()

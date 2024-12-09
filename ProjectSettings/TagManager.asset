@@ -22,7 +22,7 @@ TagManager:
   - CameraEdge
   - Player
   - FindTargetLayer
-  - 
+  - TemporaryCameraTarget
   - 
   - 
   - 

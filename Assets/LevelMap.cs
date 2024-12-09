@@ -14,6 +14,7 @@ public class LevelMap : MonoBehaviour
 
     [SerializeField]
     private List<GameObject> flagPossitions = new List<GameObject>();
+
     private void Start()
     {
         MapUpdateByLinarSystem();
