@@ -37,7 +37,7 @@ public class WeaponPickup : MonoBehaviour
         {
             if (playersInRange.Contains(collision.gameObject))
             {
-                playersInRange.Remove(collision.gameObject);
+                playersInRange.Remove(collision.gameObject); // teo suger
             }
             if (playersInRange.Count <= 0)
             {

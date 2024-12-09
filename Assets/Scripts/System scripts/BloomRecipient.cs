@@ -55,7 +55,7 @@ public class BloomRecipient : MonoBehaviour
     {
         if (hasBloomed != true)
         {
-            if (playerIndex != BloomIndex)
+            if (playerIndex != BloomIndex) //make code not suck
             {
                 BloomIndex = playerIndex;
                 bloomBuildUp = 0;
