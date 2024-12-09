@@ -3937,7 +3937,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "NEXT   <size=25><voffset=0.2em><sprite=1></voffset></size> \n"
+  m_text: "NEXT   <size=25><voffset=0.3em><sprite=2></voffset></size> \n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8055,7 +8055,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &499572486
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9159,9 +9159,8 @@ MonoBehaviour:
     - (4/4) Pick up the weapon by pressing    <size=35><voffset=0.4em><sprite=5></voffset></size>destroy
       the wall and eliminate the enemies
   - dialogues:
-    - (1/3) Dealing enough damage to an enemy causes them to get an effect called
-      bloom
-    - (2/3) Bloom is displayed with your own player color above the enemies head
+    - '(1/3) Dealing enough damage to an enemy causes them to get a bloom effect '
+    - (2/3) Bloom is displayed with your player color above the enemies head
     - (3/3) If a player with differnet color hits the bloomed target it bursts dealing
       extra damage
   - dialogues:
@@ -11237,7 +11236,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5153691423489396622, guid: 6620ce3c609997c48977c40f404285e9, type: 3}
       propertyPath: maxHealth
-      value: 50
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5236158349268883190, guid: 6620ce3c609997c48977c40f404285e9, type: 3}
       propertyPath: m_Color.b
@@ -20320,7 +20319,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5153691423489396622, guid: 6620ce3c609997c48977c40f404285e9, type: 3}
       propertyPath: maxHealth
-      value: 50
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5236158349268883190, guid: 6620ce3c609997c48977c40f404285e9, type: 3}
       propertyPath: m_Color.b
@@ -27325,7 +27324,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5153691423489396622, guid: 6620ce3c609997c48977c40f404285e9, type: 3}
       propertyPath: maxHealth
-      value: 50
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5236158349268883190, guid: 6620ce3c609997c48977c40f404285e9, type: 3}
       propertyPath: m_Color.g
@@ -32813,7 +32812,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5153691423489396622, guid: 6620ce3c609997c48977c40f404285e9, type: 3}
       propertyPath: maxHealth
-      value: 50
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5236158349268883190, guid: 6620ce3c609997c48977c40f404285e9, type: 3}
       propertyPath: m_Color.b

@@ -8,7 +8,7 @@ public class WaterSystem : MonoBehaviour
     //this script needs a "CanWater" script on any potential object you wish to be able to water
     //this script interacts with NaturalWater, PlantSeedSystem.
 
-    float maxWater = 10.0f;
+    public float maxWater = 10.0f;
 
     public float currentWater;
 

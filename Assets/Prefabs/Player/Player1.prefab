@@ -31642,7 +31642,6 @@ MonoBehaviour:
   swordDashAttack: {fileID: 0}
   attackCooldown: 0.8
   baseWeaponMoveScript: {fileID: 288850003479939413}
-  chargeDuration: 1
   stompArea: {fileID: 4873579821093086420}
   stompDamage: 10
   stompDuration: 0.3
@@ -32299,6 +32298,7 @@ GameObject:
   - component: {fileID: 4536916421548371829}
   - component: {fileID: 733676619646582600}
   - component: {fileID: 1459972644291542535}
+  - component: {fileID: 6009645008230473850}
   m_Layer: 3
   m_Name: StompArea
   m_TagString: Untagged
@@ -32464,7 +32464,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c1700008e098ae468f3da206c69f3f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackStrength: 8
+  knockbackStrength: 14
+--- !u!114 &6009645008230473850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4873579821093086420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4652404fe8aec3441a7b76ad8aca024d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerIndex: 3
+  bloomDamage: 20
+  turnOfOnStart: 0
 --- !u!1 &4928263016644737579
 GameObject:
   m_ObjectHideFlags: 0
