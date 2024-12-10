@@ -8097,8 +8097,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   focusLevel: {fileID: 730917682}
-  depthUpdateSpeed: 5
-  angleUpdateSpeed: 7
   positionUpdateSpeed: 5
   deapthMax: -10
   deapthMin: -22
@@ -8902,7 +8900,7 @@ PrefabInstance:
       objectReference: {fileID: 573467397}
     - target: {fileID: 476285938522494790, guid: b5d8548dc6b1bfa408559e695f307bde, type: 3}
       propertyPath: respawnsForMission
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 476285938522494790, guid: b5d8548dc6b1bfa408559e695f307bde, type: 3}
       propertyPath: Objectives.Array.size
