@@ -107,12 +107,18 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-
         moveDirection = context.ReadValue<Vector2>();
 
         if (moveDirection != Vector2.zero && !audioSource.isPlaying)
         {
             PlayRandomMovementSound();
+        }
+        if(GetComponent<Health>().controllerPad == null)
+        {
+            if (context.control.device is Gamepad gamepad)
+            {
+                GetComponent<Health>().controllerPad = gamepad;
+            }
         }
     }
 

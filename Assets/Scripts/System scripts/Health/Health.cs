@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.InputSystem;
 
 public class Health : MonoBehaviour
 {
@@ -31,6 +32,8 @@ public class Health : MonoBehaviour
     [SerializeField]
     public bool talkToMissionMaster = true;
 
+    [HideInInspector]
+    public Gamepad controllerPad;
     void Start()
     {
         if (FindAnyObjectByType<MissionMaster>() == null)
@@ -55,6 +58,8 @@ public class Health : MonoBehaviour
         }
 
         EpelepticFilterOn = SaveData.Instance.epelepticFilterOn;
+
+       
     }
 
     public void TakeDamage(float damageAmount)
@@ -83,7 +88,7 @@ public class Health : MonoBehaviour
         if(audioSource != null)
         {
             audioSource.pitch = Random.Range(0.90f, 1.1f);
-            audioSource.Play();
+            audioSource.PlayOneShot(hitSound);
         }
         
         if(agent != null)
@@ -95,6 +100,11 @@ public class Health : MonoBehaviour
         {
             Die();
         }
+        else if (gameObject.CompareTag("Player") && controllerPad != null)
+        {
+            RumbleManager.instance.RumblePulse(1.0f, 1.0f, 0.1f, controllerPad);
+        }
+
     }
  
     public void Heal(float amount)
