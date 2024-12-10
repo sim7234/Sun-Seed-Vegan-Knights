@@ -9,20 +9,22 @@ public class CameraSystem : MonoBehaviour
     [SerializeField]
     private FocusLevel focusLevel;
 
-    [SerializeField]
+
     private float depthUpdateSpeed = 5.0f;
 
-    [SerializeField]
+   
     private float angleUpdateSpeed = 7.0f;
  
     [SerializeField]
     private float positionUpdateSpeed = 5.0f;
 
-
+    [HideInInspector]
     public float deapthMax = 12.0f;
+    [HideInInspector]
     public float deapthMin = 6.0f;
-
+    [HideInInspector]
     public float angleMax = 11.0f;
+    [HideInInspector]
     public float angleMin = 11.0f;
 
 
@@ -76,6 +78,14 @@ public class CameraSystem : MonoBehaviour
         }
     }
 
+    public void AddTemporaryTarget(GameObject target)
+    {
+        players.Add(target);
+    }
+    public void RemoveTemporaryTarget(GameObject target)
+    {
+        players.Remove(target);
+    }
     private void MoveCamera()
     {
         Vector3 position = gameObject.transform.position;

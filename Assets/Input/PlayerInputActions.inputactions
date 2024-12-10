@@ -266,6 +266,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "02b0b374-9cbb-4c9c-b914-205d715d0770",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -378,6 +387,17 @@
                     "action": "Stomp",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "980f9ce0-6440-4e0d-8776-a4bb0d4c2109",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Control",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -426,7 +446,7 @@
                 {
                     "name": "",
                     "id": "21a04f6f-b162-4e3d-8824-b97f5f7be599",
-                    "path": "<Gamepad>/buttonSouth",
+                    "path": "<Gamepad>/dpad/right",
                     "interactions": "",
                     "processors": "",
                     "groups": "Control",

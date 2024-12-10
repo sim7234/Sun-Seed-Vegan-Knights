@@ -119,10 +119,16 @@ public class Health : MonoBehaviour
         {
             GetComponent<PlayerDeath>().onPlayerDeath();
         }
+        else if (gameObject.CompareTag("Objective"))
+        {
+            GetComponent<Objective>().onObjectiveDeath();
+        }
         else
         {
             Destroy(gameObject);
         }
+
+        
     }
 
   

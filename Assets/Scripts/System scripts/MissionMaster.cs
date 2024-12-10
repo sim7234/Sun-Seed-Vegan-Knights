@@ -65,7 +65,7 @@ public class MissionMaster : MonoBehaviour
 
         StartCoroutine(ActivateCombatAfterDelay(10f, 0));
 
-        if (Objectives.Count > 1)
+        if (Objectives.Count >= 1)
         {
             if (Objectives.Count >= combatsComplete)
             {
@@ -108,6 +108,9 @@ public class MissionMaster : MonoBehaviour
         combatsComplete++;
         if (combatsComplete == combatPoints.Count)
         {
+            //TODO: Win Screen
+
+            SaveData.Instance.completedMission += 1;
             SceneManager.LoadScene(0);
         }
         if (combatsComplete < combatPoints.Count)

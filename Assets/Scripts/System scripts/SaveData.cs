@@ -30,6 +30,7 @@ public class SaveData : MonoBehaviour
     public GameObject position3;
     public GameObject position4;
 
+    public int completedMission = 0;
     private void Awake()
     {
       
