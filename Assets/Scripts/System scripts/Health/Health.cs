@@ -5,10 +5,10 @@ using UnityEngine.InputSystem;
 
 public class Health : MonoBehaviour
 {
-    public float maxHealth = 100;
+    public float maxHealth = 5;
     [SerializeField]
     public float currentHealth;
-
+    
     [SerializeField]
     private GameObject bloodOnHit;
     [SerializeField]
@@ -64,7 +64,15 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(float damageAmount)
     {
-        currentHealth -= damageAmount; 
+        if (gameObject.CompareTag("Player"))
+        {
+            currentHealth -= 1;
+            GetComponent<HeartHealthDisplay>().UpdateDisplay();
+        }
+        else
+        {
+            currentHealth -= damageAmount; 
+        }
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
         if (GetComponent<EnemyHealthDisplay>() != null)
@@ -140,8 +148,6 @@ public class Health : MonoBehaviour
 
         
     }
-
-  
 
     public float GetCurrentHealth()
     {
