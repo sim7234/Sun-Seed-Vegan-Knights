@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ContinuallySpawn : MonoBehaviour
 {
-    public bool startSpawning = false;
+    [HideInInspector] public bool startSpawning = false;
     public float spawnDelay;
 
     SpawnEnemies spawnEnemies;
@@ -13,52 +13,64 @@ public class ContinuallySpawn : MonoBehaviour
     public bool rangedEnemy;
     public bool dashEnemy;
 
-    bool[] boolActiveAmount = new bool[4];
-
-    int activeAmount = 0;
-
     int rnd;
 
+    public bool activeInArea;
+    Collider2D collider;
+    bool hasSpawned = false;
     void Start()
     {
         spawnEnemies = Camera.main.GetComponent<SpawnEnemies>();
+        if (activeInArea == true && GetComponent<Collider2D>() != null)
+        {
+            collider = GetComponent<Collider2D>();
+        }
+        else if (GetComponent<Collider2D>() == null && activeInArea == true)
+        {
+            Debug.LogError("No Collider2D on " + this.gameObject.name);
+        }
     }
 
     void Update()
     {
-        activeAmount = 0;
-        if (basicEnemy)
-            activeAmount++;
-
-        if (köttbulleEnemy)
-            activeAmount++;
-
-        if (rangedEnemy)
-            activeAmount++;
-
-        if (dashEnemy)
-            activeAmount++;
-
-
         if (startSpawning == true)
         {
             spawnEnemies.doContinuousSpawn = true;
             spawnEnemies.continuousSpawnDelay = spawnDelay;
 
-
-            rnd = Random.Range(0, activeAmount);
+            rnd = Random.Range(0, 4);
 
             if (basicEnemy && rnd == 0)
+            {
                 spawnEnemies.ContinuallySpawn(SpawnEnemies.EnemyNames.basicEnemy);
-
-            if (köttbulleEnemy && rnd == 1)
+            }
+            else if (köttbulleEnemy && rnd == 1)
+            {
                 spawnEnemies.ContinuallySpawn(SpawnEnemies.EnemyNames.köttbulleEnemy);
-
-            if (rangedEnemy && rnd == 2)
+            }
+            else if (rangedEnemy && rnd == 2)
+            {
                 spawnEnemies.ContinuallySpawn(SpawnEnemies.EnemyNames.rangedEnemy);
-
-            if (dashEnemy && rnd == 3)
+            }
+            else if (dashEnemy && rnd == 3)
+            {
                 spawnEnemies.ContinuallySpawn(SpawnEnemies.EnemyNames.dashEnemy);
+            }
+
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (activeInArea == true && other.CompareTag("Player") && hasSpawned == false)
+        {
+            startSpawning = true;
+            hasSpawned = true;
+        }
+        if (other.GetComponent<StopSpawning>() != null)
+        {
+            Debug.Log("test");
+            startSpawning = false;
         }
     }
 }

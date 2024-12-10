@@ -65,7 +65,7 @@ public class SpawnEnemies : MonoBehaviour
         }
     }
 
-    void SpawnWave(EnemyNames enemyType, int amount)
+    public void SpawnWave(EnemyNames enemyType, int amount)
     {
         for (int i = 0; i < amount; i++)
         {
