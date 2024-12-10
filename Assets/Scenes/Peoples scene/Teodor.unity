@@ -3154,11 +3154,11 @@ Transform:
   m_GameObject: {fileID: 730917681}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2036887187}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &743589920
 GameObject:
@@ -8082,7 +8082,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 843450566}
-  - {fileID: 730917683}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2036887188
@@ -8896,6 +8895,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 730917681}
     - target: {fileID: 476285938522494790, guid: b5d8548dc6b1bfa408559e695f307bde, type: 3}
+      propertyPath: focusPoint
+      value: 
+      objectReference: {fileID: 730917681}
+    - target: {fileID: 476285938522494790, guid: b5d8548dc6b1bfa408559e695f307bde, type: 3}
       propertyPath: nextStagePointer
       value: 
       objectReference: {fileID: 573467397}
@@ -9052,6 +9055,7 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 730917683}
   - {fileID: 2036887187}
   - {fileID: 201121909}
   - {fileID: 1681748002}

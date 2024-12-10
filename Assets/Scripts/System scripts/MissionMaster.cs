@@ -17,7 +17,10 @@ public class MissionMaster : MonoBehaviour
     private TextMeshProUGUI enemyCounterText;
 
     [SerializeField]
-    private GameObject cam;
+    private GameObject cam;    
+    
+    [SerializeField]
+    private GameObject focusPoint;
 
     [SerializeField]
     private List<GameObject> combatPoints = new List<GameObject>();
@@ -120,25 +123,26 @@ public class MissionMaster : MonoBehaviour
                 actionBetweenLevels[combatsComplete].SetActive(true);
             }
 
-            StartCoroutine(MoveCameraToNextPoint(cam.transform.position, combatPoints[combatsComplete].transform.position));
+            StartCoroutine(MoveCameraToNextPoint(cam, cam.transform.position, combatPoints[combatsComplete].transform.position));
+        //    StartCoroutine(MoveCameraToNextPoint(focusPoint, focusPoint.transform.position, combatPoints[combatsComplete].transform.position));
         }
     }
 
-    private IEnumerator MoveCameraToNextPoint(Vector3 start, Vector3 end)
+    private IEnumerator MoveCameraToNextPoint(GameObject obj, Vector3 start, Vector3 end)
     {
         float duration = Vector3.Distance(start, end) / 2;
         float timeElapsed = 0;
         nextStagePointer.SetActive(true);
         while (timeElapsed < duration)
         {
-            cam.transform.position = Vector3.Lerp(start, end, timeElapsed / duration);
+            obj.transform.position = Vector3.Lerp(start, end, timeElapsed / duration);
             timeElapsed += Time.deltaTime;
             yield return null;
-            nextStagePointer.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, 0);
+            nextStagePointer.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y, 0);
             nextStagePointer.transform.up = (end - nextStagePointer.transform.position).normalized;
         }
 
-        cam.transform.position = end;
+        obj.transform.position = end;
         nextStagePointer.SetActive(false);
         StartCoroutine(ActivateCombatAfterDelay(10f, combatsComplete));
     }
