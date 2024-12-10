@@ -12,7 +12,6 @@ public class Dialogue : MonoBehaviour
     private int index;
     private PlayerInput playerInput;
     public UnityEvent<int> onDialogueLineChanged;
-    
     public string actionMapToDisable = "ControlActions1"; 
     public bool IsDialogueActive { get; private set; } 
 

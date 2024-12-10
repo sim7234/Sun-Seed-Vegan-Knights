@@ -53,8 +53,8 @@ public class PlayerJoined : MonoBehaviour
 
         if (messageText != null)
         {
-            messageText.text = "Use   <voffset=0.3em><sprite=3></voffset>to move and   <voffset=0.3em><sprite=0></voffset>to aim";
-            Invoke(nameof(HideMessage), 10f);
+            messageText.text = "Use   <voffset=0.3em><sprite=3></voffset>to move and   <voffset=0.3em><sprite=0></voffset>to rotate";
+            Invoke(nameof(HideMessage), 5f);
         }
 
         if (dialogueSystem != null && playerInput == firstPlayerInput) 
@@ -94,7 +94,7 @@ public class PlayerJoined : MonoBehaviour
 
     private IEnumerator StartDialogueCoroutine()
     {
-        yield return cameraMover.ShowDialogueAfterDelay(5f);
+        yield return cameraMover.ShowDialogueAfterDelay(3.5f);
     }
 
     private IEnumerator ShowSecondMessageCoroutine()
@@ -104,7 +104,7 @@ public class PlayerJoined : MonoBehaviour
         {
             messageText.gameObject.SetActive(true);
             messageText.text = "Press   <voffset=0.3em><sprite=2></voffset>to dash.";
-            Invoke(nameof(HideSecondMessage), 5f);
+            Invoke(nameof(HideSecondMessage), 3.5f);
         }
     }
 
