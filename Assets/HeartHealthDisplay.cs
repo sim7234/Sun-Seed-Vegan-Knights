@@ -20,6 +20,7 @@ public class HeartHealthDisplay : MonoBehaviour
     {
         health = GetComponent<Health>();
     }
+
     public void UpdateDisplay()
     {
         foreach (var heart in hearts)
@@ -28,6 +29,7 @@ public class HeartHealthDisplay : MonoBehaviour
         }
         for (int i = 0; i < health.currentHealth; i++)
         {
+            
             Debug.Log(i);
             hearts[i].SetActive(true);
             if (health.currentHealth != pastHealth)

@@ -71,9 +71,9 @@ public class Health : MonoBehaviour
         }
         else
         {
-            currentHealth -= damageAmount; 
+            currentHealth -= damageAmount;
         }
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        
 
         if (GetComponent<EnemyHealthDisplay>() != null)
         {
@@ -114,7 +114,10 @@ public class Health : MonoBehaviour
         }
 
     }
- 
+    private void Update()
+    {
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+    }
     public void Heal(float amount)
     {
         currentHealth += amount;

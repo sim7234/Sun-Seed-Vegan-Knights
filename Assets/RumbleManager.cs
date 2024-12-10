@@ -43,4 +43,5 @@ public class RumbleManager : MonoBehaviour
 
         aPad.SetMotorSpeeds(0, 0);
     }
+    
 }
