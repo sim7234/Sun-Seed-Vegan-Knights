@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canBeWatered: 1
-  totalWaterCost: 13
+  totalWaterCost: 130
   waterCostPerAction: 1
   currentWater: 0
 --- !u!1 &4163302293235249618 stripped

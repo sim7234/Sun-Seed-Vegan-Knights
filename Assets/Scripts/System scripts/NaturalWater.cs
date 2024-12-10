@@ -6,7 +6,7 @@ public class NaturalWater : MonoBehaviour
     {
         if (other.GetComponent<WaterSystem>() != null)
         {
-            other.GetComponent<WaterSystem>().ChangeWaterRefillRate(0.5f);
+            other.GetComponent<WaterSystem>().ChangeWaterRefillRate(0.05f);
             other.GetComponent<WaterSystem>().waterRefillTimer = 0;
         }
     }

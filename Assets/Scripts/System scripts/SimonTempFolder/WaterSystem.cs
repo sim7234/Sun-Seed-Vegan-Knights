@@ -12,11 +12,11 @@ public class WaterSystem : MonoBehaviour
 
     public float currentWater;
 
-    float wateringCooldown = 0.35f;
+    float wateringCooldown = 0.035f;
     //this value is changed from PlantSeedSystem to make sure you cant water at the same time you plant.
     [HideInInspector] public float wateringTimer;
 
-    float baseWaterRefillCooldown = 10f;
+    float baseWaterRefillCooldown = 1f;
     //these values can be changed by other scripts. Mainly "NaturalWater" script.
     [HideInInspector] public float waterRefillCooldown;
     [HideInInspector] public float waterRefillTimer;
