@@ -2548,6 +2548,7 @@ GameObject:
   - component: {fileID: 711497433}
   - component: {fileID: 711497432}
   - component: {fileID: 711497438}
+  - component: {fileID: 711497439}
   m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2746,13 +2747,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyTypes:
   - {fileID: 4076701649708178499, guid: cb6c1d0fdca49b04185ed3318fe9cd61, type: 3}
+  - {fileID: 516425167985709169, guid: 591317bce9526e547b9a599070faa43b, type: 3}
+  - {fileID: 4026458952341622850, guid: 9aa488ed6f997dc41932d4ec2557d188, type: 3}
+  - {fileID: 516425167985709169, guid: 7e1a7e45e9581db48867944c5311208b, type: 3}
   basicAmount: 20
   "k\xF6ttbulleAmount": 0
   rangedAmount: 0
   dashAmount: 0
-  spawnTime: 0
-  starSpawning: 0
+  doSpawnOverTime: 0
+  doContinuousSpawn: 0
+  continuousSpawnDelay: 2
+  doWaveSpawn: 0
   EmptyTransform: {fileID: 1368622365}
+--- !u!114 &711497439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711497431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07b6f3f59d246a9429f8769cd71dea13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startSpawning: 0
+  spawnDelay: 5
+  basicEnemy: 1
+  "k\xF6ttbulleEnemy": 0
+  rangedEnemy: 0
+  dashEnemy: 0
 --- !u!1 &739515510
 GameObject:
   m_ObjectHideFlags: 0
@@ -5493,7 +5517,7 @@ MonoBehaviour:
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
   m_HideEditorLogs: 0
-  m_NavMeshData: {fileID: 23800000, guid: a8712fe4f33d6c04ab2eaa0642e9c4a1, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: be76dda550d975d4da2b0354fc977827, type: 2}
 --- !u!4 &1506385711
 Transform:
   m_ObjectHideFlags: 0
@@ -6968,8 +6992,8 @@ Transform:
   m_GameObject: {fileID: 1955498657}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 138.1, y: 66.9, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalPosition: {x: 113.4211, y: 48.6903, z: 0}
+  m_LocalScale: {x: 11.285, y: 11.686, z: 10}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}

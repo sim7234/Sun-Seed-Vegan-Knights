@@ -32228,7 +32228,7 @@ MonoBehaviour:
   - {fileID: 2747442751486442724, guid: b26c7d976a1803c4a92f026c0f0ddcf4, type: 3}
   - {fileID: 4209319261259547291, guid: 668de3c610a6bef4f8e142a583ec9615, type: 3}
   - {fileID: 3066602483055560766, guid: 5dcf56cd6f39d53469d737ee801e09f7, type: 3}
-  currentType: 0
+  currentType: 1
   currentSeedTypeInRange: {fileID: 0}
   plantSpeed: 30
   plantingTimer: 0
@@ -32250,7 +32250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 191f1c39e50d03743994b2741aa70f68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxWater: 10
+  maxWater: 100
   currentWater: 0
   wateringTimer: 0
   waterRefillCooldown: 0
