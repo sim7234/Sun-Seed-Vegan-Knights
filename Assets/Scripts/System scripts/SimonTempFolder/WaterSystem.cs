@@ -111,21 +111,28 @@ public class WaterSystem : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.GetComponent<CanWater>() != null && other.GetComponent<CanWater>().enabled == true)
+        var canWater = other.GetComponent<CanWater>();
+        if (canWater != null)
         {
             DisplayWater(true);
+
+            if (waterButtonHeld && wateringTimer <= 0 && canWater.canBeWatered)
+            {
+                wateringTimer = wateringCooldown;
+                if (TakeWater(canWater.waterCostPerAction))
+                {
+                    canWater.currentWater += canWater.waterCostPerAction;
+                }
+            }
         }
 
-        if (other.GetComponent<CanWater>() != null && waterButtonHeld == true && wateringTimer <= 0 && other.GetComponent<CanWater>().canBeWatered)
+        var waterObjective = other.GetComponent<WaterObjective>();
+        if (waterObjective != null && waterButtonHeld && wateringTimer <= 0)
         {
             wateringTimer = wateringCooldown;
-
-            payWater = other.GetComponent<CanWater>().waterCostPerAction;
-
-            hasEnoughWater = TakeWater(payWater);
-            if (hasEnoughWater == true)
+            if (TakeWater(1))
             {
-                other.GetComponent<CanWater>().currentWater += payWater;
+                waterObjective.AddWater(1);
             }
         }
 
@@ -201,4 +208,5 @@ public class WaterSystem : MonoBehaviour
         currentWater = maxWater;
     }
 }
+
 
