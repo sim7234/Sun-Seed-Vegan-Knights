@@ -389,7 +389,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseSpeed: 2
   retreatSpeed: 0.75
-  whenToRetreat: 50
+  whenToRetreat: 15
   retreating: 0
 --- !u!114 &8424980281040868951
 MonoBehaviour:

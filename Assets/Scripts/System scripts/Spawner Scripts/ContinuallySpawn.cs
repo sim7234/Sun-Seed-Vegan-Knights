@@ -67,10 +67,22 @@ public class ContinuallySpawn : MonoBehaviour
             startSpawning = true;
             hasSpawned = true;
         }
+
         if (other.GetComponent<StopSpawning>() != null)
         {
             Debug.Log("test");
             startSpawning = false;
+        }   
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+
+        if (activeInArea == true && other.CompareTag("Player") && hasSpawned == true)
+        {
+            startSpawning = false;
+            hasSpawned = false;
         }
+
     }
 }
