@@ -44,6 +44,14 @@ public class SaveData : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void Update()
+    {
+        if(playerAmount > 0)
+        {
+            Camera.main.orthographicSize = 7 + playerAmount;
+        }
+    }
     public void AddPlayer(GameObject player, int index)
     {
         Debug.Log("Addplayer");
