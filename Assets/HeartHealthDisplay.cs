@@ -19,8 +19,12 @@ public class HeartHealthDisplay : MonoBehaviour
     private void Start()
     {
         health = GetComponent<Health>();
+        //InvokeRepeating(nameof(UpdateDisplay), 0.1f, 0.1f);
     }
-
+    private void Update()
+    {
+        UpdateDisplay();
+    }
     public void UpdateDisplay()
     {
         foreach (var heart in hearts)
@@ -29,21 +33,22 @@ public class HeartHealthDisplay : MonoBehaviour
         }
         for (int i = 0; i < health.currentHealth; i++)
         {
-            
-            Debug.Log(i);
-            hearts[i].SetActive(true);
-            if (health.currentHealth != pastHealth)
+            if (i <= hearts.Count - 1)
             {
-                if(loseHeartPs != null)
+                Debug.Log(i);
+                hearts[i].SetActive(true);
+                if (health.currentHealth < pastHealth)
                 {
-                    for (int j = 0; j < pastHealth - health.currentHealth; j++)
+                    if (loseHeartPs != null)
                     {
-                        GameObject newHeartlostPs = Instantiate(loseHeartPs, transform.position, Quaternion.identity);
-                        Destroy(newHeartlostPs, 0.5f);
+                        for (int j = 0; j < pastHealth - health.currentHealth; j++)
+                        {
+                            GameObject newHeartlostPs = Instantiate(loseHeartPs, transform.position, Quaternion.identity);
+                            Destroy(newHeartlostPs, 0.5f);
+                        }
                     }
+                    pastHealth = Mathf.RoundToInt(health.currentHealth);
                 }
-
-                pastHealth =  Mathf.RoundToInt(health.currentHealth);
             }
         }
     }

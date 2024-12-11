@@ -22,7 +22,9 @@ public class RumbleManager : MonoBehaviour
 
     public void RumblePulse(float lowFrequency, float highFrequency, float duration, Gamepad aPad)
     {
+
         pad = aPad;
+        //pad.SetMotorSpeeds(0, 0);
 
         if (pad != null)
         {

@@ -11,7 +11,7 @@ public class PlayerHealing : MonoBehaviour
     }
     private void Update()
     {
-        if (GetComponent<EnteredSun>().inSun)
+        if (GetComponent<EnteredSun>().inSun && health.currentHealth < health.maxHealth)
         {
             health.Heal(healingAmount * Time.deltaTime);
         }

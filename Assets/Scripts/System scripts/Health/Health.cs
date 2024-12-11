@@ -34,6 +34,8 @@ public class Health : MonoBehaviour
 
     [HideInInspector]
     public Gamepad controllerPad;
+
+    private Coroutine stopRumbleAfterTimeCoroutine;
     void Start()
     {
         if (FindAnyObjectByType<MissionMaster>() == null)
@@ -110,7 +112,7 @@ public class Health : MonoBehaviour
         }
         else if (gameObject.CompareTag("Player") && controllerPad != null)
         {
-            RumbleManager.instance.RumblePulse(1.0f, 1.0f, 0.1f, controllerPad);
+           RumblePulse(1.0f, 1.0f, 0.1f);
         }
 
     }
@@ -165,5 +167,27 @@ public class Health : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
             characterSprite.color = baseColor;
         }
+    }
+
+    public void RumblePulse(float lowFrequency, float highFrequency, float duration)
+    {
+        if (controllerPad != null)
+        {
+            controllerPad.SetMotorSpeeds(lowFrequency, highFrequency);
+        }
+
+        stopRumbleAfterTimeCoroutine = StartCoroutine(StopRumble(duration, controllerPad));
+    }
+
+    private IEnumerator StopRumble(float duration, Gamepad aPad)
+    {
+        float elapsedTime = 0f;
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        aPad.SetMotorSpeeds(0, 0);
     }
 }
