@@ -9,6 +9,8 @@ public class SpawnWaves : MonoBehaviour
     public int rangedAmount;
     public int dashAmount;
 
+    public bool spawnOnThisObject = false;
+
     SpawnEnemies spawnEnemies;
 
     int rnd;
@@ -35,7 +37,7 @@ public class SpawnWaves : MonoBehaviour
 
     void Update()
     {
-        if (startSpawning == true)
+        if (startSpawning == true && spawnOnThisObject == false)
         {
             spawnEnemies.doWaveSpawn = true;
 
@@ -57,6 +59,28 @@ public class SpawnWaves : MonoBehaviour
             if (dashAmount != 0)
             {
                 spawnEnemies.SpawnWave(SpawnEnemies.EnemyNames.dashEnemy, dashAmount);
+            }
+        }
+        else if(startSpawning == true && spawnOnThisObject == true)
+        {
+            if (basicAmount != 0)
+            {
+                spawnEnemies.SpawnOnLocation(SpawnEnemies.EnemyNames.basicEnemy, basicAmount, this.gameObject.transform.position);
+            }
+
+            if (köttbulleAmount != 0)
+            {
+                spawnEnemies.SpawnOnLocation(SpawnEnemies.EnemyNames.köttbulleEnemy, köttbulleAmount, this.gameObject.transform.position);
+            }
+
+            if (rangedAmount != 0)
+            {
+                spawnEnemies.SpawnOnLocation(SpawnEnemies.EnemyNames.rangedEnemy, rangedAmount, this.gameObject.transform.position);
+            }
+
+            if (dashAmount != 0)
+            {
+                spawnEnemies.SpawnOnLocation(SpawnEnemies.EnemyNames.dashEnemy, dashAmount, this.gameObject.transform.position);
             }
         }
 

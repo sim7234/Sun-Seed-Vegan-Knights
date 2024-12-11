@@ -65,6 +65,15 @@ public class SpawnEnemies : MonoBehaviour
         }
     }
 
+    public void SpawnOnLocation(EnemyNames enemyType, int amount, Vector2 spawnLocation)
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            Instantiate(enemyTypes[((int)enemyType)], spawnLocation, Quaternion.identity);
+        }
+    }
+
+
     public void SpawnWave(EnemyNames enemyType, int amount)
     {
         for (int i = 0; i < amount; i++)
