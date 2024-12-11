@@ -32,10 +32,17 @@ public class EndlessWaves : MonoBehaviour
     int swarmLimit;
     int swarmLimitBasic;
 
-
+    int playerAmount;
     void Start()
     {
-        difficultyMultiplier = 0.7f;
+        difficultyMultiplier = 2f;
+
+        if (FindAnyObjectByType<SaveData>() != null)
+        {
+            playerAmount = FindAnyObjectByType<SaveData>().playerAmount;
+            difficultyMultiplier += playerAmount * 2;
+        }
+
         wavesScript = GetComponent<SpawnWaves>();
     }
 
