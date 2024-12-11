@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class HeartHealthDisplay : MonoBehaviour
 {
-
     [SerializeField]
     private List<GameObject> hearts = new List<GameObject>();
 

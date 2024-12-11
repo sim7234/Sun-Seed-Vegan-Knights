@@ -179,6 +179,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Save data
       objectReference: {fileID: 0}
+    - target: {fileID: 8697077578726434992, guid: fb5d2647caf8ee044b759d5cf1915843, type: 3}
+      propertyPath: playerDeathsBeforeGameOver
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -556,7 +560,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c5ef7b927783044b911ef8e1e845664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveNumber: 1
+  waveNumber: 20
   waveActive: 0
   totalEnemies: 0
   difficultyMultiplier: 0

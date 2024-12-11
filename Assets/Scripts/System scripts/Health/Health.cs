@@ -91,11 +91,13 @@ public class Health : MonoBehaviour
         {
             StartCoroutine(BlinkOnHit());
         }
+
         if(bloodOnHit != null)
         {
             GameObject newBlood = Instantiate(bloodOnHit, transform.position, Quaternion.identity);
             Destroy(newBlood, 0.8f);
         }
+
         if(audioSource != null)
         {
             audioSource.pitch = Random.Range(0.90f, 1.1f);
@@ -161,8 +163,6 @@ public class Health : MonoBehaviour
                
             Destroy(gameObject);
         }
-
-        
     }
 
     public float GetCurrentHealth()
