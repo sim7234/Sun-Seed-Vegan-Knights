@@ -35,7 +35,7 @@ public class Health : MonoBehaviour
     [HideInInspector]
     public Gamepad controllerPad;
 
-    private Coroutine stopRumbleAfterTimeCoroutine;
+    public bool endlessMode = false;
     void Start()
     {
         if (FindAnyObjectByType<MissionMaster>() == null)
@@ -124,7 +124,7 @@ public class Health : MonoBehaviour
     {
         currentHealth += amount;
     }
-    private void Die()
+    public void Die()
     {
         if(deathEffect != null)
         {
@@ -148,6 +148,16 @@ public class Health : MonoBehaviour
         }
         else
         {
+            if (endlessMode)
+            {
+                EndlessWaves.numberOfEnemies--;
+                if (GetComponent<WorthScore>() != null)
+                {
+                    if (FindAnyObjectByType<Score>() != null)
+                    FindAnyObjectByType<Score>().score += GetComponent<WorthScore>().howMuchScore;
+                }
+            }
+               
             Destroy(gameObject);
         }
 

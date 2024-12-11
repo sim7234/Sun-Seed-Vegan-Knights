@@ -1007,49 +1007,6 @@ Transform:
   - {fileID: 172632315}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &202869397 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1591513087322252944, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
-  m_PrefabInstance: {fileID: 1257860584}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &202869404
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 202869397}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07b6f3f59d246a9429f8769cd71dea13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startSpawning: 0
-  spawnDelay: 0.8
-  basicEnemy: 1
-  "k\xF6ttbulleEnemy": 0
-  rangedEnemy: 0
-  dashEnemy: 0
-  activeInArea: 1
---- !u!114 &202869410
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 202869397}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 439dfe30ac52d8b4aaaf7a4f20e1795f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startSpawning: 0
-  basicAmount: 0
-  "k\xF6ttbulleAmount": 40
-  rangedAmount: 0
-  dashAmount: 0
-  spawnOnThisObject: 1
-  activeInArea: 1
 --- !u!1 &206527135
 GameObject:
   m_ObjectHideFlags: 0
@@ -4444,13 +4401,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1591513087322252944, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 202869404}
-    - targetCorrespondingSourceObject: {fileID: 1591513087322252944, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 202869410}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
 --- !u!1 &1261666880
 GameObject:

@@ -51,17 +51,9 @@ public class explodeOnContact : MonoBehaviour
 
             if (timeTillExplosion <= 0)
             {
-                NotifyMissionMaster();
-                Destroy(gameObject);
+                GetComponent<Health>().currentHealth = 0;
+                GetComponent<Health>().Die();
             }
-        }
-    }
-
-    private void NotifyMissionMaster()
-    {
-        if (MissionMaster.Instance != null)
-        {
-            MissionMaster.Instance.EnemyKilled(gameObject);
         }
     }
 }
