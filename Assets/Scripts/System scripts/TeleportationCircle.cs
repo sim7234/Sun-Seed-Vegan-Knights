@@ -11,6 +11,6 @@ public class TeleportationCircle : MonoBehaviour
     }
     private void Teleport()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(SaveData.Instance.completedMission + 1);
     }
 }

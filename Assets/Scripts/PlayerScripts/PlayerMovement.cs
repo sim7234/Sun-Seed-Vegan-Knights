@@ -57,6 +57,7 @@ public class PlayerMovement : MonoBehaviour
         SaveData.Instance.playerAmount++;
         playerIndex = SaveData.Instance.playerAmount;
         SaveData.Instance.FixHud(gameObject, playerIndex);
+
     }
 
     private void Awake()

@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Peoples scene/Level 1.unity
     guid: d8cb4085382dcf7448aede9670e9e7ad
   - enabled: 1
-    path: Assets/Scenes/Peoples scene/Teodor.unity
+    path: Assets/Scenes/Peoples scene/Level 2.unity
     guid: bf36e12a0cb997e438878e5c4854eeff
   - enabled: 1
     path: Assets/Scenes/Main Game scenes/Game.unity
