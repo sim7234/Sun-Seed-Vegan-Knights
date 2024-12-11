@@ -36,6 +36,7 @@ public class Health : MonoBehaviour
     public Gamepad controllerPad;
 
     public bool endlessMode = false;
+    private Coroutine stopRumbleAfterTimeCoroutine;
     void Start()
     {
         if (FindAnyObjectByType<MissionMaster>() == null)
@@ -188,6 +189,7 @@ public class Health : MonoBehaviour
 
         stopRumbleAfterTimeCoroutine = StartCoroutine(StopRumble(duration, controllerPad));
     }
+
 
     private IEnumerator StopRumble(float duration, Gamepad aPad)
     {
