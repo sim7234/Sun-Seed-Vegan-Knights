@@ -10926,6 +10926,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fileter
       objectReference: {fileID: 0}
+    - target: {fileID: 5973745771651240044, guid: 146089c19c4c06a4eb44be6e3cc3b8a1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
