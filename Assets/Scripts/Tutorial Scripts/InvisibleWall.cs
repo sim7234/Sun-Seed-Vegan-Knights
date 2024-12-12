@@ -4,10 +4,12 @@ using UnityEngine;
 public class InvisibleWall : MonoBehaviour
 {
     [SerializeField]
-    private string specialWeaponTag = "BigSword";
+    private string bigSwordTag = "BigSword";
+    [SerializeField]
+    private string bigSpearTag = "BigSpear";
 
     [SerializeField]
-    private Sprite destroyedSprite; 
+    private Sprite destroyedSprite;
 
     [SerializeField]
     private float wallHealth = 30f;
@@ -24,13 +26,18 @@ public class InvisibleWall : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!isDisappearing && collision.collider.CompareTag(specialWeaponTag))
+        if (!isDisappearing && 
+            (collision.collider.CompareTag(bigSwordTag) || collision.collider.CompareTag(bigSpearTag)))
         {
             SpecialWeapon specialWeapon = collision.collider.GetComponentInParent<SpecialWeapon>();
 
             if (specialWeapon != null && specialWeapon.IsWieldingSword() && specialWeapon.IsAttacking())
             {
-                TakeDamage(25f); 
+                TakeDamage(25f);
+            }
+            else if (specialWeapon != null && specialWeapon.IsWieldingSpear() && specialWeapon.IsAttacking())
+            {
+                TakeDamage(25f);
             }
         }
     }
@@ -46,14 +53,13 @@ public class InvisibleWall : MonoBehaviour
         }
     }
 
-
     private IEnumerator ChangeToDestroyedSprite()
     {
         yield return new WaitForSeconds(0f);
 
         if (destroyedSprite != null && spriteRenderer != null)
         {
-            spriteRenderer.sprite = destroyedSprite; 
+            spriteRenderer.sprite = destroyedSprite;
             spriteRenderer.sortingOrder = -1;
         }
 

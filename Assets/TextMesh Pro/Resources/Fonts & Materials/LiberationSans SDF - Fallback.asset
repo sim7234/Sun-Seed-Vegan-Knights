@@ -209,6 +209,134 @@ MonoBehaviour:
     m_Y: 0
     m_Width: 511
     m_Height: 511
+  - m_X: 55
+    m_Y: 106
+    m_Width: 16
+    m_Height: 77
+  - m_X: 458
+    m_Y: 75
+    m_Width: 53
+    m_Height: 3
+  - m_X: 500
+    m_Y: 0
+    m_Width: 11
+    m_Height: 78
+  - m_X: 287
+    m_Y: 80
+    m_Width: 1
+    m_Height: 76
+  - m_X: 493
+    m_Y: 156
+    m_Width: 18
+    m_Height: 64
+  - m_X: 206
+    m_Y: 156
+    m_Width: 12
+    m_Height: 3
+  - m_X: 263
+    m_Y: 159
+    m_Width: 24
+    m_Height: 63
+  - m_X: 116
+    m_Y: 211
+    m_Width: 33
+    m_Height: 11
+  - m_X: 145
+    m_Y: 183
+    m_Width: 4
+    m_Height: 39
+  - m_X: 42
+    m_Y: 185
+    m_Width: 13
+    m_Height: 64
+  - m_X: 202
+    m_Y: 222
+    m_Width: 4
+    m_Height: 2
+  - m_X: 407
+    m_Y: 221
+    m_Width: 24
+    m_Height: 65
+  - m_X: 0
+    m_Y: 250
+    m_Width: 42
+    m_Height: 135
+  - m_X: 99
+    m_Y: 249
+    m_Width: 17
+    m_Height: 136
+  - m_X: 495
+    m_Y: 156
+    m_Width: 16
+    m_Height: 130
+  - m_X: 0
+    m_Y: 502
+    m_Width: 511
+    m_Height: 9
+  - m_X: 261
+    m_Y: 224
+    m_Width: 2
+    m_Height: 79
+  - m_X: 507
+    m_Y: 369
+    m_Width: 4
+    m_Height: 142
+  - m_X: 29
+    m_Y: 463
+    m_Width: 192
+    m_Height: 48
+  - m_X: 29
+    m_Y: 500
+    m_Width: 482
+    m_Height: 11
+  - m_X: 29
+    m_Y: 468
+    m_Width: 251
+    m_Height: 43
+  - m_X: 0
+    m_Y: 327
+    m_Width: 159
+    m_Height: 58
+  - m_X: 99
+    m_Y: 321
+    m_Width: 60
+    m_Height: 64
+  - m_X: 187
+    m_Y: 304
+    m_Width: 15
+    m_Height: 81
+  - m_X: 321
+    m_Y: 303
+    m_Width: 16
+    m_Height: 131
+  - m_X: 280
+    m_Y: 385
+    m_Width: 57
+    m_Height: 49
+  - m_X: 399
+    m_Y: 303
+    m_Width: 8
+    m_Height: 131
+  - m_X: 337
+    m_Y: 498
+    m_Width: 174
+    m_Height: 13
+  - m_X: 337
+    m_Y: 448
+    m_Width: 59
+    m_Height: 63
+  - m_X: 478
+    m_Y: 434
+    m_Width: 33
+    m_Height: 77
+  - m_X: 396
+    m_Y: 385
+    m_Width: 54
+    m_Height: 49
+  - m_X: 396
+    m_Y: 367
+    m_Width: 11
+    m_Height: 67
   m_fontInfo:
     Name: Liberation Sans
     PointSize: 86

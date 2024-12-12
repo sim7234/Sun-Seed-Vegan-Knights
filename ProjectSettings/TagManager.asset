@@ -11,6 +11,7 @@ TagManager:
   - WeaponPickup
   - BigSword
   - Interact
+  - BigSpear
   layers:
   - Default
   - TransparentFX
@@ -25,8 +26,7 @@ TagManager:
   - FindTargetLayer
   - TemporaryCameraTarget
   - Interact
-  - 
-  - 
+  - BigSpear
   - 
   - 
   - 

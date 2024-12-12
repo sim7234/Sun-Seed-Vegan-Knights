@@ -207,9 +207,16 @@ public class SpecialWeapon : MonoBehaviour
         return bigSword != null && bigSword.activeSelf;
     }
 
-        public bool IsAttacking()
+    public bool IsWieldingSpear()
     {
-        return bigSword.activeSelf && bigSword.GetComponent<Collider2D>().enabled;
+        return bigSpear != null && bigSpear.activeSelf;
+    }
+
+    public bool IsAttacking()
+    {
+        return (bigSword.activeSelf && bigSword.GetComponent<Collider2D>().enabled) ||
+        (bigSpear.activeSelf && bigSpear.GetComponent<Collider2D>().enabled);
+
     }
 
     public void DisableSpecialWeapon()

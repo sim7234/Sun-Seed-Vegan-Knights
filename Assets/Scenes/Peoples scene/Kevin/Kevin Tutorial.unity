@@ -812,7 +812,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81cd69ab755b0414a95b99325a9a4f88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  specialWeaponTag: Player
+  bigSwordTag: BigSword
+  bigSpearTag: BigSpear
   destroyedSprite: {fileID: 21300000, guid: a7e829ad83124bc449450ad19d1db673, type: 3}
   wallHealth: 25
 --- !u!60 &49482294
@@ -4342,7 +4343,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81cd69ab755b0414a95b99325a9a4f88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  specialWeaponTag: Player
+  bigSwordTag: BigSword
+  bigSpearTag: BigSpear
   destroyedSprite: {fileID: 21300000, guid: a7e829ad83124bc449450ad19d1db673, type: 3}
   wallHealth: 25
 --- !u!212 &248203063
@@ -7125,7 +7127,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81cd69ab755b0414a95b99325a9a4f88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  specialWeaponTag: Player
+  bigSwordTag: BigSword
+  bigSpearTag: BigSpear
   destroyedSprite: {fileID: 21300000, guid: a7e829ad83124bc449450ad19d1db673, type: 3}
   wallHealth: 25
 --- !u!212 &413285601
@@ -7629,7 +7632,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81cd69ab755b0414a95b99325a9a4f88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  specialWeaponTag: Player
+  bigSwordTag: BigSword
+  bigSpearTag: BigSpear
   destroyedSprite: {fileID: 21300000, guid: a7e829ad83124bc449450ad19d1db673, type: 3}
   wallHealth: 25
 --- !u!60 &446066422
@@ -8832,7 +8836,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81cd69ab755b0414a95b99325a9a4f88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  specialWeaponTag: Player
+  bigSwordTag: BigSword
+  bigSpearTag: BigSpear
   destroyedSprite: {fileID: 21300000, guid: a7e829ad83124bc449450ad19d1db673, type: 3}
   wallHealth: 25
 --- !u!60 &522758167
@@ -11606,7 +11611,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8569062478616908920, guid: 6620ce3c609997c48977c40f404285e9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 26.98
+      value: 25.23
       objectReference: {fileID: 0}
     - target: {fileID: 8569062478616908920, guid: 6620ce3c609997c48977c40f404285e9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -13666,7 +13671,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81cd69ab755b0414a95b99325a9a4f88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  specialWeaponTag: Player
+  bigSwordTag: BigSword
+  bigSpearTag: BigSpear
   destroyedSprite: {fileID: 21300000, guid: a7e829ad83124bc449450ad19d1db673, type: 3}
   wallHealth: 25
 --- !u!60 &829763867
@@ -17423,7 +17429,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5130911862086886225, guid: 999eb0bcf0397c047a538a9f4753062e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 22.502983
+      value: 20.752983
       objectReference: {fileID: 0}
     - target: {fileID: 5130911862086886225, guid: 999eb0bcf0397c047a538a9f4753062e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -17849,7 +17855,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81cd69ab755b0414a95b99325a9a4f88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  specialWeaponTag: Player
+  bigSwordTag: BigSword
+  bigSpearTag: BigSpear
   destroyedSprite: {fileID: 21300000, guid: a7e829ad83124bc449450ad19d1db673, type: 3}
   wallHealth: 25
 --- !u!212 &1088319968
@@ -19630,7 +19637,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81cd69ab755b0414a95b99325a9a4f88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  specialWeaponTag: Player
+  bigSwordTag: BigSword
+  bigSpearTag: BigSpear
   destroyedSprite: {fileID: 21300000, guid: a7e829ad83124bc449450ad19d1db673, type: 3}
   wallHealth: 25
 --- !u!212 &1153676870
@@ -20564,7 +20572,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8569062478616908920, guid: 6620ce3c609997c48977c40f404285e9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 22.539999
+      value: 20.789999
       objectReference: {fileID: 0}
     - target: {fileID: 8569062478616908920, guid: 6620ce3c609997c48977c40f404285e9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -21794,7 +21802,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5130911862086886225, guid: 999eb0bcf0397c047a538a9f4753062e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 25.269999
+      value: 23.519999
       objectReference: {fileID: 0}
     - target: {fileID: 5130911862086886225, guid: 999eb0bcf0397c047a538a9f4753062e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -25201,7 +25209,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81cd69ab755b0414a95b99325a9a4f88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  specialWeaponTag: Player
+  bigSwordTag: BigSword
+  bigSpearTag: BigSpear
   destroyedSprite: {fileID: 21300000, guid: a7e829ad83124bc449450ad19d1db673, type: 3}
   wallHealth: 25
 --- !u!60 &1625780997
@@ -27575,7 +27584,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8569062478616908920, guid: 6620ce3c609997c48977c40f404285e9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 28.2
+      value: 26.45
       objectReference: {fileID: 0}
     - target: {fileID: 8569062478616908920, guid: 6620ce3c609997c48977c40f404285e9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -31071,7 +31080,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81cd69ab755b0414a95b99325a9a4f88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  specialWeaponTag: Player
+  bigSwordTag: BigSword
+  bigSpearTag: BigSpear
   destroyedSprite: {fileID: 21300000, guid: a7e829ad83124bc449450ad19d1db673, type: 3}
   wallHealth: 25
 --- !u!212 &1997486792
@@ -33096,7 +33106,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8569062478616908920, guid: 6620ce3c609997c48977c40f404285e9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 24.809998
+      value: 23.059998
       objectReference: {fileID: 0}
     - target: {fileID: 8569062478616908920, guid: 6620ce3c609997c48977c40f404285e9, type: 3}
       propertyPath: m_LocalPosition.y

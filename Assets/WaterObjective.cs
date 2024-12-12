@@ -13,9 +13,16 @@ public class WaterObjective : MonoBehaviour
 
     [SerializeField] private TMP_Text waterProgressText;
 
+    [SerializeField] private LineRenderer tongueLine;
+    [SerializeField] private Transform shootPoint;
+    [SerializeField] private float shootInterval = 0.5f;
+    [SerializeField] private float detectionRadius = 10.0f;
+
+    private bool isTurretActive = false;
+
     private void Start()
     {
-        currentWater = 250; // Initialize with starting water
+        currentWater = 250; // starting water
         UpdateProgressUI();
         StartCoroutine(DepleteWater());
     }
@@ -25,31 +32,29 @@ public class WaterObjective : MonoBehaviour
         if (waterProgressText != null)
         {
             waterProgressText.text = $"{Mathf.FloorToInt(currentWater)} / {Mathf.FloorToInt(maxWater)}";
-            //Debug.Log($"Display updated: {currentWater} / {maxWater}");
         }
     }
 
-public void AddWater(float amount)
-{
-    if (!isComplete)
+    public void AddWater(float amount)
     {
-        Debug.Log($"WaterObjective: Adding water. Amount: {amount}, Current before: {currentWater}");
-        currentWater += amount;
-        currentWater = Mathf.Clamp(currentWater, 0, maxWater);
-        UpdateProgressUI();
-
-        if (currentWater >= maxWater)
+        if (!isComplete)
         {
-            CompleteObjective();
+            currentWater += amount;
+            currentWater = Mathf.Clamp(currentWater, 0, maxWater);
+            UpdateProgressUI();
+
+            if (currentWater >= maxWater)
+            {
+                CompleteObjective();
+            }
         }
     }
-}
 
     private void CompleteObjective()
     {
         isComplete = true;
         StopCoroutine(DepleteWater());
-        Debug.Log("Objective complete!");
+        ActivateTurret();
     }
 
     private IEnumerator DepleteWater()
@@ -70,6 +75,122 @@ public void AddWater(float amount)
             {
                 break;
             }
+        }
+    }
+
+    private void ActivateTurret()
+    {
+        isTurretActive = true;
+        StartCoroutine(Shoot());
+    }
+
+    private IEnumerator Shoot()
+    {
+        while (isTurretActive)
+        {
+            GameObject target = FindNearestEnemy();
+
+            if (target != null)
+            {
+                yield return StartCoroutine(ShootAtTarget(target));
+            }
+
+            yield return new WaitForSeconds(shootInterval);
+        }
+    }
+
+    private GameObject FindNearestEnemy()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject nearestEnemy = null;
+        float shortestDistance = detectionRadius;
+
+        foreach (GameObject enemy in enemies)
+        {
+            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+
+            if (distanceToEnemy < shortestDistance)
+            {
+                shortestDistance = distanceToEnemy;
+                nearestEnemy = enemy;
+            }
+        }
+
+        return nearestEnemy;
+    }
+
+    private IEnumerator ShootAtTarget(GameObject target)
+    {
+        if (tongueLine != null && shootPoint != null)
+        {
+            float shootSpeed = 120f;
+            Vector2 startPosition = shootPoint.position;
+            Vector2 endPosition = target.transform.position;
+            float distance = Vector2.Distance(startPosition, endPosition);
+            float time = 0;
+
+            tongueLine.SetPosition(0, startPosition);
+
+            while (time < distance / shootSpeed)
+            {
+                time += Time.deltaTime;
+                Vector2 currentPoint = Vector2.Lerp(startPosition, endPosition, time / (distance / shootSpeed));
+                tongueLine.SetPosition(1, new Vector3(currentPoint.x, currentPoint.y, 0)); 
+                yield return null;
+            }
+
+            tongueLine.SetPosition(1, endPosition);
+
+            Health targetHealth = target.GetComponent<Health>();
+            if (targetHealth != null)
+            {
+                if (targetHealth.GetCurrentHealth() <= 150)
+                {
+                    yield return StartCoroutine(DragTargetToFrog(target));
+                    targetHealth.TakeDamage(150);
+                }
+                else
+                {
+                    targetHealth.TakeDamage(150);
+                }
+            }
+
+            yield return new WaitForSeconds(0.1f);
+            tongueLine.SetPosition(0, Vector3.zero);
+            tongueLine.SetPosition(1, Vector3.zero);
+        }
+    }
+
+    private IEnumerator DragTargetToFrog(GameObject target)
+    {
+        Vector3 startPosition = target.transform.position;
+        Vector3 endPosition = shootPoint.position;
+        float dragSpeed = 0.6f;
+        float time = 0;
+
+        if (target.TryGetComponent(out Rigidbody2D rb))
+        {
+            rb.velocity = Vector2.zero;
+            rb.isKinematic = true;
+        }
+
+        Collider2D frogCollider = GetComponent<Collider2D>();
+        Collider2D targetCollider = target.GetComponent<Collider2D>();
+        if (frogCollider != null && targetCollider != null)
+        {
+            Physics2D.IgnoreCollision(frogCollider, targetCollider, true);
+        }
+
+        while (time < 1f)
+        {
+            time += Time.deltaTime * dragSpeed;
+            target.transform.position = Vector3.Lerp(startPosition, endPosition, time);
+            yield return null;
+        }
+
+        if (frogCollider != null && targetCollider != null)
+        {
+            Physics2D.IgnoreCollision(frogCollider, targetCollider, false);
         }
     }
 }
