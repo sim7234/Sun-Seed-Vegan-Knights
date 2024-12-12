@@ -31,30 +31,24 @@ public class HeartHealthDisplay : MonoBehaviour
             heart.SetActive(false);
         }
 
-        for (int i = 0; i < health.currentHealth; i++)
+        for (int i = 0; i < Mathf.RoundToInt(health.currentHealth); i++)
         {
             if (i <= hearts.Count - 1)
             {
                 hearts[i].SetActive(true);
-                if (health.currentHealth < pastHealth)
-                {
-                    if (loseHeartPs != null)
-                    {
-                        for (int j = 0; j < pastHealth - health.currentHealth; j++)
-                        {
-                            GameObject newHeartlostPs = Instantiate(loseHeartPs, transform.position, Quaternion.identity);
-                            Destroy(newHeartlostPs, 0.5f);
-                        }
-                    }
-                }
             }
         }
-        pastHealth = Mathf.RoundToInt(health.currentHealth);
     }
 
     public void OnTakeDamage()
     {
+        if (Mathf.RoundToInt(health.currentHealth) < pastHealth)
+        {
+            TriggerLoseHeartEffects();
+        }
         UpdateDisplay();
+        pastHealth = Mathf.RoundToInt(health.currentHealth);
+
         if (hideHeartsCoroutine != null)
         {
             StopCoroutine(hideHeartsCoroutine);
@@ -65,6 +59,8 @@ public class HeartHealthDisplay : MonoBehaviour
     public void OnHeal()
     {
         UpdateDisplay();
+        pastHealth = Mathf.RoundToInt(health.currentHealth);
+
         if (hideHeartsCoroutine != null)
         {
             StopCoroutine(hideHeartsCoroutine);
@@ -72,9 +68,21 @@ public class HeartHealthDisplay : MonoBehaviour
         hideHeartsCoroutine = StartCoroutine(HideHeartsAfterDelay());
     }
 
+    private void TriggerLoseHeartEffects()
+    {
+        if (loseHeartPs != null)
+        {
+            for (int j = 0; j < pastHealth - Mathf.RoundToInt(health.currentHealth); j++)
+            {
+                GameObject newHeartLostPs = Instantiate(loseHeartPs, transform.position, Quaternion.identity);
+                Destroy(newHeartLostPs, 0.5f);
+            }
+        }
+    }
+
     private IEnumerator HideHeartsAfterDelay()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         HideHearts();
     }
 
