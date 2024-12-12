@@ -34,7 +34,7 @@ public class MoveOnAttack : MonoBehaviour
     }
     public void moveWhenAttacking(float strength)
     {
-        rb.velocity = Vector3.zero;
+        //rb.velocity = Vector3.zero;
         rb.AddForce(rotationObject.transform.up * strength * strengthModifer, ForceMode2D.Impulse);
         strength = 1.0f;
 
@@ -46,7 +46,7 @@ public class MoveOnAttack : MonoBehaviour
 
     private IEnumerator stopMoveControlls()
     {
-        playerMovement.moveSpeed = baseMoveSpeed;
+        playerMovement.moveSpeed = baseMoveSpeed / 2;
         playerMovement.rotationSpeed = 0;
         yield return new WaitForSeconds(stopTime);
         playerMovement.rotationSpeed = 1;
