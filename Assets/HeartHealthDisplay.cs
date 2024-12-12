@@ -14,22 +14,23 @@ public class HeartHealthDisplay : MonoBehaviour
 
     [SerializeField]
     private GameObject loseHeartPs;
+    private Coroutine hideHeartsCoroutine;
 
     private void Start()
     {
         health = GetComponent<Health>();
         //InvokeRepeating(nameof(UpdateDisplay), 0.1f, 0.1f);
+        pastHealth = Mathf.RoundToInt(health.currentHealth);
+        HideHearts();
     }
-    private void Update()
-    {
-        UpdateDisplay();
-    }
-    public void UpdateDisplay()
+
+    private void UpdateDisplay()
     {
         foreach (var heart in hearts)
         {
             heart.SetActive(false);
         }
+
         for (int i = 0; i < health.currentHealth; i++)
         {
             if (i <= hearts.Count - 1)
@@ -45,10 +46,43 @@ public class HeartHealthDisplay : MonoBehaviour
                             Destroy(newHeartlostPs, 0.5f);
                         }
                     }
-                    pastHealth = Mathf.RoundToInt(health.currentHealth);
                 }
             }
         }
+        pastHealth = Mathf.RoundToInt(health.currentHealth);
     }
 
+    public void OnTakeDamage()
+    {
+        UpdateDisplay();
+        if (hideHeartsCoroutine != null)
+        {
+            StopCoroutine(hideHeartsCoroutine);
+        }
+        hideHeartsCoroutine = StartCoroutine(HideHeartsAfterDelay());
+    }
+
+    public void OnHeal()
+    {
+        UpdateDisplay();
+        if (hideHeartsCoroutine != null)
+        {
+            StopCoroutine(hideHeartsCoroutine);
+        }
+        hideHeartsCoroutine = StartCoroutine(HideHeartsAfterDelay());
+    }
+
+    private IEnumerator HideHeartsAfterDelay()
+    {
+        yield return new WaitForSeconds(3f);
+        HideHearts();
+    }
+
+    private void HideHearts()
+    {
+        foreach (var heart in hearts)
+        {
+            heart.SetActive(false);
+        }
+    }
 }

@@ -9,6 +9,7 @@ public class PlayerHealing : MonoBehaviour
     {
         health = GetComponent<Health>();
     }
+
     private void Update()
     {
         if (GetComponent<EnteredSun>().inSun && health.currentHealth < health.maxHealth)
@@ -19,8 +20,6 @@ public class PlayerHealing : MonoBehaviour
 
     public void HealMax()
     {
-
-        health.currentHealth = health.maxHealth;
-
+        health.Heal(health.maxHealth - health.currentHealth);
     }
 }

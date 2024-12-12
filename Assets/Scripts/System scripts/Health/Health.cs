@@ -8,7 +8,6 @@ public class Health : MonoBehaviour
     public float maxHealth = 5;
     [SerializeField]
     public float currentHealth;
-    
     [SerializeField]
     private GameObject bloodOnHit;
     [SerializeField]
@@ -37,13 +36,13 @@ public class Health : MonoBehaviour
 
     public bool endlessMode = false;
     private Coroutine stopRumbleAfterTimeCoroutine;
+
     void Start()
     {
         if (FindAnyObjectByType<MissionMaster>() == null)
         {
             talkToMissionMaster = false;
         }
-
 
         currentHealth = maxHealth;
         if(characterSprite != null)
@@ -61,8 +60,6 @@ public class Health : MonoBehaviour
         }
 
         EpelepticFilterOn = SaveData.Instance.epelepticFilterOn;
-
-       
     }
 
     public void TakeDamage(float damageAmount)
@@ -70,16 +67,14 @@ public class Health : MonoBehaviour
         if (gameObject.CompareTag("Player"))
         {
             currentHealth -= 1;
-            GetComponent<HeartHealthDisplay>().UpdateDisplay();
-            GetComponent<Collider2D>().enabled = false;        
-            Invoke(nameof(TurnOnCollider), 1f);
-
+            GetComponent<HeartHealthDisplay>()?.OnTakeDamage();
+            //GetComponent<Collider2D>().enabled = false;
+            //Invoke(nameof(TurnOnCollider), 1f);
         }
         else
         {
             currentHealth -= damageAmount;
         }
-        
 
         if (GetComponent<EnemyHealthDisplay>() != null)
         {
@@ -95,7 +90,7 @@ public class Health : MonoBehaviour
             StartCoroutine(BlinkOnHit());
         }
 
-        if(bloodOnHit != null)
+        if (bloodOnHit != null)
         {
             GameObject newBlood = Instantiate(bloodOnHit, transform.position, Quaternion.identity);
             Destroy(newBlood, 0.8f);
@@ -106,7 +101,7 @@ public class Health : MonoBehaviour
             audioSource.pitch = Random.Range(0.90f, 1.1f);
             audioSource.PlayOneShot(hitSound);
         }
-        
+
         if(agent != null)
         {
             agent.velocity = Vector3.zero;
@@ -120,16 +115,28 @@ public class Health : MonoBehaviour
         {
            RumblePulse(1.0f, 1.0f, 0.1f);
         }
-
     }
+
     private void Update()
     {
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
     }
+
     public void Heal(float amount)
     {
-        currentHealth += amount;
+        if (currentHealth < maxHealth)
+        {
+            currentHealth += amount;
+            currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+
+            HeartHealthDisplay heartDisplay = GetComponent<HeartHealthDisplay>();
+            if (heartDisplay != null)
+            {
+                heartDisplay.OnHeal();
+            }
+        }
     }
+
     public void Die()
     {
         if(deathEffect != null)
@@ -143,7 +150,7 @@ public class Health : MonoBehaviour
         }
 
         Screenshake.Instance.Shake(2.0f, 0.2f, 1.0f);
-        
+
         if (gameObject.CompareTag("Player"))
         {
             GetComponent<PlayerDeath>().onPlayerDeath();
@@ -163,7 +170,6 @@ public class Health : MonoBehaviour
                     FindAnyObjectByType<Score>().score += GetComponent<WorthScore>().howMuchScore;
                 }
             }
-               
             Destroy(gameObject);
         }
     }
@@ -192,7 +198,6 @@ public class Health : MonoBehaviour
 
         stopRumbleAfterTimeCoroutine = StartCoroutine(StopRumble(duration, controllerPad));
     }
-
 
     private IEnumerator StopRumble(float duration, Gamepad aPad)
     {

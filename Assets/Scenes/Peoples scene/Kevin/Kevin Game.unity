@@ -3275,7 +3275,7 @@ PrefabInstance:
       objectReference: {fileID: 2037053748}
     - target: {fileID: 5539906317129793715, guid: e43fe1cbc5ba9ea479244b018c04a883, type: 3}
       propertyPath: shootInterval
-      value: 12
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5539906317129793715, guid: e43fe1cbc5ba9ea479244b018c04a883, type: 3}
       propertyPath: detectionRadius
