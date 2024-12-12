@@ -71,6 +71,9 @@ public class Health : MonoBehaviour
         {
             currentHealth -= 1;
             GetComponent<HeartHealthDisplay>().UpdateDisplay();
+            GetComponent<Collider2D>().enabled = false;        
+            Invoke(nameof(TurnOnCollider), 1f);
+
         }
         else
         {
@@ -201,5 +204,10 @@ public class Health : MonoBehaviour
         }
 
         aPad.SetMotorSpeeds(0, 0);
+    }
+
+    private void TurnOnCollider()
+    {
+        GetComponent<Collider2D>().enabled = true;
     }
 }
