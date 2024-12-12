@@ -25,7 +25,7 @@ public class WaterObjective : MonoBehaviour
         if (waterProgressText != null)
         {
             waterProgressText.text = $"{Mathf.FloorToInt(currentWater)} / {Mathf.FloorToInt(maxWater)}";
-            Debug.Log($"Display updated: {currentWater} / {maxWater}");
+            //Debug.Log($"Display updated: {currentWater} / {maxWater}");
         }
     }
 
