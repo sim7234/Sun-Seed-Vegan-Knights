@@ -16,25 +16,24 @@ public class Objective : MonoBehaviour
 
     private void Update()
     {
+
+
+        
+    }
+    public void StartObjectiveEvent()
+    {
+        hasStarted = true;
         if (hasStarted)
         {
             GetComponent<isTarget>().enabled = true;
             GetComponent<Collider2D>().enabled = true;
-            //timeToComplete -= Time.deltaTime;
 
-            //text.SetText(timeToComplete.ToString("0"));
-            //if (timeToComplete <= 0)
-            //{
-            //    Destroy(gameObject);
-            //}
+            if(GetComponent<WaterObjective>() != null)
+            {
+                GetComponent<WaterObjective>().enabled = true;
+            }
         }
     }
-
-    public void StartObjectiveEvent()
-    {
-        hasStarted = true;
-    }
-
     public void onObjectiveDeath()
     {
         SceneManager.LoadScene(0);

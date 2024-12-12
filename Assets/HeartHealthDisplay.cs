@@ -34,7 +34,6 @@ public class HeartHealthDisplay : MonoBehaviour
         {
             if (i <= hearts.Count - 1)
             {
-                Debug.Log(i);
                 hearts[i].SetActive(true);
                 if (health.currentHealth < pastHealth)
                 {
