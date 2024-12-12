@@ -11,6 +11,7 @@ public class Pathfinding : MonoBehaviour
     [HideInInspector] public int totalTargets;
 
     [HideInInspector] public int finalTarget;
+    [HideInInspector] public int randomTarget;
 
     [HideInInspector] public bool followTarget = true;
 
@@ -31,7 +32,7 @@ public class Pathfinding : MonoBehaviour
     public void Update()
     {
         finalTarget = FindClosestTarget(totalTargets);
-        
+
         if (target.Count > 0)
         {
             if (target[finalTarget].gameObject == null)
@@ -50,7 +51,20 @@ public class Pathfinding : MonoBehaviour
         }
     }
 
+    public int FindRandomTarget(int totalTargets)
+    {
+        int rnd = 0;
+        int i = 0;
 
+        do
+        {
+            rnd = Random.Range(0, totalTargets);  
+            i++;
+
+        } while ((!target[rnd].CompareTag("Objective")) || i >= 5);
+
+        return rnd;
+    }
     public int FindClosestTarget(int totalTargets)
     {
         float closestTarget = Mathf.Infinity;
@@ -59,14 +73,14 @@ public class Pathfinding : MonoBehaviour
         {
             if (target[i].gameObject != null)
             {
-                
+
                 Vector3 targetDistence = target[i].transform.position - transform.position;
                 float targetDistenceSquared = targetDistence.sqrMagnitude;
 
                 if (targetDistenceSquared < closestTarget && target[i].GetComponent<isTarget>().enabled == true)
                 {
                     closestTarget = targetDistenceSquared;
-                    
+
                     finalTarget = i;
                 }
             }
