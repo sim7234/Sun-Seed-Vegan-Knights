@@ -50,6 +50,9 @@ public class MissionMaster : MonoBehaviour
     [SerializeField]
     private GameObject nextStagePointer;
 
+    [SerializeField]
+    private float currentCameraSpeedModifire = 2;
+
     private void Awake()
     {
         Instance = this;
@@ -122,7 +125,10 @@ public class MissionMaster : MonoBehaviour
             {
                 actionBetweenLevels[combatsComplete].SetActive(true);
             }
-
+            if (combatPoints[combatsComplete].GetComponent<CameraSpeedModifier>() != null)
+            {
+                currentCameraSpeedModifire = combatPoints[combatsComplete].GetComponent<CameraSpeedModifier>().speed;
+            }
             StartCoroutine(MoveCameraToNextPoint(cam, cam.transform.position, combatPoints[combatsComplete].transform.position));
         //    StartCoroutine(MoveCameraToNextPoint(focusPoint, focusPoint.transform.position, combatPoints[combatsComplete].transform.position));
         }
@@ -130,7 +136,7 @@ public class MissionMaster : MonoBehaviour
 
     private IEnumerator MoveCameraToNextPoint(GameObject obj, Vector3 start, Vector3 end)
     {
-        float duration = Vector3.Distance(start, end) / 2;
+        float duration = Vector3.Distance(start, end) / currentCameraSpeedModifire;
         float timeElapsed = 0;
         nextStagePointer.SetActive(true);
         while (timeElapsed < duration)
@@ -165,7 +171,7 @@ public class MissionMaster : MonoBehaviour
         }
         else if (combatSpawnObject[combatIndex].GetComponent<SpawnWaves>() != null)
         {
-            //Camera.main.GetComponent<>
+            Camera.main.GetComponent<SpawnWaves>().startSpawning = true;
         }
     }
 

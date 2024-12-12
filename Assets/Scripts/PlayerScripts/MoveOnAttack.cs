@@ -46,7 +46,7 @@ public class MoveOnAttack : MonoBehaviour
 
     private IEnumerator stopMoveControlls()
     {
-        playerMovement.moveSpeed = 0;
+        playerMovement.moveSpeed = 10;
         playerMovement.rotationSpeed = 0;
         yield return new WaitForSeconds(stopTime);
         playerMovement.rotationSpeed = 1;
