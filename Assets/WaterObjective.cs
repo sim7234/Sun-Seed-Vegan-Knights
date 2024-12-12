@@ -18,6 +18,10 @@ public class WaterObjective : MonoBehaviour
     [SerializeField] private float shootInterval = 0.5f;
     [SerializeField] private float detectionRadius = 10.0f;
 
+    [SerializeField] private Animator frogAnimator;          
+    [SerializeField] private SpriteRenderer frogSpriteRenderer; 
+    [SerializeField] private Sprite frogOpenMouthSprite;       
+
     private bool isTurretActive = false;
 
     private void Start()
@@ -163,6 +167,16 @@ public class WaterObjective : MonoBehaviour
 
     private IEnumerator DragTargetToFrog(GameObject target)
     {
+        // Disable the Animator and set the frog's sprite to the open-mouth version
+        if (frogAnimator != null)
+        {
+            frogAnimator.enabled = false; // Disable the blinking animation
+        }
+        if (frogSpriteRenderer != null && frogOpenMouthSprite != null)
+        {
+            frogSpriteRenderer.sprite = frogOpenMouthSprite; // Set to open mouth
+        }
+
         Vector3 startPosition = target.transform.position;
         Vector3 endPosition = shootPoint.position;
         float dragSpeed = 0.6f;
@@ -184,13 +198,30 @@ public class WaterObjective : MonoBehaviour
         while (time < 1f)
         {
             time += Time.deltaTime * dragSpeed;
-            target.transform.position = Vector3.Lerp(startPosition, endPosition, time);
+            Vector3 currentTargetPosition = Vector3.Lerp(startPosition, endPosition, time);
+            target.transform.position = currentTargetPosition;
+
+            // Update the LineRenderer positions
+            tongueLine.SetPosition(0, shootPoint.position);
+            tongueLine.SetPosition(1, currentTargetPosition);
+
             yield return null;
         }
 
+        // Re-enable collisions after dragging
         if (frogCollider != null && targetCollider != null)
         {
             Physics2D.IgnoreCollision(frogCollider, targetCollider, false);
+        }
+
+        // Reset the line
+        tongueLine.SetPosition(0, Vector3.zero);
+        tongueLine.SetPosition(1, Vector3.zero);
+
+        // Re-enable the Animator and reset the frog to the default blinking animation
+        if (frogAnimator != null)
+        {
+            frogAnimator.enabled = true; // Re-enable blinking animation
         }
     }
 }
