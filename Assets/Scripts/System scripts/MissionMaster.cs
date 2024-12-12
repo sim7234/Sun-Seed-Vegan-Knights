@@ -159,7 +159,14 @@ public class MissionMaster : MonoBehaviour
         }
 
         countdownText.SetText("");
-        combatSpawnObject[combatIndex].SetActive(true);
+        if (combatSpawnObject[combatIndex] != null)
+        {
+            combatSpawnObject[combatIndex].SetActive(true);
+        }
+        else if (combatSpawnObject[combatIndex].GetComponent<SpawnWaves>() != null)
+        {
+            //Camera.main.GetComponent<>
+        }
     }
 
     private void PlayStageCompleteSound()
