@@ -401,17 +401,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""5a752270-9c1f-4a44-bc59-4041854d5e1f"",
-                    ""path"": ""<Gamepad>/buttonEast"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Control"",
-                    ""action"": ""Stomp"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""980f9ce0-6440-4e0d-8776-a4bb0d4c2109"",
                     ""path"": ""<Gamepad>/buttonNorth"",
                     ""interactions"": """",
