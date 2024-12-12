@@ -126,6 +126,7 @@ MonoBehaviour:
   hitSound: {fileID: 8300000, guid: 340dd37fae7514c499dbd20603c7fcac, type: 3}
   EpelepticFilterOn: 1
   talkToMissionMaster: 1
+  endlessMode: 0
 --- !u!114 &8504829168524113185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -451,7 +452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 599290347712b3c4bae5b7cd329c0c96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bloomResistance: 35
+  bloomResistance: 400
   hasBloomed1: 0
   BloomExplosionVFX: {fileID: 1240254011838071449, guid: 20efd42d40277384687f4f2a74a87383, type: 3}
   divideHealthBy: 5
