@@ -1116,17 +1116,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Change to Spear Seed?
+  m_text: Spear Seed
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e5e6a50a5055c2a42a7405ff66f8fc95, type: 2}
-  m_sharedMaterial: {fileID: 8760632212996779936, guid: e5e6a50a5055c2a42a7405ff66f8fc95, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4289506559
-  m_fontColor: {r: 1, g: 0.6745283, b: 0.6745283, a: 1}
+    rgba: 4290576347
+  m_fontColor: {r: 0.8586133, g: 1, b: 0.7377358, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -6298,17 +6298,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Change to Sword Seed?
+  m_text: Sword Seed
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e5e6a50a5055c2a42a7405ff66f8fc95, type: 2}
-  m_sharedMaterial: {fileID: 8760632212996779936, guid: e5e6a50a5055c2a42a7405ff66f8fc95, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4289506559
-  m_fontColor: {r: 1, g: 0.6745283, b: 0.6745283, a: 1}
+    rgba: 4290576347
+  m_fontColor: {r: 0.85882354, g: 1, b: 0.7372549, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

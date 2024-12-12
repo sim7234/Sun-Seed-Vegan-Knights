@@ -100,7 +100,7 @@ public class SpecialWeapon : MonoBehaviour
                 bigSword.GetComponent<Collider2D>().enabled = false;
                 bigSpear.SetActive(false);
 
-                specialWeaponAttacks = 5;
+                specialWeaponAttacks = 3;
                 attacksLeftText.gameObject.SetActive(true);
             }
             else if (weaponPickupsInRange[0].GetComponent<WeaponPickup>().GetWeaponType() == WeaponType.Spear)
@@ -109,7 +109,7 @@ public class SpecialWeapon : MonoBehaviour
                 bigSpear.GetComponent<Collider2D>().enabled = false;
                 bigSword.SetActive(false);
 
-                specialWeaponAttacks = 10;
+                specialWeaponAttacks = 15;
                 attacksLeftText.gameObject.SetActive(true);
             }
 

@@ -406,7 +406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e25760f8658e3b4ab70d5369e5e64ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 150
+  maxHealth: 80
   currentHealth: 0
   bloodOnHit: {fileID: 1240254011838071449, guid: 41925829a7d4e9f44b90f9db56482cec, type: 3}
   deathEffect: {fileID: 1240254011838071449, guid: a8a005973de14ea47810af5564db808b, type: 3}
@@ -414,6 +414,7 @@ MonoBehaviour:
   hitSound: {fileID: 8300000, guid: 18e659edc45c9ad40bcffc453bb19912, type: 3}
   EpelepticFilterOn: 1
   talkToMissionMaster: 1
+  endlessMode: 0
 --- !u!195 &1137979767170368613
 NavMeshAgent:
   m_ObjectHideFlags: 0
