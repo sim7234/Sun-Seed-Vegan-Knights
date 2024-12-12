@@ -39,7 +39,7 @@ public class EnemyRetreat : MonoBehaviour
 
         Vector2 distenceToCamera = camera.WorldToViewportPoint(gameObject.transform.position);
 
-        if (distenceToCamera.x < 0.1 || distenceToCamera.y < 0.1)
+        if (distenceToCamera.x < 0.05 || distenceToCamera.y < 0.05 || distenceToCamera.x > 0.95 || distenceToCamera.y > 0.95)
         {           
             canRetreat = false;
         }
