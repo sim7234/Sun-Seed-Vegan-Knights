@@ -47,9 +47,13 @@ public class SaveData : MonoBehaviour
 
     private void Update()
     {
-        if(playerAmount > 0)
+        if (playerAmount > 0 && (SceneManager.GetActiveScene().name != "EndlessMode"))
         {
             Camera.main.orthographicSize = 8 + playerAmount;
+        }
+        else if (playerAmount > 0 && (SceneManager.GetActiveScene().name == "EndlessMode"))
+        {
+            Camera.main.orthographicSize = 12 + playerAmount;
         }
     }
     public void AddPlayer(GameObject player, int index)
