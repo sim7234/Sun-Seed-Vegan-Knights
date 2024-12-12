@@ -56,7 +56,6 @@ public class Turret : MonoBehaviour
             {
                 shortestDistance = distanceToEnemy;
                 nearestEnemy = Enemy;
-                Debug.Log("Found Nearest Enemy");
             }
         }
 
@@ -75,7 +74,6 @@ public class Turret : MonoBehaviour
         }
 
         projectile.transform.rotation = Quaternion.LookRotation(Vector3.forward, direction);
-        Debug.Log("Shooting Enemy");
     }
 
     private void OnDestroy()

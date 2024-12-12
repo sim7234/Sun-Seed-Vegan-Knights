@@ -138,7 +138,7 @@ public class MissionMaster : MonoBehaviour
             obj.transform.position = Vector3.Lerp(start, end, timeElapsed / duration);
             timeElapsed += Time.deltaTime;
             yield return null;
-            nextStagePointer.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y, 0);
+            nextStagePointer.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, 0);
             nextStagePointer.transform.up = (end - nextStagePointer.transform.position).normalized;
         }
 
@@ -159,7 +159,14 @@ public class MissionMaster : MonoBehaviour
         }
 
         countdownText.SetText("");
-        combatSpawnObject[combatIndex].SetActive(true);
+        if (combatSpawnObject[combatIndex] != null)
+        {
+            combatSpawnObject[combatIndex].SetActive(true);
+        }
+        else if (combatSpawnObject[combatIndex].GetComponent<SpawnWaves>() != null)
+        {
+            //Camera.main.GetComponent<>
+        }
     }
 
     private void PlayStageCompleteSound()

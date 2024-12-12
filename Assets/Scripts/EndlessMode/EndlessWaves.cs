@@ -55,6 +55,11 @@ public class EndlessWaves : MonoBehaviour
             WaveComplete();
             calculateDifficulty();
         }
+
+        if (numberOfEnemies > 0)
+        {
+            waveActive = true;
+        }
     }
 
     void WaveComplete()
@@ -62,7 +67,7 @@ public class EndlessWaves : MonoBehaviour
         wavesScript.startSpawning = false;
         waveActive = false;
         waveNumber++;
-        difficultyMultiplier += (0.05f * waveNumber);
+        difficultyMultiplier += (0.1f * waveNumber);
         spawnerPoints = difficultyMultiplier;
         swarmLimit = 0;
         swarmLimitBasic = 0;
@@ -84,13 +89,6 @@ public class EndlessWaves : MonoBehaviour
         köttbulleAmount = 0;
         rangedAmount = 0;
         dashAmount = 0;
-
-        Invoke(nameof(activateWave), 0.01f);
-    }
-
-    void activateWave()
-    {
-        waveActive = true;
     }
 
     void calculateDifficulty()
