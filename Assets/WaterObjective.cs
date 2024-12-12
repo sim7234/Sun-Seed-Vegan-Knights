@@ -18,6 +18,10 @@ public class WaterObjective : MonoBehaviour
     [SerializeField] private float shootInterval = 0.5f;
     [SerializeField] private float detectionRadius = 10.0f;
 
+    [SerializeField] private Animator frogAnimator;          
+    [SerializeField] private SpriteRenderer frogSpriteRenderer; 
+    [SerializeField] private Sprite frogOpenMouthSprite;       
+
     private bool isTurretActive = false;
 
     private void Start()
@@ -123,6 +127,14 @@ public class WaterObjective : MonoBehaviour
     {
         if (tongueLine != null && shootPoint != null)
         {
+            if (frogAnimator != null)
+            {
+                frogAnimator.enabled = false; 
+            }
+            if (frogSpriteRenderer != null && frogOpenMouthSprite != null)
+            {
+                frogSpriteRenderer.sprite = frogOpenMouthSprite; 
+
             float shootSpeed = 120f;
             Vector2 startPosition = shootPoint.position;
             Vector2 endPosition = target.transform.position;
@@ -135,7 +147,7 @@ public class WaterObjective : MonoBehaviour
             {
                 time += Time.deltaTime;
                 Vector2 currentPoint = Vector2.Lerp(startPosition, endPosition, time / (distance / shootSpeed));
-                tongueLine.SetPosition(1, new Vector3(currentPoint.x, currentPoint.y, 0)); 
+                tongueLine.SetPosition(1, new Vector3(currentPoint.x, currentPoint.y, 0));
                 yield return null;
             }
 
@@ -158,11 +170,24 @@ public class WaterObjective : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
             tongueLine.SetPosition(0, Vector3.zero);
             tongueLine.SetPosition(1, Vector3.zero);
+
+            if (frogAnimator != null)
+            {
+                frogAnimator.enabled = true;
+            }
         }
     }
-
     private IEnumerator DragTargetToFrog(GameObject target)
     {
+        if (frogAnimator != null)
+        {
+            frogAnimator.enabled = false; 
+        }
+        if (frogSpriteRenderer != null && frogOpenMouthSprite != null)
+        {
+            frogSpriteRenderer.sprite = frogOpenMouthSprite; 
+        }
+
         Vector3 startPosition = target.transform.position;
         Vector3 endPosition = shootPoint.position;
         float dragSpeed = 0.6f;
@@ -184,13 +209,26 @@ public class WaterObjective : MonoBehaviour
         while (time < 1f)
         {
             time += Time.deltaTime * dragSpeed;
-            target.transform.position = Vector3.Lerp(startPosition, endPosition, time);
+            Vector3 currentTargetPosition = Vector3.Lerp(startPosition, endPosition, time);
+            target.transform.position = currentTargetPosition;
+
+            tongueLine.SetPosition(0, shootPoint.position);
+            tongueLine.SetPosition(1, currentTargetPosition);
+
             yield return null;
         }
 
         if (frogCollider != null && targetCollider != null)
         {
             Physics2D.IgnoreCollision(frogCollider, targetCollider, false);
+        }
+
+        tongueLine.SetPosition(0, Vector3.zero);
+        tongueLine.SetPosition(1, Vector3.zero);
+
+        if (frogAnimator != null)
+        {
+            frogAnimator.enabled = true; 
         }
     }
 }
