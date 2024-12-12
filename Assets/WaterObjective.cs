@@ -127,6 +127,14 @@ public class WaterObjective : MonoBehaviour
     {
         if (tongueLine != null && shootPoint != null)
         {
+            if (frogAnimator != null)
+            {
+                frogAnimator.enabled = false; 
+            }
+            if (frogSpriteRenderer != null && frogOpenMouthSprite != null)
+            {
+                frogSpriteRenderer.sprite = frogOpenMouthSprite; 
+
             float shootSpeed = 120f;
             Vector2 startPosition = shootPoint.position;
             Vector2 endPosition = target.transform.position;
@@ -139,7 +147,7 @@ public class WaterObjective : MonoBehaviour
             {
                 time += Time.deltaTime;
                 Vector2 currentPoint = Vector2.Lerp(startPosition, endPosition, time / (distance / shootSpeed));
-                tongueLine.SetPosition(1, new Vector3(currentPoint.x, currentPoint.y, 0)); 
+                tongueLine.SetPosition(1, new Vector3(currentPoint.x, currentPoint.y, 0));
                 yield return null;
             }
 
@@ -162,19 +170,22 @@ public class WaterObjective : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
             tongueLine.SetPosition(0, Vector3.zero);
             tongueLine.SetPosition(1, Vector3.zero);
+
+            if (frogAnimator != null)
+            {
+                frogAnimator.enabled = true;
+            }
         }
     }
-
     private IEnumerator DragTargetToFrog(GameObject target)
     {
-        // Disable the Animator and set the frog's sprite to the open-mouth version
         if (frogAnimator != null)
         {
-            frogAnimator.enabled = false; // Disable the blinking animation
+            frogAnimator.enabled = false; 
         }
         if (frogSpriteRenderer != null && frogOpenMouthSprite != null)
         {
-            frogSpriteRenderer.sprite = frogOpenMouthSprite; // Set to open mouth
+            frogSpriteRenderer.sprite = frogOpenMouthSprite; 
         }
 
         Vector3 startPosition = target.transform.position;
@@ -201,27 +212,23 @@ public class WaterObjective : MonoBehaviour
             Vector3 currentTargetPosition = Vector3.Lerp(startPosition, endPosition, time);
             target.transform.position = currentTargetPosition;
 
-            // Update the LineRenderer positions
             tongueLine.SetPosition(0, shootPoint.position);
             tongueLine.SetPosition(1, currentTargetPosition);
 
             yield return null;
         }
 
-        // Re-enable collisions after dragging
         if (frogCollider != null && targetCollider != null)
         {
             Physics2D.IgnoreCollision(frogCollider, targetCollider, false);
         }
 
-        // Reset the line
         tongueLine.SetPosition(0, Vector3.zero);
         tongueLine.SetPosition(1, Vector3.zero);
 
-        // Re-enable the Animator and reset the frog to the default blinking animation
         if (frogAnimator != null)
         {
-            frogAnimator.enabled = true; // Re-enable blinking animation
+            frogAnimator.enabled = true; 
         }
     }
 }
