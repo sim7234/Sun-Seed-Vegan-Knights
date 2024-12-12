@@ -49,7 +49,7 @@ public class SaveData : MonoBehaviour
     {
         if(playerAmount > 0)
         {
-            Camera.main.orthographicSize = 7 + playerAmount;
+            Camera.main.orthographicSize = 8 + playerAmount;
         }
     }
     public void AddPlayer(GameObject player, int index)
