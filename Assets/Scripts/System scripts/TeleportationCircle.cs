@@ -7,7 +7,7 @@ public class TeleportationCircle : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Invoke(nameof(Teleport), 3);
+        Invoke(nameof(Teleport), 1);
     }
     private void Teleport()
     {

@@ -51,7 +51,7 @@ public class MissionMaster : MonoBehaviour
     private GameObject nextStagePointer;
 
     [SerializeField]
-    private float currentCameraSpeedModifire = 2;
+    private float currentCameraSpeedModifire = 3;
 
     private void Awake()
     {
@@ -150,6 +150,7 @@ public class MissionMaster : MonoBehaviour
 
         obj.transform.position = end;
         nextStagePointer.SetActive(false);
+        currentCameraSpeedModifire = 3;
         StartCoroutine(ActivateCombatAfterDelay(10f, combatsComplete));
     }
     private IEnumerator ActivateCombatAfterDelay(float delay, int combatIndex)

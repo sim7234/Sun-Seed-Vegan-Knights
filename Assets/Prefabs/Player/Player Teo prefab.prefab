@@ -26086,7 +26086,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a79ce0dc6840bb49ac52a8a1607d9bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 30
+  moveSpeed: 35
+  rotationSpeed: 1
   curve:
     serializedVersion: 2
     m_Curve: []
@@ -26180,11 +26181,13 @@ MonoBehaviour:
   - {fileID: 3066602483055560766, guid: 5dcf56cd6f39d53469d737ee801e09f7, type: 3}
   - {fileID: 4209319261259547291, guid: 668de3c610a6bef4f8e142a583ec9615, type: 3}
   currentType: 1
+  currentSeedTypeInRange: {fileID: 0}
   plantSpeed: 30
   plantingTimer: 0
   inSun: 0
   seedCooldownText: {fileID: 2450117201710678076}
   inSunEffect: {fileID: 7701823554249734520}
+  cantPlant: 0
 --- !u!114 &4088991493060879705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26205,6 +26208,7 @@ MonoBehaviour:
   hitSound: {fileID: 8300000, guid: 340dd37fae7514c499dbd20603c7fcac, type: 3}
   EpelepticFilterOn: 1
   talkToMissionMaster: 0
+  endlessMode: 0
 --- !u!114 &5478368589574827822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26219,11 +26223,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bigSword: {fileID: 3131349570624323539}
   bigSpear: {fileID: 2422993599085478142}
+  specialWeaponAttacksBase: 5
   attackCooldown: 0
   baseWeapon: {fileID: 7790897372868414741}
   weaponPickupsInRange: []
   swordSwingSound: {fileID: 8300000, guid: dec3f8a6d31d51c4995341d391828895, type: 3}
   spearThrustSound: {fileID: 8300000, guid: e7a66464d458314458ccc300d36134b0, type: 3}
+  attacksLeftText: {fileID: 0}
 --- !u!82 &5284485026496525295
 AudioSource:
   m_ObjectHideFlags: 0
@@ -26340,6 +26346,10 @@ MonoBehaviour:
   swordDashAttack: {fileID: 0}
   attackCooldown: 0.8
   baseWeaponMoveScript: {fileID: 288850003479939413}
+  stompArea: {fileID: 0}
+  stompDamage: 10
+  stompDuration: 0.3
+  stompCooldown: 10
 --- !u!70 &3556870080283609932
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -26643,7 +26653,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea16d1144bb226146adb866d24edc490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  glow: {fileID: 4496682064531440704}
+  glow1: {fileID: 0}
+  glow2: {fileID: 0}
   directinalTriangle: {fileID: 4848016678425666741}
   playerText: {fileID: 4971959335754871291}
 --- !u!114 &690668558361250079
