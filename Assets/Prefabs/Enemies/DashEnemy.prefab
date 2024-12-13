@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 8424980281040868951}
   - component: {fileID: 112777825124948672}
   - component: {fileID: 1284862736038383755}
+  - component: {fileID: 1249900501639682539}
   m_Layer: 7
   m_Name: DashEnemy
   m_TagString: Enemy
@@ -302,6 +303,7 @@ MonoBehaviour:
   target: []
   totalTargets: 0
   finalTarget: 0
+  randomTarget: 0
   followTarget: 0
   trackTarget: 1
   targetTransform: {x: 0, y: 0, z: 0}
@@ -485,6 +487,19 @@ MonoBehaviour:
   - {fileID: 6230461460150429407}
   - {fileID: 3272384761916829688}
   - {fileID: 2684378085923273685}
+--- !u!114 &1249900501639682539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516425167985709169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f4b849e7969fc6489d93b72390478b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 6399014864675835795}
 --- !u!1 &4499121468981040283
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,7 +576,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5b04bd85f6229844b8eeb628bff6c7b4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 10.66, y: 10.15}
