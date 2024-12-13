@@ -164,8 +164,13 @@ public class SpecialWeapon : MonoBehaviour
     private void Update()
     {
         attackCooldown -= Time.deltaTime;
-        attacksLeftText.SetText((specialWeaponAttacks - attackCounter).ToString());
+
+        if (attacksLeftText != null)
+        {
+            attacksLeftText.SetText((specialWeaponAttacks - attackCounter).ToString());
+        }
     }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

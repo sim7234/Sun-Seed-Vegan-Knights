@@ -24,6 +24,6 @@ public class TutorialGoal : MonoBehaviour
             Destroy(player);
         }
 
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(0);
     }
 }
