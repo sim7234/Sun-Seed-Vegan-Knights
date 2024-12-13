@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 9150556482096656144}
   m_Layer: 6
   m_Name: BigSword
-  m_TagString: Player
+  m_TagString: BigSword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -88,7 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e20aa28020800f747860e29386be9e34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 25
+  damage: 80
   isTriggerd: 0
 --- !u!61 &3532749991860806408
 BoxCollider2D:
@@ -205,7 +205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndex: 0
-  bloomDamage: 15
+  bloomDamage: 1000
   turnOfOnStart: 1
 --- !u!1 &800290479741952436
 GameObject:

@@ -11548,6 +11548,7 @@ Transform:
   - {fileID: 8182460313060627486}
   - {fileID: 3256888254630113544}
   - {fileID: 3597490689152438076}
+  - {fileID: 7056153943691516830}
   m_Father: {fileID: 5130911862086886225}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3853071684136952862
@@ -12465,7 +12466,19 @@ MonoBehaviour:
     m_ActionId: 795f7a96-e356-440e-9d0d-e2d738cf7ba8
     m_ActionName: ControlActions1/Stomp[/XInputControllerWindows/buttonEast]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8445545096784022156}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 02b0b374-9cbb-4c9c-b914-205d715d0770
     m_ActionName: ControlActions1/Interact[/XInputControllerWindows/buttonNorth]
   m_NeverAutoSwitchControlSchemes: 0
@@ -29890,6 +29903,55 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &8445545096784022156
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7056153943691516830}
+  - component: {fileID: 4577078228782149616}
+  m_Layer: 0
+  m_Name: InteractPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7056153943691516830
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8445545096784022156}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.032, y: -0.349, z: 0}
+  m_LocalScale: {x: 2.0312479, y: 2.0312479, z: 2.0312479}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8367038486258555058}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4577078228782149616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8445545096784022156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18bf0805ebc35c54283396bf0b5346ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableLayer:
+    serializedVersion: 2
+    m_Bits: 4096
+  interactRange: 8
+  interactionPoint: {fileID: 7056153943691516830}
 --- !u!1 &8691832827524815997
 GameObject:
   m_ObjectHideFlags: 0
@@ -35279,10 +35341,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3856953559138683165}
     m_Modifications:
-    - target: {fileID: 403720270228228829, guid: cd47079427774964ab3e001483cf82fc, type: 3}
-      propertyPath: damage
-      value: 80
-      objectReference: {fileID: 0}
     - target: {fileID: 539701319072476842, guid: cd47079427774964ab3e001483cf82fc, type: 3}
       propertyPath: m_Name
       value: BigSword
@@ -35339,10 +35397,6 @@ PrefabInstance:
       propertyPath: rotationObject
       value: 
       objectReference: {fileID: 4283199718185520484}
-    - target: {fileID: 9150556482096656144, guid: cd47079427774964ab3e001483cf82fc, type: 3}
-      propertyPath: bloomDamage
-      value: 80
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -35366,10 +35420,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3856953559138683165}
     m_Modifications:
-    - target: {fileID: 97009802469318414, guid: 1f161b9a3a5acee469dca717f69e0af9, type: 3}
-      propertyPath: bloomDamage
-      value: 80
-      objectReference: {fileID: 0}
     - target: {fileID: 2650767230876090150, guid: 1f161b9a3a5acee469dca717f69e0af9, type: 3}
       propertyPath: rb
       value: 

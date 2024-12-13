@@ -14795,7 +14795,7 @@ GameObject:
   - component: {fileID: 97009802469318414}
   m_Layer: 6
   m_Name: BigSpear
-  m_TagString: Player
+  m_TagString: BigSpear
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14969,5 +14969,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndex: 0
-  bloomDamage: 15
+  bloomDamage: 1000
   turnOfOnStart: 1
