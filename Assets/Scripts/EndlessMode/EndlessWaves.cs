@@ -33,6 +33,11 @@ public class EndlessWaves : MonoBehaviour
     int swarmLimitBasic;
 
     int playerAmount;
+
+    private void startWave()
+    {
+        waveActive = true;
+    }
     void Start()
     {
 
@@ -43,6 +48,7 @@ public class EndlessWaves : MonoBehaviour
         }
 
         wavesScript = GetComponent<SpawnWaves>();
+        Invoke(nameof(startWave), 1);
     }
 
 

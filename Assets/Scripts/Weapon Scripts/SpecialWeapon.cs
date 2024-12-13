@@ -32,7 +32,7 @@ public class SpecialWeapon : MonoBehaviour
     private AudioClip spearThrustSound;
 
     private AudioSource audioSource;
-    
+
     private PlayerInput playerInput;
     private InputAction fireAction;
     private InputAction pickUpAction;
@@ -49,7 +49,7 @@ public class SpecialWeapon : MonoBehaviour
         {
             audioSource = gameObject.AddComponent<AudioSource>();
         }
-        
+
         playerInput = GetComponent<PlayerInput>();
         if (playerInput != null)
         {
@@ -63,7 +63,7 @@ public class SpecialWeapon : MonoBehaviour
         if (fireAction != null)
         {
             fireAction.Enable();
-            fireAction.performed += Fire; 
+            fireAction.performed += Fire;
         }
         if (pickUpAction != null)
         {
@@ -103,7 +103,10 @@ public class SpecialWeapon : MonoBehaviour
                 bigSpear.SetActive(false);
 
                 specialWeaponAttacks = specialWeaponAttacksBase / 3;
-                attacksLeftText.gameObject.SetActive(true);
+                if (attacksLeftText != null)
+                {
+                    attacksLeftText.gameObject.SetActive(true);
+                }
             }
             else if (weaponPickupsInRange[0].GetComponent<WeaponPickup>().GetWeaponType() == WeaponType.Spear)
             {
@@ -112,7 +115,10 @@ public class SpecialWeapon : MonoBehaviour
                 bigSword.SetActive(false);
 
                 specialWeaponAttacks = specialWeaponAttacksBase;
-                attacksLeftText.gameObject.SetActive(true);
+                if (attacksLeftText != null)
+                {
+                    attacksLeftText.gameObject.SetActive(true);
+                }
             }
 
             baseWeapon.SetActive(false);
@@ -143,7 +149,7 @@ public class SpecialWeapon : MonoBehaviour
             attackCooldown = 1.25f;
             //Debug.Log("Big swing");
         }
-        
+
         if (bigSpear.activeSelf && attackCooldown <= 0)
         {
             attackCounter++;
@@ -185,7 +191,7 @@ public class SpecialWeapon : MonoBehaviour
     {
         if (collision.GetComponent<WeaponPickup>() != null && collision.CompareTag("WeaponPickup"))
         {
-            if(weaponPickupsInRange.Contains(collision.gameObject))
+            if (weaponPickupsInRange.Contains(collision.gameObject))
             {
                 weaponPickupsInRange.Remove(collision.gameObject);
                 GetComponent<PlantSeedSystem>().cantPlant = false;
@@ -197,7 +203,7 @@ public class SpecialWeapon : MonoBehaviour
     {
         if (swordSwingSound != null && audioSource != null)
         {
-            audioSource.PlayOneShot(swordSwingSound); 
+            audioSource.PlayOneShot(swordSwingSound);
         }
     }
 
@@ -205,7 +211,7 @@ public class SpecialWeapon : MonoBehaviour
     {
         if (spearThrustSound != null && audioSource != null)
         {
-            audioSource.PlayOneShot(spearThrustSound); 
+            audioSource.PlayOneShot(spearThrustSound);
         }
     }
 
@@ -230,7 +236,10 @@ public class SpecialWeapon : MonoBehaviour
     {
         if (bigSword.activeSelf || bigSpear.activeSelf)
         {
-            attacksLeftText.gameObject.SetActive(false);
+            if (attacksLeftText != null)
+            {
+                attacksLeftText.gameObject.SetActive(false);
+            }
             bigSword.SetActive(false);
             bigSpear.SetActive(false);
             baseWeapon.SetActive(true);

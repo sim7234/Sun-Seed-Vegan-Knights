@@ -2460,7 +2460,7 @@ MonoBehaviour:
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
   m_HideEditorLogs: 0
-  m_NavMeshData: {fileID: 23800000, guid: b044fcfbccdbab64c848a50d27281592, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 71da1808ad1a7a9458462d7b2ab133a1, type: 2}
 --- !u!4 &598806550
 Transform:
   m_ObjectHideFlags: 0
@@ -3914,6 +3914,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 830817141}
+  - component: {fileID: 830817142}
   m_Layer: 0
   m_Name: CombatPoint
   m_TagString: Untagged
@@ -3937,6 +3938,19 @@ Transform:
   - {fileID: 1820688204}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &830817142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830817140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8047bca6cd6ea5a41a4119d197fbb438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 6
 --- !u!1 &832172246
 GameObject:
   m_ObjectHideFlags: 0
@@ -9041,6 +9055,7 @@ MonoBehaviour:
   deapthMin: -22
   angleMax: 11
   angleMin: 3
+  playerCount: 0
   players: []
 --- !u!1 &2044336287
 GameObject:

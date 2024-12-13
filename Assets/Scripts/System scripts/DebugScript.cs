@@ -62,6 +62,7 @@ public class DebugScript : MonoBehaviour
         {
             killPlayers();
         }
+
         if (Input.GetKeyDown(KeyCode.Keypad0))
         {
             resetPathfinding();
@@ -109,6 +110,7 @@ public class DebugScript : MonoBehaviour
 
         foreach (GameObject enemy in enemyArray)
         {
+            if (enemy.GetComponent<Health>()!= null)
             enemy.GetComponent<Health>().TakeDamage(enemy.GetComponent<Health>().maxHealth);
         }
     }
@@ -144,8 +146,16 @@ public class DebugScript : MonoBehaviour
 
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
 
+        CameraSystem cameraScript = FindAnyObjectByType<CameraSystem>();
+        cameraScript.playerCount = 0;
+        
+        cameraScript.FindTargets();
+        int i = 0;
+
         foreach (GameObject p in players)
         {
+            i++;
+            cameraScript.players.Remove(p);
             Destroy(p);
         }
     }

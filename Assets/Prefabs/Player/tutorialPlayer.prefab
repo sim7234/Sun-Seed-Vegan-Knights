@@ -171,7 +171,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5478368589574827822, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
       propertyPath: specialWeaponAttacksBase
-      value: 100
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5485992378578483934, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
       propertyPath: m_AnchorMax.x

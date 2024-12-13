@@ -34,12 +34,11 @@ public class CameraSystem : MonoBehaviour
     
     [Space]
     [Header("Player info")]
-    private int playerCount;
+    [HideInInspector] public int playerCount;
 
     private isTarget[] targets = new isTarget[3];
 
-    [SerializeField]
-    private List<GameObject> players = new List<GameObject>();
+    public List<GameObject> players = new List<GameObject>();
 
     private void Start()
     {
@@ -65,7 +64,7 @@ public class CameraSystem : MonoBehaviour
     }
    
     
-    private void FindTargets()
+    public void FindTargets()
     {
         targets = FindObjectsOfType<isTarget>();
 
@@ -116,18 +115,22 @@ public class CameraSystem : MonoBehaviour
 
         for (int i = 0; i < players.Count; i++)
         {
-            Vector3 playerPositons = players[i].transform.position;
-            
-            if(!focusLevel.focusBounds.Contains(playerPositons))
+            if (players[i] != null)
             {
-                float playerX = Mathf.Clamp(playerPositons.x, focusLevel.focusBounds.min.x, focusLevel.focusBounds.max.x);
-                float playerY = Mathf.Clamp(playerPositons.y, focusLevel.focusBounds.min.y, focusLevel.focusBounds.max.y);
-                float playerZ = Mathf.Clamp(playerPositons.z, focusLevel.focusBounds.min.z, focusLevel.focusBounds.max.z);
-                playerPositons = new Vector3(playerX, playerY, playerZ);
-            }
+                Vector3 playerPositons = players[i].transform.position;
 
-            totalPositions += playerPositons;
-            playerBounds.Encapsulate(playerPositons);
+                if (!focusLevel.focusBounds.Contains(playerPositons))
+                {
+                    float playerX = Mathf.Clamp(playerPositons.x, focusLevel.focusBounds.min.x, focusLevel.focusBounds.max.x);
+                    float playerY = Mathf.Clamp(playerPositons.y, focusLevel.focusBounds.min.y, focusLevel.focusBounds.max.y);
+                    float playerZ = Mathf.Clamp(playerPositons.z, focusLevel.focusBounds.min.z, focusLevel.focusBounds.max.z);
+                    playerPositons = new Vector3(playerX, playerY, playerZ);
+                }
+
+                totalPositions += playerPositons;
+                playerBounds.Encapsulate(playerPositons);
+            }
+            
         }
 
         avarageCeneter = (totalPositions / players.Count);
