@@ -156,6 +156,7 @@ MonoBehaviour:
   hitSound: {fileID: 8300000, guid: 340dd37fae7514c499dbd20603c7fcac, type: 3}
   EpelepticFilterOn: 0
   talkToMissionMaster: 0
+  endlessMode: 0
 --- !u!50 &-5038671019410468480
 Rigidbody2D:
   serializedVersion: 4
@@ -289,7 +290,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 4
-  m_Speed: 4
+  m_Speed: 6
   m_Acceleration: 2
   avoidancePriority: 0
   m_AngularSpeed: 120
@@ -316,6 +317,7 @@ MonoBehaviour:
   target: []
   totalTargets: 0
   finalTarget: 0
+  randomTarget: 0
   followTarget: 0
   trackTarget: 1
   targetTransform: {x: 0, y: 0, z: 0}

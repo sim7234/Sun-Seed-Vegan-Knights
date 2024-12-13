@@ -11922,7 +11922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a79ce0dc6840bb49ac52a8a1607d9bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 30
+  moveSpeed: 45
   rotationSpeed: 1
   curve:
     serializedVersion: 2
@@ -12130,7 +12130,7 @@ MonoBehaviour:
       m_Calls: []
   swordSwingSound: {fileID: 8300000, guid: 18811a636cdf3184bba5ac5851db6421, type: 3}
   swordDashAttack: {fileID: 0}
-  attackCooldown: 0.8
+  attackCooldown: 0.6
   baseWeaponMoveScript: {fileID: 288850003479939413}
   stompArea: {fileID: 4873579821093086420}
   stompDamage: 10

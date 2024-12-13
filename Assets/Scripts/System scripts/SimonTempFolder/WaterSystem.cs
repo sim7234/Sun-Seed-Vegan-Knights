@@ -12,7 +12,7 @@ public class WaterSystem : MonoBehaviour
 
     public float currentWater;
 
-    float wateringCooldown = 0.035f;
+    float wateringCooldown = 0.012f;
     //this value is changed from PlantSeedSystem to make sure you cant water at the same time you plant.
     [HideInInspector] public float wateringTimer;
 
@@ -64,12 +64,12 @@ public class WaterSystem : MonoBehaviour
 
         if (playersWaterImage.fillAmount > waterPercentage)
         {
-            playersWaterImage.fillAmount -= Time.deltaTime * 0.4f;
+            playersWaterImage.fillAmount -= Time.deltaTime * 0.8f;
         }
 
         if (playersWaterImage.fillAmount < waterPercentage)
         {
-            playersWaterImage.fillAmount += Time.deltaTime * 0.2f;
+            playersWaterImage.fillAmount += Time.deltaTime * 0.4f;
         }
     }
     void refillWater()

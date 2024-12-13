@@ -391,7 +391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6289e05915f9b7498788ff3d688cffb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpeed: 2
+  baseSpeed: 3
   retreatSpeed: 0.75
   whenToRetreat: 15
   retreating: 0
