@@ -156,7 +156,13 @@ public class WaterObjective : MonoBehaviour
                 Health targetHealth = target.GetComponent<Health>();
                 if (targetHealth != null)
                 {
-                    if (targetHealth.GetCurrentHealth() <= 150)
+                    float targetCurrentHealth = targetHealth.GetCurrentHealth();
+
+                    if (targetCurrentHealth <= 5)
+                    {
+                        targetHealth.TakeDamage(150);
+                    }
+                    else if (targetCurrentHealth <= 150)
                     {
                         yield return StartCoroutine(DragTargetToFrog(target));
                         targetHealth.TakeDamage(150);
