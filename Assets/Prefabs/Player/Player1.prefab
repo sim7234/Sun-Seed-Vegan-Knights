@@ -12009,7 +12009,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bigSword: {fileID: 3131349570624323539}
   bigSpear: {fileID: 2422993599085478142}
-  specialWeaponAttacksBase: 5
+  specialWeaponAttacksBase: 12
   attackCooldown: 0
   baseWeapon: {fileID: 7790897372868414741}
   weaponPickupsInRange: []

@@ -165,6 +165,10 @@ PrefabInstance:
       propertyPath: chargeDuration
       value: 2.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5478368589574827822, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
+      propertyPath: specialWeaponAttacksBase
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 5485992378578483934, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -179,6 +183,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7107893933753096804, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
       propertyPath: maxWater
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 7107893933753096804, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
+      propertyPath: currentWater
       value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 8503630816615383961, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
