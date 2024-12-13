@@ -218,6 +218,7 @@ MonoBehaviour:
   hitSound: {fileID: 8300000, guid: 340dd37fae7514c499dbd20603c7fcac, type: 3}
   EpelepticFilterOn: 1
   talkToMissionMaster: 0
+  endlessMode: 0
 --- !u!114 &224198753787193531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,6 +250,7 @@ MonoBehaviour:
   target: []
   totalTargets: 0
   finalTarget: 0
+  randomTarget: 0
   followTarget: 1
   trackTarget: 1
   targetTransform: {x: 0, y: 0, z: 0}
@@ -264,7 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6289e05915f9b7498788ff3d688cffb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpeed: 1
+  baseSpeed: 2
   retreatSpeed: 1.5
   whenToRetreat: 40
   retreating: 0
@@ -309,7 +311,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1.5
-  m_Speed: 1.5
+  m_Speed: 4
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

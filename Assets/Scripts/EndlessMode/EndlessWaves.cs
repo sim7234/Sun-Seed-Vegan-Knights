@@ -35,12 +35,11 @@ public class EndlessWaves : MonoBehaviour
     int playerAmount;
     void Start()
     {
-        difficultyMultiplier = 2f;
 
         if (FindAnyObjectByType<SaveData>() != null)
         {
             playerAmount = FindAnyObjectByType<SaveData>().playerAmount;
-            difficultyMultiplier += playerAmount * 2;
+            difficultyMultiplier += playerAmount;
         }
 
         wavesScript = GetComponent<SpawnWaves>();

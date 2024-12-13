@@ -26,7 +26,7 @@ public class DashAttack : MonoBehaviour
 
     Collider2D collider;
 
-    [SerializeField] GameObject dashIndicator;
+    [SerializeField] GameObject dashRotationPoint;
 
     Rigidbody2D rb;
 
@@ -39,7 +39,7 @@ public class DashAttack : MonoBehaviour
         knockbackscript = GetComponent<Knockback>();
         collider = GetComponent<Collider2D>();
         rb = GetComponent<Rigidbody2D>();
-        dashIndicator.SetActive(false);
+        dashRotationPoint.SetActive(false);
         pathfindingScript = GetComponent<Pathfinding>();
         enemyAttacksScript = GetComponent<EnemyAttacks>();
         damageCompnent = GetComponent<Damage>();
@@ -85,7 +85,7 @@ public class DashAttack : MonoBehaviour
         if (dashing == true)
         {
             lockRotationLocation = transform.position;
-            dashIndicator.SetActive(true);
+            dashRotationPoint.SetActive(true);
 
             if (setup == true)
             {
@@ -93,7 +93,7 @@ public class DashAttack : MonoBehaviour
             }
 
             windUpTimer += Time.deltaTime;
-            dashIndicator.transform.position = lockRotationLocation;
+            dashRotationPoint.transform.position = lockRotationLocation;
 
             if (windUpTimer >= dashWindupTime )
             {
@@ -113,8 +113,8 @@ public class DashAttack : MonoBehaviour
         knockbackscript.enabled = true;
         damageCompnent.enabled = true;
         collider.isTrigger = true;
-        dashIndicator.SetActive(false);
-        rb.AddForce(dashIndicator.transform.up * dashPower, ForceMode2D.Impulse);
+        dashRotationPoint.SetActive(false);
+        rb.AddForce(dashRotationPoint.transform.up * dashPower, ForceMode2D.Impulse);
     }
 
 
@@ -126,7 +126,7 @@ public class DashAttack : MonoBehaviour
         rb.velocity = Vector2.zero;
 
         lockRotationLocation = transform.position;
-        dashIndicator.transform.position = transform.position;
+        dashRotationPoint.transform.position = transform.position;
 
         windUpTimer = 0;
         setup = true;
@@ -143,7 +143,7 @@ public class DashAttack : MonoBehaviour
         targetPosition.y = targetPosition.y - transform.position.y;
 
         float angle = Mathf.Atan2(targetPosition.y, targetPosition.x) * Mathf.Rad2Deg;
-        dashIndicator.transform.rotation = Quaternion.Euler(0, 0, angle + -90);
+        dashRotationPoint.transform.rotation = Quaternion.Euler(0, 0, angle + -90);
 
         lockRotationLocation = transform.position;
         setup = false;

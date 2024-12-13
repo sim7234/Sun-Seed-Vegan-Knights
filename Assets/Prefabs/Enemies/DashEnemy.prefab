@@ -320,7 +320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distenceToTarget: 0
-  distanceToAttack: 20
+  distanceToAttack: 60
   isAttacking: 0
   withinDistance: 0
 --- !u!114 &2369945561958132068
@@ -339,7 +339,7 @@ MonoBehaviour:
   dashTime: 0.75
   dashPower: 6
   dashCooldown: 4
-  dashIndicator: {fileID: 5910768304150022312}
+  dashRotationPoint: {fileID: 5910768304150022312}
 --- !u!114 &4790872568561083539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -393,7 +393,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseSpeed: 3
   retreatSpeed: 0.75
-  whenToRetreat: 15
+  whenToRetreat: 40
   retreating: 0
 --- !u!114 &8424980281040868951
 MonoBehaviour:

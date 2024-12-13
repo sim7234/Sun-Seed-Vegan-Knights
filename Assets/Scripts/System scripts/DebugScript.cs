@@ -53,6 +53,11 @@ public class DebugScript : MonoBehaviour
         {
             goToSandbox();
         }
+        if (Input.GetKeyDown(KeyCode.Keypad6))
+        {
+            goToEndless();
+        }
+
         if (Input.GetKeyDown(KeyCode.KeypadEnter))
         {
             killPlayers();
@@ -65,7 +70,7 @@ public class DebugScript : MonoBehaviour
         {
             infiniteHealth();
         }
-        if(Input.GetKeyDown(KeyCode.Keypad9))
+        if (Input.GetKeyDown(KeyCode.Keypad9))
         {
             RegainAllStats();
         }
@@ -91,7 +96,10 @@ public class DebugScript : MonoBehaviour
         }
     }
 
-    
+    void goToEndless()
+    {
+        SceneManager.LoadScene("EndlessMode");
+    }
 
     void goToMenu()
     {
