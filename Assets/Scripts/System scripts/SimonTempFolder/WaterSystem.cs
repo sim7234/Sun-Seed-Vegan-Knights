@@ -43,8 +43,8 @@ public class WaterSystem : MonoBehaviour
     }
     void Update()
     {
-        waterOutLineImage.transform.position = Camera.main.WorldToScreenPoint(new Vector3(gameObject.transform.position.x,gameObject.transform.position.y 
-            + gameObject.transform.localScale.y + 0.3f,0));
+        waterOutLineImage.transform.position = Camera.main.WorldToScreenPoint(new Vector3(gameObject.transform.position.x, gameObject.transform.position.y
+            + gameObject.transform.localScale.y + 0.3f, 0));
 
         changeImageFill();
         refillWater();      
