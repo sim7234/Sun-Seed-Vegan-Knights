@@ -94,6 +94,23 @@ public class DebugScript : MonoBehaviour
         {
             Instantiate(enemies[3], mousePos, Quaternion.identity);
         }
+
+        if (Input.GetKeyDown(KeyCode.KeypadPeriod))
+        {
+
+            KillAllEnemies();
+        }
+
+    }
+
+    void KillAllEnemies()
+    {
+        GameObject[] enemyArray = GameObject.FindGameObjectsWithTag("Enemy");
+
+        foreach (GameObject enemy in enemyArray)
+        {
+            enemy.GetComponent<Health>().TakeDamage(enemy.GetComponent<Health>().maxHealth);
+        }
     }
 
     void goToEndless()
@@ -103,22 +120,22 @@ public class DebugScript : MonoBehaviour
 
     void goToMenu()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene("Menu");
     }
 
     void goToHub()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("True Hub");
     }
 
     void goToLevel1()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Kevin Tutorial");
     }
 
     void goToSandbox()
     {
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene("Sandbox");
     }
 
     void killPlayers()
