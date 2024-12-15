@@ -24,6 +24,6 @@ public class TutorialGoal : MonoBehaviour
             Destroy(player);
         }
 
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("True Hub");
     }
 }

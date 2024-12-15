@@ -15,6 +15,10 @@ public class WallBreakWeapon : MonoBehaviour
             specialWeapon.DisableSpecialWeapon();
             StartCoroutine(ActivateObjectsAfterDelay());
         }
+        else
+        {
+            StartCoroutine(ActivateObjectsAfterDelay());
+        }
     }
 
     private IEnumerator ActivateObjectsAfterDelay()

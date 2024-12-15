@@ -52,9 +52,39 @@ public class PlayerAttack : MonoBehaviour
     private void Awake()
     {
         playerControls = new PlayerInputActions();
-        
-        playerControls.ControlActions1.Stomp.performed += ctx => Stomp();
 
+        playerControls.ControlActions1.Fire.performed += ctx =>
+        {
+            if (ctx.duration >= 0.3f) 
+            {
+                FireHold();
+            }
+            else
+            {
+                FireTap();
+            }
+        };
+
+        playerControls.ControlActions1.Stomp.performed += ctx => Stomp();
+    }
+
+    private void FireTap()
+    {
+        Attack();
+    }
+
+    private void FireHold()
+    {
+        StartCoroutine(HoldAttackSequence());
+    }
+
+    private IEnumerator HoldAttackSequence()
+    {
+        while (playerControls.ControlActions1.Fire.ReadValue<float>() > 0)
+        {
+            Fire(); 
+            yield return new WaitForSeconds(attackCooldown); 
+        }
     }
     private void Start()
     {

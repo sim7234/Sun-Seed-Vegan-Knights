@@ -24,20 +24,23 @@ public class InvisibleWall : MonoBehaviour
         wallCollider = GetComponent<Collider2D>();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!isDisappearing && 
-            (collision.collider.CompareTag(bigSwordTag) || collision.collider.CompareTag(bigSpearTag)))
+            (collision.CompareTag(bigSwordTag) || collision.CompareTag(bigSpearTag)))
         {
-            SpecialWeapon specialWeapon = collision.collider.GetComponentInParent<SpecialWeapon>();
+            SpecialWeapon specialWeapon = collision.GetComponentInParent<SpecialWeapon>();
 
-            if (specialWeapon != null && specialWeapon.IsWieldingSword() && specialWeapon.IsAttacking())
+            if (specialWeapon != null && specialWeapon.IsAttacking())
             {
-                TakeDamage(25f);
-            }
-            else if (specialWeapon != null && specialWeapon.IsWieldingSpear() && specialWeapon.IsAttacking())
-            {
-                TakeDamage(25f);
+                if (specialWeapon.IsWieldingSword())
+                {
+                    TakeDamage(25f); 
+                }
+                else if (specialWeapon.IsWieldingSpear())
+                {
+                    TakeDamage(25f); 
+                }
             }
         }
     }

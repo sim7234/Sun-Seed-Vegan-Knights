@@ -326,7 +326,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""fe18dfbe-4cd0-4c59-923a-0201b03eab8d"",
                     ""path"": ""<Gamepad>/rightShoulder"",
-                    ""interactions"": ""Hold"",
+                    ""interactions"": ""Hold(duration=0.3),Press"",
                     ""processors"": """",
                     ""groups"": ""Control"",
                     ""action"": ""Fire"",

@@ -12,6 +12,7 @@ TagManager:
   - BigSword
   - Interact
   - BigSpear
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - TemporaryCameraTarget
   - Interact
   - BigSpear
-  - 
+  - Wall
   - 
   - 
   - 
