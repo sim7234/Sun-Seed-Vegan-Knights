@@ -413,7 +413,7 @@ MonoBehaviour:
   maxHealth: 80
   currentHealth: 0
   bloodOnHit: {fileID: 1240254011838071449, guid: 41925829a7d4e9f44b90f9db56482cec, type: 3}
-  deathEffect: {fileID: 1240254011838071449, guid: a8a005973de14ea47810af5564db808b, type: 3}
+  deathEffect: {fileID: 1240254011838071449, guid: 9abd4c5dd71cde54d86b9bf9fda6be55, type: 3}
   characterSprite: {fileID: 963201380123006881}
   hitSound: {fileID: 8300000, guid: fcb9875eaa67889438deee66421055b4, type: 3}
   EpelepticFilterOn: 1
@@ -471,6 +471,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 783cbae38164d0f4bb241c9e3c745220, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
   slightlyDamaged: {r: 1, g: 0.8745098, b: 0.8745098, a: 1}
   damaged: {r: 0.83137256, g: 0.5294118, b: 0.5294118, a: 1}
   almostDead: {r: 0.6156863, g: 0.33333334, b: 0.33333334, a: 1}
@@ -726,7 +727,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c94a1ae5607e6fa49ab66189ffda9a7d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9a200bf24641c834fa1e9a498162a01e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
