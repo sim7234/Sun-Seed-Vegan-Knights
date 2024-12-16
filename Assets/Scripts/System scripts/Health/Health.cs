@@ -17,8 +17,10 @@ public class Health : MonoBehaviour
     [SerializeField]
     private SpriteRenderer characterSprite;
 
-    [SerializeField]
-    private AudioClip hitSound;
+   [SerializeField]
+    private List<AudioClip> hitSounds;
+    private static int maxSimultaneousSounds = 5; 
+    private static int currentPlayingSounds = 0;
 
     private AudioSource audioSource;
 
@@ -117,11 +119,6 @@ public class Health : MonoBehaviour
             Destroy(newBlood, 0.8f);
         }
 
-        if (audioSource != null)
-        {
-            audioSource.pitch = Random.Range(0.90f, 1.1f);
-            audioSource.PlayOneShot(hitSound);
-        }
 
         if (agent != null)
         {

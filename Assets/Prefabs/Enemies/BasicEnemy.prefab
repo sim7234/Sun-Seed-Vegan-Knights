@@ -523,7 +523,13 @@ MonoBehaviour:
   bloodOnHit: {fileID: 1240254011838071449, guid: 41925829a7d4e9f44b90f9db56482cec, type: 3}
   deathEffect: {fileID: 1240254011838071449, guid: 9abd4c5dd71cde54d86b9bf9fda6be55, type: 3}
   characterSprite: {fileID: 7375913918595709568}
-  hitSound: {fileID: 8300000, guid: fcb9875eaa67889438deee66421055b4, type: 3}
+  hitSounds:
+  - {fileID: 8300000, guid: 5b6366041c820294bbfd43ce34f629d6, type: 3}
+  - {fileID: 8300000, guid: 13fa509599d6f524fbbf661a3a5ef340, type: 3}
+  - {fileID: 8300000, guid: 1dc8c4d5204682044ab37f4c74334dcf, type: 3}
+  - {fileID: 8300000, guid: 5378ee7a6c057e64ea27cdc7bb3821a0, type: 3}
+  - {fileID: 8300000, guid: b7c903ddb458a044595d04d59fef98d6, type: 3}
+  deathSoundClip: {fileID: 8300000, guid: 5b6366041c820294bbfd43ce34f629d6, type: 3}
   EpelepticFilterOn: 1
   talkToMissionMaster: 1
   endlessMode: 0
