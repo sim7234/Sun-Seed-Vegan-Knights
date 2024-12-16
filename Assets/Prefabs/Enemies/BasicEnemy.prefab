@@ -528,6 +528,12 @@ MonoBehaviour:
   talkToMissionMaster: 1
   endlessMode: 0
   onHitFrameChange: {fileID: 6795622847077957193}
+  bloodOnDeath:
+  - {fileID: 8342241877115311513, guid: bc5cafd32c6bac24eb5894aff9cd2032, type: 3}
+  - {fileID: 7940939451509185941, guid: 323900eff2fa8714587ddc5005db45cb, type: 3}
+  - {fileID: 1343136504665672930, guid: 585c62beec6f206479ae042b387cea88, type: 3}
+  - {fileID: 5372137512989785311, guid: 070833e5a5811d04ca67defd6d0fa818, type: 3}
+  - {fileID: 5388485240132040257, guid: 51291ecd87a2e4e4faddddbb11eb2d50, type: 3}
 --- !u!195 &1137979767170368613
 NavMeshAgent:
   m_ObjectHideFlags: 0

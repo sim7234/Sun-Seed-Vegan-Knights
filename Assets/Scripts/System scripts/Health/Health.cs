@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
@@ -39,6 +40,9 @@ public class Health : MonoBehaviour
 
     [SerializeField]
     private GameObject onHitFrameChange;
+
+    [SerializeField]
+    private List<GameObject> bloodOnDeath = new List<GameObject>();
 
     void Start()
     {
@@ -108,6 +112,8 @@ public class Health : MonoBehaviour
         if (bloodOnHit != null)
         {
             GameObject newBlood = Instantiate(bloodOnHit, transform.position, Quaternion.identity);
+            
+
             Destroy(newBlood, 0.8f);
         }
 
@@ -158,6 +164,10 @@ public class Health : MonoBehaviour
         {
             GameObject newDeathEffect = Instantiate(deathEffect, transform.position, Quaternion.identity);
             Destroy(newDeathEffect, 100f);
+            if (bloodOnDeath.Count >= 1)
+            {
+                GameObject newGroundBlood = Instantiate(bloodOnDeath[Random.Range(0, bloodOnDeath.Count)], transform.position, Quaternion.identity);
+            }
         }
         if (gameObject.CompareTag("Enemy") && talkToMissionMaster == true)
         {
