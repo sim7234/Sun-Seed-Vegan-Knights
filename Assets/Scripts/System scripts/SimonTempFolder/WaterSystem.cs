@@ -125,6 +125,10 @@ public class WaterSystem : MonoBehaviour
                 }
             }
         }
+        else if (other.GetComponent<WaterObjective>() != null)
+        {
+            DisplayWater(true);
+        }
 
         var waterObjective = other.GetComponent<WaterObjective>();
         if (waterObjective != null && waterButtonHeld && wateringTimer <= 0)
@@ -150,6 +154,10 @@ public class WaterSystem : MonoBehaviour
         }
 
         if (other.GetComponent<CanWater>() != null)
+        {
+            DisplayWater(false);
+        }
+        else if (other.GetComponent<WaterObjective>() != null)
         {
             DisplayWater(false);
         }

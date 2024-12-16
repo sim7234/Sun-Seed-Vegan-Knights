@@ -40,6 +40,8 @@ public class EndlessWaves : MonoBehaviour
     }
     void Start()
     {
+        numberOfEnemies = 0;
+        spawnerPoints = köttbulleSwarmCost;
 
         if (FindAnyObjectByType<SaveData>() != null)
         {
