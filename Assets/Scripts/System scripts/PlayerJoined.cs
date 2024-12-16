@@ -51,6 +51,13 @@ public class PlayerJoined : MonoBehaviour
             playerInput.SwitchCurrentActionMap("ControlActions1");
         }
 
+        PlayerAttack playerAttack = playerInput.GetComponent<PlayerAttack>();
+        if (playerAttack == null)
+        {
+            playerAttack = playerInput.gameObject.AddComponent<PlayerAttack>();
+        }
+        playerAttack.Initialize(playerInput);
+
         if (messageText != null)
         {
             messageText.text = "Use   <voffset=0.3em><sprite=3></voffset>to move and   <voffset=0.3em><sprite=0></voffset>to rotate";

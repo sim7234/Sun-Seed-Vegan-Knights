@@ -29,13 +29,13 @@ public class PlayerAttack : MonoBehaviour
     private float attackCounterReset;
 
     private float lastAttackTime = 0f;
-
-    public PlayerInputActions playerControls;
+    private PlayerInput playerInput;
+    private InputAction fireAction;
 
     [SerializeField]
     private MoveOnAttack baseWeaponMoveScript;
 
-        [SerializeField]
+    [SerializeField]
     private GameObject stompArea; 
 
     [SerializeField]
@@ -48,12 +48,11 @@ public class PlayerAttack : MonoBehaviour
     private float stompCooldown = 10f; 
     private bool canStomp = true; 
 
-
     private void Awake()
     {
-        playerControls = new PlayerInputActions();
-
-        playerControls.ControlActions1.Fire.performed += ctx =>
+        playerInput = GetComponent<PlayerInput>();
+        fireAction = playerInput.actions["Fire"];
+        fireAction.performed += ctx =>
         {
             if (ctx.duration >= 0.3f) 
             {
@@ -65,12 +64,34 @@ public class PlayerAttack : MonoBehaviour
             }
         };
 
-        playerControls.ControlActions1.Stomp.performed += ctx => Stomp();
+        playerInput.actions["Stomp"].performed += ctx => Stomp();
+    }
+
+    public void Initialize(PlayerInput input)
+    {
+        playerInput = input;
+        fireAction = playerInput.actions["Fire"];
+        fireAction.performed += ctx =>
+        {
+            if (ctx.duration >= 0.3f)
+            {
+                FireHold();
+            }
+            else
+            {
+                FireTap();
+            }
+        };
+        playerInput.actions["Stomp"].performed += ctx => Stomp();
     }
 
     private void FireTap()
     {
-        Attack();
+        if (Time.time >= lastAttackTime + attackCooldown)
+        {
+            Attack();
+            lastAttackTime = Time.time;
+        }
     }
 
     private void FireHold()
@@ -80,7 +101,7 @@ public class PlayerAttack : MonoBehaviour
 
     private IEnumerator HoldAttackSequence()
     {
-        while (playerControls.ControlActions1.Fire.ReadValue<float>() > 0)
+        while (fireAction.ReadValue<float>() > 0)
         {
             Fire(); 
             yield return new WaitForSeconds(attackCooldown); 
@@ -230,18 +251,14 @@ public class PlayerAttack : MonoBehaviour
 
     private void OnEnable()
     {
-        playerControls.ControlActions1.Stomp.performed += ctx =>
-        {
-            Debug.Log("Stomp");
-            Stomp();
-        };
-        playerControls.Enable();
+        fireAction?.Enable();
+        playerInput.actions["Stomp"].Enable();
     }
 
     private void OnDisable()
     {
-        playerControls.ControlActions1.Stomp.performed -= ctx => Stomp();
-        playerControls.Disable();
+        fireAction?.Disable();
+        playerInput.actions["Stomp"].Disable();
     }
 
     private void PlaySwordSwingSound()
