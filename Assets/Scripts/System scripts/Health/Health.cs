@@ -81,12 +81,13 @@ public class Health : MonoBehaviour
     public void TakeDamage(float damageAmount)
     {
         StartCoroutine(BlinkOnHit());
+
         if (gameObject.CompareTag("Player"))
         {
             currentHealth -= 1;
             GetComponent<HeartHealthDisplay>()?.OnTakeDamage();
             GetComponent<Collider2D>().enabled = false;
-            
+
             Invoke(nameof(TurnOnCollider), 1f);
         }
         else
@@ -94,31 +95,24 @@ public class Health : MonoBehaviour
             currentHealth -= damageAmount;
         }
 
+        PlayRandomHitSound(); 
+
         if (GetComponent<EnemyHealthDisplay>() != null)
         {
             GetComponent<EnemyHealthDisplay>().UpdateSprite();
             if (characterSprite != null)
             {
-                if (onHitFrameChange != null)
-                {
-                    baseColor = onHitFrameChange.GetComponent<SpriteRenderer>().color;
-
-                }
-                else
-                {
-                    baseColor = characterSprite.color;
-                }
+                baseColor = onHitFrameChange != null
+                    ? onHitFrameChange.GetComponent<SpriteRenderer>().color
+                    : characterSprite.color;
             }
         }
 
         if (bloodOnHit != null)
         {
             GameObject newBlood = Instantiate(bloodOnHit, transform.position, Quaternion.identity);
-            
-
             Destroy(newBlood, 0.8f);
         }
-
 
         if (agent != null)
         {
@@ -154,6 +148,29 @@ public class Health : MonoBehaviour
             }
         }
     }
+
+    private void PlayRandomHitSound()
+    {
+        if (hitSounds.Count > 0 && currentPlayingSounds < maxSimultaneousSounds)
+        {
+            AudioClip randomHitSound = hitSounds[Random.Range(0, hitSounds.Count)];
+            if (audioSource != null)
+            {
+                currentPlayingSounds++; 
+
+                audioSource.clip = randomHitSound;
+                audioSource.pitch = Random.Range(0.8f, 1.2f); 
+                audioSource.PlayOneShot(randomHitSound);
+
+                StartCoroutine(ResetPlayingSound(randomHitSound.length)); 
+        }
+    }
+
+private IEnumerator ResetPlayingSound(float clipLength)
+{
+    yield return new WaitForSeconds(clipLength);
+    currentPlayingSounds = Mathf.Max(0, currentPlayingSounds - 1); 
+}
 
     public void Die()
     {
