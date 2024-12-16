@@ -33,7 +33,7 @@ public class LookOnSystem : MonoBehaviour
             if(targetsInRange.Count > 0 && Vector3.Distance(currentTarget.transform.position, transform.position) < minDistanceForAttack)
             {
                 GetComponent<PlayerAttack>().DashAttack(); 
-                StartCoroutine(TurnOfLockOn());
+                StartCoroutine(TurnOfLockOn()); 
             }
         }
     }
