@@ -8,6 +8,8 @@ using static UnityEngine.GridBrushBase;
 
 public class PlayerAnimations : MonoBehaviour
 {
+
+    [Header("Running")]
     [SerializeField]
     private GameObject moveRight;
 
@@ -16,10 +18,12 @@ public class PlayerAnimations : MonoBehaviour
 
     [SerializeField]
     private GameObject moveUp;
-    
+
     [SerializeField]
     private GameObject moveDown;
 
+    [Space]
+    [Header("Idle")]
     [SerializeField]
     private GameObject idleRight;
 
@@ -32,8 +36,25 @@ public class PlayerAnimations : MonoBehaviour
     [SerializeField]
     private GameObject idleDown;
 
+    [Space]
+    [Header("Attacking")]
+    [SerializeField]
+    private GameObject attackRight;
+
+    [SerializeField]
+    private GameObject attackLeft;
+
+    [SerializeField]
+    private GameObject attackUp;
+
+    [SerializeField]
+    private GameObject attackDown;
+
 
     private Rigidbody2D rb2d;
+
+    private bool attacking;
+
 
     private void Start()
     {
@@ -44,13 +65,21 @@ public class PlayerAnimations : MonoBehaviour
     {
         float angle = Mathf.Atan2(rb2d.velocity.normalized.y, rb2d.velocity.normalized.x) * Mathf.Rad2Deg;
 
-        if(rb2d.velocity.magnitude > 0.4f)
+        if (!attacking)
         {
-            running(angle);
+
+            if (rb2d.velocity.magnitude > 0.4f)
+            {
+                running(angle);
+            }
+            else
+            {
+                Idle(angle);
+            }
         }
         else
         {
-            Idle(angle);
+            Attacking(angle);
         }
     }
 
@@ -60,6 +89,11 @@ public class PlayerAnimations : MonoBehaviour
         idleLeft.SetActive(false);
         idleDown.SetActive(false);
         idleUp.SetActive(false);
+
+        attackUp.SetActive(false);
+        attackDown.SetActive(false);
+        attackRight.SetActive(false);
+        attackLeft.SetActive(false);
 
         if (angle > -45 && angle < 45)
         {
@@ -101,7 +135,12 @@ public class PlayerAnimations : MonoBehaviour
         moveDown.SetActive(false);
         moveRight.SetActive(false);
         moveLeft.SetActive(false);
-        
+
+        attackUp.SetActive(false);
+        attackDown.SetActive(false);
+        attackRight.SetActive(false);
+        attackLeft.SetActive(false);
+
         if (angle > -45 && angle < 45)
         {
             idleLeft.SetActive(false);
@@ -135,4 +174,61 @@ public class PlayerAnimations : MonoBehaviour
             idleDown.SetActive(true);
         }
     }
+
+    public void StartAttack()
+    {
+        attacking = true;
+        Invoke(nameof(attackingOver), 0.2f);
+    }
+    private void Attacking(float angle)
+    {
+        idleRight.SetActive(false);
+        idleLeft.SetActive(false);
+        idleDown.SetActive(false);
+        idleUp.SetActive(false);
+
+        moveUp.SetActive(false);
+        moveDown.SetActive(false);
+        moveRight.SetActive(false);
+        moveLeft.SetActive(false);
+
+        if (angle > -45 && angle < 45)
+        {
+            attackLeft.SetActive(false);
+            attackUp.SetActive(false);
+            attackDown.SetActive(false);
+
+            attackRight.SetActive(true);
+        }
+        else if (angle > 45 && angle < 135)
+        {
+            attackRight.SetActive(false);
+            attackLeft.SetActive(false);
+            attackDown.SetActive(false);
+
+            attackUp.SetActive(true);
+        }
+        else if (angle > 135 && angle < 180 || angle < -135 && angle > -180)
+        {
+            attackUp.SetActive(false);
+            attackDown.SetActive(false);
+            attackRight.SetActive(false);
+
+            attackLeft.SetActive(true);
+        }
+        else if (angle > -135 && angle < -45)
+        {
+            attackRight.SetActive(false);
+            attackLeft.SetActive(false);
+            attackUp.SetActive(false);
+
+            attackDown.SetActive(true);
+        }
+    }
+
+    private void attackingOver()
+    {
+        attacking = false;
+    }
+
 }

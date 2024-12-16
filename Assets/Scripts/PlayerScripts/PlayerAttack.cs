@@ -149,6 +149,7 @@ public class PlayerAttack : MonoBehaviour
             if(weapon.activeSelf)
             {
                 PlaySwordSwingSound();
+                GetComponent<PlayerAnimations>().StartAttack();
             }
 
             switch(attackCounter)

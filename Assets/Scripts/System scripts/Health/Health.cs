@@ -37,6 +37,9 @@ public class Health : MonoBehaviour
     public bool endlessMode = false;
     private Coroutine stopRumbleAfterTimeCoroutine;
 
+    [SerializeField]
+    private GameObject onHitFrameChange;
+
     void Start()
     {
         if (FindAnyObjectByType<MissionMaster>() == null)
@@ -45,9 +48,16 @@ public class Health : MonoBehaviour
         }
 
         currentHealth = maxHealth;
-        if(characterSprite != null)
+        if (characterSprite != null)
         {
-            baseColor = characterSprite.color;
+            if (onHitFrameChange != null)
+            {
+                baseColor = onHitFrameChange.GetComponent<SpriteRenderer>().color;
+            }
+            else
+            {
+                baseColor = characterSprite.color;
+            }
         }
         if (GetComponent<AudioSource>() != null)
         {
@@ -64,6 +74,7 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(float damageAmount)
     {
+        StartCoroutine(BlinkOnHit());
         if (gameObject.CompareTag("Player"))
         {
             currentHealth -= 1;
@@ -79,15 +90,18 @@ public class Health : MonoBehaviour
         if (GetComponent<EnemyHealthDisplay>() != null)
         {
             GetComponent<EnemyHealthDisplay>().UpdateSprite();
-            if(characterSprite != null)
+            if (characterSprite != null)
             {
-                baseColor = characterSprite.color;
-            }
-        }
+                if (onHitFrameChange != null)
+                {
+                    baseColor = onHitFrameChange.GetComponent<SpriteRenderer>().color;
 
-        if(gameObject.activeSelf)
-        {
-            StartCoroutine(BlinkOnHit());
+                }
+                else
+                {
+                    baseColor = characterSprite.color;
+                }
+            }
         }
 
         if (bloodOnHit != null)
@@ -96,13 +110,13 @@ public class Health : MonoBehaviour
             Destroy(newBlood, 0.8f);
         }
 
-        if(audioSource != null)
+        if (audioSource != null)
         {
             audioSource.pitch = Random.Range(0.90f, 1.1f);
             audioSource.PlayOneShot(hitSound);
         }
 
-        if(agent != null)
+        if (agent != null)
         {
             agent.velocity = Vector3.zero;
         }
@@ -113,7 +127,7 @@ public class Health : MonoBehaviour
         }
         else if (gameObject.CompareTag("Player") && controllerPad != null)
         {
-           RumblePulse(1.0f, 1.0f, 0.1f);
+            RumblePulse(1.0f, 1.0f, 0.1f);
         }
     }
 
@@ -139,12 +153,12 @@ public class Health : MonoBehaviour
 
     public void Die()
     {
-        if(deathEffect != null)
+        if (deathEffect != null)
         {
             GameObject newDeathEffect = Instantiate(deathEffect, transform.position, Quaternion.identity);
             Destroy(newDeathEffect, 0.8f);
         }
-        if(gameObject.CompareTag("Enemy") && talkToMissionMaster == true)
+        if (gameObject.CompareTag("Enemy") && talkToMissionMaster == true)
         {
             MissionMaster.Instance.EnemyKilled(this.gameObject);
         }
@@ -167,7 +181,7 @@ public class Health : MonoBehaviour
                 if (GetComponent<WorthScore>() != null)
                 {
                     if (FindAnyObjectByType<Score>() != null)
-                    FindAnyObjectByType<Score>().score += GetComponent<WorthScore>().howMuchScore;
+                        FindAnyObjectByType<Score>().score += GetComponent<WorthScore>().howMuchScore;
                 }
             }
             Destroy(gameObject);
@@ -181,7 +195,26 @@ public class Health : MonoBehaviour
 
     private IEnumerator BlinkOnHit()
     {
-        if(!EpelepticFilterOn && characterSprite != null)
+        if (onHitFrameChange != null)
+        {
+            onHitFrameChange.SetActive(true);
+            characterSprite.enabled = false;
+
+            if (!EpelepticFilterOn && characterSprite != null)
+            {
+                onHitFrameChange.GetComponent<SpriteRenderer>().color = Color.red;
+                yield return new WaitForSeconds(0.05f);
+                onHitFrameChange.GetComponent<SpriteRenderer>().color = baseColor;
+                onHitFrameChange.SetActive(false);
+            }
+            else
+            {
+                yield return new WaitForSeconds(0.05f);
+                onHitFrameChange.SetActive(false);
+            }
+            characterSprite.enabled = true;
+        }
+        else
         {
             characterSprite.color = Color.red;
             yield return new WaitForSeconds(0.01f);
