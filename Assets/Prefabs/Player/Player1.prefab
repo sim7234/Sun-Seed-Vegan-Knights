@@ -11806,7 +11806,7 @@ MonoBehaviour:
   bloodOnHit: {fileID: 1240254011838071449, guid: 41925829a7d4e9f44b90f9db56482cec, type: 3}
   deathEffect: {fileID: 1240254011838071449, guid: a8a005973de14ea47810af5564db808b, type: 3}
   characterSprite: {fileID: 5383747409787903520}
-  hitSound: {fileID: 8300000, guid: 340dd37fae7514c499dbd20603c7fcac, type: 3}
+  hitSound: {fileID: 8300000, guid: 5c72f5804b72a6f40b4f0f532393dc78, type: 3}
   EpelepticFilterOn: 1
   talkToMissionMaster: 0
   endlessMode: 0
@@ -11944,9 +11944,9 @@ MonoBehaviour:
   onFire:
     m_PersistentCalls:
       m_Calls: []
-  swordSwingSound: {fileID: 8300000, guid: 18811a636cdf3184bba5ac5851db6421, type: 3}
+  swordSwingSound: {fileID: 8300000, guid: 07795ac1643fbaa4ab5ad3b7f0110b8b, type: 3}
   swordDashAttack: {fileID: 0}
-  attackCooldown: 0.6
+  attackCooldown: 1
   baseWeaponMoveScript: {fileID: 288850003479939413}
   stompArea: {fileID: 4873579821093086420}
   stompDamage: 10
@@ -29578,8 +29578,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 18811a636cdf3184bba5ac5851db6421, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 07795ac1643fbaa4ab5ad3b7f0110b8b, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

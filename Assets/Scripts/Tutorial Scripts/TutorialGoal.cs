@@ -21,7 +21,7 @@ public class TutorialGoal : MonoBehaviour
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
         foreach (GameObject player in players)
         {
-            Destroy(player);
+            //Destroy(player);
         }
 
         SceneManager.LoadScene("True Hub");
