@@ -74,7 +74,10 @@ public class CameraSystem : MonoBehaviour
             {
                 if(target.isActiveAndEnabled)
                 {
-                    players.Add(target.gameObject);
+                    if (players.Contains(target.gameObject) == false)
+                    {
+                        players.Add(target.gameObject);
+                    }
                 }
             }
         }

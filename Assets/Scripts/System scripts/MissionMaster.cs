@@ -10,22 +10,16 @@ public class MissionMaster : MonoBehaviour
     [HideInInspector] public int enemyCounter;
 
 
-    [SerializeField]
+    
     private List<GameObject> enemies = new List<GameObject>();
 
-    [SerializeField]
-    private TextMeshProUGUI enemyCounterText;
 
-    [SerializeField]
-    private GameObject cam;    
-    
+    [Header("Mission set up")]
     [SerializeField]
     private GameObject focusPoint;
 
     [SerializeField]
     private List<GameObject> combatPoints = new List<GameObject>();
-
-    private int combatsComplete;
 
     [SerializeField]
     private List<GameObject> combatSpawnObject = new List<GameObject>();
@@ -36,6 +30,24 @@ public class MissionMaster : MonoBehaviour
     [SerializeField]
     private List<GameObject> actionBetweenLevels = new List<GameObject>();
 
+    private int combatsComplete;
+
+
+
+    [SerializeField]
+    private int respawnsForMission = 4;
+
+    [Space]
+    [Header ("Mission master required")]
+
+    [SerializeField]
+    private GameObject nextStagePointer;
+
+    private float currentCameraSpeedModifire = 3;
+
+    [HideInInspector]
+    public bool combatOver = true;
+
     [SerializeField]
     private AudioClip stageCompleteSound;
 
@@ -45,13 +57,10 @@ public class MissionMaster : MonoBehaviour
     private TextMeshProUGUI countdownText;
 
     [SerializeField]
-    private int respawnsForMission = 4;
+    private TextMeshProUGUI enemyCounterText;
 
-    [SerializeField]
-    private GameObject nextStagePointer;
 
-    [SerializeField]
-    private float currentCameraSpeedModifire = 3;
+    private bool onFinalStage;
 
     private void Awake()
     {
@@ -60,6 +69,7 @@ public class MissionMaster : MonoBehaviour
 
     private void Start()
     {
+        onFinalStage = false;
         combatsComplete = 0;
         SaveData.Instance.playerDeathsBeforeGameOver = respawnsForMission;
         SaveData.Instance.UpdateRespawnCount();
@@ -69,19 +79,33 @@ public class MissionMaster : MonoBehaviour
             audioSource = gameObject.AddComponent<AudioSource>();
         }
 
-        StartCoroutine(ActivateCombatAfterDelay(10f, 0));
+        //StartCoroutine(ActivateCombatAfterDelay(10f, 0));
 
-        if (Objectives.Count >= 1)
+        //if (Objectives.Count >= 1)
+        //{
+        //    if (Objectives.Count >= combatsComplete)
+        //    {
+        //        if (Objectives[combatsComplete] != null)
+        //        {
+        //            Objectives[combatsComplete].SetActive(true);
+        //            Objectives[combatsComplete].GetComponent<Objective>().StartObjectiveEvent();
+        //        }
+        //    }
+        //}
+
+        combatOver = true;
+    }
+    private void Update()
+    {
+        if(onFinalStage && enemies.Count <= 0)
         {
-            if (Objectives.Count >= combatsComplete)
-            {
-                if (Objectives[combatsComplete] != null)
-                {
-                    Objectives[combatsComplete].SetActive(true);
-                    Objectives[combatsComplete].GetComponent<Objective>().StartObjectiveEvent();
-                }
-            }
+            WinScreen();
         }
+    }
+
+    private void WinScreen()
+    {
+        SceneManager.LoadScene(0);
     }
     public void AddEnemy(GameObject enemyObject)
     {
@@ -91,7 +115,7 @@ public class MissionMaster : MonoBehaviour
     }
     public void EnemyKilled(GameObject aEnemy)
     {
-        if(enemies.Contains(aEnemy))
+        if (enemies.Contains(aEnemy))
         {
             enemies.Remove(aEnemy);
             enemyCounter -= 1;
@@ -99,7 +123,9 @@ public class MissionMaster : MonoBehaviour
             if (enemyCounter <= 0)
             {
                 PlayStageCompleteSound();
-                NextStage();
+                //NextStage();
+
+                combatOver = true;
             }
         }
     }
@@ -107,6 +133,11 @@ public class MissionMaster : MonoBehaviour
     private void UpdateText()
     {
         enemyCounterText.SetText(enemyCounter.ToString());
+    }
+
+    public void NewStageByTrigger(GameObject point)
+    {
+        StartCoroutine(MoveCameraToNextPoint(focusPoint, focusPoint.transform.position, point));
     }
 
     private void NextStage()
@@ -129,29 +160,64 @@ public class MissionMaster : MonoBehaviour
             {
                 currentCameraSpeedModifire = combatPoints[combatsComplete].GetComponent<CameraSpeedModifier>().speed;
             }
-            StartCoroutine(MoveCameraToNextPoint(cam, cam.transform.position, combatPoints[combatsComplete].transform.position));
-        //    StartCoroutine(MoveCameraToNextPoint(focusPoint, focusPoint.transform.position, combatPoints[combatsComplete].transform.position));
+            StartCoroutine(MoveCameraToNextPoint(focusPoint, focusPoint.transform.position, combatPoints[combatsComplete]));
+            //    StartCoroutine(MoveCameraToNextPoint(focusPoint, focusPoint.transform.position, combatPoints[combatsComplete].transform.position));
         }
     }
 
-    private IEnumerator MoveCameraToNextPoint(GameObject obj, Vector3 start, Vector3 end)
+    private IEnumerator MoveCameraToNextPoint(GameObject obj, Vector3 start, GameObject end)
     {
-        float duration = Vector3.Distance(start, end) / currentCameraSpeedModifire;
+        combatOver = false;
+        float duration = Vector3.Distance(start, end.transform.position) / currentCameraSpeedModifire;
         float timeElapsed = 0;
         nextStagePointer.SetActive(true);
         while (timeElapsed < duration)
         {
-            obj.transform.position = Vector3.Lerp(start, end, timeElapsed / duration);
+            obj.transform.position = Vector3.Lerp(start, end.transform.position, timeElapsed / duration);
             timeElapsed += Time.deltaTime;
             yield return null;
             nextStagePointer.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, 0);
-            nextStagePointer.transform.up = (end - nextStagePointer.transform.position).normalized;
+            nextStagePointer.transform.up = (end.transform.position - nextStagePointer.transform.position).normalized;
         }
 
-        obj.transform.position = end;
+        obj.transform.position = end.transform.position;
         nextStagePointer.SetActive(false);
         currentCameraSpeedModifire = 3;
-        StartCoroutine(ActivateCombatAfterDelay(10f, combatsComplete));
+
+        int matchingIndex = FindMatchingIndex(end);
+        if(end.GetComponent<FinalMissionPoint>() != null)
+        {
+            StartCoroutine(ActivateCombatAfterDelay(0.0f, matchingIndex));
+            end.GetComponent<FinalMissionPoint>().FinalMission();
+            onFinalStage = true;
+        }
+        else
+        {
+            StartCoroutine(ActivateCombatAfterDelay(4f, matchingIndex));
+        }
+        
+       
+    }
+    private int FindMatchingIndex(GameObject obj)
+    {
+        int returnIndex = -1;
+        for (int i = 0; i < combatPoints.Count; i++)
+        {
+            if (combatPoints[i] == obj)
+            {
+                returnIndex = i;
+                break;
+            }
+        }
+        if(returnIndex == -1)
+        {
+            Debug.Log("No match found");   
+            return 0;
+        }
+        else
+        {
+            return returnIndex;
+        }
     }
     private IEnumerator ActivateCombatAfterDelay(float delay, int combatIndex)
     {
