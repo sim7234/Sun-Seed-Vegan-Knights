@@ -79,8 +79,9 @@ public class Health : MonoBehaviour
         {
             currentHealth -= 1;
             GetComponent<HeartHealthDisplay>()?.OnTakeDamage();
-            //GetComponent<Collider2D>().enabled = false;
-            //Invoke(nameof(TurnOnCollider), 1f);
+            GetComponent<Collider2D>().enabled = false;
+            
+            Invoke(nameof(TurnOnCollider), 1f);
         }
         else
         {
@@ -127,7 +128,7 @@ public class Health : MonoBehaviour
         }
         else if (gameObject.CompareTag("Player") && controllerPad != null)
         {
-            RumblePulse(1.0f, 1.0f, 0.1f);
+            RumblePulse(2.0f, 4.0f, 0.2f);
         }
     }
 
@@ -203,13 +204,13 @@ public class Health : MonoBehaviour
             if (!EpelepticFilterOn && characterSprite != null)
             {
                 onHitFrameChange.GetComponent<SpriteRenderer>().color = Color.red;
-                yield return new WaitForSeconds(0.05f);
+                yield return new WaitForSeconds(0.2f);
                 onHitFrameChange.GetComponent<SpriteRenderer>().color = baseColor;
                 onHitFrameChange.SetActive(false);
             }
             else
             {
-                yield return new WaitForSeconds(0.05f);
+                yield return new WaitForSeconds(0.2f);
                 onHitFrameChange.SetActive(false);
             }
             characterSprite.enabled = true;
@@ -217,7 +218,7 @@ public class Health : MonoBehaviour
         else
         {
             characterSprite.color = Color.red;
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(0.04f);
             characterSprite.color = baseColor;
         }
     }

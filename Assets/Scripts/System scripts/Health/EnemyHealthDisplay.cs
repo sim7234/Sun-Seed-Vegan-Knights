@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyHealthDisplay : MonoBehaviour
 {
+    [SerializeField]
     private SpriteRenderer sprite;
     private Health health;
 
@@ -18,7 +19,10 @@ public class EnemyHealthDisplay : MonoBehaviour
 
     private void Start()
     {
-        sprite = GetComponent<SpriteRenderer>();
+        if(sprite == null)
+        {
+            sprite = GetComponent<SpriteRenderer>();
+        }
         health = GetComponent<Health>();
     }
    
