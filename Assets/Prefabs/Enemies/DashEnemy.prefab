@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e25760f8658e3b4ab70d5369e5e64ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1000
+  maxHealth: 2000
   currentHealth: 0
   bloodOnHit: {fileID: 1240254011838071449, guid: 41925829a7d4e9f44b90f9db56482cec, type: 3}
   deathEffect: {fileID: 1240254011838071449, guid: a8a005973de14ea47810af5564db808b, type: 3}
@@ -455,10 +455,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 599290347712b3c4bae5b7cd329c0c96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bloomResistance: 400
+  bloomResistance: 500
   hasBloomed1: 0
   BloomExplosionVFX: {fileID: 1240254011838071449, guid: 20efd42d40277384687f4f2a74a87383, type: 3}
-  divideHealthBy: 5
+  divideHealthBy: 10
   flowerPelletsObject1: {fileID: 494011705319241371}
   flowerPelletsObject2: {fileID: 1627341430117491623}
   flowerPelletsObject3: {fileID: 6927066790787219826}
