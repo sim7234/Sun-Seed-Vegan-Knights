@@ -413,7 +413,7 @@ MonoBehaviour:
   maxHealth: 80
   currentHealth: 0
   bloodOnHit: {fileID: 1240254011838071449, guid: 41925829a7d4e9f44b90f9db56482cec, type: 3}
-  deathEffect: {fileID: 1240254011838071449, guid: a8a005973de14ea47810af5564db808b, type: 3}
+  deathEffect: {fileID: 1240254011838071449, guid: 9abd4c5dd71cde54d86b9bf9fda6be55, type: 3}
   characterSprite: {fileID: 963201380123006881}
   hitSound: {fileID: 8300000, guid: 18e659edc45c9ad40bcffc453bb19912, type: 3}
   EpelepticFilterOn: 1

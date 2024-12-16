@@ -157,7 +157,7 @@ public class Health : MonoBehaviour
         if (deathEffect != null)
         {
             GameObject newDeathEffect = Instantiate(deathEffect, transform.position, Quaternion.identity);
-            Destroy(newDeathEffect, 0.8f);
+            Destroy(newDeathEffect, 100f);
         }
         if (gameObject.CompareTag("Enemy") && talkToMissionMaster == true)
         {
