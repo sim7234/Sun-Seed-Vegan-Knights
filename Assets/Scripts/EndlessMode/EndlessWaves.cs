@@ -34,6 +34,8 @@ public class EndlessWaves : MonoBehaviour
 
     int playerAmount;
 
+    //this is changed in EndlessScaleWithWaves
+    [HideInInspector] public bool buffDashEnemy = false;
     private void startWave()
     {
         waveActive = true;
@@ -82,10 +84,18 @@ public class EndlessWaves : MonoBehaviour
         swarmLimit = 0 - Mathf.FloorToInt(difficultyMultiplier);
         swarmLimitBasic = 0 - Mathf.FloorToInt(difficultyMultiplier);
 
+        int moduloWave3 = waveNumber % 3;
+
+        if (moduloWave3 == 0)
+        {
+            dashAmount++;
+            buffDashEnemy = true;
+        }
+
     }
 
     void StartWave()
-    {
+    {    
         wavesScript.basicAmount = basicAmount;
         wavesScript.köttbulleAmount = köttbulleAmount;
         wavesScript.rangedAmount = rangedAmount;
@@ -132,8 +142,9 @@ public class EndlessWaves : MonoBehaviour
 
                 if (rnd == 0)
                 {
-                    spawnerPoints -= dashCost;
-                    dashAmount++;
+                    basicAmount += 2;
+                    köttbulleAmount += 2;
+                    rangedAmount += 2;
                 }
             }
         }

@@ -3683,6 +3683,7 @@ MonoBehaviour:
   rangedCost: 0.3
   dashCost: 0.8
   spawnerPoints: 0
+  buffDashEnemy: 0
 --- !u!114 &303261181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6028,7 +6029,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 589575138}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 2
   m_Camera: {fileID: 0}
@@ -14601,12 +14602,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1382096850}
   - component: {fileID: 1382096849}
-  - component: {fileID: 1382096851}
   - component: {fileID: 1382096853}
-  - component: {fileID: 1382096854}
-  - component: {fileID: 1382096855}
-  - component: {fileID: 1382096856}
-  - component: {fileID: 1382096857}
   m_Layer: 0
   m_Name: trad1
   m_TagString: Objective
@@ -14682,27 +14678,6 @@ Transform:
   - {fileID: 589575142}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1382096851
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1382096846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e25760f8658e3b4ab70d5369e5e64ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 2000
-  currentHealth: 0
-  bloodOnHit: {fileID: 0}
-  deathEffect: {fileID: 0}
-  characterSprite: {fileID: 0}
-  hitSound: {fileID: 0}
-  EpelepticFilterOn: 0
-  talkToMissionMaster: 0
-  endlessMode: 0
 --- !u!58 &1382096853
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -14738,58 +14713,6 @@ CircleCollider2D:
   m_Offset: {x: 1.9139199, y: -5.042436}
   serializedVersion: 2
   m_Radius: 3.7772188
---- !u!114 &1382096854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1382096846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db270f78a1ede644190bf94f0e74a47c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1382096855
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1382096846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9853db36df8517d45a393d1365f2f6b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healAmount: 5
-  healCooldown: 2
---- !u!114 &1382096856
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1382096846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b664b499cbca7d14aa3701ad52807ee0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hpBar: {fileID: 1676458877}
-  parent: {fileID: 589575138}
---- !u!114 &1382096857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1382096846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32dbc3bc09b7b954d85493a9dd88b9d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1383991283
 GameObject:
   m_ObjectHideFlags: 0

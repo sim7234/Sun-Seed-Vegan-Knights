@@ -20,6 +20,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: DashEnemy Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4790872568561083539, guid: 7e1a7e45e9581db48867944c5311208b, type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 6664301478171992985}
+    - target: {fileID: 4790872568561083539, guid: 7e1a7e45e9581db48867944c5311208b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8853922157738319403, guid: 7e1a7e45e9581db48867944c5311208b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.7336988
@@ -70,6 +78,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 516425167985709169, guid: 7e1a7e45e9581db48867944c5311208b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6038124588094774283}
+    - targetCorrespondingSourceObject: {fileID: 516425167985709169, guid: 7e1a7e45e9581db48867944c5311208b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -8331321068191215095}
   m_SourcePrefab: {fileID: 100100000, guid: 7e1a7e45e9581db48867944c5311208b, type: 3}
 --- !u!1 &259855328313867387 stripped
 GameObject:
@@ -101,3 +112,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   howMuchScore: 1000
+--- !u!114 &-8331321068191215095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259855328313867387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b3aeb4f4b255f141b6f2d94e1670f37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  increaseScoreBy: 100
+  minimumCooldown: 0.2
+--- !u!212 &6664301478171992985 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6399014864675835795, guid: 7e1a7e45e9581db48867944c5311208b, type: 3}
+  m_PrefabInstance: {fileID: 338197678250781706}
+  m_PrefabAsset: {fileID: 0}
