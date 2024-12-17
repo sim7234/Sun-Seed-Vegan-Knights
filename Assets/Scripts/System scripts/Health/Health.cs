@@ -158,17 +158,17 @@ public class Health : MonoBehaviour
     private void PlayRandomHitSound()
     {
         if (hitSounds.Count > 0 && currentPlayingSounds < maxSimultaneousSounds)
-        {
-            AudioClip randomHitSound = hitSounds[Random.Range(0, hitSounds.Count)];
-            if (audioSource != null)
             {
-                currentPlayingSounds++;
+                AudioClip randomHitSound = hitSounds[Random.Range(0, hitSounds.Count)];
+                if (audioSource != null)
+                {
+                    currentPlayingSounds++; 
 
-                audioSource.clip = randomHitSound;
-                audioSource.pitch = Random.Range(0.8f, 1.2f);
-                audioSource.PlayOneShot(randomHitSound);
+                    audioSource.clip = randomHitSound;
+                    audioSource.pitch = Random.Range(0.8f, 1.2f); 
+                    audioSource.PlayOneShot(randomHitSound);
 
-                StartCoroutine(ResetPlayingSound(randomHitSound.length));
+                    StartCoroutine(ResetPlayingSound(randomHitSound.length)); 
             }
         }
     }

@@ -26,7 +26,7 @@ public class WaterObjective : MonoBehaviour
 
     private void Start()
     {
-        currentWater = 250; // starting water
+        currentWater = 1; // starting water
         UpdateProgressUI();
         StartCoroutine(DepleteWater());
     }
