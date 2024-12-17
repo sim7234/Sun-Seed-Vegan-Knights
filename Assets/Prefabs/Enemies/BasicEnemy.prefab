@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c1700008e098ae468f3da206c69f3f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackStrength: 5
+  knockbackStrength: 20
 --- !u!1 &2423242964555548766
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,7 +529,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1dc8c4d5204682044ab37f4c74334dcf, type: 3}
   - {fileID: 8300000, guid: 5378ee7a6c057e64ea27cdc7bb3821a0, type: 3}
   - {fileID: 8300000, guid: b7c903ddb458a044595d04d59fef98d6, type: 3}
-  deathSoundClip: {fileID: 8300000, guid: 5b6366041c820294bbfd43ce34f629d6, type: 3}
   EpelepticFilterOn: 1
   talkToMissionMaster: 1
   endlessMode: 0
@@ -540,6 +539,8 @@ MonoBehaviour:
   - {fileID: 1343136504665672930, guid: 585c62beec6f206479ae042b387cea88, type: 3}
   - {fileID: 5372137512989785311, guid: 070833e5a5811d04ca67defd6d0fa818, type: 3}
   - {fileID: 5388485240132040257, guid: 51291ecd87a2e4e4faddddbb11eb2d50, type: 3}
+  waterDrop: {fileID: 0}
+  WaterValue: 0
 --- !u!195 &1137979767170368613
 NavMeshAgent:
   m_ObjectHideFlags: 0
