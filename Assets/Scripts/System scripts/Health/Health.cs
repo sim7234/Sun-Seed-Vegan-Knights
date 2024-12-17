@@ -220,7 +220,12 @@ public class Health : MonoBehaviour
             {
                 for (int i = 0; i < WaterValue; i++)
                 {
-                    Instantiate(waterDrop, transform.position, Quaternion.identity);
+                    int rnd = Random.Range(1, 4);
+
+                    for (int j = 0; j < rnd; j++)
+                    {
+                        Instantiate(waterDrop, transform.position, Quaternion.identity);
+                    }
                 }
 
             }

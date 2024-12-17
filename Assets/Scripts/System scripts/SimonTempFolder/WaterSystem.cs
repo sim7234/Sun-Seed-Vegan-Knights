@@ -38,8 +38,11 @@ public class WaterSystem : MonoBehaviour
     [SerializeField] Image playersWaterImage;
 
     bool canDisableWater = true;
+
+    float displayWaterTimer;
     void Start()
     {
+        DisplayWater(false);
         waterRefillCooldown = baseWaterRefillCooldown;
         currentWater = maxWater;
         waterRefillTimer = waterRefillCooldown;
@@ -51,6 +54,19 @@ public class WaterSystem : MonoBehaviour
 
         changeImageFill();
         refillWater();
+
+        if (displayWaterTimer > 0)
+        {
+            DisplayWater(true);
+            displayWaterTimer -= Time.deltaTime;
+        }
+        else
+        {
+            if (canDisableWater == true)
+            {
+                DisplayWater(false);
+            }
+        }
     }
     private void Awake()
     {
@@ -131,8 +147,8 @@ public class WaterSystem : MonoBehaviour
         }
         else if (other.GetComponent<WaterObjective>() != null)
         {
-            canDisableWater = false;
             DisplayWater(true);
+            canDisableWater = false;
         }
 
         var waterObjective = other.GetComponent<WaterObjective>();
@@ -175,16 +191,9 @@ public class WaterSystem : MonoBehaviour
 
     public void DisplayDropForTime()
     {
+        displayWaterTimer = 0.5f;
         DisplayWater(true);
-        StartCoroutine(nameof(WaitDisplayDrop));
-    }
-
-
-    private IEnumerator WaitDisplayDrop()
-    {
-        yield return new WaitForSeconds(0.5f);
-        if (canDisableWater == true)
-            DisplayWater(false);
+        
     }
 
     public void OnWater(InputAction.CallbackContext context)

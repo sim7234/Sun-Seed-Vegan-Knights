@@ -13,6 +13,7 @@ TagManager:
   - Interact
   - BigSpear
   - Wall
+  - AttractWater
   layers:
   - Default
   - TransparentFX
@@ -30,7 +31,7 @@ TagManager:
   - BigSpear
   - Wall
   - HeadRollingFloor
-  - 
+  - Water Drops
   - 
   - 
   - 

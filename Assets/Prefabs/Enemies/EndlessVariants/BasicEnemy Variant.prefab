@@ -9,6 +9,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 997164337715888419, guid: cb6c1d0fdca49b04185ed3318fe9cd61, type: 3}
+      propertyPath: waterDrop
+      value: 
+      objectReference: {fileID: 6001740046752183623, guid: ffe2729c7c00c9b44bef8358f3944424, type: 3}
+    - target: {fileID: 997164337715888419, guid: cb6c1d0fdca49b04185ed3318fe9cd61, type: 3}
+      propertyPath: WaterValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 997164337715888419, guid: cb6c1d0fdca49b04185ed3318fe9cd61, type: 3}
       propertyPath: endlessMode
       value: 1
       objectReference: {fileID: 0}
@@ -74,6 +82,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4076701649708178499, guid: cb6c1d0fdca49b04185ed3318fe9cd61, type: 3}
       insertIndex: -1
       addedObject: {fileID: -6280311153189016013}
+    - targetCorrespondingSourceObject: {fileID: 4076701649708178499, guid: cb6c1d0fdca49b04185ed3318fe9cd61, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8539885020288496312}
   m_SourcePrefab: {fileID: 100100000, guid: cb6c1d0fdca49b04185ed3318fe9cd61, type: 3}
 --- !u!1 &136044234089427502 stripped
 GameObject:
@@ -105,3 +116,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   howMuchScore: 75
+--- !u!114 &8539885020288496312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136044234089427502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e0f745fb8698d149a30f3af345536af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

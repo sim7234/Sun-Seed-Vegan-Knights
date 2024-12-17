@@ -84,6 +84,7 @@ GameObject:
   - component: {fileID: 6099218356677875489}
   - component: {fileID: 2970145736370037896}
   - component: {fileID: 6836250361340239303}
+  - component: {fileID: -561433438986083819}
   m_Layer: 7
   m_Name: RangedEnemy
   m_TagString: Enemy
@@ -101,7 +102,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.04, y: -3.78, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.4}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7734785468707168658}
@@ -215,10 +216,14 @@ MonoBehaviour:
   bloodOnHit: {fileID: 1240254011838071449, guid: 41925829a7d4e9f44b90f9db56482cec, type: 3}
   deathEffect: {fileID: 1240254011838071449, guid: 20efd42d40277384687f4f2a74a87383, type: 3}
   characterSprite: {fileID: 6320093891914461404}
-  hitSound: {fileID: 8300000, guid: 340dd37fae7514c499dbd20603c7fcac, type: 3}
+  hitSounds: []
   EpelepticFilterOn: 1
   talkToMissionMaster: 0
   endlessMode: 0
+  onHitFrameChange: {fileID: 0}
+  bloodOnDeath: []
+  waterDrop: {fileID: 6001740046752183623, guid: ffe2729c7c00c9b44bef8358f3944424, type: 3}
+  WaterValue: 5
 --- !u!114 &224198753787193531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -362,6 +367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 783cbae38164d0f4bb241c9e3c745220, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
   slightlyDamaged: {r: 0.4113207, g: 0.17697382, b: 0.16375217, a: 1}
   damaged: {r: 0.6150943, g: 0.18022452, b: 0.16131714, a: 1}
   almostDead: {r: 1, g: 0.017396705, b: 0, a: 1}
@@ -390,6 +396,18 @@ MonoBehaviour:
   - {fileID: 6876465684710197578}
   - {fileID: 2625825292842926189}
   - {fileID: 3195802078376825920}
+--- !u!114 &-561433438986083819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4026458952341622850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e0f745fb8698d149a30f3af345536af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6058974118426098655
 GameObject:
   m_ObjectHideFlags: 0
