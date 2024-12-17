@@ -34,6 +34,9 @@ public class EndlessWaves : MonoBehaviour
 
     int playerAmount;
 
+    float waveTimeLimit = 60;
+    public float waveTimer;
+
     //this is changed in EndlessScaleWithWaves
     [HideInInspector] public bool buffDashEnemy = false;
     private void startWave()
@@ -42,6 +45,7 @@ public class EndlessWaves : MonoBehaviour
     }
     void Start()
     {
+        difficultyMultiplier = 1f;
         numberOfEnemies = 0;
         spawnerPoints = köttbulleSwarmCost;
 
@@ -69,14 +73,27 @@ public class EndlessWaves : MonoBehaviour
         {
             waveActive = true;
         }
+
+        if (totalEnemies > 0)
+        {
+            waveTimer += Time.deltaTime;
+        }
+        if (waveTimer >= waveTimeLimit)
+        {
+            WaveComplete();
+            calculateDifficulty();
+            waveTimer = 0;
+        }
+
     }
 
     void WaveComplete()
     {
+        waveTimer = 0;
         wavesScript.startSpawning = false;
         waveActive = false;
         waveNumber++;
-        difficultyMultiplier += (0.1f * waveNumber);
+        difficultyMultiplier += ((0.05f * playerAmount) * waveNumber);
         spawnerPoints = difficultyMultiplier;
         swarmLimit = 0;
         swarmLimitBasic = 0;

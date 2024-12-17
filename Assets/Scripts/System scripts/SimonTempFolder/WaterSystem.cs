@@ -1,4 +1,6 @@
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -35,6 +37,7 @@ public class WaterSystem : MonoBehaviour
     [SerializeField] Image waterOutLineImage;
     [SerializeField] Image playersWaterImage;
 
+    bool canDisableWater = true;
     void Start()
     {
         waterRefillCooldown = baseWaterRefillCooldown;
@@ -47,7 +50,7 @@ public class WaterSystem : MonoBehaviour
             + gameObject.transform.localScale.y + 0.3f, 0));
 
         changeImageFill();
-        refillWater();      
+        refillWater();
     }
     private void Awake()
     {
@@ -115,6 +118,7 @@ public class WaterSystem : MonoBehaviour
         if (canWater != null)
         {
             DisplayWater(true);
+            canDisableWater = false;
 
             if (waterButtonHeld && wateringTimer <= 0 && canWater.canBeWatered)
             {
@@ -127,6 +131,7 @@ public class WaterSystem : MonoBehaviour
         }
         else if (other.GetComponent<WaterObjective>() != null)
         {
+            canDisableWater = false;
             DisplayWater(true);
         }
 
@@ -143,6 +148,7 @@ public class WaterSystem : MonoBehaviour
         if (other.GetComponent<NaturalWater>() != null)
         {
             DisplayWater(true);
+            canDisableWater = false;
         }
     }
 
@@ -151,16 +157,34 @@ public class WaterSystem : MonoBehaviour
         if (other.GetComponent<NaturalWater>() != null)
         {
             DisplayWater(false);
+            canDisableWater = true;
         }
 
         if (other.GetComponent<CanWater>() != null)
         {
             DisplayWater(false);
+            canDisableWater = true;
         }
         else if (other.GetComponent<WaterObjective>() != null)
         {
             DisplayWater(false);
+            canDisableWater = true;
         }
+    }
+
+
+    public void DisplayDropForTime()
+    {
+        DisplayWater(true);
+        StartCoroutine(nameof(WaitDisplayDrop));
+    }
+
+
+    private IEnumerator WaitDisplayDrop()
+    {
+        yield return new WaitForSeconds(0.5f);
+        if (canDisableWater == true)
+            DisplayWater(false);
     }
 
     public void OnWater(InputAction.CallbackContext context)
@@ -188,7 +212,7 @@ public class WaterSystem : MonoBehaviour
         {
             return false;
         }
-    }   
+    }
 
     void DisplayWater(bool displayWater)
     {

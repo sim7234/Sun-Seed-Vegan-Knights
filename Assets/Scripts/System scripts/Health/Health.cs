@@ -43,9 +43,15 @@ public class Health : MonoBehaviour
     [SerializeField]
     private GameObject onHitFrameChange;
 
+<<<<<<< Updated upstream
     [SerializeField]
     private List<GameObject> bloodOnDeath = new List<GameObject>();
 
+=======
+    [SerializeField] GameObject waterDrop;
+
+    public int WaterValue;
+>>>>>>> Stashed changes
     void Start()
     {
         if (FindAnyObjectByType<MissionMaster>() == null)
@@ -209,6 +215,16 @@ private IEnumerator ResetPlayingSound(float clipLength)
                         FindAnyObjectByType<Score>().score += GetComponent<WorthScore>().howMuchScore;
                 }
             }
+
+            if (GetComponent<DropWaterOnDeath>() != null)
+            {
+                for (int i = 0; i < WaterValue; i++)
+                {
+                    Instantiate(waterDrop, transform.position, Quaternion.identity);
+                }
+
+            }
+
             Destroy(gameObject);
         }
     }

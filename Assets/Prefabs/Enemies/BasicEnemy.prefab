@@ -333,7 +333,11 @@ GameObject:
   - component: {fileID: 1194922765740879506}
   - component: {fileID: 3584761834077132561}
   - component: {fileID: 696941880725087294}
+<<<<<<< Updated upstream
   - component: {fileID: 6695330178681394931}
+=======
+  - component: {fileID: 8274031957818458329}
+>>>>>>> Stashed changes
   m_Layer: 7
   m_Name: BasicEnemy
   m_TagString: Enemy
@@ -534,12 +538,17 @@ MonoBehaviour:
   talkToMissionMaster: 1
   endlessMode: 0
   onHitFrameChange: {fileID: 6795622847077957193}
+<<<<<<< Updated upstream
   bloodOnDeath:
   - {fileID: 8342241877115311513, guid: bc5cafd32c6bac24eb5894aff9cd2032, type: 3}
   - {fileID: 7940939451509185941, guid: 323900eff2fa8714587ddc5005db45cb, type: 3}
   - {fileID: 1343136504665672930, guid: 585c62beec6f206479ae042b387cea88, type: 3}
   - {fileID: 5372137512989785311, guid: 070833e5a5811d04ca67defd6d0fa818, type: 3}
   - {fileID: 5388485240132040257, guid: 51291ecd87a2e4e4faddddbb11eb2d50, type: 3}
+=======
+  waterDrop: {fileID: 6001740046752183623, guid: ffe2729c7c00c9b44bef8358f3944424, type: 3}
+  WaterValue: 3
+>>>>>>> Stashed changes
 --- !u!195 &1137979767170368613
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -673,14 +682,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 3167047894628798470}
+<<<<<<< Updated upstream
 --- !u!82 &6695330178681394931
 AudioSource:
+=======
+--- !u!114 &8274031957818458329
+MonoBehaviour:
+>>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4076701649708178499}
   m_Enabled: 1
+<<<<<<< Updated upstream
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -769,6 +784,12 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+=======
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e0f745fb8698d149a30f3af345536af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+>>>>>>> Stashed changes
 --- !u!1 &6558300269100734190
 GameObject:
   m_ObjectHideFlags: 0
