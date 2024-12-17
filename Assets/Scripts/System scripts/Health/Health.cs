@@ -93,8 +93,8 @@ public class Health : MonoBehaviour
             currentHealth -= 1;
             GetComponent<HeartHealthDisplay>()?.OnTakeDamage();
             GetComponent<Collider2D>().enabled = false;
-
             Invoke(nameof(TurnOnCollider), 1f);
+            StartCoroutine(FreezeGame(0.001f));
         }
         else
         {
@@ -288,5 +288,12 @@ public class Health : MonoBehaviour
     private void TurnOnCollider()
     {
         GetComponent<Collider2D>().enabled = true;
+    }
+
+    private IEnumerator FreezeGame(float time)
+    {
+        Time.timeScale = 0.01f;
+        yield return new WaitForSeconds(time);
+        Time.timeScale = 1;
     }
 }
