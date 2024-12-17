@@ -458,12 +458,8 @@ GameObject:
   - component: {fileID: 3584761834077132561}
   - component: {fileID: 696941880725087294}
   - component: {fileID: 6695330178681394931}
-<<<<<<< Updated upstream
-  - component: {fileID: 4208116088904603096}
-=======
   - component: {fileID: 6071900709546581982}
   - component: {fileID: 1910779451597007481}
->>>>>>> Stashed changes
   m_Layer: 7
   m_Name: BasicEnemy
   m_TagString: Enemy
@@ -906,11 +902,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-<<<<<<< Updated upstream
---- !u!114 &4208116088904603096
-=======
 --- !u!114 &6071900709546581982
->>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -919,11 +911,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 4076701649708178499}
   m_Enabled: 1
   m_EditorHideFlags: 0
-<<<<<<< Updated upstream
-  m_Script: {fileID: 11500000, guid: 9e0f745fb8698d149a30f3af345536af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-=======
   m_Script: {fileID: 11500000, guid: b558383e7fae96846a13ecc9c3417116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -972,7 +959,6 @@ Transform:
   - {fileID: 4482689604166774517}
   m_Father: {fileID: 4135095162753181587}
   m_LocalEulerAnglesHint: {x: 55, y: 0, z: 45}
->>>>>>> Stashed changes
 --- !u!1 &6558300269100734190
 GameObject:
   m_ObjectHideFlags: 0
