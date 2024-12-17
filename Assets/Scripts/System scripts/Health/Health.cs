@@ -95,6 +95,7 @@ public class Health : MonoBehaviour
             GetComponent<Collider2D>().enabled = false;
             Invoke(nameof(TurnOnCollider), 1f);
             StartCoroutine(FreezeGame(0.001f));
+            
         }
         else
         {

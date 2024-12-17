@@ -25,6 +25,20 @@ public class enemyMeleeAttack : MonoBehaviour
     bool canWalk = true;
 
     NavMeshAgent agent;
+
+    [SerializeField]
+    private GameObject walkingSprite;
+    [SerializeField]
+    private GameObject attackingSprite;
+
+    [SerializeField]
+    private GameObject attackEffectPos;
+    [SerializeField]
+    private GameObject attackPS;
+    [SerializeField]
+    private GameObject rotationReference;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,18 +72,21 @@ public class enemyMeleeAttack : MonoBehaviour
 
             enemyAttacksScript.isAttacking = true;
             pathfindingScript.followTarget = false;
-            
+
 
             attackPattern.SetActive(true);
             rotateScript.lockRotation = true;
             canWalk = false;
-            Invoke(nameof(StartMeleeAttack),windUpTime);
+            changeSprite();
+            Invoke(nameof(StartMeleeAttack), windUpTime);
         }
     }
 
     void StartMeleeAttack()
     {
-        
+        attackPS.SetActive(true);
+        attackEffectPos.transform.localEulerAngles = new Vector3(0, 0, rotationReference.transform.localEulerAngles.z + 135 + 90);
+
         attackVisualCollider.enabled = true;
         damageSprite.color = Color.black;
         Invoke(nameof(EndMeleeAttack), resetTime);
@@ -85,5 +102,21 @@ public class enemyMeleeAttack : MonoBehaviour
         enemyAttacksScript.isAttacking = false;
         cannotStartAttack = false;
         canWalk = true;
+        changeSprite();
     }
+
+    private void changeSprite()
+    {
+        if (walkingSprite.activeSelf)
+        {
+            walkingSprite.SetActive(false);
+            attackingSprite.SetActive(true);
+        }
+        else
+        {
+            walkingSprite.SetActive(true);
+            attackingSprite.SetActive(false);
+        }
+    }
+
 }

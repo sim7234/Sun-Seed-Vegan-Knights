@@ -105,6 +105,7 @@ public class MissionMaster : MonoBehaviour
 
     private void WinScreen()
     {
+        SaveData.Instance.completedMission += 1;
         SceneManager.LoadScene(0);
     }
     public void AddEnemy(GameObject enemyObject)

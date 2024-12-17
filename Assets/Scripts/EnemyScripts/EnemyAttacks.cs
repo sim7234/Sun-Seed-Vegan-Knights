@@ -15,8 +15,6 @@ public class EnemyAttacks : MonoBehaviour
 
     NavMeshAgent agent;
 
- 
-
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -49,4 +47,6 @@ public class EnemyAttacks : MonoBehaviour
             withinDistance = false;
         }
     }
+
+   
 }
