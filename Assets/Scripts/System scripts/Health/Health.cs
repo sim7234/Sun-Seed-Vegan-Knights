@@ -17,9 +17,9 @@ public class Health : MonoBehaviour
     [SerializeField]
     private SpriteRenderer characterSprite;
 
-   [SerializeField]
+    [SerializeField]
     private List<AudioClip> hitSounds;
-    private static int maxSimultaneousSounds = 5; 
+    private static int maxSimultaneousSounds = 5;
     private static int currentPlayingSounds = 0;
 
     private AudioSource audioSource;
@@ -43,15 +43,15 @@ public class Health : MonoBehaviour
     [SerializeField]
     private GameObject onHitFrameChange;
 
-<<<<<<< Updated upstream
+
     [SerializeField]
     private List<GameObject> bloodOnDeath = new List<GameObject>();
 
-=======
+
     [SerializeField] GameObject waterDrop;
 
     public int WaterValue;
->>>>>>> Stashed changes
+
     void Start()
     {
         if (FindAnyObjectByType<MissionMaster>() == null)
@@ -101,7 +101,7 @@ public class Health : MonoBehaviour
             currentHealth -= damageAmount;
         }
 
-        PlayRandomHitSound(); 
+        PlayRandomHitSound();
 
         if (GetComponent<EnemyHealthDisplay>() != null)
         {
@@ -162,21 +162,21 @@ public class Health : MonoBehaviour
             AudioClip randomHitSound = hitSounds[Random.Range(0, hitSounds.Count)];
             if (audioSource != null)
             {
-                currentPlayingSounds++; 
+                currentPlayingSounds++;
 
                 audioSource.clip = randomHitSound;
-                audioSource.pitch = Random.Range(0.8f, 1.2f); 
+                audioSource.pitch = Random.Range(0.8f, 1.2f);
                 audioSource.PlayOneShot(randomHitSound);
 
-                StartCoroutine(ResetPlayingSound(randomHitSound.length)); 
+                StartCoroutine(ResetPlayingSound(randomHitSound.length));
+            }
         }
     }
-
-private IEnumerator ResetPlayingSound(float clipLength)
-{
-    yield return new WaitForSeconds(clipLength);
-    currentPlayingSounds = Mathf.Max(0, currentPlayingSounds - 1); 
-}
+    private IEnumerator ResetPlayingSound(float clipLength)
+    {
+        yield return new WaitForSeconds(clipLength);
+        currentPlayingSounds = Mathf.Max(0, currentPlayingSounds - 1);
+    }
 
     public void Die()
     {

@@ -15,6 +15,7 @@ public class DebugScript : MonoBehaviour
 
     private void Start()
     {
+        
         Application.targetFrameRate = 144;
         camera = Camera.main;
     }
