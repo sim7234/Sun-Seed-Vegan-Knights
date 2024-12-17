@@ -106,6 +106,8 @@ public class WaterDrop : MonoBehaviour
 
             if (scoreScript != null)
             scoreScript.score += 1;
+
+            FindAnyObjectByType<WaterSoundController>().amountToPlay++;
         }
 
 
