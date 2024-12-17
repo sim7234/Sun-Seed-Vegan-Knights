@@ -83,8 +83,13 @@ public class WaterDrop : MonoBehaviour
     {
         waterSpeed += Time.deltaTime * 0.05f;
         waterSpeed = Mathf.Clamp01(waterSpeed);
-
-        transform.position = Vector2.MoveTowards(transform.position, target.transform.position, waterSpeed);
+        if (target != null)
+        {
+            if (target.gameObject.activeSelf == true)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, target.transform.position, waterSpeed);
+            }
+        }
     }
 
 
@@ -105,13 +110,13 @@ public class WaterDrop : MonoBehaviour
             Score scoreScript = FindAnyObjectByType<Score>();
 
             if (scoreScript != null)
-            scoreScript.score += 1;
+                scoreScript.score += 1;
 
             FindAnyObjectByType<WaterSoundController>().amountToPlay++;
         }
 
 
-         Destroy(gameObject);
+        Destroy(gameObject);
 
     }
 }
