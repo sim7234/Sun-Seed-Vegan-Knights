@@ -8078,7 +8078,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5539906317129793715, guid: e43fe1cbc5ba9ea479244b018c04a883, type: 3}
       propertyPath: maxWater
-      value: 2000
+      value: 750
       objectReference: {fileID: 0}
     - target: {fileID: 5539906317129793715, guid: e43fe1cbc5ba9ea479244b018c04a883, type: 3}
       propertyPath: frogAnimator
@@ -8098,7 +8098,7 @@ PrefabInstance:
       objectReference: {fileID: 766105944}
     - target: {fileID: 5539906317129793715, guid: e43fe1cbc5ba9ea479244b018c04a883, type: 3}
       propertyPath: waterDepletionRate
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5539906317129793715, guid: e43fe1cbc5ba9ea479244b018c04a883, type: 3}
       propertyPath: frogOpenMouthSprite
