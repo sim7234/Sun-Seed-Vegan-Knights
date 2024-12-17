@@ -37,6 +37,10 @@ public class enemyMeleeAttack : MonoBehaviour
     private GameObject attackPS;
     [SerializeField]
     private GameObject rotationReference;
+    [SerializeField]
+    private GameObject crackedFloorEffect;
+
+
 
 
     // Start is called before the first frame update
@@ -80,12 +84,11 @@ public class enemyMeleeAttack : MonoBehaviour
             changeSprite();
             Invoke(nameof(StartMeleeAttack), windUpTime);
         }
+        attackEffectPos.transform.localEulerAngles = new Vector3(0, 0, rotationReference.transform.localEulerAngles.z);
     }
 
     void StartMeleeAttack()
     {
-        attackPS.SetActive(true);
-        attackEffectPos.transform.localEulerAngles = new Vector3(0, 0, rotationReference.transform.localEulerAngles.z + 135 + 90);
 
         attackVisualCollider.enabled = true;
         damageSprite.color = Color.black;
@@ -116,6 +119,7 @@ public class enemyMeleeAttack : MonoBehaviour
         {
             walkingSprite.SetActive(true);
             attackingSprite.SetActive(false);
+            attackPS.SetActive(false);
         }
     }
 
