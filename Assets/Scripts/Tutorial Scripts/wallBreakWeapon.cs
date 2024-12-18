@@ -15,6 +15,11 @@ public class WallBreakWeapon : MonoBehaviour
             specialWeapon.DisableSpecialWeapon();
             StartCoroutine(ActivateObjectsAfterDelay());
         }
+        else if (specialWeapon != null && specialWeapon.IsWieldingSpear())
+        {
+            specialWeapon.DisableSpecialWeapon();
+            StartCoroutine(ActivateObjectsAfterDelay());
+        }
         else
         {
             StartCoroutine(ActivateObjectsAfterDelay());

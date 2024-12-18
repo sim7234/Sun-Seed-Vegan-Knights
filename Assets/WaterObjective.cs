@@ -125,6 +125,10 @@ public class WaterObjective : MonoBehaviour
 
     private IEnumerator ShootAtTarget(GameObject target)
     {
+        if (target == null || !target.activeInHierarchy)
+        {
+            yield break; 
+        }
         if (tongueLine != null && shootPoint != null)
         {
             if (frogAnimator != null)
@@ -145,6 +149,12 @@ public class WaterObjective : MonoBehaviour
 
                 while (time < distance / shootSpeed)
                 {
+
+                    if (target == null || !target.activeInHierarchy)
+                    {
+                        yield break;
+                    }
+
                     time += Time.deltaTime;
                     Vector2 currentPoint = Vector2.Lerp(startPosition, endPosition, time / (distance / shootSpeed));
                     tongueLine.SetPosition(1, new Vector3(currentPoint.x, currentPoint.y, 0));
@@ -152,24 +162,26 @@ public class WaterObjective : MonoBehaviour
                 }
 
                 tongueLine.SetPosition(1, endPosition);
-
-                Health targetHealth = target.GetComponent<Health>();
-                if (targetHealth != null)
+                if (target != null)
                 {
-                    float targetCurrentHealth = targetHealth.GetCurrentHealth();
+                    Health targetHealth = target.GetComponent<Health>();
+                    if (targetHealth != null)
+                    {
+                        float targetCurrentHealth = targetHealth.GetCurrentHealth();
 
-                    if (targetCurrentHealth <= 5)
-                    {
-                        targetHealth.TakeDamage(150);
-                    }
-                    else if (targetCurrentHealth <= 150)
-                    {
-                        yield return StartCoroutine(DragTargetToFrog(target));
-                        targetHealth.TakeDamage(150);
-                    }
-                    else
-                    {
-                        targetHealth.TakeDamage(150);
+                        if (targetCurrentHealth <= 5)
+                        {
+                            targetHealth.TakeDamage(150);
+                        }
+                        else if (targetCurrentHealth <= 150)
+                        {
+                            yield return StartCoroutine(DragTargetToFrog(target));
+                            targetHealth.TakeDamage(150);
+                        }
+                        else
+                        {
+                            targetHealth.TakeDamage(150);
+                        }
                     }
                 }
 
@@ -186,6 +198,10 @@ public class WaterObjective : MonoBehaviour
     }
     private IEnumerator DragTargetToFrog(GameObject target)
     {
+        if (target == null || !target.activeInHierarchy)
+        {
+            yield break; 
+        }
         if (frogAnimator != null)
         {
             frogAnimator.enabled = false;
@@ -215,6 +231,11 @@ public class WaterObjective : MonoBehaviour
 
         while (time < 1f)
         {
+            if (target == null || !target.activeInHierarchy)
+            {
+                yield break; 
+            }
+
             time += Time.deltaTime * dragSpeed;
             Vector3 currentTargetPosition = Vector3.Lerp(startPosition, endPosition, time);
             target.transform.position = currentTargetPosition;

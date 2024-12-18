@@ -201,7 +201,7 @@
                     "id": "d7d55869-27e1-4c78-b0ba-796175e0c725",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press(behavior=2)",
+                    "interactions": "",
                     "initialStateCheck": false
                 },
                 {
@@ -347,7 +347,7 @@
                 {
                     "name": "",
                     "id": "88e0631e-9a21-403d-a608-66a5c07dbb30",
-                    "path": "<Gamepad>/dpad/up",
+                    "path": "<Gamepad>/start",
                     "interactions": "",
                     "processors": "",
                     "groups": "Control",

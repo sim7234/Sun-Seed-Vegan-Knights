@@ -4114,6 +4114,7 @@ GameObject:
   - component: {fileID: 843450563}
   - component: {fileID: 843450567}
   - component: {fileID: 843450568}
+  - component: {fileID: 843450569}
   m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4299,6 +4300,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EpelepticFilterOn: 1
+--- !u!114 &843450569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843450562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3590cc360f3d02f48909c89bbfaa8d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetGameObject: {fileID: 1557481452}
+  activationDelay: 0.5
 --- !u!1 &856878594
 GameObject:
   m_ObjectHideFlags: 0
@@ -6916,7 +6931,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1557481453
 Transform:
   m_ObjectHideFlags: 0
