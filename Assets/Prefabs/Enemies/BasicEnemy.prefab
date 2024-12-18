@@ -474,9 +474,9 @@ GameObject:
   - component: {fileID: 3584761834077132561}
   - component: {fileID: 696941880725087294}
   - component: {fileID: 6695330178681394931}
-  - component: {fileID: 6071900709546581982}
   - component: {fileID: 1910779451597007481}
   - component: {fileID: 421583042266671367}
+  - component: {fileID: 7201140583276990376}
   m_Layer: 7
   m_Name: BasicEnemy
   m_TagString: Enemy
@@ -729,7 +729,6 @@ MonoBehaviour:
   attackEffectPos: {fileID: 8910223660134759549}
   attackPS: {fileID: 7662198458920859161}
   rotationReference: {fileID: 2423242964555548766}
-  crackedFloorEffect: {fileID: 0}
 --- !u!114 &598431295749118918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -920,18 +919,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &6071900709546581982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4076701649708178499}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b558383e7fae96846a13ecc9c3417116, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1910779451597007481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -957,6 +944,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e0f745fb8698d149a30f3af345536af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7201140583276990376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4076701649708178499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b558383e7fae96846a13ecc9c3417116, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onHitEffect: {fileID: 1240254011838071449, guid: eb73ffa3a4dc04943a19fff3efadf472, type: 3}
 --- !u!1 &5203639370248839269
 GameObject:
   m_ObjectHideFlags: 0
