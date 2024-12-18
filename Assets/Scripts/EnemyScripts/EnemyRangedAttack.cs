@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -14,6 +15,8 @@ public class EnemyRangedAttack : MonoBehaviour
     [SerializeField] Transform rotationPoint;
 
     [SerializeField] float distenceToAttack;
+
+    [SerializeField] SpriteRenderer eye;
 
     public float attackSpeed;
     public float projectileSpeed;
@@ -93,11 +96,30 @@ public class EnemyRangedAttack : MonoBehaviour
 
     void rangedAttack()
     {
+
+        StartCoroutine(nameof(ProjectileWindpTime));
+        canShoot = false;
+
         spawnPointToVector = projectileSpawnPoint.transform.position;
 
-         GameObject projectile = Instantiate(projectilePrefab, spawnPointToVector, Quaternion.identity);
-
-         projectile.GetComponent<Rigidbody2D>().AddForce((targetPos) * projectileSpeed, ForceMode2D.Impulse);
-         attackCooldown = attackSpeed; 
+         
     }
+
+
+    private IEnumerator ProjectileWindpTime()
+    {
+        
+
+        eye.color = Color.magenta;
+        yield return new WaitForSeconds(1);
+        GameObject projectile = Instantiate(projectilePrefab, spawnPointToVector, Quaternion.identity);
+
+        projectile.GetComponent<Rigidbody2D>().AddForce((targetPos + new Vector3(-1,0)) * projectileSpeed, ForceMode2D.Impulse);
+        attackCooldown = attackSpeed;
+        eye.color = Color.white;
+
+    }
+    
+
+    
 }

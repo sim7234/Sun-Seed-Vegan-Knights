@@ -3796,7 +3796,7 @@ MonoBehaviour:
   waveActive: 1
   totalEnemies: 0
   difficultyMultiplier: 0
-  basicSwarmCost: 0.2
+  basicSwarmCost: 0.1
   "k\xF6ttbulleSwarmCost": 0.2
   rangedCost: 0.3
   dashCost: 0.8

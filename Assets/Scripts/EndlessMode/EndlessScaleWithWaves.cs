@@ -44,7 +44,6 @@ public class EndlessScaleWithWaves : MonoBehaviour
         if (wavesScript.buffDashEnemy == true)
         {
             wavesScript.buffDashEnemy = false;
-            Debug.Log("Buff");
             currentHealth += baseHealth + wavesScript.difficultyMultiplier * 50;
             currentAttackCooldown = baseAttackCooldown - (wavesScript.difficultyMultiplier * 0.5f);
             currentAttackCooldown = Mathf.Clamp(currentAttackCooldown, minimumCooldown, Mathf.Infinity);
@@ -53,8 +52,8 @@ public class EndlessScaleWithWaves : MonoBehaviour
             dashWindupTimeCurrent = Mathf.Clamp(dashWindupTimeCurrent,0.1f, Mathf.Infinity);
 
 
-            healthScript.maxHealth = currentHealth;
-            attackScript.dashCooldown = currentAttackCooldown;
+           // healthScript.maxHealth = currentHealth;
+            //attackScript.dashCooldown = currentAttackCooldown;
             attackScript.dashWindupTime = dashWindupTimeCurrent;
 
         }

@@ -37,6 +37,10 @@ public class EndlessWaves : MonoBehaviour
     float waveTimeLimit = 60;
     public float waveTimer;
 
+    float startWaveTimer;
+    float betweenWavesWaitTime = 10;
+    bool canStartWave = false;
+
     //this is changed in EndlessScaleWithWaves
     [HideInInspector] public bool buffDashEnemy = false;
     private void startWave()
@@ -45,20 +49,30 @@ public class EndlessWaves : MonoBehaviour
     }
     void Start()
     {
+        startWaveTimer = betweenWavesWaitTime;
         difficultyMultiplier = 1f;
         numberOfEnemies = 0;
         spawnerPoints = köttbulleSwarmCost;
 
-        if (FindAnyObjectByType<SaveData>() != null)
-        {
-            playerAmount = FindAnyObjectByType<SaveData>().playerAmount;
-            difficultyMultiplier += playerAmount;
-        }
+        Invoke(nameof(GetPlayAmount), 1);
 
         wavesScript = GetComponent<SpawnWaves>();
         Invoke(nameof(startWave), 1);
     }
 
+    void GetPlayAmount()
+    {
+        if (FindAnyObjectByType<SaveData>() != null)
+        {
+            playerAmount = FindAnyObjectByType<SaveData>().playerAmount;
+            Debug.Log(playerAmount);
+            difficultyMultiplier += playerAmount;
+        }
+        else
+        {
+            Debug.Log("Save data == null");
+        }
+    }
 
     void Update()
     {
@@ -67,8 +81,22 @@ public class EndlessWaves : MonoBehaviour
             totalEnemies = 0;
         }
 
+        if (startWaveTimer > 0)
+        {
+            canStartWave = false;
+
+            if (numberOfEnemies == 0)
+                startWaveTimer -= Time.deltaTime;
+        }
+        else
+        {
+            canStartWave = true;
+            startWaveTimer = betweenWavesWaitTime;
+        }
+
         totalEnemies = numberOfEnemies;
-        if (numberOfEnemies <= 0 && waveActive == true)
+
+        if (numberOfEnemies <= 0 && waveActive == true && canStartWave == true)
         {
             WaveComplete();
             calculateDifficulty();
@@ -83,13 +111,21 @@ public class EndlessWaves : MonoBehaviour
         {
             waveTimer += Time.deltaTime;
         }
-        if (waveTimer >= waveTimeLimit)
-        {
-            WaveComplete();
-            calculateDifficulty();
-            waveTimer = 0;
-        }
 
+        //Backup in case all enemies are dead but next wave has not started
+        //should not be needed.
+        if (waveTimer >= (waveTimeLimit + difficultyMultiplier * 30))
+        {
+            if (FindAnyObjectByType<EnemyAttacks>() == null)
+            {
+                totalEnemies = 0;
+                waveTimer = 60 + difficultyMultiplier * 30;
+            }
+            else
+            {
+                waveTimer = 60 + difficultyMultiplier * 30;
+            }
+        }
     }
 
     void WaveComplete()
@@ -98,7 +134,18 @@ public class EndlessWaves : MonoBehaviour
         wavesScript.startSpawning = false;
         waveActive = false;
         waveNumber++;
-        difficultyMultiplier += ((0.05f * playerAmount) * waveNumber);
+
+        //Difficulty for endless mode, after 7 ~ 8 difficulty starts becoming ridiculous, so we slow down the scaling after that point.
+
+        if (difficultyMultiplier < 7)
+        {
+            difficultyMultiplier += ((0.05f * playerAmount) + (waveNumber * 0.05f));
+        }
+        else
+        {
+            difficultyMultiplier += ((0.1f * playerAmount));
+        }
+
         spawnerPoints = difficultyMultiplier;
         swarmLimit = 0;
         swarmLimitBasic = 0;
@@ -117,7 +164,7 @@ public class EndlessWaves : MonoBehaviour
     }
 
     void StartWave()
-    {    
+    {
         wavesScript.basicAmount = basicAmount;
         wavesScript.köttbulleAmount = köttbulleAmount;
         wavesScript.rangedAmount = rangedAmount;
@@ -133,7 +180,7 @@ public class EndlessWaves : MonoBehaviour
     void calculateDifficulty()
     {
 
-        while (spawnerPoints >= köttbulleSwarmCost)
+        while (spawnerPoints >= basicSwarmCost)
         {
             randomSelect = Random.Range(0, 4);
 
@@ -141,7 +188,7 @@ public class EndlessWaves : MonoBehaviour
             {
                 spawnerPoints -= basicSwarmCost;
                 int howManyBasic = 3 - swarmLimitBasic;
-                basicAmount += Mathf.Clamp(howManyBasic, 1, 3);
+                basicAmount += Mathf.Clamp(howManyBasic, 2, 4);
 
                 swarmLimitBasic++;
             }
@@ -164,9 +211,8 @@ public class EndlessWaves : MonoBehaviour
 
                 if (rnd == 0)
                 {
-                    basicAmount += 2;
-                    köttbulleAmount += 2;
-                    rangedAmount += 2;
+                    basicAmount += 8;
+
                 }
             }
         }
