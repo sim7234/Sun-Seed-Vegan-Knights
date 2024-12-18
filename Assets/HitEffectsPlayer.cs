@@ -45,7 +45,6 @@ public class HitEffectsPlayer : MonoBehaviour
                 newHitEffect.transform.up = -direction;
                 Destroy(newHitEffect, 2f);
 
-                Debug.Log("Damage hit effect");
             }
         }
     }
