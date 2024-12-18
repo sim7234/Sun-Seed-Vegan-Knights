@@ -28,22 +28,25 @@ public class HitEffectsPlayer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(effectcooldown <= 0)
+        if (collision.gameObject.GetComponent<Damage>() != null)
         {
-            effectcooldown = 2;
-            foreach (var sprite in allPlayerSprites)
+            if (effectcooldown <= 0)
             {
-                sprite.color = Color.red;
+                effectcooldown = 2;
+                foreach (var sprite in allPlayerSprites)
+                {
+                    sprite.color = Color.red;
+                }
+                Invoke(nameof(ResetColor), blinkTime);
+
+                Vector2 direction = new Vector2(collision.transform.position.x - transform.position.x, collision.transform.position.y - transform.position.y);
+
+                GameObject newHitEffect = Instantiate(onHitEffect, transform.position, Quaternion.identity);
+                newHitEffect.transform.up = -direction;
+                Destroy(newHitEffect, 2f);
+
+                Debug.Log("Damage hit effect");
             }
-            Invoke(nameof(ResetColor), blinkTime);
-
-            Vector2 direction = new Vector2(collision.transform.position.x - transform.position.x, collision.transform.position.y - transform.position.y);
-
-            GameObject newHitEffect = Instantiate(onHitEffect, transform.position, Quaternion.identity);
-            newHitEffect.transform.up = -direction;
-            Destroy(newHitEffect, 2f);
-
-            Debug.Log("Damage hit effect");
         }
     }
 
