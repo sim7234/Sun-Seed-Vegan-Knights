@@ -19,8 +19,11 @@ public class Pathfinding : MonoBehaviour
 
     [HideInInspector] public Vector3 targetTransform;
 
+    private int randomTargetIndex;
+
     private void Start()
     {
+        randomTargetIndex = Random.Range(0, 3);
         followTarget = true;
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
@@ -41,11 +44,9 @@ public class Pathfinding : MonoBehaviour
 
             if (followTarget)
             {
-
                 if (trackTarget == true)
                 {
-                    agent.SetDestination(target[finalTarget].transform.position);
-
+                    agent.SetDestination(target[finalTarget].GetComponent<PlayerTargetPoints>().GetTargetPoint(randomTargetIndex).transform.position);
                 }
             }
         }
@@ -58,7 +59,7 @@ public class Pathfinding : MonoBehaviour
 
         do
         {
-            rnd = Random.Range(0, totalTargets);  
+            rnd = Random.Range(0, totalTargets);
             i++;
 
         } while ((!target[rnd].CompareTag("Objective")) || i >= 5);
@@ -73,7 +74,6 @@ public class Pathfinding : MonoBehaviour
         {
             if (target[i].gameObject != null)
             {
-
                 Vector3 targetDistence = target[i].transform.position - transform.position;
                 float targetDistenceSquared = targetDistence.sqrMagnitude;
 
@@ -84,7 +84,6 @@ public class Pathfinding : MonoBehaviour
                     finalTarget = i;
                 }
             }
-
         }
         return finalTarget;
     }
