@@ -20,6 +20,8 @@ public class WaterDrop : MonoBehaviour
     int totalTargets;
 
     float waterSpeed = 0;
+
+    bool giveScore = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -83,24 +85,23 @@ public class WaterDrop : MonoBehaviour
     {
         waterSpeed += Time.deltaTime * 0.05f;
         waterSpeed = Mathf.Clamp01(waterSpeed);
-        if (target != null)
+
+        if (target == null)
+            return;
+
+        if (target.gameObject.activeSelf == true)
         {
-            if (target.gameObject.activeSelf == true)
-            {
-                transform.position = Vector2.MoveTowards(transform.position, target.transform.position, waterSpeed);
-            }
-            else
-            {
-                finalTarget = FindClosestTarget(totalTargets);
-                target = playerHolder[finalTarget];
-            }
+
+            finalTarget = FindClosestTarget(totalTargets);
+            target = playerHolder[finalTarget];
+            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, waterSpeed);
+
         }
         else
         {
             Destroy(gameObject);
         }
     }
-
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -109,23 +110,16 @@ public class WaterDrop : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Test");
             if (other.GetComponent<WaterSystem>().currentWater < other.GetComponent<WaterSystem>().maxWater)
             {
                 other.GetComponent<WaterSystem>().currentWater += 0.2f;
                 other.GetComponent<WaterSystem>().DisplayDropForTime();
             }
 
-            Score scoreScript = FindAnyObjectByType<Score>();
-
-            if (scoreScript != null)
-                scoreScript.score += 1;
-
             FindAnyObjectByType<WaterSoundController>().amountToPlay++;
+
+            FindAnyObjectByType<Score>().waterDropsCollected++;
+            Destroy(gameObject);
         }
-
-
-        Destroy(gameObject);
-
     }
 }

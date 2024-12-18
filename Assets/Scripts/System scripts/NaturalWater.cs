@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NaturalWater : MonoBehaviour
 {
@@ -6,7 +7,15 @@ public class NaturalWater : MonoBehaviour
     {
         if (other.GetComponent<WaterSystem>() != null)
         {
-            other.GetComponent<WaterSystem>().ChangeWaterRefillRate(0.01f);
+            if (SceneManager.GetActiveScene().name == "EndlessMode")
+            {
+                other.GetComponent<WaterSystem>().ChangeWaterRefillRate(0.1f);
+            }
+            else
+            {
+                other.GetComponent<WaterSystem>().ChangeWaterRefillRate(0.01f);
+            }
+
             other.GetComponent<WaterSystem>().waterRefillTimer = 0;
         }
     }

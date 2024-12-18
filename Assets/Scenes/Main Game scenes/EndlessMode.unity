@@ -979,6 +979,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1976558302}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &83571060
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 452093264199394699, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 33.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 452093264199394699, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -11.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 452093264199394699, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 452093264199394699, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 452093264199394699, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 452093264199394699, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 452093264199394699, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 452093264199394699, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 452093264199394699, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 452093264199394699, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591513087322252944, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
+      propertyPath: m_Name
+      value: Sun spot (10)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
 --- !u!1 &92191193
 GameObject:
   m_ObjectHideFlags: 0
@@ -1483,6 +1540,71 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &149110739
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 452093264199394699, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -28.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 452093264199394699, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 452093264199394699, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 452093264199394699, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 452093264199394699, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 452093264199394699, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 452093264199394699, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 452093264199394699, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 452093264199394699, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 452093264199394699, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961298607462088740, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 961298607462088740, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591513087322252944, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
+      propertyPath: m_Name
+      value: Sun spot (11)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
 --- !u!1 &152058220
 GameObject:
   m_ObjectHideFlags: 0
@@ -3693,8 +3815,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13d9d761e031e914cacdfa657c17e59f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 579882323}
+  waveText: {fileID: 579882323}
   score: 0
+  waterDropsCollected: 0
+  currentWave: 0
 --- !u!1 &311213092
 GameObject:
   m_ObjectHideFlags: 0
@@ -5754,7 +5878,7 @@ GameObject:
   - component: {fileID: 579882324}
   - component: {fileID: 579882323}
   m_Layer: 5
-  m_Name: Score
+  m_Name: Waves Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5799,7 +5923,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Score:'
+  m_text: 'Wave:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -14695,6 +14819,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1379034385
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 452093264199394699, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 33.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 452093264199394699, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -11.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 452093264199394699, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 452093264199394699, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 452093264199394699, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 452093264199394699, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 452093264199394699, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 452093264199394699, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 452093264199394699, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 452093264199394699, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591513087322252944, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
+      propertyPath: m_Name
+      value: Sun spot (9)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f8c5230b60f91bd4681f7e1bcf971a91, type: 3}
 --- !u!1 &1382096846
 GameObject:
   m_ObjectHideFlags: 0
@@ -20917,6 +21098,9 @@ SceneRoots:
   - {fileID: 1881629428}
   - {fileID: 1073531232}
   - {fileID: 843367752}
+  - {fileID: 1379034385}
+  - {fileID: 83571060}
+  - {fileID: 149110739}
   - {fileID: 303261178}
   - {fileID: 1382096850}
   - {fileID: 1976558302}
@@ -20925,4 +21109,3 @@ SceneRoots:
   - {fileID: 32925155}
   - {fileID: 1860421401}
   - {fileID: 766105943}
-  - {fileID: 7118023}

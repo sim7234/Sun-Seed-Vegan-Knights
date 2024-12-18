@@ -1,4 +1,3 @@
-using System.Security.Cryptography;
 using UnityEngine;
 
 public class EndlessScaleWithWaves : MonoBehaviour
@@ -26,7 +25,6 @@ public class EndlessScaleWithWaves : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        worthScoreScript = GetComponent<WorthScore>();
         wavesScript = FindAnyObjectByType<EndlessWaves>();
         healthScript = gameObject.GetComponent<Health>();
         attackScript = gameObject.GetComponent<DashAttack>();
@@ -36,8 +34,6 @@ public class EndlessScaleWithWaves : MonoBehaviour
 
         baseAttackCooldown = attackScript.dashCooldown;
         currentAttackCooldown = baseAttackCooldown;
-
-        worthScore = worthScoreScript.howMuchScore;
 
         dashWindupTimeBase = attackScript.dashWindupTime;
     }
@@ -56,14 +52,10 @@ public class EndlessScaleWithWaves : MonoBehaviour
             dashWindupTimeCurrent = dashWindupTimeBase - wavesScript.difficultyMultiplier * 0.3f;
             dashWindupTimeCurrent = Mathf.Clamp(dashWindupTimeCurrent,0.1f, Mathf.Infinity);
 
-            worthScore += increaseScoreBy;
-
 
             healthScript.maxHealth = currentHealth;
             attackScript.dashCooldown = currentAttackCooldown;
             attackScript.dashWindupTime = dashWindupTimeCurrent;
-
-            worthScoreScript.howMuchScore = worthScore;
 
         }
     }
