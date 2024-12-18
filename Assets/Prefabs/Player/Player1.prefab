@@ -12678,6 +12678,10 @@ MonoBehaviour:
   dashCooldown: 1
   rotationPoint: {fileID: 4283199718185520484}
   dashTrail: {fileID: 1023537523245711233}
+  raycastDistance: 4
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 130431
 --- !u!114 &5064035060424883740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30730,7 +30734,7 @@ MonoBehaviour:
   interactableLayer:
     serializedVersion: 2
     m_Bits: 4096
-  interactRange: 8
+  interactRange: 1
   interactionPoint: {fileID: 7056153943691516830}
 --- !u!1 &8691832827524815997
 GameObject:

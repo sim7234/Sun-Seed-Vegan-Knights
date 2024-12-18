@@ -1,5 +1,3 @@
-// Ignore Spelling: Cooldown
-
 using UnityEngine.InputSystem;
 using System.Collections;
 using UnityEngine;
@@ -20,25 +18,27 @@ public class PlayerDash : MonoBehaviour
 
     [SerializeField] GameObject rotationPoint;
     [SerializeField] TrailRenderer dashTrail;
-    bool dashEffectEnabled;
+    [SerializeField] float raycastDistance = 1f; 
+    [SerializeField] LayerMask collisionMask; 
 
-   // float r2Value;
+    bool dashEffectEnabled;
 
     private void Awake()
     {
-        
         var playerInput = GetComponent<PlayerInput>();
         if (playerInput != null)
         {
             dashAction = playerInput.actions["Dash"];
         }
     }
+    
     void Start()
     {
         playerCollider = GetComponent<Collider2D>();
         dashTrail.emitting = false;
         rb = GetComponent<Rigidbody2D>();
     }
+    
     private void Update()
     {
         dashCooldownTimer -= Time.deltaTime;
@@ -49,38 +49,35 @@ public class PlayerDash : MonoBehaviour
         playerCollider.enabled = false;
         dashTrail.emitting = true;
         
+
+        Vector2 dashDirection = rb.velocity.normalized;
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, dashDirection, raycastDistance, collisionMask);
+
+        if (hit.collider != null)
+        {
+            playerCollider.enabled = true;
+            yield break;
+        }
+
         yield return new WaitForSeconds(0.2f);
 
         GetComponent<LookOnSystem>().AttackClosestEnemy();
         playerCollider.enabled = true;
 
         yield return new WaitForSeconds(0.1f);
-        
-
 
         dashTrail.emitting = false;
     }
 
-    /*private void Update()
-    {
-        r2Value = Gamepad.current.rightTrigger.ReadValue();
-        if (r2Value > 0)
-        {
-            r2Value = 1;
-        }
-    }*/
 
     public void Dash(InputAction.CallbackContext context)
     {
        if (context.phase != InputActionPhase.Started)
             return; 
 
-       
         if (dashCooldownTimer < 0)
         {
-            //waterScript.TakeWater(1);
             dashCooldownTimer = dashCooldown;
-            //rb.AddForce(-rotationPoint.transform.up * dashPower, ForceMode2D.Impulse);
             rb.AddForce(rb.velocity.normalized * dashPower, ForceMode2D.Impulse);
             StartCoroutine(SpendWaterEffect());
         }
@@ -103,5 +100,4 @@ public class PlayerDash : MonoBehaviour
             dashAction.Disable();
         }
     }
-
 }
