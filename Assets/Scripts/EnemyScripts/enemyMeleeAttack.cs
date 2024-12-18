@@ -37,8 +37,7 @@ public class enemyMeleeAttack : MonoBehaviour
     private GameObject attackPS;
     [SerializeField]
     private GameObject rotationReference;
-    [SerializeField]
-    private GameObject crackedFloorEffect;
+
 
 
 
