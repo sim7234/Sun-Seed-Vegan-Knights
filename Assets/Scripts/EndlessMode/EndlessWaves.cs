@@ -62,6 +62,11 @@ public class EndlessWaves : MonoBehaviour
 
     void Update()
     {
+        if (totalEnemies < 0)
+        {
+            totalEnemies = 0;
+        }
+
         totalEnemies = numberOfEnemies;
         if (numberOfEnemies <= 0 && waveActive == true)
         {

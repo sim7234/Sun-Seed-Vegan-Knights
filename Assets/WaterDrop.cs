@@ -118,7 +118,9 @@ public class WaterDrop : MonoBehaviour
 
             FindAnyObjectByType<WaterSoundController>().amountToPlay++;
 
-            FindAnyObjectByType<Score>().waterDropsCollected++;
+            if (FindAnyObjectByType<Score>() != null)
+                FindAnyObjectByType<Score>().waterDropsCollected++;
+
             Destroy(gameObject);
         }
     }
