@@ -41,7 +41,7 @@ public class SpecialWeapon : MonoBehaviour
     private TextMeshProUGUI attacksLeftText;
 
 
-
+    
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();

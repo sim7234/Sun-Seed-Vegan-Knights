@@ -9,6 +9,9 @@ public class PlayerAttack : MonoBehaviour
     private GameObject weapon;
 
     [SerializeField]
+    private GameObject weaponSprite;
+
+    [SerializeField]
     private UnityEvent onFire;
 
     [SerializeField]
@@ -139,7 +142,8 @@ public class PlayerAttack : MonoBehaviour
         {
             onFire?.Invoke();
 
-            
+            weaponSprite.SetActive(true);
+            Invoke(nameof(DeactivateWeapon), 0.3f);
             attackCounter++;
             
             if (weaponAnimator != null)
@@ -177,6 +181,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (weaponAnimator != null)
         {
+            
             weaponAnimator.SetTrigger("PressedR1");
         }
         if (weapon.activeSelf)
@@ -186,7 +191,10 @@ public class PlayerAttack : MonoBehaviour
 
         lastAttackTime = Time.time;
     }
-    
+    private void DeactivateWeapon()
+    {
+        weaponSprite.SetActive(false);
+    }
     public void DashAttack()
     {
         if (weaponAnimator != null)
