@@ -89,6 +89,15 @@ public class WaterDrop : MonoBehaviour
             {
                 transform.position = Vector2.MoveTowards(transform.position, target.transform.position, waterSpeed);
             }
+            else
+            {
+                finalTarget = FindClosestTarget(totalTargets);
+                target = playerHolder[finalTarget];
+            }
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
 
