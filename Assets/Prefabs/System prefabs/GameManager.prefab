@@ -89,3 +89,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 569e4f9e90ea5d04cb373a5910cb5cd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueSystem: {fileID: 0}
+  messageText: {fileID: 0}
+  cameraMover: {fileID: 0}

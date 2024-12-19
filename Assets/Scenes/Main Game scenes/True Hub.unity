@@ -32774,12 +32774,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1702263384289283666, guid: 0a0a301070571154ebfe8299cff1d754, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3742195237272373381, guid: 0a0a301070571154ebfe8299cff1d754, type: 3}
       propertyPath: m_PlayerPrefab
       value: 
       objectReference: {fileID: 4130278647452102232, guid: 0304f4e030c64f144998a5242e0f3542, type: 3}
+    - target: {fileID: 4759607219845234050, guid: 0a0a301070571154ebfe8299cff1d754, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7710765539125367052, guid: 0a0a301070571154ebfe8299cff1d754, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8072204458140635389, guid: 0a0a301070571154ebfe8299cff1d754, type: 3}
+      propertyPath: settingsMenuUI
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9049773422924308316, guid: 0a0a301070571154ebfe8299cff1d754, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8368269241276052841, guid: 0a0a301070571154ebfe8299cff1d754, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a0a301070571154ebfe8299cff1d754, type: 3}
