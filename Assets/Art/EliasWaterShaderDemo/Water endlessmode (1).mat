@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FogShader
-  m_Shader: {fileID: -6465566751694194690, guid: 36f60290bcb93cf4e83f71ff6e7ab912, type: 3}
+  m_Name: Water endlessmode (1)
+  m_Shader: {fileID: -6465566751694194690, guid: 21d7e0566b34ced4fb26d429a86fbd93, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -23,6 +23,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Texture2D:
+        m_Texture: {fileID: 2800000, guid: 636bb97f4f8bf554f8830f01d4e21426, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -37,12 +41,19 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Size: 98.5
+    - _DotsDensity: 10
+    - _DotsSize: 0.4
+    - _HighlightAmount: 6
+    - _Speed: 0.03
+    - _Tilt: 3
+    - _Vingette_Streangth: 0
+    - _Wavesize: 0.01
     m_Colors:
-    - _Fog_Color: {r: 0.8773585, g: 0.7521281, b: 0.624911, a: 0.09803922}
-    - _Fog_speed: {r: 0.011, g: 0.009, b: 0, a: 0}
+    - _Base_water: {r: 0.4176077, g: 0.46216822, b: 0.554717, a: 1}
+    - _Dots_Colour: {r: 0.6874688, g: 0.7592322, b: 0.7735849, a: 1}
+    - _Highlights: {r: 0.59357065, g: 0.6328834, b: 0.6679245, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &1562154117739525287
+--- !u!114 &7990190435874378120
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
