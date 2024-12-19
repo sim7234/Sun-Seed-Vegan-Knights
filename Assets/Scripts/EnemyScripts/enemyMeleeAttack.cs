@@ -38,13 +38,20 @@ public class enemyMeleeAttack : MonoBehaviour
     [SerializeField]
     private GameObject rotationReference;
 
+    [SerializeField] AudioClip attackSound;
 
+    AudioSource audioSourceSaveData;
+
+    EnemyTurnTowardsTarget[] flipSpriteScript = new EnemyTurnTowardsTarget[2];
 
 
 
     // Start is called before the first frame update
     void Start()
     {
+        flipSpriteScript = GetComponents<EnemyTurnTowardsTarget>();
+
+        audioSourceSaveData = FindAnyObjectByType<SaveData>().GetComponentInChildren<AudioSource>();
         agent = GetComponent<NavMeshAgent>();
         baseCooldown = baseCooldown + windUpTime + resetTime;
 
@@ -70,6 +77,11 @@ public class enemyMeleeAttack : MonoBehaviour
 
         if (enemyAttacksScript.withinDistance == true && cannotStartAttack == false && currentCooldown <= 0)
         {
+
+            foreach (var flipScript in flipSpriteScript)
+            {
+                flipScript.canFlip = false;
+            }
             cannotStartAttack = true;
             currentCooldown = baseCooldown;
 
@@ -88,13 +100,18 @@ public class enemyMeleeAttack : MonoBehaviour
 
     void StartMeleeAttack()
     {
-
+        
+        audioSourceSaveData.PlayOneShot(attackSound);
         attackVisualCollider.enabled = true;
         damageSprite.color = Color.black;
         Invoke(nameof(EndMeleeAttack), resetTime);
     }
     void EndMeleeAttack()
     {
+        foreach (var flipScript in flipSpriteScript)
+        {
+            flipScript.canFlip = true;
+        }
         attackVisualCollider.enabled = false;
         rotateScript.lockRotation = false;
 
@@ -120,6 +137,7 @@ public class enemyMeleeAttack : MonoBehaviour
             attackingSprite.SetActive(false);
             attackPS.SetActive(false);
         }
+        
     }
 
 }

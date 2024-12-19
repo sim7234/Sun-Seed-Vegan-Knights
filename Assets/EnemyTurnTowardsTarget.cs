@@ -10,19 +10,24 @@ public class EnemyTurnTowardsTarget : MonoBehaviour
 
     private Pathfinding pathfinding;
 
+    [SerializeField] public bool canFlip = true;
+
     private void Start()
     {
         pathfinding = GetComponent<Pathfinding>();
     }
     private void Update()
     {
-        if((transform.position - pathfinding.target[pathfinding.finalTarget].transform.position).x < 0)
+        if (canFlip)
         {
-            sprite.flipX = true;
-        }
-        else
-        {
-            sprite.flipX = false;
-        }
+            if ((transform.position - pathfinding.target[pathfinding.finalTarget].transform.position).x < 0)
+            {
+                sprite.flipX = true;
+            }
+            else
+            {
+                sprite.flipX = false;
+            }
+        }  
     }
 }

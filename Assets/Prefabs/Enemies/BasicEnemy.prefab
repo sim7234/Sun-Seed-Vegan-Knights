@@ -152,6 +152,7 @@ GameObject:
   - component: {fileID: 8531037382075390071}
   - component: {fileID: 1167606713829056523}
   - component: {fileID: 5584459873855053666}
+  - component: {fileID: 2946057093317556759}
   m_Layer: 7
   m_Name: AttackRange
   m_TagString: Enemy
@@ -299,6 +300,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knockbackStrength: 20
   knockBackSource: {fileID: 4076701649708178499}
+--- !u!114 &2946057093317556759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325933197060965250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1db0eb80ce7f6d4ebe8ee4c26ff280e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoundOnHit: {fileID: 0}
 --- !u!1 &2423242964555548766
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,7 +662,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distenceToTarget: 0
-  distanceToAttack: 4
+  distanceToAttack: 6
   isAttacking: 0
   withinDistance: 0
 --- !u!114 &997164337715888419
@@ -730,6 +744,7 @@ MonoBehaviour:
   attackEffectPos: {fileID: 8910223660134759549}
   attackPS: {fileID: 7662198458920859161}
   rotationReference: {fileID: 2423242964555548766}
+  attackSound: {fileID: 8300000, guid: 29d1fbff048f20443818325b502b2ae7, type: 3}
 --- !u!114 &598431295749118918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -811,6 +826,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 7375913918595709568}
+  canFlip: 0
 --- !u!114 &696941880725087294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -824,6 +840,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 3167047894628798470}
+  canFlip: 0
 --- !u!82 &6695330178681394931
 AudioSource:
   m_ObjectHideFlags: 0
@@ -933,6 +950,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 3642978271374002926}
+  canFlip: 0
 --- !u!114 &421583042266671367
 MonoBehaviour:
   m_ObjectHideFlags: 0
