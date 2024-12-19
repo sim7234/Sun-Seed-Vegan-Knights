@@ -49,7 +49,7 @@ public class SaveData : MonoBehaviour
     {
         if (playerAmount > 0 && (SceneManager.GetActiveScene().name != "EndlessMode"))
         {
-            Camera.main.orthographicSize = 8 + playerAmount;
+            Camera.main.orthographicSize = 9 + playerAmount;
         }
         else if (playerAmount > 0 && (SceneManager.GetActiveScene().name == "EndlessMode"))
         {
