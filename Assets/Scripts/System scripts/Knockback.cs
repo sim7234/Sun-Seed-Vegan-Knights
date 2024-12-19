@@ -31,14 +31,14 @@ public class Knockback : MonoBehaviour
     {
         if (knockBackSource != null)
         {
-            if (collision.gameObject.GetComponent<Rigidbody2D>() != null)
+            if (collision.gameObject.GetComponent<Rigidbody2D>() != null && collision.gameObject.GetComponent<Health>().isActiveAndEnabled)
             {
                 collision.gameObject.GetComponent<Rigidbody2D>().AddForce((collision.transform.position - knockBackSource.transform.position).normalized * knockbackStrength, ForceMode2D.Impulse);
             }
         }
         else
         {
-            if (collision.gameObject.GetComponent<Rigidbody2D>() != null)
+            if (collision.gameObject.GetComponent<Rigidbody2D>() != null && collision.gameObject.GetComponent<Health>().isActiveAndEnabled)
             {
                 collision.gameObject.GetComponent<Rigidbody2D>().AddForce((collision.transform.position - transform.position).normalized * knockbackStrength, ForceMode2D.Impulse);
             }

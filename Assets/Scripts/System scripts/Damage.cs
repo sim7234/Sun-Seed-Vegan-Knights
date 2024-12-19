@@ -21,8 +21,11 @@ public class Damage : MonoBehaviour
     {
         if (other.GetComponent<Health>() != null && this.tag != other.tag)
         {
-            other.GetComponent<Health>().TakeDamage(damage);
-            Screenshake.Instance.Shake(0.3f, 0.1f, 1.0f);
+            if(other.GetComponent<Health>().isActiveAndEnabled)
+            {
+                other.GetComponent<Health>().TakeDamage(damage);
+                Screenshake.Instance.Shake(0.3f, 0.1f, 1.0f);
+            }
         }
         else
         {

@@ -35,7 +35,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.14, y: -0.24}
+  m_AnchoredPosition: {x: -0.14, y: 2.03}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4971681579260239135
@@ -345,7 +345,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b2f2123553238e445afc2bcfc9c3c37a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6c1b3a1178a289f4d828693cd35be351, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -385,9 +385,14 @@ MonoBehaviour:
   bloodOnHit: {fileID: 1240254011838071449, guid: abe38af62c188af4fa1de4a133173141, type: 3}
   deathEffect: {fileID: 1240254011838071449, guid: abe38af62c188af4fa1de4a133173141, type: 3}
   characterSprite: {fileID: 993754828137958043}
-  hitSound: {fileID: 8300000, guid: 340dd37fae7514c499dbd20603c7fcac, type: 3}
+  hitSounds: []
   EpelepticFilterOn: 0
   talkToMissionMaster: 1
+  endlessMode: 0
+  onHitFrameChange: {fileID: 0}
+  bloodOnDeath: []
+  waterDrop: {fileID: 0}
+  WaterValue: 0
 --- !u!61 &7210383631290466964
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -424,7 +429,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 7.44, y: 3.67}
+    oldSize: {x: 25.88598, y: 14.03}
     newSize: {x: 7.44, y: 3.67}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

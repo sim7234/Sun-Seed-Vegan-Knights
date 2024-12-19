@@ -126,7 +126,7 @@ public class Health : MonoBehaviour
             agent.velocity = Vector3.zero;
         }
 
-        if (currentHealth <= 0)
+        if (currentHealth < 1)
         {
             Die();
         }
