@@ -14852,7 +14852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e20aa28020800f747860e29386be9e34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 100
+  damage: 50
   isTriggerd: 1
 --- !u!61 &4834693156047020099
 BoxCollider2D:
@@ -14912,6 +14912,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockbackStrength: 3
+  knockBackSource: {fileID: 0}
 --- !u!114 &2650767230876090150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14969,5 +14970,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndex: 0
-  bloomDamage: 1000
+  bloomDamage: 200
   turnOfOnStart: 1
