@@ -100,7 +100,6 @@ public class enemyMeleeAttack : MonoBehaviour
 
     void StartMeleeAttack()
     {
-        
         audioSourceSaveData.PlayOneShot(attackSound);
         attackVisualCollider.enabled = true;
         damageSprite.color = Color.black;
