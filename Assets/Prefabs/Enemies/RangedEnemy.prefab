@@ -292,8 +292,8 @@ MonoBehaviour:
   projectileSpawnPoint: {fileID: 8603948458539968747}
   rotationPoint: {fileID: 416790700085312721}
   distenceToAttack: 60
-  eye: {fileID: 0}
-  pupil: {fileID: 0}
+  eye: {fileID: 8474552511798323635}
+  pupil: {fileID: 3648989103791377992}
   attackSpeed: 3
   projectileSpeed: 1.25
 --- !u!114 &3580056762478777823
