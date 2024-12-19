@@ -49,6 +49,8 @@ public class PlayerDeath : MonoBehaviour
         //GetComponent<AudioSource>().enabled = false;
         GetComponent<PlayerAttack>().enabled = false;
 
+        gameObject.layer = 18;
+
         GetComponent<Collider2D>().enabled = false;
 
         GetComponent<HPBar>().enabled = false;
@@ -71,6 +73,8 @@ public class PlayerDeath : MonoBehaviour
         GetComponent<PlayerAttack>().enabled = true;
 
         GetComponent<Collider2D>().enabled = true;
+
+        gameObject.layer = 9;
 
         GetComponent<HPBar>().enabled = true;
         GetComponent<PlayerDash>().enabled = true;
