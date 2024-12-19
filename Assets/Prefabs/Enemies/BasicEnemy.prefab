@@ -622,6 +622,7 @@ MonoBehaviour:
   followTarget: 1
   trackTarget: 1
   targetTransform: {x: 0, y: 0, z: 0}
+  targetPlayerPoints: 1
 --- !u!114 &7442658620520573493
 MonoBehaviour:
   m_ObjectHideFlags: 0

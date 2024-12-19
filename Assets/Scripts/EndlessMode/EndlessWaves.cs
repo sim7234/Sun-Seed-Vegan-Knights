@@ -37,7 +37,7 @@ public class EndlessWaves : MonoBehaviour
     float waveTimeLimit = 60;
     public float waveTimer;
 
-    float startWaveTimer;
+    [HideInInspector] public float startWaveTimer;
     float betweenWavesWaitTime = 10;
     bool canStartWave = false;
 
@@ -76,9 +76,9 @@ public class EndlessWaves : MonoBehaviour
 
     void Update()
     {
-        if (totalEnemies < 0)
+        if (numberOfEnemies < 0)
         {
-            totalEnemies = 0;
+            numberOfEnemies = 0;
         }
 
         if (startWaveTimer > 0)
@@ -118,7 +118,7 @@ public class EndlessWaves : MonoBehaviour
         {
             if (FindAnyObjectByType<EnemyAttacks>() == null)
             {
-                totalEnemies = 0;
+                numberOfEnemies = 0;
                 waveTimer = 60 + difficultyMultiplier * 30;
             }
             else

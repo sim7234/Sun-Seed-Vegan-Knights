@@ -21,6 +21,7 @@ public class Pathfinding : MonoBehaviour
 
     private int randomTargetIndex;
 
+    [SerializeField] bool targetPlayerPoints;
     private void Start()
     {
         randomTargetIndex = Random.Range(0, 3);
@@ -44,9 +45,14 @@ public class Pathfinding : MonoBehaviour
 
             if (followTarget)
             {
-                if (trackTarget == true)
+                if (trackTarget == true && targetPlayerPoints == true)
                 {
                     agent.SetDestination(target[finalTarget].GetComponent<PlayerTargetPoints>().GetTargetPoint(randomTargetIndex).transform.position);
+                }
+
+                if (trackTarget == true && targetPlayerPoints == false)
+                {
+                    agent.SetDestination(target[finalTarget].transform.position);
                 }
             }
         }

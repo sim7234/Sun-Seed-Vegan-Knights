@@ -326,6 +326,7 @@ MonoBehaviour:
   followTarget: 0
   trackTarget: 1
   targetTransform: {x: 0, y: 0, z: 0}
+  targetPlayerPoints: 0
 --- !u!114 &928377495995262593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,6 +409,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockbackStrength: 15
+  knockBackSource: {fileID: 0}
 --- !u!114 &-7834787649296433603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -588,7 +590,7 @@ GameObject:
   - component: {fileID: 2197320349180914669}
   m_Layer: 7
   m_Name: ExplosionRadius
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
