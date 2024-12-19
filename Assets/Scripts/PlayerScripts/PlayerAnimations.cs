@@ -74,6 +74,7 @@ public class PlayerAnimations : MonoBehaviour
 
     [SerializeField]
     private GameObject directionalArrow;
+
     private void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -100,7 +101,13 @@ public class PlayerAnimations : MonoBehaviour
         }
         else
         {
-            Attacking(angle);
+            float aimAngle = (directionalArrow.transform.localEulerAngles.z % 360) + 90;
+            if(aimAngle < 0)
+            {
+                aimAngle = -aimAngle;
+            }
+            Attacking(aimAngle);
+            //Attacking(angle);
         }
     }
 
@@ -225,15 +232,7 @@ public class PlayerAnimations : MonoBehaviour
         //Basic attack or specal weaponss
         if (basicSword.activeSelf)
         {
-            if (angle > -45 && angle < 45)
-            {
-                attackLeft.SetActive(false);
-                attackUp.SetActive(false);
-                attackDown.SetActive(false);
-
-                attackRight.SetActive(true);
-            }
-            else if (angle > 45 && angle < 135)
+            if (angle > 45 && angle < 135)
             {
                 attackRight.SetActive(false);
                 attackLeft.SetActive(false);
@@ -241,7 +240,7 @@ public class PlayerAnimations : MonoBehaviour
 
                 attackUp.SetActive(true);
             }
-            else if (angle > 135 && angle < 180 || angle < -135 && angle > -180)
+            else if (angle > 135 && angle < 225)
             {
                 attackUp.SetActive(false);
                 attackDown.SetActive(false);
@@ -249,7 +248,7 @@ public class PlayerAnimations : MonoBehaviour
 
                 attackLeft.SetActive(true);
             }
-            else if (angle > -135 && angle < -45)
+            else if (angle > 225 && angle < 270)
             {
                 attackRight.SetActive(false);
                 attackLeft.SetActive(false);
@@ -257,18 +256,19 @@ public class PlayerAnimations : MonoBehaviour
 
                 attackDown.SetActive(true);
             }
+            else
+            {
+                attackLeft.SetActive(false);
+                attackUp.SetActive(false);
+                attackDown.SetActive(false);
+
+                attackRight.SetActive(true);
+            }
+
         }
         else
         {
-            if (angle > -45 && angle < 45)
-            {
-                sAttackLeft.SetActive(false);
-                sAttackUp.SetActive(false);
-                sAttackDown.SetActive(false);
-
-                sAttackRight.SetActive(true);
-            }
-            else if (angle > 45 && angle < 135)
+            if (angle > 45 && angle < 135)
             {
                 sAttackRight.SetActive(false);
                 sAttackLeft.SetActive(false);
@@ -276,7 +276,7 @@ public class PlayerAnimations : MonoBehaviour
 
                 sAttackUp.SetActive(true);
             }
-            else if (angle > 135 && angle < 180 || angle < -135 && angle > -180)
+            else if (angle > 135 && angle < 225)
             {
                 sAttackUp.SetActive(false);
                 sAttackDown.SetActive(false);
@@ -284,13 +284,21 @@ public class PlayerAnimations : MonoBehaviour
 
                 sAttackLeft.SetActive(true);
             }
-            else if (angle > -135 && angle < -45)
+            else if (angle > 225 && angle < 270)
             {
                 sAttackRight.SetActive(false);
                 sAttackLeft.SetActive(false);
                 sAttackUp.SetActive(false);
 
                 sAttackDown.SetActive(true);
+            }
+            else
+            {
+                sAttackLeft.SetActive(false);
+                sAttackUp.SetActive(false);
+                sAttackDown.SetActive(false);
+
+                sAttackRight.SetActive(true);
             }
         }
 

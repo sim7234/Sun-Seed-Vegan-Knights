@@ -11434,14 +11434,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2285738126161764168}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3624312949254381609}
   m_Father: {fileID: 729360322606702788}
-  m_LocalEulerAnglesHint: {x: 55, y: 0, z: 60.025}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1964687777075302757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12867,12 +12867,12 @@ MonoBehaviour:
   attackLeft: {fileID: 8206984305842406964}
   attackUp: {fileID: 9071837778061051460}
   attackDown: {fileID: 6657237821713989037}
-  sAttackRight: {fileID: 334022949188193938}
+  sAttackRight: {fileID: 4810339265387981805}
   sAttackLeft: {fileID: 4935112959409587848}
   sAttackUp: {fileID: 7916943757723955670}
   sAttackDown: {fileID: 334022949188193938}
   basicSword: {fileID: 7790897372868414741}
-  directionalArrow: {fileID: 0}
+  directionalArrow: {fileID: 2285738126161764168}
 --- !u!114 &5730679572236321430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19815,7 +19815,7 @@ Animation:
   m_GameObject: {fileID: 6657237821713989037}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 0}
+  m_Animation: {fileID: 7400000, guid: 18c0b443fe060274bbaf43e144eea177, type: 2}
   m_Animations: []
   m_WrapMode: 0
   m_PlayAutomatically: 1
@@ -20370,7 +20370,7 @@ Animation:
   m_GameObject: {fileID: 7438358459318389563}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 0}
+  m_Animation: {fileID: 7400000, guid: c996fcb48f50a9a4fa1b650984f419e0, type: 2}
   m_Animations: []
   m_WrapMode: 0
   m_PlayAutomatically: 1
@@ -31413,7 +31413,7 @@ Animation:
   m_GameObject: {fileID: 8206984305842406964}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 0}
+  m_Animation: {fileID: 7400000, guid: c996fcb48f50a9a4fa1b650984f419e0, type: 2}
   m_Animations: []
   m_WrapMode: 0
   m_PlayAutomatically: 1
@@ -36672,7 +36672,7 @@ Animation:
   m_GameObject: {fileID: 9071837778061051460}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 0}
+  m_Animation: {fileID: 7400000, guid: 4c0c875a1ccb60842af4cc0a7c23621f, type: 2}
   m_Animations: []
   m_WrapMode: 0
   m_PlayAutomatically: 1
