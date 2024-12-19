@@ -141,12 +141,13 @@ public class SpecialWeapon : MonoBehaviour
             {
                 Invoke(nameof(DisableSpecialWeapon), 0.8f);
             }
-
-            bigSword.GetComponent<Animator>().SetTrigger("Attack");
-            bigSword.GetComponent<Collider2D>().enabled = true;
-            Invoke(nameof(DisableWeaponCollider), 0.5f);
-            PlaySwordSwingSound();
             attackCooldown = 1.25f;
+            GetComponent<PlayerAnimations>().StartAttack();
+            StartCoroutine(StartAnimation(bigSword, 0.3f));
+            //bigSword.GetComponent<Animator>().SetTrigger("Attack");
+            //bigSword.GetComponent<Collider2D>().enabled = true;
+            //Invoke(nameof(DisableWeaponCollider), 0.5f);
+            PlaySwordSwingSound();
             //Debug.Log("Big swing");
         }
 
@@ -158,13 +159,23 @@ public class SpecialWeapon : MonoBehaviour
                 Invoke(nameof(DisableSpecialWeapon), 0.8f);
             }
 
-            bigSpear.GetComponent<Animator>().SetTrigger("Attack");
-            bigSpear.GetComponent<Collider2D>().enabled = true;
-            Invoke(nameof(DisableWeaponCollider), 0.5f);
-            PlaySpearThrustSound();
             attackCooldown = 0.8f;
+            GetComponent<PlayerAnimations>().StartAttack();
+            StartCoroutine(StartAnimation(bigSpear, 0.3f));
+            //bigSpear.GetComponent<Animator>().SetTrigger("Attack");
+            //bigSpear.GetComponent<Collider2D>().enabled = true;
+            //Invoke(nameof(DisableWeaponCollider), 0.5f);
+            PlaySpearThrustSound();
         }
 
+    }
+
+    private IEnumerator StartAnimation(GameObject weapon, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        weapon.GetComponent<Animator>().SetTrigger("Attack");
+        weapon.GetComponent<Collider2D>().enabled = true;
+        Invoke(nameof(DisableWeaponCollider), 0.5f);
     }
 
     private void Update()

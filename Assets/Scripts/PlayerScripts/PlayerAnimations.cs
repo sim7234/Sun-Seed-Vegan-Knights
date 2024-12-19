@@ -50,12 +50,30 @@ public class PlayerAnimations : MonoBehaviour
     [SerializeField]
     private GameObject attackDown;
 
+    [Space]
+    [Header("Special Attacking")]
+    [SerializeField]
+    private GameObject sAttackRight;
+
+    [SerializeField]
+    private GameObject sAttackLeft;
+
+    [SerializeField]
+    private GameObject sAttackUp;
+
+    [SerializeField]
+    private GameObject sAttackDown;
+
 
     private Rigidbody2D rb2d;
 
     private bool attacking;
 
+    [SerializeField]
+    private GameObject basicSword;
 
+    [SerializeField]
+    private GameObject directionalArrow;
     private void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -74,7 +92,10 @@ public class PlayerAnimations : MonoBehaviour
             }
             else
             {
-                Idle(angle);
+                if(rb2d.velocity.magnitude > 0.05f)
+                {
+                    Idle(angle);
+                }
             }
         }
         else
@@ -178,7 +199,7 @@ public class PlayerAnimations : MonoBehaviour
     public void StartAttack()
     {
         attacking = true;
-        Invoke(nameof(attackingOver), 0.2f);
+        Invoke(nameof(attackingOver), 1.0f);
     }
     private void Attacking(float angle)
     {
@@ -191,39 +212,78 @@ public class PlayerAnimations : MonoBehaviour
         moveDown.SetActive(false);
         moveRight.SetActive(false);
         moveLeft.SetActive(false);
-
-        if (angle > -45 && angle < 45)
+        //Basic attack or specal weapons
+        if (basicSword.activeSelf)
         {
-            attackLeft.SetActive(false);
-            attackUp.SetActive(false);
-            attackDown.SetActive(false);
+            if (angle > -45 && angle < 45)
+            {
+                attackLeft.SetActive(false);
+                attackUp.SetActive(false);
+                attackDown.SetActive(false);
 
-            attackRight.SetActive(true);
+                attackRight.SetActive(true);
+            }
+            else if (angle > 45 && angle < 135)
+            {
+                attackRight.SetActive(false);
+                attackLeft.SetActive(false);
+                attackDown.SetActive(false);
+
+                attackUp.SetActive(true);
+            }
+            else if (angle > 135 && angle < 180 || angle < -135 && angle > -180)
+            {
+                attackUp.SetActive(false);
+                attackDown.SetActive(false);
+                attackRight.SetActive(false);
+
+                attackLeft.SetActive(true);
+            }
+            else if (angle > -135 && angle < -45)
+            {
+                attackRight.SetActive(false);
+                attackLeft.SetActive(false);
+                attackUp.SetActive(false);
+
+                attackDown.SetActive(true);
+            }
         }
-        else if (angle > 45 && angle < 135)
+        else
         {
-            attackRight.SetActive(false);
-            attackLeft.SetActive(false);
-            attackDown.SetActive(false);
+            if (angle > -45 && angle < 45)
+            {
+                sAttackLeft.SetActive(false);
+                sAttackUp.SetActive(false);
+                sAttackDown.SetActive(false);
 
-            attackUp.SetActive(true);
-        }
-        else if (angle > 135 && angle < 180 || angle < -135 && angle > -180)
-        {
-            attackUp.SetActive(false);
-            attackDown.SetActive(false);
-            attackRight.SetActive(false);
+                sAttackRight.SetActive(true);
+            }
+            else if (angle > 45 && angle < 135)
+            {
+                sAttackRight.SetActive(false);
+                sAttackLeft.SetActive(false);
+                sAttackDown.SetActive(false);
 
-            attackLeft.SetActive(true);
-        }
-        else if (angle > -135 && angle < -45)
-        {
-            attackRight.SetActive(false);
-            attackLeft.SetActive(false);
-            attackUp.SetActive(false);
+                sAttackUp.SetActive(true);
+            }
+            else if (angle > 135 && angle < 180 || angle < -135 && angle > -180)
+            {
+                sAttackUp.SetActive(false);
+                sAttackDown.SetActive(false);
+                sAttackRight.SetActive(false);
 
-            attackDown.SetActive(true);
+                sAttackLeft.SetActive(true);
+            }
+            else if (angle > -135 && angle < -45)
+            {
+                sAttackRight.SetActive(false);
+                sAttackLeft.SetActive(false);
+                sAttackUp.SetActive(false);
+
+                sAttackDown.SetActive(true);
+            }
         }
+
     }
 
     private void attackingOver()
