@@ -25,11 +25,11 @@ Transform:
   m_GameObject: {fileID: 1148076621201228805}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.08, z: 0}
-  m_LocalScale: {x: 0.3693121, y: 0.5197352, z: 1.507409}
+  m_LocalPosition: {x: -0.53486395, y: -1.3676977, z: 0}
+  m_LocalScale: {x: 0.7065139, y: 3.53257, z: 0.70651406}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8813863312646302099}
+  m_Father: {fileID: 3648989103791377992}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2816269504754358125
 GameObject:
@@ -292,6 +292,8 @@ MonoBehaviour:
   projectileSpawnPoint: {fileID: 8603948458539968747}
   rotationPoint: {fileID: 416790700085312721}
   distenceToAttack: 60
+  eye: {fileID: 0}
+  pupil: {fileID: 0}
   attackSpeed: 3
   projectileSpeed: 1.25
 --- !u!114 &3580056762478777823
@@ -652,7 +654,8 @@ Transform:
   m_LocalPosition: {x: 0, y: -0.28, z: 0}
   m_LocalScale: {x: 0.42462003, y: 0.42462003, z: 1.4154}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8603948458539968747}
   m_Father: {fileID: 4563323985388915373}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -70}
 --- !u!212 &4896163698983844417
@@ -749,8 +752,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 1.82, z: 0}
   m_LocalScale: {x: 1.2245, y: 4.35051, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 8603948458539968747}
+  m_Children: []
   m_Father: {fileID: 416790700085312721}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3503044222133684543
