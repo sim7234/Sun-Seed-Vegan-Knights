@@ -92,7 +92,7 @@ public class PlayerAnimations : MonoBehaviour
             }
             else
             {
-                if(rb2d.velocity.magnitude > 0.05f)
+                if(rb2d.velocity.magnitude > 0.01f)
                 {
                     Idle(angle);
                 }
@@ -115,6 +115,11 @@ public class PlayerAnimations : MonoBehaviour
         attackDown.SetActive(false);
         attackRight.SetActive(false);
         attackLeft.SetActive(false);
+
+        sAttackUp.SetActive(false);
+        sAttackDown.SetActive(false);
+        sAttackRight.SetActive(false);
+        sAttackLeft.SetActive(false);
 
         if (angle > -45 && angle < 45)
         {
@@ -162,6 +167,11 @@ public class PlayerAnimations : MonoBehaviour
         attackRight.SetActive(false);
         attackLeft.SetActive(false);
 
+        sAttackUp.SetActive(false);
+        sAttackDown.SetActive(false);
+        sAttackRight.SetActive(false);
+        sAttackLeft.SetActive(false);
+
         if (angle > -45 && angle < 45)
         {
             idleLeft.SetActive(false);
@@ -196,10 +206,10 @@ public class PlayerAnimations : MonoBehaviour
         }
     }
 
-    public void StartAttack()
+    public void StartAttack(float timeBeforeRest)
     {
         attacking = true;
-        Invoke(nameof(attackingOver), 1.0f);
+        Invoke(nameof(attackingOver), timeBeforeRest);
     }
     private void Attacking(float angle)
     {
@@ -212,7 +222,7 @@ public class PlayerAnimations : MonoBehaviour
         moveDown.SetActive(false);
         moveRight.SetActive(false);
         moveLeft.SetActive(false);
-        //Basic attack or specal weapons
+        //Basic attack or specal weaponss
         if (basicSword.activeSelf)
         {
             if (angle > -45 && angle < 45)
@@ -289,6 +299,10 @@ public class PlayerAnimations : MonoBehaviour
     private void attackingOver()
     {
         attacking = false;
+        //if(basicSword.activeSelf)
+        //{
+        //    Idle(-90);
+        //}
     }
 
 }

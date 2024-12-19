@@ -12871,7 +12871,7 @@ MonoBehaviour:
   sAttackLeft: {fileID: 4935112959409587848}
   sAttackUp: {fileID: 7916943757723955670}
   sAttackDown: {fileID: 334022949188193938}
-  basicSword: {fileID: 0}
+  basicSword: {fileID: 7790897372868414741}
   directionalArrow: {fileID: 0}
 --- !u!114 &5730679572236321430
 MonoBehaviour:
