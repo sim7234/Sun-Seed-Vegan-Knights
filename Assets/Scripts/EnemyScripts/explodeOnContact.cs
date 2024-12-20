@@ -3,21 +3,25 @@ using UnityEngine;
 public class explodeOnContact : MonoBehaviour
 {
     bool startExplosion;
-    float explosionTimer = 0.5f;
+    float explosionTimer = 0.2f;
     float timeTillExplosion;
 
     SpriteRenderer kottBulleSprite;
 
     [SerializeField] Collider2D explosionCollider;
-    SpriteRenderer explosionSprite;
     EnemyAttacks enemyAttacksScript;
 
+    [SerializeField]
+    private GameObject normalSprite;
+    [SerializeField]
+    private GameObject explosionAnimeSprite;
+    [SerializeField]
+    private GameObject explosionVFX;
     float growthRate = 0.1f;
 
     private void Start()
     {
         enemyAttacksScript = GetComponent<EnemyAttacks>();
-        explosionSprite = explosionCollider.gameObject.GetComponent<SpriteRenderer>();
         kottBulleSprite = GetComponent<SpriteRenderer>();
 
         timeTillExplosion = explosionTimer;
@@ -32,21 +36,23 @@ public class explodeOnContact : MonoBehaviour
 
         if (startExplosion == true)
         {
+            normalSprite.SetActive(false);
+            explosionAnimeSprite.SetActive(true);
             if (timeTillExplosion <= 0.1)
             {
+                explosionVFX.SetActive(true);
                 explosionCollider.gameObject.SetActive(true);
-                explosionSprite.enabled = true;
             }
-
-            kottBulleSprite.color = Color.red;
+            //kottBulleSprite.color = Color.red;
+            
             if (timeTillExplosion > 0)
             {
                 timeTillExplosion -= Time.deltaTime;
             }
 
-            transform.localScale = new Vector3(
-                transform.localScale.x + Time.deltaTime * growthRate,
-                transform.localScale.y + Time.deltaTime * growthRate
+            explosionAnimeSprite.transform.localScale = new Vector3(
+                explosionAnimeSprite.transform.localScale.x + Time.deltaTime * growthRate,
+                explosionAnimeSprite.transform.localScale.y + Time.deltaTime * growthRate
             );
 
             if (timeTillExplosion <= 0)
