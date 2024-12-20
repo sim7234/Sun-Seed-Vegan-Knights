@@ -232,7 +232,7 @@ public class PlayerAnimations : MonoBehaviour
         //Basic attack or specal weaponss
         if (basicSword.activeSelf)
         {
-            if (angle > 45 && angle < 135)
+            if (angle > 0 && angle < 135)
             {
                 attackRight.SetActive(false);
                 attackLeft.SetActive(false);
@@ -268,7 +268,7 @@ public class PlayerAnimations : MonoBehaviour
         }
         else
         {
-            if (angle > 45 && angle < 135)
+            if (angle > 0 && angle < 135)
             {
                 sAttackRight.SetActive(false);
                 sAttackLeft.SetActive(false);

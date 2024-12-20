@@ -142,7 +142,7 @@ public class SpecialWeapon : MonoBehaviour
                 Invoke(nameof(DisableSpecialWeapon), 0.8f);
             }
             attackCooldown = 1.25f;
-            GetComponent<PlayerAnimations>().StartAttack(1.3f);
+            GetComponent<PlayerAnimations>().StartAttack(1.5f);
             StartCoroutine(StartAnimation(bigSword, 0.3f));
             //bigSword.GetComponent<Animator>().SetTrigger("Attack");
             //bigSword.GetComponent<Collider2D>().enabled = true;
