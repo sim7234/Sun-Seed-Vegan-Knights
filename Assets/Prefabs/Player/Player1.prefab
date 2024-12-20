@@ -13423,8 +13423,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 191f1c39e50d03743994b2741aa70f68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxWater: 10000
-  currentWater: 0
+  maxWater: 100
+  currentWater: 100
   wateringTimer: 0
   waterRefillCooldown: 0
   waterRefillTimer: 0
@@ -37657,6 +37657,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5130911862086886225}
     m_Modifications:
+    - target: {fileID: 1198629897833855737, guid: f5ecf1c8838ce614a8593f1099e12c13, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1712047693285780737, guid: f5ecf1c8838ce614a8593f1099e12c13, type: 3}
       propertyPath: m_Navigation.m_SelectOnDown
       value: 

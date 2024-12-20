@@ -10,7 +10,7 @@ public class RmoveSeedCooldown : MonoBehaviour
 
         if (plantSeedSystem != null)
         {
-            plantSeedSystem.plantingTimer = 0;
+            plantSeedSystem.plantingTimer = 1;
             Debug.Log("Planting cooldown removed!");
         }
     }
