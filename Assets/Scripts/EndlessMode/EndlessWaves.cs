@@ -50,7 +50,7 @@ public class EndlessWaves : MonoBehaviour
     void Start()
     {
         startWaveTimer = betweenWavesWaitTime;
-        difficultyMultiplier = 1f;
+        difficultyMultiplier = 0f;
         numberOfEnemies = 0;
         spawnerPoints = köttbulleSwarmCost;
 
@@ -137,7 +137,7 @@ public class EndlessWaves : MonoBehaviour
 
         //Difficulty for endless mode, after 7 ~ 8 difficulty starts becoming ridiculous, so we slow down the scaling after that point.
 
-        if (difficultyMultiplier < 7)
+        if (difficultyMultiplier < 6)
         {
             difficultyMultiplier += ((0.05f * playerAmount) + (waveNumber * 0.05f));
         }
