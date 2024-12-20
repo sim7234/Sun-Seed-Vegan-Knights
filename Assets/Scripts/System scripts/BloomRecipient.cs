@@ -82,6 +82,11 @@ public class BloomRecipient : MonoBehaviour
             }
         }
     }
+
+        public bool CanBeAttacked()
+    {
+        return hasBloomed;
+    }
     private void changeColorOfRim(int playerIndex)
     {
         switch (playerIndex)
@@ -132,6 +137,25 @@ public class BloomRecipient : MonoBehaviour
             if (i < flowerPelltes.Count)
             {
                 flowerPelltes[i].SetActive(true);
+            }
+        }
+    }
+
+        public void ResetForDrag()
+    {
+        if (hasBloomed)
+        {
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            Collider2D collider2D = GetComponent<Collider2D>();
+
+            if (rb != null)
+            {
+                rb.isKinematic = false; // Ensure target can still be dragged
+            }
+
+            if (collider2D != null)
+            {
+                collider2D.enabled = true; // Ensure collider is active
             }
         }
     }

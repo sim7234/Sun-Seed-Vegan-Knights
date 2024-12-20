@@ -41,9 +41,15 @@ public class PlayerJoined : MonoBehaviour
     {
         DontDestroyOnLoad(playerInput.gameObject);
 
-        playerInput.SwitchCurrentActionMap("Disabled");
-
-        StartCoroutine(EnableActionMapAfterDelay(playerInput));
+        if (firstPlayerInput == null)
+        {
+            firstPlayerInput = playerInput;
+            playerInput.SwitchCurrentActionMap("ControlActions1"); 
+        }
+        else
+        {
+            playerInput.SwitchCurrentActionMap("ControlActions1");
+        }
 
         PlayerAttack playerAttack = playerInput.GetComponent<PlayerAttack>();
         if (playerAttack == null)
@@ -77,21 +83,6 @@ public class PlayerJoined : MonoBehaviour
                     dialogueSystem.PreviousLine();
                 }
             };
-        }
-    }
-
-    private IEnumerator EnableActionMapAfterDelay(PlayerInput playerInput)
-    {
-        yield return new WaitForSeconds(0.2f);
-
-        if (firstPlayerInput == null)
-        {
-            firstPlayerInput = playerInput;
-            playerInput.SwitchCurrentActionMap("ControlActions1"); 
-        }
-        else
-        {
-            playerInput.SwitchCurrentActionMap("ControlActions1");
         }
     }
 
