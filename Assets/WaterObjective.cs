@@ -111,12 +111,6 @@ public class WaterObjective : MonoBehaviour
 
         foreach (GameObject enemy in enemies)
         {
-
-            BloomRecipient bloomRecipient = enemy.GetComponent<BloomRecipient>();
-            if (bloomRecipient != null && bloomRecipient.hasBloomed)
-            {
-                continue; 
-            }
             float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
 
             if (distanceToEnemy < shortestDistance)
@@ -129,78 +123,84 @@ public class WaterObjective : MonoBehaviour
         return nearestEnemy;
     }
 
-private IEnumerator ShootAtTarget(GameObject target)
-{
-    if (target == null || !target.activeInHierarchy)
+    private IEnumerator ShootAtTarget(GameObject target)
     {
-        yield break; 
-    }
-        else
+
+        if (target.TryGetComponent<BloomRecipient>(out BloomRecipient bloomRecipient) && !bloomRecipient.CanBeAttacked())
         {
-            if (tongueLine != null && shootPoint != null)
+            Debug.LogWarning("Target cannot be attacked while bloomed.");
+            yield break;
+        }
+        if (target == null || !target.activeInHierarchy)
+        {
+            yield break; 
+        }
+        if (tongueLine != null && shootPoint != null)
+        {
+            if (frogAnimator != null)
             {
+                frogAnimator.enabled = false;
+            }
+            if (frogSpriteRenderer != null && frogOpenMouthSprite != null)
+            {
+                frogSpriteRenderer.sprite = frogOpenMouthSprite;
+
+                float shootSpeed = 120f;
+                Vector2 startPosition = shootPoint.position;
+                Vector2 endPosition = target.transform.position;
+                float distance = Vector2.Distance(startPosition, endPosition);
+                float time = 0;
+
+                tongueLine.SetPosition(0, startPosition);
+
+                while (time < distance / shootSpeed)
+                {
+
+                    if (target == null || !target.activeInHierarchy)
+                    {
+                        yield break;
+                    }
+
+                    time += Time.deltaTime;
+                    Vector2 currentPoint = Vector2.Lerp(startPosition, endPosition, time / (distance / shootSpeed));
+                    tongueLine.SetPosition(1, new Vector3(currentPoint.x, currentPoint.y, 0));
+                    yield return null;
+                }
+
+                tongueLine.SetPosition(1, endPosition);
+                if (target != null)
+                {
+                    Health targetHealth = target.GetComponent<Health>();
+                    if (targetHealth != null)
+                    {
+                        Debug.Log($"Target Health Detected: {targetHealth.GetCurrentHealth()}");
+                        if (targetHealth.GetCurrentHealth() <= 5)
+                        {
+                            targetHealth.TakeDamage(150);
+                        }
+                        else if (targetHealth.GetCurrentHealth() <= 150)
+                        {
+                            yield return StartCoroutine(DragTargetToFrog(target));
+                            targetHealth.TakeDamage(150);
+                        }
+                        else
+                        {
+                            targetHealth.TakeDamage(150);
+                        }
+                    }
+                    else
+                    {
+                        Debug.LogWarning("No health component found on target.");
+                    }
+                }
+
+                yield return new WaitForSeconds(0.1f);
+                tongueLine.SetPosition(0, Vector3.zero);
+                tongueLine.SetPosition(1, Vector3.zero);
+
                 if (frogAnimator != null)
                 {
-                    frogAnimator.enabled = false;
-                }
-                if (frogSpriteRenderer != null && frogOpenMouthSprite != null)
-                {
-                    frogSpriteRenderer.sprite = frogOpenMouthSprite;
-
-                    float shootSpeed = 120f;
-                    Vector2 startPosition = shootPoint.position;
-                    Vector2 endPosition = target.transform.position;
-                    float distance = Vector2.Distance(startPosition, endPosition);
-                    float time = 0;
-
-                    tongueLine.SetPosition(0, startPosition);
-
-                    while (time < distance / shootSpeed)
-                    {
-                        if (target == null || !target.activeInHierarchy)
-                        {
-                            yield break;
-                        }
-
-                        time += Time.deltaTime;
-                        Vector2 currentPoint = Vector2.Lerp(startPosition, endPosition, time / (distance / shootSpeed));
-                        tongueLine.SetPosition(1, new Vector3(currentPoint.x, currentPoint.y, 0));
-                        yield return null;
-                    }
-
-                    tongueLine.SetPosition(1, endPosition);
-                    if (target != null)
-                    {
-                        Health targetHealth = target.GetComponent<Health>();
-                        if (targetHealth != null)
-                        {
-                            float targetCurrentHealth = targetHealth.GetCurrentHealth();
-
-                            if (targetCurrentHealth <= 5)
-                            {
-                                targetHealth.TakeDamage(150);
-                            }
-                            else if (targetCurrentHealth <= 150)
-                            {
-                                Debug.Log("eat");
-                                yield return StartCoroutine(DragTargetToFrog(target));
-                                targetHealth.TakeDamage(10000);
-                            }
-                            else
-                            {
-                                targetHealth.TakeDamage(150);
-                            }
-                        }
-                    }
-
-                    yield return new WaitForSeconds(0.1f);
-                    tongueLine.SetPosition(0, Vector3.zero);
-                    tongueLine.SetPosition(1, Vector3.zero);
-
-                    if (frogAnimator != null)
-                    {
-                        frogAnimator.enabled = true;
-                    }
+                    frogAnimator.enabled = true;
                 }
             }
         }
@@ -209,8 +209,17 @@ private IEnumerator ShootAtTarget(GameObject target)
     {
         if (target == null || !target.activeInHierarchy)
         {
-        yield break; 
+            Debug.LogWarning("Target is null or inactive. Exiting drag logic.");
+            yield break; 
         }
+
+        BloomRecipient bloomRecipient = target.GetComponent<BloomRecipient>();
+        if (bloomRecipient != null)
+        {
+            bloomRecipient.ResetForDrag();
+        }
+        Debug.Log("Starting drag logic for target: " + target.name);
+        
         if (frogAnimator != null)
         {
             frogAnimator.enabled = false;
@@ -227,6 +236,7 @@ private IEnumerator ShootAtTarget(GameObject target)
 
         if (target.TryGetComponent(out Rigidbody2D rb))
         {
+            Debug.Log("Found Rigidbody2D on target.");
             rb.velocity = Vector2.zero;
             rb.isKinematic = true;
         }
@@ -235,11 +245,18 @@ private IEnumerator ShootAtTarget(GameObject target)
         Collider2D targetCollider = target.GetComponent<Collider2D>();
         if (frogCollider != null && targetCollider != null)
         {
+            Debug.Log("Ignoring collisions between frog and target.");
             Physics2D.IgnoreCollision(frogCollider, targetCollider, true);
         }
 
         while (time < 1f)
         {
+            if (target == null || !target.activeInHierarchy)
+            {
+                Debug.LogWarning("Target became null or inactive during drag.");
+                yield break; 
+            }
+
             time += Time.deltaTime * dragSpeed;
             Vector3 currentTargetPosition = Vector3.Lerp(startPosition, endPosition, time);
             target.transform.position = currentTargetPosition;
@@ -252,6 +269,7 @@ private IEnumerator ShootAtTarget(GameObject target)
 
         if (frogCollider != null && targetCollider != null)
         {
+            Debug.Log("Re-enabling collisions between frog and target.");
             Physics2D.IgnoreCollision(frogCollider, targetCollider, false);
         }
 
@@ -262,6 +280,8 @@ private IEnumerator ShootAtTarget(GameObject target)
         {
             frogAnimator.enabled = true;
         }
+
+        Debug.Log("Drag logic complete for target: " + target.name);
     }
 }
 
