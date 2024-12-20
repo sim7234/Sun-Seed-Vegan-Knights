@@ -39,6 +39,13 @@ public class PlayerJoined : MonoBehaviour
 
     public void OnPlayerJoined(PlayerInput playerInput)
     {
+        if (playerInput.devices.Count > 0 && 
+            (playerInput.devices[0] is Keyboard || playerInput.devices[0] is Mouse))
+        {
+            Destroy(playerInput.gameObject);
+            return;
+        }
+
         DontDestroyOnLoad(playerInput.gameObject);
 
         if (firstPlayerInput == null)
