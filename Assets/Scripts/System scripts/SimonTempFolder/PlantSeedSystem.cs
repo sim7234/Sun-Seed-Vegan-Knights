@@ -129,6 +129,29 @@ public class PlantSeedSystem : MonoBehaviour
 
     private void OnPlantSeedPerformed(InputAction.CallbackContext context)
     {
+        if (plantingTimer > 0)
+        {
+            Debug.Log("Planting timer cooldown");
+        }
+        if (seedInRange.Count != 0)
+        {
+            Debug.Log("To many seeds in range");
+        }
+        if (currentSeedTypeInRange != null)
+        {
+            Debug.Log("Current seed type in range is not null");
+        }
+        if (inSunScript.inSun == false)
+        {
+            Debug.Log("Not in sun");
+        }
+        if (cantPlant)
+        {
+            Debug.Log("Cant plant bool");
+        }
+
+
+
         if (plantingTimer <= 0 && seedInRange.Count == 0 && currentSeedTypeInRange == null && inSunScript.inSun && !cantPlant)
         {
             recentlyPlanted = true;
