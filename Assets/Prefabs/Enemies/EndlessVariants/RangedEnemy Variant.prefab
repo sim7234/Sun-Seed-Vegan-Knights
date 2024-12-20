@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RangedEnemy Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8063347678101092571, guid: 9aa488ed6f997dc41932d4ec2557d188, type: 3}
+      propertyPath: distenceToAttack
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 8670388131981876662, guid: 9aa488ed6f997dc41932d4ec2557d188, type: 3}
       propertyPath: endlessMode
       value: 1

@@ -259,6 +259,7 @@ MonoBehaviour:
   followTarget: 1
   trackTarget: 1
   targetTransform: {x: 0, y: 0, z: 0}
+  targetPlayerPoints: 0
 --- !u!114 &850041088368170479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,8 +295,8 @@ MonoBehaviour:
   distenceToAttack: 60
   eye: {fileID: 8474552511798323635}
   pupil: {fileID: 3648989103791377992}
-  attackSpeed: 3
-  projectileSpeed: 1.25
+  attackSpeed: 2
+  projectileSpeed: 1.5
 --- !u!114 &3580056762478777823
 MonoBehaviour:
   m_ObjectHideFlags: 0
