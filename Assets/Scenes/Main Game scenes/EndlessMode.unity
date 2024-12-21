@@ -40361,8 +40361,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c05f1956ff6c60945b0cbbefa22758eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  halfXBounds: 20
-  halfYBounds: 15
+  halfXBounds: 50
+  halfYBounds: 50
   halfZBounds: 15
   focusBounds:
     m_Center: {x: 0, y: 0, z: 0}

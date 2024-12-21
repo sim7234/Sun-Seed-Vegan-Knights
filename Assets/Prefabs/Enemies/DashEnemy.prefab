@@ -75,7 +75,8 @@ MonoBehaviour:
   bloodOnHit: {fileID: 1240254011838071449, guid: 41925829a7d4e9f44b90f9db56482cec, type: 3}
   deathEffect: {fileID: 1240254011838071449, guid: a8a005973de14ea47810af5564db808b, type: 3}
   characterSprite: {fileID: 6399014864675835795}
-  hitSounds: []
+  hitSounds:
+  - {fileID: 8300000, guid: 65e9a71824cd56941898248aa78f1b56, type: 3}
   EpelepticFilterOn: 1
   talkToMissionMaster: 1
   endlessMode: 0
