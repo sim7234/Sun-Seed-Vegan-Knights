@@ -155,7 +155,8 @@ MonoBehaviour:
   bloodOnHit: {fileID: 1240254011838071449, guid: 41925829a7d4e9f44b90f9db56482cec, type: 3}
   deathEffect: {fileID: 1240254011838071449, guid: a8a005973de14ea47810af5564db808b, type: 3}
   characterSprite: {fileID: 766832208405697385}
-  hitSounds: []
+  hitSounds:
+  - {fileID: 8300000, guid: ed63a7b92d3b17742ba456aa1d474d00, type: 3}
   EpelepticFilterOn: 0
   talkToMissionMaster: 0
   endlessMode: 0
@@ -200,9 +201,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 823a7c3600d14944a9be1f282f070446, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ed63a7b92d3b17742ba456aa1d474d00, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.61
   m_Pitch: 1
   Loop: 0
   Mute: 0

@@ -105,7 +105,7 @@ public class enemyMeleeAttack : MonoBehaviour
         damageSprite.color = Color.black;
         Invoke(nameof(EndMeleeAttack), resetTime);
     }
-    void EndMeleeAttack()
+    public void EndMeleeAttack()
     {
         foreach (var flipScript in flipSpriteScript)
         {

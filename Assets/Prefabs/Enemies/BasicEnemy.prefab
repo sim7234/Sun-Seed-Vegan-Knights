@@ -491,6 +491,7 @@ GameObject:
   - component: {fileID: 1910779451597007481}
   - component: {fileID: 421583042266671367}
   - component: {fileID: 7201140583276990376}
+  - component: {fileID: 4181001954920178482}
   m_Layer: 7
   m_Name: BasicEnemy
   m_TagString: Enemy
@@ -509,7 +510,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.08, y: 2.23, z: 0}
   m_LocalScale: {x: 0.10918054, y: 0.10918054, z: 0.10918054}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7762172955754322478}
   - {fileID: 3524747875397807258}
@@ -604,7 +605,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.06420779, y: -0.052930832}
+  m_Offset: {x: -0.06420779, y: -0.26088166}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -615,7 +616,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.979176, y: 6.0508986}
+  m_Size: {x: 4.979176, y: 13.6203785}
   m_EdgeRadius: 0
 --- !u!114 &4183702063713386211
 MonoBehaviour:
@@ -683,15 +684,13 @@ MonoBehaviour:
   deathEffect: {fileID: 1240254011838071449, guid: 9abd4c5dd71cde54d86b9bf9fda6be55, type: 3}
   characterSprite: {fileID: 7375913918595709568}
   hitSounds:
-  - {fileID: 8300000, guid: 5b6366041c820294bbfd43ce34f629d6, type: 3}
-  - {fileID: 8300000, guid: 13fa509599d6f524fbbf661a3a5ef340, type: 3}
-  - {fileID: 8300000, guid: 1dc8c4d5204682044ab37f4c74334dcf, type: 3}
-  - {fileID: 8300000, guid: 5378ee7a6c057e64ea27cdc7bb3821a0, type: 3}
-  - {fileID: 8300000, guid: b7c903ddb458a044595d04d59fef98d6, type: 3}
-  EpelepticFilterOn: 1
+  - {fileID: 8300000, guid: ed63a7b92d3b17742ba456aa1d474d00, type: 3}
+  EpelepticFilterOn: 0
   talkToMissionMaster: 1
   endlessMode: 0
   onHitFrameChange: {fileID: 6795622847077957193}
+  allOtherSprites:
+  - {fileID: 480903109418286814}
   bloodOnDeath:
   - {fileID: 8342241877115311513, guid: bc5cafd32c6bac24eb5894aff9cd2032, type: 3}
   - {fileID: 7940939451509185941, guid: 323900eff2fa8714587ddc5005db45cb, type: 3}
@@ -757,7 +756,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 783cbae38164d0f4bb241c9e3c745220, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 7375913918595709568}
+  sprites:
+  - {fileID: 7375913918595709568}
+  - {fileID: 3167047894628798470}
+  - {fileID: 3642978271374002926}
   slightlyDamaged: {r: 1, g: 0.8745098, b: 0.8745098, a: 1}
   damaged: {r: 0.83137256, g: 0.5294118, b: 0.5294118, a: 1}
   almostDead: {r: 0.6156863, g: 0.33333334, b: 0.33333334, a: 1}
@@ -851,9 +853,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_audioClip: {fileID: 8300000, guid: ed63a7b92d3b17742ba456aa1d474d00, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.61
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -976,6 +978,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onHitEffect: {fileID: 1240254011838071449, guid: eb73ffa3a4dc04943a19fff3efadf472, type: 3}
+--- !u!70 &4181001954920178482
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4076701649708178499}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.2495434, y: 0}
+  m_Size: {x: 5.7927437, y: 15.629999}
+  m_Direction: 0
 --- !u!1 &5203639370248839269
 GameObject:
   m_ObjectHideFlags: 0
@@ -1398,12 +1435,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 4375344111486016213}
     m_Modifications:
     - target: {fileID: 3510066618627222310, guid: 644a79e5e41be3741947b55aca384f8a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5383173
+      objectReference: {fileID: 0}
+    - target: {fileID: 3510066618627222310, guid: 644a79e5e41be3741947b55aca384f8a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5383173
+      objectReference: {fileID: 0}
+    - target: {fileID: 3510066618627222310, guid: 644a79e5e41be3741947b55aca384f8a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5383173
+      objectReference: {fileID: 0}
+    - target: {fileID: 3510066618627222310, guid: 644a79e5e41be3741947b55aca384f8a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.25
+      value: 0.36
       objectReference: {fileID: 0}
     - target: {fileID: 3510066618627222310, guid: 644a79e5e41be3741947b55aca384f8a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.41
+      value: 4.59
       objectReference: {fileID: 0}
     - target: {fileID: 3510066618627222310, guid: 644a79e5e41be3741947b55aca384f8a, type: 3}
       propertyPath: m_LocalPosition.z

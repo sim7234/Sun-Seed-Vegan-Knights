@@ -42,11 +42,12 @@ public class Health : MonoBehaviour
 
     [SerializeField]
     private GameObject onHitFrameChange;
+    [SerializeField]
+    private List<GameObject> allOtherSprites = new List<GameObject>();
 
 
     [SerializeField]
     private List<GameObject> bloodOnDeath = new List<GameObject>();
-
 
     [SerializeField] GameObject waterDrop;
 
@@ -95,7 +96,7 @@ public class Health : MonoBehaviour
             GetComponent<Collider2D>().enabled = false;
             Invoke(nameof(TurnOnCollider), 1f);
             StartCoroutine(FreezeGame(0.001f));
-            
+
         }
         else
         {
@@ -158,7 +159,15 @@ public class Health : MonoBehaviour
 
     private void PlayRandomHitSound()
     {
-        if (hitSounds.Count > 0 && currentPlayingSounds < maxSimultaneousSounds)
+        if(hitSounds.Count == 1)
+        {
+            if (hitSounds[0] == audioSource.clip)
+            {
+                audioSource.pitch = Random.Range(0.9f, 1.1f);
+                audioSource.Play();
+            }
+        }
+        else if (hitSounds.Count > 0 && currentPlayingSounds < maxSimultaneousSounds)
             {
                 AudioClip randomHitSound = hitSounds[Random.Range(0, hitSounds.Count)];
                 if (audioSource != null)
@@ -246,6 +255,14 @@ public class Health : MonoBehaviour
         {
             onHitFrameChange.SetActive(true);
             characterSprite.enabled = false;
+            foreach (GameObject sprites in allOtherSprites)
+            {
+                sprites.SetActive(false);
+                if(GetComponent<enemyMeleeAttack>() != null)
+                {
+                    GetComponent<enemyMeleeAttack>().EndMeleeAttack();
+                }
+            }
 
             if (!EpelepticFilterOn && characterSprite != null)
             {
@@ -260,6 +277,7 @@ public class Health : MonoBehaviour
                 onHitFrameChange.SetActive(false);
             }
             characterSprite.enabled = true;
+
         }
         else
         {

@@ -28,6 +28,11 @@ public class HitEffectsPlayer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        DoHitEffect(collision);
+    }
+
+    public void DoHitEffect(Collider2D collision)
+    {
         if (collision.gameObject.GetComponent<Damage>() != null && collision.gameObject.CompareTag("Enemy"))
         {
             if (effectcooldown <= 0)
@@ -48,7 +53,6 @@ public class HitEffectsPlayer : MonoBehaviour
             }
         }
     }
-
     private void ResetColor()
     {
         foreach (var sprite in allPlayerSprites)

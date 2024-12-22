@@ -1,9 +1,10 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyHealthDisplay : MonoBehaviour
 {
     [SerializeField]
-    private SpriteRenderer sprite;
+    private List<SpriteRenderer> sprites;
     private Health health;
 
     [SerializeField]
@@ -17,10 +18,6 @@ public class EnemyHealthDisplay : MonoBehaviour
 
     private void Start()
     {
-        if(sprite == null)
-        {
-            sprite = GetComponent<SpriteRenderer>();
-        }
         health = GetComponent<Health>();
     }
    
@@ -30,15 +27,24 @@ public class EnemyHealthDisplay : MonoBehaviour
         {
             //Debug.Log(health.GetCurrentHealth() / health.maxHealth);
             //Debug.Log("SlightlyDamged");
-            sprite.color = slightlyDamaged;
+            foreach (var sprite in sprites)
+            { 
+                sprite.color = slightlyDamaged;
+            }   
         }
         if (health.GetCurrentHealth() / health.maxHealth <= 0.50f)
         {
-            sprite.color = damaged;
+            foreach (var sprite in sprites)
+            {
+                sprite.color = damaged;
+            }
         }
         if (health.GetCurrentHealth() / health.maxHealth <= 0.30f)
         {
-            sprite.color = almostDead;
+            foreach (var sprite in sprites)
+            {
+                sprite.color = almostDead;
+            }
         }
     }
 }

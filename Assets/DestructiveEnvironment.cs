@@ -42,7 +42,8 @@ public class DestructiveEnvironment : MonoBehaviour
         audioSource.pitch = Random.Range(0.90f, 1.1f);
         audioSource.Play();
 
-        GetComponent<Collider2D>().enabled = false;
+        GetComponent<BoxCollider2D>().enabled = false;
+        GetComponent<CircleCollider2D>().enabled = false;
 
         SpawnWater();
     }
