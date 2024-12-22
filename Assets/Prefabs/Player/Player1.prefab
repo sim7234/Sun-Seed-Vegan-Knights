@@ -12718,6 +12718,7 @@ MonoBehaviour:
   talkToMissionMaster: 0
   endlessMode: 0
   onHitFrameChange: {fileID: 0}
+  allOtherSprites: []
   bloodOnDeath: []
   waterDrop: {fileID: 0}
   WaterValue: 0
@@ -13383,7 +13384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allChildren: {fileID: 3656512881633316162}
-  deathBomb: {fileID: 6217569336462880355, guid: 9ee545789671ad940a52d74fee1a68d8, type: 3}
+  deathBomb: {fileID: 4291055712889806521, guid: 6166b81ed2c525e41860b9b2c6e574a0, type: 3}
 --- !u!114 &4777482717192873088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13507,8 +13508,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPoints:
-  - {fileID: 7692558217389795792}
   - {fileID: 8878796716465749325}
+  - {fileID: 7692558217389795792}
   - {fileID: 6261405070672844600}
   - {fileID: 1346763302680612463}
 --- !u!114 &2125979303738123990
@@ -31577,7 +31578,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 07795ac1643fbaa4ab5ad3b7f0110b8b, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.373
+  m_Volume: 0.144
   m_Pitch: 1
   Loop: 0
   Mute: 0

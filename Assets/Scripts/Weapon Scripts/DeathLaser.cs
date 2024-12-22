@@ -49,7 +49,7 @@ public class DeathLaser : MonoBehaviour
                     targets.RemoveAt(i);
                 }
             }
-            agent.destination = targets[0].transform.position;
+            //agent.destination = targets[0].transform.position;
             if (hitsperSecond <= 0)
             {
                 for (int i = 0; i < targets.Count; i++)

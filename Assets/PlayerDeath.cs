@@ -26,7 +26,7 @@ public class PlayerDeath : MonoBehaviour
         GetComponent<PlayerMovement>().moveSpeed = baseMoveSpeed;
         GetComponent<PlayerMovement>().rotationSpeed = 1;
         Invoke(nameof(TurnOnAllScripts), 5.0f);
-        Invoke(nameof(SpawnExplosion), 4.8f);
+        Invoke(nameof(SpawnExplosion), 4.0f);
 
         SaveData.Instance.playerDeathsBeforeGameOver--;
         SaveData.Instance.UpdateRespawnCount();
@@ -89,6 +89,6 @@ public class PlayerDeath : MonoBehaviour
     private void SpawnExplosion()
     {
         GameObject newDeathSpawn = Instantiate(deathBomb, transform.position, quaternion.identity);
-        Destroy(newDeathSpawn, 0.2f);
+        Destroy(newDeathSpawn, 1.0f);
     }
 }

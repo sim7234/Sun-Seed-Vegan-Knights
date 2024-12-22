@@ -69,7 +69,7 @@ public class BloomRecipient : MonoBehaviour
             {
                 flowerPelletsObject.SetActive(true);
                 hasBloomed = true;
-                bloomGlowRim.SetActive(true);
+                //bloomGlowRim.SetActive(true);
                 changeColorOfRim(BloomIndex);
             }
 

@@ -274,7 +274,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (swordSwingSound != null && audioSource != null)
         {
-            audioSource.pitch = (1.0f - attackCounter /10) * Random.Range(0.95f, 1.05f);
+            audioSource.pitch = (1.0f - attackCounter /10) * Random.Range(0.90f, 1.1f);
             audioSource.Play();
         }
     }
