@@ -116,11 +116,14 @@ public class SaveData : MonoBehaviour
     {        
         respawnCountText.gameObject.SetActive(true);
         respawnCountText.SetText("Respawns: " + playerDeathsBeforeGameOver);
-        if(playerDeathsBeforeGameOver <= 0)
+
+        if (playerDeathsBeforeGameOver <= 0)
         {
             respawnCountText.gameObject.SetActive(false);
-            SceneManager.LoadScene(0);
+            if (MissionMaster.Instance != null)
+            {
+                MissionMaster.Instance.CheckGameOver();
+            }
         }
-        
     }
 }

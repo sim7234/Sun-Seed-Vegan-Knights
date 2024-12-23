@@ -58,9 +58,18 @@ public class MissionMaster : MonoBehaviour
 
     [SerializeField]
     private TextMeshProUGUI enemyCounterText;
-
-
     private bool onFinalStage;
+
+    [SerializeField]
+    private GameObject winScreen;
+
+    [SerializeField]
+    private GameObject gameOverScreen;
+
+    [SerializeField]
+    private float screenDisplayDuration = 5f;
+
+
 
     private void Awake()
     {
@@ -103,10 +112,43 @@ public class MissionMaster : MonoBehaviour
         }
     }
 
-    private void WinScreen()
+        private void WinScreen()
     {
         SaveData.Instance.completedMission += 1;
-        SceneManager.LoadScene(0);
+        StartCoroutine(ShowScreenTemporarily(winScreen, true));
+    }
+    public void ShowGameOverScreen()
+    {
+        StartCoroutine(ShowScreenTemporarily(gameOverScreen, false));
+    }
+
+    private IEnumerator ShowScreenTemporarily(GameObject screen, bool isWin)
+    {
+        if (screen != null)
+        {
+            screen.SetActive(true);
+        }
+        yield return new WaitForSeconds(screenDisplayDuration); 
+        if (screen != null)
+        {
+            screen.SetActive(false); 
+        }
+
+        if (isWin)
+        {
+            SceneManager.LoadScene(0); 
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+    }
+    public void CheckGameOver()
+    {
+        if (SaveData.Instance.playerDeathsBeforeGameOver <= 0)
+        {
+            ShowGameOverScreen();
+        }
     }
     public void AddEnemy(GameObject enemyObject)
     {
