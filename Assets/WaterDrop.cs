@@ -112,7 +112,7 @@ public class WaterDrop : MonoBehaviour
         {
             if (other.GetComponent<WaterSystem>().currentWater < other.GetComponent<WaterSystem>().maxWater)
             {
-                other.GetComponent<WaterSystem>().currentWater += 1f;
+                other.GetComponent<WaterSystem>().currentWater += 0.5f;
                 other.GetComponent<WaterSystem>().DisplayDropForTime();
             }
 
