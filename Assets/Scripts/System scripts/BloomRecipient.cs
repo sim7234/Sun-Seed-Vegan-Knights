@@ -30,6 +30,8 @@ public class BloomRecipient : MonoBehaviour
     [SerializeField]
     private GameObject flowerPelletsObject;
 
+    [SerializeField] GameObject bloomFlowerOutline;
+
     [SerializeField]
     private List<GameObject> flowerPelltes = new List<GameObject>();
     private void Start()
@@ -67,6 +69,7 @@ public class BloomRecipient : MonoBehaviour
 
             if (bloomBuildUp > bloomResistance)
             {
+                bloomFlowerOutline.SetActive(true);
                 flowerPelletsObject.SetActive(true);
                 hasBloomed = true;
                 //bloomGlowRim.SetActive(true);

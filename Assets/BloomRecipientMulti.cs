@@ -54,6 +54,10 @@ public class BloomRecipientMulti : MonoBehaviour
     private List<GameObject> flowerPelltes3 = new List<GameObject>();
     [SerializeField]
     private List<GameObject> flowerPelltes4 = new List<GameObject>();
+
+
+    [SerializeField] GameObject[] bloomOutline = new GameObject[4];
+
     private void Start()
     {
         health = GetComponent<Health>();
@@ -97,6 +101,7 @@ public class BloomRecipientMulti : MonoBehaviour
                 PrintPellets(flowerPelltes1, bloomBuildUp1);
                 if (bloomBuildUp1 > bloomResistance)
                 {
+                    bloomOutline[0].SetActive(true);
                     hasBloomed1 = true;
                     flowerPelletsObject1.SetActive(true);
                 }
@@ -106,6 +111,7 @@ public class BloomRecipientMulti : MonoBehaviour
                 PrintPellets(flowerPelltes2, bloomBuildUp2);
                 if (bloomBuildUp2 > bloomResistance)
                 {
+                    bloomOutline[1].SetActive(true);
                     hasBloomed2 = true;
                     flowerPelletsObject2.SetActive(true);
                 }
@@ -115,6 +121,7 @@ public class BloomRecipientMulti : MonoBehaviour
                 PrintPellets(flowerPelltes3, bloomBuildUp3);
                 if (bloomBuildUp3 > bloomResistance)
                 {
+                    bloomOutline[2].SetActive(true);
                     hasBloomed3 = true;
                     flowerPelletsObject3.SetActive(true);
                 }
@@ -124,6 +131,7 @@ public class BloomRecipientMulti : MonoBehaviour
                 PrintPellets(flowerPelltes4, bloomBuildUp4);
                 if (bloomBuildUp4 > bloomResistance)
                 {
+                    bloomOutline[3].SetActive(true);
                     hasBloomed4 = true;
                     flowerPelletsObject4.SetActive(true);
                 }
