@@ -222,6 +222,7 @@ public class PlantSeedSystem : MonoBehaviour
             seedInRange.Remove(oldSeed);
         }
 
+        //currentSeedTypeInRange != null; problem
         if (collision.GetComponent<WeaponPickup>() != null && !collision.gameObject.CompareTag("WeaponPickup"))
         {
             if (currentSeedTypeInRange == collision.gameObject)
