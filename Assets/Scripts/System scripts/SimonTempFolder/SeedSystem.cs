@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SeedSystem : MonoBehaviour
 {
@@ -25,6 +26,9 @@ public class SeedSystem : MonoBehaviour
     CanWater canWaterScript;
     private int playersInTrigger = 0;
 
+    [SerializeField] Image waterDropImage;
+    [SerializeField] Image waterDropOutline;
+
     private void Start()
     {
         if (GetComponent<CanWater>() != null)
@@ -37,6 +41,23 @@ public class SeedSystem : MonoBehaviour
         if (canWaterScript != null)
         {
             displayCostText.text = (canWaterScript.currentWater.ToString() + " / " + canWaterScript.totalWaterCost.ToString());
+
+            Debug.Log(canWaterScript.currentWater / canWaterScript.totalWaterCost);
+
+            //we multiply by 1.001 to return a float instead of int
+
+            if (canWaterScript.currentWater * 1.001 / canWaterScript.totalWaterCost * 1.001 < 0.6f)
+            {
+                if (waterDropImage.fillAmount < (canWaterScript.currentWater * 1.001 / canWaterScript.totalWaterCost * 1.001) - 0.05f)
+                {
+                    waterDropImage.fillAmount += Time.deltaTime * 0.3f;
+                }
+            }
+            else if (waterDropImage.fillAmount < (canWaterScript.currentWater * 1.001 / canWaterScript.totalWaterCost * 1.001) - 0.05f)
+            {
+                waterDropImage.fillAmount += Time.deltaTime * 0.6f;
+            }
+
         }
 
 
@@ -50,6 +71,8 @@ public class SeedSystem : MonoBehaviour
             wetSeed = true;
             canWaterScript.canBeWatered = false;
             displayCostText.enabled = false;
+            waterDropImage.enabled = false;
+            waterDropOutline.enabled = false;
             growingEffect.SetActive(true);
         }
     }
@@ -69,16 +92,20 @@ public class SeedSystem : MonoBehaviour
         Destroy(gameObject);
     }
 
-   public void DisplayCost(bool active)
+    public void DisplayCost(bool active)
     {
         if (active == true && wetSeed == false)
         {
             displayCostText.enabled = true;
+            waterDropImage.enabled = true;
+            waterDropOutline.enabled = true;
         }
         else
         {
             displayCostText.enabled = false;
-        }   
+            waterDropImage.enabled = false;
+            waterDropOutline.enabled = false;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
