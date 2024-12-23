@@ -346,7 +346,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""82433dfd-8f37-4aca-8785-c16393469ff4"",
                     ""path"": ""<Gamepad>/buttonNorth"",
-                    ""interactions"": ""Press(behavior=2)"",
+                    ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": ""Control"",
                     ""action"": ""Water"",

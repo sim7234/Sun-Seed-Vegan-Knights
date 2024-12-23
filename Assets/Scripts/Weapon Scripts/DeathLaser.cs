@@ -56,6 +56,7 @@ public class DeathLaser : MonoBehaviour
                 {
                     if (Vector3.Distance(targets[i].transform.position, transform.position) <= damageRange)
                     {
+                        if (targets[i].GetComponent<Health>() != null)
                         targets[i].GetComponent<Health>().TakeDamage(damage * Time.deltaTime * 10);
                     }
                 }

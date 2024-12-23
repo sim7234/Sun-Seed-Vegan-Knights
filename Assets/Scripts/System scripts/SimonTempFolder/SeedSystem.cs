@@ -42,8 +42,6 @@ public class SeedSystem : MonoBehaviour
         {
             displayCostText.text = (canWaterScript.currentWater.ToString() + " / " + canWaterScript.totalWaterCost.ToString());
 
-            Debug.Log(canWaterScript.currentWater / canWaterScript.totalWaterCost);
-
             //we multiply by 1.001 to return a float instead of int
 
             if (canWaterScript.currentWater * 1.001 / canWaterScript.totalWaterCost * 1.001 < 0.6f)

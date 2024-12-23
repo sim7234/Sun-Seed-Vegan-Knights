@@ -49,6 +49,16 @@ public class WaterSystem : MonoBehaviour
     }
     void Update()
     {
+
+        if (waterAction.ReadValue<float>() > 0)
+        {
+            waterButtonHeld = true;
+        }
+        else
+        {
+            waterButtonHeld = false;
+        }
+
         //waterOutLineImage.transform.position = Camera.main.WorldToScreenPoint(new Vector3(gameObject.transform.position.x, gameObject.transform.position.y
         //    + gameObject.transform.localScale.y + 0.3f, 0));
 
@@ -110,23 +120,23 @@ public class WaterSystem : MonoBehaviour
         }
     }
 
-    private void OnEnable()
-    {
-        if (waterAction != null)
-        {
-            waterAction.performed += OnWater;
-            waterAction.Enable();
-        }
-    }
+    //private void OnEnable()
+    //{
+    //    if (waterAction != null)
+    //    {
+    //        waterAction.performed += OnWater;
+    //        waterAction.Enable();
+    //    }
+    //}
 
-    private void OnDisable()
-    {
-        if (waterAction != null)
-        {
-            waterAction.performed -= OnWater;
-            waterAction.Disable();
-        }
-    }
+    //private void OnDisable()
+    //{
+    //    if (waterAction != null)
+    //    {
+    //        waterAction.performed -= OnWater;
+    //        waterAction.Disable();
+    //    }
+    //}
 
     private void OnTriggerStay2D(Collider2D other)
     {
@@ -196,14 +206,18 @@ public class WaterSystem : MonoBehaviour
         
     }
 
-    public void OnWater(InputAction.CallbackContext context)
-    {
-        //WaterInput triggers on press and release.
-        if (context.performed)
-        {
-            waterButtonHeld = !waterButtonHeld;
-        }
-    }
+    //public void OnWater(InputAction.CallbackContext context)
+    //{
+    //    //WaterInput triggers on press and release.
+    //    if (context.performed)
+    //    {
+    //        waterButtonHeld = true;
+    //    }
+    //    if (context.canceled)
+    //    {
+    //        waterButtonHeld = false;
+    //    }
+    //}
 
     /// <summary>
     /// Takes a water cost, returns true if player had enough water and had the cooldown to water, returns false otherwise.
