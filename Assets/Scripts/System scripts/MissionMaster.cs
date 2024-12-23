@@ -211,7 +211,7 @@ public class MissionMaster : MonoBehaviour
     private IEnumerator MoveCameraToNextPoint(GameObject obj, Vector3 start, GameObject end)
     {
         combatOver = false;
-        float duration = Vector3.Distance(start, end.transform.position) / currentCameraSpeedModifire;
+        float duration = Vector3.Distance(start, end.transform.position) / 8;
         float timeElapsed = 0;
         nextStagePointer.SetActive(true);
         while (timeElapsed < duration)
