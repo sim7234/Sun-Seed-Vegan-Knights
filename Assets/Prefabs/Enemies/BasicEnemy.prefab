@@ -775,7 +775,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab102bb52a7da4b4a9d11af98a9b39f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bloomResistance: 10
+  bloomResistance: 240
   bloomBuildUp: 0
   hasBloomed: 0
   BloomExplosionVFX: {fileID: 1240254011838071449, guid: 20efd42d40277384687f4f2a74a87383, type: 3}
