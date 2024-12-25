@@ -18,11 +18,11 @@ public class choseMissionPoint : MonoBehaviour
 
     private Collider2D collider;
 
-    private SpriteRenderer sprite;
+    [SerializeField]
+    private List<SpriteRenderer> sprites = new List<SpriteRenderer>();
     private void Start()
     {
         collider = GetComponent<Collider2D>();
-        sprite = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -32,12 +32,22 @@ public class choseMissionPoint : MonoBehaviour
             if (missionMaster.combatOver && activeIfNull == null)
             {
                 collider.enabled = true;
-                sprite.enabled = true;
+                foreach (SpriteRenderer sprite in sprites)
+                {
+
+                    sprite.enabled = true;
+
+                }
             }
             else
             {
                 collider.enabled = false;
-                sprite.enabled = false;
+                foreach (SpriteRenderer sprite in sprites)
+                {
+
+                    sprite.enabled = false;
+
+                }
             }
         }
         else
@@ -45,12 +55,22 @@ public class choseMissionPoint : MonoBehaviour
             if (missionMaster.combatOver)
             {
                 collider.enabled = true;
-                sprite.enabled = true;
+                foreach (SpriteRenderer sprite in sprites)
+                {
+
+                    sprite.enabled = true;
+
+                }
             }
             else
             {
                 collider.enabled = false;
-                sprite.enabled = false;
+                foreach (SpriteRenderer sprite in sprites)
+                {
+
+                    sprite.enabled = false;
+
+                }
             }
         }
     }

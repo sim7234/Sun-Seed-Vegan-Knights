@@ -92,7 +92,7 @@ public class enemyMeleeAttack : MonoBehaviour
             attackPattern.SetActive(true);
             rotateScript.lockRotation = true;
             canWalk = false;
-            changeSprite();
+            changeSprite(true);
             Invoke(nameof(StartMeleeAttack), windUpTime);
         }
         attackEffectPos.transform.localEulerAngles = new Vector3(0, 0, rotationReference.transform.localEulerAngles.z);
@@ -100,10 +100,12 @@ public class enemyMeleeAttack : MonoBehaviour
 
     void StartMeleeAttack()
     {
+       
         audioSourceSaveData.PlayOneShot(attackSound);
         attackVisualCollider.enabled = true;
         damageSprite.color = Color.black;
         Invoke(nameof(EndMeleeAttack), resetTime);
+        
     }
     public void EndMeleeAttack()
     {
@@ -120,12 +122,12 @@ public class enemyMeleeAttack : MonoBehaviour
         enemyAttacksScript.isAttacking = false;
         cannotStartAttack = false;
         canWalk = true;
-        changeSprite();
+        changeSprite(false);
     }
 
-    private void changeSprite()
+    private void changeSprite(bool shouldAttack)
     {
-        if (walkingSprite.activeSelf)
+        if (shouldAttack)
         {
             walkingSprite.SetActive(false);
             attackingSprite.SetActive(true);

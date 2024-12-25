@@ -75,6 +75,8 @@ public class PlantSeedSystem : MonoBehaviour
         {
             currentType = SaveData.Instance.seedType4;
         }
+
+        StartCoroutine(CleanReapting());
     }
     private void Update()
     {
@@ -89,9 +91,36 @@ public class PlantSeedSystem : MonoBehaviour
             seedCooldownText.text = Mathf.RoundToInt(plantingTimer).ToString();
         }
 
-
+       
     }
-    
+    private void CleanSeed()
+    {
+        for (int i = 0; seedInRange.Count > i; i++)
+        {
+            if (seedInRange[i] == null)
+            {
+                seedInRange.RemoveAt(i);
+            }
+        }
+        if (currentSeedTypeInRange != null)
+        {
+            if (Vector3.Distance(transform.position, currentSeedTypeInRange.transform.position) <= 5)
+            {
+                currentSeedTypeInRange = null;
+                
+            }
+        }
+        Debug.Log("Clean");
+    }
+
+    private IEnumerator CleanReapting()
+    {
+        while (true)
+        {
+            CleanSeed();
+            yield return new WaitForSeconds(0.5f);
+        }
+    }
     private void SelectSeed()
     {
         if (currentSeedTypeInRange != null)
