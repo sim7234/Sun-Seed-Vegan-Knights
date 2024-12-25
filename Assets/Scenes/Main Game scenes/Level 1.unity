@@ -23710,6 +23710,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Save data
       objectReference: {fileID: 0}
+    - target: {fileID: 8455107829287981794, guid: fb5d2647caf8ee044b759d5cf1915843, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8697077578726434992, guid: fb5d2647caf8ee044b759d5cf1915843, type: 3}
       propertyPath: respawnCountText
       value: 
@@ -23921,7 +23925,7 @@ PrefabInstance:
       objectReference: {fileID: 573467397}
     - target: {fileID: 476285938522494790, guid: b5d8548dc6b1bfa408559e695f307bde, type: 3}
       propertyPath: respawnsForMission
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 476285938522494790, guid: b5d8548dc6b1bfa408559e695f307bde, type: 3}
       propertyPath: Objectives.Array.size

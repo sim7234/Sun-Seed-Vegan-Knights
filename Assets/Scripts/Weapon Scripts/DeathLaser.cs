@@ -21,6 +21,11 @@ public class DeathLaser : MonoBehaviour
     private GameObject NormalVfx;
     [SerializeField]
     private GameObject EpelepticFreindlyVerison;
+
+    private bool laserIsOn = false;
+
+    [SerializeField]
+    private GameObject lightSource;
     
     private void Start()
     {
@@ -34,33 +39,36 @@ public class DeathLaser : MonoBehaviour
         {
             EpelepticFreindlyVerison.SetActive(false);
             NormalVfx.SetActive(true);
-
+            Invoke(nameof(Activate), 0.5f);
         }
     }
     private void Update()
     {
-        hitsperSecond -= Time.deltaTime;
-        if (targets.Count > 0)
+        if (laserIsOn)
         {
-            for (int i = 0; i < targets.Count; i++)
-            {
-                if (targets[i] == null)
-                {
-                    targets.RemoveAt(i);
-                }
-            }
-            //agent.destination = targets[0].transform.position;
-            if (hitsperSecond <= 0)
+            hitsperSecond -= Time.deltaTime;
+            if (targets.Count > 0)
             {
                 for (int i = 0; i < targets.Count; i++)
                 {
-                    if (Vector3.Distance(targets[i].transform.position, transform.position) <= damageRange)
+                    if (targets[i] == null)
                     {
-                        if (targets[i].GetComponent<Health>() != null)
-                        targets[i].GetComponent<Health>().TakeDamage(damage * Time.deltaTime * 10);
+                        targets.RemoveAt(i);
                     }
                 }
-                hitsperSecond = 0.1f;
+                //agent.destination = targets[0].transform.position;
+                if (hitsperSecond <= 0)
+                {
+                    for (int i = 0; i < targets.Count; i++)
+                    {
+                        if (Vector3.Distance(targets[i].transform.position, transform.position) <= damageRange)
+                        {
+                            if (targets[i].GetComponent<Health>() != null)
+                                targets[i].GetComponent<Health>().TakeDamage(damage * Time.deltaTime * 10);
+                        }
+                    }
+                    hitsperSecond = 0.1f;
+                }
             }
         }
 
@@ -79,5 +87,11 @@ public class DeathLaser : MonoBehaviour
         {
             targets.Remove(collision.gameObject);
         }
+    }
+
+    private void Activate()
+    {
+        laserIsOn = true;
+        lightSource.SetActive(true);
     }
 }
