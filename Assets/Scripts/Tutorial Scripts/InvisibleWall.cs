@@ -34,6 +34,7 @@ public class InvisibleWall : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        audioSource.Play();
         if (!isDisappearing && 
             (collision.CompareTag(bigSwordTag) || collision.CompareTag(bigSpearTag)))
         {
@@ -60,7 +61,7 @@ public class InvisibleWall : MonoBehaviour
         if (wallHealth <= 0 && !isDisappearing)
         {
             GameObject newGoopeffect = Instantiate(bloodEffect, collision.transform.position, Quaternion.identity);
-            audioSource.Play();
+            
             isDisappearing = true;
             StartCoroutine(ChangeToDestroyedSprite());
         }

@@ -110,7 +110,6 @@ public class PlantSeedSystem : MonoBehaviour
                 
             }
         }
-        Debug.Log("Clean");
     }
 
     private IEnumerator CleanReapting()
