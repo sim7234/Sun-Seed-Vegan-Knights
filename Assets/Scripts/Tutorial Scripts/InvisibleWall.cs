@@ -31,6 +31,11 @@ public class InvisibleWall : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+
+        if (audioSource == null)
+        {
+            audioSource = FindAnyObjectByType<SaveData>().GetComponentInChildren<AudioSource>();
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
