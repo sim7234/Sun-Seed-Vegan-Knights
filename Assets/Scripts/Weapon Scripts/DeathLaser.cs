@@ -26,11 +26,11 @@ public class DeathLaser : MonoBehaviour
 
     [SerializeField]
     private GameObject lightSource;
-    
+
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        if(SaveData.Instance.epelepticFilterOn)
+        if (SaveData.Instance.epelepticFilterOn)
         {
             EpelepticFreindlyVerison.SetActive(true);
             NormalVfx.SetActive(false);
@@ -61,11 +61,14 @@ public class DeathLaser : MonoBehaviour
                 {
                     for (int i = 0; i < targets.Count; i++)
                     {
-                        if (Vector3.Distance(targets[i].transform.position, transform.position) <= damageRange)
+                        if (targets[i].gameObject != null)
                         {
-                            if (targets[i].GetComponent<Health>() != null)
-                                targets[i].GetComponent<Health>().TakeDamage(damage * Time.deltaTime * 10);
-                        }
+                            if (Vector3.Distance(targets[i].transform.position, transform.position) <= damageRange)
+                            {
+                                if (targets[i].GetComponent<Health>() != null)
+                                    targets[i].GetComponent<Health>().TakeDamage(damage * Time.deltaTime * 10);
+                            }
+                        } 
                     }
                     hitsperSecond = 0.1f;
                 }
