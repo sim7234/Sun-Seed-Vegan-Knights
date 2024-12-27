@@ -18,12 +18,20 @@ public class InvisibleWall : MonoBehaviour
     private Collider2D wallCollider;
     private bool isDisappearing = false;
 
+    [SerializeField]
+    private GameObject bloodEffect;
+
+    private AudioSource audioSource;
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         wallCollider = GetComponent<Collider2D>();
     }
 
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!isDisappearing && 
@@ -35,22 +43,24 @@ public class InvisibleWall : MonoBehaviour
             {
                 if (specialWeapon.IsWieldingSword())
                 {
-                    TakeDamage(25f); 
+                    TakeDamage(25f, collision); 
                 }
                 else if (specialWeapon.IsWieldingSpear())
                 {
-                    TakeDamage(25f); 
+                    TakeDamage(25f, collision); 
                 }
             }
         }
     }
 
-    private void TakeDamage(float damageAmount)
+    private void TakeDamage(float damageAmount, Collider2D collision)
     {
         wallHealth -= damageAmount;
 
         if (wallHealth <= 0 && !isDisappearing)
         {
+            GameObject newGoopeffect = Instantiate(bloodEffect, collision.transform.position, Quaternion.identity);
+            audioSource.Play();
             isDisappearing = true;
             StartCoroutine(ChangeToDestroyedSprite());
         }

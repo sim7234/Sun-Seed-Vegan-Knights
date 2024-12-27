@@ -20326,7 +20326,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 200
   m_TargetDisplay: 0
 --- !u!114 &4794508627879886451
 MonoBehaviour:
@@ -37880,6 +37880,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3856953559138683165}
     m_Modifications:
+    - target: {fileID: 403720270228228829, guid: cd47079427774964ab3e001483cf82fc, type: 3}
+      propertyPath: damage
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 539701319072476842, guid: cd47079427774964ab3e001483cf82fc, type: 3}
       propertyPath: m_Name
       value: BigSword
@@ -37887,6 +37891,22 @@ PrefabInstance:
     - target: {fileID: 539701319072476842, guid: cd47079427774964ab3e001483cf82fc, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3532749991860806408, guid: cd47079427774964ab3e001483cf82fc, type: 3}
+      propertyPath: m_Size.x
+      value: 1.2787085
+      objectReference: {fileID: 0}
+    - target: {fileID: 3532749991860806408, guid: cd47079427774964ab3e001483cf82fc, type: 3}
+      propertyPath: m_Size.y
+      value: 3.9410143
+      objectReference: {fileID: 0}
+    - target: {fileID: 3532749991860806408, guid: cd47079427774964ab3e001483cf82fc, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.12653363
+      objectReference: {fileID: 0}
+    - target: {fileID: 3532749991860806408, guid: cd47079427774964ab3e001483cf82fc, type: 3}
+      propertyPath: m_Offset.y
+      value: 2.0550394
       objectReference: {fileID: 0}
     - target: {fileID: 5783182556664064001, guid: cd47079427774964ab3e001483cf82fc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -37963,6 +37983,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3856953559138683165}
     m_Modifications:
+    - target: {fileID: 97009802469318414, guid: 1f161b9a3a5acee469dca717f69e0af9, type: 3}
+      propertyPath: bloomDamage
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591399108831129397, guid: 1f161b9a3a5acee469dca717f69e0af9, type: 3}
+      propertyPath: damage
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 2650767230876090150, guid: 1f161b9a3a5acee469dca717f69e0af9, type: 3}
       propertyPath: rb
       value: 
