@@ -31,15 +31,10 @@ public class InvisibleWall : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
-
-        if (audioSource == null)
-        {
-            audioSource = FindAnyObjectByType<SaveData>().GetComponentInChildren<AudioSource>();
-        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!isDisappearing && 
+        if (!isDisappearing &&
             (collision.CompareTag(bigSwordTag) || collision.CompareTag(bigSpearTag)))
         {
             SpecialWeapon specialWeapon = collision.GetComponentInParent<SpecialWeapon>();
@@ -48,11 +43,11 @@ public class InvisibleWall : MonoBehaviour
             {
                 if (specialWeapon.IsWieldingSword())
                 {
-                    TakeDamage(25f, collision); 
+                    TakeDamage(25f, collision);
                 }
                 else if (specialWeapon.IsWieldingSpear())
                 {
-                    TakeDamage(25f, collision); 
+                    TakeDamage(25f, collision);
                 }
             }
         }
@@ -65,7 +60,9 @@ public class InvisibleWall : MonoBehaviour
         if (wallHealth <= 0 && !isDisappearing)
         {
             GameObject newGoopeffect = Instantiate(bloodEffect, collision.transform.position, Quaternion.identity);
-            audioSource.Play();
+            if (audioSource != null)
+                audioSource.Play();
+
             isDisappearing = true;
             StartCoroutine(ChangeToDestroyedSprite());
         }
