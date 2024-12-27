@@ -3860,7 +3860,7 @@ PrefabInstance:
     - target: {fileID: 3438878325835907437, guid: d0656742c126fe1489c7ba47fe1cd2d8, type: 3}
       propertyPath: missionPoint
       value: 
-      objectReference: {fileID: 1877722449}
+      objectReference: {fileID: 1627479765}
     - target: {fileID: 3438878325835907437, guid: d0656742c126fe1489c7ba47fe1cd2d8, type: 3}
       propertyPath: missionMaster
       value: 
@@ -11912,7 +11912,11 @@ PrefabInstance:
     - target: {fileID: 3438878325835907437, guid: d0656742c126fe1489c7ba47fe1cd2d8, type: 3}
       propertyPath: missionPoint
       value: 
-      objectReference: {fileID: 1877722449}
+      objectReference: {fileID: 827695581}
+    - target: {fileID: 3438878325835907437, guid: d0656742c126fe1489c7ba47fe1cd2d8, type: 3}
+      propertyPath: isReturnPoint
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3438878325835907437, guid: d0656742c126fe1489c7ba47fe1cd2d8, type: 3}
       propertyPath: missionMaster
       value: 
