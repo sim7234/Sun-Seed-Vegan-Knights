@@ -16,7 +16,7 @@ public class SpecialWeapon : MonoBehaviour
     private int specialWeaponAttacks = 5;
     [SerializeField]
     private int specialWeaponAttacksBase = 5;
-    private int attackCounter;
+    public int attackCounter;
     public float attackCooldown;
 
     [SerializeField]
@@ -136,7 +136,7 @@ public class SpecialWeapon : MonoBehaviour
     {
         if (bigSword.activeSelf && attackCooldown <= 0)
         {
-            attackCounter++;
+            
             if (attackCounter == specialWeaponAttacks)
             {
                 Invoke(nameof(DisableSpecialWeapon), 0.8f);
@@ -153,7 +153,7 @@ public class SpecialWeapon : MonoBehaviour
 
         if (bigSpear.activeSelf && attackCooldown <= 0)
         {
-            attackCounter++;
+            
             if (attackCounter == specialWeaponAttacks)
             {
                 Invoke(nameof(DisableSpecialWeapon), 0.8f);
