@@ -344,6 +344,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""13fd2fcb-288c-4095-bca5-46b2126d812b"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": ""Hold(duration=0.3),Press"",
+                    ""processors"": """",
+                    ""groups"": ""Control"",
+                    ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""82433dfd-8f37-4aca-8785-c16393469ff4"",
                     ""path"": ""<Gamepad>/buttonNorth"",
                     ""interactions"": ""Press"",

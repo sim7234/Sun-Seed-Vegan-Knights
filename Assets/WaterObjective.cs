@@ -125,12 +125,6 @@ public class WaterObjective : MonoBehaviour
 
     private IEnumerator ShootAtTarget(GameObject target)
     {
-
-        if (target.TryGetComponent<BloomRecipient>(out BloomRecipient bloomRecipient) && !bloomRecipient.CanBeAttacked())
-        {
-            Debug.LogWarning("Target cannot be attacked while bloomed.");
-            yield break;
-        }
         if (target == null || !target.activeInHierarchy)
         {
             yield break; 
@@ -147,27 +141,31 @@ public class WaterObjective : MonoBehaviour
 
                 float shootSpeed = 120f;
                 Vector2 startPosition = shootPoint.position;
-                Vector2 endPosition = target.transform.position;
+                Vector2 endPosition = target != null ? target.transform.position : startPosition;
                 float distance = Vector2.Distance(startPosition, endPosition);
                 float time = 0;
 
                 tongueLine.SetPosition(0, startPosition);
 
-                while (time < distance / shootSpeed)
-                {
+                float maxTongueDuration = 5f; 
+                float elapsedTongueTime = 0f;
 
+                while (time < distance / shootSpeed && elapsedTongueTime < maxTongueDuration)
+                {
                     if (target == null || !target.activeInHierarchy)
                     {
-                        yield break;
+                        break;
                     }
 
                     time += Time.deltaTime;
+                    elapsedTongueTime += Time.deltaTime;
                     Vector2 currentPoint = Vector2.Lerp(startPosition, endPosition, time / (distance / shootSpeed));
                     tongueLine.SetPosition(1, new Vector3(currentPoint.x, currentPoint.y, 0));
                     yield return null;
                 }
 
                 tongueLine.SetPosition(1, endPosition);
+
                 if (target != null)
                 {
                     Health targetHealth = target.GetComponent<Health>();
