@@ -9,7 +9,7 @@ public class NaturalWater : MonoBehaviour
         {
             if (SceneManager.GetActiveScene().name == "EndlessMode")
             {
-                other.GetComponent<WaterSystem>().ChangeWaterRefillRate(0.1f);
+                other.GetComponent<WaterSystem>().ChangeWaterRefillRate(0.03f);
             }
             else
             {

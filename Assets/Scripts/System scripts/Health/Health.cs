@@ -258,7 +258,7 @@ public class Health : MonoBehaviour
             foreach (GameObject sprites in allOtherSprites)
             {
                 sprites.SetActive(false);
-                if(GetComponent<enemyMeleeAttack>() != null)
+                if(GetComponent<enemyMeleeAttack>() != null && GetComponent<enemyMeleeAttack>().enabled == true)
                 {
                     GetComponent<enemyMeleeAttack>().EndMeleeAttack();
                 }

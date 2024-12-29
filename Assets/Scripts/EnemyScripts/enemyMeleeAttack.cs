@@ -80,6 +80,7 @@ public class enemyMeleeAttack : MonoBehaviour
 
             foreach (var flipScript in flipSpriteScript)
             {
+                if (flipScript != null)
                 flipScript.canFlip = false;
             }
             cannotStartAttack = true;
@@ -111,6 +112,7 @@ public class enemyMeleeAttack : MonoBehaviour
     {
         foreach (var flipScript in flipSpriteScript)
         {
+            if (flipScript != null)
             flipScript.canFlip = true;
         }
         attackVisualCollider.enabled = false;

@@ -37,6 +37,7 @@ public class LevelMap : MonoBehaviour
 
     public void MoveMissionFlag()
     {
+        if (flagPossitions[completedMissions] != null)
         missionFlag.transform.position = flagPossitions[completedMissions].transform.position;
     }
 
