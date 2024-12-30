@@ -33,6 +33,12 @@ public class DashAttack : MonoBehaviour
     private Damage damageCompnent;
     Knockback knockbackscript;
 
+    [SerializeField]
+    private AudioClip dashSound;
+
+    private AudioSource audioSource;
+    private bool audioIsPlayed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +52,8 @@ public class DashAttack : MonoBehaviour
 
         windUpTimer = 0f;
         knockbackscript.enabled = false;
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -97,6 +105,11 @@ public class DashAttack : MonoBehaviour
 
             if (windUpTimer >= dashWindupTime )
             {
+                if(!audioIsPlayed)
+                {
+                    audioSource.PlayOneShot(dashSound);
+                    audioIsPlayed = true;
+                }
                 Dash();
             }
 
@@ -120,6 +133,7 @@ public class DashAttack : MonoBehaviour
 
     void ResetDash()
     {
+        audioIsPlayed = false;
         knockbackscript.enabled = false;
         collider.isTrigger = false;
         damageCompnent.enabled = false;

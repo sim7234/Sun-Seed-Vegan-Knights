@@ -23,6 +23,10 @@ public class PlayerDash : MonoBehaviour
 
     bool dashEffectEnabled;
 
+    [SerializeField]
+    private AudioClip dashSound;
+    private AudioSource audioSource;
+
     private void Awake()
     {
         var playerInput = GetComponent<PlayerInput>();
@@ -37,6 +41,7 @@ public class PlayerDash : MonoBehaviour
         playerCollider = GetComponent<Collider2D>();
         dashTrail.emitting = false;
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
     }
     
     private void Update()
@@ -80,6 +85,7 @@ public class PlayerDash : MonoBehaviour
             dashCooldownTimer = dashCooldown;
             rb.AddForce(rb.velocity.normalized * dashPower, ForceMode2D.Impulse);
             StartCoroutine(SpendWaterEffect());
+            audioSource.PlayOneShot(dashSound);
         }
     }
 

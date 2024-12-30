@@ -13288,6 +13288,7 @@ MonoBehaviour:
   collisionMask:
     serializedVersion: 2
     m_Bits: 130431
+  dashSound: {fileID: 8300000, guid: e7a328b0b1606e347adfd277fcfc808d, type: 3}
 --- !u!114 &5064035060424883740
 MonoBehaviour:
   m_ObjectHideFlags: 0

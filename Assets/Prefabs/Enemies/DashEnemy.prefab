@@ -297,6 +297,7 @@ MonoBehaviour:
   dashPower: 6
   dashCooldown: 4
   dashRotationPoint: {fileID: 5910768304150022312}
+  dashSound: {fileID: 8300000, guid: 50da35961aa42b240923f24dd4edc863, type: 3}
 --- !u!114 &4790872568561083539
 MonoBehaviour:
   m_ObjectHideFlags: 0
