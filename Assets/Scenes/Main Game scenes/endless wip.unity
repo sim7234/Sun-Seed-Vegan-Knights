@@ -3657,11 +3657,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6393749143671580433, guid: f1208376a800d8d42a775a39ab341807, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 130.21107
+      value: 130.45
       objectReference: {fileID: 0}
     - target: {fileID: 6393749143671580433, guid: f1208376a800d8d42a775a39ab341807, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -17.989727
+      value: -17.43
       objectReference: {fileID: 0}
     - target: {fileID: 6393749143671580433, guid: f1208376a800d8d42a775a39ab341807, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4547,6 +4547,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1539274468129029802, guid: 03b3f8b2563489c4899f12dda883d1f6, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7752516799317239824, guid: 03b3f8b2563489c4899f12dda883d1f6, type: 3}
       propertyPath: m_Name
       value: Tunnel hus placeholder
@@ -8278,11 +8282,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6393749143671580433, guid: f1208376a800d8d42a775a39ab341807, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 61.441074
+      value: 60.99
       objectReference: {fileID: 0}
     - target: {fileID: 6393749143671580433, guid: f1208376a800d8d42a775a39ab341807, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.489726
+      value: -8.06
       objectReference: {fileID: 0}
     - target: {fileID: 6393749143671580433, guid: f1208376a800d8d42a775a39ab341807, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13723,11 +13727,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3993045346020786777, guid: 93f047c970a18a744bfcfb311967c284, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 56.95
+      value: 57.64
       objectReference: {fileID: 0}
     - target: {fileID: 3993045346020786777, guid: 93f047c970a18a744bfcfb311967c284, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.57
+      value: -9.65
       objectReference: {fileID: 0}
     - target: {fileID: 3993045346020786777, guid: 93f047c970a18a744bfcfb311967c284, type: 3}
       propertyPath: m_LocalPosition.z
@@ -18960,7 +18964,7 @@ Transform:
   m_GameObject: {fileID: 2015424488}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 64.74108, y: -12.021871, z: -1.1617668}
+  m_LocalPosition: {x: 53.73, y: -7.91, z: -1.1617668}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
