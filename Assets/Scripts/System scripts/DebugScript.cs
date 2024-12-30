@@ -102,6 +102,13 @@ public class DebugScript : MonoBehaviour
             Instantiate(enemies[3], mousePos, Quaternion.identity);
         }
 
+
+
+        if (Input.GetKeyDown(KeyCode.KeypadMultiply))
+        {
+            PlayerPrefs.SetInt("HasDoneTutorial", 0);
+        }
+
         if (Input.GetKeyDown(KeyCode.KeypadPeriod))
         {
 
