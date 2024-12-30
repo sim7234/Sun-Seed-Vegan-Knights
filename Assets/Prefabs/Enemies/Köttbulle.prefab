@@ -1088,15 +1088,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2853718660560938554, guid: 6d86b2c5243832e42a9ca57416eae00c, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.134293
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2853718660560938554, guid: 6d86b2c5243832e42a9ca57416eae00c, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.134293
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2853718660560938554, guid: 6d86b2c5243832e42a9ca57416eae00c, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.134293
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2853718660560938554, guid: 6d86b2c5243832e42a9ca57416eae00c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1138,6 +1138,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2853718660560938554, guid: 6d86b2c5243832e42a9ca57416eae00c, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7932600499743563938, guid: 6d86b2c5243832e42a9ca57416eae00c, type: 3}
       propertyPath: m_Name
       value: MeatballExplosion
@@ -1145,6 +1149,42 @@ PrefabInstance:
     - target: {fileID: 7932600499743563938, guid: 6d86b2c5243832e42a9ca57416eae00c, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9064493021862177532, guid: 6d86b2c5243832e42a9ca57416eae00c, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9064493021862177532, guid: 6d86b2c5243832e42a9ca57416eae00c, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9064493021862177532, guid: 6d86b2c5243832e42a9ca57416eae00c, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.4901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 9064493021862177532, guid: 6d86b2c5243832e42a9ca57416eae00c, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.5019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 9064493021862177532, guid: 6d86b2c5243832e42a9ca57416eae00c, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.654902
+      objectReference: {fileID: 0}
+    - target: {fileID: 9064493021862177532, guid: 6d86b2c5243832e42a9ca57416eae00c, type: 3}
+      propertyPath: InitialModule.startColor.minColor.b
+      value: 0.10196079
+      objectReference: {fileID: 0}
+    - target: {fileID: 9064493021862177532, guid: 6d86b2c5243832e42a9ca57416eae00c, type: 3}
+      propertyPath: InitialModule.startColor.minColor.g
+      value: 0.1137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 9064493021862177532, guid: 6d86b2c5243832e42a9ca57416eae00c, type: 3}
+      propertyPath: InitialModule.startColor.minColor.r
+      value: 0.3254902
+      objectReference: {fileID: 0}
+    - target: {fileID: 9064493021862177532, guid: 6d86b2c5243832e42a9ca57416eae00c, type: 3}
+      propertyPath: InitialModule.startColor.minMaxState
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
