@@ -54,9 +54,9 @@ Material:
     - _ToggleVingette: 1
     - _Toggle_outline: 1
     m_Colors:
-    - _BaseColour: {r: 0.29387674, g: 0.44815004, b: 0.735849, a: 0}
+    - _BaseColour: {r: 0.22103548, g: 0.33699724, b: 0.55345905, a: 0}
     - _Base_water: {r: 0.3042453, g: 0.48776534, b: 0.5, a: 0}
-    - _HighlightColour: {r: 0.4470588, g: 0.654088, b: 0.6520909, a: 1}
-    - _ShadeColour: {r: 0.09843354, g: 0.10451094, b: 0.3962264, a: 0}
-    - _Sparkles: {r: 0.57588696, g: 0.76233757, b: 0.8679245, a: 0}
+    - _HighlightColour: {r: 0.31891537, g: 0.4716981, b: 0.46837673, a: 1}
+    - _ShadeColour: {r: 0.059392404, g: 0.06428424, b: 0.24528301, a: 0}
+    - _Sparkles: {r: 0.49464014, g: 0.6678132, b: 0.76729554, a: 0}
   m_BuildTextureStacks: []
