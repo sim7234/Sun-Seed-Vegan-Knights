@@ -34,10 +34,11 @@ public class InvisibleWall : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        audioSource.Play();
+        
         if (!isDisappearing && 
             (collision.CompareTag(bigSwordTag) || collision.CompareTag(bigSpearTag)))
         {
+            audioSource.Play();
             SpecialWeapon specialWeapon = collision.GetComponentInParent<SpecialWeapon>();
 
             if (specialWeapon != null && specialWeapon.IsAttacking())

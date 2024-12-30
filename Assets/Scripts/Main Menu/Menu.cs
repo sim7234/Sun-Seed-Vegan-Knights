@@ -5,14 +5,36 @@ using UnityEngine.SceneManagement;
 public class Menu : MonoBehaviour
 {
     Button playButton;
-    
+
+    bool hasDoneTutorial = false;
 
     [SerializeField] GameObject[] buttons;
 
+    void Start()
+    {
+        if (PlayerPrefs.GetInt("HasDoneTutorial") == 1)
+        {
+            hasDoneTutorial = true;
+        }
+        else
+        {
+            hasDoneTutorial = false;
+        }
+    }
+
     public void pressedPlay()
     {
-        //loads Hub scene
-        SceneManager.LoadScene("Tutorial");
+        if (hasDoneTutorial == false)
+        {
+            PlayerPrefs.SetInt("HasDoneTutorial", 1);
+            hasDoneTutorial = true;
+            SceneManager.LoadScene("Tutorial");
+        }
+        else
+        {
+            //loads Hub scene
+            SceneManager.LoadScene("True Hub");
+        }
     }
 
     public void pressedQuit()
