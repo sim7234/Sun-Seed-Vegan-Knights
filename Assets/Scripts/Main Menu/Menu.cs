@@ -12,7 +12,7 @@ public class Menu : MonoBehaviour
     public void pressedPlay()
     {
         //loads Hub scene
-        SceneManager.LoadScene("True Hub");
+        SceneManager.LoadScene("Tutorial");
     }
 
     public void pressedQuit()
