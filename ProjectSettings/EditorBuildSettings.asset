@@ -27,16 +27,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Game scenes/True Hub.unity
     guid: edd5e53129b43dd49ad5d74d94d3330f
   - enabled: 0
-    path: Assets/Scenes/AlphaScene.unity
-    guid: c7caa91300e30414ea4eed472be2cf49
-  - enabled: 0
     path: Assets/Scenes/Peoples scene/Alpha finished scene.unity
     guid: 5328fb61954f5164db2a938ac07906ea
   - enabled: 1
     path: Assets/Scenes/Sandbox.unity
     guid: 1fde7ee6dab856848918d1a378c155db
-  - enabled: 0
-    path: Assets/Scenes/Tutorial.unity
-    guid: 43a1173293c9c2749b20f86a119e6d04
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: bbbd167fa38e5004f8744d92da0ebbd5, type: 2}
