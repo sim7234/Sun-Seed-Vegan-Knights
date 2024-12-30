@@ -520,8 +520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyCounter: 0
-  enemyCounterText: {fileID: 3443105375759140199}
-  cam: {fileID: 0}
+  focusPoint: {fileID: 0}
   combatPoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -537,8 +536,16 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   Objectives: []
+  actionBetweenLevels: []
+  respawnsForMission: 4
+  nextStagePointer: {fileID: 0}
+  combatOver: 1
   stageCompleteSound: {fileID: 8300000, guid: 7bfdd66e3385f89488fd5720c2e0084e, type: 3}
   countdownText: {fileID: 7531465182515603974}
+  enemyCounterText: {fileID: 3443105375759140199}
+  winScreen: {fileID: 0}
+  gameOverScreen: {fileID: 0}
+  screenDisplayDuration: 2
 --- !u!82 &2890641714279537170
 AudioSource:
   m_ObjectHideFlags: 0

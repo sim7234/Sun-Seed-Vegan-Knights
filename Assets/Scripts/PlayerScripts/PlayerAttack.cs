@@ -57,17 +57,18 @@ public class PlayerAttack : MonoBehaviour
         fireAction = playerInput.actions["Fire"];
         fireAction.performed += ctx =>
         {
-            if (ctx.duration >= 0.3f) 
+            if (ctx.control.name == "rightTrigger" || ctx.control.name == "rightShoulder")
             {
-                FireHold();
-            }
-            else
-            {
-                FireTap();
+                if (ctx.duration >= 0.01f) 
+                {
+                    FireHold();
+                }
+                else 
+                {
+                    FireTap();
+                }
             }
         };
-
-        playerInput.actions["Stomp"].performed += ctx => Stomp();
     }
 
     public void Initialize(PlayerInput input)

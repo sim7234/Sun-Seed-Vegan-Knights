@@ -50,6 +50,11 @@ public class DebugScript : MonoBehaviour
         {
             goToLevel1();
         }
+        if (Input.GetKeyDown(KeyCode.Keypad4))
+        {
+            goToLevel2();
+        }
+
         if (Input.GetKeyDown(KeyCode.Keypad5))
         {
             goToSandbox();
@@ -105,6 +110,8 @@ public class DebugScript : MonoBehaviour
 
     }
 
+    
+
     void KillAllEnemies()
     {
         GameObject[] enemyArray = GameObject.FindGameObjectsWithTag("Enemy");
@@ -120,7 +127,10 @@ public class DebugScript : MonoBehaviour
             FindAnyObjectByType<EndlessWaves>().startWaveTimer = 0;
         }
     }
-
+    private void goToLevel2()
+    {
+        SceneManager.LoadScene("Level 2");
+    }
     void goToEndless()
     {
         SceneManager.LoadScene("EndlessMode");
@@ -138,7 +148,7 @@ public class DebugScript : MonoBehaviour
 
     void goToLevel1()
     {
-        SceneManager.LoadScene("Kevin Tutorial");
+        SceneManager.LoadScene("Tutorial");
     }
 
     void goToSandbox()

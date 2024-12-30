@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -6,7 +5,6 @@ using UnityEngine.SceneManagement;
 public class Menu : MonoBehaviour
 {
     Button playButton;
-    Camera camera;
     
 
     [SerializeField] GameObject[] buttons;
@@ -14,7 +12,7 @@ public class Menu : MonoBehaviour
     public void pressedPlay()
     {
         //loads Hub scene
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("True Hub");
     }
 
     public void pressedQuit()
@@ -24,7 +22,7 @@ public class Menu : MonoBehaviour
 
     public void pressedTutorial()
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene("Tutorial");
     }
 
     void changeButtonState()
