@@ -50,7 +50,7 @@ Material:
     - _HighlightScale: 0.4
     - _LineThickness: 0.5
     - _Speed: 0.25
-    - _Tilt: 2
+    - _Tilt: 1.5
     - _ToggleVingette: 1
     - _Toggle_outline: 1
     m_Colors:

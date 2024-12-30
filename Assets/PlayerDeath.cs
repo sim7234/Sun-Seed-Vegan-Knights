@@ -21,6 +21,12 @@ public class PlayerDeath : MonoBehaviour
     public void onPlayerDeath()
     {
 
+        if (SaveData.Instance.playerDeathsBeforeGameOver <= 0)
+        {
+            HandleFinalDeath();
+            return;
+        }
+
         GetComponent<PlayerHealing>().HealMax();
         TurnOfAllScripts();
         GetComponent<PlayerMovement>().moveSpeed = baseMoveSpeed;
@@ -37,6 +43,15 @@ public class PlayerDeath : MonoBehaviour
     {
         this.gameObject.SetActive(true);
         GetComponent<Health>().currentHealth = GetComponent<Health>().maxHealth;
+    }
+
+    private void HandleFinalDeath()
+    {
+        TurnOfAllScripts();
+        if (MissionMaster.Instance != null)
+        {
+            MissionMaster.Instance.ShowGameOverScreen();
+        }
     }
 
     private void TurnOfAllScripts()
