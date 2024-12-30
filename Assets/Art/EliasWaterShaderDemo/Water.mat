@@ -21,8 +21,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Water
-  m_Shader: {fileID: -6465566751694194690, guid: 566abf72b09e7234282952f93b1000c0, type: 3}
-  m_Parent: {fileID: 0}
+  m_Shader: {fileID: -6465566751694194690, guid: c3be70512d84e2540b68660624e69030, type: 3}
+  m_Parent: {fileID: 2100000, guid: ddc3db34eec93c3499c0aca461bf93b5, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -36,70 +36,27 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Cuastics:
-        m_Texture: {fileID: 2800000, guid: e445e8973bcb4b64aaa7213a6a7737e4, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MaskTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _NormalMap:
-        m_Texture: {fileID: 0}
+    - _Shape:
+        m_Texture: {fileID: 2800000, guid: 7581b23a6831340418f0162342258b55, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture2D:
         m_Texture: {fileID: 2800000, guid: 5b17754adfb75624bbd478ef6593766c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _DotDensity: 10
-    - _DotSize: 0.89
-    - _DotsDensity: 41.71
-    - _DotsSize: 0.5
-    - _EnableExternalAlpha: 0
     - _HighlightAmount: 6
-    - _RippleSpeed: 1
-    - _Slimness: 6.72
-    - _Speed: 0.025
-    - _Tilt: 3
-    - _Vingette_Streangth: 1
-    - _Wavesize: 0.01
-    - _Y_tilt: 3
-    - _vingette: 4.34
+    - _HighlightScale: 0.4
+    - _LineThickness: 0.5
+    - _Speed: 0.25
+    - _Tilt: 2
+    - _ToggleVingette: 1
+    - _Toggle_outline: 1
     m_Colors:
+    - _BaseColour: {r: 0.29387674, g: 0.44815004, b: 0.735849, a: 0}
     - _Base_water: {r: 0.3042453, g: 0.48776534, b: 0.5, a: 0}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Dots_Colour: {r: 0.4528302, g: 0.39729437, b: 0.39729437, a: 0}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _Highlights: {r: 0.18244927, g: 0.18492466, b: 0.2830189, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-    - _RippleColour: {r: 0.015030997, g: 0.12399936, b: 0.25157225, a: 1}
-    - _colour4: {r: 0.52201253, g: 0.52201253, b: 0.52201253, a: 0}
-    - _dots_Colour: {r: 0.14578135, g: 0.30823222, b: 0.3962264, a: 1}
-    - _highlight: {r: 0.19312915, g: 0.571396, b: 0.5849056, a: 1}
-    - _real_Dotcolour: {r: 0.4117647, g: 0.4717398, b: 0.61635214, a: 0}
-    - _tiling: {r: 1, g: 1, b: 0, a: 0}
-    - _water: {r: 0.5022941, g: 0.6301798, b: 0.6855345, a: 0}
+    - _HighlightColour: {r: 0.4470588, g: 0.654088, b: 0.6520909, a: 1}
+    - _ShadeColour: {r: 0.09843354, g: 0.10451094, b: 0.3962264, a: 0}
+    - _Sparkles: {r: 0.57588696, g: 0.76233757, b: 0.8679245, a: 0}
   m_BuildTextureStacks: []
