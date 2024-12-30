@@ -123,6 +123,7 @@ public class BloomRecipient : MonoBehaviour
         health.TakeDamage(health.maxHealth / divideHealthBy + 25);
         hasBloomed = false;
         flowerPelletsObject.SetActive(false);
+        bloomFlowerOutline.SetActive(false);
         bloomBuildUp = 0;
         bloomGlowRim.SetActive(false);
     }
