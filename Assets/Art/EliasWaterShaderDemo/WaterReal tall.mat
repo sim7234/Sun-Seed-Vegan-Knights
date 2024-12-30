@@ -78,6 +78,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _DontsSize: 30
     - _DotDensity: 10
     - _DotSize: 0.89
     - _DotsDensity: 41.71
@@ -87,7 +88,7 @@ Material:
     - _HighlightAreaScale: 10
     - _HighlightScale: 0.2
     - _HighlightSize: 5
-    - _LineThickness: 0.5
+    - _LineThickness: 0.1
     - _RippleSpeed: 1
     - _Slimness: 6.72
     - _Speed: 0.5
