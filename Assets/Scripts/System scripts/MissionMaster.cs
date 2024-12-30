@@ -60,14 +60,12 @@ public class MissionMaster : MonoBehaviour
     private TextMeshProUGUI enemyCounterText;
     private bool onFinalStage;
 
-    [SerializeField]
-    private GameObject winScreen;
+    [SerializeField] private GameObject winScreen;
+    [SerializeField] private GameObject gameOverScreen;
+    [SerializeField] private Animator winAnimator;
+    [SerializeField] private Animator gameOverAnimator;
+    [SerializeField] private float screenDisplayDuration = 3f;
 
-    [SerializeField]
-    private GameObject gameOverScreen;
-
-    [SerializeField]
-    private float screenDisplayDuration = 5f;
 
 
 
@@ -112,35 +110,38 @@ public class MissionMaster : MonoBehaviour
         }
     }
 
-        private void WinScreen()
+    private void WinScreen()
     {
         SaveData.Instance.completedMission += 1;
-        StartCoroutine(ShowScreenTemporarily(winScreen, true));
+        StartCoroutine(ShowScreenWithAnimation(winAnimator, true));
     }
-    public void ShowGameOverScreen()
+     public void ShowGameOverScreen()
     {
-        StartCoroutine(ShowScreenTemporarily(gameOverScreen, false));
+        StartCoroutine(ShowScreenWithAnimation(gameOverAnimator, false));
     }
 
-    private IEnumerator ShowScreenTemporarily(GameObject screen, bool isWin)
+    private IEnumerator ShowScreenWithAnimation(Animator animator, bool isWin)
     {
-        if (screen != null)
+        if (animator != null)
         {
-            screen.SetActive(true);
-        }
-        yield return new WaitForSeconds(screenDisplayDuration); 
-        if (screen != null)
-        {
-            screen.SetActive(false); 
-        }
+            animator.gameObject.SetActive(true);
+ 
+            animator.SetTrigger("FadeIn");
+            yield return new WaitForSeconds(screenDisplayDuration);
 
-        if (isWin)
-        {
-            SceneManager.LoadScene(0); 
-        }
-        else
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            /*animator.SetTrigger("FadeOut");
+            yield return new WaitForSeconds(1.0f);*/
+
+            animator.gameObject.SetActive(false);
+
+            if (isWin)
+            {
+                SceneManager.LoadScene(0); 
+            }
+            else
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
         }
     }
     public void CheckGameOver()
