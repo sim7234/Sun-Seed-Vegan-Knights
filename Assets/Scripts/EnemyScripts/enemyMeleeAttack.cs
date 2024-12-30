@@ -25,9 +25,33 @@ public class enemyMeleeAttack : MonoBehaviour
     bool canWalk = true;
 
     NavMeshAgent agent;
+
+    [SerializeField]
+    private GameObject walkingSprite;
+    [SerializeField]
+    private GameObject attackingSprite;
+
+    [SerializeField]
+    private GameObject attackEffectPos;
+    [SerializeField]
+    private GameObject attackPS;
+    [SerializeField]
+    private GameObject rotationReference;
+
+    [SerializeField] AudioClip attackSound;
+
+    AudioSource audioSourceSaveData;
+
+    EnemyTurnTowardsTarget[] flipSpriteScript = new EnemyTurnTowardsTarget[2];
+
+
+
     // Start is called before the first frame update
     void Start()
     {
+        flipSpriteScript = GetComponents<EnemyTurnTowardsTarget>();
+
+        audioSourceSaveData = FindAnyObjectByType<SaveData>().GetComponentInChildren<AudioSource>();
         agent = GetComponent<NavMeshAgent>();
         baseCooldown = baseCooldown + windUpTime + resetTime;
 
@@ -53,29 +77,44 @@ public class enemyMeleeAttack : MonoBehaviour
 
         if (enemyAttacksScript.withinDistance == true && cannotStartAttack == false && currentCooldown <= 0)
         {
+
+            foreach (var flipScript in flipSpriteScript)
+            {
+                if (flipScript != null)
+                flipScript.canFlip = false;
+            }
             cannotStartAttack = true;
             currentCooldown = baseCooldown;
 
             enemyAttacksScript.isAttacking = true;
             pathfindingScript.followTarget = false;
-            
+
 
             attackPattern.SetActive(true);
             rotateScript.lockRotation = true;
             canWalk = false;
-            Invoke(nameof(StartMeleeAttack),windUpTime);
+            changeSprite(true);
+            Invoke(nameof(StartMeleeAttack), windUpTime);
         }
+        attackEffectPos.transform.localEulerAngles = new Vector3(0, 0, rotationReference.transform.localEulerAngles.z);
     }
 
     void StartMeleeAttack()
     {
-        
+       
+        audioSourceSaveData.PlayOneShot(attackSound);
         attackVisualCollider.enabled = true;
         damageSprite.color = Color.black;
         Invoke(nameof(EndMeleeAttack), resetTime);
+        
     }
-    void EndMeleeAttack()
+    public void EndMeleeAttack()
     {
+        foreach (var flipScript in flipSpriteScript)
+        {
+            if (flipScript != null)
+            flipScript.canFlip = true;
+        }
         attackVisualCollider.enabled = false;
         rotateScript.lockRotation = false;
 
@@ -85,5 +124,23 @@ public class enemyMeleeAttack : MonoBehaviour
         enemyAttacksScript.isAttacking = false;
         cannotStartAttack = false;
         canWalk = true;
+        changeSprite(false);
     }
+
+    private void changeSprite(bool shouldAttack)
+    {
+        if (shouldAttack)
+        {
+            walkingSprite.SetActive(false);
+            attackingSprite.SetActive(true);
+        }
+        else
+        {
+            walkingSprite.SetActive(true);
+            attackingSprite.SetActive(false);
+            attackPS.SetActive(false);
+        }
+        
+    }
+
 }

@@ -9,6 +9,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     public float moveSpeed = 4f;
 
+    [SerializeField]
+    public float rotationSpeed = 1;
+
     public AnimationCurve curve;
 
     [SerializeField]
@@ -54,6 +57,7 @@ public class PlayerMovement : MonoBehaviour
         SaveData.Instance.playerAmount++;
         playerIndex = SaveData.Instance.playerAmount;
         SaveData.Instance.FixHud(gameObject, playerIndex);
+
     }
 
     private void Awake()
@@ -104,12 +108,18 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-
         moveDirection = context.ReadValue<Vector2>();
 
         if (moveDirection != Vector2.zero && !audioSource.isPlaying)
         {
             PlayRandomMovementSound();
+        }
+        if(GetComponent<Health>().controllerPad == null)
+        {
+            if (context.control.device is Gamepad gamepad)
+            {
+                GetComponent<Health>().controllerPad = gamepad;
+            }
         }
     }
 
@@ -123,7 +133,10 @@ public class PlayerMovement : MonoBehaviour
         if(rotationDirection != Vector2.zero && !lockOn)
         {
             float angle = Mathf.Atan2(rotationDirection.y, rotationDirection.x) * Mathf.Rad2Deg;
-            directionIndicator.transform.rotation = Quaternion.Euler(0, 0, angle - 90);
+            if(rotationSpeed != 0)
+            {
+                directionIndicator.transform.rotation = Quaternion.Euler(0, 0, angle - 90);
+            }
         }
 
         if (lastAttackTime >= 0)

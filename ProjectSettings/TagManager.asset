@@ -9,11 +9,16 @@ TagManager:
   - Sword
   - Objective
   - WeaponPickup
+  - BigSword
+  - Interact
+  - BigSpear
+  - Wall
+  - AttractWater
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Stomp
   - Water
   - UI
   - Sword
@@ -21,14 +26,14 @@ TagManager:
   - CameraEdge
   - Player
   - FindTargetLayer
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - TemporaryCameraTarget
+  - Interact
+  - BigSpear
+  - Wall
+  - HeadRollingFloor
+  - Water Drops
+  - CanBreak
+  - Ghost
   - 
   - 
   - 

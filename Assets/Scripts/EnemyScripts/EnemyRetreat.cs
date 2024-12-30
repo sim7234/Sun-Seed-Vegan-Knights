@@ -37,18 +37,18 @@ public class EnemyRetreat : MonoBehaviour
         cameraVertical = camera.orthographicSize * 2;
         cameraHorizontal = cameraVertical * camera.aspect;
 
-        if (transform.position.x > (cameraHorizontal/2 - 0.8) || transform.position.x < -(cameraHorizontal/2 - 0.8))
-        {
-            canRetreat = false;
-        }
-        else if (transform.position.y > ((cameraVertical/2) - 0.8) || transform.position.y < -((cameraVertical/2 - 0.8)))
-        {
+        Vector2 distenceToCamera = camera.WorldToViewportPoint(gameObject.transform.position);
+
+        if (distenceToCamera.x < 0.05 || distenceToCamera.y < 0.05 || distenceToCamera.x > 0.95 || distenceToCamera.y > 0.95)
+        {           
             canRetreat = false;
         }
         else
-        {
+        {           
             canRetreat = true;
         }
+
+
 
         //retreat if enemy gets within distance
         currentTarget = pathfindingScript.FindClosestTarget(pathfindingScript.totalTargets);
@@ -70,6 +70,7 @@ public class EnemyRetreat : MonoBehaviour
         }
 
     }
+
     void retreat()
     {
         retreating = true;
