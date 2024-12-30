@@ -107,6 +107,11 @@ public class DebugScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.KeypadMultiply))
         {
             PlayerPrefs.SetInt("HasDoneTutorial", 0);
+            Menu menu = FindAnyObjectByType<Menu>();
+            if (menu != null)
+            {
+                menu.hasDoneTutorial = false;
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.KeypadPeriod))

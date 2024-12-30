@@ -6,7 +6,7 @@ public class Menu : MonoBehaviour
 {
     Button playButton;
 
-    bool hasDoneTutorial = false;
+    [HideInInspector] public bool hasDoneTutorial = false;
 
     [SerializeField] GameObject[] buttons;
 
