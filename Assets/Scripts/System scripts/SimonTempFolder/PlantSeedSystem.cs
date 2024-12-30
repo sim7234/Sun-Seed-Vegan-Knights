@@ -104,7 +104,7 @@ public class PlantSeedSystem : MonoBehaviour
         }
         if (currentSeedTypeInRange != null)
         {
-            if (Vector3.Distance(transform.position, currentSeedTypeInRange.transform.position) <= 5)
+            if (Vector3.Distance(transform.position, currentSeedTypeInRange.transform.position) >= 5)
             {
                 currentSeedTypeInRange = null;
                 
