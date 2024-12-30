@@ -15,6 +15,8 @@ public class PauseMenu : MonoBehaviour
 
     private bool isPaused = false;
 
+    private bool pauseCooldown = false;
+
     private void Start()
     {
         //pauseMenuUI.SetActive(false);
@@ -34,7 +36,10 @@ public class PauseMenu : MonoBehaviour
     }
     public void PauseGame()
     {
+        if (isPaused || pauseCooldown) return;
+
         isPaused = true;
+        pauseCooldown = true;
         pauseMenuUI.SetActive(true);
         settingsMenuUI.SetActive(false);
         Time.timeScale = 0f;
@@ -43,6 +48,14 @@ public class PauseMenu : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(pauseMenuUI.GetComponentInChildren<Selectable>().gameObject);
 
         SwitchActionMap("PauseMenu");
+
+        StartCoroutine(PauseCooldownCoroutine());
+    }
+
+    private IEnumerator PauseCooldownCoroutine()
+    {
+        yield return new WaitForSeconds(0.5f); 
+        pauseCooldown = false;
     }
     public void ResumeGame()
     {

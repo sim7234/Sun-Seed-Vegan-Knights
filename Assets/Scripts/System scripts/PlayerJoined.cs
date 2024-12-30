@@ -58,6 +58,13 @@ public class PlayerJoined : MonoBehaviour
             playerInput.SwitchCurrentActionMap("ControlActions1");
         }
 
+        InputAction pauseAction = playerInput.actions["Pause"];
+        if (pauseAction != null)
+        {
+            pauseAction.Disable();
+            StartCoroutine(ReenablePauseAction(pauseAction));
+        }
+
         PlayerAttack playerAttack = playerInput.GetComponent<PlayerAttack>();
         if (playerAttack == null)
         {
@@ -91,6 +98,12 @@ public class PlayerJoined : MonoBehaviour
                 }
             };
         }
+    }
+
+    private IEnumerator ReenablePauseAction(InputAction pauseAction)
+    {
+        yield return null;
+        pauseAction.Enable();
     }
 
     private void HideMessage()
