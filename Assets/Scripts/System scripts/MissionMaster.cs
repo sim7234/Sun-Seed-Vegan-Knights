@@ -236,6 +236,7 @@ public class MissionMaster : MonoBehaviour
         }
         else
         {
+            Debug.Log(matchingIndex + " MATCHING INDEX");
             StartCoroutine(ActivateCombatAfterDelay(4f, matchingIndex));
         }
         

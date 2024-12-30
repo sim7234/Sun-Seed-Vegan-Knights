@@ -298,7 +298,7 @@ public class PlayerAnimations : MonoBehaviour
                 sAttackUp.SetActive(false);
                 sAttackDown.SetActive(false);
 
-                sAttackRight.SetActive(true);
+                sAttackRight.SetActive(true);       
             }
         }
 
