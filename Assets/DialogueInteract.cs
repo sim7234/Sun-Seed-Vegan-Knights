@@ -83,7 +83,8 @@ public class DialogueInteract : MonoBehaviour
     {
         if (interactionButton != null && collision.CompareTag("Player"))
         {
-            interactionButton.SetActive(false); 
+            interactionButton.SetActive(false);
+            EndDialogue();
         }
     }
 }
