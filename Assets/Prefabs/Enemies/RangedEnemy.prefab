@@ -396,7 +396,7 @@ MonoBehaviour:
   hasBloomed: 0
   BloomExplosionVFX: {fileID: 1240254011838071449, guid: 20efd42d40277384687f4f2a74a87383, type: 3}
   bloomGlowRim: {fileID: 4489020329169231368}
-  divideHealthBy: 10
+  divideHealthBy: 100
   flowerPelletsObject: {fileID: 7850640792766571365}
   bloomFlowerOutline: {fileID: 1893350044377078639}
   flowerPelltes:

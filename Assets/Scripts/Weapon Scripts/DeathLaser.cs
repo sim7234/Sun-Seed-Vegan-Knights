@@ -6,9 +6,9 @@ using UnityEngine.AI;
 
 public class DeathLaser : MonoBehaviour
 {
-    private float damageRange = 2;
+    private float damageRange = 8;
 
-    private float damage = 100;
+    private float damage = 500;
 
     private NavMeshAgent agent;
 
