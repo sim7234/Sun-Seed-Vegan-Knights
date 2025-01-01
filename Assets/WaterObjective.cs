@@ -105,24 +105,23 @@ public class WaterObjective : MonoBehaviour
 
     private GameObject FindNearestEnemy()
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        EnemyHealthDisplay[] enemies = FindObjectsOfType<EnemyHealthDisplay>();
         GameObject nearestEnemy = null;
         float shortestDistance = detectionRadius;
 
-        foreach (GameObject enemy in enemies)
+        foreach (EnemyHealthDisplay enemy in enemies)
         {
             float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
 
             if (distanceToEnemy < shortestDistance)
             {
                 shortestDistance = distanceToEnemy;
-                nearestEnemy = enemy;
+                nearestEnemy = enemy.gameObject;
             }
         }
 
         return nearestEnemy;
     }
-
     private IEnumerator ShootAtTarget(GameObject target)
     {
         if (tongueLine != null && shootPoint != null)
