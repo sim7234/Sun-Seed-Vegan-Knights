@@ -125,10 +125,6 @@ public class WaterObjective : MonoBehaviour
 
     private IEnumerator ShootAtTarget(GameObject target)
     {
-        if (target == null || !target.activeInHierarchy)
-        {
-            yield break; 
-        }
         if (tongueLine != null && shootPoint != null)
         {
             if (frogAnimator != null)
@@ -138,6 +134,7 @@ public class WaterObjective : MonoBehaviour
             if (frogSpriteRenderer != null && frogOpenMouthSprite != null)
             {
                 frogSpriteRenderer.sprite = frogOpenMouthSprite;
+            }
 
                 float shootSpeed = 120f;
                 Vector2 startPosition = shootPoint.position;
@@ -164,41 +161,32 @@ public class WaterObjective : MonoBehaviour
                     yield return null;
                 }
 
-                tongueLine.SetPosition(1, endPosition);
+            tongueLine.SetPosition(0, Vector3.zero);
+            tongueLine.SetPosition(1, Vector3.zero);
 
-                if (target != null)
+            if (frogAnimator != null)
+            {
+                frogAnimator.enabled = true;
+            }
+
+            if (target != null && target.activeInHierarchy)
+            {
+                Health targetHealth = target.GetComponent<Health>();
+                if (targetHealth != null)
                 {
-                    Health targetHealth = target.GetComponent<Health>();
-                    if (targetHealth != null)
+                    if (targetHealth.GetCurrentHealth() <= 5)
                     {
-                        Debug.Log($"Target Health Detected: {targetHealth.GetCurrentHealth()}");
-                        if (targetHealth.GetCurrentHealth() <= 5)
-                        {
-                            targetHealth.TakeDamage(150);
-                        }
-                        else if (targetHealth.GetCurrentHealth() <= 150)
-                        {
-                            yield return StartCoroutine(DragTargetToFrog(target));
-                            targetHealth.TakeDamage(150);
-                        }
-                        else
-                        {
-                            targetHealth.TakeDamage(150);
-                        }
+                        targetHealth.TakeDamage(150);
+                    }
+                    else if (targetHealth.GetCurrentHealth() <= 150)
+                    {
+                        yield return StartCoroutine(DragTargetToFrog(target));
+                        targetHealth.TakeDamage(150);
                     }
                     else
                     {
-                        Debug.LogWarning("No health component found on target.");
+                        targetHealth.TakeDamage(150);
                     }
-                }
-
-                yield return new WaitForSeconds(0.1f);
-                tongueLine.SetPosition(0, Vector3.zero);
-                tongueLine.SetPosition(1, Vector3.zero);
-
-                if (frogAnimator != null)
-                {
-                    frogAnimator.enabled = true;
                 }
             }
         }
@@ -207,7 +195,6 @@ public class WaterObjective : MonoBehaviour
     {
         if (target == null || !target.activeInHierarchy)
         {
-            Debug.LogWarning("Target is null or inactive. Exiting drag logic.");
             yield break; 
         }
 
@@ -216,7 +203,6 @@ public class WaterObjective : MonoBehaviour
         {
             bloomRecipient.ResetForDrag();
         }
-        Debug.Log("Starting drag logic for target: " + target.name);
         
         if (frogAnimator != null)
         {
@@ -234,7 +220,6 @@ public class WaterObjective : MonoBehaviour
 
         if (target.TryGetComponent(out Rigidbody2D rb))
         {
-            Debug.Log("Found Rigidbody2D on target.");
             rb.velocity = Vector2.zero;
             rb.isKinematic = true;
         }
@@ -243,7 +228,6 @@ public class WaterObjective : MonoBehaviour
         Collider2D targetCollider = target.GetComponent<Collider2D>();
         if (frogCollider != null && targetCollider != null)
         {
-            Debug.Log("Ignoring collisions between frog and target.");
             Physics2D.IgnoreCollision(frogCollider, targetCollider, true);
         }
 
@@ -251,7 +235,6 @@ public class WaterObjective : MonoBehaviour
         {
             if (target == null || !target.activeInHierarchy)
             {
-                Debug.LogWarning("Target became null or inactive during drag.");
                 yield break; 
             }
 
@@ -267,7 +250,6 @@ public class WaterObjective : MonoBehaviour
 
         if (frogCollider != null && targetCollider != null)
         {
-            Debug.Log("Re-enabling collisions between frog and target.");
             Physics2D.IgnoreCollision(frogCollider, targetCollider, false);
         }
 
@@ -278,8 +260,6 @@ public class WaterObjective : MonoBehaviour
         {
             frogAnimator.enabled = true;
         }
-
-        Debug.Log("Drag logic complete for target: " + target.name);
     }
 }
 
