@@ -135,7 +135,7 @@ public class DashAttack : MonoBehaviour
     {
         audioIsPlayed = false;
         knockbackscript.enabled = false;
-        collider.isTrigger = false;
+        //collider.isTrigger = false;
         damageCompnent.enabled = false;
         rb.velocity = Vector2.zero;
 

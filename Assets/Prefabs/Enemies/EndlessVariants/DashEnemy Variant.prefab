@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: talkToMissionMaster
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 112777825124948672, guid: 7e1a7e45e9581db48867944c5311208b, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 516425167985709169, guid: 7e1a7e45e9581db48867944c5311208b, type: 3}
       propertyPath: m_Name
       value: DashEnemy Variant
