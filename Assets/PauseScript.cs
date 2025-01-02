@@ -22,9 +22,17 @@ public class PauseMenu : MonoBehaviour
         //pauseMenuUI.SetActive(false);
         //settingsMenuUI.SetActive(false);
 
-        if (SaveData.Instance != null && filterToggle != null)
+        if (filterToggle != null)
         {
-            filterToggle.isOn = SaveData.Instance.epelepticFilterOn;
+            if (SaveData.Instance != null)
+            {
+                filterToggle.isOn = SaveData.Instance.epelepticFilterOn;
+            }
+            else
+            {
+                filterToggle.isOn = false; 
+            }
+
             filterToggle.onValueChanged.AddListener(OnFilterToggle);
         }
 

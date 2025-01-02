@@ -38135,7 +38135,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2434780779711296317, guid: f5ecf1c8838ce614a8593f1099e12c13, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2434780779711296317, guid: f5ecf1c8838ce614a8593f1099e12c13, type: 3}
       propertyPath: m_AnchorMin.x
@@ -38187,7 +38187,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2914193667773166654, guid: f5ecf1c8838ce614a8593f1099e12c13, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3404878307667910478, guid: f5ecf1c8838ce614a8593f1099e12c13, type: 3}
       propertyPath: m_Color.b
@@ -38353,9 +38353,13 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8260072544459328382, guid: f5ecf1c8838ce614a8593f1099e12c13, type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8681821647516474556, guid: f5ecf1c8838ce614a8593f1099e12c13, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9137593036649627311, guid: f5ecf1c8838ce614a8593f1099e12c13, type: 3}
       propertyPath: m_Color.b
@@ -38371,6 +38375,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9217193126529305697, guid: f5ecf1c8838ce614a8593f1099e12c13, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9217193126529305697, guid: f5ecf1c8838ce614a8593f1099e12c13, type: 3}
+      propertyPath: m_Maskable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9217193126529305697, guid: f5ecf1c8838ce614a8593f1099e12c13, type: 3}
+      propertyPath: m_RaycastTarget
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
