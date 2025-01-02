@@ -17,6 +17,8 @@ public class PauseMenu : MonoBehaviour
 
     private bool pauseCooldown = false;
 
+    private const string FilterTogglePrefKey = "FilterToggle";
+    private const string VolumePrefKey = "VolumeLevel";
     private void Start()
     {
         //pauseMenuUI.SetActive(false);
@@ -24,17 +26,13 @@ public class PauseMenu : MonoBehaviour
 
         if (filterToggle != null)
         {
-            if (SaveData.Instance != null)
-            {
-                filterToggle.isOn = false; 
-            }
-
+            filterToggle.isOn = PlayerPrefs.GetInt(FilterTogglePrefKey, 0) == 1;
             filterToggle.onValueChanged.AddListener(OnFilterToggle);
         }
 
         if (volumeSlider != null)
         {
-            volumeSlider.value = AudioListener.volume; 
+            volumeSlider.value = PlayerPrefs.GetFloat(VolumePrefKey, 1.0f);
             volumeSlider.onValueChanged.AddListener(OnVolumeSliderChange);
         }
     }
@@ -97,17 +95,17 @@ public class PauseMenu : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(pauseMenuUI.GetComponentInChildren<Selectable>().gameObject);
     }
-    public void OnFilterToggle(bool isOn)
-    {
-        if (SaveData.Instance != null)
+        public void OnFilterToggle(bool isOn)
         {
-            SaveData.Instance.epelepticFilterOn = isOn;
+            PlayerPrefs.SetInt(FilterTogglePrefKey, isOn ? 1 : 0);
+            PlayerPrefs.Save();
         }
-    }
 
     public void OnVolumeSliderChange(float volume)
     {
-        AudioListener.volume = volume; 
+        AudioListener.volume = volume;
+        PlayerPrefs.SetFloat(VolumePrefKey, volume);
+        PlayerPrefs.Save();
     }
 
     public void ExitGame()
