@@ -47,16 +47,16 @@ Material:
     m_Ints: []
     m_Floats:
     - _HighlightAmount: 6
-    - _HighlightScale: 0.4
+    - _HighlightScale: 0.77
     - _LineThickness: 0.5
     - _Speed: 0.25
     - _Tilt: 1.5
     - _ToggleVingette: 1
     - _Toggle_outline: 1
     m_Colors:
-    - _BaseColour: {r: 0.22103548, g: 0.33699724, b: 0.55345905, a: 0}
+    - _BaseColour: {r: 0.22342858, g: 0.324559, b: 0.49685526, a: 0}
     - _Base_water: {r: 0.3042453, g: 0.48776534, b: 0.5, a: 0}
-    - _HighlightColour: {r: 0.31891537, g: 0.4716981, b: 0.46837673, a: 1}
-    - _ShadeColour: {r: 0.059392404, g: 0.06428424, b: 0.24528301, a: 0}
+    - _HighlightColour: {r: 0.3532692, g: 0.49056602, b: 0.48566255, a: 1}
+    - _ShadeColour: {r: 0.09659424, g: 0.10133462, b: 0.27672952, a: 0}
     - _Sparkles: {r: 0.49464014, g: 0.6678132, b: 0.76729554, a: 0}
   m_BuildTextureStacks: []
