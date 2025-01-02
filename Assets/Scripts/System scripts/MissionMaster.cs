@@ -107,6 +107,7 @@ public class MissionMaster : MonoBehaviour
         if(onFinalStage && enemies.Count <= 0)
         {
             WinScreen();
+            onFinalStage = false;
         }
     }
 
@@ -136,7 +137,7 @@ public class MissionMaster : MonoBehaviour
 
             if (isWin)
             {
-                SceneManager.LoadScene(0); 
+                SceneManager.LoadScene("True Hub"); 
             }
             else
             {

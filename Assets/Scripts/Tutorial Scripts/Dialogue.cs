@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
+using System.Collections;
 
 public class Dialogue : MonoBehaviour
 {
@@ -81,12 +82,18 @@ public class Dialogue : MonoBehaviour
         if (index >= 0 && index < lines.Length)
         {
             textComponent.text = lines[index];
-            onDialogueLineChanged?.Invoke(index); 
+            onDialogueLineChanged?.Invoke(index);
         }
     }
 
+    private bool canAdvanceDialogue = true;
+
     public void NextLine()
     {
+        if (!canAdvanceDialogue) return;
+
+        StartCoroutine(DebounceDialogueAdvance());
+
         if (index < lines.Length - 1)
         {
             index++;
@@ -96,6 +103,13 @@ public class Dialogue : MonoBehaviour
         {
             EndDialogue();
         }
+    }
+
+    private IEnumerator DebounceDialogueAdvance()
+    {
+        canAdvanceDialogue = false;
+        yield return new WaitForSeconds(0.01f); 
+        canAdvanceDialogue = true;
     }
 
     public void PreviousLine()
@@ -109,12 +123,17 @@ public class Dialogue : MonoBehaviour
 
     private void EndDialogue()
     {
-        IsDialogueActive = false; 
+        IsDialogueActive = false;
+        StartCoroutine(EndDialogueWithDelay(0.05f));
+    }
+
+    private IEnumerator EndDialogueWithDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
         gameObject.SetActive(false);
         textComponent.text = string.Empty;
         EnableActionMap();
     }
-
     private PlayerInput dialogueControllerPlayer; 
 
     private void DisableActionMap()
