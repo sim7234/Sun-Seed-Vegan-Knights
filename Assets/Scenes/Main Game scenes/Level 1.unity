@@ -4628,27 +4628,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 211520584960021155, guid: 1e3ca5d83e87352438702b8939cb8b45, type: 3}
   m_PrefabInstance: {fileID: 2602751241033127311}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &279523529
+--- !u!95 &279523529 stripped
 Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 3278492205659036345, guid: 1e3ca5d83e87352438702b8939cb8b45, type: 3}
+  m_PrefabInstance: {fileID: 2602751241033127311}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 279523527}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e2f9526c60b085d4985b2b3194470300, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &280212669
 GameObject:
   m_ObjectHideFlags: 0
@@ -16228,27 +16212,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8749820621190932401, guid: 1e3ca5d83e87352438702b8939cb8b45, type: 3}
   m_PrefabInstance: {fileID: 2602751241033127311}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &863235600
+--- !u!95 &863235600 stripped
 Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 5205755154834936665, guid: 1e3ca5d83e87352438702b8939cb8b45, type: 3}
+  m_PrefabInstance: {fileID: 2602751241033127311}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 863235598}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a5e7083648a4e0140b13aba0591f071c, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &863280790
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43361,18 +43329,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 154039982876332882, guid: 1e3ca5d83e87352438702b8939cb8b45, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 2.324463
-      objectReference: {fileID: 0}
-    - target: {fileID: 416107030453099248, guid: 1e3ca5d83e87352438702b8939cb8b45, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1052198116557172126, guid: 1e3ca5d83e87352438702b8939cb8b45, type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1567141627738733387, guid: 1e3ca5d83e87352438702b8939cb8b45, type: 3}
       propertyPath: m_Name
       value: Endscreen
@@ -43457,24 +43413,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7811339567282218858, guid: 1e3ca5d83e87352438702b8939cb8b45, type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8270554960773262354, guid: 1e3ca5d83e87352438702b8939cb8b45, type: 3}
-      propertyPath: m_text
-      value: MISSION COMPLETED
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8749820621190932401, guid: 1e3ca5d83e87352438702b8939cb8b45, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 863235600}
-    - targetCorrespondingSourceObject: {fileID: 211520584960021155, guid: 1e3ca5d83e87352438702b8939cb8b45, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 279523529}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e3ca5d83e87352438702b8939cb8b45, type: 3}
 --- !u!1001 &2811687226104201288
 PrefabInstance:

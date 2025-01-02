@@ -48,10 +48,19 @@ public class PlayerDeath : MonoBehaviour
     private void HandleFinalDeath()
     {
         TurnOfAllScripts();
+
+        Invoke(nameof(TeleportAndReactivate), 4.0f);
+
         if (MissionMaster.Instance != null)
         {
             MissionMaster.Instance.ShowGameOverScreen();
         }
+    }
+
+    private void TeleportAndReactivate()
+    {
+        transform.position = Vector3.zero;
+        TurnOnAllScripts();
     }
 
     private void TurnOfAllScripts()
