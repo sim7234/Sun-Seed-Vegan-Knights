@@ -1,0 +1,1700 @@
+fileFormatVersion: 2
+guid: 55fbbe5a495d16148b18268be758764d
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+    spritePosition: {x: 0, y: 0}
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
+  - name: Lager 49
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3054
+      y: 14067
+      width: 802
+      height: 788
+    spriteID: e82c79d5f534a6b458822763a9550bf5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3054, y: 14067}
+    spritePosition: {x: 1366, y: 1811}
+  - name: Lager 48
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2178
+      y: 4
+      width: 1722
+      height: 2625
+    spriteID: d2f788500d82b894ea75dbbff7b92925
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2178, y: 4}
+    spritePosition: {x: 594, y: 82}
+  - name: Lager 10
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 7305
+      y: 10800
+      width: 766
+      height: 1237
+    spriteID: e7cb722985b76624e8dfcc69705076d2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 7305, y: 10800}
+    spritePosition: {x: 1369, y: 1452}
+  - name: Lager 11
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 7415
+      y: 15538
+      width: 726
+      height: 625
+    spriteID: aeb50de30fddc704582d6c7c09a52bc5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 7415, y: 15538}
+    spritePosition: {x: 1349, y: 1381}
+  - name: Lager 13
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 7305
+      y: 12045
+      width: 103
+      height: 254
+    spriteID: 52a97d8910ccbf14e9b95501426a152f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 7305, y: 12045}
+    spritePosition: {x: 1484, y: 1429}
+  - name: Lager 22
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2178
+      y: 13173
+      width: 928
+      height: 886
+    spriteID: 59e30df4ee5ad3643b85e26b05e769d9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2178, y: 13173}
+    spritePosition: {x: 1220, y: 1809}
+  - name: Lager 19
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 5657
+      y: 15538
+      width: 992
+      height: 822
+    spriteID: ada0be563a09ef2458bff2522a5778b4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 5657, y: 15538}
+    spritePosition: {x: 1364, y: 1838}
+  - name: Lager 20
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2178
+      y: 14067
+      width: 868
+      height: 868
+    spriteID: e2a19ac60bf4d754c9a8722852237fff
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2178, y: 14067}
+    spritePosition: {x: 1280, y: 1839}
+  - name: Lager 47
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 7336
+      y: 5666
+      width: 696
+      height: 1775
+    spriteID: 0df1a15c4ae6b89479fe8f3275480709
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 7336, y: 5666}
+    spritePosition: {x: 1420, y: 785}
+  - name: Lager 21
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2178
+      y: 14943
+      width: 868
+      height: 868
+    spriteID: f3bbc6a2ce0c34d4ebb59839d6f0a7ba
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2178, y: 14943}
+    spritePosition: {x: 1280, y: 1839}
+  - name: Lager 42
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 6657
+      y: 15538
+      width: 750
+      height: 617
+    spriteID: bb81e7da8914b934fb11a0ae4ca924a6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 6657, y: 15538}
+    spritePosition: {x: 1363, y: 1332}
+  - name: Lager 38
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2178
+      y: 9424
+      width: 1343
+      height: 1139
+    spriteID: f7e7522bdc81d41419749fbb0e37159b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2178, y: 9424}
+    spritePosition: {x: 1149, y: 1061}
+  - name: Lager 18
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 15427
+      width: 1108
+      height: 848
+    spriteID: 12eba634c1a47bb4089ac44f1b3c36d6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 15427}
+    spritePosition: {x: 1259, y: 1077}
+  - name: Lager 41
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3529
+      y: 10324
+      width: 160
+      height: 190
+    spriteID: 6271e769fbef8a64d85238952b38c140
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3529, y: 10324}
+    spritePosition: {x: 1455, y: 1479}
+  - name: Lager 37
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 7083
+      y: 16163
+      width: 161
+      height: 195
+    spriteID: fb62aa4835ce7f240a2efc1dcaacd380
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 7083, y: 16163}
+    spritePosition: {x: 1453, y: 1474}
+  - name: Lager 29
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1120
+      y: 15427
+      width: 1026
+      height: 857
+    spriteID: b0a48f8bf0a71b94a92a967ef894b4d1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1120, y: 15427}
+    spritePosition: {x: 1180, y: 1286}
+  - name: Lager 27
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3219
+      y: 11946
+      width: 666
+      height: 482
+    spriteID: 01b819fb3e23f4445b97dc2cddd63550
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3219, y: 11946}
+    spritePosition: {x: 1419, y: 1421}
+  - name: Lager 26
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 5657
+      y: 1877
+      width: 1904
+      height: 2021
+    spriteID: 95d7aa2e80e0cc142a5d28095b2004b7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 5657, y: 1877}
+    spritePosition: {x: 598, y: 686}
+  - name: Lager 25
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 5657
+      y: 10800
+      width: 1640
+      height: 1699
+    spriteID: a09a2d5422019064eb76797fc4a58b57
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 5657, y: 10800}
+    spritePosition: {x: 862, y: 1008}
+  - name: Lager 23
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 2166
+      height: 2707
+    spriteID: 0dac1b95cde68074896a0b3ea439bb84
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 336, y: 0}
+  - name: Lager 16
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2719
+      width: 2166
+      height: 2707
+    spriteID: 86067c4939911ec4eaec29756c872356
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 2719}
+    spritePosition: {x: 336, y: 0}
+  - name: Lager 14
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 7365
+      y: 12507
+      width: 764
+      height: 1255
+    spriteID: 89729fbfd8d14f843a284e7cbb98040f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 7365, y: 12507}
+    spritePosition: {x: 1369, y: 1424}
+  - name: Lager 6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 5657
+      y: 7481
+      width: 1788
+      height: 1658
+    spriteID: a88d92b372ae96140a65eaf81a321db4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 5657, y: 7481}
+    spritePosition: {x: 418, y: 870}
+  - name: Lager 7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3114
+      y: 13173
+      width: 687
+      height: 834
+    spriteID: 1bd43a8a326b41748aaceb0353cb63d5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3114, y: 13173}
+    spritePosition: {x: 1541, y: 747}
+  - name: Bricktexture1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 6657
+      y: 16163
+      width: 418
+      height: 200
+    spriteID: af1200ed55bbea544a8ecb92a65d91b9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 6657, y: 16163}
+    spritePosition: {x: 784, y: 1086}
+  - name: Lager 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2178
+      y: 11946
+      width: 1033
+      height: 1219
+    spriteID: ccf5862c0b4dc494b9f1501ceb1a9857
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2178, y: 11946}
+    spritePosition: {x: 924, y: 233}
+  - name: Lager 10 kopiera
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2178
+      y: 6777
+      width: 1278
+      height: 1474
+    spriteID: 22e11fa1125129044b3b723f5239e1a7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2178, y: 6777}
+    spritePosition: {x: 1004, y: 94}
+  - name: Lager 12
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3529
+      y: 9424
+      width: 311
+      height: 749
+    spriteID: f4249ff627ab76b4bbbbff279f100029
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3529, y: 9424}
+    spritePosition: {x: 610, y: 392}
+  - name: Lager 11 kopiera
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2178
+      y: 10571
+      width: 1035
+      height: 1367
+    spriteID: 55e5f8745673a014f88b0eab965be3d9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2178, y: 10571}
+    spritePosition: {x: 1041, y: 223}
+  - name: Lager 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 5657
+      y: 12507
+      width: 1700
+      height: 1501
+    spriteID: db67123edceb27948a25fafea486e355
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 5657, y: 12507}
+    spritePosition: {x: 542, y: 99}
+  - name: Lager 46
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 5657
+      y: 5666
+      width: 1671
+      height: 1807
+    spriteID: adee32f0900c59744868215d4c480821
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 5657, y: 5666}
+    spritePosition: {x: 564, y: 96}
+  - name: Lager 40
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2178
+      y: 8259
+      width: 1612
+      height: 1157
+    spriteID: 4aa2804f1f966e44db2e77b169a38b5e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2178, y: 8259}
+    spritePosition: {x: 615, y: 206}
+  - name: Lager 36
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2178
+      y: 5604
+      width: 1647
+      height: 1165
+    spriteID: 44094baeac8be1c4bb3a963567f11284
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2178, y: 5604}
+    spritePosition: {x: 598, y: 203}
+  - name: Lager 17
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2178
+      y: 4100
+      width: 1439
+      height: 1496
+    spriteID: 7e6fd9274169607468411dd3cd8a6924
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2178, y: 4100}
+    spritePosition: {x: 458, y: 68}
+  - name: Lager 43
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3529
+      y: 10181
+      width: 336
+      height: 135
+    spriteID: 2ec533620c88dd04e93fa656e3bfea40
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3529, y: 10181}
+    spritePosition: {x: 1651, y: 1317}
+  - name: Lager 39
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 5657
+      y: 4
+      width: 2085
+      height: 1865
+    spriteID: 437f630e9fa2e8f40918d09e0f59f052
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 5657, y: 4}
+    spritePosition: {x: 417, y: 0}
+  - name: Lager 35
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2178
+      y: 2637
+      width: 1665
+      height: 1455
+    spriteID: f0d940ccdc7a1894c9297ee4b5371fd6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2178, y: 2637}
+    spritePosition: {x: 534, y: 180}
+  - name: Lager 34
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2178
+      y: 15819
+      width: 768
+      height: 459
+    spriteID: f53cb050b952abb49ab977a056c84a57
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2178, y: 15819}
+    spritePosition: {x: 947, y: 1141}
+  - name: Lager 33
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 5657
+      y: 14016
+      width: 1677
+      height: 1514
+    spriteID: fe4db5cc5d3ca6e4da1cf08377c6cc16
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 5657, y: 14016}
+    spritePosition: {x: 617, y: 215}
+  - name: Lager 32
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 5657
+      y: 9147
+      width: 1782
+      height: 1645
+    spriteID: 5b0354711f1ddf84fb5c929fd4c23a44
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 5657, y: 9147}
+    spritePosition: {x: 533, y: 58}
+  - name: Lager 31
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 13236
+      width: 2166
+      height: 2183
+    spriteID: 9ed7211c096a00a4daa13da47462e86b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 13236}
+    spritePosition: {x: 336, y: 0}
+  - name: Lager 30
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 10864
+      width: 2166
+      height: 2364
+    spriteID: ac2afd5161eede945bbde1dd62113e3c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 10864}
+    spritePosition: {x: 336, y: 0}
+  - name: Lager 24
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 5434
+      width: 2166
+      height: 2707
+    spriteID: 2174c4c02f8e9dc4da71a1c9b4877f63
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 5434}
+    spritePosition: {x: 336, y: 0}
+  - name: Lager 15
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 8149
+      width: 2166
+      height: 2707
+    spriteID: 9dab5ea9ac2bd004fb3f4655b1286fee
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 8149}
+    spritePosition: {x: 336, y: 0}
+  - name: Lager 8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 5657
+      y: 3906
+      width: 1731
+      height: 1752
+    spriteID: e8e3f2be2a6774a46b3942ebfc12080d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 5657, y: 3906}
+    spritePosition: {x: 548, y: 97}
+  - name: Lager 44
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3908
+      y: 2528
+      width: 1738
+      height: 1024
+    spriteID: 986988d79991f824ea41f8a8ebbd5acd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3908, y: 2528}
+    spritePosition: {x: 551, y: 91}
+  - name: Lager 45
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3908
+      y: 4
+      width: 1741
+      height: 2516
+    spriteID: f442c41dc853b6b4c88ef0e395e76e20
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3908, y: 4}
+    spritePosition: {x: 543, y: 90}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    pivot: {x: 0, y: 0}
+    boneReadOnly: 0
+  sharedRigSpriteImportData: []
+  sharedRigCharacterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    pivot: {x: 0, y: 0}
+    boneReadOnly: 0
+  platformSettings: []
+  mosaicLayers: 1
+  characterMode: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  layerMappingOption: 2
+  generatePhysicsShape: 0
+  paperDollMode: 0
+  keepDupilcateSpriteName: 1
+  skeletonAssetReferenceID: 
+  pipeline: {instanceID: 0}
+  pipelineVersion: 
+  padding: 4
+  spriteSizeExpand: 0
+  spriteCategoryList:
+    categories: []
+  spritePackingTag: 
+  resliceFromLayer: 0
+  mosaicPSDLayers: []
+  rigPSDLayers:
+  - name: Lager 49
+    spriteName: Lager 49
+    isGroup: 0
+    parentIndex: -1
+    spriteID: e82c79d5f534a6b458822763a9550bf5
+    layerID: 675
+    mosaicPosition: {x: 3054, y: 14067}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lager 48
+    spriteName: Lager 48
+    isGroup: 0
+    parentIndex: -1
+    spriteID: d2f788500d82b894ea75dbbff7b92925
+    layerID: 672
+    mosaicPosition: {x: 2178, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Grupp 1
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 119667802cd546b4da9a13e30c4b16f8
+    layerID: 673
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Torn
+    spriteName: 
+    isGroup: 1
+    parentIndex: 2
+    spriteID: b0435d12173309b459c19fe5ac82f1dc
+    layerID: 665
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Torn
+    spriteName: 
+    isGroup: 1
+    parentIndex: 3
+    spriteID: 10e897af8f35ef84a8b079abb3d39918
+    layerID: 624
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Lager 10
+    spriteName: Lager 10
+    isGroup: 0
+    parentIndex: 4
+    spriteID: e7cb722985b76624e8dfcc69705076d2
+    layerID: 614
+    mosaicPosition: {x: 7305, y: 10800}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lager 11
+    spriteName: Lager 11
+    isGroup: 0
+    parentIndex: 4
+    spriteID: aeb50de30fddc704582d6c7c09a52bc5
+    layerID: 616
+    mosaicPosition: {x: 7415, y: 15538}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lager 13
+    spriteName: Lager 13
+    isGroup: 0
+    parentIndex: 4
+    spriteID: 52a97d8910ccbf14e9b95501426a152f
+    layerID: 618
+    mosaicPosition: {x: 7305, y: 12045}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: torn
+    spriteName: 
+    isGroup: 1
+    parentIndex: 3
+    spriteID: df93a1647e0df7b4098e52b8c76587ac
+    layerID: 663
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Lager 22
+    spriteName: Lager 22
+    isGroup: 0
+    parentIndex: 8
+    spriteID: 59e30df4ee5ad3643b85e26b05e769d9
+    layerID: 636
+    mosaicPosition: {x: 2178, y: 13173}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lager 19
+    spriteName: Lager 19
+    isGroup: 0
+    parentIndex: 8
+    spriteID: ada0be563a09ef2458bff2522a5778b4
+    layerID: 632
+    mosaicPosition: {x: 5657, y: 15538}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lager 20
+    spriteName: Lager 20
+    isGroup: 0
+    parentIndex: 8
+    spriteID: e2a19ac60bf4d754c9a8722852237fff
+    layerID: 634
+    mosaicPosition: {x: 2178, y: 14067}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lager 47
+    spriteName: Lager 47
+    isGroup: 0
+    parentIndex: 8
+    spriteID: 0df1a15c4ae6b89479fe8f3275480709
+    layerID: 662
+    mosaicPosition: {x: 7336, y: 5666}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lager 21
+    spriteName: Lager 21
+    isGroup: 0
+    parentIndex: 8
+    spriteID: f3bbc6a2ce0c34d4ebb59839d6f0a7ba
+    layerID: 635
+    mosaicPosition: {x: 2178, y: 14943}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lager 42
+    spriteName: Lager 42
+    isGroup: 0
+    parentIndex: 8
+    spriteID: bb81e7da8914b934fb11a0ae4ca924a6
+    layerID: 657
+    mosaicPosition: {x: 6657, y: 15538}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lager 38
+    spriteName: Lager 38
+    isGroup: 0
+    parentIndex: 8
+    spriteID: f7e7522bdc81d41419749fbb0e37159b
+    layerID: 653
+    mosaicPosition: {x: 2178, y: 9424}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lager 18
+    spriteName: Lager 18
+    isGroup: 0
+    parentIndex: 8
+    spriteID: 12eba634c1a47bb4089ac44f1b3c36d6
+    layerID: 631
+    mosaicPosition: {x: 4, y: 15427}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lager 41
+    spriteName: Lager 41
+    isGroup: 0
+    parentIndex: 8
+    spriteID: 6271e769fbef8a64d85238952b38c140
+    layerID: 656
+    mosaicPosition: {x: 3529, y: 10324}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lager 37
+    spriteName: Lager 37
+    isGroup: 0
+    parentIndex: 8
+    spriteID: fb62aa4835ce7f240a2efc1dcaacd380
+    layerID: 652
+    mosaicPosition: {x: 7083, y: 16163}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lager 29
+    spriteName: Lager 29
+    isGroup: 0
+    parentIndex: 8
+    spriteID: b0a48f8bf0a71b94a92a967ef894b4d1
+    layerID: 644
+    mosaicPosition: {x: 1120, y: 15427}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lager 27
+    spriteName: Lager 27
+    isGroup: 0
+    parentIndex: 8
+    spriteID: 01b819fb3e23f4445b97dc2cddd63550
+    layerID: 642
+    mosaicPosition: {x: 3219, y: 11946}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lager 26
+    spriteName: Lager 26
+    isGroup: 0
+    parentIndex: 8
+    spriteID: 95d7aa2e80e0cc142a5d28095b2004b7
+    layerID: 641
+    mosaicPosition: {x: 5657, y: 1877}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lager 25
+    spriteName: Lager 25
+    isGroup: 0
+    parentIndex: 8
+    spriteID: a09a2d5422019064eb76797fc4a58b57
+    layerID: 640
+    mosaicPosition: {x: 5657, y: 10800}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lager 23
+    spriteName: Lager 23
+    isGroup: 0
+    parentIndex: 8
+    spriteID: 0dac1b95cde68074896a0b3ea439bb84
+    layerID: 638
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lager 16
+    spriteName: Lager 16
+    isGroup: 0
+    parentIndex: 8
+    spriteID: 86067c4939911ec4eaec29756c872356
+    layerID: 629
+    mosaicPosition: {x: 4, y: 2719}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lager 14
+    spriteName: Lager 14
+    isGroup: 0
+    parentIndex: 8
+    spriteID: 89729fbfd8d14f843a284e7cbb98040f
+    layerID: 619
+    mosaicPosition: {x: 7365, y: 12507}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Base
+    spriteName: 
+    isGroup: 1
+    parentIndex: 2
+    spriteID: 7d85721965837bc488e0d3b16951bd64
+    layerID: 669
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Base
+    spriteName: 
+    isGroup: 1
+    parentIndex: 26
+    spriteID: 87081a8152eed3b43a8bbb2e9802d3aa
+    layerID: 626
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Lager 6
+    spriteName: Lager 6
+    isGroup: 0
+    parentIndex: 27
+    spriteID: a88d92b372ae96140a65eaf81a321db4
+    layerID: 608
+    mosaicPosition: {x: 5657, y: 7481}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lager 7
+    spriteName: Lager 7
+    isGroup: 0
+    parentIndex: 27
+    spriteID: 1bd43a8a326b41748aaceb0353cb63d5
+    layerID: 610
+    mosaicPosition: {x: 3114, y: 13173}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Bricktexture1
+    spriteName: Bricktexture1
+    isGroup: 0
+    parentIndex: 27
+    spriteID: af1200ed55bbea544a8ecb92a65d91b9
+    layerID: 609
+    mosaicPosition: {x: 6657, y: 16163}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lager 3
+    spriteName: Lager 3
+    isGroup: 0
+    parentIndex: 27
+    spriteID: ccf5862c0b4dc494b9f1501ceb1a9857
+    layerID: 605
+    mosaicPosition: {x: 2178, y: 11946}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lager 10 kopiera
+    spriteName: Lager 10 kopiera
+    isGroup: 0
+    parentIndex: 27
+    spriteID: 22e11fa1125129044b3b723f5239e1a7
+    layerID: 622
+    mosaicPosition: {x: 2178, y: 6777}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lager 12
+    spriteName: Lager 12
+    isGroup: 0
+    parentIndex: 27
+    spriteID: f4249ff627ab76b4bbbbff279f100029
+    layerID: 617
+    mosaicPosition: {x: 3529, y: 9424}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lager 11 kopiera
+    spriteName: Lager 11 kopiera
+    isGroup: 0
+    parentIndex: 27
+    spriteID: 55e5f8745673a014f88b0eab965be3d9
+    layerID: 623
+    mosaicPosition: {x: 2178, y: 10571}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lager 2
+    spriteName: Lager 2
+    isGroup: 0
+    parentIndex: 27
+    spriteID: db67123edceb27948a25fafea486e355
+    layerID: 604
+    mosaicPosition: {x: 5657, y: 12507}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: bas
+    spriteName: 
+    isGroup: 1
+    parentIndex: 26
+    spriteID: 91aba3ae7dd585947b96b0e2de912659
+    layerID: 667
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Lager 46
+    spriteName: Lager 46
+    isGroup: 0
+    parentIndex: 36
+    spriteID: adee32f0900c59744868215d4c480821
+    layerID: 661
+    mosaicPosition: {x: 5657, y: 5666}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lager 40
+    spriteName: Lager 40
+    isGroup: 0
+    parentIndex: 36
+    spriteID: 4aa2804f1f966e44db2e77b169a38b5e
+    layerID: 655
+    mosaicPosition: {x: 2178, y: 8259}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lager 36
+    spriteName: Lager 36
+    isGroup: 0
+    parentIndex: 36
+    spriteID: 44094baeac8be1c4bb3a963567f11284
+    layerID: 651
+    mosaicPosition: {x: 2178, y: 5604}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lager 17
+    spriteName: Lager 17
+    isGroup: 0
+    parentIndex: 36
+    spriteID: 7e6fd9274169607468411dd3cd8a6924
+    layerID: 630
+    mosaicPosition: {x: 2178, y: 4100}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lager 43
+    spriteName: Lager 43
+    isGroup: 0
+    parentIndex: 36
+    spriteID: 2ec533620c88dd04e93fa656e3bfea40
+    layerID: 658
+    mosaicPosition: {x: 3529, y: 10181}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lager 39
+    spriteName: Lager 39
+    isGroup: 0
+    parentIndex: 36
+    spriteID: 437f630e9fa2e8f40918d09e0f59f052
+    layerID: 654
+    mosaicPosition: {x: 5657, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lager 35
+    spriteName: Lager 35
+    isGroup: 0
+    parentIndex: 36
+    spriteID: f0d940ccdc7a1894c9297ee4b5371fd6
+    layerID: 650
+    mosaicPosition: {x: 2178, y: 2637}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lager 34
+    spriteName: Lager 34
+    isGroup: 0
+    parentIndex: 36
+    spriteID: f53cb050b952abb49ab977a056c84a57
+    layerID: 649
+    mosaicPosition: {x: 2178, y: 15819}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lager 33
+    spriteName: Lager 33
+    isGroup: 0
+    parentIndex: 36
+    spriteID: fe4db5cc5d3ca6e4da1cf08377c6cc16
+    layerID: 648
+    mosaicPosition: {x: 5657, y: 14016}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lager 32
+    spriteName: Lager 32
+    isGroup: 0
+    parentIndex: 36
+    spriteID: 5b0354711f1ddf84fb5c929fd4c23a44
+    layerID: 647
+    mosaicPosition: {x: 5657, y: 9147}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lager 31
+    spriteName: Lager 31
+    isGroup: 0
+    parentIndex: 36
+    spriteID: 9ed7211c096a00a4daa13da47462e86b
+    layerID: 646
+    mosaicPosition: {x: 4, y: 13236}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lager 30
+    spriteName: Lager 30
+    isGroup: 0
+    parentIndex: 36
+    spriteID: ac2afd5161eede945bbde1dd62113e3c
+    layerID: 645
+    mosaicPosition: {x: 4, y: 10864}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lager 24
+    spriteName: Lager 24
+    isGroup: 0
+    parentIndex: 36
+    spriteID: 2174c4c02f8e9dc4da71a1c9b4877f63
+    layerID: 639
+    mosaicPosition: {x: 4, y: 5434}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lager 15
+    spriteName: Lager 15
+    isGroup: 0
+    parentIndex: 36
+    spriteID: 9dab5ea9ac2bd004fb3f4655b1286fee
+    layerID: 628
+    mosaicPosition: {x: 4, y: 8149}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lager 8
+    spriteName: Lager 8
+    isGroup: 0
+    parentIndex: 36
+    spriteID: e8e3f2be2a6774a46b3942ebfc12080d
+    layerID: 611
+    mosaicPosition: {x: 5657, y: 3906}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lager 44
+    spriteName: Lager 44
+    isGroup: 0
+    parentIndex: 36
+    spriteID: 986988d79991f824ea41f8a8ebbd5acd
+    layerID: 659
+    mosaicPosition: {x: 3908, y: 2528}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lager 45
+    spriteName: Lager 45
+    isGroup: 0
+    parentIndex: 36
+    spriteID: f442c41dc853b6b4c88ef0e395e76e20
+    layerID: 660
+    mosaicPosition: {x: 3908, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Isometric Grid kopiera 3
+    spriteName: 
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 0173dd9b25ab37045bf9dc5e2640ce21
+    layerID: 603
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
+  - name: Tunnel hus
+    spriteName: 
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 38caac8651750d74288032f9cdb85438
+    layerID: 601
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
+  - name: Lager 1
+    spriteName: 
+    isGroup: 0
+    parentIndex: -1
+    spriteID: e70737d58fda70d4fb96bf02dbb8130b
+    layerID: 602
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
+  sharedRigPSDLayers: []
+  pSDLayerImportSetting: []
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  spriteSizeExpandChanged: 0
+  generateGOHierarchy: 0
+  textureAssetName: 
+  prefabAssetName: 
+  spriteLibAssetName: 
+  skeletonAssetName: 
+  secondarySpriteTextures: []
