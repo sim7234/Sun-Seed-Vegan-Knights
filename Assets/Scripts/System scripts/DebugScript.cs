@@ -134,7 +134,7 @@ public class DebugScript : MonoBehaviour
             enemy.GetComponent<Health>().TakeDamage(enemy.GetComponent<Health>().maxHealth);
         }
 
-        if (SceneManager.GetActiveScene().name == "EndlessMode")
+        if (SceneManager.GetActiveScene().name == "EndlessMode" || SceneManager.GetActiveScene().name == "endless wip")
         {
             FindAnyObjectByType<EndlessWaves>().startWaveTimer = 0;
         }
