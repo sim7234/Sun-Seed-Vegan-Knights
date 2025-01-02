@@ -19,7 +19,7 @@ public class BloomBomb : MonoBehaviour
     }
     private void GetPlayerIndex()
     {
-        playerIndex = SaveData.Instance.playerAmount;
+        playerIndex = SaveData.playerAmount;
         if(turnOfOnStart)
         {
             gameObject.SetActive(false);

@@ -4,7 +4,7 @@ public class KillPlayersOnStart : MonoBehaviour
 {
     void Awake()
     {
-        SaveData.Instance.playerAmount = 0;
+        SaveData.playerAmount = 0;
 
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
 

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class SaveData : MonoBehaviour
 {
     public static SaveData Instance { get; private set; }
-    public int playerAmount;
+    public static int playerAmount;
 
     public int playerDeathsBeforeGameOver;
     [SerializeField]
@@ -31,6 +31,7 @@ public class SaveData : MonoBehaviour
     public GameObject position4;
 
     public int completedMission = 0;
+
     private void Awake()
     {
       
@@ -47,15 +48,16 @@ public class SaveData : MonoBehaviour
 
     private void Update()
     {
-        if (playerAmount > 0 && (SceneManager.GetActiveScene().name != "EndlessMode"))
+        if (playerAmount > 0 && (SceneManager.GetActiveScene().name != "endless wip"))
         {
             Camera.main.orthographicSize = 9 + playerAmount;
         }
-        else if (playerAmount > 0 && (SceneManager.GetActiveScene().name == "EndlessMode"))
+        else if (playerAmount > 0 && (SceneManager.GetActiveScene().name == "endless wip"))
         {
             Camera.main.orthographicSize = 12 + playerAmount;
         }
     }
+
     public void AddPlayer(GameObject player, int index)
     {
         Debug.Log("Addplayer");
