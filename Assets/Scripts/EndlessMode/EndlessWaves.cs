@@ -64,7 +64,7 @@ public class EndlessWaves : MonoBehaviour
     {
         if (FindAnyObjectByType<SaveData>() != null)
         {
-            playerAmount = FindAnyObjectByType<SaveData>().playerAmount;
+            playerAmount = SaveData.playerAmount;
             Debug.Log(playerAmount);
             difficultyMultiplier += playerAmount;
         }

@@ -54,9 +54,9 @@ public class CameraSystem : MonoBehaviour
     }
     private void LateUpdate()
     {
-        if (SaveData.Instance.playerAmount != playerCount)
+        if (SaveData.playerAmount != playerCount)
         {
-            playerCount = SaveData.Instance.playerAmount;
+            playerCount = SaveData.playerAmount;
             FindTargets();
         }
         CalculateCameraLocation();
