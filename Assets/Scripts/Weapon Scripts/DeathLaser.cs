@@ -34,6 +34,7 @@ public class DeathLaser : MonoBehaviour
         {
             EpelepticFreindlyVerison.SetActive(true);
             NormalVfx.SetActive(false);
+            Invoke(nameof(Activate), 0.5f);
         }
         else
         {
