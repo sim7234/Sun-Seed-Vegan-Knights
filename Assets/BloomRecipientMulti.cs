@@ -167,21 +167,25 @@ public class BloomRecipientMulti : MonoBehaviour
             case 1:
                 hasBloomed1 = false;
                 bloomBuildUp1 = 0;
+                bloomOutline[0].SetActive(false);
                 flowerPelletsObject1.SetActive(false);
                 break;
             case 2:
                 hasBloomed2 = false;
                 bloomBuildUp2 = 0;
+                bloomOutline[1].SetActive(false);
                 flowerPelletsObject2.SetActive(false);
                 break;
             case 3:
                 hasBloomed3 = false;
                 bloomBuildUp3 = 0;
+                bloomOutline[2].SetActive(false);
                 flowerPelletsObject3.SetActive(false);
                 break;
             case 4:
                 hasBloomed4 = false;
                 bloomBuildUp4 = 0;
+                bloomOutline[3].SetActive(false);
                 flowerPelletsObject4.SetActive(false);
                 break;
         }
