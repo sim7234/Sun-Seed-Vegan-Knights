@@ -11175,7 +11175,7 @@ MonoBehaviour:
   dialogueLines:
   - Stand in the sun to regain Health
   - Respawn on top of enemies to deal massive damage
-  - Helping your fellow knights with watering is better then focusing on your own
+  - Helping your fellow knights with watering is better than focusing on your own
   - If you find a friendly creature out in the world, they might help you for a price
   interactionButton: {fileID: 733930952}
 --- !u!61 &507459561
