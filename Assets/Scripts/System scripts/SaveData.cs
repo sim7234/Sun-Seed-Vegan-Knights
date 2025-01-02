@@ -34,6 +34,7 @@ public class SaveData : MonoBehaviour
 
     private void Awake()
     {
+        Cursor.visible = false;
       
         if (Instance == null)
         {

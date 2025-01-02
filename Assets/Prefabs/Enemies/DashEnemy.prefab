@@ -417,7 +417,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 599290347712b3c4bae5b7cd329c0c96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bloomResistance: 500
+  bloomResistance: 360
   hasBloomed1: 0
   BloomExplosionVFX: {fileID: 1240254011838071449, guid: 20efd42d40277384687f4f2a74a87383, type: 3}
   divideHealthBy: 15

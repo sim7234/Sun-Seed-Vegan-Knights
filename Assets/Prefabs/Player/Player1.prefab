@@ -31433,7 +31433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndex: 0
-  bloomDamage: 80
+  bloomDamage: 50
   turnOfOnStart: 0
 --- !u!82 &3293877512282924849
 AudioSource:
@@ -37961,7 +37961,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 403720270228228829, guid: cd47079427774964ab3e001483cf82fc, type: 3}
       propertyPath: damage
-      value: 50
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 539701319072476842, guid: cd47079427774964ab3e001483cf82fc, type: 3}
       propertyPath: m_Name
@@ -38039,6 +38039,10 @@ PrefabInstance:
       propertyPath: rotationObject
       value: 
       objectReference: {fileID: 4283199718185520484}
+    - target: {fileID: 9150556482096656144, guid: cd47079427774964ab3e001483cf82fc, type: 3}
+      propertyPath: bloomDamage
+      value: 1000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -38080,11 +38084,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 97009802469318414, guid: 1f161b9a3a5acee469dca717f69e0af9, type: 3}
       propertyPath: bloomDamage
-      value: 1000
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 1591399108831129397, guid: 1f161b9a3a5acee469dca717f69e0af9, type: 3}
       propertyPath: damage
-      value: 50
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 2650767230876090150, guid: 1f161b9a3a5acee469dca717f69e0af9, type: 3}
       propertyPath: rb
