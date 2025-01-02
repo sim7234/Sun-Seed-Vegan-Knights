@@ -32,5 +32,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Sandbox.unity
     guid: 1fde7ee6dab856848918d1a378c155db
+  - enabled: 1
+    path: Assets/Scenes/Main Game scenes/endless wip.unity
+    guid: 06706c7a53eac87468b3944d47566b9d
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: bbbd167fa38e5004f8744d92da0ebbd5, type: 2}

@@ -145,7 +145,7 @@ public class DebugScript : MonoBehaviour
     }
     void goToEndless()
     {
-        SceneManager.LoadScene("EndlessMode");
+        SceneManager.LoadScene("endless wip");
     }
 
     void goToMenu()
