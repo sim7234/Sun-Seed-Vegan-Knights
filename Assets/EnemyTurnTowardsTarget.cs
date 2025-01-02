@@ -10,11 +10,12 @@ public class EnemyTurnTowardsTarget : MonoBehaviour
 
     private Pathfinding pathfinding;
 
-    [SerializeField] public bool canFlip = true;
+    [SerializeField] public bool canFlip;
 
     private void Start()
     {
         pathfinding = GetComponent<Pathfinding>();
+        canFlip = true;
     }
     private void Update()
     {
