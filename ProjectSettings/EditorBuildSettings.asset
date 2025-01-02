@@ -9,11 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Game scenes/Menu.unity
     guid: df3db59eabbab64469ba24e99675146d
   - enabled: 1
-    path: Assets/Scenes/Main Game scenes/Level 1.unity
-    guid: d8cb4085382dcf7448aede9670e9e7ad
-  - enabled: 1
     path: Assets/Scenes/Main Game scenes/Level 2.unity
     guid: bf36e12a0cb997e438878e5c4854eeff
+  - enabled: 1
+    path: Assets/Scenes/Main Game scenes/Level 1.unity
+    guid: d8cb4085382dcf7448aede9670e9e7ad
   - enabled: 1
     path: Assets/Scenes/Main Game scenes/EndlessMode.unity
     guid: 823e782f98cf4674f9d3d0f7e98854a9
