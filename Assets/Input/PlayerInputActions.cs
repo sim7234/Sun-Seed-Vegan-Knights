@@ -702,17 +702,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""891000ea-4cda-4ce2-b35c-d8a244a424ee"",
-                    ""path"": ""<DualShockGamepad>/buttonSouth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Control"",
-                    ""action"": ""Select"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""85f41246-c7cf-434d-901b-8e819260cccc"",
                     ""path"": ""<Gamepad>/dpad"",
                     ""interactions"": """",
