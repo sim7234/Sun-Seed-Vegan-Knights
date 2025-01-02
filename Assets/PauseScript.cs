@@ -26,10 +26,6 @@ public class PauseMenu : MonoBehaviour
         {
             if (SaveData.Instance != null)
             {
-                filterToggle.isOn = SaveData.Instance.epelepticFilterOn;
-            }
-            else
-            {
                 filterToggle.isOn = false; 
             }
 
