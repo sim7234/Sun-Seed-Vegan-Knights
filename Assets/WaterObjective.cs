@@ -150,7 +150,8 @@ public class WaterObjective : MonoBehaviour
                 {
                     if (target == null || !target.activeInHierarchy)
                     {
-                        break;
+                        ResetTongue(); 
+                        yield break;
                     }
 
                     time += Time.deltaTime;
@@ -180,7 +181,10 @@ public class WaterObjective : MonoBehaviour
                     else if (targetHealth.GetCurrentHealth() <= 150)
                     {
                         yield return StartCoroutine(DragTargetToFrog(target));
-                        targetHealth.TakeDamage(150);
+                        if (target != null && target.activeInHierarchy)
+                        {
+                            targetHealth.TakeDamage(150);
+                        }
                     }
                     else
                     {
@@ -188,6 +192,17 @@ public class WaterObjective : MonoBehaviour
                     }
                 }
             }
+        }
+    }
+
+    private void ResetTongue()
+    {
+        tongueLine.SetPosition(0, Vector3.zero);
+        tongueLine.SetPosition(1, Vector3.zero);
+
+        if (frogAnimator != null)
+        {   
+            frogAnimator.enabled = true;
         }
     }
     private IEnumerator DragTargetToFrog(GameObject target)
@@ -202,7 +217,6 @@ public class WaterObjective : MonoBehaviour
         {
             bloomRecipient.ResetForDrag();
         }
-        
         if (frogAnimator != null)
         {
             frogAnimator.enabled = false;
@@ -234,7 +248,7 @@ public class WaterObjective : MonoBehaviour
         {
             if (target == null || !target.activeInHierarchy)
             {
-                yield break; 
+                break; 
             }
 
             time += Time.deltaTime * dragSpeed;
@@ -258,6 +272,11 @@ public class WaterObjective : MonoBehaviour
         if (frogAnimator != null)
         {
             frogAnimator.enabled = true;
+        }
+
+        if (target == null || !target.activeInHierarchy)
+        {
+            yield break; 
         }
     }
 }
