@@ -18590,9 +18590,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 06106f247b79f7b4191f6fdab640994b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6ef8fc5198b7e6647aba574a8c93c2a5, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 0.04
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -21782,7 +21782,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicBox: {fileID: 1231060465}
-  musicClip: {fileID: 8300000, guid: 61c4b4ad7f1eb934f95f291d09ae9b28, type: 3}
+  musicClip: {fileID: 8300000, guid: 273862c3ee6865d48a316c8a33a44fde, type: 3}
 --- !u!1001 &1432151141
 PrefabInstance:
   m_ObjectHideFlags: 0
