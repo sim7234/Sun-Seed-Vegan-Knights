@@ -44,8 +44,6 @@ public class Menu : MonoBehaviour
 
     public void pressedTutorial()
     {
-        PlayerPrefs.SetInt("HasDoneTutorial", 1);
-        hasDoneTutorial = true;
         SceneManager.LoadScene("Tutorial");
     }
 
