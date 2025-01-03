@@ -141,7 +141,7 @@ public class MissionMaster : MonoBehaviour
             }
             else
             {
-                SceneManager.LoadScene("True Hub"); 
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
     }
