@@ -355,7 +355,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8873821524221023165
 RectTransform:
   m_ObjectHideFlags: 0
@@ -545,8 +545,6 @@ MonoBehaviour:
   enemyCounterText: {fileID: 3443105375759140199}
   winScreen: {fileID: 0}
   gameOverScreen: {fileID: 0}
-  winAnimator: {fileID: 0}
-  gameOverAnimator: {fileID: 0}
   screenDisplayDuration: 2
 --- !u!82 &2890641714279537170
 AudioSource:
